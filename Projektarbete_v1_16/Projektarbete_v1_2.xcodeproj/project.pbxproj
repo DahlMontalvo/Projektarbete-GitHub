@@ -1,0 +1,612 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		000DFE5515BEDFDC00138D06 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 000DFE5415BEDFDC00138D06 /* MainMenuViewController.m */; };
+		000DFE5815BEE4D800138D06 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 000DFE5715BEE4D800138D06 /* AboutViewController.m */; };
+		0023A33215BF4EC9006BD781 /* BiologyMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0023A33115BF4EC9006BD781 /* BiologyMasterViewController.m */; };
+		0023A33515BF51F6006BD781 /* ChemistryMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0023A33415BF51F6006BD781 /* ChemistryMasterViewController.m */; };
+		0023A33815BF5258006BD781 /* PhysicsMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0023A33715BF5258006BD781 /* PhysicsMasterViewController.m */; };
+		007BC47D15C09B4E009BC60D /* MathTableCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 007BC47B15C09B4E009BC60D /* MathTableCellController.m */; };
+		007BC47E15C09B4E009BC60D /* MathTableCellController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007BC47C15C09B4E009BC60D /* MathTableCellController.xib */; };
+		007BC48415C0A957009BC60D /* kanonlogga2.png in Resources */ = {isa = PBXBuildFile; fileRef = 007BC48315C0A957009BC60D /* kanonlogga2.png */; };
+		007BC49B15C0B1AE009BC60D /* Addition.png in Resources */ = {isa = PBXBuildFile; fileRef = 007BC49715C0B1AE009BC60D /* Addition.png */; };
+		007BC49D15C0B1AE009BC60D /* Percent.png in Resources */ = {isa = PBXBuildFile; fileRef = 007BC49915C0B1AE009BC60D /* Percent.png */; };
+		007BC49E15C0B1AE009BC60D /* Subtraction.png in Resources */ = {isa = PBXBuildFile; fileRef = 007BC49A15C0B1AE009BC60D /* Subtraction.png */; };
+		007BC4A015C0B229009BC60D /* Multiplication.png in Resources */ = {isa = PBXBuildFile; fileRef = 007BC49F15C0B229009BC60D /* Multiplication.png */; };
+		00D655DF15BDFC1C00314BBB /* GlobalStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D655DE15BDFC1C00314BBB /* GlobalStatsViewController.m */; };
+		00E66CF715BC9DA600174D38 /* Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E66CF415BC9DA600174D38 /* Singleton.m */; };
+		00E66CF815BC9DA600174D38 /* StatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E66CF615BC9DA600174D38 /* StatsViewController.m */; };
+		DD83609015C1E48D00F69EF3 /* Division.png in Resources */ = {isa = PBXBuildFile; fileRef = DD83608D15C1E48D00F69EF3 /* Division.png */; };
+		DD83609115C1E48D00F69EF3 /* Equations.png in Resources */ = {isa = PBXBuildFile; fileRef = DD83608E15C1E48D00F69EF3 /* Equations.png */; };
+		DD83609215C1E48D00F69EF3 /* Fraction.png in Resources */ = {isa = PBXBuildFile; fileRef = DD83608F15C1E48D00F69EF3 /* Fraction.png */; };
+		DDB5885D15B947A9009CF151 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB5885C15B947A9009CF151 /* UIKit.framework */; };
+		DDB5885F15B947A9009CF151 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB5885E15B947A9009CF151 /* Foundation.framework */; };
+		DDB5886115B947A9009CF151 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB5886015B947A9009CF151 /* CoreGraphics.framework */; };
+		DDB5886715B947A9009CF151 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DDB5886515B947A9009CF151 /* InfoPlist.strings */; };
+		DDB5886915B947A9009CF151 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB5886815B947A9009CF151 /* main.m */; };
+		DDB5886D15B947A9009CF151 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB5886C15B947A9009CF151 /* AppDelegate.m */; };
+		DDB5887015B947A9009CF151 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB5886E15B947A9009CF151 /* MainStoryboard.storyboard */; };
+		DDB5887E15B947AA009CF151 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB5887D15B947AA009CF151 /* SenTestingKit.framework */; };
+		DDB5887F15B947AA009CF151 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB5885C15B947A9009CF151 /* UIKit.framework */; };
+		DDB5888015B947AA009CF151 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB5885E15B947A9009CF151 /* Foundation.framework */; };
+		DDB5888815B947AA009CF151 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DDB5888615B947AA009CF151 /* InfoPlist.strings */; };
+		DDB5888B15B947AA009CF151 /* Projektarbete_v1_2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB5888A15B947AA009CF151 /* Projektarbete_v1_2Tests.m */; };
+		DDB5889E15B955C6009CF151 /* MathDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB5889D15B955C6009CF151 /* MathDetailViewController.m */; };
+		DDB588A115B99B2F009CF151 /* MathMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB588A015B99B2F009CF151 /* MathMasterViewController.m */; };
+		DDB588A815B99DED009CF151 /* MathExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB588A715B99DED009CF151 /* MathExerciseViewController.m */; };
+		DDB588AC15B9A1AE009CF151 /* MathResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB588AB15B9A1AE009CF151 /* MathResultsViewController.m */; };
+		DDE8B8E115BDD72E0010A6D7 /* StatsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDE8B8E015BDD72E0010A6D7 /* StatsTableCell.xib */; };
+		DDE8B8E515BDD8420010A6D7 /* StatsTableCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE8B8E415BDD8420010A6D7 /* StatsTableCellController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DDB5888115B947AA009CF151 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DDB5884F15B947A9009CF151 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DDB5885715B947A9009CF151;
+			remoteInfo = Projektarbete_v1_2;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		000DFE5315BEDFDC00138D06 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
+		000DFE5415BEDFDC00138D06 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
+		000DFE5615BEE4D800138D06 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		000DFE5715BEE4D800138D06 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		0023A33015BF4EC9006BD781 /* BiologyMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BiologyMasterViewController.h; sourceTree = "<group>"; };
+		0023A33115BF4EC9006BD781 /* BiologyMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BiologyMasterViewController.m; sourceTree = "<group>"; };
+		0023A33315BF51F6006BD781 /* ChemistryMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChemistryMasterViewController.h; sourceTree = "<group>"; };
+		0023A33415BF51F6006BD781 /* ChemistryMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChemistryMasterViewController.m; sourceTree = "<group>"; };
+		0023A33615BF5258006BD781 /* PhysicsMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsMasterViewController.h; sourceTree = "<group>"; };
+		0023A33715BF5258006BD781 /* PhysicsMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhysicsMasterViewController.m; sourceTree = "<group>"; };
+		007BC47A15C09B4E009BC60D /* MathTableCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathTableCellController.h; sourceTree = "<group>"; };
+		007BC47B15C09B4E009BC60D /* MathTableCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathTableCellController.m; sourceTree = "<group>"; };
+		007BC47C15C09B4E009BC60D /* MathTableCellController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MathTableCellController.xib; sourceTree = "<group>"; };
+		007BC48315C0A957009BC60D /* kanonlogga2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kanonlogga2.png; sourceTree = "<group>"; };
+		007BC49715C0B1AE009BC60D /* Addition.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Addition.png; sourceTree = "<group>"; };
+		007BC49915C0B1AE009BC60D /* Percent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Percent.png; sourceTree = "<group>"; };
+		007BC49A15C0B1AE009BC60D /* Subtraction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Subtraction.png; sourceTree = "<group>"; };
+		007BC49F15C0B229009BC60D /* Multiplication.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Multiplication.png; sourceTree = "<group>"; };
+		00D655DD15BDFC1C00314BBB /* GlobalStatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalStatsViewController.h; sourceTree = "<group>"; };
+		00D655DE15BDFC1C00314BBB /* GlobalStatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalStatsViewController.m; sourceTree = "<group>"; };
+		00E66CF315BC9DA600174D38 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		00E66CF415BC9DA600174D38 /* Singleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Singleton.m; sourceTree = "<group>"; };
+		00E66CF515BC9DA600174D38 /* StatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsViewController.h; sourceTree = "<group>"; };
+		00E66CF615BC9DA600174D38 /* StatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatsViewController.m; sourceTree = "<group>"; };
+		DD83608D15C1E48D00F69EF3 /* Division.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Division.png; sourceTree = "<group>"; };
+		DD83608E15C1E48D00F69EF3 /* Equations.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Equations.png; sourceTree = "<group>"; };
+		DD83608F15C1E48D00F69EF3 /* Fraction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fraction.png; sourceTree = "<group>"; };
+		DDB5885815B947A9009CF151 /* Projektarbete_v1_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Projektarbete_v1_2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDB5885C15B947A9009CF151 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DDB5885E15B947A9009CF151 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DDB5886015B947A9009CF151 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DDB5886415B947A9009CF151 /* Projektarbete_v1_2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Projektarbete_v1_2-Info.plist"; sourceTree = "<group>"; };
+		DDB5886615B947A9009CF151 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DDB5886815B947A9009CF151 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DDB5886A15B947A9009CF151 /* Projektarbete_v1_2-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Projektarbete_v1_2-Prefix.pch"; sourceTree = "<group>"; };
+		DDB5886B15B947A9009CF151 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DDB5886C15B947A9009CF151 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DDB5886F15B947A9009CF151 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		DDB5887C15B947AA009CF151 /* Projektarbete_v1_2Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Projektarbete_v1_2Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDB5887D15B947AA009CF151 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		DDB5888515B947AA009CF151 /* Projektarbete_v1_2Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Projektarbete_v1_2Tests-Info.plist"; sourceTree = "<group>"; };
+		DDB5888715B947AA009CF151 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DDB5888915B947AA009CF151 /* Projektarbete_v1_2Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Projektarbete_v1_2Tests.h; sourceTree = "<group>"; };
+		DDB5888A15B947AA009CF151 /* Projektarbete_v1_2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Projektarbete_v1_2Tests.m; sourceTree = "<group>"; };
+		DDB5889C15B955C6009CF151 /* MathDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathDetailViewController.h; sourceTree = "<group>"; };
+		DDB5889D15B955C6009CF151 /* MathDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathDetailViewController.m; sourceTree = "<group>"; };
+		DDB5889F15B99B2F009CF151 /* MathMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathMasterViewController.h; sourceTree = "<group>"; };
+		DDB588A015B99B2F009CF151 /* MathMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathMasterViewController.m; sourceTree = "<group>"; };
+		DDB588A615B99DEC009CF151 /* MathExerciseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathExerciseViewController.h; sourceTree = "<group>"; };
+		DDB588A715B99DED009CF151 /* MathExerciseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathExerciseViewController.m; sourceTree = "<group>"; };
+		DDB588AA15B9A1AE009CF151 /* MathResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathResultsViewController.h; sourceTree = "<group>"; };
+		DDB588AB15B9A1AE009CF151 /* MathResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathResultsViewController.m; sourceTree = "<group>"; };
+		DDE8B8E015BDD72E0010A6D7 /* StatsTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatsTableCell.xib; sourceTree = "<group>"; };
+		DDE8B8E315BDD8420010A6D7 /* StatsTableCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsTableCellController.h; sourceTree = "<group>"; };
+		DDE8B8E415BDD8420010A6D7 /* StatsTableCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatsTableCellController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DDB5885515B947A9009CF151 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDB5885D15B947A9009CF151 /* UIKit.framework in Frameworks */,
+				DDB5885F15B947A9009CF151 /* Foundation.framework in Frameworks */,
+				DDB5886115B947A9009CF151 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDB5887815B947AA009CF151 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDB5887E15B947AA009CF151 /* SenTestingKit.framework in Frameworks */,
+				DDB5887F15B947AA009CF151 /* UIKit.framework in Frameworks */,
+				DDB5888015B947AA009CF151 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0023A32515BF3216006BD781 /* Icke ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DDB5886B15B947A9009CF151 /* AppDelegate.h */,
+				DDB5886C15B947A9009CF151 /* AppDelegate.m */,
+				00E66CF315BC9DA600174D38 /* Singleton.h */,
+				00E66CF415BC9DA600174D38 /* Singleton.m */,
+				007BC47A15C09B4E009BC60D /* MathTableCellController.h */,
+				007BC47B15C09B4E009BC60D /* MathTableCellController.m */,
+				DDE8B8E315BDD8420010A6D7 /* StatsTableCellController.h */,
+				DDE8B8E415BDD8420010A6D7 /* StatsTableCellController.m */,
+			);
+			name = "Icke ViewControllers";
+			sourceTree = "<group>";
+		};
+		0023A32D15BF4E15006BD781 /* Chemistry */ = {
+			isa = PBXGroup;
+			children = (
+				0023A33315BF51F6006BD781 /* ChemistryMasterViewController.h */,
+				0023A33415BF51F6006BD781 /* ChemistryMasterViewController.m */,
+			);
+			name = Chemistry;
+			sourceTree = "<group>";
+		};
+		0023A32E15BF4E33006BD781 /* Physics */ = {
+			isa = PBXGroup;
+			children = (
+				0023A33615BF5258006BD781 /* PhysicsMasterViewController.h */,
+				0023A33715BF5258006BD781 /* PhysicsMasterViewController.m */,
+			);
+			name = Physics;
+			sourceTree = "<group>";
+		};
+		0023A32F15BF4E4F006BD781 /* Biology */ = {
+			isa = PBXGroup;
+			children = (
+				0023A33015BF4EC9006BD781 /* BiologyMasterViewController.h */,
+				0023A33115BF4EC9006BD781 /* BiologyMasterViewController.m */,
+			);
+			name = Biology;
+			sourceTree = "<group>";
+		};
+		007BC48015C09E0A009BC60D /* Bilder etc. */ = {
+			isa = PBXGroup;
+			children = (
+				DD83608D15C1E48D00F69EF3 /* Division.png */,
+				DD83608E15C1E48D00F69EF3 /* Equations.png */,
+				DD83608F15C1E48D00F69EF3 /* Fraction.png */,
+				007BC49F15C0B229009BC60D /* Multiplication.png */,
+				007BC49715C0B1AE009BC60D /* Addition.png */,
+				007BC49915C0B1AE009BC60D /* Percent.png */,
+				007BC49A15C0B1AE009BC60D /* Subtraction.png */,
+				007BC48315C0A957009BC60D /* kanonlogga2.png */,
+			);
+			name = "Bilder etc.";
+			sourceTree = "<group>";
+		};
+		DDB5884D15B947A9009CF151 = {
+			isa = PBXGroup;
+			children = (
+				DDB5886215B947A9009CF151 /* Projektarbete_v1_2 */,
+				DDB5888315B947AA009CF151 /* Projektarbete_v1_2Tests */,
+				DDB5885B15B947A9009CF151 /* Frameworks */,
+				DDB5885915B947A9009CF151 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DDB5885915B947A9009CF151 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DDB5885815B947A9009CF151 /* Projektarbete_v1_2.app */,
+				DDB5887C15B947AA009CF151 /* Projektarbete_v1_2Tests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DDB5885B15B947A9009CF151 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DDB5885C15B947A9009CF151 /* UIKit.framework */,
+				DDB5885E15B947A9009CF151 /* Foundation.framework */,
+				DDB5886015B947A9009CF151 /* CoreGraphics.framework */,
+				DDB5887D15B947AA009CF151 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DDB5886215B947A9009CF151 /* Projektarbete_v1_2 */ = {
+			isa = PBXGroup;
+			children = (
+				0023A32515BF3216006BD781 /* Icke ViewControllers */,
+				DDB5889815B953A3009CF151 /* Math */,
+				0023A32D15BF4E15006BD781 /* Chemistry */,
+				0023A32E15BF4E33006BD781 /* Physics */,
+				0023A32F15BF4E4F006BD781 /* Biology */,
+				000DFE5315BEDFDC00138D06 /* MainMenuViewController.h */,
+				000DFE5415BEDFDC00138D06 /* MainMenuViewController.m */,
+				000DFE5615BEE4D800138D06 /* AboutViewController.h */,
+				000DFE5715BEE4D800138D06 /* AboutViewController.m */,
+				00D655DD15BDFC1C00314BBB /* GlobalStatsViewController.h */,
+				00D655DE15BDFC1C00314BBB /* GlobalStatsViewController.m */,
+				00E66CF515BC9DA600174D38 /* StatsViewController.h */,
+				00E66CF615BC9DA600174D38 /* StatsViewController.m */,
+				DDB5886E15B947A9009CF151 /* MainStoryboard.storyboard */,
+				007BC47C15C09B4E009BC60D /* MathTableCellController.xib */,
+				DDE8B8E015BDD72E0010A6D7 /* StatsTableCell.xib */,
+				007BC48015C09E0A009BC60D /* Bilder etc. */,
+				DDB5886315B947A9009CF151 /* Supporting Files */,
+			);
+			path = Projektarbete_v1_2;
+			sourceTree = "<group>";
+		};
+		DDB5886315B947A9009CF151 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DDB5886415B947A9009CF151 /* Projektarbete_v1_2-Info.plist */,
+				DDB5886515B947A9009CF151 /* InfoPlist.strings */,
+				DDB5886815B947A9009CF151 /* main.m */,
+				DDB5886A15B947A9009CF151 /* Projektarbete_v1_2-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DDB5888315B947AA009CF151 /* Projektarbete_v1_2Tests */ = {
+			isa = PBXGroup;
+			children = (
+				DDB5888915B947AA009CF151 /* Projektarbete_v1_2Tests.h */,
+				DDB5888A15B947AA009CF151 /* Projektarbete_v1_2Tests.m */,
+				DDB5888415B947AA009CF151 /* Supporting Files */,
+			);
+			path = Projektarbete_v1_2Tests;
+			sourceTree = "<group>";
+		};
+		DDB5888415B947AA009CF151 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DDB5888515B947AA009CF151 /* Projektarbete_v1_2Tests-Info.plist */,
+				DDB5888615B947AA009CF151 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DDB5889815B953A3009CF151 /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				DDB5889F15B99B2F009CF151 /* MathMasterViewController.h */,
+				DDB588A015B99B2F009CF151 /* MathMasterViewController.m */,
+				DDB5889C15B955C6009CF151 /* MathDetailViewController.h */,
+				DDB5889D15B955C6009CF151 /* MathDetailViewController.m */,
+				DDB588A615B99DEC009CF151 /* MathExerciseViewController.h */,
+				DDB588A715B99DED009CF151 /* MathExerciseViewController.m */,
+				DDB588AA15B9A1AE009CF151 /* MathResultsViewController.h */,
+				DDB588AB15B9A1AE009CF151 /* MathResultsViewController.m */,
+			);
+			name = Math;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DDB5885715B947A9009CF151 /* Projektarbete_v1_2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDB5888E15B947AA009CF151 /* Build configuration list for PBXNativeTarget "Projektarbete_v1_2" */;
+			buildPhases = (
+				DDB5885415B947A9009CF151 /* Sources */,
+				DDB5885515B947A9009CF151 /* Frameworks */,
+				DDB5885615B947A9009CF151 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Projektarbete_v1_2;
+			productName = Projektarbete_v1_2;
+			productReference = DDB5885815B947A9009CF151 /* Projektarbete_v1_2.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DDB5887B15B947AA009CF151 /* Projektarbete_v1_2Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDB5889115B947AA009CF151 /* Build configuration list for PBXNativeTarget "Projektarbete_v1_2Tests" */;
+			buildPhases = (
+				DDB5887715B947AA009CF151 /* Sources */,
+				DDB5887815B947AA009CF151 /* Frameworks */,
+				DDB5887915B947AA009CF151 /* Resources */,
+				DDB5887A15B947AA009CF151 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DDB5888215B947AA009CF151 /* PBXTargetDependency */,
+			);
+			name = Projektarbete_v1_2Tests;
+			productName = Projektarbete_v1_2Tests;
+			productReference = DDB5887C15B947AA009CF151 /* Projektarbete_v1_2Tests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DDB5884F15B947A9009CF151 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = DDB5885215B947A9009CF151 /* Build configuration list for PBXProject "Projektarbete_v1_2" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DDB5884D15B947A9009CF151;
+			productRefGroup = DDB5885915B947A9009CF151 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DDB5885715B947A9009CF151 /* Projektarbete_v1_2 */,
+				DDB5887B15B947AA009CF151 /* Projektarbete_v1_2Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DDB5885615B947A9009CF151 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDB5886715B947A9009CF151 /* InfoPlist.strings in Resources */,
+				DDB5887015B947A9009CF151 /* MainStoryboard.storyboard in Resources */,
+				DDE8B8E115BDD72E0010A6D7 /* StatsTableCell.xib in Resources */,
+				007BC47E15C09B4E009BC60D /* MathTableCellController.xib in Resources */,
+				007BC48415C0A957009BC60D /* kanonlogga2.png in Resources */,
+				007BC49B15C0B1AE009BC60D /* Addition.png in Resources */,
+				007BC49D15C0B1AE009BC60D /* Percent.png in Resources */,
+				007BC49E15C0B1AE009BC60D /* Subtraction.png in Resources */,
+				007BC4A015C0B229009BC60D /* Multiplication.png in Resources */,
+				DD83609015C1E48D00F69EF3 /* Division.png in Resources */,
+				DD83609115C1E48D00F69EF3 /* Equations.png in Resources */,
+				DD83609215C1E48D00F69EF3 /* Fraction.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDB5887915B947AA009CF151 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDB5888815B947AA009CF151 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DDB5887A15B947AA009CF151 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DDB5885415B947A9009CF151 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDB5886915B947A9009CF151 /* main.m in Sources */,
+				DDB5886D15B947A9009CF151 /* AppDelegate.m in Sources */,
+				DDB5889E15B955C6009CF151 /* MathDetailViewController.m in Sources */,
+				DDB588A115B99B2F009CF151 /* MathMasterViewController.m in Sources */,
+				DDB588A815B99DED009CF151 /* MathExerciseViewController.m in Sources */,
+				DDB588AC15B9A1AE009CF151 /* MathResultsViewController.m in Sources */,
+				00E66CF715BC9DA600174D38 /* Singleton.m in Sources */,
+				00E66CF815BC9DA600174D38 /* StatsViewController.m in Sources */,
+				DDE8B8E515BDD8420010A6D7 /* StatsTableCellController.m in Sources */,
+				00D655DF15BDFC1C00314BBB /* GlobalStatsViewController.m in Sources */,
+				000DFE5515BEDFDC00138D06 /* MainMenuViewController.m in Sources */,
+				000DFE5815BEE4D800138D06 /* AboutViewController.m in Sources */,
+				0023A33215BF4EC9006BD781 /* BiologyMasterViewController.m in Sources */,
+				0023A33515BF51F6006BD781 /* ChemistryMasterViewController.m in Sources */,
+				0023A33815BF5258006BD781 /* PhysicsMasterViewController.m in Sources */,
+				007BC47D15C09B4E009BC60D /* MathTableCellController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDB5887715B947AA009CF151 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDB5888B15B947AA009CF151 /* Projektarbete_v1_2Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DDB5888215B947AA009CF151 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DDB5885715B947A9009CF151 /* Projektarbete_v1_2 */;
+			targetProxy = DDB5888115B947AA009CF151 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DDB5886515B947A9009CF151 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DDB5886615B947A9009CF151 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DDB5886E15B947A9009CF151 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DDB5886F15B947A9009CF151 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		DDB5888615B947AA009CF151 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DDB5888715B947AA009CF151 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DDB5888C15B947AA009CF151 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DDB5888D15B947AA009CF151 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DDB5888F15B947AA009CF151 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Projektarbete_v1_2/Projektarbete_v1_2-Prefix.pch";
+				INFOPLIST_FILE = "Projektarbete_v1_2/Projektarbete_v1_2-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DDB5889015B947AA009CF151 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Projektarbete_v1_2/Projektarbete_v1_2-Prefix.pch";
+				INFOPLIST_FILE = "Projektarbete_v1_2/Projektarbete_v1_2-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		DDB5889215B947AA009CF151 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Projektarbete_v1_2.app/Projektarbete_v1_2";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Projektarbete_v1_2/Projektarbete_v1_2-Prefix.pch";
+				INFOPLIST_FILE = "Projektarbete_v1_2Tests/Projektarbete_v1_2Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		DDB5889315B947AA009CF151 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Projektarbete_v1_2.app/Projektarbete_v1_2";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Projektarbete_v1_2/Projektarbete_v1_2-Prefix.pch";
+				INFOPLIST_FILE = "Projektarbete_v1_2Tests/Projektarbete_v1_2Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DDB5885215B947A9009CF151 /* Build configuration list for PBXProject "Projektarbete_v1_2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDB5888C15B947AA009CF151 /* Debug */,
+				DDB5888D15B947AA009CF151 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDB5888E15B947AA009CF151 /* Build configuration list for PBXNativeTarget "Projektarbete_v1_2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDB5888F15B947AA009CF151 /* Debug */,
+				DDB5889015B947AA009CF151 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDB5889115B947AA009CF151 /* Build configuration list for PBXNativeTarget "Projektarbete_v1_2Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDB5889215B947AA009CF151 /* Debug */,
+				DDB5889315B947AA009CF151 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DDB5884F15B947A9009CF151 /* Project object */;
+}
