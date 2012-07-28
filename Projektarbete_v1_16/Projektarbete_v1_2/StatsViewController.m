@@ -47,6 +47,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     
+    //varför blir det här en warning?
     return [operations objectAtIndex:section];
 }
 

@@ -13,6 +13,6 @@
 
 @property (nonatomic, weak) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *valueLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (retain , nonatomic) IBOutlet UIImageView *imageView;
 
 @end
