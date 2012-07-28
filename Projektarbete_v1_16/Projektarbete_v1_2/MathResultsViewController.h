@@ -28,6 +28,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *timeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *gamemodeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *highscoreLabel;
+@property (strong, nonatomic) IBOutlet UILabel *starLabel;
 
 @property (retain, nonatomic) IBOutlet UINavigationItem *navItem;
 

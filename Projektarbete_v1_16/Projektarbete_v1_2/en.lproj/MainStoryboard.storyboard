@@ -857,7 +857,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="tyF-EU-mJe">
-                                <rect key="frame" x="83" y="291" width="157" height="56"/>
+                                <rect key="frame" x="82" y="331" width="157" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="26"/>
                                 <state key="normal" title="Continue">
@@ -900,16 +900,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Gamemode" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="LOd-hw-npN">
-                                <rect key="frame" x="83" y="30" width="157" height="42"/>
+                                <rect key="frame" x="83" y="12" width="157" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="24"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" minimumFontSize="10" id="p4x-au-yoP">
-                                <rect key="frame" x="139" y="252" width="42" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="grd-BF-BeA">
+                                <rect key="frame" x="70" y="281" width="181" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -923,6 +923,7 @@
                         <outlet property="infoLabel" destination="LPw-V2-RF1" id="8hs-rI-XYd"/>
                         <outlet property="navItem" destination="tO5-Z0-Tfe" id="ryt-F3-uII"/>
                         <outlet property="resultsLabel" destination="SS8-3R-sIg" id="6EO-Dg-od4"/>
+                        <outlet property="starLabel" destination="grd-BF-BeA" id="O7H-4j-JcM"/>
                         <outlet property="timeLabel" destination="Ecy-hK-j3R" id="4d3-8y-XOd"/>
                     </connections>
                 </viewController>
@@ -930,12 +931,96 @@
             <point key="canvasLocation" x="2230" y="-1213"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="AboutViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="BiologyMasterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BiologyMasterViewController.h"/>
+        </class>
+        <class className="ChemistryMasterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ChemistryMasterViewController.h"/>
+        </class>
+        <class className="GlobalStatsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GlobalStatsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="clearAll:"/>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="outlet" name="clearButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="completedPractisesLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="completedTestsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="MainMenuViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainMenuViewController.h"/>
+        </class>
+        <class className="MathDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MathDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="difficultySegmentedControl:"/>
+                <relationship kind="action" name="gamemodeSegmentedControl:"/>
+                <relationship kind="outlet" name="difficultySegmentedControl" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="gameButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="gamemodeSegmentedControl" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="modeLabel" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="practiseButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="practiseTextField" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="startButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="testTextField" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="testingButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="MathExerciseViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MathExerciseViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="nextButton:"/>
+                <relationship kind="action" name="pausePressed:"/>
+                <relationship kind="outlet" name="answerFromUser" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="correctAnswersLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="countdownLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="exerciseLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="navItem" candidateClass="UINavigationItem"/>
+                <relationship kind="outlet" name="nextButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="numberLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="pauseButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="MathMasterViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MathMasterViewController.h"/>
+        </class>
+        <class className="MathResultsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MathResultsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="gamemodeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="highscoreLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="infoLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="navItem" candidateClass="UINavigationItem"/>
+                <relationship kind="outlet" name="resultsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="starLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="PhysicsMasterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhysicsMasterViewController.h"/>
+        </class>
+        <class className="StatsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StatsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="navItem" candidateClass="UINavigationItem"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="VvE-F8-LG2"/>
+        <segue reference="P2Q-i1-wSk"/>
     </inferredMetricsTieBreakers>
 </document>
