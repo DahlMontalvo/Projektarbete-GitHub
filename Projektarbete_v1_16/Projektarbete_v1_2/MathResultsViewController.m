@@ -20,6 +20,7 @@
 @synthesize gamemode;
 @synthesize gamemodeLabel;
 @synthesize highscoreLabel;
+@synthesize starLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -52,6 +53,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //Hur många stjärnor får användaren? Ska presenteras grafiskt senare, och storas som highscoren.
+    //Storar hur många stjärnor man har, tex 3 forKey StarsAddition2 då har man alltså 3 stjärnor på Addition lvl 2
+    if (finalTime < (difficulty * 100)*0.2) {
+        starLabel.text = @"3 Stars!";
+        [[[Singleton sharedSingleton] sharedPrefs] setInteger:3 forKey:[NSString stringWithFormat:@"Stars%@%i",operation,difficulty]];
+    } else if (finalTime < (difficulty * 100)*0.4) {
+         starLabel.text = @"2 Stars!";
+         [[[Singleton sharedSingleton] sharedPrefs] setInteger:2 forKey:[NSString stringWithFormat:@"Stars%@%i",operation,difficulty]];
+    } else if (finalTime < (difficulty * 100)*0.6) {
+        starLabel.text = @"1 Star!";
+         [[[Singleton sharedSingleton] sharedPrefs] setInteger:1 forKey:[NSString stringWithFormat:@"Stars%@%i",operation,difficulty]];
+    } else {
+        starLabel.text = @"";
+         [[[Singleton sharedSingleton] sharedPrefs] setInteger:0 forKey:[NSString stringWithFormat:@"Stars%@%i",operation,difficulty]];
+    }
+
     
     navItem.hidesBackButton = YES;
     resultsLabel.text = [NSString stringWithFormat:@"%i/10", results];
