@@ -30,6 +30,8 @@
 @synthesize cancelCountdown;
 @synthesize finalTime;
 @synthesize interval;
+@synthesize decimalSignInserted;
+@synthesize keyboarddot;
 @synthesize testStarted;
 
 
@@ -261,9 +263,8 @@
     
     //SAKER FÖR ATT STÄDA UPP
     //Tangentbord upp
-    [answerFromUser becomeFirstResponder];
+    //[answerFromUser becomeFirstResponder];
     
-    answerFromUser.borderStyle = UITextBorderStyleNone;
     countdownLabel.text = @"";
     navItem.hidesBackButton = YES;
     [navItem setTitle:[NSString stringWithFormat:@"%@ in %@ %i",gameMode,operation,difficulty]];
@@ -291,6 +292,8 @@
 
 
 -(void)nextButtonPressed {
+    decimalSignInserted = NO;
+    [keyboarddot setEnabled:YES];
     testStarted = YES;
     questionAtm++;
     NSLog(@"Qatm = %i", questionAtm);
@@ -381,6 +384,68 @@
     }
 }
 
+-(void)addNumber:(int)numberToAdd {
+    [answerFromUser setText:[NSString stringWithFormat:@"%@%i",answerFromUser.text,numberToAdd]];
+}
+
+- (IBAction)keyboard1:(id)sender {
+    [self addNumber:1];
+}
+
+- (IBAction)keyboard2:(id)sender {
+    [self addNumber:2];
+}
+
+- (IBAction)keyboard3:(id)sender {
+    [self addNumber:3];
+}
+
+- (IBAction)keyboard4:(id)sender {
+    [self addNumber:4];
+}
+
+- (IBAction)keyboard5:(id)sender {
+    [self addNumber:5];
+}
+
+- (IBAction)keyboard6:(id)sender {
+    [self addNumber:6];
+}
+
+- (IBAction)keyboard7:(id)sender {
+    [self addNumber:7];
+}
+
+- (IBAction)keyboard8:(id)sender {
+    [self addNumber:8];
+}
+
+- (IBAction)keyboard9:(id)sender {
+    [self addNumber:9];
+}
+
+- (IBAction)keyboarddot:(id)sender {
+    if (decimalSignInserted == NO)
+        [answerFromUser setText:[NSString stringWithFormat:@"%@.",answerFromUser.text]];
+    decimalSignInserted = YES;
+    [keyboarddot setEnabled:NO];
+}
+
+- (IBAction)keyboard0:(id)sender {
+    [self addNumber:0];
+}
+
+- (IBAction)keyboardback:(id)sender {
+    NSString *string = [answerFromUser text];
+    if ([string hasSuffix:@"."]) {
+        decimalSignInserted = NO;
+        [keyboarddot setEnabled:YES];
+    }
+    if ( [string length] > 0)
+        string = [string substringToIndex:[string length] - 1];
+    answerFromUser.text = string;
+}
+
 - (IBAction)nextButton:(id)sender {
     
     [self nextButtonPressed];
@@ -465,6 +530,7 @@
     [self setCountdownLabel:nil];
     [self setPauseButton:nil];
     
+    [self setKeyboarddot:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

@@ -48,12 +48,26 @@
 @property (strong, nonatomic) IBOutlet UILabel *countdownLabel;
 @property (strong, nonatomic) IBOutlet UILabel *correctAnswersLabel;
 @property (strong, nonatomic) IBOutlet UILabel *numberLabel;
-@property (strong, nonatomic) IBOutlet UITextField *answerFromUser;
+@property (strong, nonatomic) IBOutlet UILabel *answerFromUser;
 @property (strong, nonatomic) IBOutlet UILabel *exerciseLabel;
 @property (strong, nonatomic) IBOutlet UIButton *nextButton;
 @property (retain, nonatomic) IBOutlet UINavigationItem *navItem;
+@property (nonatomic) bool decimalSignInserted;
+@property (weak, nonatomic) IBOutlet UIButton *keyboarddot;
 
 
+- (IBAction)keyboard1:(id)sender;
+- (IBAction)keyboard2:(id)sender;
+- (IBAction)keyboard3:(id)sender;
+- (IBAction)keyboard4:(id)sender;
+- (IBAction)keyboard5:(id)sender;
+- (IBAction)keyboard6:(id)sender;
+- (IBAction)keyboard7:(id)sender;
+- (IBAction)keyboard8:(id)sender;
+- (IBAction)keyboard9:(id)sender;
+- (IBAction)keyboarddot:(id)sender;
+- (IBAction)keyboard0:(id)sender;
+- (IBAction)keyboardback:(id)sender;
 
 
 - (IBAction)nextButton:(id)sender;

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11D50d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3">
     <dependencies>
-        <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
+        <deployment defaultVersion="1296" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
     </dependencies>
     <scenes>
+        <!--Navi Controller-->
         <scene sceneID="11">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
@@ -20,6 +21,7 @@
             </objects>
             <point key="canvasLocation" x="-7" y="64"/>
         </scene>
+        <!--Main Menu View Controller - Custom Banner-->
         <scene sceneID="Onx-dH-0rD">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MRo-L2-yyb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -174,6 +176,7 @@
             </objects>
             <point key="canvasLocation" x="404" y="64"/>
         </scene>
+        <!--Biology Master View Controller - Biology-->
         <scene sceneID="1cw-z8-M8l">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oFX-oq-8tR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -197,6 +200,7 @@
             </objects>
             <point key="canvasLocation" x="947" y="715"/>
         </scene>
+        <!--Navigation Controller-->
         <scene sceneID="FE0-5u-K6P">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="876-ak-tpT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -213,6 +217,7 @@
             </objects>
             <point key="canvasLocation" x="462" y="1369"/>
         </scene>
+        <!--About View Controller - About-->
         <scene sceneID="8yc-OT-i5o">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nuT-lU-VMF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -263,6 +268,7 @@
             </objects>
             <point key="canvasLocation" x="947" y="1369"/>
         </scene>
+        <!--Navigation Controller-->
         <scene sceneID="LDi-DE-FEg">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U0c-VQ-e0w" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -278,6 +284,7 @@
             </objects>
             <point key="canvasLocation" x="462" y="2003"/>
         </scene>
+        <!--Global Stats View Controller - Statistics-->
         <scene sceneID="9Kn-3S-LYs">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fxJ-Vo-lg1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -522,6 +529,7 @@
             </objects>
             <point key="canvasLocation" x="947" y="2003"/>
         </scene>
+        <!--Stats View Controller - Operation-->
         <scene sceneID="h6c-Yi-93P">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mLa-rk-It1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -557,6 +565,7 @@
             </objects>
             <point key="canvasLocation" x="1429" y="2003"/>
         </scene>
+        <!--Physics Master View Controller - Biology-->
         <scene sceneID="UdB-tj-NNT">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="39j-uR-TbU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -580,6 +589,7 @@
             </objects>
             <point key="canvasLocation" x="947" y="64"/>
         </scene>
+        <!--Math Master View Controller - Math-->
         <scene sceneID="GcW-IV-pDE">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FuM-ew-1cr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -623,6 +633,7 @@
             </objects>
             <point key="canvasLocation" x="947" y="-1213"/>
         </scene>
+        <!--Chemistry Master View Controller - Biology-->
         <scene sceneID="b4o-Ob-CSf">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Mm-Q4-5ef" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -646,6 +657,7 @@
             </objects>
             <point key="canvasLocation" x="947" y="-581"/>
         </scene>
+        <!--Math Detail View Controller - Difficulty-->
         <scene sceneID="q2C-yn-1ya">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c55-oN-Hpe" sceneMemberID="firstResponder"/>
@@ -749,6 +761,7 @@
             </objects>
             <point key="canvasLocation" x="1424" y="-1213"/>
         </scene>
+        <!--Math Exercise View Controller - ExerciseViewController-->
         <scene sceneID="YJG-RU-Omp">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="URm-fa-A7u" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -764,12 +777,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" id="cYj-OD-3ap">
-                                <rect key="frame" x="81" y="83" width="159" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="23"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" returnKeyType="next"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="h7a-Mc-1R3">
                                 <rect key="frame" x="94" y="140" width="132" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -822,15 +829,203 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RUu-9A-6qU">
+                                <rect key="frame" x="57" y="242" width="72" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="1">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="keyboard1:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="d5L-eN-xaY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xSN-Aq-fM8">
+                                <rect key="frame" x="128" y="242" width="72" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="2">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="keyboard2:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="U0S-uA-G1t"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qRE-pR-9vo">
+                                <rect key="frame" x="199" y="242" width="72" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="3">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="keyboard3:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="kk8-CW-JYt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="viH-Zv-92z">
+                                <rect key="frame" x="57" y="278" width="72" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="4">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="keyboard4:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="xIh-q4-TNm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oau-TO-fRK">
+                                <rect key="frame" x="128" y="278" width="72" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="5">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="keyboard5:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="Bw7-jw-Q7J"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HL5-D1-SVY">
+                                <rect key="frame" x="199" y="278" width="72" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="6">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="keyboard6:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="gMV-4r-6do"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NAb-67-oBp">
+                                <rect key="frame" x="57" y="314" width="72" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="7">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="keyboard7:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="Sad-1S-a1u"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ODD-lw-muD">
+                                <rect key="frame" x="128" y="314" width="72" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="8">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="keyboard8:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="Gzl-Jt-A89"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="G6n-7u-HYL">
+                                <rect key="frame" x="199" y="314" width="72" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="9">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="keyboard9:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="zxZ-Sr-bMX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="swu-i6-han">
+                                <rect key="frame" x="57" y="350" width="72" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title=",">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="keyboarddot:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="5un-hv-s08"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4o8-Mu-ivk">
+                                <rect key="frame" x="199" y="350" width="72" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="&lt;--">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="keyboardback:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="UbS-f3-7Z9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PX3-om-SEv">
+                                <rect key="frame" x="128" y="350" width="72" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="0">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="keyboard0:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="f9Q-xS-rth"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="nqJ-z9-2bO">
+                                <rect key="frame" x="87" y="97" width="154" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Gamemode" id="kRC-of-v0x"/>
                     <connections>
-                        <outlet property="answerFromUser" destination="cYj-OD-3ap" id="RjN-cg-d5K"/>
+                        <outlet property="answerFromUser" destination="nqJ-z9-2bO" id="giz-zO-pee"/>
                         <outlet property="correctAnswersLabel" destination="QIe-I2-sQk" id="hye-NX-xlW"/>
                         <outlet property="countdownLabel" destination="Z7p-OL-zXR" id="GWf-VO-rqk"/>
                         <outlet property="exerciseLabel" destination="f7B-ag-joi" id="D6F-je-dqh"/>
+                        <outlet property="keyboarddot" destination="swu-i6-han" id="lnh-1O-iTP"/>
                         <outlet property="navItem" destination="kRC-of-v0x" id="jjP-iC-s8a"/>
                         <outlet property="nextButton" destination="h7a-Mc-1R3" id="Vvg-7u-e68"/>
                         <outlet property="pauseButton" destination="EkH-OD-WuR" id="yFU-Pp-Mr8"/>
@@ -841,6 +1036,7 @@
             </objects>
             <point key="canvasLocation" x="1834" y="-1213"/>
         </scene>
+        <!--Math Results View Controller - Results-->
         <scene sceneID="rbs-AK-90N">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KoK-fV-D4J" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -885,14 +1081,14 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="in 00:00:00" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" minimumFontSize="4" id="Ecy-hK-j3R">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="in 00:00:00" lineBreakMode="tailTruncation" minimumFontSize="4" adjustsFontSizeToFit="NO" id="Ecy-hK-j3R">
                                 <rect key="frame" x="97" y="212" width="65" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="seconds" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" minimumFontSize="4" id="mXW-Tu-Elx">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="seconds" lineBreakMode="tailTruncation" minimumFontSize="4" adjustsFontSizeToFit="NO" id="mXW-Tu-Elx">
                                 <rect key="frame" x="160" y="212" width="65" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="17"/>
@@ -978,12 +1174,25 @@
         <class className="MathExerciseViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MathExerciseViewController.h"/>
             <relationships>
+                <relationship kind="action" name="keyboard0:"/>
+                <relationship kind="action" name="keyboard1:"/>
+                <relationship kind="action" name="keyboard2:"/>
+                <relationship kind="action" name="keyboard3:"/>
+                <relationship kind="action" name="keyboard4:"/>
+                <relationship kind="action" name="keyboard5:"/>
+                <relationship kind="action" name="keyboard6:"/>
+                <relationship kind="action" name="keyboard7:"/>
+                <relationship kind="action" name="keyboard8:"/>
+                <relationship kind="action" name="keyboard9:"/>
+                <relationship kind="action" name="keyboardback:"/>
+                <relationship kind="action" name="keyboarddot:"/>
                 <relationship kind="action" name="nextButton:"/>
                 <relationship kind="action" name="pausePressed:"/>
-                <relationship kind="outlet" name="answerFromUser" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="answerFromUser" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="correctAnswersLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="countdownLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="exerciseLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="keyboarddot" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="navItem" candidateClass="UINavigationItem"/>
                 <relationship kind="outlet" name="nextButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="numberLabel" candidateClass="UILabel"/>
@@ -1021,6 +1230,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="P2Q-i1-wSk"/>
+        <segue reference="VvE-F8-LG2"/>
     </inferredMetricsTieBreakers>
 </document>
