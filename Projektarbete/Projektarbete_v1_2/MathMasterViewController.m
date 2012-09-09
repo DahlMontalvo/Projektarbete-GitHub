@@ -16,9 +16,10 @@
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
+    
     //self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+        
     }
     return self;
 }
@@ -37,7 +38,9 @@
 {
     [super viewDidLoad];
     
-    [[self.navigationController navigationBar] setTintColor:[UIColor colorWithRed:0.5 green:0.0 blue:0.0 alpha:1.0]];
+     [[self.navigationController navigationBar] setTintColor:[UIColor colorWithRed:0.5 green:0.0 blue:0.0 alpha:1.0]];
+   // [[self.navigationController navigationBar] setTintColor:[UIColor grayColor]];
+
     
     operations = [[NSMutableArray alloc] init];
     otherExercises = [[NSMutableArray alloc] init];
@@ -47,6 +50,10 @@
     [operations addObject:@"Subtraction"];
     [operations addObject:@"Multiplication"];
     [operations addObject:@"Division"];
+    [operations addObject:@"Percent"];
+    [operations addObject:@"Fraction"];
+    [operations addObject:@"Equations"];
+    [operations addObject:@"Mixed"];
     
     [otherExercises addObject:@"Percent"];
     [otherExercises addObject:@"Fraction"];
@@ -55,19 +62,20 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
+ 
     if (section == 0) {
-        return [operations count];
+     return [operations count];
+    } else {
+        return 0;
     }
-    else {
-        return [otherExercises count];
-    }
-}
 
+}
+/*
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     
     if (section == 0) {
@@ -77,14 +85,14 @@
         return @"More";
     }
 }
-
+*/
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSString *CellIdentifier;
     NSString *cellValue;
     
-    if (indexPath.section == 0) {
+   
         CellIdentifier = [operations objectAtIndex:indexPath.row];
         
         cellValue = [operations objectAtIndex:indexPath.row];
@@ -99,10 +107,10 @@
         cell.titleLabel.text = [operations objectAtIndex:indexPath.row];
         cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",[operations objectAtIndex:indexPath.row]]];
 
-        cell.valueLabel.text = @"";
+        cell.valueLabel.text = @"Stars: X/X";
         
         return cell;
-    }
+    }/*
     else {
         CellIdentifier = [otherExercises objectAtIndex:indexPath.row];
         
@@ -117,7 +125,9 @@
         
         cell.titleLabel.text = [otherExercises objectAtIndex:indexPath.row];
         cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",[otherExercises objectAtIndex:indexPath.row]]];
-        cell.valueLabel.text = @"";
+        cell.valueLabel.text = @"Stars Collected: x/x";
+        
+        
         
         return cell;
     }
@@ -126,6 +136,7 @@
    
 
 }
+      */
 /*
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     MathDetailViewController *dvc = [segue destinationViewController];
@@ -160,11 +171,19 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    
+
     [super viewWillAppear:animated];
+    
+    
+    [[self.navigationController navigationBar] setHidden:NO];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    
+    
     [super viewDidAppear:animated];
 }
 

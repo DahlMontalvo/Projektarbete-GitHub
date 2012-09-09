@@ -14,17 +14,24 @@
 		0023A33815BF5258006BD781 /* PhysicsMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0023A33715BF5258006BD781 /* PhysicsMasterViewController.m */; };
 		007BC47D15C09B4E009BC60D /* MathTableCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 007BC47B15C09B4E009BC60D /* MathTableCellController.m */; };
 		007BC47E15C09B4E009BC60D /* MathTableCellController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007BC47C15C09B4E009BC60D /* MathTableCellController.xib */; };
-		007BC48415C0A957009BC60D /* kanonlogga2.png in Resources */ = {isa = PBXBuildFile; fileRef = 007BC48315C0A957009BC60D /* kanonlogga2.png */; };
-		007BC49B15C0B1AE009BC60D /* Addition.png in Resources */ = {isa = PBXBuildFile; fileRef = 007BC49715C0B1AE009BC60D /* Addition.png */; };
-		007BC49D15C0B1AE009BC60D /* Percent.png in Resources */ = {isa = PBXBuildFile; fileRef = 007BC49915C0B1AE009BC60D /* Percent.png */; };
-		007BC49E15C0B1AE009BC60D /* Subtraction.png in Resources */ = {isa = PBXBuildFile; fileRef = 007BC49A15C0B1AE009BC60D /* Subtraction.png */; };
-		007BC4A015C0B229009BC60D /* Multiplication.png in Resources */ = {isa = PBXBuildFile; fileRef = 007BC49F15C0B229009BC60D /* Multiplication.png */; };
+		00C6AD4515FCF05100493F52 /* grayFB copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AD4215FCF05100493F52 /* grayFB copy.png */; };
+		00C6AD4615FCF05100493F52 /* statsbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AD4315FCF05100493F52 /* statsbutton.png */; };
+		00C6AD4715FCF05100493F52 /* twittericonBW copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AD4415FCF05100493F52 /* twittericonBW copy.png */; };
+		00C6AD4915FCF29F00493F52 /* grayFBny.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AD4815FCF29F00493F52 /* grayFBny.png */; };
+		00C6AD4B15FD12FE00493F52 /* MainMenu4.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AD4A15FD12FE00493F52 /* MainMenu4.png */; };
+		00C6AD5515FD1F9000493F52 /* TableCellBG3.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AD5415FD1F9000493F52 /* TableCellBG3.png */; };
+		00C6AD6B15FD248600493F52 /* Addition.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AD6415FD248600493F52 /* Addition.png */; };
+		00C6AD6C15FD248600493F52 /* Division.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AD6515FD248600493F52 /* Division.png */; };
+		00C6AD6D15FD248600493F52 /* Equation.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AD6615FD248600493F52 /* Equation.png */; };
+		00C6AD6E15FD248600493F52 /* Fraction.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AD6715FD248600493F52 /* Fraction.png */; };
+		00C6AD6F15FD248600493F52 /* Multiplication.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AD6815FD248600493F52 /* Multiplication.png */; };
+		00C6AD7015FD248600493F52 /* Percent.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AD6915FD248600493F52 /* Percent.png */; };
+		00C6AD7115FD248600493F52 /* Subtraction.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AD6A15FD248600493F52 /* Subtraction.png */; };
+		00C6AD7315FD284900493F52 /* MainMenu5.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AD7215FD284900493F52 /* MainMenu5.png */; };
+		00C6AD7515FD285000493F52 /* PlainGrayBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AD7415FD284F00493F52 /* PlainGrayBG.png */; };
 		00D655DF15BDFC1C00314BBB /* GlobalStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D655DE15BDFC1C00314BBB /* GlobalStatsViewController.m */; };
 		00E66CF715BC9DA600174D38 /* Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E66CF415BC9DA600174D38 /* Singleton.m */; };
 		00E66CF815BC9DA600174D38 /* StatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E66CF615BC9DA600174D38 /* StatsViewController.m */; };
-		DD83609015C1E48D00F69EF3 /* Division.png in Resources */ = {isa = PBXBuildFile; fileRef = DD83608D15C1E48D00F69EF3 /* Division.png */; };
-		DD83609115C1E48D00F69EF3 /* Equations.png in Resources */ = {isa = PBXBuildFile; fileRef = DD83608E15C1E48D00F69EF3 /* Equations.png */; };
-		DD83609215C1E48D00F69EF3 /* Fraction.png in Resources */ = {isa = PBXBuildFile; fileRef = DD83608F15C1E48D00F69EF3 /* Fraction.png */; };
 		DDB5885D15B947A9009CF151 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB5885C15B947A9009CF151 /* UIKit.framework */; };
 		DDB5885F15B947A9009CF151 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB5885E15B947A9009CF151 /* Foundation.framework */; };
 		DDB5886115B947A9009CF151 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB5886015B947A9009CF151 /* CoreGraphics.framework */; };
@@ -69,20 +76,27 @@
 		007BC47A15C09B4E009BC60D /* MathTableCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathTableCellController.h; sourceTree = "<group>"; };
 		007BC47B15C09B4E009BC60D /* MathTableCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathTableCellController.m; sourceTree = "<group>"; };
 		007BC47C15C09B4E009BC60D /* MathTableCellController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MathTableCellController.xib; sourceTree = "<group>"; };
-		007BC48315C0A957009BC60D /* kanonlogga2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kanonlogga2.png; sourceTree = "<group>"; };
-		007BC49715C0B1AE009BC60D /* Addition.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Addition.png; sourceTree = "<group>"; };
-		007BC49915C0B1AE009BC60D /* Percent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Percent.png; sourceTree = "<group>"; };
-		007BC49A15C0B1AE009BC60D /* Subtraction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Subtraction.png; sourceTree = "<group>"; };
-		007BC49F15C0B229009BC60D /* Multiplication.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Multiplication.png; sourceTree = "<group>"; };
+		00C6AD4215FCF05100493F52 /* grayFB copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grayFB copy.png"; sourceTree = "<group>"; };
+		00C6AD4315FCF05100493F52 /* statsbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statsbutton.png; sourceTree = "<group>"; };
+		00C6AD4415FCF05100493F52 /* twittericonBW copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twittericonBW copy.png"; sourceTree = "<group>"; };
+		00C6AD4815FCF29F00493F52 /* grayFBny.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grayFBny.png; sourceTree = "<group>"; };
+		00C6AD4A15FD12FE00493F52 /* MainMenu4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MainMenu4.png; sourceTree = "<group>"; };
+		00C6AD5415FD1F9000493F52 /* TableCellBG3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TableCellBG3.png; sourceTree = "<group>"; };
+		00C6AD6415FD248600493F52 /* Addition.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Addition.png; sourceTree = "<group>"; };
+		00C6AD6515FD248600493F52 /* Division.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Division.png; sourceTree = "<group>"; };
+		00C6AD6615FD248600493F52 /* Equation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Equation.png; sourceTree = "<group>"; };
+		00C6AD6715FD248600493F52 /* Fraction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fraction.png; sourceTree = "<group>"; };
+		00C6AD6815FD248600493F52 /* Multiplication.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Multiplication.png; sourceTree = "<group>"; };
+		00C6AD6915FD248600493F52 /* Percent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Percent.png; sourceTree = "<group>"; };
+		00C6AD6A15FD248600493F52 /* Subtraction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Subtraction.png; sourceTree = "<group>"; };
+		00C6AD7215FD284900493F52 /* MainMenu5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MainMenu5.png; sourceTree = "<group>"; };
+		00C6AD7415FD284F00493F52 /* PlainGrayBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlainGrayBG.png; sourceTree = "<group>"; };
 		00D655DD15BDFC1C00314BBB /* GlobalStatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalStatsViewController.h; sourceTree = "<group>"; };
 		00D655DE15BDFC1C00314BBB /* GlobalStatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalStatsViewController.m; sourceTree = "<group>"; };
 		00E66CF315BC9DA600174D38 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
 		00E66CF415BC9DA600174D38 /* Singleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Singleton.m; sourceTree = "<group>"; };
 		00E66CF515BC9DA600174D38 /* StatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsViewController.h; sourceTree = "<group>"; };
 		00E66CF615BC9DA600174D38 /* StatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatsViewController.m; sourceTree = "<group>"; };
-		DD83608D15C1E48D00F69EF3 /* Division.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Division.png; sourceTree = "<group>"; };
-		DD83608E15C1E48D00F69EF3 /* Equations.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Equations.png; sourceTree = "<group>"; };
-		DD83608F15C1E48D00F69EF3 /* Fraction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fraction.png; sourceTree = "<group>"; };
 		DDB5885815B947A9009CF151 /* Projektarbete_v1_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Projektarbete_v1_2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB5885C15B947A9009CF151 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DDB5885E15B947A9009CF151 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -182,14 +196,21 @@
 		007BC48015C09E0A009BC60D /* Bilder etc. */ = {
 			isa = PBXGroup;
 			children = (
-				DD83608D15C1E48D00F69EF3 /* Division.png */,
-				DD83608E15C1E48D00F69EF3 /* Equations.png */,
-				DD83608F15C1E48D00F69EF3 /* Fraction.png */,
-				007BC49F15C0B229009BC60D /* Multiplication.png */,
-				007BC49715C0B1AE009BC60D /* Addition.png */,
-				007BC49915C0B1AE009BC60D /* Percent.png */,
-				007BC49A15C0B1AE009BC60D /* Subtraction.png */,
-				007BC48315C0A957009BC60D /* kanonlogga2.png */,
+				00C6AD7415FD284F00493F52 /* PlainGrayBG.png */,
+				00C6AD7215FD284900493F52 /* MainMenu5.png */,
+				00C6AD6415FD248600493F52 /* Addition.png */,
+				00C6AD6515FD248600493F52 /* Division.png */,
+				00C6AD6615FD248600493F52 /* Equation.png */,
+				00C6AD6715FD248600493F52 /* Fraction.png */,
+				00C6AD6815FD248600493F52 /* Multiplication.png */,
+				00C6AD6915FD248600493F52 /* Percent.png */,
+				00C6AD6A15FD248600493F52 /* Subtraction.png */,
+				00C6AD5415FD1F9000493F52 /* TableCellBG3.png */,
+				00C6AD4A15FD12FE00493F52 /* MainMenu4.png */,
+				00C6AD4815FCF29F00493F52 /* grayFBny.png */,
+				00C6AD4215FCF05100493F52 /* grayFB copy.png */,
+				00C6AD4315FCF05100493F52 /* statsbutton.png */,
+				00C6AD4415FCF05100493F52 /* twittericonBW copy.png */,
 			);
 			name = "Bilder etc.";
 			sourceTree = "<group>";
@@ -368,14 +389,21 @@
 				DDB5887015B947A9009CF151 /* MainStoryboard.storyboard in Resources */,
 				DDE8B8E115BDD72E0010A6D7 /* StatsTableCell.xib in Resources */,
 				007BC47E15C09B4E009BC60D /* MathTableCellController.xib in Resources */,
-				007BC48415C0A957009BC60D /* kanonlogga2.png in Resources */,
-				007BC49B15C0B1AE009BC60D /* Addition.png in Resources */,
-				007BC49D15C0B1AE009BC60D /* Percent.png in Resources */,
-				007BC49E15C0B1AE009BC60D /* Subtraction.png in Resources */,
-				007BC4A015C0B229009BC60D /* Multiplication.png in Resources */,
-				DD83609015C1E48D00F69EF3 /* Division.png in Resources */,
-				DD83609115C1E48D00F69EF3 /* Equations.png in Resources */,
-				DD83609215C1E48D00F69EF3 /* Fraction.png in Resources */,
+				00C6AD4515FCF05100493F52 /* grayFB copy.png in Resources */,
+				00C6AD4615FCF05100493F52 /* statsbutton.png in Resources */,
+				00C6AD4715FCF05100493F52 /* twittericonBW copy.png in Resources */,
+				00C6AD4915FCF29F00493F52 /* grayFBny.png in Resources */,
+				00C6AD4B15FD12FE00493F52 /* MainMenu4.png in Resources */,
+				00C6AD5515FD1F9000493F52 /* TableCellBG3.png in Resources */,
+				00C6AD6B15FD248600493F52 /* Addition.png in Resources */,
+				00C6AD6C15FD248600493F52 /* Division.png in Resources */,
+				00C6AD6D15FD248600493F52 /* Equation.png in Resources */,
+				00C6AD6E15FD248600493F52 /* Fraction.png in Resources */,
+				00C6AD6F15FD248600493F52 /* Multiplication.png in Resources */,
+				00C6AD7015FD248600493F52 /* Percent.png in Resources */,
+				00C6AD7115FD248600493F52 /* Subtraction.png in Resources */,
+				00C6AD7315FD284900493F52 /* MainMenu5.png in Resources */,
+				00C6AD7515FD285000493F52 /* PlainGrayBG.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

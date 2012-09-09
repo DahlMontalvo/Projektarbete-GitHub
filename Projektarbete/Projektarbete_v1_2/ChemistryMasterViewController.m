@@ -43,7 +43,15 @@
     [super viewDidLoad];
     
      [[self.navigationController navigationBar] setTintColor:[UIColor colorWithRed:0.0 green:0.5 blue:1.0 alpha:1.0]];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
     
+    
+    [super viewWillAppear:animated];
+    
+    [[self.navigationController navigationBar] setHidden:NO];
 }
 
 

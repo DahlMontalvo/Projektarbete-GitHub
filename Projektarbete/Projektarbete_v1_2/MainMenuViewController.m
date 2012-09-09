@@ -101,6 +101,11 @@
 -(void)viewWillAppear:(BOOL)animated {
     
        [[self.navigationController navigationBar] setTintColor:[UIColor blackColor]];
+   //  [[self.navigationController navigationBar] setBackgroundImage:<#(UIImage *)#> forBarMetrics:
+        [[self.navigationController navigationBar] setHidden:YES];
+    
+    UIApplication *app = [UIApplication sharedApplication];
+    [app setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
 }
 
 @end

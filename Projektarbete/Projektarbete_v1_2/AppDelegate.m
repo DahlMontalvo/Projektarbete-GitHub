@@ -14,8 +14,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    UIApplication *app = [UIApplication sharedApplication];
+    [app setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
     // Override point for customization after application launch.
     return YES;
+    
+    [application setStatusBarHidden:YES];
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

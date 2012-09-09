@@ -35,6 +35,14 @@
 {
 }
 */
+- (void)viewWillAppear:(BOOL)animated
+{
+    
+    
+    [super viewWillAppear:animated];
+    
+    [[self.navigationController navigationBar] setHidden:NO];
+}
 
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
