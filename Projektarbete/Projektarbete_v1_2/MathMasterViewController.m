@@ -38,7 +38,20 @@
 {
     [super viewDidLoad];
     
-     [[self.navigationController navigationBar] setTintColor:[UIColor colorWithRed:0.5 green:0.0 blue:0.0 alpha:1.0]];
+    
+    
+    [[self.navigationController navigationBar] setTintColor:[UIColor colorWithRed:0.5 green:0.0 blue:0.0 alpha:1.0]];
+    
+    float version = [[[UIDevice currentDevice] systemVersion] floatValue];
+    NSLog(@"%f",version);
+    UIImage *backgroundImage = [UIImage imageNamed:@"PlainGrayBG.png"];
+    if (version >= 5.0) {
+        [self.navigationController.navigationBar setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
+    }
+    else
+    {
+        [self.navigationController.navigationBar insertSubview:[[UIImageView alloc] initWithImage:backgroundImage] atIndex:1];
+    }
    // [[self.navigationController navigationBar] setTintColor:[UIColor grayColor]];
 
     
