@@ -48,6 +48,7 @@
 		DDB588A115B99B2F009CF151 /* MathMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB588A015B99B2F009CF151 /* MathMasterViewController.m */; };
 		DDB588A815B99DED009CF151 /* MathExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB588A715B99DED009CF151 /* MathExerciseViewController.m */; };
 		DDB588AC15B9A1AE009CF151 /* MathResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB588AB15B9A1AE009CF151 /* MathResultsViewController.m */; };
+		DDE5CC9C15FFE368002005BF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE5CC9B15FFE368002005BF /* ViewController.m */; };
 		DDE8B8E115BDD72E0010A6D7 /* StatsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDE8B8E015BDD72E0010A6D7 /* StatsTableCell.xib */; };
 		DDE8B8E515BDD8420010A6D7 /* StatsTableCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE8B8E415BDD8420010A6D7 /* StatsTableCellController.m */; };
 /* End PBXBuildFile section */
@@ -122,6 +123,8 @@
 		DDB588A715B99DED009CF151 /* MathExerciseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathExerciseViewController.m; sourceTree = "<group>"; };
 		DDB588AA15B9A1AE009CF151 /* MathResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathResultsViewController.h; sourceTree = "<group>"; };
 		DDB588AB15B9A1AE009CF151 /* MathResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathResultsViewController.m; sourceTree = "<group>"; };
+		DDE5CC9A15FFE368002005BF /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		DDE5CC9B15FFE368002005BF /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		DDE8B8E015BDD72E0010A6D7 /* StatsTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatsTableCell.xib; sourceTree = "<group>"; };
 		DDE8B8E315BDD8420010A6D7 /* StatsTableCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsTableCellController.h; sourceTree = "<group>"; };
 		DDE8B8E415BDD8420010A6D7 /* StatsTableCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatsTableCellController.m; sourceTree = "<group>"; };
@@ -266,6 +269,8 @@
 				DDE8B8E015BDD72E0010A6D7 /* StatsTableCell.xib */,
 				007BC48015C09E0A009BC60D /* Bilder etc. */,
 				DDB5886315B947A9009CF151 /* Supporting Files */,
+				DDE5CC9A15FFE368002005BF /* ViewController.h */,
+				DDE5CC9B15FFE368002005BF /* ViewController.m */,
 			);
 			path = Projektarbete_v1_2;
 			sourceTree = "<group>";
@@ -454,6 +459,7 @@
 				0023A33515BF51F6006BD781 /* ChemistryMasterViewController.m in Sources */,
 				0023A33815BF5258006BD781 /* PhysicsMasterViewController.m in Sources */,
 				007BC47D15C09B4E009BC60D /* MathTableCellController.m in Sources */,
+				DDE5CC9C15FFE368002005BF /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
