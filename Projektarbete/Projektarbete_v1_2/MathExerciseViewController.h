@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MathResultsViewController.h"
+#import "MathMasterViewController.h"
 #include "stdlib.h"
 
 

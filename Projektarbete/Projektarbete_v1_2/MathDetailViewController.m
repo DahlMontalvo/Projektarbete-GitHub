@@ -13,6 +13,7 @@
 @synthesize testingButton;
 @synthesize gameButton;
 @synthesize practiseButton;
+@synthesize navigationLabel;
 @synthesize operation;
 @synthesize modeLabel;
 @synthesize startButton;
@@ -57,7 +58,8 @@
     [practiseTextField setTextColor:[UIColor lightGrayColor]];
     [testTextField setTextColor:[UIColor lightGrayColor]];
     
-    self.navigationItem.title = operation;
+    //self.navigationItem.title = operation;
+    navigationLabel.text = operation;
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -82,6 +84,7 @@
     [self setTestingButton:nil];
     [self setGameButton:nil];
     [self setPractiseButton:nil];
+    [self setNavigationLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -105,5 +108,11 @@
 - (IBAction)gamemodeSegmentedControl:(id)sender {
     [startButton setEnabled:YES];
 
+}
+
+- (IBAction)backButton:(id)sender {
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    
 }
 @end

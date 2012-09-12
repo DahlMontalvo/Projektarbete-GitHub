@@ -676,14 +676,14 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="1. Difficulty:" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="OTC-Sr-O0e">
-                                <rect key="frame" x="71" y="20" width="179" height="33"/>
+                                <rect key="frame" x="71" y="80" width="179" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="22"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" id="UoU-24-owR">
-                                <rect key="frame" x="29" y="61" width="263" height="44"/>
+                                <rect key="frame" x="29" y="121" width="263" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="1"/>
@@ -697,21 +697,21 @@
                                 </connections>
                             </segmentedControl>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Practise without saving any highscores" textAlignment="center" id="qBW-0D-ySy">
-                                <rect key="frame" x="29" y="227" width="118" height="64"/>
+                                <rect key="frame" x="29" y="287" width="118" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Test your skills with limited time and no pausing" textAlignment="center" id="Tkr-cp-tlj">
-                                <rect key="frame" x="174" y="227" width="118" height="64"/>
+                                <rect key="frame" x="174" y="287" width="118" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pdW-OX-cMP">
-                                <rect key="frame" x="80" y="131" width="160" height="37"/>
+                                <rect key="frame" x="80" y="191" width="160" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="22"/>
                                 <state key="normal" title="2. Gamemode:">
@@ -726,7 +726,7 @@
                                 </state>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" id="63j-DP-hWc">
-                                <rect key="frame" x="29" y="176" width="263" height="44"/>
+                                <rect key="frame" x="29" y="236" width="263" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Practise"/>
@@ -754,6 +754,33 @@
                                     <segue destination="ZY0-nv-5j1" kind="push" id="vFs-O9-7uw"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="NavBar2.png" id="dOA-KU-Nss">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Math Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Fcm-Ex-rVx">
+                                <rect key="frame" x="71" y="10" width="179" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="22"/>
+                                <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Frv-lX-quJ">
+                                <rect key="frame" x="0.0" y="0.0" width="72" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Back" image="bakåtpil.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Button:" destination="uf3-zW-hz6" eventType="touchUpInside" id="cXQ-hJ-g0m"/>
+                                    <action selector="backButton:" destination="Y81-nL-Ifg" eventType="touchUpInside" id="aRv-nZ-gV9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -762,6 +789,7 @@
                         <outlet property="difficultySegmentedControl" destination="UoU-24-owR" id="yPo-Ew-8Rn"/>
                         <outlet property="gamemodeSegmentedControl" destination="63j-DP-hWc" id="mB8-Wl-Mgg"/>
                         <outlet property="modeLabel" destination="pdW-OX-cMP" id="iEd-IC-Zbg"/>
+                        <outlet property="navigationLabel" destination="Fcm-Ex-rVx" id="aBw-6v-Bkr"/>
                         <outlet property="practiseTextField" destination="qBW-0D-ySy" id="ara-kc-gj3"/>
                         <outlet property="startButton" destination="bhY-ir-hg6" id="snw-SL-2YD"/>
                         <outlet property="testTextField" destination="Tkr-cp-tlj" id="Gb7-Ya-h3t"/>
@@ -1176,12 +1204,14 @@
         <class className="MathDetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MathDetailViewController.h"/>
             <relationships>
+                <relationship kind="action" name="backButton:"/>
                 <relationship kind="action" name="difficultySegmentedControl:"/>
                 <relationship kind="action" name="gamemodeSegmentedControl:"/>
                 <relationship kind="outlet" name="difficultySegmentedControl" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="gameButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="gamemodeSegmentedControl" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="modeLabel" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="navigationLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="practiseButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="practiseTextField" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="startButton" candidateClass="UIButton"/>
@@ -1221,7 +1251,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MathMasterViewController.h"/>
             <relationships>
                 <relationship kind="action" name="Button:"/>
-                <relationship kind="outlet" name="Back" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
         </class>

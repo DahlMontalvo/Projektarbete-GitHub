@@ -13,7 +13,6 @@
 @end
 
 @implementation MathMasterViewController
-@synthesize Back;
 @synthesize tableView;
 
 @synthesize otherExercise;
@@ -58,7 +57,6 @@
 
 - (void)viewDidUnload
 {
-    [self setBack:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -165,7 +163,9 @@
     dvc.operation = operation;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)localTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [localTableView deselectRowAtIndexPath:indexPath animated:NO];
+    
     if (indexPath.section == 0) {
         operation = [operations objectAtIndex:indexPath.row];
     }

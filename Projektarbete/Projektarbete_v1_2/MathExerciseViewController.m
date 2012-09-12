@@ -477,10 +477,21 @@
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
 
 	if (buttonIndex == 0) {
+        cancelCountdown = YES;
         
-        //pusha tillbaks till huvudmenyn (så att NavControllern följer med också) !! 
-        //Kanske avbryta eventuell tidtagning och återställa något annat med?
-        [self performSegueWithIdentifier:@"exerciseToMain" sender:self];
+        [timer invalidate];
+        timer = nil;
+        
+        [countdownTimer invalidate];
+        countdownTimer = nil;
+        [self onReset];
+        
+        if ([self.navigationController.viewControllers objectAtIndex:1] != nil) {
+            [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:1] animated:YES];
+        }
+        else {
+            [self performSegueWithIdentifier:@"exerciseToMain" sender:self];
+        }
 		
 	} else if (buttonIndex == 1) {
         //Restarta 
@@ -493,7 +504,8 @@
         answerFromUser.text = @"";
         correctAnswers = 0;
         
-        
+        [countdownTimer invalidate];
+        countdownTimer = nil;
         [timer invalidate];
         timer = nil;
         cancelCountdown = YES;

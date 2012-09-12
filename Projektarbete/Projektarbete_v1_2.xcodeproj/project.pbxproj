@@ -49,7 +49,6 @@
 		DDB5888815B947AA009CF151 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DDB5888615B947AA009CF151 /* InfoPlist.strings */; };
 		DDB5888B15B947AA009CF151 /* Projektarbete_v1_2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB5888A15B947AA009CF151 /* Projektarbete_v1_2Tests.m */; };
 		DDB5889E15B955C6009CF151 /* MathDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB5889D15B955C6009CF151 /* MathDetailViewController.m */; };
-		DDB588A115B99B2F009CF151 /* MathMasterViewControllerOld.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB588A015B99B2F009CF151 /* MathMasterViewControllerOld.m */; };
 		DDB588A815B99DED009CF151 /* MathExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB588A715B99DED009CF151 /* MathExerciseViewController.m */; };
 		DDB588AC15B9A1AE009CF151 /* MathResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB588AB15B9A1AE009CF151 /* MathResultsViewController.m */; };
 		DDE5CC9C15FFE368002005BF /* MathMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE5CC9B15FFE368002005BF /* MathMasterViewController.m */; };
@@ -126,8 +125,6 @@
 		DDB5888A15B947AA009CF151 /* Projektarbete_v1_2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Projektarbete_v1_2Tests.m; sourceTree = "<group>"; };
 		DDB5889C15B955C6009CF151 /* MathDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathDetailViewController.h; sourceTree = "<group>"; };
 		DDB5889D15B955C6009CF151 /* MathDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathDetailViewController.m; sourceTree = "<group>"; };
-		DDB5889F15B99B2F009CF151 /* MathMasterViewControllerOld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathMasterViewControllerOld.h; sourceTree = "<group>"; };
-		DDB588A015B99B2F009CF151 /* MathMasterViewControllerOld.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathMasterViewControllerOld.m; sourceTree = "<group>"; };
 		DDB588A615B99DEC009CF151 /* MathExerciseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathExerciseViewController.h; sourceTree = "<group>"; };
 		DDB588A715B99DED009CF151 /* MathExerciseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathExerciseViewController.m; sourceTree = "<group>"; };
 		DDB588AA15B9A1AE009CF151 /* MathResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathResultsViewController.h; sourceTree = "<group>"; };
@@ -323,8 +320,6 @@
 			children = (
 				DDE5CC9A15FFE368002005BF /* MathMasterViewController.h */,
 				DDE5CC9B15FFE368002005BF /* MathMasterViewController.m */,
-				DDB5889F15B99B2F009CF151 /* MathMasterViewControllerOld.h */,
-				DDB588A015B99B2F009CF151 /* MathMasterViewControllerOld.m */,
 				DDB5889C15B955C6009CF151 /* MathDetailViewController.h */,
 				DDB5889D15B955C6009CF151 /* MathDetailViewController.m */,
 				DDB588A615B99DEC009CF151 /* MathExerciseViewController.h */,
@@ -466,7 +461,6 @@
 				DDB5886915B947A9009CF151 /* main.m in Sources */,
 				DDB5886D15B947A9009CF151 /* AppDelegate.m in Sources */,
 				DDB5889E15B955C6009CF151 /* MathDetailViewController.m in Sources */,
-				DDB588A115B99B2F009CF151 /* MathMasterViewControllerOld.m in Sources */,
 				DDB588A815B99DED009CF151 /* MathExerciseViewController.m in Sources */,
 				DDB588AC15B9A1AE009CF151 /* MathResultsViewController.m in Sources */,
 				00E66CF715BC9DA600174D38 /* Singleton.m in Sources */,
