@@ -10,7 +10,7 @@
 #import "MathDetailViewController.h"
 #import "MathTableCellController.h"
 
-@interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+@interface MathMasterViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     NSMutableArray *operations;
     NSMutableArray *otherExercises;
     NSString *operation;
@@ -20,7 +20,6 @@
 @property (nonatomic, retain) NSString *operation;
 @property (nonatomic, retain) NSString *otherExercise;
 
-@property (weak, nonatomic) IBOutlet UIButton *Back;
 @property (nonatomic, retain)IBOutlet UITableView *tableView;
 - (IBAction)Button:(id)sender;
 

@@ -6,13 +6,13 @@
 //
 //
 
-#import "ViewController.h"
+#import "MathMasterViewController.h"
 
-@interface ViewController ()
+@interface MathMasterViewController ()
 
 @end
 
-@implementation ViewController
+@implementation MathMasterViewController
 @synthesize Back;
 @synthesize tableView;
 
@@ -101,7 +101,7 @@
  }
  */
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)localTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSString *CellIdentifier;
     NSString *cellValue;
@@ -111,7 +111,7 @@
     
     cellValue = [operations objectAtIndex:indexPath.row];
     
-    MathTableCellController *cell = (MathTableCellController *)[tableView dequeueReusableCellWithIdentifier:operation];
+    MathTableCellController *cell = (MathTableCellController *)[localTableView dequeueReusableCellWithIdentifier:operation];
     if (cell == nil)
     {
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MathTableCellController" owner:self options:nil];

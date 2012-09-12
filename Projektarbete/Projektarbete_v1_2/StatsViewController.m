@@ -45,10 +45,10 @@
     return 5;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)localSection {
     
     //varför blir det här en warning?
-    return [operations objectAtIndex:section];
+    return [operations objectAtIndex:localSection];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

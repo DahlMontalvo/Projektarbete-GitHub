@@ -309,7 +309,7 @@
             cancelCountdown = YES;
         }
         countdownCounter = 5+difficulty*5;
-        countdownLabel.text = [NSString stringWithFormat:@"%i", countdownCounter];
+        countdownLabel.text = [NSString stringWithFormat:@"%i", (int)countdownCounter];
         countdownTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f/20.0f
                                                                         target:self
                                                                       selector:@selector(countdownTimer)
