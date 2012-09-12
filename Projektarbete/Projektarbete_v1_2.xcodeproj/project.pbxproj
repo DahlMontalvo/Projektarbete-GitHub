@@ -22,7 +22,7 @@
 		00C6AD5515FD1F9000493F52 /* TableCellBG3.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AD5415FD1F9000493F52 /* TableCellBG3.png */; };
 		00C6AD6B15FD248600493F52 /* Addition.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AD6415FD248600493F52 /* Addition.png */; };
 		00C6AD6C15FD248600493F52 /* Division.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AD6515FD248600493F52 /* Division.png */; };
-		00C6AD6D15FD248600493F52 /* Equation.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AD6615FD248600493F52 /* Equation.png */; };
+		00C6AD6D15FD248600493F52 /* Equations.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AD6615FD248600493F52 /* Equations.png */; };
 		00C6AD6E15FD248600493F52 /* Fraction.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AD6715FD248600493F52 /* Fraction.png */; };
 		00C6AD6F15FD248600493F52 /* Multiplication.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AD6815FD248600493F52 /* Multiplication.png */; };
 		00C6AD7015FD248600493F52 /* Percent.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AD6915FD248600493F52 /* Percent.png */; };
@@ -89,7 +89,7 @@
 		00C6AD5415FD1F9000493F52 /* TableCellBG3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TableCellBG3.png; sourceTree = "<group>"; };
 		00C6AD6415FD248600493F52 /* Addition.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Addition.png; sourceTree = "<group>"; };
 		00C6AD6515FD248600493F52 /* Division.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Division.png; sourceTree = "<group>"; };
-		00C6AD6615FD248600493F52 /* Equation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Equation.png; sourceTree = "<group>"; };
+		00C6AD6615FD248600493F52 /* Equations.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Equations.png; sourceTree = "<group>"; };
 		00C6AD6715FD248600493F52 /* Fraction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fraction.png; sourceTree = "<group>"; };
 		00C6AD6815FD248600493F52 /* Multiplication.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Multiplication.png; sourceTree = "<group>"; };
 		00C6AD6915FD248600493F52 /* Percent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Percent.png; sourceTree = "<group>"; };
@@ -215,7 +215,7 @@
 				00C6AD7215FD284900493F52 /* MainMenu5.png */,
 				00C6AD6415FD248600493F52 /* Addition.png */,
 				00C6AD6515FD248600493F52 /* Division.png */,
-				00C6AD6615FD248600493F52 /* Equation.png */,
+				00C6AD6615FD248600493F52 /* Equations.png */,
 				00C6AD6715FD248600493F52 /* Fraction.png */,
 				00C6AD6815FD248600493F52 /* Multiplication.png */,
 				00C6AD6915FD248600493F52 /* Percent.png */,
@@ -414,7 +414,7 @@
 				00C6AD5515FD1F9000493F52 /* TableCellBG3.png in Resources */,
 				00C6AD6B15FD248600493F52 /* Addition.png in Resources */,
 				00C6AD6C15FD248600493F52 /* Division.png in Resources */,
-				00C6AD6D15FD248600493F52 /* Equation.png in Resources */,
+				00C6AD6D15FD248600493F52 /* Equations.png in Resources */,
 				00C6AD6E15FD248600493F52 /* Fraction.png in Resources */,
 				00C6AD6F15FD248600493F52 /* Multiplication.png in Resources */,
 				00C6AD7015FD248600493F52 /* Percent.png in Resources */,

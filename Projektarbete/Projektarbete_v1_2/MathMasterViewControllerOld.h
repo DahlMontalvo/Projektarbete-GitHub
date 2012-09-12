@@ -1,16 +1,17 @@
 //
-//  ViewController.h
+//  MathMasterViewController.h
 //  Projektarbete_v1_2
 //
-//  Created by Jonas Dahl on 9/11/12.
-//
+//  Created by Jonas Dahl on 7/20/12.
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "MathDetailViewController.h"
 #import "MathTableCellController.h"
 
-@interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+
+@interface MathMasterViewController : UITableViewController {
     NSMutableArray *operations;
     NSMutableArray *otherExercises;
     NSString *operation;
@@ -19,10 +20,5 @@
 
 @property (nonatomic, retain) NSString *operation;
 @property (nonatomic, retain) NSString *otherExercise;
-
-@property (weak, nonatomic) IBOutlet UIButton *Back;
-@property (nonatomic, retain)IBOutlet UITableView *tableView;
-- (IBAction)Button:(id)sender;
-
 
 @end
