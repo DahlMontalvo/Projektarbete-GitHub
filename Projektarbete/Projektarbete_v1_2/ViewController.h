@@ -10,6 +10,8 @@
 
 @interface ViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *Back;
+@property (nonatomic, retain)IBOutlet UITableView *tableView;
 - (IBAction)Button:(id)sender;
+
 
 @end

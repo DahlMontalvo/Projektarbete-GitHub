@@ -14,6 +14,7 @@
 
 @implementation ViewController
 @synthesize Back;
+@synthesize tableView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,6 +27,10 @@
 
 - (void)viewDidLoad
 {
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MathFirstBG.png"]];
+    
+    self.tableView.backgroundView = imageView;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
