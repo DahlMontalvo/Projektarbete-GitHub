@@ -38,6 +38,10 @@
 @synthesize cancelCountdown;
 @synthesize finalTime;
 @synthesize interval;
+@synthesize correctButton;
+@synthesize answersArray;
+@synthesize questionArray;
+@synthesize correctString;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -148,7 +152,7 @@
     else
         s = a;
     for (int i = s; i > 0; i--) {
-        if ((a%i == 0) && (b%i == 0)) {
+        if (((a%i == 0) && (b%i == 0)) || ((a%(-1*i) == 0) && (b%(-1*i) == 0)) || ((a%(-1*i) == 0) && (b%(1*i) == 0)) || ((a%(1*i) == 0) && (b%(-1*i) == 0))) {
             gcf = i;
             break;
         }
@@ -166,12 +170,49 @@
     }
 }
 
+-(void)updateButtonsWithCorrectString:(NSString *)correctString {
+    NSMutableArray *buttons = [[NSMutableArray alloc] initWithObjects:buttonOne, buttonTwo, buttonThree, buttonFour, nil];
+    //Vilken ska vara rätt? 0-3
+    correctButton = arc4random() % 3;
+    UIButton *button;
+    for (int i = 0; i < 4; i++) {
+        button = [buttons objectAtIndex:i];
+        if (i == correctButton) {
+            [button setTitle:correctString forState:UIControlStateNormal];
+        }
+        else {
+            [button setTitle:[NSString stringWithFormat:@"%i / %i", arc4random() % 9 + 1, arc4random() % 9 + 1] forState:UIControlStateNormal];
+        }
+    }
+}
+
+-(BOOL)checkIfCorrect:(int)buttonID {
+    NSMutableArray *buttons = [[NSMutableArray alloc] initWithObjects:buttonOne, buttonTwo, buttonThree, buttonFour, nil];
+    UIButton *button = [buttons objectAtIndex:buttonID];
+    if ([[[button titleLabel] text] isEqualToString:correctString]) {
+        return YES;
+    }
+    return NO;
+}
+
 - (void)viewDidLoad
 {
+    if ([gameMode isEqualToString:@"Test"]) {
+        testDate = [NSDate date];
+    }
+    else {
+        //Skapa stoppur
+        start_date = [NSDate date];
+        timer = [NSTimer scheduledTimerWithTimeInterval:1.0/20.0
+                                                 target:self
+                                               selector:@selector(timer)
+                                               userInfo:nil
+                                                repeats:YES];
+    }
+    questionArray = [[NSMutableArray alloc] init];
+    answersArray = [[NSMutableArray alloc] init];
+    correctAnswers = 0;
     //Skapa frågor
-    
-    NSMutableArray *questionsArray = [[NSMutableArray alloc] init];
-    NSMutableArray *answersArray = [[NSMutableArray alloc] init];
     int numeratorOne;
     int numeratorTwo;
     int denominatorOne;
@@ -187,21 +228,27 @@
         bool continueLoop = true;
         while (continueLoop) {
             countingOperation = arc4random() % 3 + 1;
-            if (countingOperation == 3 && difficulty < 4) {
+            if ((countingOperation == 3 || countingOperation == 3) && difficulty < 4) {
                 continueLoop = YES;
             }
             else {
                 continueLoop = NO;
             }
         }
+        if (difficulty == 1) {
+            denominatorOne = denominatorTwo;
+            countingOperation = 1;
+        }
+        else if (difficulty == 2) {
+            denominatorOne = denominatorTwo;
+        }
         
-        NSMutableArray *contents = [[NSMutableArray alloc] init];
-        [contents insertObject:[NSNumber numberWithInt:numeratorOne] atIndex:0];
-        [contents insertObject:[NSNumber numberWithInt:numeratorTwo] atIndex:1];
-        [contents insertObject:[NSNumber numberWithInt:denominatorOne] atIndex:2];
-        [contents insertObject:[NSNumber numberWithInt:denominatorTwo] atIndex:3];
-        [contents insertObject:[NSNumber numberWithInt:countingOperation] atIndex:4];
-        [questionsArray insertObject:contents atIndex:i];
+        [questionArray insertObject:[[NSMutableArray alloc] initWithObjects:
+                                 [NSNumber numberWithInt:numeratorOne],
+                                 [NSNumber numberWithInt:numeratorTwo],
+                                 [NSNumber numberWithInt:denominatorOne],
+                                 [NSNumber numberWithInt:denominatorTwo],
+                                 [NSNumber numberWithInt:countingOperation], nil] atIndex:i];
         //Räknesätt: 1 = plus 2 = minus 3 = delat 4 = gånger "Det heter multiplikation" //Kalle
         switch (countingOperation) {
             case 1:
@@ -229,45 +276,22 @@
                 answerDenominator = denominatorOne*denominatorTwo;
                 break;
         }
-        [answersArray insertObject:[[NSMutableArray alloc] initWithObjects:[NSNumber numberWithInt:answerNumerator], [NSNumber numberWithInt:answerDenominator], nil] atIndex:i];
+        
+        NSMutableArray *temp = [self simplifyFractionFromArray:[[NSMutableArray alloc] initWithObjects:[NSNumber numberWithInt:answerNumerator], [NSNumber numberWithInt:answerDenominator], nil]];
+        
+        [answersArray insertObject:temp atIndex:i];
     }
     
-    numeratorOneLabel.text = [NSString stringWithFormat:@"%@", [[questionsArray objectAtIndex:0] objectAtIndex:0]];
-    numeratorTwoLabel.text = [NSString stringWithFormat:@"%@", [[questionsArray objectAtIndex:0] objectAtIndex:1]];
-    denominatorOneLabel.text = [NSString stringWithFormat:@"%@", [[questionsArray objectAtIndex:0] objectAtIndex:2]];
-    denominatorTwoLabel.text = [NSString stringWithFormat:@"%@", [[questionsArray objectAtIndex:0] objectAtIndex:3]];
+    questionAtm = 0;
     
-    buttonOne.titleLabel.text = [NSString stringWithFormat:@"%i / %i", [[[answersArray objectAtIndex:0] objectAtIndex:0] intValue], [[[answersArray objectAtIndex:0] objectAtIndex:1] intValue]];
-    NSLog(@"%i, %i", [[[answersArray objectAtIndex:0] objectAtIndex:0] intValue], [[[answersArray objectAtIndex:0] objectAtIndex:1] intValue]);
-    
-    
-    if ([[[questionsArray objectAtIndex:0] objectAtIndex:4] intValue] == 1) {
-        operationLabel.text = @"+";
-    }
-    else if ([[[questionsArray objectAtIndex:0] objectAtIndex:4] intValue] == 2) {
-        operationLabel.text = @"-";
-    }
-    else if ([[[questionsArray objectAtIndex:0] objectAtIndex:4] intValue] == 3) {
-        operationLabel.text = @"/";
-    }
-    else if ([[[questionsArray objectAtIndex:0] objectAtIndex:4] intValue] == 4) {
-        operationLabel.text = @"*";
-    }
-
-    [self nextButtonPressed];
-    
-    //Skapa svar (1 korrekt och 3 felaktiga - viktigt att de felaktiga verkligen är FEL)
+    [self presentNextQuestion];
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
 
--(void)nextButtonPressed {
+-(void)presentNextQuestion {
     
-    //decimalSignInserted = NO;
-    questionAtm++;
-    
-    //Vid test gäller andra puckar för klockan
     if ([gameMode isEqualToString:@"Test"]) {
         if (questionAtm > 0) {
             cancelCountdown = YES;
@@ -280,58 +304,42 @@
                                                         userInfo:nil
                                                          repeats:YES];
     }
-    if (questionAtm == 1) {
-        if ([gameMode isEqualToString:@"Test"]) {
-            testDate = [NSDate date];
-        }
-        else {
-            //Skapa stoppur
-            start_date = [NSDate date];
-            timer = [NSTimer scheduledTimerWithTimeInterval:1.0/20.0
-                                                     target:self
-                                                   selector:@selector(timer)
-                                                   userInfo:nil
-                                                    repeats:YES];
-        }
-    }
-    correctAnswersLabel.text = [NSString stringWithFormat:@"%i/%i", correctAnswers, questionAtm-1];
     
-    if (questionAtm == 11) {
-        //Skickar med tiden till nästa view
-        
-        if ([gameMode isEqualToString:@"Test"]) {
-            
-            NSDate *currentDate = [NSDate date];
-            NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:testDate];
-            finalTime = timeInterval;
-            NSLog(@"finaltime TEST: %f",finalTime);
-            [timer invalidate];
-            start_date = nil;
-            testDate = nil;
-            cancelCountdown = YES;
-            questionAtm = 0;
-            [self performSegueWithIdentifier:@"Done" sender:self];
-            
-        }
-        else if ([gameMode isEqualToString:@"Practise"]) {
-            
-            NSDate *currentDate = [NSDate date];
-            NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:start_date]+time_passed;
-            finalTime = timeInterval;
-            NSLog(@"finaltime PRAC: %f",finalTime);
-            [timer invalidate];
-            start_date = nil;
-            testDate = nil;
-            questionAtm = 0;
-            [self performSegueWithIdentifier:@"Done" sender:self];
-        }
-        
+    numeratorOneLabel.text = [NSString stringWithFormat:@"%i", [[[questionArray objectAtIndex:questionAtm] objectAtIndex:0] intValue]];
+    numeratorTwoLabel.text = [NSString stringWithFormat:@"%i", [[[questionArray objectAtIndex:questionAtm] objectAtIndex:1] intValue]];
+    denominatorOneLabel.text = [NSString stringWithFormat:@"%i", [[[questionArray objectAtIndex:questionAtm] objectAtIndex:2] intValue]];
+    denominatorTwoLabel.text = [NSString stringWithFormat:@"%i", [[[questionArray objectAtIndex:questionAtm] objectAtIndex:3] intValue]];
+    NSLog(@"%i, %i, 2", [[[questionArray objectAtIndex:questionAtm] objectAtIndex:2] intValue], questionAtm);
+    
+    
+    if ([[[answersArray objectAtIndex:questionAtm] objectAtIndex:1] intValue] == 1) {
+        correctString = [NSString stringWithFormat:@"%i", [[[answersArray objectAtIndex:questionAtm] objectAtIndex:0] intValue]];
+    }
+    else if ([[[answersArray objectAtIndex:questionAtm] objectAtIndex:0] intValue] == 0) {
+        correctString = @"0";
     }
     else {
-        //exerciseLabel.text = [[quizArray objectAtIndex:0] objectAtIndex:questionAtm-1];
-        start_countdown_date = [NSDate date];
+        correctString = [NSString stringWithFormat:@"%i / %i", [[[answersArray objectAtIndex:questionAtm] objectAtIndex:0] intValue], [[[answersArray objectAtIndex:questionAtm] objectAtIndex:1] intValue]];
     }
-     
+    
+    
+    if ([[[questionArray objectAtIndex:questionAtm] objectAtIndex:4] intValue] == 1) {
+        operationLabel.text = @"+";
+    }
+    else if ([[[questionArray objectAtIndex:questionAtm] objectAtIndex:4] intValue] == 2) {
+        operationLabel.text = @"-";
+    }
+    else if ([[[questionArray objectAtIndex:questionAtm] objectAtIndex:4] intValue] == 3) {
+        operationLabel.text = @"/";
+    }
+    else if ([[[questionArray objectAtIndex:questionAtm] objectAtIndex:4] intValue] == 4) {
+        operationLabel.text = @"*";
+    }
+    
+    [self updateButtonsWithCorrectString:correctString];
+    NSLog(@"rätt är : %@", correctString);
+    questionAtm++;
+    
 }
 
 - (void)viewDidUnload
@@ -358,6 +366,49 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+-(void)buttonClicked:(int)buttonNumber {
+    if ([self checkIfCorrect:buttonNumber]) {
+        correctAnswers++;
+        NSLog(@"Rätt!");
+    }
+    else {
+        NSLog(@"Fel!");
+    }
+    
+    correctAnswersLabel.text = [NSString stringWithFormat:@"%i/%i", correctAnswers, questionAtm];
+    
+    if (questionAtm == 10) {
+        if ([gameMode isEqualToString:@"Test"]) {
+            
+            NSDate *currentDate = [NSDate date];
+            NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:testDate];
+            finalTime = timeInterval;
+            NSLog(@"finaltime TEST: %f",finalTime);
+            [timer invalidate];
+            start_date = nil;
+            testDate = nil;
+            cancelCountdown = YES;
+            questionAtm = 0;
+            
+        }
+        else if ([gameMode isEqualToString:@"Practise"]) {
+            
+            NSDate *currentDate = [NSDate date];
+            NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:start_date]+time_passed;
+            finalTime = timeInterval;
+            NSLog(@"finaltime PRAC: %f",finalTime);
+            [timer invalidate];
+            start_date = nil;
+            testDate = nil;
+            questionAtm = 0;
+        }
+        [self performSegueWithIdentifier:@"ToResult" sender:self];
+    }
+    else {
+        [self presentNextQuestion];
+    }
 }
 
 - (IBAction)pauseButton:(id)sender {
@@ -398,7 +449,7 @@
 	} else if (buttonIndex == 1) {
         //Restarta
         questionAtm = 0;
-        [[quizArray objectAtIndex:1] removeAllObjects];
+        [[questionArray objectAtIndex:1] removeAllObjects];
         correctAnswersLabel.text = @"";
         correctAnswers = 0;
         
@@ -430,14 +481,30 @@
 }
 
 - (IBAction)buttonOne:(id)sender {
+    [self buttonClicked:0];
 }
 
 - (IBAction)buttonTwo:(id)sender {
+    [self buttonClicked:1];
 }
 
 - (IBAction)buttonThree:(id)sender {
+    [self buttonClicked:2];
 }
 
 - (IBAction)buttonFour:(id)sender {
+    [self buttonClicked:3];
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"ToResult"]) {
+        MathResultsViewController *rvc = [segue destinationViewController];
+        rvc.results = correctAnswers;
+        rvc.difficulty = difficulty;
+        rvc.operation = operation;
+        rvc.finalTime = finalTime;
+        rvc.gamemode = gameMode;
+    }
+}
+
 @end

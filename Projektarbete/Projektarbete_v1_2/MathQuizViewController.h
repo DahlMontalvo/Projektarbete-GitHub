@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MathResultsViewController.h"
 
 @interface MathQuizViewController : UIViewController  <UIActionSheetDelegate> {
     NSString *operation;
@@ -39,7 +40,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *numeratorTwoLabel;
 @property (weak, nonatomic) IBOutlet UILabel *denominatorOneLabel;
 @property (weak, nonatomic) IBOutlet UILabel *denominatorTwoLabel;
+@property (nonatomic) int correctButton;
 @property (nonatomic, retain) NSMutableArray *quizArray;
+@property (nonatomic, retain) NSMutableArray *questionArray;
+@property (nonatomic, retain) NSMutableArray *answersArray;
 @property (nonatomic, retain) NSString *operation;
 @property (nonatomic) int questionAtm;
 @property (nonatomic) int difficulty;
@@ -52,6 +56,7 @@
 @property (nonatomic) BOOL cancelCountdown;
 @property (nonatomic, retain) NSDate *start_countdown_date;
 @property (nonatomic) NSTimeInterval interval;
+@property (nonatomic, retain) NSString *correctString;
 
 - (IBAction)buttonOne:(id)sender;
 - (IBAction)buttonTwo:(id)sender;
