@@ -33,6 +33,12 @@
 		00C6ADC91600C27A00493F52 /* bakåtpil.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6ADC81600C27A00493F52 /* bakåtpil.png */; };
 		00C6ADCD1600C70A00493F52 /* MathFirstBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6ADCC1600C70A00493F52 /* MathFirstBG.png */; };
 		00C6ADCF1600C8A900493F52 /* NavBar2.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6ADCE1600C8A900493F52 /* NavBar2.png */; };
+		00C6AE151602762400493F52 /* BiButton2.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AE111602762400493F52 /* BiButton2.png */; };
+		00C6AE161602762400493F52 /* ChButton2.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AE121602762400493F52 /* ChButton2.png */; };
+		00C6AE171602762400493F52 /* MaButton2.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AE131602762400493F52 /* MaButton2.png */; };
+		00C6AE181602762400493F52 /* PhButton2.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AE141602762400493F52 /* PhButton2.png */; };
+		00C6AE1D16028C4300493F52 /* settings3.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AE1C16028C4300493F52 /* settings3.png */; };
+		00C6AE1F16028D4F00493F52 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AE1E16028D4F00493F52 /* Default@2x.png */; };
 		00D655DF15BDFC1C00314BBB /* GlobalStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D655DE15BDFC1C00314BBB /* GlobalStatsViewController.m */; };
 		00E66CF715BC9DA600174D38 /* Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E66CF415BC9DA600174D38 /* Singleton.m */; };
 		00E66CF815BC9DA600174D38 /* StatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E66CF615BC9DA600174D38 /* StatsViewController.m */; };
@@ -102,6 +108,12 @@
 		00C6ADC81600C27A00493F52 /* bakåtpil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bakåtpil.png"; sourceTree = "<group>"; };
 		00C6ADCC1600C70A00493F52 /* MathFirstBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MathFirstBG.png; sourceTree = "<group>"; };
 		00C6ADCE1600C8A900493F52 /* NavBar2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavBar2.png; sourceTree = "<group>"; };
+		00C6AE111602762400493F52 /* BiButton2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BiButton2.png; sourceTree = "<group>"; };
+		00C6AE121602762400493F52 /* ChButton2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChButton2.png; sourceTree = "<group>"; };
+		00C6AE131602762400493F52 /* MaButton2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MaButton2.png; sourceTree = "<group>"; };
+		00C6AE141602762400493F52 /* PhButton2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PhButton2.png; sourceTree = "<group>"; };
+		00C6AE1C16028C4300493F52 /* settings3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings3.png; sourceTree = "<group>"; };
+		00C6AE1E16028D4F00493F52 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		00D655DD15BDFC1C00314BBB /* GlobalStatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalStatsViewController.h; sourceTree = "<group>"; };
 		00D655DE15BDFC1C00314BBB /* GlobalStatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalStatsViewController.m; sourceTree = "<group>"; };
 		00E66CF315BC9DA600174D38 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
@@ -212,6 +224,11 @@
 		007BC48015C09E0A009BC60D /* Bilder etc. */ = {
 			isa = PBXGroup;
 			children = (
+				00C6AE1C16028C4300493F52 /* settings3.png */,
+				00C6AE111602762400493F52 /* BiButton2.png */,
+				00C6AE121602762400493F52 /* ChButton2.png */,
+				00C6AE131602762400493F52 /* MaButton2.png */,
+				00C6AE141602762400493F52 /* PhButton2.png */,
 				00C6ADCC1600C70A00493F52 /* MathFirstBG.png */,
 				00C6ADCE1600C8A900493F52 /* NavBar2.png */,
 				00C6ADC81600C27A00493F52 /* bakåtpil.png */,
@@ -239,6 +256,7 @@
 		DDB5884D15B947A9009CF151 = {
 			isa = PBXGroup;
 			children = (
+				00C6AE1E16028D4F00493F52 /* Default@2x.png */,
 				DDB5886215B947A9009CF151 /* Projektarbete_v1_2 */,
 				DDB5888315B947AA009CF151 /* Projektarbete_v1_2Tests */,
 				DDB5885B15B947A9009CF151 /* Frameworks */,
@@ -434,6 +452,12 @@
 				00C6ADCD1600C70A00493F52 /* MathFirstBG.png in Resources */,
 				00C6ADCF1600C8A900493F52 /* NavBar2.png in Resources */,
 				DDE5CCA41600ED1C002005BF /* Mixed.png in Resources */,
+				00C6AE151602762400493F52 /* BiButton2.png in Resources */,
+				00C6AE161602762400493F52 /* ChButton2.png in Resources */,
+				00C6AE171602762400493F52 /* MaButton2.png in Resources */,
+				00C6AE181602762400493F52 /* PhButton2.png in Resources */,
+				00C6AE1D16028C4300493F52 /* settings3.png in Resources */,
+				00C6AE1F16028D4F00493F52 /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,6 +610,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Projektarbete_v1_2/Projektarbete_v1_2-Prefix.pch";
 				INFOPLIST_FILE = "Projektarbete_v1_2/Projektarbete_v1_2-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -597,6 +622,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Projektarbete_v1_2/Projektarbete_v1_2-Prefix.pch";
 				INFOPLIST_FILE = "Projektarbete_v1_2/Projektarbete_v1_2-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

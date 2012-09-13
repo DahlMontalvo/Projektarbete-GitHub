@@ -9,6 +9,7 @@
 #import "MainMenuViewController.h"
 
 @implementation MainMenuViewController
+@synthesize scrollView;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -74,7 +75,8 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
-    
+    scrollView.scrollEnabled = YES;
+    scrollView.contentSize = CGSizeMake(320,460);
     
     [super viewDidLoad];
     

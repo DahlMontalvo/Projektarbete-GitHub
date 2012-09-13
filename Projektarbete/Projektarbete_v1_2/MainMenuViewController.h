@@ -13,9 +13,12 @@
 
 
 @interface MainMenuViewController : UIViewController <GlobalStatsViewControllerDelegate, AboutViewControllerDelegate>  {
+  
     
     
 }
+
+@property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
 
 
 
