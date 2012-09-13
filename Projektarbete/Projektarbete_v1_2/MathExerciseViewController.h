@@ -54,8 +54,19 @@
 @property (strong, nonatomic) IBOutlet UIButton *nextButton;
 @property (retain, nonatomic) IBOutlet UINavigationItem *navItem;
 @property (nonatomic) bool decimalSignInserted;
-@property (weak, nonatomic) IBOutlet UIButton *keyboarddot;
 
+@property (weak, nonatomic) IBOutlet UIButton *keyboard1;
+@property (weak, nonatomic) IBOutlet UIButton *keyboard2;
+@property (weak, nonatomic) IBOutlet UIButton *keyboard3;
+@property (weak, nonatomic) IBOutlet UIButton *keyboard4;
+@property (weak, nonatomic) IBOutlet UIButton *keyboard5;
+@property (weak, nonatomic) IBOutlet UIButton *keyboard6;
+@property (weak, nonatomic) IBOutlet UIButton *keyboard7;
+@property (weak, nonatomic) IBOutlet UIButton *keyboard8;
+@property (weak, nonatomic) IBOutlet UIButton *keyboard9;
+@property (weak, nonatomic) IBOutlet UIButton *keyboarddot;
+@property (weak, nonatomic) IBOutlet UIButton *keyboard0;
+@property (weak, nonatomic) IBOutlet UIButton *keyboardback;
 
 - (IBAction)keyboard1:(id)sender;
 - (IBAction)keyboard2:(id)sender;

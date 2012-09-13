@@ -51,6 +51,8 @@
 		DDB5889E15B955C6009CF151 /* MathDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB5889D15B955C6009CF151 /* MathDetailViewController.m */; };
 		DDB588A815B99DED009CF151 /* MathExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB588A715B99DED009CF151 /* MathExerciseViewController.m */; };
 		DDB588AC15B9A1AE009CF151 /* MathResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB588AB15B9A1AE009CF151 /* MathResultsViewController.m */; };
+		DDD0C2C51601289A00CD3BDA /* MathQuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD0C2C41601289A00CD3BDA /* MathQuizViewController.m */; };
+		DDD0C2C91601298C00CD3BDA /* MathStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD0C2C81601298C00CD3BDA /* MathStartViewController.m */; };
 		DDE5CC9C15FFE368002005BF /* MathMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE5CC9B15FFE368002005BF /* MathMasterViewController.m */; };
 		DDE5CCA41600ED1C002005BF /* Mixed.png in Resources */ = {isa = PBXBuildFile; fileRef = DDE5CCA31600ED1C002005BF /* Mixed.png */; };
 		DDE8B8E115BDD72E0010A6D7 /* StatsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDE8B8E015BDD72E0010A6D7 /* StatsTableCell.xib */; };
@@ -129,6 +131,10 @@
 		DDB588A715B99DED009CF151 /* MathExerciseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathExerciseViewController.m; sourceTree = "<group>"; };
 		DDB588AA15B9A1AE009CF151 /* MathResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathResultsViewController.h; sourceTree = "<group>"; };
 		DDB588AB15B9A1AE009CF151 /* MathResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathResultsViewController.m; sourceTree = "<group>"; };
+		DDD0C2C31601289A00CD3BDA /* MathQuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathQuizViewController.h; sourceTree = "<group>"; };
+		DDD0C2C41601289A00CD3BDA /* MathQuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathQuizViewController.m; sourceTree = "<group>"; };
+		DDD0C2C71601298C00CD3BDA /* MathStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathStartViewController.h; sourceTree = "<group>"; };
+		DDD0C2C81601298C00CD3BDA /* MathStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathStartViewController.m; sourceTree = "<group>"; };
 		DDE5CC9A15FFE368002005BF /* MathMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathMasterViewController.h; sourceTree = "<group>"; };
 		DDE5CC9B15FFE368002005BF /* MathMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathMasterViewController.m; sourceTree = "<group>"; };
 		DDE5CCA31600ED1C002005BF /* Mixed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mixed.png; sourceTree = "<group>"; };
@@ -322,6 +328,10 @@
 				DDE5CC9B15FFE368002005BF /* MathMasterViewController.m */,
 				DDB5889C15B955C6009CF151 /* MathDetailViewController.h */,
 				DDB5889D15B955C6009CF151 /* MathDetailViewController.m */,
+				DDD0C2C71601298C00CD3BDA /* MathStartViewController.h */,
+				DDD0C2C81601298C00CD3BDA /* MathStartViewController.m */,
+				DDD0C2C31601289A00CD3BDA /* MathQuizViewController.h */,
+				DDD0C2C41601289A00CD3BDA /* MathQuizViewController.m */,
 				DDB588A615B99DEC009CF151 /* MathExerciseViewController.h */,
 				DDB588A715B99DED009CF151 /* MathExerciseViewController.m */,
 				DDB588AA15B9A1AE009CF151 /* MathResultsViewController.h */,
@@ -474,6 +484,8 @@
 				0023A33815BF5258006BD781 /* PhysicsMasterViewController.m in Sources */,
 				007BC47D15C09B4E009BC60D /* MathTableCellController.m in Sources */,
 				DDE5CC9C15FFE368002005BF /* MathMasterViewController.m in Sources */,
+				DDD0C2C51601289A00CD3BDA /* MathQuizViewController.m in Sources */,
+				DDD0C2C91601298C00CD3BDA /* MathStartViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

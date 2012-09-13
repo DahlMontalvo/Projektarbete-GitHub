@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MathExerciseViewController.h"
+#import "MathStartViewController.h"
 
 @interface MathDetailViewController : UIViewController {
     NSString *operation;

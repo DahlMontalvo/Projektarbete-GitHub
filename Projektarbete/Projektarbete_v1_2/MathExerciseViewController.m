@@ -31,6 +31,17 @@
 @synthesize finalTime;
 @synthesize interval;
 @synthesize decimalSignInserted;
+@synthesize keyboard0;
+@synthesize keyboardback;
+@synthesize keyboard1;
+@synthesize keyboard2;
+@synthesize keyboard3;
+@synthesize keyboard4;
+@synthesize keyboard5;
+@synthesize keyboard6;
+@synthesize keyboard7;
+@synthesize keyboard8;
+@synthesize keyboard9;
 @synthesize keyboarddot;
 @synthesize testStarted;
 
@@ -255,6 +266,20 @@
 {
     [super viewDidLoad];
     
+    [keyboard1 setEnabled:NO];
+    [keyboard2 setEnabled:NO];
+    [keyboard3 setEnabled:NO];
+    [keyboard4 setEnabled:NO];
+    [keyboard5 setEnabled:NO];
+    [keyboard6 setEnabled:NO];
+    [keyboard7 setEnabled:NO];
+    [keyboard8 setEnabled:NO];
+    [keyboard9 setEnabled:NO];
+    [keyboard0 setEnabled:NO];
+    [keyboarddot setEnabled:NO];
+    [keyboardback setEnabled:NO];
+    
+    
     testStarted = NO;
     
     cancelCountdown = NO;
@@ -317,6 +342,21 @@
                                                                        repeats:YES];
     }
     if (questionAtm == 1) {
+        if (YES) {
+            [keyboard1 setEnabled:YES];
+            [keyboard2 setEnabled:YES];
+            [keyboard3 setEnabled:YES];
+            [keyboard4 setEnabled:YES];
+            [keyboard5 setEnabled:YES];
+            [keyboard6 setEnabled:YES];
+            [keyboard7 setEnabled:YES];
+            [keyboard8 setEnabled:YES];
+            [keyboard9 setEnabled:YES];
+            [keyboard0 setEnabled:YES];
+            [keyboarddot setEnabled:YES];
+            [keyboardback setEnabled:YES];
+        }
+        
         if ([gameMode isEqualToString:@"Test"]) {
             testDate = [NSDate date];
         }
@@ -543,6 +583,18 @@
     [self setPauseButton:nil];
     
     [self setKeyboarddot:nil];
+    [self setKeyboard1:nil];
+    [self setKeyboard2:nil];
+    [self setKeyboard3:nil];
+    [self setKeyboard4:nil];
+    [self setKeyboard5:nil];
+    [self setKeyboard6:nil];
+    [self setKeyboard7:nil];
+    [self setKeyboard8:nil];
+    [self setKeyboard9:nil];
+    [self setKeyboarddot:nil];
+    [self setKeyboard0:nil];
+    [self setKeyboardback:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

@@ -69,12 +69,12 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    MathExerciseViewController *evc = [segue destinationViewController];
+    
+    MathStartViewController *evc = [segue destinationViewController];
     evc.operation = operation;
     evc.difficulty = (difficultySegmentedControl.selectedSegmentIndex+1);
-    
-    int selected = (gamemodeSegmentedControl.selectedSegmentIndex);
-    evc.gameMode = [gamemodeSegmentedControl titleForSegmentAtIndex:selected];
+    evc.gameMode = [gamemodeSegmentedControl titleForSegmentAtIndex:gamemodeSegmentedControl.selectedSegmentIndex];
+     
 }
 
 - (void)viewDidUnload
