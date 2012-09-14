@@ -302,6 +302,8 @@
         [pauseButton setTitle:@"Exit" forState:UIControlStateNormal];    
     }
     
+    [self nextButtonPressed];
+    
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -553,6 +555,8 @@
         [self onReset];
         
         countdownLabel.text = @"";
+        [self.navigationController popViewControllerAnimated:YES];
+        [actionSheet setHidden:YES];
     
 	} else if (buttonIndex == 2) {
 		//Starta klockan!!!!

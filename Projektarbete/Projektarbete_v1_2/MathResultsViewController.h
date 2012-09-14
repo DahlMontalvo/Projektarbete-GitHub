@@ -31,5 +31,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *starLabel;
 
 @property (retain, nonatomic) IBOutlet UINavigationItem *navItem;
+- (IBAction)continueButtonPressed:(id)sender;
 
 @end

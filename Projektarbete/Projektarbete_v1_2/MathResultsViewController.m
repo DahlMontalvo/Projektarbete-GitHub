@@ -121,4 +121,11 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (IBAction)continueButtonPressed:(id)sender {
+    
+    NSArray *viewControllers = [self.navigationController viewControllers];
+    
+    [self.navigationController popToViewController:[viewControllers objectAtIndex:1] animated:YES];
+    
+}
 @end
