@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MathStartViewController.h"
+#import "MathQuizViewController.h"
+#import "MathExerciseViewController.h"
 
 @interface MathDetailViewController : UIViewController {
     NSString *operation;
@@ -28,5 +29,7 @@
 - (IBAction)difficultySegmentedControl:(id)sender;
 - (IBAction)gamemodeSegmentedControl:(id)sender;
 - (IBAction)backButton:(id)sender;
+- (IBAction)startButton:(id)sender;
+
 
 @end

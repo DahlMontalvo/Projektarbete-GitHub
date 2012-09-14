@@ -9,6 +9,7 @@
 #import "MathDetailViewController.h"
 
 @implementation MathDetailViewController
+@synthesize startButton;
 
 @synthesize testingButton;
 @synthesize gameButton;
@@ -16,7 +17,6 @@
 @synthesize navigationLabel;
 @synthesize operation;
 @synthesize modeLabel;
-@synthesize startButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -69,11 +69,18 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    MathStartViewController *evc = [segue destinationViewController];
-    evc.operation = operation;
-    evc.difficulty = (difficultySegmentedControl.selectedSegmentIndex+1);
-    evc.gameMode = [gamemodeSegmentedControl titleForSegmentAtIndex:gamemodeSegmentedControl.selectedSegmentIndex];
+    if ([[segue identifier] isEqualToString:@"ToQuiz"]) {
+        MathQuizViewController *evc = [segue destinationViewController];
+        evc.operation = operation;
+        evc.difficulty = (difficultySegmentedControl.selectedSegmentIndex+1);
+        evc.gameMode = [gamemodeSegmentedControl titleForSegmentAtIndex:gamemodeSegmentedControl.selectedSegmentIndex];
+    }
+    else {
+        MathExerciseViewController *evc = [segue destinationViewController];
+        evc.operation = operation;
+        evc.difficulty = (difficultySegmentedControl.selectedSegmentIndex+1);
+        evc.gameMode = [gamemodeSegmentedControl titleForSegmentAtIndex:gamemodeSegmentedControl.selectedSegmentIndex];
+    }
      
 }
 
@@ -85,6 +92,7 @@
     [self setGameButton:nil];
     [self setPractiseButton:nil];
     [self setNavigationLabel:nil];
+    [self setStartButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -114,5 +122,14 @@
     
     [self.navigationController popViewControllerAnimated:YES];
     
+}
+
+- (IBAction)startButton:(id)sender {
+    if ([operation isEqualToString:@"Fraction"]) {
+        [self performSegueWithIdentifier:@"ToQuiz" sender:self];
+    }
+    else {
+        [self performSegueWithIdentifier:@"ToCount" sender:self];
+    }
 }
 @end

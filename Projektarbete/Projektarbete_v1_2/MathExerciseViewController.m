@@ -13,6 +13,8 @@
 @synthesize operation;
 @synthesize difficulty;
 @synthesize start_countdown_date;
+@synthesize startCountdownLabel;
+@synthesize darkView;
 @synthesize quizArray;
 @synthesize questionAtm;
 @synthesize answer;
@@ -42,8 +44,12 @@
 @synthesize keyboard7;
 @synthesize keyboard8;
 @synthesize keyboard9;
+@synthesize startCountdownTimer;
 @synthesize keyboarddot;
+@synthesize startCountdown;
 @synthesize testStarted;
+@synthesize startCountdownDate;
+@synthesize startCountdownCounter;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -128,8 +134,6 @@
     NSString *timeString=[dateFormatter stringFromDate:timerDate];
     countdownLabel.text = timeString;
     
-
-    
 }
 
 - (void)countdownTimer
@@ -144,6 +148,29 @@
     
     countdownLabel.text = timeString;
     if (countdownCounter <= 0) {
+        [self nextButtonPressed];
+    }
+    
+}
+
+- (void)startCountdownMethod
+{
+    [self setStartCountdown:3-fabs([startCountdownDate timeIntervalSinceNow])];
+    NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:startCountdown];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"s"];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
+    NSString *timeString=[dateFormatter stringFromDate:timerDate];
+    
+    int val = [timeString intValue]+1;
+    
+    startCountdownLabel.text = [NSString stringWithFormat:@"%i", val];
+    NSLog(@"%@, %i", timeString, val);
+    if (startCountdown <= 0) {
+        [darkView setHidden:YES];
+        [startCountdownTimer invalidate];
+        startCountdownTimer = nil;
         [self nextButtonPressed];
     }
     
@@ -301,8 +328,14 @@
         //Exit ist för pause
         [pauseButton setTitle:@"Exit" forState:UIControlStateNormal];    
     }
+
+    startCountdownDate = [NSDate date];
+    startCountdownTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f/20.0f
+                                                  target:self
+                                                selector:@selector(startCountdownMethod)
+                                                userInfo:nil
+                                                 repeats:YES];
     
-    [self nextButtonPressed];
     
 }
 
@@ -599,6 +632,8 @@
     [self setKeyboarddot:nil];
     [self setKeyboard0:nil];
     [self setKeyboardback:nil];
+    [self setDarkView:nil];
+    [self setStartCountdownLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

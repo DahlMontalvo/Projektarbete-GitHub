@@ -732,7 +732,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="yY0-ZL-MtP" kind="push" id="fEH-Om-Bja"/>
+                                    <action selector="startButton:" destination="Y81-nL-Ifg" eventType="touchUpInside" id="4A2-Ti-HfG"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="NavBar2.png" id="dOA-KU-Nss">
@@ -774,58 +774,12 @@
                         <outlet property="practiseTextField" destination="qBW-0D-ySy" id="ara-kc-gj3"/>
                         <outlet property="startButton" destination="bhY-ir-hg6" id="snw-SL-2YD"/>
                         <outlet property="testTextField" destination="Tkr-cp-tlj" id="Gb7-Ya-h3t"/>
+                        <segue destination="fYp-3i-OM3" kind="push" identifier="ToQuiz" id="ban-Y7-B8a"/>
+                        <segue destination="ZY0-nv-5j1" kind="push" identifier="ToCount" id="UzV-7s-uF2"/>
                     </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1424" y="-1213"/>
-        </scene>
-        <!--Math Start View Controller-->
-        <scene sceneID="a7S-Fi-uXl">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bj2-cL-VbZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="yY0-ZL-MtP" customClass="MathStartViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Kd6-Mf-zgD">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="NavBar2.png" id="EQS-F6-zhP">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="62"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="eCA-kf-lum">
-                                <rect key="frame" x="71" y="10" width="179" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="22"/>
-                                <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UOe-Fb-4qE">
-                                <rect key="frame" x="84" y="208" width="153" height="63"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="36"/>
-                                <color key="tintColor" red="0.58971637229999996" green="0.0" blue="0.013901808749999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Start!">
-                                    <color key="titleColor" red="0.58971637229999996" green="0.0" blue="0.013901808749999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="startButton:" destination="yY0-ZL-MtP" eventType="touchUpInside" id="jhx-S0-stl"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="xcm-gE-3a1"/>
-                    <connections>
-                        <segue destination="fYp-3i-OM3" kind="push" identifier="Quiz" id="Ikn-CJ-9jD"/>
-                        <segue destination="ZY0-nv-5j1" kind="push" identifier="Count" id="faU-GD-DBB"/>
-                    </connections>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="1826" y="-1213"/>
         </scene>
         <!--Math Quiz View Controller-->
         <scene sceneID="Kvk-mQ-DYH">
@@ -1274,6 +1228,20 @@
                                     <action selector="pausePressed:" destination="URm-fa-A7u" eventType="touchUpInside" id="po8-HF-aP3"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" id="4tC-sZ-nQI">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="0fm-vN-wD3">
+                                        <rect key="frame" x="49" y="139" width="222" height="202"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="129"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -1282,6 +1250,7 @@
                         <outlet property="answerFromUser" destination="nqJ-z9-2bO" id="giz-zO-pee"/>
                         <outlet property="correctAnswersLabel" destination="ppB-hW-GXu" id="UXb-vu-Gbz"/>
                         <outlet property="countdownLabel" destination="uLR-VF-S6t" id="RNF-Yy-dsJ"/>
+                        <outlet property="darkView" destination="4tC-sZ-nQI" id="aDt-Wf-hgP"/>
                         <outlet property="exerciseLabel" destination="f7B-ag-joi" id="D6F-je-dqh"/>
                         <outlet property="keyboard0" destination="PX3-om-SEv" id="bHG-0R-fy3"/>
                         <outlet property="keyboard1" destination="RUu-9A-6qU" id="OzI-2O-zCJ"/>
@@ -1299,6 +1268,7 @@
                         <outlet property="nextButton" destination="h7a-Mc-1R3" id="Vvg-7u-e68"/>
                         <outlet property="numberLabel" destination="ppB-hW-GXu" id="rbc-Kf-YoN"/>
                         <outlet property="pauseButton" destination="pOo-KL-YGW" id="CQN-qk-fhT"/>
+                        <outlet property="startCountdownLabel" destination="0fm-vN-wD3" id="UGt-uz-sfk"/>
                         <segue destination="MWV-x0-Nen" kind="push" identifier="Done" id="Ord-lZ-lSz"/>
                         <segue destination="3" kind="modal" identifier="exerciseToMain" modalTransitionStyle="flipHorizontal" id="VvE-F8-LG2"/>
                     </connections>
@@ -1443,6 +1413,7 @@
                 <relationship kind="action" name="backButton:"/>
                 <relationship kind="action" name="difficultySegmentedControl:"/>
                 <relationship kind="action" name="gamemodeSegmentedControl:"/>
+                <relationship kind="action" name="startButton:"/>
                 <relationship kind="outlet" name="difficultySegmentedControl" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="gameButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="gamemodeSegmentedControl" candidateClass="UISegmentedControl"/>
@@ -1475,6 +1446,7 @@
                 <relationship kind="outlet" name="answerFromUser" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="correctAnswersLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="countdownLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="darkView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="exerciseLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="keyboard0" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="keyboard1" candidateClass="UIButton"/>
@@ -1492,6 +1464,7 @@
                 <relationship kind="outlet" name="nextButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="numberLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="pauseButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="startCountdownLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="MathMasterViewController" superclassName="UIViewController">
@@ -1534,12 +1507,6 @@
                 <relationship kind="outlet" name="resultsLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="starLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MathStartViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MathStartViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="startButton:"/>
             </relationships>
         </class>
         <class className="PhysicsMasterViewController" superclassName="UIViewController">

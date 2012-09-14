@@ -29,7 +29,9 @@
     NSTimer *countdownTimer;
     BOOL testStarted;
 }
+@property (weak, nonatomic) IBOutlet UILabel *startCountdownLabel;
 
+@property (weak, nonatomic) IBOutlet UIView *darkView;
 @property (nonatomic, retain) NSMutableArray *quizArray;
 @property (nonatomic, retain) NSString *operation;
 @property (nonatomic) int questionAtm;
@@ -43,6 +45,10 @@
 @property (nonatomic) BOOL cancelCountdown;
 @property (nonatomic, retain) NSDate *start_countdown_date;
 @property (nonatomic) NSTimeInterval interval;
+@property (nonatomic) float startCountdown;
+@property (nonatomic, retain) NSTimer *startCountdownTimer;
+@property (nonatomic, retain) NSDate *startCountdownDate;
+@property (nonatomic) float startCountdownCounter;
 
 
 @property (strong, nonatomic) IBOutlet UIButton *pauseButton;
