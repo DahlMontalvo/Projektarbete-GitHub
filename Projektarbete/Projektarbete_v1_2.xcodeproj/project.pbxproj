@@ -39,6 +39,7 @@
 		00C6AE181602762400493F52 /* PhButton2.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AE141602762400493F52 /* PhButton2.png */; };
 		00C6AE1D16028C4300493F52 /* settings3.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AE1C16028C4300493F52 /* settings3.png */; };
 		00C6AE1F16028D4F00493F52 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AE1E16028D4F00493F52 /* Default@2x.png */; };
+		00C6AE2D1604C7BD00493F52 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C6AE2C1604C7BD00493F52 /* MessageUI.framework */; };
 		00D655DF15BDFC1C00314BBB /* GlobalStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D655DE15BDFC1C00314BBB /* GlobalStatsViewController.m */; };
 		00E66CF715BC9DA600174D38 /* Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E66CF415BC9DA600174D38 /* Singleton.m */; };
 		00E66CF815BC9DA600174D38 /* StatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E66CF615BC9DA600174D38 /* StatsViewController.m */; };
@@ -114,6 +115,7 @@
 		00C6AE141602762400493F52 /* PhButton2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PhButton2.png; sourceTree = "<group>"; };
 		00C6AE1C16028C4300493F52 /* settings3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings3.png; sourceTree = "<group>"; };
 		00C6AE1E16028D4F00493F52 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		00C6AE2C1604C7BD00493F52 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		00D655DD15BDFC1C00314BBB /* GlobalStatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalStatsViewController.h; sourceTree = "<group>"; };
 		00D655DE15BDFC1C00314BBB /* GlobalStatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalStatsViewController.m; sourceTree = "<group>"; };
 		00E66CF315BC9DA600174D38 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00C6AE2D1604C7BD00493F52 /* MessageUI.framework in Frameworks */,
 				DDB5885D15B947A9009CF151 /* UIKit.framework in Frameworks */,
 				DDB5885F15B947A9009CF151 /* Foundation.framework in Frameworks */,
 				DDB5886115B947A9009CF151 /* CoreGraphics.framework in Frameworks */,
@@ -256,6 +259,7 @@
 		DDB5884D15B947A9009CF151 = {
 			isa = PBXGroup;
 			children = (
+				00C6AE2C1604C7BD00493F52 /* MessageUI.framework */,
 				00C6AE1E16028D4F00493F52 /* Default@2x.png */,
 				DDB5886215B947A9009CF151 /* Projektarbete_v1_2 */,
 				DDB5888315B947AA009CF151 /* Projektarbete_v1_2Tests */,

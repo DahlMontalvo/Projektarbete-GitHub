@@ -17,6 +17,23 @@
 
 }
 
+
+- (IBAction)emailPressed:(id)sender {
+	MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
+	mailController.mailComposeDelegate = self;
+    NSArray *toRecipients = [NSArray arrayWithObject:@"VårSupportEmail"];
+	[mailController setToRecipients:toRecipients];
+	[mailController setSubject:@"Simple Science Feedback"];
+	[mailController setMessageBody:@"Enter text here." isHTML:NO];
+	[self presentModalViewController:mailController animated:YES];
+
+}
+
+- (void)mailComposeController:(MFMailComposeViewController*)mailController didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error {
+	[self becomeFirstResponder];
+	[self dismissModalViewControllerAnimated:YES];
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

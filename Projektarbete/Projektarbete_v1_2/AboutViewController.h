@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
 @class AboutViewController;
 
-@protocol AboutViewControllerDelegate <NSObject>
+@protocol AboutViewControllerDelegate <NSObject, MFMailComposeViewControllerDelegate>
 - (void)AboutViewControllerDidDone:(AboutViewController *)controller;
 
 
@@ -25,5 +26,6 @@
 @property (strong, nonatomic)IBOutlet UIBarButtonItem *doneButton;
 
 -(IBAction)done:(id)sender;
+-(IBAction)emailPressed:(id)sender;
 
 @end

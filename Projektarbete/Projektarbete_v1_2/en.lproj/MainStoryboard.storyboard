@@ -273,7 +273,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Feg-j1-Hsq" kind="modal" identifier="AboutSegue" id="1fB-Gd-rGr"/>
+                                    <segue destination="Feg-j1-Hsq" kind="modal" identifier="AboutSegue" modalTransitionStyle="flipHorizontal" id="1fB-Gd-rGr"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -371,6 +371,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="emailPressed:" destination="ck9-16-VUu" eventType="touchUpInside" id="BB8-n8-Xpl"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gQh-gm-c2f">
                                 <rect key="frame" x="20" y="292" width="280" height="37"/>
@@ -1477,6 +1480,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutViewController.h"/>
             <relationships>
                 <relationship kind="action" name="done:"/>
+                <relationship kind="action" name="emailPressed:"/>
                 <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
             </relationships>
         </class>
