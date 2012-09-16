@@ -166,7 +166,6 @@
     int val = [timeString intValue]+1;
     
     startCountdownLabel.text = [NSString stringWithFormat:@"%i", val];
-    NSLog(@"%@, %i", timeString, val);
     if (startCountdown <= 0) {
         [darkView setHidden:YES];
         //[darkView removeFromSuperview];
@@ -294,6 +293,11 @@
 {
     [super viewDidLoad];
     
+    [darkView setHidden:NO];
+    [quizArray removeAllObjects];
+    
+    correctAnswersLabel.text = @"0/0";
+    
     [keyboard1 setEnabled:NO];
     [keyboard2 setEnabled:NO];
     [keyboard3 setEnabled:NO];
@@ -317,8 +321,6 @@
     //SAKER FÖR ATT STÄDA UPP
     //Tangentbord upp
     //[answerFromUser becomeFirstResponder];
-    
-    countdownLabel.text = @"";
     navItem.hidesBackButton = YES;
     [navItem setTitle:[NSString stringWithFormat:@"%@ in %@ %i",gameMode,operation,difficulty]];
 
@@ -329,9 +331,10 @@
         //Exit ist för pause
         [pauseButton setTitle:@"Exit" forState:UIControlStateNormal];    
     }
+    countdownLabel.text = @"00:00:00";
 
     startCountdownDate = [NSDate date];
-    startCountdownTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f/20.0f
+    startCountdownTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f/10.0f
                                                   target:self
                                                 selector:@selector(startCountdownMethod)
                                                 userInfo:nil
@@ -583,7 +586,7 @@
         countdownLabel.text = @"0";
         [self onReset];
         
-        countdownLabel.text = @"";
+        [self viewDidLoad];
     
 	} else if (buttonIndex == 2) {
 		//Starta klockan!!!!

@@ -20,6 +20,8 @@
 @synthesize operation;
 @synthesize difficulty;
 @synthesize start_countdown_date;
+@synthesize startCountdownLabel;
+@synthesize darkView;
 @synthesize countdownLabel;
 @synthesize correctAnswersLabel;
 @synthesize buttonOne;
@@ -42,6 +44,11 @@
 @synthesize answersArray;
 @synthesize questionArray;
 @synthesize correctString;
+@synthesize startCountdownTimer;
+@synthesize startCountdown;
+@synthesize testStarted;
+@synthesize startCountdownDate;
+@synthesize startCountdownCounter;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -142,6 +149,117 @@
     
 }
 
+- (void)startCountdownMethod
+{
+    [self setStartCountdown:3-fabs([startCountdownDate timeIntervalSinceNow])];
+    NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:startCountdown];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"s"];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
+    NSString *timeString=[dateFormatter stringFromDate:timerDate];
+    
+    int val = [timeString intValue]+1;
+    
+    startCountdownLabel.text = [NSString stringWithFormat:@"%i", val];
+    if (startCountdown <= 0) {
+        [darkView setHidden:YES];
+        //[darkView removeFromSuperview];
+        [startCountdownTimer invalidate];
+        startCountdownTimer = nil;
+        
+        if ([gameMode isEqualToString:@"Test"]) {
+            testDate = [NSDate date];
+        }
+        else {
+            //Skapa stoppur
+            start_date = [NSDate date];
+            timer = [NSTimer scheduledTimerWithTimeInterval:1.0/20.0
+                                                     target:self
+                                                   selector:@selector(timer)
+                                                   userInfo:nil
+                                                    repeats:YES];
+        }
+        questionArray = [[NSMutableArray alloc] init];
+        answersArray = [[NSMutableArray alloc] init];
+        correctAnswers = 0;
+        //Skapa frågor
+        int numeratorOne;
+        int numeratorTwo;
+        int denominatorOne;
+        int denominatorTwo;
+        int countingOperation;
+        int answerNumerator;
+        int answerDenominator;
+        for (int i = 0; i < 10; i++) {
+            numeratorOne = arc4random() % 9 + 1;
+            numeratorTwo = arc4random() % 9 + 1;
+            denominatorOne = arc4random() % 9 + 1;
+            denominatorTwo = arc4random() % 9 + 1;
+            bool continueLoop = true;
+            while (continueLoop) {
+                countingOperation = arc4random() % 3 + 1;
+                if ((countingOperation == 3 || countingOperation == 3) && difficulty < 4) {
+                    continueLoop = YES;
+                }
+                else {
+                    continueLoop = NO;
+                }
+            }
+            if (difficulty == 1) {
+                denominatorOne = denominatorTwo;
+                countingOperation = 1;
+            }
+            else if (difficulty == 2) {
+                denominatorOne = denominatorTwo;
+            }
+            
+            [questionArray insertObject:[[NSMutableArray alloc] initWithObjects:
+                                         [NSNumber numberWithInt:numeratorOne],
+                                         [NSNumber numberWithInt:numeratorTwo],
+                                         [NSNumber numberWithInt:denominatorOne],
+                                         [NSNumber numberWithInt:denominatorTwo],
+                                         [NSNumber numberWithInt:countingOperation], nil] atIndex:i];
+            //Räknesätt: 1 = plus 2 = minus 3 = delat 4 = gånger "Det heter multiplikation" //Kalle
+            switch (countingOperation) {
+                case 1:
+                    answerNumerator = denominatorTwo*numeratorOne+denominatorOne*numeratorTwo;
+                    answerDenominator = denominatorOne*denominatorTwo;
+                    break;
+                    
+                case 2:
+                    answerNumerator = denominatorTwo*numeratorOne-denominatorOne*numeratorTwo;
+                    answerDenominator = denominatorOne*denominatorTwo;
+                    break;
+                    
+                case 3:
+                    answerNumerator = numeratorOne*denominatorTwo;
+                    answerDenominator = denominatorOne*numeratorTwo;
+                    break;
+                    
+                case 4:
+                    answerNumerator = numeratorOne*numeratorTwo;
+                    answerDenominator = denominatorOne*denominatorTwo;
+                    break;
+                    
+                default:
+                    answerNumerator = numeratorOne*numeratorTwo;
+                    answerDenominator = denominatorOne*denominatorTwo;
+                    break;
+            }
+            
+            NSMutableArray *temp = [self simplifyFractionFromArray:[[NSMutableArray alloc] initWithObjects:[NSNumber numberWithInt:answerNumerator], [NSNumber numberWithInt:answerDenominator], nil]];
+            
+            [answersArray insertObject:temp atIndex:i];
+        }
+
+        
+        
+        [self presentNextQuestion];
+    }
+    
+}
+
 - (NSMutableArray *)simplifyFractionFromArray:(NSMutableArray *)array {
     int a = [[array objectAtIndex:0] intValue];
     int b = [[array objectAtIndex:1] intValue];
@@ -197,100 +315,33 @@
 
 - (void)viewDidLoad
 {
-    if ([gameMode isEqualToString:@"Test"]) {
-        testDate = [NSDate date];
-    }
-    else {
-        //Skapa stoppur
-        start_date = [NSDate date];
-        timer = [NSTimer scheduledTimerWithTimeInterval:1.0/20.0
-                                                 target:self
-                                               selector:@selector(timer)
-                                               userInfo:nil
-                                                repeats:YES];
-    }
-    questionArray = [[NSMutableArray alloc] init];
-    answersArray = [[NSMutableArray alloc] init];
-    correctAnswers = 0;
-    //Skapa frågor
-    int numeratorOne;
-    int numeratorTwo;
-    int denominatorOne;
-    int denominatorTwo;
-    int countingOperation;
-    int answerNumerator;
-    int answerDenominator;
-    for (int i = 0; i < 10; i++) {
-        numeratorOne = arc4random() % 9 + 1;
-        numeratorTwo = arc4random() % 9 + 1;
-        denominatorOne = arc4random() % 9 + 1;
-        denominatorTwo = arc4random() % 9 + 1;
-        bool continueLoop = true;
-        while (continueLoop) {
-            countingOperation = arc4random() % 3 + 1;
-            if ((countingOperation == 3 || countingOperation == 3) && difficulty < 4) {
-                continueLoop = YES;
-            }
-            else {
-                continueLoop = NO;
-            }
-        }
-        if (difficulty == 1) {
-            denominatorOne = denominatorTwo;
-            countingOperation = 1;
-        }
-        else if (difficulty == 2) {
-            denominatorOne = denominatorTwo;
-        }
         
-        [questionArray insertObject:[[NSMutableArray alloc] initWithObjects:
-                                 [NSNumber numberWithInt:numeratorOne],
-                                 [NSNumber numberWithInt:numeratorTwo],
-                                 [NSNumber numberWithInt:denominatorOne],
-                                 [NSNumber numberWithInt:denominatorTwo],
-                                 [NSNumber numberWithInt:countingOperation], nil] atIndex:i];
-        //Räknesätt: 1 = plus 2 = minus 3 = delat 4 = gånger "Det heter multiplikation" //Kalle
-        switch (countingOperation) {
-            case 1:
-                answerNumerator = denominatorTwo*numeratorOne+denominatorOne*numeratorTwo;
-                answerDenominator = denominatorOne*denominatorTwo;
-                break;
-                
-            case 2:
-                answerNumerator = denominatorTwo*numeratorOne-denominatorOne*numeratorTwo;
-                answerDenominator = denominatorOne*denominatorTwo;
-                break;
-                
-            case 3:
-                answerNumerator = numeratorOne*denominatorTwo;
-                answerDenominator = denominatorOne*numeratorTwo;
-                break;
-                
-            case 4:
-                answerNumerator = numeratorOne*numeratorTwo;
-                answerDenominator = denominatorOne*denominatorTwo;
-                break;
-                
-            default:
-                answerNumerator = numeratorOne*numeratorTwo;
-                answerDenominator = denominatorOne*denominatorTwo;
-                break;
-        }
-        
-        NSMutableArray *temp = [self simplifyFractionFromArray:[[NSMutableArray alloc] initWithObjects:[NSNumber numberWithInt:answerNumerator], [NSNumber numberWithInt:answerDenominator], nil]];
-        
-        [answersArray insertObject:temp atIndex:i];
-    }
-    
     questionAtm = 0;
+    [darkView setHidden:NO];
+    [questionArray removeAllObjects];
+    [answersArray removeAllObjects];
+    countdownLabel.text = @"00:00.0";
+    correctAnswersLabel.text = @"0/0";
+    denominatorOneLabel.text = @"";
+    denominatorTwoLabel.text = @"";
+    numeratorOneLabel.text = @"";
+    numeratorTwoLabel.text = @"";
+    testStarted = NO;
     
-    [self presentNextQuestion];
+    startCountdownDate = [NSDate date];
+    startCountdownTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f/10.0f
+                                                           target:self
+                                                         selector:@selector(startCountdownMethod)
+                                                         userInfo:nil
+                                                          repeats:YES];
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
 
 -(void)presentNextQuestion {
+    
+    testStarted = YES;
     
     if ([gameMode isEqualToString:@"Test"]) {
         if (questionAtm > 0) {
@@ -359,6 +410,8 @@
     [self setButtonTwo:nil];
     [self setButtonThree:nil];
     [self setButtonFour:nil];
+    [self setStartCountdownLabel:nil];
+    [self setDarkView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -460,8 +513,7 @@
         cancelCountdown = YES;
         countdownLabel.text = @"0";
         [self onReset];
-        
-        countdownLabel.text = @"";
+        [self viewDidLoad];
         
 	} else if (buttonIndex == 2) {
 		//Starta klockan!!!!

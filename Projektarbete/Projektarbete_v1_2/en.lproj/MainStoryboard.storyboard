@@ -921,7 +921,7 @@
                                 <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="8" textAlignment="center" lineBreakMode="clip" numberOfLines="4" minimumFontSize="10" id="x5g-IQ-KJ8">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="clip" numberOfLines="4" minimumFontSize="10" id="x5g-IQ-KJ8">
                                 <rect key="frame" x="99" y="134" width="65" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
@@ -935,14 +935,14 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="4" textAlignment="center" lineBreakMode="clip" numberOfLines="4" minimumFontSize="10" id="c36-ac-ILD">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="clip" numberOfLines="4" minimumFontSize="10" id="c36-ac-ILD">
                                 <rect key="frame" x="99" y="164" width="65" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="8" textAlignment="center" lineBreakMode="clip" numberOfLines="4" minimumFontSize="10" id="rwg-mV-PEL">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="clip" numberOfLines="4" minimumFontSize="10" id="rwg-mV-PEL">
                                 <rect key="frame" x="156" y="134" width="65" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
@@ -956,7 +956,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="4" textAlignment="center" lineBreakMode="clip" numberOfLines="4" minimumFontSize="10" id="IrB-v3-IGZ">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="clip" numberOfLines="4" minimumFontSize="10" id="IrB-v3-IGZ">
                                 <rect key="frame" x="156" y="164" width="65" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
@@ -1034,6 +1034,22 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" id="IyR-Sw-win">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Bec-Bh-XOx">
+                                        <rect key="frame" x="49" y="139" width="222" height="202"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="129"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <size key="shadowOffset" width="-1" height="-1"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -1045,12 +1061,14 @@
                         <outlet property="buttonTwo" destination="NLs-Ts-kMi" id="23e-f4-cHu"/>
                         <outlet property="correctAnswersLabel" destination="vqV-Jc-4DK" id="5lB-Dd-qNn"/>
                         <outlet property="countdownLabel" destination="W9w-Fb-WQo" id="iyK-wT-eUp"/>
+                        <outlet property="darkView" destination="IyR-Sw-win" id="8Xv-ER-Mg0"/>
                         <outlet property="denominatorOneLabel" destination="c36-ac-ILD" id="UfB-JX-FG2"/>
                         <outlet property="denominatorTwoLabel" destination="IrB-v3-IGZ" id="99U-iM-FpS"/>
                         <outlet property="numeratorOneLabel" destination="x5g-IQ-KJ8" id="1Oc-Od-aUA"/>
                         <outlet property="numeratorTwoLabel" destination="rwg-mV-PEL" id="K8c-bN-igx"/>
                         <outlet property="operationLabel" destination="fpr-vj-0cd" id="0O9-Qz-Hjs"/>
                         <outlet property="pauseButton" destination="6EI-K1-G0Q" id="5sG-db-IWv"/>
+                        <outlet property="startCountdownLabel" destination="Bec-Bh-XOx" id="LBa-ys-9Me"/>
                         <segue destination="MWV-x0-Nen" kind="push" identifier="ToResult" id="m7M-EV-8hW"/>
                     </connections>
                 </viewController>
@@ -1584,12 +1602,14 @@
                 <relationship kind="outlet" name="buttonTwo" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="correctAnswersLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="countdownLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="darkView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="denominatorOneLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="denominatorTwoLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="numeratorOneLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="numeratorTwoLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="operationLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="pauseButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="startCountdownLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="MathResultsViewController" superclassName="UIViewController">
@@ -1621,6 +1641,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Ord-lZ-lSz"/>
+        <segue reference="m7M-EV-8hW"/>
     </inferredMetricsTieBreakers>
 </document>
