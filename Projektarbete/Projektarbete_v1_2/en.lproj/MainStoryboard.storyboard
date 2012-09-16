@@ -663,7 +663,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="xLB-DO-wul">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="xLB-DO-wul">
                                         <rect key="frame" x="0.0" y="46" width="320" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1028,9 +1028,16 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="*" textAlignment="center" lineBreakMode="clip" numberOfLines="4" minimumFontSize="10" id="fpr-vj-0cd">
-                                <rect key="frame" x="128" y="149" width="65" height="36"/>
+                                <rect key="frame" x="128" y="152" width="65" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="cGX-kE-8g8">
+                                <rect key="frame" x="0.0" y="141" width="320" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1064,10 +1071,13 @@
                         <outlet property="darkView" destination="IyR-Sw-win" id="8Xv-ER-Mg0"/>
                         <outlet property="denominatorOneLabel" destination="c36-ac-ILD" id="UfB-JX-FG2"/>
                         <outlet property="denominatorTwoLabel" destination="IrB-v3-IGZ" id="99U-iM-FpS"/>
+                        <outlet property="firstLineLabel" destination="PAp-2l-HE3" id="fnw-lb-IbQ"/>
                         <outlet property="numeratorOneLabel" destination="x5g-IQ-KJ8" id="1Oc-Od-aUA"/>
                         <outlet property="numeratorTwoLabel" destination="rwg-mV-PEL" id="K8c-bN-igx"/>
                         <outlet property="operationLabel" destination="fpr-vj-0cd" id="0O9-Qz-Hjs"/>
                         <outlet property="pauseButton" destination="6EI-K1-G0Q" id="5sG-db-IWv"/>
+                        <outlet property="questionLabel" destination="cGX-kE-8g8" id="6DT-qc-70t"/>
+                        <outlet property="secondLineLabel" destination="cAb-x6-TO6" id="1mP-lu-JSs"/>
                         <outlet property="startCountdownLabel" destination="Bec-Bh-XOx" id="LBa-ys-9Me"/>
                         <segue destination="MWV-x0-Nen" kind="push" identifier="ToResult" id="m7M-EV-8hW"/>
                     </connections>
@@ -1605,10 +1615,13 @@
                 <relationship kind="outlet" name="darkView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="denominatorOneLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="denominatorTwoLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="firstLineLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="numeratorOneLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="numeratorTwoLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="operationLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="pauseButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="questionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="secondLineLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="startCountdownLabel" candidateClass="UILabel"/>
             </relationships>
         </class>

@@ -29,6 +29,9 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *startCountdownLabel;
 @property (weak, nonatomic) IBOutlet UIView *darkView;
+@property (weak, nonatomic) IBOutlet UILabel *questionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *firstLineLabel;
+@property (weak, nonatomic) IBOutlet UILabel *secondLineLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *countdownLabel;
 @property (weak, nonatomic) IBOutlet UILabel *correctAnswersLabel;

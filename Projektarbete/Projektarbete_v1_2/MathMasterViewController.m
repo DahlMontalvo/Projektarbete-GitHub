@@ -74,40 +74,41 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
     
     if (section == 0) {
-        return [operations count];
+        return 4;
     } else {
-        return 0;
+        return 3;
     }
     
 }
-/*
+
  - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
  
- if (section == 0) {
- return @"Basic Operations";
- }
- else {
- return @"More";
- }
- }
- */
+     if (section == 0) {
+         return @"Basic operations";
+     }
+     else {
+         return @"More";
+     }
+}
+ 
 
 - (UITableViewCell *)tableView:(UITableView *)localTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSString *CellIdentifier;
     NSString *cellValue;
     
+    int index = indexPath.row+(indexPath.section*4);
     
-    CellIdentifier = [operations objectAtIndex:indexPath.row];
+    CellIdentifier = [operations objectAtIndex:index];
     
-    cellValue = [operations objectAtIndex:indexPath.row];
+    cellValue = [operations objectAtIndex:index];
     
     MathTableCellController *cell = (MathTableCellController *)[localTableView dequeueReusableCellWithIdentifier:operation];
     if (cell == nil)
@@ -116,8 +117,8 @@
         cell = [nib objectAtIndex:0];
     }
     
-    cell.titleLabel.text = [operations objectAtIndex:indexPath.row];
-    cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",[operations objectAtIndex:indexPath.row]]];
+    cell.titleLabel.text = [operations objectAtIndex:index];
+    cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",[operations objectAtIndex:index]]];
     
     cell.valueLabel.text = @"Stars: X/X";
     
