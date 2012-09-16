@@ -125,7 +125,9 @@
 }
 
 - (IBAction)startButton:(id)sender {
-    if ([operation isEqualToString:@"Fraction"]) {
+    if ([operation isEqualToString:@"Fraction"] ||
+        [operation isEqualToString:@"Equations"] ||
+        [operation isEqualToString:@"Percent"]) {
         [self performSegueWithIdentifier:@"ToQuiz" sender:self];
     }
     else {

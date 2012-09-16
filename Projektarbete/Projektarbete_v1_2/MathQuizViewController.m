@@ -22,6 +22,9 @@
 @synthesize start_countdown_date;
 @synthesize startCountdownLabel;
 @synthesize darkView;
+@synthesize questionLabel;
+@synthesize firstLineLabel;
+@synthesize secondLineLabel;
 @synthesize countdownLabel;
 @synthesize correctAnswersLabel;
 @synthesize buttonOne;
@@ -180,80 +183,169 @@
                                                    userInfo:nil
                                                     repeats:YES];
         }
-        questionArray = [[NSMutableArray alloc] init];
-        answersArray = [[NSMutableArray alloc] init];
-        correctAnswers = 0;
-        //Skapa frågor
-        int numeratorOne;
-        int numeratorTwo;
-        int denominatorOne;
-        int denominatorTwo;
-        int countingOperation;
-        int answerNumerator;
-        int answerDenominator;
-        for (int i = 0; i < 10; i++) {
-            numeratorOne = arc4random() % 9 + 1;
-            numeratorTwo = arc4random() % 9 + 1;
-            denominatorOne = arc4random() % 9 + 1;
-            denominatorTwo = arc4random() % 9 + 1;
-            bool continueLoop = true;
-            while (continueLoop) {
-                countingOperation = arc4random() % 3 + 1;
-                if ((countingOperation == 3 || countingOperation == 3) && difficulty < 4) {
-                    continueLoop = YES;
+        if ([operation isEqualToString:@"Fraction"]) {
+            questionArray = [[NSMutableArray alloc] init];
+            answersArray = [[NSMutableArray alloc] init];
+            correctAnswers = 0;
+            //Skapa frågor
+            int numeratorOne;
+            int numeratorTwo;
+            int denominatorOne;
+            int denominatorTwo;
+            int countingOperation;
+            int answerNumerator;
+            int answerDenominator;
+            for (int i = 0; i < 10; i++) {
+                numeratorOne = arc4random() % 9 + 1;
+                numeratorTwo = arc4random() % 9 + 1;
+                denominatorOne = arc4random() % 9 + 1;
+                denominatorTwo = arc4random() % 9 + 1;
+                bool continueLoop = true;
+                while (continueLoop) {
+                    countingOperation = arc4random() % 3 + 1;
+                    if ((countingOperation == 3 || countingOperation == 3) && difficulty < 4) {
+                        continueLoop = YES;
+                    }
+                    else {
+                        continueLoop = NO;
+                    }
                 }
-                else {
-                    continueLoop = NO;
+                if (difficulty == 1) {
+                    denominatorOne = denominatorTwo;
+                    countingOperation = 1;
                 }
+                else if (difficulty == 2) {
+                    denominatorOne = denominatorTwo;
+                }
+                
+                [questionArray insertObject:[[NSMutableArray alloc] initWithObjects:
+                                             [NSNumber numberWithInt:numeratorOne],
+                                             [NSNumber numberWithInt:numeratorTwo],
+                                             [NSNumber numberWithInt:denominatorOne],
+                                             [NSNumber numberWithInt:denominatorTwo],
+                                             [NSNumber numberWithInt:countingOperation], nil] atIndex:i];
+                //Räknesätt: 1 = plus 2 = minus 3 = delat 4 = gånger "Det heter multiplikation" //Kalle
+                switch (countingOperation) {
+                    case 1:
+                        answerNumerator = denominatorTwo*numeratorOne+denominatorOne*numeratorTwo;
+                        answerDenominator = denominatorOne*denominatorTwo;
+                        break;
+                        
+                    case 2:
+                        answerNumerator = denominatorTwo*numeratorOne-denominatorOne*numeratorTwo;
+                        answerDenominator = denominatorOne*denominatorTwo;
+                        break;
+                        
+                    case 3:
+                        answerNumerator = numeratorOne*denominatorTwo;
+                        answerDenominator = denominatorOne*numeratorTwo;
+                        break;
+                        
+                    case 4:
+                        answerNumerator = numeratorOne*numeratorTwo;
+                        answerDenominator = denominatorOne*denominatorTwo;
+                        break;
+                        
+                    default:
+                        answerNumerator = numeratorOne*numeratorTwo;
+                        answerDenominator = denominatorOne*denominatorTwo;
+                        break;
+                }
+                
+                NSMutableArray *temp = [self simplifyFractionFromArray:[[NSMutableArray alloc] initWithObjects:[NSNumber numberWithInt:answerNumerator], [NSNumber numberWithInt:answerDenominator], nil]];
+                
+                [answersArray insertObject:temp atIndex:i];
             }
-            if (difficulty == 1) {
-                denominatorOne = denominatorTwo;
-                countingOperation = 1;
-            }
-            else if (difficulty == 2) {
-                denominatorOne = denominatorTwo;
-            }
-            
-            [questionArray insertObject:[[NSMutableArray alloc] initWithObjects:
-                                         [NSNumber numberWithInt:numeratorOne],
-                                         [NSNumber numberWithInt:numeratorTwo],
-                                         [NSNumber numberWithInt:denominatorOne],
-                                         [NSNumber numberWithInt:denominatorTwo],
-                                         [NSNumber numberWithInt:countingOperation], nil] atIndex:i];
-            //Räknesätt: 1 = plus 2 = minus 3 = delat 4 = gånger "Det heter multiplikation" //Kalle
-            switch (countingOperation) {
-                case 1:
-                    answerNumerator = denominatorTwo*numeratorOne+denominatorOne*numeratorTwo;
-                    answerDenominator = denominatorOne*denominatorTwo;
-                    break;
-                    
-                case 2:
-                    answerNumerator = denominatorTwo*numeratorOne-denominatorOne*numeratorTwo;
-                    answerDenominator = denominatorOne*denominatorTwo;
-                    break;
-                    
-                case 3:
-                    answerNumerator = numeratorOne*denominatorTwo;
-                    answerDenominator = denominatorOne*numeratorTwo;
-                    break;
-                    
-                case 4:
-                    answerNumerator = numeratorOne*numeratorTwo;
-                    answerDenominator = denominatorOne*denominatorTwo;
-                    break;
-                    
-                default:
-                    answerNumerator = numeratorOne*numeratorTwo;
-                    answerDenominator = denominatorOne*denominatorTwo;
-                    break;
-            }
-            
-            NSMutableArray *temp = [self simplifyFractionFromArray:[[NSMutableArray alloc] initWithObjects:[NSNumber numberWithInt:answerNumerator], [NSNumber numberWithInt:answerDenominator], nil]];
-            
-            [answersArray insertObject:temp atIndex:i];
         }
-
-        
+        else if ([operation isEqualToString:@"Equations"]) {
+            questionArray = [[NSMutableArray alloc] init];
+            answersArray = [[NSMutableArray alloc] init];
+            correctAnswers = 0;
+            //Skapa frågor
+            
+            for (int i = 0; i < 10; i++) {
+                int a = (arc4random() % 50)/(6-difficulty)+1;
+                int b = (arc4random() % 50)/(6-difficulty)+1;
+                int c = (arc4random() % 50)/(6-difficulty)+1;
+                NSString *question;
+                int x;
+                bool leaveLoop;
+                
+                switch (difficulty) {
+                    case 1:
+                        question = [NSString stringWithFormat:@"%i + x = %i", a, b];
+                        x = b-a;
+                        break;
+                    case 2:
+                        b=b/2+1;
+                        a*=3;
+                        c*=5;
+                        leaveLoop = NO;
+                        while (leaveLoop == NO) {
+                            if ((c-a)%b != 0) {
+                                a++;
+                            }
+                            else if (c-a==0) {
+                                a++;
+                            }
+                            else leaveLoop = YES;
+                        }
+                        if (a > c) { int temp = a; a=c; c=temp; }
+                        question = [NSString stringWithFormat:@"%i + %ix = %i", a, b, c];
+                        x = (c-a)/b;
+                        break;
+                    case 3:
+                        b=b/2+1;
+                        a*=3;
+                        c*=5;
+                        leaveLoop = NO;
+                        while (leaveLoop == NO) {
+                            if ((a-c)%(b) != 0) {
+                                a++;
+                            }
+                            else if (c+a==0) {
+                                a++;
+                            }
+                            else leaveLoop = YES;
+                        }
+                        if (a < c) { int temp = a; a=c; c=temp; }
+                        question = [NSString stringWithFormat:@"%i - %ix = %i", a, b, c];
+                        x = (a-c)/(b);
+                        break;
+                    case 4:
+                        leaveLoop = NO;
+                        while (leaveLoop == NO) {
+                            if (a+b==0) {
+                                a++;
+                            }
+                            else leaveLoop = YES;
+                        }
+                        c=(a+b)*(arc4random()%10-5);
+                        question = [NSString stringWithFormat:@"%ix + %ix = %i", a, b, c];
+                        x = c/(a+b);
+                        break;
+                    case 5:
+                        leaveLoop = NO;
+                        while (leaveLoop == NO) {
+                            if (a-b==0) {
+                                a++;
+                            }
+                            else leaveLoop = YES;
+                        }
+                        c=(a+b)*(arc4random()%16-8);
+                        question = [NSString stringWithFormat:@"%ix - %ix = %i", a, b, c];
+                        x = c/(a-b);
+                        break;
+                        
+                    default:
+                        break;
+                }
+                
+                
+                [questionArray insertObject:question atIndex:i];
+                [answersArray insertObject:[NSNumber numberWithInt:x] atIndex:i];
+            }
+        }
         
         [self presentNextQuestion];
     }
@@ -288,7 +380,7 @@
     }
 }
 
--(void)updateButtonsWithCorrectString:(NSString *)correctString {
+-(void)updateButtonsWithCorrectString:(NSString *)correct andCorrectValue:(float)correctVal {
     NSMutableArray *buttons = [[NSMutableArray alloc] initWithObjects:buttonOne, buttonTwo, buttonThree, buttonFour, nil];
     //Vilken ska vara rätt? 0-3
     correctButton = arc4random() % 3;
@@ -296,10 +388,35 @@
     for (int i = 0; i < 4; i++) {
         button = [buttons objectAtIndex:i];
         if (i == correctButton) {
-            [button setTitle:correctString forState:UIControlStateNormal];
+            [button setTitle:correct forState:UIControlStateNormal];
         }
         else {
-            [button setTitle:[NSString stringWithFormat:@"%i / %i", arc4random() % 9 + 1, arc4random() % 9 + 1] forState:UIControlStateNormal];
+            if ([operation isEqualToString:@"Fraction"]) {
+                bool leave = NO;
+                int first = 1;
+                int second = 1;
+                while (leave == NO) {
+                    first = arc4random() % 9 + 1;
+                    second = arc4random() % 9 + 1;
+                    
+                    float quota = (float)first/(float)second;
+                    if (quota != correctVal) {
+                        leave = YES;
+                    }
+                }
+                
+                [button setTitle:[NSString stringWithFormat:@"%i / %i", first, second] forState:UIControlStateNormal];
+            }
+            else if ([operation isEqualToString:@"Equations"]) {
+                bool leave = NO;
+                int a = 1;
+                while (leave == NO) {
+                    a = arc4random() % 30 - 15;
+                    if (a != correctVal)
+                        leave = YES;
+                }
+                [button setTitle:[NSString stringWithFormat:@"x = %i", a] forState:UIControlStateNormal];
+            }
         }
     }
 }
@@ -326,6 +443,13 @@
     denominatorTwoLabel.text = @"";
     numeratorOneLabel.text = @"";
     numeratorTwoLabel.text = @"";
+    questionLabel.text = @"";
+    
+    if (![operation isEqualToString:@"Fraction"]) {
+        operationLabel.text = @"";
+        firstLineLabel.text = @"";
+        secondLineLabel.text = @"";
+    }
     testStarted = NO;
     
     startCountdownDate = [NSDate date];
@@ -355,40 +479,50 @@
                                                         userInfo:nil
                                                          repeats:YES];
     }
-    
-    numeratorOneLabel.text = [NSString stringWithFormat:@"%i", [[[questionArray objectAtIndex:questionAtm] objectAtIndex:0] intValue]];
-    numeratorTwoLabel.text = [NSString stringWithFormat:@"%i", [[[questionArray objectAtIndex:questionAtm] objectAtIndex:1] intValue]];
-    denominatorOneLabel.text = [NSString stringWithFormat:@"%i", [[[questionArray objectAtIndex:questionAtm] objectAtIndex:2] intValue]];
-    denominatorTwoLabel.text = [NSString stringWithFormat:@"%i", [[[questionArray objectAtIndex:questionAtm] objectAtIndex:3] intValue]];
-    NSLog(@"%i, %i, 2", [[[questionArray objectAtIndex:questionAtm] objectAtIndex:2] intValue], questionAtm);
-    
-    
-    if ([[[answersArray objectAtIndex:questionAtm] objectAtIndex:1] intValue] == 1) {
-        correctString = [NSString stringWithFormat:@"%i", [[[answersArray objectAtIndex:questionAtm] objectAtIndex:0] intValue]];
+    if ([operation isEqualToString:@"Fraction"]) {
+        numeratorOneLabel.text = [NSString stringWithFormat:@"%i", [[[questionArray objectAtIndex:questionAtm] objectAtIndex:0] intValue]];
+        numeratorTwoLabel.text = [NSString stringWithFormat:@"%i", [[[questionArray objectAtIndex:questionAtm] objectAtIndex:1] intValue]];
+        denominatorOneLabel.text = [NSString stringWithFormat:@"%i", [[[questionArray objectAtIndex:questionAtm] objectAtIndex:2] intValue]];
+        denominatorTwoLabel.text = [NSString stringWithFormat:@"%i", [[[questionArray objectAtIndex:questionAtm] objectAtIndex:3] intValue]];
+        NSLog(@"%i, %i, 2", [[[questionArray objectAtIndex:questionAtm] objectAtIndex:2] intValue], questionAtm);
+        
+        float correctVal = 0.0;
+        
+        if ([[[answersArray objectAtIndex:questionAtm] objectAtIndex:1] intValue] == 1) {
+            correctString = [NSString stringWithFormat:@"%i", [[[answersArray objectAtIndex:questionAtm] objectAtIndex:0] intValue]];
+            correctVal = (float)[[[answersArray objectAtIndex:questionAtm] objectAtIndex:0] intValue];
+        }
+        else if ([[[answersArray objectAtIndex:questionAtm] objectAtIndex:0] intValue] == 0) {
+            correctString = @"0";
+            correctVal = 0;
+        }
+        else {
+            correctString = [NSString stringWithFormat:@"%i / %i", [[[answersArray objectAtIndex:questionAtm] objectAtIndex:0] intValue], [[[answersArray objectAtIndex:questionAtm] objectAtIndex:1] intValue]];
+            correctVal = (float)[[[answersArray objectAtIndex:questionAtm] objectAtIndex:0] intValue]/(float)[[[answersArray objectAtIndex:questionAtm] objectAtIndex:1] intValue];
+        }
+        
+        
+        if ([[[questionArray objectAtIndex:questionAtm] objectAtIndex:4] intValue] == 1) {
+            operationLabel.text = @"+";
+        }
+        else if ([[[questionArray objectAtIndex:questionAtm] objectAtIndex:4] intValue] == 2) {
+            operationLabel.text = @"-";
+        }
+        else if ([[[questionArray objectAtIndex:questionAtm] objectAtIndex:4] intValue] == 3) {
+            operationLabel.text = @"/";
+        }
+        else if ([[[questionArray objectAtIndex:questionAtm] objectAtIndex:4] intValue] == 4) {
+            operationLabel.text = @"*";
+        }
+        
+        [self updateButtonsWithCorrectString:correctString andCorrectValue:correctVal];
     }
-    else if ([[[answersArray objectAtIndex:questionAtm] objectAtIndex:0] intValue] == 0) {
-        correctString = @"0";
+    else if ([operation isEqualToString:@"Equations"]) {
+        questionLabel.text = [questionArray objectAtIndex:questionAtm];
+        NSString *cs = [NSString stringWithFormat:@"x = %i", [[answersArray objectAtIndex:questionAtm] intValue]];
+        [self updateButtonsWithCorrectString:cs andCorrectValue:[[answersArray objectAtIndex:questionAtm] intValue]];
+        correctString = cs;
     }
-    else {
-        correctString = [NSString stringWithFormat:@"%i / %i", [[[answersArray objectAtIndex:questionAtm] objectAtIndex:0] intValue], [[[answersArray objectAtIndex:questionAtm] objectAtIndex:1] intValue]];
-    }
-    
-    
-    if ([[[questionArray objectAtIndex:questionAtm] objectAtIndex:4] intValue] == 1) {
-        operationLabel.text = @"+";
-    }
-    else if ([[[questionArray objectAtIndex:questionAtm] objectAtIndex:4] intValue] == 2) {
-        operationLabel.text = @"-";
-    }
-    else if ([[[questionArray objectAtIndex:questionAtm] objectAtIndex:4] intValue] == 3) {
-        operationLabel.text = @"/";
-    }
-    else if ([[[questionArray objectAtIndex:questionAtm] objectAtIndex:4] intValue] == 4) {
-        operationLabel.text = @"*";
-    }
-    
-    [self updateButtonsWithCorrectString:correctString];
-    NSLog(@"rätt är : %@", correctString);
     questionAtm++;
     
 }
@@ -412,6 +546,9 @@
     [self setButtonFour:nil];
     [self setStartCountdownLabel:nil];
     [self setDarkView:nil];
+    [self setQuestionLabel:nil];
+    [self setFirstLineLabel:nil];
+    [self setSecondLineLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -424,10 +561,6 @@
 -(void)buttonClicked:(int)buttonNumber {
     if ([self checkIfCorrect:buttonNumber]) {
         correctAnswers++;
-        NSLog(@"Rätt!");
-    }
-    else {
-        NSLog(@"Fel!");
     }
     
     correctAnswersLabel.text = [NSString stringWithFormat:@"%i/%i", correctAnswers, questionAtm];
