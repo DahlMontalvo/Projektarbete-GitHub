@@ -166,9 +166,9 @@
     int val = [timeString intValue]+1;
     
     startCountdownLabel.text = [NSString stringWithFormat:@"%i", val];
-    NSLog(@"%@, %i", timeString, val);
     if (startCountdown <= 0) {
         [darkView setHidden:YES];
+        //[darkView removeFromSuperview];
         [startCountdownTimer invalidate];
         startCountdownTimer = nil;
         [self nextButtonPressed];
@@ -293,6 +293,11 @@
 {
     [super viewDidLoad];
     
+    [darkView setHidden:NO];
+    [quizArray removeAllObjects];
+    
+    correctAnswersLabel.text = @"0/0";
+    
     [keyboard1 setEnabled:NO];
     [keyboard2 setEnabled:NO];
     [keyboard3 setEnabled:NO];
@@ -316,8 +321,6 @@
     //SAKER FÖR ATT STÄDA UPP
     //Tangentbord upp
     //[answerFromUser becomeFirstResponder];
-    
-    countdownLabel.text = @"";
     navItem.hidesBackButton = YES;
     [navItem setTitle:[NSString stringWithFormat:@"%@ in %@ %i",gameMode,operation,difficulty]];
 
@@ -328,9 +331,10 @@
         //Exit ist för pause
         [pauseButton setTitle:@"Exit" forState:UIControlStateNormal];    
     }
+    countdownLabel.text = @"00:00:00";
 
     startCountdownDate = [NSDate date];
-    startCountdownTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f/20.0f
+    startCountdownTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f/10.0f
                                                   target:self
                                                 selector:@selector(startCountdownMethod)
                                                 userInfo:nil
@@ -530,21 +534,17 @@
 // PAUSE OCH ACTIONSHEET
 
 -(IBAction)pausePressed:(id)sender {
-    
-    UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"Quiz paused" delegate:self cancelButtonTitle:@"Resume" destructiveButtonTitle:@"Exit" otherButtonTitles:@"Restart quiz", nil, nil];
-	popupQuery.actionSheetStyle = UIActionSheetStyleBlackOpaque;
-	[popupQuery showInView:self.view];
-    
-    NSLog(@"Pausad!");
-    //Stanna klockan!
-	
+    //Hej! Ibland så laggar jag, jag låtsas bli tryckt två gånger fast jag bara blivit tryckt en enda gång. Det är inte bra. Hejdå!
+        
+    UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"Quiz paused" delegate:self cancelButtonTitle:@"Resume" destructiveButtonTitle:@"Exit" otherButtonTitles:@"Restart quiz", nil];
+	popupQuery.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
+	[popupQuery showInView:[UIApplication sharedApplication].keyWindow];
     
     if ([gameMode isEqualToString:@"Practise"]) {
         [timer invalidate];
         timer = nil;
         [self onPause];
     }
-
     
     
 }
@@ -575,7 +575,6 @@
         correctAnswersLabel.text = @"";
         numberLabel.text = @"";
         exerciseLabel.text = @"";
-		[nextButton setTitle:@"Start!" forState:UIControlStateNormal];
         answerFromUser.text = @"";
         correctAnswers = 0;
         
@@ -587,9 +586,7 @@
         countdownLabel.text = @"0";
         [self onReset];
         
-        countdownLabel.text = @"";
-        [self.navigationController popViewControllerAnimated:YES];
-        [actionSheet setHidden:YES];
+        [self viewDidLoad];
     
 	} else if (buttonIndex == 2) {
 		//Starta klockan!!!!

@@ -26,6 +26,10 @@
     NSTimer *countdownTimer;
     BOOL testStarted;
 }
+
+@property (weak, nonatomic) IBOutlet UILabel *startCountdownLabel;
+@property (weak, nonatomic) IBOutlet UIView *darkView;
+
 @property (weak, nonatomic) IBOutlet UILabel *countdownLabel;
 @property (weak, nonatomic) IBOutlet UILabel *correctAnswersLabel;
 - (IBAction)pauseButton:(id)sender;
@@ -56,6 +60,10 @@
 @property (nonatomic) BOOL cancelCountdown;
 @property (nonatomic, retain) NSDate *start_countdown_date;
 @property (nonatomic) NSTimeInterval interval;
+@property (nonatomic) float startCountdown;
+@property (nonatomic, retain) NSTimer *startCountdownTimer;
+@property (nonatomic, retain) NSDate *startCountdownDate;
+@property (nonatomic) float startCountdownCounter;
 @property (nonatomic, retain) NSString *correctString;
 
 - (IBAction)buttonOne:(id)sender;
