@@ -343,8 +343,65 @@
                         break;
                 }
                 
-                
                 [questionArray insertObject:question atIndex:i];
+                [answersArray insertObject:[NSNumber numberWithInt:x] atIndex:i];
+            }
+        }
+        else if ([operation isEqualToString:@"Percent"]) {
+            questionArray = [[NSMutableArray alloc] init];
+            answersArray = [[NSMutableArray alloc] init];
+            correctAnswers = 0;
+            //Skapa frågor
+            
+            for (int i = 0; i < 10; i++) {
+                int a = (arc4random() % 95);
+                a=(a/10)*10;
+                int b = (arc4random() % 500)/(6-difficulty)+5;
+                NSString *question;
+                int x;
+                int typeOfQuestion = arc4random() % 2+1;
+                NSLog(@"%i", typeOfQuestion);
+                bool leave;
+                NSString *unit;
+                //Fem olika frågtyper 1-5.
+                /*
+                 1: 5% av 100 =
+                 2: Hur många procent motsvarar 5/20?
+                 */
+                
+                switch (typeOfQuestion) {
+                    case 1:
+                        // 5% av 100 =
+                        leave = NO;
+                        while (leave == NO) {
+                            float f = ((float)a/100.0)*(float)b;
+                            if (f-(int)f == 0)
+                                leave = YES;
+                            else {
+                                b++;
+                            }
+                        }
+                        question = [NSString stringWithFormat:@"%i%% of %i = ?", a, b];
+                        x = (int)(((float)a/100.0)*b);
+                        unit = @"";
+                        break;
+                        
+                    case 2:
+                        // Mur många procent motsvarar 5/20?
+                        if (difficulty < 4) {
+                            b=(b/10)*10;
+                        }
+                        
+                        question = [NSString stringWithFormat:@"%i of %i = ?", a, b];
+                        x = 100*a/b;
+                        unit = @" %";
+                        break;
+                        
+                    default:
+                        break;
+                }
+                
+                [questionArray insertObject:[[NSMutableArray alloc] initWithObjects:question, unit, nil] atIndex:i];
                 [answersArray insertObject:[NSNumber numberWithInt:x] atIndex:i];
             }
         }
@@ -382,15 +439,16 @@
     }
 }
 
--(void)updateButtonsWithCorrectString:(NSString *)correct andCorrectValue:(float)correctVal {
+-(void)updateButtonsWithCorrectString:(NSString *)correct andCorrectValue:(float)correctVal andUnit:(NSString*)unit {
     NSMutableArray *buttons = [[NSMutableArray alloc] initWithObjects:buttonOne, buttonTwo, buttonThree, buttonFour, nil];
     //Vilken ska vara rätt? 0-3
     correctButton = arc4random() % 3;
     UIButton *button;
+    NSMutableArray *earlierInTheListValues = [[NSMutableArray alloc] init];
     for (int i = 0; i < 4; i++) {
         button = [buttons objectAtIndex:i];
         if (i == correctButton) {
-            [button setTitle:correct forState:UIControlStateNormal];
+            [button setTitle:[NSString stringWithFormat:@"%@%@", correct, unit] forState:UIControlStateNormal];
         }
         else {
             if ([operation isEqualToString:@"Fraction"]) {
@@ -418,6 +476,25 @@
                         leave = YES;
                 }
                 [button setTitle:[NSString stringWithFormat:@"x = %i", a] forState:UIControlStateNormal];
+            }
+            else if ([operation isEqualToString:@"Percent"]) {
+                bool leave = NO;
+                int a;
+                while (leave == NO) {
+                    a = arc4random() % (int)(correctVal*2+4);
+                    bool alreadyThere = NO;
+                    for (int q = 0; q < [earlierInTheListValues count]; q++) {
+                        NSLog(@"Letar om %i finns...", a);
+                        if ([[earlierInTheListValues objectAtIndex:q] intValue] == a) {
+                            alreadyThere = YES;
+                            NSLog(@"...och hittade");
+                        }
+                    }
+                    if (a != correctVal && alreadyThere == NO)
+                        leave = YES;
+                }
+                [earlierInTheListValues addObject:[NSNumber numberWithInt:a]];
+                [button setTitle:[NSString stringWithFormat:@"%i%@", a, unit] forState:UIControlStateNormal];
             }
         }
     }
@@ -517,13 +594,19 @@
             operationLabel.text = @"*";
         }
         
-        [self updateButtonsWithCorrectString:correctString andCorrectValue:correctVal];
+        [self updateButtonsWithCorrectString:correctString andCorrectValue:correctVal andUnit:@""];
     }
     else if ([operation isEqualToString:@"Equations"]) {
         questionLabel.text = [questionArray objectAtIndex:questionAtm];
         NSString *cs = [NSString stringWithFormat:@"x = %i", [[answersArray objectAtIndex:questionAtm] intValue]];
-        [self updateButtonsWithCorrectString:cs andCorrectValue:[[answersArray objectAtIndex:questionAtm] intValue]];
+        [self updateButtonsWithCorrectString:cs andCorrectValue:[[answersArray objectAtIndex:questionAtm] intValue] andUnit:@""];
         correctString = cs;
+    }
+    else if ([operation isEqualToString:@"Percent"]) {
+        questionLabel.text = [[questionArray objectAtIndex:questionAtm] objectAtIndex:0];
+        NSString *cs = [NSString stringWithFormat:@"%i", [[answersArray objectAtIndex:questionAtm] intValue]];
+        [self updateButtonsWithCorrectString:cs andCorrectValue:[[answersArray objectAtIndex:questionAtm] intValue] andUnit:[[questionArray objectAtIndex:questionAtm] objectAtIndex:1]];
+        correctString = [NSString stringWithFormat:@"%@%@", cs, [[questionArray objectAtIndex:questionAtm] objectAtIndex:1]];
     }
     questionAtm++;
     
@@ -601,7 +684,7 @@
 
 - (IBAction)pauseButton:(id)sender {
     UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"Quiz paused" delegate:self cancelButtonTitle:@"Resume" destructiveButtonTitle:@"Exit" otherButtonTitles:@"Restart quiz", nil, nil];
-	popupQuery.actionSheetStyle = UIActionSheetStyleBlackOpaque;
+	popupQuery.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
 	[popupQuery showInView:self.view];
     
     NSLog(@"Pausad!");
