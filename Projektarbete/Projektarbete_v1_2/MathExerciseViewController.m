@@ -169,6 +169,7 @@
     NSLog(@"%@, %i", timeString, val);
     if (startCountdown <= 0) {
         [darkView setHidden:YES];
+        //[darkView removeFromSuperview];
         [startCountdownTimer invalidate];
         startCountdownTimer = nil;
         [self nextButtonPressed];
@@ -530,21 +531,17 @@
 // PAUSE OCH ACTIONSHEET
 
 -(IBAction)pausePressed:(id)sender {
-    
-    UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"Quiz paused" delegate:self cancelButtonTitle:@"Resume" destructiveButtonTitle:@"Exit" otherButtonTitles:@"Restart quiz", nil, nil];
-	popupQuery.actionSheetStyle = UIActionSheetStyleBlackOpaque;
-	[popupQuery showInView:self.view];
-    
-    NSLog(@"Pausad!");
-    //Stanna klockan!
-	
+    //Hej! Ibland så laggar jag, jag låtsas bli tryckt två gånger fast jag bara blivit tryckt en enda gång. Det är inte bra. Hejdå!
+        
+    UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"Quiz paused" delegate:self cancelButtonTitle:@"Resume" destructiveButtonTitle:@"Exit" otherButtonTitles:@"Restart quiz", nil];
+	popupQuery.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
+	[popupQuery showInView:[UIApplication sharedApplication].keyWindow];
     
     if ([gameMode isEqualToString:@"Practise"]) {
         [timer invalidate];
         timer = nil;
         [self onPause];
     }
-
     
     
 }
@@ -575,7 +572,6 @@
         correctAnswersLabel.text = @"";
         numberLabel.text = @"";
         exerciseLabel.text = @"";
-		[nextButton setTitle:@"Start!" forState:UIControlStateNormal];
         answerFromUser.text = @"";
         correctAnswers = 0;
         
@@ -588,8 +584,6 @@
         [self onReset];
         
         countdownLabel.text = @"";
-        [self.navigationController popViewControllerAnimated:YES];
-        [actionSheet setHidden:YES];
     
 	} else if (buttonIndex == 2) {
 		//Starta klockan!!!!
