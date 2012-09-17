@@ -56,17 +56,17 @@
     
     //Hur många stjärnor får användaren? Ska presenteras grafiskt senare, och storas som highscoren.
     //Storar hur många stjärnor man har, tex 3 forKey StarsAddition2 då har man alltså 3 stjärnor på Addition lvl 2
-    if (finalTime < (difficulty * 100)*0.2) {
+    if (finalTime < ((difficulty * 100)*0.2) && results == 10) {
         starLabel.text = @"3 Stars!";
         [[[Singleton sharedSingleton] sharedPrefs] setInteger:3 forKey:[NSString stringWithFormat:@"Stars%@%i",operation,difficulty]];
-    } else if (finalTime < (difficulty * 100)*0.4) {
+    } else if (finalTime < (difficulty * 100)*0.4 && results == 10) {
          starLabel.text = @"2 Stars!";
          [[[Singleton sharedSingleton] sharedPrefs] setInteger:2 forKey:[NSString stringWithFormat:@"Stars%@%i",operation,difficulty]];
-    } else if (finalTime < (difficulty * 100)*0.6) {
+    } else if (finalTime < (difficulty * 100)*0.6 && results == 10) {
         starLabel.text = @"1 Star!";
          [[[Singleton sharedSingleton] sharedPrefs] setInteger:1 forKey:[NSString stringWithFormat:@"Stars%@%i",operation,difficulty]];
     } else {
-        starLabel.text = @"";
+        starLabel.text = @"No stars this time!";
          [[[Singleton sharedSingleton] sharedPrefs] setInteger:0 forKey:[NSString stringWithFormat:@"Stars%@%i",operation,difficulty]];
     }
 
