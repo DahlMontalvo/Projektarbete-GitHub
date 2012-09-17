@@ -49,6 +49,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     [gamemodeSegmentedControl setEnabled:NO];
     [practiseButton setEnabled:NO];
     [testingButton setEnabled:NO];
