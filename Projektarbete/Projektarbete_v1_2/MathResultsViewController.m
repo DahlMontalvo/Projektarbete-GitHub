@@ -66,11 +66,23 @@
         starLabel.text = @"1 Star!";
          [[[Singleton sharedSingleton] sharedPrefs] setInteger:1 forKey:[NSString stringWithFormat:@"Stars%@%i",operation,difficulty]];
     } else {
-        starLabel.text = @"No stars this time!";
+        starLabel.text = @"No stars this time! :(";
          [[[Singleton sharedSingleton] sharedPrefs] setInteger:0 forKey:[NSString stringWithFormat:@"Stars%@%i",operation,difficulty]];
     }
-
     
+    [[[Singleton sharedSingleton] sharedPrefs] synchronize];
+    
+    int starsA = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"Stars%@1",operation]];
+    int starsB = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"Stars%@2",operation]];
+    int starsC = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"Stars%@3",operation]];
+    int starsD = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"Stars%@4",operation]];
+    int starsE = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"Stars%@5",operation]];
+    
+    int totalStars = starsA + starsB + starsC + starsD + starsE;
+    
+    [[[Singleton sharedSingleton] sharedPrefs] setInteger:totalStars forKey:[NSString stringWithFormat:@"TotalStars%@",operation]];
+
+    [[[Singleton sharedSingleton] sharedPrefs] synchronize];
     navItem.hidesBackButton = YES;
     resultsLabel.text = [NSString stringWithFormat:@"%i/10", results];
     infoLabel.text = [NSString stringWithFormat:@"Completed in %@ level %i,", operation,difficulty];

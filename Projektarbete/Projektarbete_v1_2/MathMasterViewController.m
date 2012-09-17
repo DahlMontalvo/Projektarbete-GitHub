@@ -32,8 +32,9 @@
 - (void)viewDidLoad
 {
     
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MathFirstBG4.png"]];
     
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MathFirstBG4.png"]];
     self.tableView.backgroundView = imageView;
     
     operations = [[NSMutableArray alloc] init];
@@ -147,7 +148,9 @@
     cell.titleLabel.text = [operations objectAtIndex:index];
     cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",[operations objectAtIndex:index]]];
     
-    cell.valueLabel.text = @"Stars: X/X";
+    cell.valueLabel.text = [NSString stringWithFormat:@"%i/15 Stars",[[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"TotalStars%@",[operations objectAtIndex:index]]]];
+    
+    
     
     return cell;
 }/*
@@ -202,6 +205,11 @@
     }
     
     [self performSegueWithIdentifier:@"ToDetail" sender:self];
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    
+    [self.tableView reloadData];
 }
 
 @end
