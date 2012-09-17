@@ -19,6 +19,7 @@
 
 @property (nonatomic, retain) NSString *operation;
 @property (nonatomic, retain) NSString *otherExercise;
+@property (nonatomic, retain) NSString *sectionTitle;
 
 @property (nonatomic, retain)IBOutlet UITableView *tableView;
 - (IBAction)Button:(id)sender;

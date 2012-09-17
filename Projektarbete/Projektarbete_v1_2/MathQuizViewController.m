@@ -271,6 +271,8 @@
                 int x;
                 bool leaveLoop;
                 
+                //fan va bra du har gjort det här.
+                
                 switch (difficulty) {
                     case 1:
                         question = [NSString stringWithFormat:@"%i + x = %i", a, b];
@@ -635,7 +637,7 @@
 	} else if (buttonIndex == 1) {
         //Restarta
         questionAtm = 0;
-        [[questionArray objectAtIndex:1] removeAllObjects];
+        [questionArray removeAllObjects];
         correctAnswersLabel.text = @"";
         correctAnswers = 0;
         

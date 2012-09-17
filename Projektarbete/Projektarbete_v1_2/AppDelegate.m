@@ -15,6 +15,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
+    [NSThread sleepForTimeInterval:1.0];
+    
     UIApplication *app = [UIApplication sharedApplication];
     [app setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
     // Override point for customization after application launch.

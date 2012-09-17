@@ -12,6 +12,9 @@
 		0023A33215BF4EC9006BD781 /* BiologyMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0023A33115BF4EC9006BD781 /* BiologyMasterViewController.m */; };
 		0023A33515BF51F6006BD781 /* ChemistryMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0023A33415BF51F6006BD781 /* ChemistryMasterViewController.m */; };
 		0023A33815BF5258006BD781 /* PhysicsMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0023A33715BF5258006BD781 /* PhysicsMasterViewController.m */; };
+		006E426016069736003B5BC7 /* loadscreen2.png in Resources */ = {isa = PBXBuildFile; fileRef = 006E425F16069736003B5BC7 /* loadscreen2.png */; };
+		006E426616069A2C003B5BC7 /* StartButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 006E426516069A2C003B5BC7 /* StartButton.png */; };
+		006E426816069C6A003B5BC7 /* MathFirstBG4.png in Resources */ = {isa = PBXBuildFile; fileRef = 006E426716069C6A003B5BC7 /* MathFirstBG4.png */; };
 		007BC47D15C09B4E009BC60D /* MathTableCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 007BC47B15C09B4E009BC60D /* MathTableCellController.m */; };
 		007BC47E15C09B4E009BC60D /* MathTableCellController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007BC47C15C09B4E009BC60D /* MathTableCellController.xib */; };
 		00C6AD4515FCF05100493F52 /* grayFB copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AD4215FCF05100493F52 /* grayFB copy.png */; };
@@ -87,6 +90,9 @@
 		0023A33415BF51F6006BD781 /* ChemistryMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChemistryMasterViewController.m; sourceTree = "<group>"; };
 		0023A33615BF5258006BD781 /* PhysicsMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsMasterViewController.h; sourceTree = "<group>"; };
 		0023A33715BF5258006BD781 /* PhysicsMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhysicsMasterViewController.m; sourceTree = "<group>"; };
+		006E425F16069736003B5BC7 /* loadscreen2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loadscreen2.png; sourceTree = "<group>"; };
+		006E426516069A2C003B5BC7 /* StartButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StartButton.png; sourceTree = "<group>"; };
+		006E426716069C6A003B5BC7 /* MathFirstBG4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MathFirstBG4.png; sourceTree = "<group>"; };
 		007BC47A15C09B4E009BC60D /* MathTableCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathTableCellController.h; sourceTree = "<group>"; };
 		007BC47B15C09B4E009BC60D /* MathTableCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathTableCellController.m; sourceTree = "<group>"; };
 		007BC47C15C09B4E009BC60D /* MathTableCellController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MathTableCellController.xib; sourceTree = "<group>"; };
@@ -227,6 +233,9 @@
 		007BC48015C09E0A009BC60D /* Bilder etc. */ = {
 			isa = PBXGroup;
 			children = (
+				006E426716069C6A003B5BC7 /* MathFirstBG4.png */,
+				006E426516069A2C003B5BC7 /* StartButton.png */,
+				006E425F16069736003B5BC7 /* loadscreen2.png */,
 				00C6AE1C16028C4300493F52 /* settings3.png */,
 				00C6AE111602762400493F52 /* BiButton2.png */,
 				00C6AE121602762400493F52 /* ChButton2.png */,
@@ -462,6 +471,9 @@
 				00C6AE181602762400493F52 /* PhButton2.png in Resources */,
 				00C6AE1D16028C4300493F52 /* settings3.png in Resources */,
 				00C6AE1F16028D4F00493F52 /* Default@2x.png in Resources */,
+				006E426016069736003B5BC7 /* loadscreen2.png in Resources */,
+				006E426616069A2C003B5BC7 /* StartButton.png in Resources */,
+				006E426816069C6A003B5BC7 /* MathFirstBG4.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,7 +595,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -601,7 +613,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

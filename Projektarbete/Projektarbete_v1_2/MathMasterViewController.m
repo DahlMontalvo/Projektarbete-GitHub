@@ -17,6 +17,8 @@
 
 @synthesize otherExercise;
 @synthesize operation;
+@synthesize sectionTitle;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,7 +32,7 @@
 - (void)viewDidLoad
 {
     
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MathFirstBG.png"]];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MathFirstBG4.png"]];
     
     self.tableView.backgroundView = imageView;
     
@@ -70,6 +72,31 @@
     
     [self.navigationController popViewControllerAnimated:YES];
     
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    if (section == 0) {
+         sectionTitle = @"Basic";
+    } else {
+        sectionTitle = @"More";
+    }
+   
+    
+    // Create label with section title
+    UILabel *label = [[UILabel alloc] init];
+    label.frame = CGRectMake(15, 5, 284, 23);
+    label.textColor = [UIColor blackColor];
+    label.font = [UIFont fontWithName:@"Gill Sans" size:20];
+
+    label.text = sectionTitle;
+    label.backgroundColor = [UIColor clearColor];
+    
+    // Create header view and add label as a subview
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
+    [view addSubview:label];
+    
+    return view;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
