@@ -358,15 +358,13 @@
     [keyboarddot setEnabled:YES];
     testStarted = YES;
     questionAtm++;
-    NSLog(@"Qatm = %i", questionAtm);
+    NSLog(@"Fortsätter denna efter vi är klara är det fel! Qatm = %i", questionAtm);
+    [countdownTimer invalidate];
+    countdownTimer = nil;
     
-    if ([countdownTimer isValid]) {
-        [countdownTimer invalidate];
-        countdownTimer = nil;
-    }
     
     //Vid test gäller andra puckar för klockan
-    if ([gameMode isEqualToString:@"Test"]) {
+    if ([gameMode isEqualToString:@"Test"] && questionAtm < 11) {
         if (questionAtm > 0) {
             cancelCountdown = YES;
         }

@@ -58,15 +58,21 @@
     //Storar hur många stjärnor man har, tex 3 forKey StarsAddition2 då har man alltså 3 stjärnor på Addition lvl 2
     if (finalTime < ((difficulty * 100)*0.2) && results == 10) {
         starLabel.text = @"3 Stars!";
-        [[[Singleton sharedSingleton] sharedPrefs] setInteger:3 forKey:[NSString stringWithFormat:@"Stars%@%i",operation,difficulty]];
+        if ([[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"Stars%@%i",operation,difficulty] ] < 3) {
+            [[[Singleton sharedSingleton] sharedPrefs] setInteger:3 forKey:[NSString stringWithFormat:@"Stars%@%i",operation,difficulty]];
+        }
     } else if (finalTime < (difficulty * 100)*0.4 && results == 10) {
-         starLabel.text = @"2 Stars!";
-         [[[Singleton sharedSingleton] sharedPrefs] setInteger:2 forKey:[NSString stringWithFormat:@"Stars%@%i",operation,difficulty]];
+        starLabel.text = @"2 Stars!";
+        if ([[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"Stars%@%i",operation,difficulty] ] < 2) {
+            [[[Singleton sharedSingleton] sharedPrefs] setInteger:2 forKey:[NSString stringWithFormat:@"Stars%@%i",operation,difficulty]];
+        }
     } else if (finalTime < (difficulty * 100)*0.6 && results == 10) {
         starLabel.text = @"1 Star!";
-         [[[Singleton sharedSingleton] sharedPrefs] setInteger:1 forKey:[NSString stringWithFormat:@"Stars%@%i",operation,difficulty]];
+        if ([[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"Stars%@%i",operation,difficulty] ] < 1) {
+            [[[Singleton sharedSingleton] sharedPrefs] setInteger:1 forKey:[NSString stringWithFormat:@"Stars%@%i",operation,difficulty]];
+        }
     } else {
-        starLabel.text = @"No stars this time! :(";
+        starLabel.text = @"No stars this time! Haha! :(";
          [[[Singleton sharedSingleton] sharedPrefs] setInteger:0 forKey:[NSString stringWithFormat:@"Stars%@%i",operation,difficulty]];
     }
     
@@ -92,13 +98,10 @@
     
     float previousHighscore = [[[Singleton sharedSingleton] sharedPrefs] floatForKey:[NSString stringWithFormat:@"%@%i",operation,difficulty]];
     
+    timeLabel.text = [NSString stringWithFormat:@"in %.2f seconds",finalTime];
     if ((finalTime < previousHighscore || previousHighscore == 0) && [gamemode isEqualToString:@"Test"] && results == 10) {
-        timeLabel.text = [NSString stringWithFormat:@"in %f seconds",finalTime];
         [[[Singleton sharedSingleton] sharedPrefs] setFloat:finalTime forKey:[NSString stringWithFormat:@"%@%i",operation,difficulty]];
-        highscoreLabel.text = @"New Highscore!";
-    }
-    else {
-        timeLabel.text = [NSString stringWithFormat:@"in %f",finalTime];
+        highscoreLabel.text = @"Highscore!";
     }
     
     //Sparar Global Stats
