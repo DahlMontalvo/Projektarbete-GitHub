@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="12B19" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3">
     <dependencies>
         <deployment defaultVersion="1296" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
@@ -321,7 +321,6 @@
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="5Ji-O6-rRx">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="tintColor" red="0.70196078429999997" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="ck9-16-VUu" kind="relationship" relationship="rootViewController" id="LqF-4N-vbd"/>
@@ -428,7 +427,6 @@
                 <navigationController definesPresentationContext="YES" id="qjj-h2-kOT" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="omo-Fz-F7A">
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="0.70196080207824707" green="0.70196080207824707" blue="0.70196080207824707" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="djt-lz-ZBQ" kind="relationship" relationship="rootViewController" id="fMP-TK-nF1"/>
@@ -579,7 +577,7 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title=" Clear all" style="done" id="vqi-Zu-uw1">
-                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" cyan="0.0008087158203125" magenta="0.80248719453811646" yellow="0.94119173288345337" black="0.085595346715328466" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                             <connections>
                                 <action selector="clearAll:" destination="djt-lz-ZBQ" id="0vp-BY-5kA"/>
                             </connections>
@@ -686,9 +684,10 @@
                                     <outlet property="delegate" destination="uf3-zW-hz6" id="nqD-iE-zix"/>
                                 </connections>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="NavBar2.png" id="7Du-Zl-Ce6">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="NavBar3.png" id="7Du-Zl-Ce6">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Math Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="TW1-Md-tGB">
                                 <rect key="frame" x="71" y="10" width="179" height="42"/>
@@ -701,7 +700,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="72" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Back" image="bakåtpil.png">
+                                <state key="normal" title="Back" image="bakåtpil2.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -841,7 +840,7 @@
                                     <action selector="startButton:" destination="Y81-nL-Ifg" eventType="touchUpInside" id="4A2-Ti-HfG"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="NavBar2.png" id="dOA-KU-Nss">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="NavBar3.png" id="dOA-KU-Nss">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -856,7 +855,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="72" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Back" image="bakåtpil.png">
+                                <state key="normal" title="Back" image="bakåtpil2.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1427,14 +1426,14 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="10/10" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="SS8-3R-sIg">
-                                <rect key="frame" x="65" y="56" width="192" height="138"/>
+                                <rect key="frame" x="64" y="33" width="192" height="138"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="84"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="tyF-EU-mJe">
-                                <rect key="frame" x="82" y="331" width="157" height="56"/>
+                                <rect key="frame" x="86" y="370" width="157" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="26"/>
                                 <state key="normal" title="Continue">
@@ -1449,40 +1448,44 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Completed in Addition 5" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="LPw-V2-RF1">
-                                <rect key="frame" x="67" y="183" width="186" height="21"/>
+                                <rect key="frame" x="64" y="155" width="186" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="pke-iB-YDI">
-                                <rect key="frame" x="67" y="252" width="186" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Highscore!" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="pke-iB-YDI">
+                                <rect key="frame" x="59" y="213" width="203" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="25"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="in 00.00" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="4" adjustsFontSizeToFit="NO" id="Ecy-hK-j3R">
-                                <rect key="frame" x="97" y="212" width="129" height="21"/>
+                                <rect key="frame" x="94" y="184" width="129" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Gamemode" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="LOd-hw-npN">
-                                <rect key="frame" x="83" y="12" width="157" height="42"/>
+                                <rect key="frame" x="86" y="20" width="157" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="28"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Stars!" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="grd-BF-BeA">
-                                <rect key="frame" x="70" y="281" width="181" height="21"/>
+                                <rect key="frame" x="70" y="322" width="181" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="Y4P-Rx-xGR">
+                                <rect key="frame" x="88" y="266" width="151" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -1493,6 +1496,7 @@
                         <outlet property="infoLabel" destination="LPw-V2-RF1" id="8hs-rI-XYd"/>
                         <outlet property="navItem" destination="tO5-Z0-Tfe" id="ryt-F3-uII"/>
                         <outlet property="resultsLabel" destination="SS8-3R-sIg" id="6EO-Dg-od4"/>
+                        <outlet property="starImage" destination="Y4P-Rx-xGR" id="wjZ-F2-UM2"/>
                         <outlet property="starLabel" destination="grd-BF-BeA" id="O7H-4j-JcM"/>
                         <outlet property="timeLabel" destination="Ecy-hK-j3R" id="4d3-8y-XOd"/>
                     </connections>
@@ -1506,160 +1510,12 @@
         <image name="ChButton2.png" width="276" height="262"/>
         <image name="MaButton2.png" width="276" height="262"/>
         <image name="NavBar2.png" width="640" height="124"/>
+        <image name="NavBar3.png" width="640" height="124"/>
         <image name="PhButton2.png" width="276" height="262"/>
         <image name="StartButton.png" width="292" height="47"/>
-        <image name="bakåtpil.png" width="124" height="124"/>
+        <image name="bakåtpil2.png" width="124" height="124"/>
         <image name="settings3.png" width="526" height="106"/>
     </resources>
-    <classes>
-        <class className="AboutViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="done:"/>
-                <relationship kind="action" name="emailPressed:"/>
-                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
-            </relationships>
-        </class>
-        <class className="BiologyMasterViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BiologyMasterViewController.h"/>
-        </class>
-        <class className="ChemistryMasterViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ChemistryMasterViewController.h"/>
-        </class>
-        <class className="GlobalStatsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GlobalStatsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="clearAll:"/>
-                <relationship kind="action" name="done:"/>
-                <relationship kind="outlet" name="clearButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="completedPractisesLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="completedTestsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
-            </relationships>
-        </class>
-        <class className="MainMenuViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainMenuViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="MathDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MathDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backButton:"/>
-                <relationship kind="action" name="difficultySegmentedControl:"/>
-                <relationship kind="action" name="gamemodeSegmentedControl:"/>
-                <relationship kind="action" name="startButton:"/>
-                <relationship kind="outlet" name="difficultySegmentedControl" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="gameButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="gamemodeSegmentedControl" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="modeLabel" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="navigationLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="practiseButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="practiseTextField" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="startButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="testTextField" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="testingButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="MathExerciseViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MathExerciseViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="keyboard0:"/>
-                <relationship kind="action" name="keyboard1:"/>
-                <relationship kind="action" name="keyboard2:"/>
-                <relationship kind="action" name="keyboard3:"/>
-                <relationship kind="action" name="keyboard4:"/>
-                <relationship kind="action" name="keyboard5:"/>
-                <relationship kind="action" name="keyboard6:"/>
-                <relationship kind="action" name="keyboard7:"/>
-                <relationship kind="action" name="keyboard8:"/>
-                <relationship kind="action" name="keyboard9:"/>
-                <relationship kind="action" name="keyboardback:"/>
-                <relationship kind="action" name="keyboarddot:"/>
-                <relationship kind="action" name="nextButton:"/>
-                <relationship kind="action" name="pausePressed:"/>
-                <relationship kind="outlet" name="answerFromUser" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="correctAnswersLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="countdownLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="darkView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="exerciseLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="keyboard0" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="keyboard1" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="keyboard2" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="keyboard3" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="keyboard4" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="keyboard5" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="keyboard6" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="keyboard7" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="keyboard8" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="keyboard9" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="keyboardback" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="keyboarddot" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="navItem" candidateClass="UINavigationItem"/>
-                <relationship kind="outlet" name="nextButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="numberLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="pauseButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="startCountdownLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MathMasterViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MathMasterViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="Button:"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="MathQuizViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MathQuizViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buttonFour:"/>
-                <relationship kind="action" name="buttonOne:"/>
-                <relationship kind="action" name="buttonThree:"/>
-                <relationship kind="action" name="buttonTwo:"/>
-                <relationship kind="action" name="pauseButton:"/>
-                <relationship kind="outlet" name="buttonFour" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonOne" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonThree" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonTwo" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="correctAnswersLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="countdownLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="darkView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="denominatorOneLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="denominatorTwoLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="firstLineLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="numeratorOneLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="numeratorTwoLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="operationLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="pauseButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="questionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="secondLineLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="startCountdownLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MathResultsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MathResultsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="continueButtonPressed:"/>
-                <relationship kind="outlet" name="gamemodeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="highscoreLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="infoLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="navItem" candidateClass="UINavigationItem"/>
-                <relationship kind="outlet" name="resultsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="starLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="PhysicsMasterViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhysicsMasterViewController.h"/>
-        </class>
-        <class className="StatsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/StatsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="navItem" candidateClass="UINavigationItem"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

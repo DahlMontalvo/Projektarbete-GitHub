@@ -21,6 +21,7 @@
 @synthesize gamemodeLabel;
 @synthesize highscoreLabel;
 @synthesize starLabel;
+@synthesize starImage;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -53,26 +54,30 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    int stars;
     //Hur många stjärnor får användaren? Ska presenteras grafiskt senare, och storas som highscoren.
     //Storar hur många stjärnor man har, tex 3 forKey StarsAddition2 då har man alltså 3 stjärnor på Addition lvl 2
     if (finalTime < ((difficulty * 100)*0.2) && results == 10) {
         starLabel.text = @"3 Stars!";
+        stars = 3;
         if ([[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"Stars%@%i",operation,difficulty] ] < 3) {
             [[[Singleton sharedSingleton] sharedPrefs] setInteger:3 forKey:[NSString stringWithFormat:@"Stars%@%i",operation,difficulty]];
         }
     } else if (finalTime < (difficulty * 100)*0.4 && results == 10) {
         starLabel.text = @"2 Stars!";
+        stars = 2;
         if ([[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"Stars%@%i",operation,difficulty] ] < 2) {
             [[[Singleton sharedSingleton] sharedPrefs] setInteger:2 forKey:[NSString stringWithFormat:@"Stars%@%i",operation,difficulty]];
         }
     } else if (finalTime < (difficulty * 100)*0.6 && results == 10) {
         starLabel.text = @"1 Star!";
+        stars = 1;
         if ([[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"Stars%@%i",operation,difficulty] ] < 1) {
             [[[Singleton sharedSingleton] sharedPrefs] setInteger:1 forKey:[NSString stringWithFormat:@"Stars%@%i",operation,difficulty]];
         }
     } else {
-        starLabel.text = @"No stars this time! Haha! :(";
+        starLabel.text = @"No stars this time! :(";
+        stars = 0;
          [[[Singleton sharedSingleton] sharedPrefs] setInteger:0 forKey:[NSString stringWithFormat:@"Stars%@%i",operation,difficulty]];
     }
     
@@ -87,6 +92,28 @@
     int totalStars = starsA + starsB + starsC + starsD + starsE;
     
     [[[Singleton sharedSingleton] sharedPrefs] setInteger:totalStars forKey:[NSString stringWithFormat:@"TotalStars%@",operation]];
+    
+    NSString *name;
+    
+    switch (stars) {
+        case 0:
+            name = @"NoStars.png";
+            break;
+        case 1:
+            name = @"OneStars.png";
+            break;
+        case 2:
+            name = @"TwoStars.png";
+            break;
+        case 3:
+            name = @"ThreeStars.png";
+            break;
+        default:
+            name = @"NoStars.png";
+            break;
+    }
+    
+    starImage.image = [UIImage imageNamed:name];
 
     [[[Singleton sharedSingleton] sharedPrefs] synchronize];
     navItem.hidesBackButton = YES;
@@ -125,6 +152,7 @@
 - (void)viewDidUnload
 {
     [self setResultsLabel:nil];
+    [self setStarImage:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

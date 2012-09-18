@@ -34,8 +34,8 @@
     
     
     
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MathFirstBG4.png"]];
-    self.tableView.backgroundView = imageView;
+  //  UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MathFirstBG4.png"]];
+  //  self.tableView.backgroundView = imageView;
     
     operations = [[NSMutableArray alloc] init];
     otherExercises = [[NSMutableArray alloc] init];

@@ -29,6 +29,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *gamemodeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *highscoreLabel;
 @property (strong, nonatomic) IBOutlet UILabel *starLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *starImage;
 
 @property (retain, nonatomic) IBOutlet UINavigationItem *navItem;
 - (IBAction)continueButtonPressed:(id)sender;

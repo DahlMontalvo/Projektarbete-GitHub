@@ -5,12 +5,14 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>${PRODUCT_NAME}</string>
+	<string>Simple Sci.</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFiles</key>
 	<array>
 		<string>Default@2x.png</string>
+		<string>Default@2x.png</string>
+		<string>icon4-114.png</string>
 		<string>Default@2x.png</string>
 	</array>
 	<key>CFBundleIcons</key>
@@ -20,6 +22,8 @@
 			<key>CFBundleIconFiles</key>
 			<array>
 				<string>Default@2x.png</string>
+				<string>Default@2x.png</string>
+				<string>icon4-114.png</string>
 				<string>Default@2x.png</string>
 			</array>
 			<key>UIPrerenderedIcon</key>
@@ -31,7 +35,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>${PRODUCT_NAME}</string>
+	<string>Simple Science</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -53,8 +57,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 </dict>
 </plist>
