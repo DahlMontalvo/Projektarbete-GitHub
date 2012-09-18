@@ -67,7 +67,7 @@
     else {
         float time = [[[Singleton sharedSingleton] sharedPrefs] floatForKey:[NSString stringWithFormat:@"%@%i", [operations objectAtIndex:section], difficulty]];
         
-        highscore = [NSString stringWithFormat:@"%.2f s", (float)((int)(100.0*(time+0.5)))/100.0];
+        highscore = [NSString stringWithFormat:@"%.2f s", time];
     }
     
     NSString *cellID = [operations objectAtIndex:section];
