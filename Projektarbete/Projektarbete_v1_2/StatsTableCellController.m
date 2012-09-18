@@ -13,6 +13,7 @@
 @synthesize titleLabel;
 @synthesize descriptionLabel;
 @synthesize valueLabel;
+@synthesize starsImage;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -29,5 +30,7 @@
 
     // Configure the view for the selected state
 }
+
+
 
 @end

@@ -65,7 +65,9 @@
         highscore = @"None";
     }
     else {
-        highscore = [NSString stringWithFormat:@"%f", [[[Singleton sharedSingleton] sharedPrefs] floatForKey:[NSString stringWithFormat:@"%@%i", [operations objectAtIndex:section], difficulty]] ];
+            float time = [[[Singleton sharedSingleton] sharedPrefs] floatForKey:[NSString stringWithFormat:@"%@%i", [operations objectAtIndex:section], difficulty]];
+        
+        highscore = [NSString stringWithFormat:@"%f", (float)((int)(100.0*(time+0.5)))/100.0];
     }
     
     NSString *cellID = [operations objectAtIndex:section];
@@ -81,10 +83,39 @@
     cell.descriptionLabel.text = @"Fastest 10/10";
     
     
+    int stars = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"Stars%@%i",[operations objectAtIndex:section],difficulty]];
+    NSLog(@"%@", [NSString stringWithFormat:@"Stars%@%i",operation,difficulty]);
+    
+    NSString *name;
+    
+    switch (stars) {
+        case 0:
+            name = @"NoStars.png";
+            break;
+        case 1:
+            name = @"OneStars.png";
+            break;
+        case 2:
+            name = @"TwoStars.png";
+            break;
+        case 3:
+            name = @"ThreeStars.png";
+            break;
+        default:
+            break;
+    }
+    
+    cell.starsImage.image = [UIImage imageNamed:name];
+    
     cell.valueLabel.text = highscore;
+    
+        
+    NSLog(@"%@%i",name, stars);
     
     return cell;
 }
+
+
 
 #pragma mark - View lifecycle
 
@@ -203,6 +234,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
     // Navigation logic may go here. Create and push another view controller.
     /*
      <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];

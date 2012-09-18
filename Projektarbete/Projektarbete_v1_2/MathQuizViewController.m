@@ -392,6 +392,10 @@
                             b=(b/10)*10;
                         }
                         
+                        if (b==0) {
+                            b = 1;
+                        }
+                        
                         question = [NSString stringWithFormat:@"%i of %i = ?", a, b];
                         x = 100*a/b;
                         unit = @" %";

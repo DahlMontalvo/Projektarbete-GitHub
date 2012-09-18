@@ -12,6 +12,10 @@
 		0023A33215BF4EC9006BD781 /* BiologyMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0023A33115BF4EC9006BD781 /* BiologyMasterViewController.m */; };
 		0023A33515BF51F6006BD781 /* ChemistryMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0023A33415BF51F6006BD781 /* ChemistryMasterViewController.m */; };
 		0023A33815BF5258006BD781 /* PhysicsMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0023A33715BF5258006BD781 /* PhysicsMasterViewController.m */; };
+		004DD9ED1608AD5D008B97E7 /* NoStars.png in Resources */ = {isa = PBXBuildFile; fileRef = 004DD9E91608AD5D008B97E7 /* NoStars.png */; };
+		004DD9EE1608AD5D008B97E7 /* OneStars.png in Resources */ = {isa = PBXBuildFile; fileRef = 004DD9EA1608AD5D008B97E7 /* OneStars.png */; };
+		004DD9EF1608AD5D008B97E7 /* ThreeStars.png in Resources */ = {isa = PBXBuildFile; fileRef = 004DD9EB1608AD5D008B97E7 /* ThreeStars.png */; };
+		004DD9F01608AD5D008B97E7 /* TwoStars.png in Resources */ = {isa = PBXBuildFile; fileRef = 004DD9EC1608AD5D008B97E7 /* TwoStars.png */; };
 		006E426016069736003B5BC7 /* loadscreen2.png in Resources */ = {isa = PBXBuildFile; fileRef = 006E425F16069736003B5BC7 /* loadscreen2.png */; };
 		006E426616069A2C003B5BC7 /* StartButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 006E426516069A2C003B5BC7 /* StartButton.png */; };
 		006E426816069C6A003B5BC7 /* MathFirstBG4.png in Resources */ = {isa = PBXBuildFile; fileRef = 006E426716069C6A003B5BC7 /* MathFirstBG4.png */; };
@@ -90,6 +94,10 @@
 		0023A33415BF51F6006BD781 /* ChemistryMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChemistryMasterViewController.m; sourceTree = "<group>"; };
 		0023A33615BF5258006BD781 /* PhysicsMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsMasterViewController.h; sourceTree = "<group>"; };
 		0023A33715BF5258006BD781 /* PhysicsMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhysicsMasterViewController.m; sourceTree = "<group>"; };
+		004DD9E91608AD5D008B97E7 /* NoStars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NoStars.png; sourceTree = "<group>"; };
+		004DD9EA1608AD5D008B97E7 /* OneStars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OneStars.png; sourceTree = "<group>"; };
+		004DD9EB1608AD5D008B97E7 /* ThreeStars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ThreeStars.png; sourceTree = "<group>"; };
+		004DD9EC1608AD5D008B97E7 /* TwoStars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TwoStars.png; sourceTree = "<group>"; };
 		006E425F16069736003B5BC7 /* loadscreen2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loadscreen2.png; sourceTree = "<group>"; };
 		006E426516069A2C003B5BC7 /* StartButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StartButton.png; sourceTree = "<group>"; };
 		006E426716069C6A003B5BC7 /* MathFirstBG4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MathFirstBG4.png; sourceTree = "<group>"; };
@@ -233,6 +241,10 @@
 		007BC48015C09E0A009BC60D /* Bilder etc. */ = {
 			isa = PBXGroup;
 			children = (
+				004DD9E91608AD5D008B97E7 /* NoStars.png */,
+				004DD9EA1608AD5D008B97E7 /* OneStars.png */,
+				004DD9EB1608AD5D008B97E7 /* ThreeStars.png */,
+				004DD9EC1608AD5D008B97E7 /* TwoStars.png */,
 				006E426716069C6A003B5BC7 /* MathFirstBG4.png */,
 				006E426516069A2C003B5BC7 /* StartButton.png */,
 				006E425F16069736003B5BC7 /* loadscreen2.png */,
@@ -474,6 +486,10 @@
 				006E426016069736003B5BC7 /* loadscreen2.png in Resources */,
 				006E426616069A2C003B5BC7 /* StartButton.png in Resources */,
 				006E426816069C6A003B5BC7 /* MathFirstBG4.png in Resources */,
+				004DD9ED1608AD5D008B97E7 /* NoStars.png in Resources */,
+				004DD9EE1608AD5D008B97E7 /* OneStars.png in Resources */,
+				004DD9EF1608AD5D008B97E7 /* ThreeStars.png in Resources */,
+				004DD9F01608AD5D008B97E7 /* TwoStars.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
