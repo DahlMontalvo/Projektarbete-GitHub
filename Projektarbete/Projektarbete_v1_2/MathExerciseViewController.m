@@ -72,8 +72,6 @@
     [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
     NSString *timeString=[dateFormatter stringFromDate:timerDate];
     countdownLabel.text = timeString;
-    
-
 }
 
 -(void)onTimerStart
@@ -331,7 +329,7 @@
         //Exit ist för pause
         [pauseButton setTitle:@"Exit" forState:UIControlStateNormal];    
     }
-    countdownLabel.text = @"00:00:00";
+    countdownLabel.text = @"00:00.0";
 
     startCountdownDate = [NSDate date];
     startCountdownTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f/10.0f

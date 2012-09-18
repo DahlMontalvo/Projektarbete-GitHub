@@ -132,13 +132,12 @@
     [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
     NSString *timeString=[dateFormatter stringFromDate:timerDate];
     countdownLabel.text = timeString;
-    
-    
-    
+
 }
 
 - (void)countdownTimer
 {
+    NSLog(@"date: %@", start_countdown_date);
     [self setCountdownCounter:(5+5*difficulty)-fabs([start_countdown_date timeIntervalSinceNow])];
     NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:countdownCounter];
     
@@ -148,7 +147,10 @@
     NSString *timeString=[dateFormatter stringFromDate:timerDate];
     
     countdownLabel.text = timeString;
-    
+    NSLog(@"Countdowntimer: %@", timerDate);
+    if (countdownCounter <= 0) {
+        [self presentNextQuestion];
+    }
     
 }
 
@@ -167,12 +169,14 @@
     startCountdownLabel.text = [NSString stringWithFormat:@"%i", val];
     if (startCountdown <= 0) {
         [darkView setHidden:YES];
+        [quizArray removeAllObjects];
+        correctAnswersLabel.text = @"";
         //[darkView removeFromSuperview];
         [startCountdownTimer invalidate];
         startCountdownTimer = nil;
-        
         if ([gameMode isEqualToString:@"Test"]) {
             testDate = [NSDate date];
+            [pauseButton setTitle:@"Exit" forState:UIControlStateNormal];
         }
         else {
             //Skapa stoppur
@@ -183,6 +187,9 @@
                                                    userInfo:nil
                                                     repeats:YES];
         }
+        
+        
+        
         if ([operation isEqualToString:@"Fraction"]) {
             questionArray = [[NSMutableArray alloc] init];
             answersArray = [[NSMutableArray alloc] init];
@@ -547,6 +554,12 @@
 }
 
 -(void)presentNextQuestion {
+    start_countdown_date = [NSDate date];
+    correctAnswersLabel.text = [NSString stringWithFormat:@"%i/%i", correctAnswers, questionAtm];
+    if ([countdownTimer isValid]) {
+        [countdownTimer invalidate];
+        countdownTimer = nil;
+    }
     
     testStarted = YES;
     

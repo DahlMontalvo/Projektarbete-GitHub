@@ -65,9 +65,9 @@
         highscore = @"None";
     }
     else {
-            float time = [[[Singleton sharedSingleton] sharedPrefs] floatForKey:[NSString stringWithFormat:@"%@%i", [operations objectAtIndex:section], difficulty]];
+        float time = [[[Singleton sharedSingleton] sharedPrefs] floatForKey:[NSString stringWithFormat:@"%@%i", [operations objectAtIndex:section], difficulty]];
         
-        highscore = [NSString stringWithFormat:@"%f", (float)((int)(100.0*(time+0.5)))/100.0];
+        highscore = [NSString stringWithFormat:@"%.2f s", (float)((int)(100.0*(time+0.5)))/100.0];
     }
     
     NSString *cellID = [operations objectAtIndex:section];
@@ -84,7 +84,6 @@
     
     
     int stars = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"Stars%@%i",[operations objectAtIndex:section],difficulty]];
-    NSLog(@"%@", [NSString stringWithFormat:@"Stars%@%i",operation,difficulty]);
     
     NSString *name;
     
@@ -102,6 +101,7 @@
             name = @"ThreeStars.png";
             break;
         default:
+            name = @"NoStars.png";
             break;
     }
     
