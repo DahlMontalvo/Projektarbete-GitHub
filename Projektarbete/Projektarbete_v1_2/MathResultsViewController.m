@@ -78,7 +78,6 @@
     } else {
         starLabel.text = @"No stars this time! :(";
         stars = 0;
-         [[[Singleton sharedSingleton] sharedPrefs] setInteger:0 forKey:[NSString stringWithFormat:@"Stars%@%i",operation,difficulty]];
     }
     
     [[[Singleton sharedSingleton] sharedPrefs] synchronize];

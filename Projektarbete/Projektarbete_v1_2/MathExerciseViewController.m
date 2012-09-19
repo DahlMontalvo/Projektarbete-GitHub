@@ -262,7 +262,7 @@
         }
         else if ([localOperation isEqualToString:@"Subtraction"]) {
             if (difficulty > 3) {
-                int slump = arc4random() % 3;
+                int slump = arc4random() % 4;
                 if (slump == 4) {
                     bool continueLoop = YES;
                     while(continueLoop) {
@@ -322,31 +322,186 @@
             } 
         } 
         else if ([localOperation isEqualToString:@"Division"]) {
+            number1*=difficulty+1;
+            number2*=2;
+            number3*=(difficulty+1)/3;
+            number2/=2;
+            
+            number2++;
             if (number1%number2 != 0) {
                 number1 = number1 - (number1%number2);
             }
             if (number1 < 0) {
                 number1 = 0;
             }
-            localAnswer = (float) number1 / (float) number2;
-            text = [NSString stringWithFormat:@"%i / %i", number1, number2];  
+            
+            if (difficulty > 3) {
+                number1*=0.7;
+                number2*=0.7;
+                number3*=0.7;
+                number2/=2;
+                
+                number2++;
+                int slump = arc4random() % 6;
+                
+                if (slump == 6) {
+                    if (number1%number2 != 0) {
+                        number1 = number1 - number1%number2;
+                    }
+                    localAnswer = (float) number1 / (float) number2 + number3;
+                    text = [NSString stringWithFormat:@"%i / %i + %i", number1, number2, number3];
+                    
+                }
+                else if (slump == 5) {
+                    if (number1%number2 != 0) {
+                        number1 = number1 - number1%number2;
+                    }
+                    bool continueLoop = YES;
+                    while(continueLoop) {
+                        if ((float) number1 / (float) number2 >= number3) {
+                            if (number1/number2 == number3) {
+                                number3 = arc4random()%10;
+                            }
+                            else {
+                                continueLoop = NO;
+                            }
+                        }
+                        else {
+                            number3--;
+                        }
+                    }
+                    localAnswer = (float) number1 / (float) number2 - number3;
+                    text = [NSString stringWithFormat:@"%i / %i - %i", number1, number2, number3];
+                    
+                }
+                else if (slump == 4) {
+                    number3/=5;
+                    if (number1%(number2+number3) != 0) {
+                        number1 = number1 - (number1%(number2+number3));
+                    }
+                    localAnswer = (float) number1 / (float) (number2+number3);
+                    text = [NSString stringWithFormat:@"%i / (%i + %i)", number1, number2, number3];
+                    
+                }
+                else if (slump == 3) {
+                    number3/=5;
+                    if ((number1+number3)%number2 != 0) {
+                        number1-=((number1+number3)%number2);
+                    }
+                    localAnswer = (float) (number1+number3) / (float) number2;
+                    text = [NSString stringWithFormat:@"(%i + %i) / %i", number1, number3, number2];
+                    
+                }
+                else if (slump == 2) {
+                    number3/=5;
+                    if ((number1-number3)%number2 != 0) {
+                        number1-=((number1-number3)%number2);
+                    }
+                    localAnswer = (float) (number1-number3) / (float) number2;
+                    text = [NSString stringWithFormat:@"(%i - %i) / %i", number1, number3, number2];
+                    
+                }
+                else {
+                    number3/=5;
+                    if (number3 > number2) {
+                        int temp = number3;
+                        number3 = number2;
+                        number2 = temp;
+                    }
+                    if ((number2-number3) == 0) {
+                        number2++;
+                    }
+                    if (number1%(number2-number3) != 0) {
+                        number1-=number1%(number2-number3);
+                    }
+                    localAnswer = (float) number1 / (float) (number2-number3);
+                    text = [NSString stringWithFormat:@"%i / (%i - %i)", number1, number2, number3];
+                }
+                    
+            }
+            else {
+                
+                
+                localAnswer = (float) number1 / (float) number2;
+                text = [NSString stringWithFormat:@"%i / %i", number1, number2];
+            }
+            
+            
         } 
         else if ([localOperation isEqualToString:@"Multiplication"]) {
-            localAnswer = number1*number2;
-            text = [NSString stringWithFormat:@"%i * %i", number1, number2];  
-        }
-        else if ([localOperation isEqualToString:@"Percent"]) {
-            number1 = (arc4random() % 10)*10;
-            localAnswer = number1*number2/100;
-            text = [NSString stringWithFormat:@"%i%% of %i", number1, number2];  
-        }
-        else if ([localOperation isEqualToString:@"Fraction"]) {
-            localAnswer = number1*number2;
-            text = [NSString stringWithFormat:@"%i * %i", number1, number2];
-        }
-        else if ([localOperation isEqualToString:@"Equations"]) {
-            localAnswer = number1*number2;
-            text = [NSString stringWithFormat:@"%i * %i", number1, number2];  
+            number1/=5;
+            number2/=5;
+            number3/=5;
+            if (difficulty > 3) {
+                int slump = arc4random() % 5;
+                if (slump == 5 && difficulty == 5) {
+                    
+                    int number4 = arc4random() % 25 + 1;
+                    text = [NSString stringWithFormat:@"(%i + %i) * (%i + %i)", number1, number2, number3, number4];
+                    localAnswer = (number1+number2)*(number3+number4);
+                    
+                }
+                else if (slump == 4 && difficulty == 5) {
+                    
+                    int number4 = arc4random() % 25 + 1;
+                    
+                    bool continueLoop = YES;
+                    while(continueLoop) {
+                        if (number3 >= number4) {
+                            continueLoop = NO;
+                        }
+                        else {
+                            number3+=(arc4random()%20);
+                        }
+                    }
+                    
+                    text = [NSString stringWithFormat:@"(%i + %i) * (%i - %i)", number1, number2, number3, number4];
+                    localAnswer = (number1+number2)*(number3-number4);
+                    
+                }
+                else if (slump > 3) {
+                    
+                    text = [NSString stringWithFormat:@"%i * (%i + %i)", number1, number2, number3];
+                    localAnswer = number1*(number2+number3);
+                    
+                }
+                else if (slump == 3) {
+                    
+                    text = [NSString stringWithFormat:@"%i(%i + %i)", number1, number2, number3];
+                    localAnswer = number1*(number2+number3);
+                    
+                }
+                else if (slump == 2) {
+                    bool continueLoop = YES;
+                    while(continueLoop) {
+                        if (number2 >= number3) {
+                            continueLoop = NO;
+                        }
+                        else {
+                            number2+=(arc4random()%20);
+                        }
+                    }
+                    text = [NSString stringWithFormat:@"%i(%i - %i)", number1, number2, number3];
+                    localAnswer = number1*(number2-number3);
+                }
+                else {
+                    bool continueLoop = YES;
+                    while(continueLoop) {
+                        if (number2 >= number3) {
+                            continueLoop = NO;
+                        }
+                        else {
+                            number2+=(arc4random()%20);
+                        }
+                    }
+                    text = [NSString stringWithFormat:@"%i * (%i - %i)", number1, number2, number3];
+                    localAnswer = number1*(number2-number3);
+                }
+            }
+            else {
+                localAnswer = number1*number2;
+                text = [NSString stringWithFormat:@"%i * %i", number1, number2];
+            }
         }
         else {
             text = @"";
