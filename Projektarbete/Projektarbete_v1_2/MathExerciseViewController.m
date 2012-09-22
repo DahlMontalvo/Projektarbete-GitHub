@@ -429,10 +429,10 @@
             
         } 
         else if ([localOperation isEqualToString:@"Multiplication"]) {
-            number1/=5;
-            number2/=5;
-            number3/=5;
             if (difficulty > 3) {
+                number1/=difficulty;
+                number2/=difficulty;
+                number3/=difficulty;
                 int slump = arc4random() % 5;
                 if (slump == 5 && difficulty == 5) {
                     
@@ -499,6 +499,9 @@
                 }
             }
             else {
+                number1/=difficulty*1.25;
+                number2/=difficulty*1.25;
+                number3/=difficulty*1.25;
                 localAnswer = number1*number2;
                 text = [NSString stringWithFormat:@"%i * %i", number1, number2];
             }
