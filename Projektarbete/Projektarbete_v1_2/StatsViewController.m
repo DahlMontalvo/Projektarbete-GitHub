@@ -135,7 +135,7 @@
     [operations addObject:@"Division"];
     [operations addObject:@"Percent"];
     [operations addObject:@"Fratction"];
-    [operations addObject:@"Equation"];
+    [operations addObject:@"Equations"];
 }
 
 - (void)viewDidUnload
