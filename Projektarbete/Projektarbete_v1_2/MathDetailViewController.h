@@ -17,6 +17,8 @@
     IBOutlet UITextView *practiseTextField;
     IBOutlet UITextView *testTextField;
 }
+@property (weak, nonatomic) IBOutlet UIImageView *starsImage;
+@property (weak, nonatomic) IBOutlet UILabel *starsLabel;
 
 @property (strong, nonatomic) IBOutlet UIButton *testingButton;
 @property (strong, nonatomic) IBOutlet UIButton *gameButton;

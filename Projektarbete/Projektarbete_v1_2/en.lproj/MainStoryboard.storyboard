@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="11">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
                 <navigationController id="3" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="4">
                         <autoresizingMask key="autoresizingMask"/>
@@ -18,13 +17,13 @@
                         <segue destination="IQu-bC-Tsf" kind="relationship" relationship="rootViewController" id="Wep-hF-h3B"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-7" y="64"/>
         </scene>
         <!--Main Menu View Controller-->
         <scene sceneID="Onx-dH-0rD">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MRo-L2-yyb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="IQu-bC-Tsf" customClass="MainMenuViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Rl-WL-9h5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
@@ -286,13 +285,13 @@
                         <outlet property="scrollView" destination="3bR-Bv-o0D" id="wNZ-NF-2Tk"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MRo-L2-yyb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="404" y="64"/>
         </scene>
         <!--Biology Master View Controller - Biology-->
         <scene sceneID="1cw-z8-M8l">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oFX-oq-8tR" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="Biology" id="Q68-bD-PBh" customClass="BiologyMasterViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="atp-fz-7Sb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
@@ -310,13 +309,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Biology" id="ksm-c1-NtP"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oFX-oq-8tR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="947" y="715"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FE0-5u-K6P">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="876-ak-tpT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="Feg-j1-Hsq" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="5Ji-O6-rRx">
                         <autoresizingMask key="autoresizingMask"/>
@@ -326,16 +325,16 @@
                         <segue destination="ck9-16-VUu" kind="relationship" relationship="rootViewController" id="LqF-4N-vbd"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="876-ak-tpT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="462" y="1369"/>
         </scene>
         <!--About View Controller - About-->
         <scene sceneID="8yc-OT-i5o">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nuT-lU-VMF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="ck9-16-VUu" customClass="AboutViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TFY-Ud-ad1">
-                        <rect key="frame" x="0.0" y="44" width="320" height="436"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="2012 © Dahl &amp; Montalvo Apps" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="WLV-Qd-5nJ">
@@ -417,13 +416,13 @@
                         <outlet property="doneButton" destination="Irt-gF-0Nv" id="Q55-3v-6KU"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nuT-lU-VMF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="947" y="1369"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LDi-DE-FEg">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="U0c-VQ-e0w" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="qjj-h2-kOT" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="omo-Fz-F7A">
                         <autoresizingMask key="autoresizingMask"/>
@@ -432,16 +431,16 @@
                         <segue destination="djt-lz-ZBQ" kind="relationship" relationship="rootViewController" id="fMP-TK-nF1"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U0c-VQ-e0w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="462" y="2003"/>
         </scene>
         <!--Global Stats View Controller - Statistics-->
         <scene sceneID="9Kn-3S-LYs">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fxJ-Vo-lg1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="djt-lz-ZBQ" customClass="GlobalStatsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xrB-O8-s9Q">
-                        <rect key="frame" x="0.0" y="44" width="320" height="436"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aoH-xe-nNd">
@@ -588,16 +587,16 @@
                         <outlet property="doneButton" destination="IVi-pL-mwq" id="YL5-te-hZA"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fxJ-Vo-lg1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="947" y="2003"/>
         </scene>
         <!--Stats View Controller - Operation-->
         <scene sceneID="h6c-Yi-93P">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mLa-rk-It1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="4qP-lV-kyf" customClass="StatsViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="DdR-Dr-Xcw">
-                        <rect key="frame" x="0.0" y="44" width="320" height="436"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -624,13 +623,13 @@
                         <outlet property="navItem" destination="cZy-5B-Uh2" id="jY5-s0-3HG"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mLa-rk-It1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1429" y="2003"/>
         </scene>
         <!--Physics Master View Controller - Biology-->
         <scene sceneID="UdB-tj-NNT">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="39j-uR-TbU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="Biology" id="tbs-wF-URu" customClass="PhysicsMasterViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hGJ-Mo-OCD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
@@ -648,13 +647,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Physics" id="1VO-6m-B8O"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="39j-uR-TbU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="947" y="64"/>
         </scene>
         <!--Math Master View Controller-->
         <scene sceneID="0yb-cp-avd">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="o9I-be-3mI" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="uf3-zW-hz6" customClass="MathMasterViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8AH-O2-rtA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
@@ -719,13 +718,13 @@
                         <outlet property="tableView" destination="KAQ-m4-ntn" id="J1U-8g-c2Y"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o9I-be-3mI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="947" y="-1213"/>
         </scene>
         <!--Chemistry Master View Controller - Biology-->
         <scene sceneID="b4o-Ob-CSf">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2Mm-Q4-5ef" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="Biology" id="kuD-3n-KM2" customClass="ChemistryMasterViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BGa-ia-NMk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
@@ -743,13 +742,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Chemistry" id="5Kg-m7-s4V"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Mm-Q4-5ef" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="947" y="-581"/>
         </scene>
         <!--Math Detail View Controller - Difficulty-->
         <scene sceneID="q2C-yn-1ya">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="c55-oN-Hpe" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="" title="Difficulty" id="Y81-nL-Ifg" customClass="MathDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hPj-wE-FGx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
@@ -760,14 +759,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="1. Difficulty:" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="OTC-Sr-O0e">
-                                <rect key="frame" x="71" y="80" width="179" height="33"/>
+                                <rect key="frame" x="71" y="70" width="179" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="22"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" id="UoU-24-owR">
-                                <rect key="frame" x="29" y="128" width="263" height="30"/>
+                                <rect key="frame" x="29" y="106" width="263" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="1"/>
@@ -782,21 +781,21 @@
                                 </connections>
                             </segmentedControl>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Practise without saving any highscores" textAlignment="center" id="qBW-0D-ySy">
-                                <rect key="frame" x="29" y="287" width="118" height="64"/>
+                                <rect key="frame" x="26" y="278" width="118" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Test your skills with limited time and no pausing" textAlignment="center" id="Tkr-cp-tlj">
-                                <rect key="frame" x="174" y="287" width="118" height="64"/>
+                                <rect key="frame" x="166" y="278" width="118" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pdW-OX-cMP">
-                                <rect key="frame" x="80" y="191" width="160" height="37"/>
+                                <rect key="frame" x="77" y="213" width="160" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="22"/>
                                 <state key="normal" title="2. Gamemode:">
@@ -811,7 +810,7 @@
                                 </state>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" id="63j-DP-hWc">
-                                <rect key="frame" x="29" y="243" width="263" height="30"/>
+                                <rect key="frame" x="26" y="249" width="263" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Practise"/>
@@ -823,7 +822,7 @@
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bhY-ir-hg6">
-                                <rect key="frame" x="29" y="365" width="263" height="52"/>
+                                <rect key="frame" x="26" y="378" width="263" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="27"/>
                                 <state key="normal" title="3. Start" image="StartButton.png">
@@ -868,12 +867,23 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="3. Start" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="7Ex-dQ-ySS">
-                                <rect key="frame" x="97" y="365" width="127" height="52"/>
+                                <rect key="frame" x="94" y="378" width="127" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="23"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Stars in Test mode:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dJ3-D9-MCg">
+                                <rect key="frame" x="32" y="162" width="148" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="NoStars.png" id="a7Y-2j-tXX">
+                                <rect key="frame" x="188" y="160" width="96" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -884,19 +894,21 @@
                         <outlet property="modeLabel" destination="pdW-OX-cMP" id="iEd-IC-Zbg"/>
                         <outlet property="navigationLabel" destination="Fcm-Ex-rVx" id="aBw-6v-Bkr"/>
                         <outlet property="practiseTextField" destination="qBW-0D-ySy" id="ara-kc-gj3"/>
+                        <outlet property="starsImage" destination="a7Y-2j-tXX" id="uY7-oL-qOj"/>
+                        <outlet property="starsLabel" destination="dJ3-D9-MCg" id="HB8-NJ-3W1"/>
                         <outlet property="startButton" destination="bhY-ir-hg6" id="snw-SL-2YD"/>
                         <outlet property="testTextField" destination="Tkr-cp-tlj" id="Gb7-Ya-h3t"/>
                         <segue destination="fYp-3i-OM3" kind="push" identifier="ToQuiz" id="ban-Y7-B8a"/>
                         <segue destination="ZY0-nv-5j1" kind="push" identifier="ToCount" id="UzV-7s-uF2"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c55-oN-Hpe" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1424" y="-1213"/>
         </scene>
         <!--Math Quiz View Controller-->
         <scene sceneID="Kvk-mQ-DYH">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="b7t-Ag-PaP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="fYp-3i-OM3" customClass="MathQuizViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6z5-1V-90D">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
@@ -1098,13 +1110,13 @@
                         <segue destination="MWV-x0-Nen" kind="push" identifier="ToResult" id="m7M-EV-8hW"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b7t-Ag-PaP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2216" y="-1789"/>
         </scene>
         <!--Math Exercise View Controller - ExerciseViewController-->
         <scene sceneID="YJG-RU-Omp">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="URm-fa-A7u" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="ExerciseViewController" title="ExerciseViewController" id="ZY0-nv-5j1" customClass="MathExerciseViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GxV-j1-7DE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
@@ -1413,13 +1425,13 @@
                         <segue destination="3" kind="modal" identifier="exerciseToMain" modalTransitionStyle="flipHorizontal" id="VvE-F8-LG2"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="URm-fa-A7u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2216" y="-1213"/>
         </scene>
         <!--Math Results View Controller - Results-->
         <scene sceneID="rbs-AK-90N">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KoK-fV-D4J" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="MWV-x0-Nen" customClass="MathResultsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vw4-Jw-syl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
@@ -1501,6 +1513,7 @@
                         <outlet property="timeLabel" destination="Ecy-hK-j3R" id="4d3-8y-XOd"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KoK-fV-D4J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2614" y="-1213"/>
         </scene>
@@ -1511,6 +1524,7 @@
         <image name="MaButton2.png" width="276" height="262"/>
         <image name="NavBar2.png" width="640" height="124"/>
         <image name="NavBar3.png" width="640" height="124"/>
+        <image name="NoStars.png" width="320" height="90"/>
         <image name="PhButton2.png" width="276" height="262"/>
         <image name="StartButton.png" width="292" height="47"/>
         <image name="bakåtpil2.png" width="124" height="124"/>
@@ -1562,6 +1576,8 @@
                 <relationship kind="outlet" name="navigationLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="practiseButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="practiseTextField" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="starsImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="starsLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="startButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="testTextField" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="testingButton" candidateClass="UIButton"/>

@@ -17,6 +17,8 @@
 @synthesize navigationLabel;
 @synthesize operation;
 @synthesize modeLabel;
+@synthesize starsImage;
+@synthesize starsLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -58,6 +60,7 @@
     
     [practiseTextField setTextColor:[UIColor lightGrayColor]];
     [testTextField setTextColor:[UIColor lightGrayColor]];
+    [starsLabel setTextColor:[UIColor lightGrayColor]];
     
     //self.navigationItem.title = operation;
     navigationLabel.text = operation;
@@ -94,6 +97,8 @@
     [self setPractiseButton:nil];
     [self setNavigationLabel:nil];
     [self setStartButton:nil];
+    [self setStarsImage:nil];
+    [self setStarsLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -112,6 +117,32 @@
     [modeLabel setEnabled:YES];
     [practiseTextField setTextColor:[UIColor blackColor]];
     [testTextField setTextColor:[UIColor blackColor]];
+    [starsLabel setTextColor:[UIColor blackColor]];
+    
+    int stars = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"Stars%@%i",operation, difficultySegmentedControl.selectedSegmentIndex+1]];
+    
+    NSString *name;
+    
+    switch (stars) {
+        case 0:
+            name = @"NoStars.png";
+            break;
+        case 1:
+            name = @"OneStars.png";
+            break;
+        case 2:
+            name = @"TwoStars.png";
+            break;
+        case 3:
+            name = @"ThreeStars.png";
+            break;
+        default:
+            name = @"NoStars.png";
+            break;
+    }
+    
+    starsImage.image = [UIImage imageNamed:name];
+
 }
 
 - (IBAction)gamemodeSegmentedControl:(id)sender {
