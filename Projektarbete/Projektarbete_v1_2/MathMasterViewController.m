@@ -86,15 +86,16 @@
     
     // Create label with section title
     UILabel *label = [[UILabel alloc] init];
-    label.frame = CGRectMake(30, 5, 284, 23);
+    label.frame = CGRectMake(30, 10, 280, 23);
     label.textColor = [UIColor blackColor];
-    label.font = [UIFont fontWithName:@"Marion" size:20];
+    label.font = [UIFont fontWithName:@"Marion-Bold" size:22];
 
     label.text = sectionTitle;
     label.backgroundColor = [UIColor clearColor];
     
     // Create header view and add label as a subview
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 280, 100)];
+    //view.backgroundColor = [UIColor grayColor];
     [view addSubview:label];
     
     return view;
