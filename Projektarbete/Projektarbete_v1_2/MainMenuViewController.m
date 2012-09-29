@@ -10,6 +10,7 @@
 
 @implementation MainMenuViewController
 @synthesize scrollView;
+@synthesize redBanner;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -81,11 +82,18 @@
     [super viewDidLoad];
     
     [[self.navigationController navigationBar] setTintColor:[UIColor darkGrayColor]];
+    
+    [redBanner addTarget:self action:@selector(draggedOut:withEvent:)
+         forControlEvents:UIControlEventTouchDragOutside |
+     UIControlEventTouchDragInside];
 }
+
+
 
 
 - (void)viewDidUnload
 {
+    [self setRedBanner:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -108,6 +116,19 @@
     
     UIApplication *app = [UIApplication sharedApplication];
     [app setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
+}
+
+- (void) draggedOut: (UIControl *) c withEvent: (UIEvent *) ev {
+    CGPoint point = [[[ev allTouches] anyObject] locationInView:self.view];
+     
+    if(point.y > 387 && point.y <422) {
+        c.center = CGPointMake(74, point.y);
+
+    }
+    
+    
+
+   
 }
 
 @end

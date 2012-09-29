@@ -34,8 +34,8 @@
     
     
     
-  //  UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MathFirstBG4.png"]];
-  //  self.tableView.backgroundView = imageView;
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TableViewBG2"]];
+    self.tableView.backgroundView = imageView;
     
     operations = [[NSMutableArray alloc] init];
     otherExercises = [[NSMutableArray alloc] init];
@@ -86,9 +86,9 @@
     
     // Create label with section title
     UILabel *label = [[UILabel alloc] init];
-    label.frame = CGRectMake(15, 5, 284, 23);
+    label.frame = CGRectMake(30, 5, 284, 23);
     label.textColor = [UIColor blackColor];
-    label.font = [UIFont fontWithName:@"Gill Sans" size:20];
+    label.font = [UIFont fontWithName:@"Marion" size:20];
 
     label.text = sectionTitle;
     label.backgroundColor = [UIColor clearColor];

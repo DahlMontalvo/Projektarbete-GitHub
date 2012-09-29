@@ -20,6 +20,22 @@
 		002DBD2D1609306C00E8B4A1 /* bakåtpil2.png in Resources */ = {isa = PBXBuildFile; fileRef = 002DBD2C1609306C00E8B4A1 /* bakåtpil2.png */; };
 		002DBD2F1609323000E8B4A1 /* icon5-114.png in Resources */ = {isa = PBXBuildFile; fileRef = 002DBD2E1609323000E8B4A1 /* icon5-114.png */; };
 		004DD9ED1608AD5D008B97E7 /* NoStars.png in Resources */ = {isa = PBXBuildFile; fileRef = 004DD9E91608AD5D008B97E7 /* NoStars.png */; };
+		005C23A116162D2F0056EA7F /* BGTest.png in Resources */ = {isa = PBXBuildFile; fileRef = 005C23A016162D2F0056EA7F /* BGTest.png */; };
+		005C23A4161642350056EA7F /* BGTest2.png in Resources */ = {isa = PBXBuildFile; fileRef = 005C23A3161642350056EA7F /* BGTest2.png */; };
+		005C23A616164FAF0056EA7F /* BGTest3.png in Resources */ = {isa = PBXBuildFile; fileRef = 005C23A516164FAF0056EA7F /* BGTest3.png */; };
+		005C23A8161653740056EA7F /* BGTest4.png in Resources */ = {isa = PBXBuildFile; fileRef = 005C23A7161653740056EA7F /* BGTest4.png */; };
+		005C23AA1617491A0056EA7F /* BGTest5.png in Resources */ = {isa = PBXBuildFile; fileRef = 005C23A91617491A0056EA7F /* BGTest5.png */; };
+		005C23AE16177C490056EA7F /* Papper1.png in Resources */ = {isa = PBXBuildFile; fileRef = 005C23AB16177C490056EA7F /* Papper1.png */; };
+		005C23AF16177C490056EA7F /* RödBanner1.png in Resources */ = {isa = PBXBuildFile; fileRef = 005C23AC16177C490056EA7F /* RödBanner1.png */; };
+		005C23B016177C490056EA7F /* Wood1.png in Resources */ = {isa = PBXBuildFile; fileRef = 005C23AD16177C490056EA7F /* Wood1.png */; };
+		005C23B216177CBF0056EA7F /* Papper2.png in Resources */ = {isa = PBXBuildFile; fileRef = 005C23B116177CBF0056EA7F /* Papper2.png */; };
+		005C23B41617866E0056EA7F /* PlayButton1.png in Resources */ = {isa = PBXBuildFile; fileRef = 005C23B31617866E0056EA7F /* PlayButton1.png */; };
+		005C23B6161788F70056EA7F /* GrönBanner1.png in Resources */ = {isa = PBXBuildFile; fileRef = 005C23B5161788F70056EA7F /* GrönBanner1.png */; };
+		005C23B81617897B0056EA7F /* NavBarNy1.png in Resources */ = {isa = PBXBuildFile; fileRef = 005C23B71617897B0056EA7F /* NavBarNy1.png */; };
+		005C23BA16178A2D0056EA7F /* GulBanner1.png in Resources */ = {isa = PBXBuildFile; fileRef = 005C23B916178A2D0056EA7F /* GulBanner1.png */; };
+		005C23BD161790EA0056EA7F /* TableViewBG2.png in Resources */ = {isa = PBXBuildFile; fileRef = 005C23BB161790EA0056EA7F /* TableViewBG2.png */; };
+		005C23BE161790EA0056EA7F /* UnderTableView1.png in Resources */ = {isa = PBXBuildFile; fileRef = 005C23BC161790EA0056EA7F /* UnderTableView1.png */; };
+		005C23C0161793750056EA7F /* Arrow1.png in Resources */ = {isa = PBXBuildFile; fileRef = 005C23BF161793750056EA7F /* Arrow1.png */; };
 		006E426016069736003B5BC7 /* loadscreen2.png in Resources */ = {isa = PBXBuildFile; fileRef = 006E425F16069736003B5BC7 /* loadscreen2.png */; };
 		006E426616069A2C003B5BC7 /* StartButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 006E426516069A2C003B5BC7 /* StartButton.png */; };
 		006E426816069C6A003B5BC7 /* MathFirstBG4.png in Resources */ = {isa = PBXBuildFile; fileRef = 006E426716069C6A003B5BC7 /* MathFirstBG4.png */; };
@@ -106,6 +122,22 @@
 		002DBD2C1609306C00E8B4A1 /* bakåtpil2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bakåtpil2.png"; sourceTree = "<group>"; };
 		002DBD2E1609323000E8B4A1 /* icon5-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon5-114.png"; sourceTree = "<group>"; };
 		004DD9E91608AD5D008B97E7 /* NoStars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NoStars.png; sourceTree = "<group>"; };
+		005C23A016162D2F0056EA7F /* BGTest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BGTest.png; sourceTree = "<group>"; };
+		005C23A3161642350056EA7F /* BGTest2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BGTest2.png; sourceTree = "<group>"; };
+		005C23A516164FAF0056EA7F /* BGTest3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BGTest3.png; sourceTree = "<group>"; };
+		005C23A7161653740056EA7F /* BGTest4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BGTest4.png; sourceTree = "<group>"; };
+		005C23A91617491A0056EA7F /* BGTest5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BGTest5.png; sourceTree = "<group>"; };
+		005C23AB16177C490056EA7F /* Papper1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Papper1.png; sourceTree = "<group>"; };
+		005C23AC16177C490056EA7F /* RödBanner1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RödBanner1.png"; sourceTree = "<group>"; };
+		005C23AD16177C490056EA7F /* Wood1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Wood1.png; sourceTree = "<group>"; };
+		005C23B116177CBF0056EA7F /* Papper2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Papper2.png; sourceTree = "<group>"; };
+		005C23B31617866E0056EA7F /* PlayButton1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlayButton1.png; sourceTree = "<group>"; };
+		005C23B5161788F70056EA7F /* GrönBanner1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GrönBanner1.png"; sourceTree = "<group>"; };
+		005C23B71617897B0056EA7F /* NavBarNy1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavBarNy1.png; sourceTree = "<group>"; };
+		005C23B916178A2D0056EA7F /* GulBanner1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GulBanner1.png; sourceTree = "<group>"; };
+		005C23BB161790EA0056EA7F /* TableViewBG2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TableViewBG2.png; sourceTree = "<group>"; };
+		005C23BC161790EA0056EA7F /* UnderTableView1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UnderTableView1.png; sourceTree = "<group>"; };
+		005C23BF161793750056EA7F /* Arrow1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Arrow1.png; sourceTree = "<group>"; };
 		006E425F16069736003B5BC7 /* loadscreen2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loadscreen2.png; sourceTree = "<group>"; };
 		006E426516069A2C003B5BC7 /* StartButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StartButton.png; sourceTree = "<group>"; };
 		006E426716069C6A003B5BC7 /* MathFirstBG4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MathFirstBG4.png; sourceTree = "<group>"; };
@@ -249,6 +281,22 @@
 		007BC48015C09E0A009BC60D /* Bilder etc. */ = {
 			isa = PBXGroup;
 			children = (
+				005C23BF161793750056EA7F /* Arrow1.png */,
+				005C23BB161790EA0056EA7F /* TableViewBG2.png */,
+				005C23BC161790EA0056EA7F /* UnderTableView1.png */,
+				005C23B916178A2D0056EA7F /* GulBanner1.png */,
+				005C23B71617897B0056EA7F /* NavBarNy1.png */,
+				005C23B5161788F70056EA7F /* GrönBanner1.png */,
+				005C23B31617866E0056EA7F /* PlayButton1.png */,
+				005C23B116177CBF0056EA7F /* Papper2.png */,
+				005C23AB16177C490056EA7F /* Papper1.png */,
+				005C23AC16177C490056EA7F /* RödBanner1.png */,
+				005C23AD16177C490056EA7F /* Wood1.png */,
+				005C23A91617491A0056EA7F /* BGTest5.png */,
+				005C23A7161653740056EA7F /* BGTest4.png */,
+				005C23A516164FAF0056EA7F /* BGTest3.png */,
+				005C23A3161642350056EA7F /* BGTest2.png */,
+				005C23A016162D2F0056EA7F /* BGTest.png */,
 				002DBD2C1609306C00E8B4A1 /* bakåtpil2.png */,
 				002DBD2A16092FA500E8B4A1 /* NavBar3.png */,
 				002DBD1C1609194100E8B4A1 /* OneStars.png */,
@@ -506,6 +554,22 @@
 				002DBD2B16092FA500E8B4A1 /* NavBar3.png in Resources */,
 				002DBD2D1609306C00E8B4A1 /* bakåtpil2.png in Resources */,
 				002DBD2F1609323000E8B4A1 /* icon5-114.png in Resources */,
+				005C23A116162D2F0056EA7F /* BGTest.png in Resources */,
+				005C23A4161642350056EA7F /* BGTest2.png in Resources */,
+				005C23A616164FAF0056EA7F /* BGTest3.png in Resources */,
+				005C23A8161653740056EA7F /* BGTest4.png in Resources */,
+				005C23AA1617491A0056EA7F /* BGTest5.png in Resources */,
+				005C23AE16177C490056EA7F /* Papper1.png in Resources */,
+				005C23AF16177C490056EA7F /* RödBanner1.png in Resources */,
+				005C23B016177C490056EA7F /* Wood1.png in Resources */,
+				005C23B216177CBF0056EA7F /* Papper2.png in Resources */,
+				005C23B41617866E0056EA7F /* PlayButton1.png in Resources */,
+				005C23B6161788F70056EA7F /* GrönBanner1.png in Resources */,
+				005C23B81617897B0056EA7F /* NavBarNy1.png in Resources */,
+				005C23BA16178A2D0056EA7F /* GulBanner1.png in Resources */,
+				005C23BD161790EA0056EA7F /* TableViewBG2.png in Resources */,
+				005C23BE161790EA0056EA7F /* UnderTableView1.png in Resources */,
+				005C23C0161793750056EA7F /* Arrow1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
