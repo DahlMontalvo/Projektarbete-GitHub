@@ -36,6 +36,7 @@
 		005C23BD161790EA0056EA7F /* TableViewBG2.png in Resources */ = {isa = PBXBuildFile; fileRef = 005C23BB161790EA0056EA7F /* TableViewBG2.png */; };
 		005C23BE161790EA0056EA7F /* UnderTableView1.png in Resources */ = {isa = PBXBuildFile; fileRef = 005C23BC161790EA0056EA7F /* UnderTableView1.png */; };
 		005C23C0161793750056EA7F /* Arrow1.png in Resources */ = {isa = PBXBuildFile; fileRef = 005C23BF161793750056EA7F /* Arrow1.png */; };
+		005C23C2161888CD0056EA7F /* Papper3.png in Resources */ = {isa = PBXBuildFile; fileRef = 005C23C1161888CD0056EA7F /* Papper3.png */; };
 		006E426016069736003B5BC7 /* loadscreen2.png in Resources */ = {isa = PBXBuildFile; fileRef = 006E425F16069736003B5BC7 /* loadscreen2.png */; };
 		006E426616069A2C003B5BC7 /* StartButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 006E426516069A2C003B5BC7 /* StartButton.png */; };
 		006E426816069C6A003B5BC7 /* MathFirstBG4.png in Resources */ = {isa = PBXBuildFile; fileRef = 006E426716069C6A003B5BC7 /* MathFirstBG4.png */; };
@@ -138,6 +139,7 @@
 		005C23BB161790EA0056EA7F /* TableViewBG2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TableViewBG2.png; sourceTree = "<group>"; };
 		005C23BC161790EA0056EA7F /* UnderTableView1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UnderTableView1.png; sourceTree = "<group>"; };
 		005C23BF161793750056EA7F /* Arrow1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Arrow1.png; sourceTree = "<group>"; };
+		005C23C1161888CD0056EA7F /* Papper3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Papper3.png; sourceTree = "<group>"; };
 		006E425F16069736003B5BC7 /* loadscreen2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loadscreen2.png; sourceTree = "<group>"; };
 		006E426516069A2C003B5BC7 /* StartButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StartButton.png; sourceTree = "<group>"; };
 		006E426716069C6A003B5BC7 /* MathFirstBG4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MathFirstBG4.png; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 		007BC48015C09E0A009BC60D /* Bilder etc. */ = {
 			isa = PBXGroup;
 			children = (
+				005C23C1161888CD0056EA7F /* Papper3.png */,
 				005C23BF161793750056EA7F /* Arrow1.png */,
 				005C23BB161790EA0056EA7F /* TableViewBG2.png */,
 				005C23BC161790EA0056EA7F /* UnderTableView1.png */,
@@ -570,6 +573,7 @@
 				005C23BD161790EA0056EA7F /* TableViewBG2.png in Resources */,
 				005C23BE161790EA0056EA7F /* UnderTableView1.png in Resources */,
 				005C23C0161793750056EA7F /* Arrow1.png in Resources */,
+				005C23C2161888CD0056EA7F /* Papper3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

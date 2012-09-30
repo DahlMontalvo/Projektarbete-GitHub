@@ -59,9 +59,12 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Feg-j1-Hsq" kind="modal" identifier="AboutSegue" id="ar4-w5-HKl"/>
+                                </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Papper2.png" id="f3N-vQ-uqn">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="423"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Papper3.png" id="f3N-vQ-uqn">
+                                <rect key="frame" x="6" y="47" width="308" height="376"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="ThreeStars.png" id="KPJ-dd-r5z">
@@ -1414,7 +1417,7 @@
         <image name="NavBar2.png" width="640" height="124"/>
         <image name="NavBarNy1.png" width="640" height="129"/>
         <image name="NoStars.png" width="320" height="90"/>
-        <image name="Papper2.png" width="640" height="844"/>
+        <image name="Papper3.png" width="605" height="749"/>
         <image name="PlayButton1.png" width="208" height="73"/>
         <image name="RödBanner1.png" width="174" height="224"/>
         <image name="StartButton.png" width="292" height="47"/>
