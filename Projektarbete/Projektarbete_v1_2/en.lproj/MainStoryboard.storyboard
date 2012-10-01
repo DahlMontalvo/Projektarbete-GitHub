@@ -157,6 +157,24 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Congratulations on your iPhone 5!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kU3-YU-8Of">
+                                <rect key="frame" x="31" y="539" width="258" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Marion-Regular" family="Marion" pointSize="15"/>
+                                <color key="textColor" red="0.60000002384185791" green="0.40000000596046448" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Lounge3.png" id="h9f-VO-cxo">
+                                <rect key="frame" x="0.0" y="477" width="320" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Pre-Alpha" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wQG-Fd-6e9">
+                                <rect key="frame" x="238" y="18" width="76" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Marion-Regular" family="Marion" pointSize="16"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -1414,6 +1432,7 @@
     <resources>
         <image name="GrönBanner1.png" width="170" height="222"/>
         <image name="GulBanner1.png" width="110" height="139"/>
+        <image name="Lounge3.png" width="639" height="176"/>
         <image name="NavBar2.png" width="640" height="124"/>
         <image name="NavBarNy1.png" width="640" height="129"/>
         <image name="NoStars.png" width="320" height="90"/>
