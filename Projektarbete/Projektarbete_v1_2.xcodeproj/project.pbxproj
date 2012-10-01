@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		000B98BD1619E58F0050AFB1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000B98BC1619E58F0050AFB1 /* Default-568h@2x.png */; };
 		000DFE5515BEDFDC00138D06 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 000DFE5415BEDFDC00138D06 /* MainMenuViewController.m */; };
 		000DFE5815BEE4D800138D06 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 000DFE5715BEE4D800138D06 /* AboutViewController.m */; };
 		0023A33215BF4EC9006BD781 /* BiologyMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0023A33115BF4EC9006BD781 /* BiologyMasterViewController.m */; };
@@ -105,6 +106,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		000B98BC1619E58F0050AFB1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		000DFE5315BEDFDC00138D06 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		000DFE5415BEDFDC00138D06 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		000DFE5615BEE4D800138D06 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 		DDB5884D15B947A9009CF151 = {
 			isa = PBXGroup;
 			children = (
+				000B98BC1619E58F0050AFB1 /* Default-568h@2x.png */,
 				002DBD2E1609323000E8B4A1 /* icon5-114.png */,
 				002DBD2816092C2800E8B4A1 /* icon4-114.png */,
 				00C6AE2C1604C7BD00493F52 /* MessageUI.framework */,
@@ -574,6 +577,7 @@
 				005C23BE161790EA0056EA7F /* UnderTableView1.png in Resources */,
 				005C23C0161793750056EA7F /* Arrow1.png in Resources */,
 				005C23C2161888CD0056EA7F /* Papper3.png in Resources */,
+				000B98BD1619E58F0050AFB1 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
