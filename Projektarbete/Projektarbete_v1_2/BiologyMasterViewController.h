@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 
 @interface BiologyMasterViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet UILabel *questionLabel;
 
 @end

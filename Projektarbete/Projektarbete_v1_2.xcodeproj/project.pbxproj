@@ -75,6 +75,9 @@
 		00D655DF15BDFC1C00314BBB /* GlobalStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D655DE15BDFC1C00314BBB /* GlobalStatsViewController.m */; };
 		00E66CF715BC9DA600174D38 /* Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E66CF415BC9DA600174D38 /* Singleton.m */; };
 		00E66CF815BC9DA600174D38 /* StatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E66CF615BC9DA600174D38 /* StatsViewController.m */; };
+		DD751EC1161B7CB200C4E2D1 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DD751EC0161B7CB200C4E2D1 /* libsqlite3.0.dylib */; };
+		DD751ECB161B83B200C4E2D1 /* Database.sql in Resources */ = {isa = PBXBuildFile; fileRef = DD751ECA161B83B200C4E2D1 /* Database.sql */; };
+		DD751ECC161B83B200C4E2D1 /* Database.sql in Resources */ = {isa = PBXBuildFile; fileRef = DD751ECA161B83B200C4E2D1 /* Database.sql */; };
 		DDB5885D15B947A9009CF151 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB5885C15B947A9009CF151 /* UIKit.framework */; };
 		DDB5885F15B947A9009CF151 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB5885E15B947A9009CF151 /* Foundation.framework */; };
 		DDB5886115B947A9009CF151 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB5886015B947A9009CF151 /* CoreGraphics.framework */; };
@@ -186,6 +189,8 @@
 		00E66CF415BC9DA600174D38 /* Singleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Singleton.m; sourceTree = "<group>"; };
 		00E66CF515BC9DA600174D38 /* StatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsViewController.h; sourceTree = "<group>"; };
 		00E66CF615BC9DA600174D38 /* StatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatsViewController.m; sourceTree = "<group>"; };
+		DD751EC0161B7CB200C4E2D1 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		DD751ECA161B83B200C4E2D1 /* Database.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = Database.sql; sourceTree = "<group>"; };
 		DDB5885815B947A9009CF151 /* Projektarbete_v1_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Projektarbete_v1_2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB5885C15B947A9009CF151 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DDB5885E15B947A9009CF151 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -226,6 +231,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD751EC1161B7CB200C4E2D1 /* libsqlite3.0.dylib in Frameworks */,
 				00C6AE2D1604C7BD00493F52 /* MessageUI.framework in Frameworks */,
 				DDB5885D15B947A9009CF151 /* UIKit.framework in Frameworks */,
 				DDB5885F15B947A9009CF151 /* Foundation.framework in Frameworks */,
@@ -291,6 +297,7 @@
 		007BC48015C09E0A009BC60D /* Bilder etc. */ = {
 			isa = PBXGroup;
 			children = (
+				DD751ECA161B83B200C4E2D1 /* Database.sql */,
 				000B98C3161A381A0050AFB1 /* Lounge3.png */,
 				000B98C1161A37620050AFB1 /* Lounge2.png */,
 				000B98BF161A36850050AFB1 /* Lounge1.png */,
@@ -352,6 +359,7 @@
 		DDB5884D15B947A9009CF151 = {
 			isa = PBXGroup;
 			children = (
+				DD751EC0161B7CB200C4E2D1 /* libsqlite3.0.dylib */,
 				000B98BC1619E58F0050AFB1 /* Default-568h@2x.png */,
 				002DBD2E1609323000E8B4A1 /* icon5-114.png */,
 				002DBD2816092C2800E8B4A1 /* icon4-114.png */,
@@ -590,6 +598,7 @@
 				000B98C0161A36850050AFB1 /* Lounge1.png in Resources */,
 				000B98C2161A37620050AFB1 /* Lounge2.png in Resources */,
 				000B98C4161A381A0050AFB1 /* Lounge3.png in Resources */,
+				DD751ECB161B83B200C4E2D1 /* Database.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,6 +607,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDB5888815B947AA009CF151 /* InfoPlist.strings in Resources */,
+				DD751ECC161B83B200C4E2D1 /* Database.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

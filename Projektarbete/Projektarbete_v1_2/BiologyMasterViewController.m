@@ -10,6 +10,8 @@
 
 @implementation BiologyMasterViewController
 
+@synthesize questionLabel;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -53,11 +55,23 @@
     [super viewDidLoad];
     
         [[self.navigationController navigationBar] setTintColor:[UIColor colorWithRed:0.0 green:0.5 blue:0.0 alpha:1.0]];
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    NSLog(@"Count: %i", [appDelegate.questions count]);
+    
+    int randomNumber = arc4random() % ([appDelegate.questions count]);
+    
+    NSLog(@"Rn: %i", randomNumber);
+    
+	NSString *question = (NSString *)[appDelegate.questions objectAtIndex:randomNumber];
+    questionLabel.text = question;
 }
 
 
 - (void)viewDidUnload
 {
+    [self setQuestionLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

@@ -7,8 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <sqlite3.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate> {
+    // DBvariabler
+	NSString *databaseName;
+	NSString *databasePath;
+    
+	// Frågorarray
+	NSMutableArray *questions;
+}
+
+@property (nonatomic, retain) NSMutableArray *questions;
 
 @property (strong, nonatomic) UIWindow *window;
 
