@@ -11,6 +11,7 @@
 @implementation MainMenuViewController
 @synthesize scrollView;
 @synthesize redBanner;
+@synthesize greenBanner;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -84,7 +85,10 @@
     [[self.navigationController navigationBar] setTintColor:[UIColor darkGrayColor]];
     
     [redBanner addTarget:self action:@selector(draggedOut:withEvent:)
-         forControlEvents:UIControlEventTouchDragOutside |
+        forControlEvents:UIControlEventTouchDragOutside |
+     UIControlEventTouchDragInside];
+    [greenBanner addTarget:self action:@selector(draggedOutGreen:withEvent:)
+        forControlEvents:UIControlEventTouchDragOutside |
      UIControlEventTouchDragInside];
 }
 
@@ -122,9 +126,18 @@
 
 - (void) draggedOut: (UIControl *) c withEvent: (UIEvent *) ev {
     CGPoint point = [[[ev allTouches] anyObject] locationInView:self.view];
-     
+    
     if(point.y > 387 && point.y <422) {
         c.center = CGPointMake(74, point.y);
+    }
+    
+}
+
+- (void) draggedOutGreen: (UIControl *) c withEvent: (UIEvent *) ev {
+    CGPoint point = [[[ev allTouches] anyObject] locationInView:self.view];
+    
+    if(point.y > 397 && point.y <412) {
+        c.center = CGPointMake(252, point.y);
     }
     
 }
@@ -141,6 +154,10 @@
 }
 
 - (IBAction)greenBanner:(id)sender {
-    [self performSegueWithIdentifier:@"AboutSegue" sender:sender];
+    int y = greenBanner.center.y;
+    if (y > 409) {
+        [self performSegueWithIdentifier:@"AboutSegue" sender:sender];
+    }
+    greenBanner.center = CGPointMake(252, 412);
 }
 @end
