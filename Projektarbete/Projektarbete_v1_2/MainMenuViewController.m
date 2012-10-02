@@ -94,6 +94,8 @@
 - (void)viewDidUnload
 {
     [self setRedBanner:nil];
+    [self setGreenBanner:nil];
+    [self setGreenBanner:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -123,12 +125,22 @@
      
     if(point.y > 387 && point.y <422) {
         c.center = CGPointMake(74, point.y);
-
     }
     
-    
-
-   
 }
 
+- (IBAction)redBanner:(id)sender {
+    
+    int y = redBanner.center.y;
+    if (y > 419) {
+        [self performSegueWithIdentifier:@"StatsSegue" sender:sender];
+    }
+    redBanner.center = CGPointMake(74, 422);
+    
+    
+}
+
+- (IBAction)greenBanner:(id)sender {
+    [self performSegueWithIdentifier:@"AboutSegue" sender:sender];
+}
 @end

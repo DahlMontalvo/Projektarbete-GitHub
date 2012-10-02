@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "GlobalStatsViewController.h"
 #import "AboutViewController.h"
-#import "StatsViewController.h"
 
 
 @interface MainMenuViewController : UIViewController <GlobalStatsViewControllerDelegate, AboutViewControllerDelegate>  {
@@ -20,8 +19,11 @@
 
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIButton *redBanner;
+@property (weak, nonatomic) IBOutlet UIButton *greenBanner;
 
 
+- (IBAction)redBanner:(id)sender;
+- (IBAction)greenBanner:(id)sender;
 
 
 

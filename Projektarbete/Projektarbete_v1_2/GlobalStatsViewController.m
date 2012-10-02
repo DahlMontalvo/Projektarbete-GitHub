@@ -7,6 +7,7 @@
 //
 
 #import "GlobalStatsViewController.h"
+#import "StatsViewController.h"
 
 @implementation GlobalStatsViewController
 @synthesize completedTestsLabel;
@@ -53,7 +54,6 @@
 
 -(IBAction)done:(id)sender {
     [self.delegate GlobalStatsViewControllerDidDone:self];
-   
 }
 
 -(IBAction)clearAll:(id)sender {
