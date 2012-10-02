@@ -34,22 +34,33 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-	if ([segue.identifier isEqualToString:@"GlobalStatsSegue"])
-	{
+    
+    NSLog(@"Haha");
+	if ([segue.identifier isEqualToString:@"GlobalStatsSegue"]) {
 		UINavigationController *navigationController = segue.destinationViewController;
 		GlobalStatsViewController *globalVC = [[navigationController viewControllers] objectAtIndex:0];
 		globalVC.delegate = self;
         
 	}
-    
-    if ([segue.identifier isEqualToString:@"AboutSegue"])
-	{
+    else if ([segue.identifier isEqualToString:@"AboutSegue"]) {
 		UINavigationController *navigationController = segue.destinationViewController;
 		AboutViewController *aboutVC = [[navigationController viewControllers] objectAtIndex:0];
 		aboutVC.delegate = self;
         
 	}
-
+    else if ([segue.identifier isEqualToString:@"Chemistry"]) {
+		NatureMasterViewController *nvc = segue.destinationViewController;
+        nvc.subject = @"Chemistry";
+	}
+    else if ([segue.identifier isEqualToString:@"Physics"]) {
+		NatureMasterViewController *nvc = segue.destinationViewController;
+        nvc.subject = @"Physics";
+	}
+    else if ([segue.identifier isEqualToString:@"Biology"]) {
+		NatureMasterViewController *nvc = segue.destinationViewController;
+        nvc.subject = @"Biology";
+	}
+    NSLog(@"Haha");
     
     
 }
@@ -130,25 +141,6 @@
     UIApplication *app = [UIApplication sharedApplication];
     [app setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
 }
-/*
-- (void) draggedOut: (UIControl *) c withEvent: (UIEvent *) ev {
-    CGPoint point = [[[ev allTouches] anyObject] locationInView:self.view];
-    
-    if(point.y > 387 && point.y <422) {
-        c.center = CGPointMake(74, point.y);
-    }
-    
-}
-
-- (void) draggedOutGreen: (UIControl *) c withEvent: (UIEvent *) ev {
-    CGPoint point = [[[ev allTouches] anyObject] locationInView:self.view];
-    
-    if(point.y > 397 && point.y <422) {
-        c.center = CGPointMake(252, point.y);
-    }
-    
-}
-*/
 
 
 - (IBAction)redBanner:(id)sender {
@@ -163,4 +155,5 @@
         [self performSegueWithIdentifier:@"AboutSegue" sender:sender];
 
 }
+
 @end

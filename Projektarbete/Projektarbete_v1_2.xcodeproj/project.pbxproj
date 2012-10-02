@@ -16,9 +16,7 @@
 		000B98D7161B94CE0050AFB1 /* Röd Banner 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 000B98D5161B94CE0050AFB1 /* Röd Banner 2.png */; };
 		000DFE5515BEDFDC00138D06 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 000DFE5415BEDFDC00138D06 /* MainMenuViewController.m */; };
 		000DFE5815BEE4D800138D06 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 000DFE5715BEE4D800138D06 /* AboutViewController.m */; };
-		0023A33215BF4EC9006BD781 /* BiologyMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0023A33115BF4EC9006BD781 /* BiologyMasterViewController.m */; };
-		0023A33515BF51F6006BD781 /* ChemistryMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0023A33415BF51F6006BD781 /* ChemistryMasterViewController.m */; };
-		0023A33815BF5258006BD781 /* PhysicsMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0023A33715BF5258006BD781 /* PhysicsMasterViewController.m */; };
+		0023A33215BF4EC9006BD781 /* NatureMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0023A33115BF4EC9006BD781 /* NatureMasterViewController.m */; };
 		002DBD1F1609194100E8B4A1 /* OneStars.png in Resources */ = {isa = PBXBuildFile; fileRef = 002DBD1C1609194100E8B4A1 /* OneStars.png */; };
 		002DBD201609194100E8B4A1 /* ThreeStars.png in Resources */ = {isa = PBXBuildFile; fileRef = 002DBD1D1609194100E8B4A1 /* ThreeStars.png */; };
 		002DBD211609194100E8B4A1 /* TwoStars.png in Resources */ = {isa = PBXBuildFile; fileRef = 002DBD1E1609194100E8B4A1 /* TwoStars.png */; };
@@ -126,12 +124,8 @@
 		000DFE5415BEDFDC00138D06 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		000DFE5615BEE4D800138D06 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		000DFE5715BEE4D800138D06 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
-		0023A33015BF4EC9006BD781 /* BiologyMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BiologyMasterViewController.h; sourceTree = "<group>"; };
-		0023A33115BF4EC9006BD781 /* BiologyMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BiologyMasterViewController.m; sourceTree = "<group>"; };
-		0023A33315BF51F6006BD781 /* ChemistryMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChemistryMasterViewController.h; sourceTree = "<group>"; };
-		0023A33415BF51F6006BD781 /* ChemistryMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChemistryMasterViewController.m; sourceTree = "<group>"; };
-		0023A33615BF5258006BD781 /* PhysicsMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsMasterViewController.h; sourceTree = "<group>"; };
-		0023A33715BF5258006BD781 /* PhysicsMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhysicsMasterViewController.m; sourceTree = "<group>"; };
+		0023A33015BF4EC9006BD781 /* NatureMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NatureMasterViewController.h; sourceTree = "<group>"; };
+		0023A33115BF4EC9006BD781 /* NatureMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NatureMasterViewController.m; sourceTree = "<group>"; };
 		002DBD1C1609194100E8B4A1 /* OneStars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OneStars.png; sourceTree = "<group>"; };
 		002DBD1D1609194100E8B4A1 /* ThreeStars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ThreeStars.png; sourceTree = "<group>"; };
 		002DBD1E1609194100E8B4A1 /* TwoStars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TwoStars.png; sourceTree = "<group>"; };
@@ -273,31 +267,13 @@
 			name = "Icke ViewControllers";
 			sourceTree = "<group>";
 		};
-		0023A32D15BF4E15006BD781 /* Chemistry */ = {
+		0023A32F15BF4E4F006BD781 /* Biology, Chemistry & Physics */ = {
 			isa = PBXGroup;
 			children = (
-				0023A33315BF51F6006BD781 /* ChemistryMasterViewController.h */,
-				0023A33415BF51F6006BD781 /* ChemistryMasterViewController.m */,
+				0023A33015BF4EC9006BD781 /* NatureMasterViewController.h */,
+				0023A33115BF4EC9006BD781 /* NatureMasterViewController.m */,
 			);
-			name = Chemistry;
-			sourceTree = "<group>";
-		};
-		0023A32E15BF4E33006BD781 /* Physics */ = {
-			isa = PBXGroup;
-			children = (
-				0023A33615BF5258006BD781 /* PhysicsMasterViewController.h */,
-				0023A33715BF5258006BD781 /* PhysicsMasterViewController.m */,
-			);
-			name = Physics;
-			sourceTree = "<group>";
-		};
-		0023A32F15BF4E4F006BD781 /* Biology */ = {
-			isa = PBXGroup;
-			children = (
-				0023A33015BF4EC9006BD781 /* BiologyMasterViewController.h */,
-				0023A33115BF4EC9006BD781 /* BiologyMasterViewController.m */,
-			);
-			name = Biology;
+			name = "Biology, Chemistry & Physics";
 			sourceTree = "<group>";
 		};
 		007BC48015C09E0A009BC60D /* Bilder etc. */ = {
@@ -406,9 +382,7 @@
 			children = (
 				0023A32515BF3216006BD781 /* Icke ViewControllers */,
 				DDB5889815B953A3009CF151 /* Math */,
-				0023A32D15BF4E15006BD781 /* Chemistry */,
-				0023A32E15BF4E33006BD781 /* Physics */,
-				0023A32F15BF4E4F006BD781 /* Biology */,
+				0023A32F15BF4E4F006BD781 /* Biology, Chemistry & Physics */,
 				000DFE5315BEDFDC00138D06 /* MainMenuViewController.h */,
 				000DFE5415BEDFDC00138D06 /* MainMenuViewController.m */,
 				000DFE5615BEE4D800138D06 /* AboutViewController.h */,
@@ -657,9 +631,7 @@
 				00D655DF15BDFC1C00314BBB /* GlobalStatsViewController.m in Sources */,
 				000DFE5515BEDFDC00138D06 /* MainMenuViewController.m in Sources */,
 				000DFE5815BEE4D800138D06 /* AboutViewController.m in Sources */,
-				0023A33215BF4EC9006BD781 /* BiologyMasterViewController.m in Sources */,
-				0023A33515BF51F6006BD781 /* ChemistryMasterViewController.m in Sources */,
-				0023A33815BF5258006BD781 /* PhysicsMasterViewController.m in Sources */,
+				0023A33215BF4EC9006BD781 /* NatureMasterViewController.m in Sources */,
 				007BC47D15C09B4E009BC60D /* MathTableCellController.m in Sources */,
 				DDE5CC9C15FFE368002005BF /* MathMasterViewController.m in Sources */,
 				DDD0C2C51601289A00CD3BDA /* MathQuizViewController.m in Sources */,

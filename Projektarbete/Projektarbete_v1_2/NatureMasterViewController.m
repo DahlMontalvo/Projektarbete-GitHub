@@ -6,11 +6,11 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "BiologyMasterViewController.h"
+#import "NatureMasterViewController.h"
 
-@implementation BiologyMasterViewController
+@implementation NatureMasterViewController
 
-@synthesize questionLabel;
+@synthesize questionLabel, subject;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -40,11 +40,21 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    
-    
     [super viewWillAppear:animated];
     
+    [[self navigationItem] setTitle:subject];
+    if ([subject isEqualToString:@"Biology"]) {
+        [[self.navigationController navigationBar] setTintColor:[UIColor colorWithRed:0.0 green:0.5 blue:0.0 alpha:1.0]];
+    }
+    else if ([subject isEqualToString:@"Physics"]) {
+        [[self.navigationController navigationBar] setTintColor:[UIColor colorWithRed:1.0 green:0.5 blue:0.0 alpha:1.0]];
+    }
+    else if ([subject isEqualToString:@"Chemistry"]) {
+        [[self.navigationController navigationBar] setTintColor:[UIColor colorWithRed:0.2 green:0.2 blue:1.0 alpha:1.0]];
+    }
+    
     [[self.navigationController navigationBar] setHidden:NO];
+    NSLog(@"Haha");
 }
 
 
@@ -54,15 +64,9 @@
 {
     [super viewDidLoad];
     
-        [[self.navigationController navigationBar] setTintColor:[UIColor colorWithRed:0.0 green:0.5 blue:0.0 alpha:1.0]];
-    
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    NSLog(@"Count: %i", [appDelegate.questions count]);
-    
     int randomNumber = arc4random() % ([appDelegate.questions count]);
-    
-    NSLog(@"Rn: %i", randomNumber);
     
 	NSString *question = (NSString *)[appDelegate.questions objectAtIndex:randomNumber];
     questionLabel.text = question;

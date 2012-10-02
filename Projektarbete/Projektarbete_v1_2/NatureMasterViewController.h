@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 
-@interface BiologyMasterViewController : UIViewController
+@interface NatureMasterViewController : UIViewController {
+    NSString *subject;
+}
 
+@property (nonatomic, retain) NSString *subject;
 @property (weak, nonatomic) IBOutlet UILabel *questionLabel;
 
 @end

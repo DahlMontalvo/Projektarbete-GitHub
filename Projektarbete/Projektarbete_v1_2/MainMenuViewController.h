@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "GlobalStatsViewController.h"
 #import "AboutViewController.h"
+#import "NatureMasterViewController.h"
 
 
 @interface MainMenuViewController : UIViewController <GlobalStatsViewControllerDelegate, AboutViewControllerDelegate>  {
