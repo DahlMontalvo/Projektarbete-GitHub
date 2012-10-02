@@ -18,6 +18,7 @@
 }
 
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, retain) IBOutlet UIScrollView *scrollViewGr;
 @property (weak, nonatomic) IBOutlet UIButton *redBanner;
 @property (weak, nonatomic) IBOutlet UIButton *greenBanner;
 

@@ -10,6 +10,7 @@
 
 @implementation MainMenuViewController
 @synthesize scrollView;
+@synthesize scrollViewGr;
 @synthesize redBanner;
 @synthesize greenBanner;
 
@@ -78,18 +79,24 @@
 - (void)viewDidLoad
 {
     scrollView.scrollEnabled = YES;
-    scrollView.contentSize = CGSizeMake(320,460);
+    self.scrollView.contentSize = self.scrollView.frame.size;
+    [scrollView setAlwaysBounceVertical:YES];
+    
+    scrollViewGr.scrollEnabled = YES;
+    self.scrollViewGr.contentSize = self.scrollViewGr.frame.size;
+    [scrollViewGr setAlwaysBounceVertical:YES];
     
     [super viewDidLoad];
     
     [[self.navigationController navigationBar] setTintColor:[UIColor darkGrayColor]];
-    
+    /*
     [redBanner addTarget:self action:@selector(draggedOut:withEvent:)
         forControlEvents:UIControlEventTouchDragOutside |
      UIControlEventTouchDragInside];
     [greenBanner addTarget:self action:@selector(draggedOutGreen:withEvent:)
         forControlEvents:UIControlEventTouchDragOutside |
      UIControlEventTouchDragInside];
+     */
 }
 
 
@@ -123,7 +130,7 @@
     UIApplication *app = [UIApplication sharedApplication];
     [app setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
 }
-
+/*
 - (void) draggedOut: (UIControl *) c withEvent: (UIEvent *) ev {
     CGPoint point = [[[ev allTouches] anyObject] locationInView:self.view];
     
@@ -136,28 +143,24 @@
 - (void) draggedOutGreen: (UIControl *) c withEvent: (UIEvent *) ev {
     CGPoint point = [[[ev allTouches] anyObject] locationInView:self.view];
     
-    if(point.y > 397 && point.y <412) {
+    if(point.y > 397 && point.y <422) {
         c.center = CGPointMake(252, point.y);
     }
     
 }
+*/
+
 
 - (IBAction)redBanner:(id)sender {
-    
-    int y = redBanner.center.y;
-    if (y > 419) {
+
         [self performSegueWithIdentifier:@"StatsSegue" sender:sender];
-    }
-    redBanner.center = CGPointMake(74, 422);
-    
+
     
 }
 
 - (IBAction)greenBanner:(id)sender {
-    int y = greenBanner.center.y;
-    if (y > 409) {
+
         [self performSegueWithIdentifier:@"AboutSegue" sender:sender];
-    }
-    greenBanner.center = CGPointMake(252, 412);
+
 }
 @end

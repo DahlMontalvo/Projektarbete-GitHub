@@ -11,6 +11,9 @@
 		000B98C0161A36850050AFB1 /* Lounge1.png in Resources */ = {isa = PBXBuildFile; fileRef = 000B98BF161A36850050AFB1 /* Lounge1.png */; };
 		000B98C2161A37620050AFB1 /* Lounge2.png in Resources */ = {isa = PBXBuildFile; fileRef = 000B98C1161A37620050AFB1 /* Lounge2.png */; };
 		000B98C4161A381A0050AFB1 /* Lounge3.png in Resources */ = {isa = PBXBuildFile; fileRef = 000B98C3161A381A0050AFB1 /* Lounge3.png */; };
+		000B98D2161B90E90050AFB1 /* Someicon4-114 kopia.png in Resources */ = {isa = PBXBuildFile; fileRef = 000B98D1161B90E90050AFB1 /* Someicon4-114 kopia.png */; };
+		000B98D6161B94CE0050AFB1 /* Grön Banner 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 000B98D4161B94CE0050AFB1 /* Grön Banner 2.png */; };
+		000B98D7161B94CE0050AFB1 /* Röd Banner 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 000B98D5161B94CE0050AFB1 /* Röd Banner 2.png */; };
 		000DFE5515BEDFDC00138D06 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 000DFE5415BEDFDC00138D06 /* MainMenuViewController.m */; };
 		000DFE5815BEE4D800138D06 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 000DFE5715BEE4D800138D06 /* AboutViewController.m */; };
 		0023A33215BF4EC9006BD781 /* BiologyMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0023A33115BF4EC9006BD781 /* BiologyMasterViewController.m */; };
@@ -116,6 +119,9 @@
 		000B98BF161A36850050AFB1 /* Lounge1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Lounge1.png; sourceTree = "<group>"; };
 		000B98C1161A37620050AFB1 /* Lounge2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Lounge2.png; sourceTree = "<group>"; };
 		000B98C3161A381A0050AFB1 /* Lounge3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Lounge3.png; sourceTree = "<group>"; };
+		000B98D1161B90E90050AFB1 /* Someicon4-114 kopia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Someicon4-114 kopia.png"; sourceTree = "<group>"; };
+		000B98D4161B94CE0050AFB1 /* Grön Banner 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Grön Banner 2.png"; sourceTree = "<group>"; };
+		000B98D5161B94CE0050AFB1 /* Röd Banner 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Röd Banner 2.png"; sourceTree = "<group>"; };
 		000DFE5315BEDFDC00138D06 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		000DFE5415BEDFDC00138D06 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		000DFE5615BEE4D800138D06 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
@@ -298,6 +304,8 @@
 			isa = PBXGroup;
 			children = (
 				DD751ECA161B83B200C4E2D1 /* Database.sql */,
+				000B98D4161B94CE0050AFB1 /* Grön Banner 2.png */,
+				000B98D5161B94CE0050AFB1 /* Röd Banner 2.png */,
 				000B98C3161A381A0050AFB1 /* Lounge3.png */,
 				000B98C1161A37620050AFB1 /* Lounge2.png */,
 				000B98BF161A36850050AFB1 /* Lounge1.png */,
@@ -359,6 +367,7 @@
 		DDB5884D15B947A9009CF151 = {
 			isa = PBXGroup;
 			children = (
+				000B98D1161B90E90050AFB1 /* Someicon4-114 kopia.png */,
 				DD751EC0161B7CB200C4E2D1 /* libsqlite3.0.dylib */,
 				000B98BC1619E58F0050AFB1 /* Default-568h@2x.png */,
 				002DBD2E1609323000E8B4A1 /* icon5-114.png */,
@@ -599,6 +608,9 @@
 				000B98C2161A37620050AFB1 /* Lounge2.png in Resources */,
 				000B98C4161A381A0050AFB1 /* Lounge3.png in Resources */,
 				DD751ECB161B83B200C4E2D1 /* Database.sql in Resources */,
+				000B98D2161B90E90050AFB1 /* Someicon4-114 kopia.png in Resources */,
+				000B98D6161B94CE0050AFB1 /* Grön Banner 2.png in Resources */,
+				000B98D7161B94CE0050AFB1 /* Röd Banner 2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="12C54" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
     </dependencies>
@@ -32,37 +32,53 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="OZ1-d9-Xae">
-                                <rect key="frame" x="30" y="366" width="87" height="112"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Lounge3.png" id="h9f-VO-cxo">
+                                <rect key="frame" x="0.0" y="477" width="320" height="86"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <gestureRecognizers/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" image="RödBanner1.png">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="redBanner:" destination="IQu-bC-Tsf" eventType="touchUpInside" id="LOI-YU-nDm"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="CTO-tp-9JJ">
-                                <rect key="frame" x="208" y="356" width="88" height="112"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="ANL-LO-6WD">
+                                <rect key="frame" x="30" y="342" width="87" height="158"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" image="GrönBanner1.png">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="greenBanner:" destination="IQu-bC-Tsf" eventType="touchUpInside" id="23I-RS-jou"/>
-                                </connections>
-                            </button>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="OZ1-d9-Xae">
+                                        <rect key="frame" x="0.0" y="-162" width="87" height="300"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" image="Röd Banner 2.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="redBanner:" destination="IQu-bC-Tsf" eventType="touchUpInside" id="LOI-YU-nDm"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </scrollView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="ACj-5u-NLq">
+                                <rect key="frame" x="209" y="330" width="87" height="170"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="CTO-tp-9JJ">
+                                        <rect key="frame" x="-1" y="-120" width="88" height="270"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" image="Grön Banner 2.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="greenBanner:" destination="IQu-bC-Tsf" eventType="touchUpInside" id="23I-RS-jou"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </scrollView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Papper3.png" id="f3N-vQ-uqn">
                                 <rect key="frame" x="6" y="47" width="308" height="376"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -167,10 +183,6 @@
                                 <color key="textColor" red="0.60000002384185791" green="0.40000000596046448" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Lounge3.png" id="h9f-VO-cxo">
-                                <rect key="frame" x="0.0" y="477" width="320" height="86"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Pre-Alpha" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wQG-Fd-6e9">
                                 <rect key="frame" x="238" y="18" width="76" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -187,6 +199,8 @@
                     <connections>
                         <outlet property="greenBanner" destination="CTO-tp-9JJ" id="xgh-Zl-rp1"/>
                         <outlet property="redBanner" destination="OZ1-d9-Xae" id="SJD-Nl-IF8"/>
+                        <outlet property="scrollView" destination="ANL-LO-6WD" id="bgQ-pq-Cmx"/>
+                        <outlet property="scrollViewGr" destination="ACj-5u-NLq" id="F4M-2Y-kZM"/>
                         <segue destination="Feg-j1-Hsq" kind="modal" identifier="AboutSegue" modalTransitionStyle="coverVertical" id="nrX-mw-O9i"/>
                         <segue destination="qjj-h2-kOT" kind="modal" identifier="StatsSegue" modalTransitionStyle="coverVertical" id="kM2-km-ce9"/>
                     </connections>
@@ -1439,7 +1453,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="GrönBanner1.png" width="170" height="222"/>
+        <image name="Grön Banner 2.png" width="174" height="579"/>
         <image name="GulBanner1.png" width="110" height="139"/>
         <image name="Lounge3.png" width="639" height="176"/>
         <image name="NavBar2.png" width="640" height="124"/>
@@ -1447,13 +1461,173 @@
         <image name="NoStars.png" width="320" height="90"/>
         <image name="Papper3.png" width="605" height="749"/>
         <image name="PlayButton1.png" width="208" height="73"/>
-        <image name="RödBanner1.png" width="174" height="224"/>
+        <image name="Röd Banner 2.png" width="174" height="579"/>
         <image name="StartButton.png" width="292" height="47"/>
         <image name="ThreeStars.png" width="320" height="90"/>
         <image name="UnderTableView1.png" width="640" height="60"/>
         <image name="Wood1.png" width="640" height="960"/>
         <image name="bakåtpil.png" width="124" height="124"/>
     </resources>
+    <classes>
+        <class className="AboutViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="action" name="emailPressed:"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="BiologyMasterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BiologyMasterViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="questionLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ChemistryMasterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ChemistryMasterViewController.h"/>
+        </class>
+        <class className="GlobalStatsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GlobalStatsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="clearAll:"/>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="outlet" name="clearButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="completedPractisesLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="completedTestsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="MainMenuViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainMenuViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="greenBanner:"/>
+                <relationship kind="action" name="redBanner:"/>
+                <relationship kind="outlet" name="greenBanner" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="redBanner" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="scrollViewGr" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="MathDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MathDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backButton:"/>
+                <relationship kind="action" name="difficultySegmentedControl:"/>
+                <relationship kind="action" name="gamemodeSegmentedControl:"/>
+                <relationship kind="action" name="startButton:"/>
+                <relationship kind="outlet" name="difficultySegmentedControl" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="gameButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="gamemodeSegmentedControl" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="modeLabel" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="navigationLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="practiseButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="practiseTextField" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="starsImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="starsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="startButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="testTextField" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="testingButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="MathExerciseViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MathExerciseViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="keyboard0:"/>
+                <relationship kind="action" name="keyboard1:"/>
+                <relationship kind="action" name="keyboard2:"/>
+                <relationship kind="action" name="keyboard3:"/>
+                <relationship kind="action" name="keyboard4:"/>
+                <relationship kind="action" name="keyboard5:"/>
+                <relationship kind="action" name="keyboard6:"/>
+                <relationship kind="action" name="keyboard7:"/>
+                <relationship kind="action" name="keyboard8:"/>
+                <relationship kind="action" name="keyboard9:"/>
+                <relationship kind="action" name="keyboardback:"/>
+                <relationship kind="action" name="keyboarddot:"/>
+                <relationship kind="action" name="nextButton:"/>
+                <relationship kind="action" name="pausePressed:"/>
+                <relationship kind="outlet" name="answerFromUser" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="correctAnswersLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="countdownLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="darkView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="exerciseLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="keyboard0" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="keyboard1" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="keyboard2" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="keyboard3" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="keyboard4" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="keyboard5" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="keyboard6" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="keyboard7" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="keyboard8" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="keyboard9" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="keyboardback" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="keyboarddot" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="navItem" candidateClass="UINavigationItem"/>
+                <relationship kind="outlet" name="nextButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="numberLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="pauseButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="startCountdownLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MathMasterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MathMasterViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="Button:"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="MathQuizViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MathQuizViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="buttonFour:"/>
+                <relationship kind="action" name="buttonOne:"/>
+                <relationship kind="action" name="buttonThree:"/>
+                <relationship kind="action" name="buttonTwo:"/>
+                <relationship kind="action" name="pauseButton:"/>
+                <relationship kind="outlet" name="buttonFour" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonOne" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonThree" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonTwo" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="correctAnswersLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="countdownLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="darkView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="denominatorOneLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="denominatorTwoLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="firstLineLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="numeratorOneLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="numeratorTwoLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="operationLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="pauseButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="questionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="secondLineLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="startCountdownLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MathResultsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MathResultsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="continueButtonPressed:"/>
+                <relationship kind="outlet" name="gamemodeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="highscoreLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="infoLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="navItem" candidateClass="UINavigationItem"/>
+                <relationship kind="outlet" name="resultsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="starImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="starLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="PhysicsMasterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhysicsMasterViewController.h"/>
+        </class>
+        <class className="StatsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StatsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="navItem" candidateClass="UINavigationItem"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
