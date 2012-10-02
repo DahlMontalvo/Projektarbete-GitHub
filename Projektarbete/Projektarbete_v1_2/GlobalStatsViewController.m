@@ -54,6 +54,7 @@
 
 -(IBAction)done:(id)sender {
     [self.delegate GlobalStatsViewControllerDidDone:self];
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 -(IBAction)clearAll:(id)sender {
