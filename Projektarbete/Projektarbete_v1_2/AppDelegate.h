@@ -16,10 +16,14 @@
     
 	// Frågorarray
 	NSMutableArray *questions;
+	NSMutableArray *categories;
 }
 
 @property (nonatomic, retain) NSMutableArray *questions;
+@property (nonatomic, retain) NSMutableArray *categories;
 
 @property (strong, nonatomic) UIWindow *window;
+
+-(NSMutableArray *)getCategoryWithID:(int)ID;
 
 @end

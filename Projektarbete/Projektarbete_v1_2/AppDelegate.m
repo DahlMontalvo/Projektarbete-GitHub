@@ -12,9 +12,22 @@
 
 @synthesize window = _window;
 @synthesize questions;
+@synthesize categories;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    [NSThread sleepForTimeInterval:1.0];
+    
+    UIApplication *app = [UIApplication sharedApplication];
+    [app setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
+    // Override point for customization after application launch.
+    return YES;
+    
+    [application setStatusBarHidden:YES];
+}
+
+-(void)applicationDidBecomeActive:(UIApplication *)application {
     // Setup some globals
 	databaseName = @"Database.sql";
     
@@ -28,15 +41,7 @@
     
 	// Databas till array
 	[self readQuestionsFromDatabase];
-    
-    [NSThread sleepForTimeInterval:1.0];
-    
-    UIApplication *app = [UIApplication sharedApplication];
-    [app setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
-    // Override point for customization after application launch.
-    return YES;
-    
-    [application setStatusBarHidden:YES];
+    NSLog(@"Hej nu är jag aktiv!");
 }
 
 -(void) checkAndCreateDatabase{
@@ -67,21 +72,24 @@
 	sqlite3 *database;
     
 	// Init the animals Array
-	questions = [[NSMutableArray alloc] init];
+	categories = [[NSMutableArray alloc] init];
     
 	// Open the database from the users filessytem
 	if(sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK) {
 		// Setup the SQL Statement and compile it for faster access
-		const char *sqlStatement = "SELECT * FROM questions";
+		const char *sqlStatement = "SELECT * FROM categories";
 		sqlite3_stmt *compiledStatement;
 		if(sqlite3_prepare_v2(database, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK) {
 			// Loop through the results and add them to the feeds array
 			while(sqlite3_step(compiledStatement) == SQLITE_ROW) {
 				// Read the data from the result row
-				NSString *question = [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 1)];
+				NSNumber *catID = [NSNumber numberWithInt:sqlite3_column_int(compiledStatement, 0)];
+				NSString *category = [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 1)];
+                NSString *parent = [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 2)];
                 
-				// Add the animal object to the animals Array
-				[questions addObject:question];
+                NSMutableArray *cat = [[NSMutableArray alloc] initWithObjects:category, parent, catID, nil];
+                
+                [categories addObject:cat];
 			}
 		}
 		// Release the compiled statement from memory
@@ -89,6 +97,41 @@
         
 	}
 	sqlite3_close(database);
+    
+}
+
+-(NSMutableArray *) getCategoryWithID:(int)ID {
+	// Setup the database object
+	sqlite3 *database;
+    
+	// Init the animals Array
+	NSMutableArray *category = [[NSMutableArray alloc] init];
+    
+	// Open the database from the users filessytem
+	if(sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK) {
+		// Setup the SQL Statement and compile it for faster access
+		const char *sqlStatement = [[NSString stringWithFormat:@"SELECT * FROM categories WHERE id = %i", ID] UTF8String];
+		sqlite3_stmt *compiledStatement;
+		if(sqlite3_prepare_v2(database, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK) {
+			// Loop through the results and add them to the feeds array
+			while(sqlite3_step(compiledStatement) == SQLITE_ROW) {
+				// Read the data from the result row
+				NSNumber *catID = [NSNumber numberWithInt:sqlite3_column_int(compiledStatement, 0)];
+				NSString *name = [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 1)];
+                NSString *parent = [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 2)];
+                
+                [category addObject:name];
+                [category addObject:parent];
+                [category addObject:catID];
+			}
+		}
+		// Release the compiled statement from memory
+		sqlite3_finalize(compiledStatement);
+        
+	}
+	sqlite3_close(database);
+    
+    return category;
     
 }
 
@@ -113,13 +156,6 @@
 {
     /*
      Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-     */
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-    /*
-     Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
      */
 }
 

@@ -14,7 +14,7 @@
 
 @implementation NatureMasterViewController
 
-@synthesize questionLabel, subject, subjectLabel, tableView;
+@synthesize questionLabel, subject, subjectLabel, tableView, categories, categoryID;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -46,6 +46,25 @@
 {
     [super viewWillAppear:animated];
     
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    categories = [[NSMutableArray alloc] init];
+    
+    for (int i = 0; i < [appDelegate.categories count]; i++) {
+        if ([[[appDelegate.categories objectAtIndex:i] objectAtIndex:1] isEqualToString:subject]) {
+            NSString *name = [[appDelegate.categories objectAtIndex:i] objectAtIndex:0];
+            NSString *parent = [[appDelegate.categories objectAtIndex:i] objectAtIndex:1];
+            int ID = [[[appDelegate.categories objectAtIndex:i] objectAtIndex:2] intValue];
+            NSMutableArray *temp = [[NSMutableArray alloc] initWithObjects:name, parent, [NSNumber numberWithInt:ID], nil];
+            [categories addObject:temp];
+        }
+    }
+    
+    //int randomNumber = arc4random() % ([appDelegate.questions count]);
+    
+	//NSString *question = (NSString *)[appDelegate.questions objectAtIndex:randomNumber];
+    //questionLabel.text = question;
+    
     subjectLabel.text = subject;
     
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TableViewBG2"]];
@@ -60,13 +79,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+}
+
+- (void)tableView:(UITableView *)localTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [localTableView deselectRowAtIndexPath:indexPath animated:NO];
     
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    categoryID = [[[categories objectAtIndex:indexPath.row] objectAtIndex:2] intValue];
     
-    int randomNumber = arc4random() % ([appDelegate.questions count]);
-    
-	NSString *question = (NSString *)[appDelegate.questions objectAtIndex:randomNumber];
-    questionLabel.text = question;
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [self performSegueWithIdentifier:@"ToDetail" sender:self];
 }
 
 
@@ -83,37 +104,30 @@
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
     
-    return 4;
+    return [categories count];
     
-}
-
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-
 }
 
 - (UITableViewCell *)tableView:(UITableView *)localTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    NSLog(@"Hej");
     
     NSString *CellIdentifier;
     NSString *cellValue;
     
     int index = indexPath.row;
     
-    CellIdentifier = @"Hello";
+    CellIdentifier = [NSString stringWithFormat:@"%i", [[[categories objectAtIndex:index] objectAtIndex:2] intValue]];
     
-    cellValue = [NSString stringWithFormat:@"Hello %i", index];
+    cellValue = [[categories objectAtIndex:index] objectAtIndex:0];
     
-    /*MathTableCellController *cell = (MathTableCellController *)[localTableView dequeueReusableCellWithIdentifier:operation];
-     */
-    UITableViewCell *cell = [localTableView dequeueReusableCellWithIdentifier:@"Hello"];
+    NatureCategoryCell *cell = (NatureCategoryCell *)[localTableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    NSLog(@"RID: %@", CellIdentifier);
     if (cell == nil)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"NatureCategoryCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
     }
     
-    cell.textLabel.text = [NSString stringWithFormat:@"Hello %i", index];
+    cell.titleLabel.text = cellValue;
     
     return cell;
 }
@@ -127,4 +141,12 @@
 - (IBAction)backButton:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NatureDetailViewController *nvc = segue.destinationViewController;
+    nvc.subject = subject;
+    nvc.categoryID = categoryID;
+    NSLog(@"ID i master: %i", categoryID);
+}
+
 @end

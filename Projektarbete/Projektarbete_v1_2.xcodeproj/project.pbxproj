@@ -79,6 +79,9 @@
 		DD751EC1161B7CB200C4E2D1 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DD751EC0161B7CB200C4E2D1 /* libsqlite3.0.dylib */; };
 		DD751ECB161B83B200C4E2D1 /* Database.sql in Resources */ = {isa = PBXBuildFile; fileRef = DD751ECA161B83B200C4E2D1 /* Database.sql */; };
 		DD751ECC161B83B200C4E2D1 /* Database.sql in Resources */ = {isa = PBXBuildFile; fileRef = DD751ECA161B83B200C4E2D1 /* Database.sql */; };
+		DD76D37F161C97DC0017D48F /* NatureCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD76D37E161C97DC0017D48F /* NatureCategoryCell.m */; };
+		DD76D381161C97F80017D48F /* NatureCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD76D380161C97F80017D48F /* NatureCategoryCell.xib */; };
+		DD76D384161CA98A0017D48F /* NatureDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD76D383161CA98A0017D48F /* NatureDetailViewController.m */; };
 		DDB5885D15B947A9009CF151 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB5885C15B947A9009CF151 /* UIKit.framework */; };
 		DDB5885F15B947A9009CF151 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB5885E15B947A9009CF151 /* Foundation.framework */; };
 		DDB5886115B947A9009CF151 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB5886015B947A9009CF151 /* CoreGraphics.framework */; };
@@ -191,6 +194,11 @@
 		00E66CF615BC9DA600174D38 /* StatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatsViewController.m; sourceTree = "<group>"; };
 		DD751EC0161B7CB200C4E2D1 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		DD751ECA161B83B200C4E2D1 /* Database.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = Database.sql; sourceTree = "<group>"; };
+		DD76D37D161C97DC0017D48F /* NatureCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NatureCategoryCell.h; sourceTree = "<group>"; };
+		DD76D37E161C97DC0017D48F /* NatureCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NatureCategoryCell.m; sourceTree = "<group>"; };
+		DD76D380161C97F80017D48F /* NatureCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NatureCategoryCell.xib; sourceTree = "<group>"; };
+		DD76D382161CA98A0017D48F /* NatureDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NatureDetailViewController.h; sourceTree = "<group>"; };
+		DD76D383161CA98A0017D48F /* NatureDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NatureDetailViewController.m; sourceTree = "<group>"; };
 		DDB5885815B947A9009CF151 /* Projektarbete_v1_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Projektarbete_v1_2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB5885C15B947A9009CF151 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DDB5885E15B947A9009CF151 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -263,6 +271,8 @@
 				007BC47B15C09B4E009BC60D /* MathTableCellController.m */,
 				DDE8B8E315BDD8420010A6D7 /* StatsTableCellController.h */,
 				DDE8B8E415BDD8420010A6D7 /* StatsTableCellController.m */,
+				DD76D37D161C97DC0017D48F /* NatureCategoryCell.h */,
+				DD76D37E161C97DC0017D48F /* NatureCategoryCell.m */,
 			);
 			name = "Icke ViewControllers";
 			sourceTree = "<group>";
@@ -272,6 +282,8 @@
 			children = (
 				0023A33015BF4EC9006BD781 /* NatureMasterViewController.h */,
 				0023A33115BF4EC9006BD781 /* NatureMasterViewController.m */,
+				DD76D382161CA98A0017D48F /* NatureDetailViewController.h */,
+				DD76D383161CA98A0017D48F /* NatureDetailViewController.m */,
 			);
 			name = "Biology, Chemistry & Physics";
 			sourceTree = "<group>";
@@ -393,6 +405,7 @@
 				00E66CF615BC9DA600174D38 /* StatsViewController.m */,
 				DDB5886E15B947A9009CF151 /* MainStoryboard.storyboard */,
 				007BC47C15C09B4E009BC60D /* MathTableCellController.xib */,
+				DD76D380161C97F80017D48F /* NatureCategoryCell.xib */,
 				DDE8B8E015BDD72E0010A6D7 /* StatsTableCell.xib */,
 				007BC48015C09E0A009BC60D /* Bilder etc. */,
 				DDB5886315B947A9009CF151 /* Supporting Files */,
@@ -585,6 +598,7 @@
 				000B98D2161B90E90050AFB1 /* Someicon4-114 kopia.png in Resources */,
 				000B98D6161B94CE0050AFB1 /* Grön Banner 2.png in Resources */,
 				000B98D7161B94CE0050AFB1 /* Röd Banner 2.png in Resources */,
+				DD76D381161C97F80017D48F /* NatureCategoryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,6 +650,8 @@
 				DDE5CC9C15FFE368002005BF /* MathMasterViewController.m in Sources */,
 				DDD0C2C51601289A00CD3BDA /* MathQuizViewController.m in Sources */,
 				DDD0C2C91601298C00CD3BDA /* MathStartViewController.m in Sources */,
+				DD76D37F161C97DC0017D48F /* NatureCategoryCell.m in Sources */,
+				DD76D384161CA98A0017D48F /* NatureDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

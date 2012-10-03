@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
+#import "NatureCategoryCell.h"
+#import "AppDelegate.h"
+#import "NatureDetailViewController.h"
 
 @interface NatureMasterViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     NSString *subject;
@@ -18,5 +21,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *questionLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 - (IBAction)backButton:(id)sender;
+
+@property (nonatomic, retain) NSMutableArray *categories;
+@property (nonatomic) int categoryID;
 
 @end
