@@ -8,9 +8,13 @@
 
 #import "NatureMasterViewController.h"
 
+@interface NatureMasterViewController ()
+
+@end
+
 @implementation NatureMasterViewController
 
-@synthesize questionLabel, subject;
+@synthesize questionLabel, subject, subjectLabel, tableView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -42,19 +46,12 @@
 {
     [super viewWillAppear:animated];
     
-    [[self navigationItem] setTitle:subject];
-    if ([subject isEqualToString:@"Biology"]) {
-        [[self.navigationController navigationBar] setTintColor:[UIColor colorWithRed:0.0 green:0.5 blue:0.0 alpha:1.0]];
-    }
-    else if ([subject isEqualToString:@"Physics"]) {
-        [[self.navigationController navigationBar] setTintColor:[UIColor colorWithRed:1.0 green:0.5 blue:0.0 alpha:1.0]];
-    }
-    else if ([subject isEqualToString:@"Chemistry"]) {
-        [[self.navigationController navigationBar] setTintColor:[UIColor colorWithRed:0.2 green:0.2 blue:1.0 alpha:1.0]];
-    }
+    subjectLabel.text = subject;
     
-    [[self.navigationController navigationBar] setHidden:NO];
-    NSLog(@"Haha");
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TableViewBG2"]];
+    self.tableView.backgroundView = imageView;
+    
+    [[self.navigationController navigationBar] setHidden:YES];
 }
 
 
@@ -76,9 +73,49 @@
 - (void)viewDidUnload
 {
     [self setQuestionLabel:nil];
+    [self setSubjectLabel:nil];
+    [self setTableView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section {
+    
+    return 4;
+    
+}
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+
+}
+
+- (UITableViewCell *)tableView:(UITableView *)localTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSLog(@"Hej");
+    
+    NSString *CellIdentifier;
+    NSString *cellValue;
+    
+    int index = indexPath.row;
+    
+    CellIdentifier = @"Hello";
+    
+    cellValue = [NSString stringWithFormat:@"Hello %i", index];
+    
+    /*MathTableCellController *cell = (MathTableCellController *)[localTableView dequeueReusableCellWithIdentifier:operation];
+     */
+    UITableViewCell *cell = [localTableView dequeueReusableCellWithIdentifier:@"Hello"];
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"Hello %i", index];
+    
+    return cell;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -87,4 +124,7 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (IBAction)backButton:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 @end

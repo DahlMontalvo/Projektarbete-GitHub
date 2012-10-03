@@ -9,11 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 
-@interface NatureMasterViewController : UIViewController {
+@interface NatureMasterViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     NSString *subject;
 }
 
+@property (weak, nonatomic) IBOutlet UILabel *subjectLabel;
 @property (nonatomic, retain) NSString *subject;
 @property (weak, nonatomic) IBOutlet UILabel *questionLabel;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+- (IBAction)backButton:(id)sender;
 
 @end
