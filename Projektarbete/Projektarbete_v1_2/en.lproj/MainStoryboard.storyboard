@@ -79,7 +79,7 @@
                                     </button>
                                 </subviews>
                             </scrollView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Papper3.png" id="f3N-vQ-uqn">
+                            <imageView contentMode="scaleToFill" image="Papper3.png" id="f3N-vQ-uqn">
                                 <rect key="frame" x="6" y="47" width="308" height="376"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -1722,10 +1722,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NatureDetailViewController.h"/>
             <relationships>
                 <relationship kind="action" name="backButton:"/>
-                <relationship kind="outlet" name="buttonFour" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonOne" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonThree" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonTwo" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="questionLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="subjectLabel" candidateClass="UILabel"/>
             </relationships>
