@@ -14,7 +14,7 @@
 
 @implementation NatureDetailViewController
 
-@synthesize categoryID, subject, category, subjectLabel;
+@synthesize categoryID, subject, category, subjectLabel, questionLabel, buttonFour, buttonOne, buttonThree, buttonTwo;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,6 +37,8 @@
     
     subjectLabel.text = [NSString stringWithFormat:@"%@: %@", subject, [category objectAtIndex:0]];
     
+    questionLabel.text = [appDelegate getQuestionInCategory:categoryID];
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
@@ -55,6 +57,11 @@
 
 - (void)viewDidUnload {
     [self setSubjectLabel:nil];
+    [self setQuestionLabel:nil];
+    [self setButtonOne:nil];
+    [self setButtonTwo:nil];
+    [self setButtonThree:nil];
+    [self setButtonFour:nil];
     [super viewDidUnload];
 }
 - (IBAction)backButton:(id)sender {

@@ -135,6 +135,35 @@
     
 }
 
+-(NSString *) getQuestionInCategory:(int)ID {
+	// Setup the database object
+	sqlite3 *database;
+    
+	NSString *question = @"";
+    
+	// Open the database from the users filessytem
+	if(sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK) {
+		// Setup the SQL Statement and compile it for faster access
+		const char *sqlStatement = [[NSString stringWithFormat:@"SELECT * FROM questions WHERE parentCategory = %i LIMIT 1", ID] UTF8String];
+		sqlite3_stmt *compiledStatement;
+		if(sqlite3_prepare_v2(database, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK) {
+			// Loop through the results and add them to the feeds array
+			while(sqlite3_step(compiledStatement) == SQLITE_ROW) {
+				// Read the data from the result row
+				//NSNumber *catID = [NSNumber numberWithInt:sqlite3_column_int(compiledStatement, 0)];
+				question = [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 1)];
+			}
+		}
+		// Release the compiled statement from memory
+		sqlite3_finalize(compiledStatement);
+        
+	}
+	sqlite3_close(database);
+    
+    return question;
+    
+}
+
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {
