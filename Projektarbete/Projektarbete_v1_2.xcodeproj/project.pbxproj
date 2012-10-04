@@ -76,9 +76,9 @@
 		00D655DF15BDFC1C00314BBB /* GlobalStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D655DE15BDFC1C00314BBB /* GlobalStatsViewController.m */; };
 		00E66CF715BC9DA600174D38 /* Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E66CF415BC9DA600174D38 /* Singleton.m */; };
 		00E66CF815BC9DA600174D38 /* StatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E66CF615BC9DA600174D38 /* StatsViewController.m */; };
+		DD412BC8161D94B100F950E1 /* Database.sql in Resources */ = {isa = PBXBuildFile; fileRef = DD412BC7161D94B100F950E1 /* Database.sql */; };
+		DD412BC9161D94B100F950E1 /* Database.sql in Resources */ = {isa = PBXBuildFile; fileRef = DD412BC7161D94B100F950E1 /* Database.sql */; };
 		DD751EC1161B7CB200C4E2D1 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DD751EC0161B7CB200C4E2D1 /* libsqlite3.0.dylib */; };
-		DD751ECB161B83B200C4E2D1 /* Database.sql in Resources */ = {isa = PBXBuildFile; fileRef = DD751ECA161B83B200C4E2D1 /* Database.sql */; };
-		DD751ECC161B83B200C4E2D1 /* Database.sql in Resources */ = {isa = PBXBuildFile; fileRef = DD751ECA161B83B200C4E2D1 /* Database.sql */; };
 		DD76D37F161C97DC0017D48F /* NatureCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD76D37E161C97DC0017D48F /* NatureCategoryCell.m */; };
 		DD76D381161C97F80017D48F /* NatureCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD76D380161C97F80017D48F /* NatureCategoryCell.xib */; };
 		DD76D384161CA98A0017D48F /* NatureDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD76D383161CA98A0017D48F /* NatureDetailViewController.m */; };
@@ -192,8 +192,8 @@
 		00E66CF415BC9DA600174D38 /* Singleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Singleton.m; sourceTree = "<group>"; };
 		00E66CF515BC9DA600174D38 /* StatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsViewController.h; sourceTree = "<group>"; };
 		00E66CF615BC9DA600174D38 /* StatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatsViewController.m; sourceTree = "<group>"; };
+		DD412BC7161D94B100F950E1 /* Database.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = Database.sql; sourceTree = "<group>"; };
 		DD751EC0161B7CB200C4E2D1 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
-		DD751ECA161B83B200C4E2D1 /* Database.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = Database.sql; sourceTree = "<group>"; };
 		DD76D37D161C97DC0017D48F /* NatureCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NatureCategoryCell.h; sourceTree = "<group>"; };
 		DD76D37E161C97DC0017D48F /* NatureCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NatureCategoryCell.m; sourceTree = "<group>"; };
 		DD76D380161C97F80017D48F /* NatureCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NatureCategoryCell.xib; sourceTree = "<group>"; };
@@ -291,7 +291,7 @@
 		007BC48015C09E0A009BC60D /* Bilder etc. */ = {
 			isa = PBXGroup;
 			children = (
-				DD751ECA161B83B200C4E2D1 /* Database.sql */,
+				DD412BC7161D94B100F950E1 /* Database.sql */,
 				000B98D4161B94CE0050AFB1 /* Grön Banner 2.png */,
 				000B98D5161B94CE0050AFB1 /* Röd Banner 2.png */,
 				000B98C3161A381A0050AFB1 /* Lounge3.png */,
@@ -594,11 +594,11 @@
 				000B98C0161A36850050AFB1 /* Lounge1.png in Resources */,
 				000B98C2161A37620050AFB1 /* Lounge2.png in Resources */,
 				000B98C4161A381A0050AFB1 /* Lounge3.png in Resources */,
-				DD751ECB161B83B200C4E2D1 /* Database.sql in Resources */,
 				000B98D2161B90E90050AFB1 /* Someicon4-114 kopia.png in Resources */,
 				000B98D6161B94CE0050AFB1 /* Grön Banner 2.png in Resources */,
 				000B98D7161B94CE0050AFB1 /* Röd Banner 2.png in Resources */,
 				DD76D381161C97F80017D48F /* NatureCategoryCell.xib in Resources */,
+				DD412BC8161D94B100F950E1 /* Database.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,7 +607,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDB5888815B947AA009CF151 /* InfoPlist.strings in Resources */,
-				DD751ECC161B83B200C4E2D1 /* Database.sql in Resources */,
+				DD412BC9161D94B100F950E1 /* Database.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,6 +14,7 @@
     NSString *subject;
 }
 @property (weak, nonatomic) IBOutlet UILabel *subjectLabel;
+@property (weak, nonatomic) IBOutlet UILabel *questionLabel;
 
 @property (nonatomic) int categoryID;
 @property (nonatomic, retain) NSString *subject;
