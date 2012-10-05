@@ -76,6 +76,11 @@
 		00D655DF15BDFC1C00314BBB /* GlobalStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D655DE15BDFC1C00314BBB /* GlobalStatsViewController.m */; };
 		00E66CF715BC9DA600174D38 /* Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E66CF415BC9DA600174D38 /* Singleton.m */; };
 		00E66CF815BC9DA600174D38 /* StatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E66CF615BC9DA600174D38 /* StatsViewController.m */; };
+		00F082CA161ECA1600616FBE /* Paper4.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F082C5161ECA1500616FBE /* Paper4.png */; };
+		00F082CB161ECA1600616FBE /* BioButton2.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F082C6161ECA1500616FBE /* BioButton2.png */; };
+		00F082CC161ECA1600616FBE /* PhysButton2.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F082C7161ECA1500616FBE /* PhysButton2.png */; };
+		00F082CD161ECA1600616FBE /* ChemButton2.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F082C8161ECA1500616FBE /* ChemButton2.png */; };
+		00F082CE161ECA1600616FBE /* MathButton2.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F082C9161ECA1500616FBE /* MathButton2.png */; };
 		DD412BC8161D94B100F950E1 /* Database.sql in Resources */ = {isa = PBXBuildFile; fileRef = DD412BC7161D94B100F950E1 /* Database.sql */; };
 		DD412BC9161D94B100F950E1 /* Database.sql in Resources */ = {isa = PBXBuildFile; fileRef = DD412BC7161D94B100F950E1 /* Database.sql */; };
 		DD751EC1161B7CB200C4E2D1 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DD751EC0161B7CB200C4E2D1 /* libsqlite3.0.dylib */; };
@@ -192,6 +197,11 @@
 		00E66CF415BC9DA600174D38 /* Singleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Singleton.m; sourceTree = "<group>"; };
 		00E66CF515BC9DA600174D38 /* StatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsViewController.h; sourceTree = "<group>"; };
 		00E66CF615BC9DA600174D38 /* StatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatsViewController.m; sourceTree = "<group>"; };
+		00F082C5161ECA1500616FBE /* Paper4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Paper4.png; sourceTree = "<group>"; };
+		00F082C6161ECA1500616FBE /* BioButton2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BioButton2.png; sourceTree = "<group>"; };
+		00F082C7161ECA1500616FBE /* PhysButton2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PhysButton2.png; sourceTree = "<group>"; };
+		00F082C8161ECA1500616FBE /* ChemButton2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChemButton2.png; sourceTree = "<group>"; };
+		00F082C9161ECA1500616FBE /* MathButton2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MathButton2.png; sourceTree = "<group>"; };
 		DD412BC7161D94B100F950E1 /* Database.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = Database.sql; sourceTree = "<group>"; };
 		DD751EC0161B7CB200C4E2D1 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		DD76D37D161C97DC0017D48F /* NatureCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NatureCategoryCell.h; sourceTree = "<group>"; };
@@ -292,6 +302,11 @@
 			isa = PBXGroup;
 			children = (
 				DD412BC7161D94B100F950E1 /* Database.sql */,
+				00F082C5161ECA1500616FBE /* Paper4.png */,
+				00F082C6161ECA1500616FBE /* BioButton2.png */,
+				00F082C7161ECA1500616FBE /* PhysButton2.png */,
+				00F082C8161ECA1500616FBE /* ChemButton2.png */,
+				00F082C9161ECA1500616FBE /* MathButton2.png */,
 				000B98D4161B94CE0050AFB1 /* Grön Banner 2.png */,
 				000B98D5161B94CE0050AFB1 /* Röd Banner 2.png */,
 				000B98C3161A381A0050AFB1 /* Lounge3.png */,
@@ -599,6 +614,11 @@
 				000B98D7161B94CE0050AFB1 /* Röd Banner 2.png in Resources */,
 				DD76D381161C97F80017D48F /* NatureCategoryCell.xib in Resources */,
 				DD412BC8161D94B100F950E1 /* Database.sql in Resources */,
+				00F082CA161ECA1600616FBE /* Paper4.png in Resources */,
+				00F082CB161ECA1600616FBE /* BioButton2.png in Resources */,
+				00F082CC161ECA1600616FBE /* PhysButton2.png in Resources */,
+				00F082CD161ECA1600616FBE /* ChemButton2.png in Resources */,
+				00F082CE161ECA1600616FBE /* MathButton2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
