@@ -25,6 +25,6 @@
 @property (strong, nonatomic) UIWindow *window;
 
 -(NSMutableArray *)getCategoryWithID:(int)ID;
--(NSString *)getQuestionInCategory:(int)ID;
+-(NSMutableArray *)getQuestionInCategory:(int)ID;
 
 @end

@@ -101,21 +101,14 @@
 }
 
 -(NSMutableArray *) getCategoryWithID:(int)ID {
-	// Setup the database object
 	sqlite3 *database;
+    NSMutableArray *category = [[NSMutableArray alloc] init];
     
-	// Init the animals Array
-	NSMutableArray *category = [[NSMutableArray alloc] init];
-    
-	// Open the database from the users filessytem
-	if(sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK) {
-		// Setup the SQL Statement and compile it for faster access
+    if(sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK) {
 		const char *sqlStatement = [[NSString stringWithFormat:@"SELECT * FROM categories WHERE id = %i", ID] UTF8String];
 		sqlite3_stmt *compiledStatement;
 		if(sqlite3_prepare_v2(database, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK) {
-			// Loop through the results and add them to the feeds array
 			while(sqlite3_step(compiledStatement) == SQLITE_ROW) {
-				// Read the data from the result row
 				NSNumber *catID = [NSNumber numberWithInt:sqlite3_column_int(compiledStatement, 0)];
 				NSString *name = [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 1)];
                 NSString *parent = [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 2)];
@@ -135,35 +128,41 @@
     
 }
 
--(NSString *) getQuestionInCategory:(int)ID {
-	// Setup the database object
+-(NSMutableArray *) getQuestionInCategory:(int)ID {
 	sqlite3 *database;
+    NSMutableArray *question = [[NSMutableArray alloc] init];
     
-	NSString *question = @"";
-    
-	// Open the database from the users filessytem
-	if(sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK) {
-		// Setup the SQL Statement and compile it for faster access
+    if(sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK) {
 		const char *sqlStatement = [[NSString stringWithFormat:@"SELECT * FROM questions WHERE parentCategory = %i", ID] UTF8String];
 		sqlite3_stmt *compiledStatement;
 		if(sqlite3_prepare_v2(database, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK) {
-			// Loop through the results and add them to the feeds array
 			while(sqlite3_step(compiledStatement) == SQLITE_ROW) {
-				// Read the data from the result row
-				//NSNumber *catID = [NSNumber numberWithInt:sqlite3_column_int(compiledStatement, 0)];
-				question = [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 1)];
-                NSLog(@"Question: %@", question);
+				NSNumber *qID = [NSNumber numberWithInt:sqlite3_column_int(compiledStatement, 0)];
+				NSString *questionStr = [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 1)];
+                
+                /* HÄMTA SVAREN */
+                //Rätt svar alltid först i arrayen
+                const char *sqlStatement = [[NSString stringWithFormat:@"SELECT * FROM answers WHERE questionId = %i ORDER BY correct DESC", [qID intValue]] UTF8String];
+                sqlite3_stmt *compiledStatement;
+                NSMutableArray *answers = [[NSMutableArray alloc] init];
+                
+                if(sqlite3_prepare_v2(database, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK) {
+                    while(sqlite3_step(compiledStatement) == SQLITE_ROW) {
+                        NSNumber *ansId = [NSNumber numberWithInt:sqlite3_column_int(compiledStatement, 0)];
+                        NSString *answerStr = [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 3)];
+                        NSNumber *correct = [NSNumber numberWithInt:sqlite3_column_int(compiledStatement, 2)];
+                        
+                        [answers addObject:[[NSMutableArray alloc] initWithObjects:answerStr, ansId, correct, nil]];
+                    }
+                }
+                sqlite3_finalize(compiledStatement);
+                
+                question = [[NSMutableArray alloc] initWithObjects:questionStr, qID, answers, nil];
 			}
 		}
-        else {
-            NSLog(@"Error: %@", [NSString stringWithUTF8String:sqlStatement]);
-        }
-		// Release the compiled statement from memory
 		sqlite3_finalize(compiledStatement);
-        
 	}
 	sqlite3_close(database);
-    NSLog(@"Return: %@", question);
     return question;
     
 }
