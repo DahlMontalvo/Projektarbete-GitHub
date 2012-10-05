@@ -38,13 +38,22 @@
     subjectLabel.text = [NSString stringWithFormat:@"%@: %@", subject, [category objectAtIndex:0]];
     
     NSMutableArray *question = [appDelegate getQuestionInCategory:categoryID];
-    
-    questionLabel.text = [question objectAtIndex:0];
-    
-    [buttonOne setTitle:[[[question objectAtIndex:2] objectAtIndex:0] objectAtIndex:0] forState:UIControlStateNormal];
-    [buttonTwo setTitle:[[[question objectAtIndex:2] objectAtIndex:1] objectAtIndex:0] forState:UIControlStateNormal];
-    [buttonThree setTitle:[[[question objectAtIndex:2] objectAtIndex:2] objectAtIndex:0] forState:UIControlStateNormal];
-    [buttonFour setTitle:[[[question objectAtIndex:2] objectAtIndex:3] objectAtIndex:0] forState:UIControlStateNormal];
+    if (question != nil) {
+        questionLabel.text = [question objectAtIndex:0];
+        
+        [buttonOne setTitle:[[[question objectAtIndex:2] objectAtIndex:0] objectAtIndex:0] forState:UIControlStateNormal];
+        [buttonTwo setTitle:[[[question objectAtIndex:2] objectAtIndex:1] objectAtIndex:0] forState:UIControlStateNormal];
+        [buttonThree setTitle:[[[question objectAtIndex:2] objectAtIndex:2] objectAtIndex:0] forState:UIControlStateNormal];
+        [buttonFour setTitle:[[[question objectAtIndex:2] objectAtIndex:3] objectAtIndex:0] forState:UIControlStateNormal];
+    }
+    else {
+        questionLabel.text = @"Ingen fråga hittad.";
+        
+        [buttonOne setHidden:YES];
+        [buttonTwo setHidden:YES];
+        [buttonThree setHidden:YES];
+        [buttonFour setHidden:YES];
+    }
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view.

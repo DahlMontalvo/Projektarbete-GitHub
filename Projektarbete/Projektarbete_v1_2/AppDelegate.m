@@ -131,6 +131,7 @@
 -(NSMutableArray *) getQuestionInCategory:(int)ID {
 	sqlite3 *database;
     NSMutableArray *question = [[NSMutableArray alloc] init];
+    BOOL found = NO;
     
     if(sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK) {
 		const char *sqlStatement = [[NSString stringWithFormat:@"SELECT * FROM questions WHERE parentCategory = %i", ID] UTF8String];
@@ -153,6 +154,8 @@
                         NSNumber *correct = [NSNumber numberWithInt:sqlite3_column_int(compiledStatement, 2)];
                         
                         [answers addObject:[[NSMutableArray alloc] initWithObjects:answerStr, ansId, correct, nil]];
+                        
+                        found = YES;
                     }
                 }
                 sqlite3_finalize(compiledStatement);
@@ -163,7 +166,10 @@
 		sqlite3_finalize(compiledStatement);
 	}
 	sqlite3_close(database);
-    return question;
+    if (found)
+        return question;
+    else
+        return nil;
     
 }
 
