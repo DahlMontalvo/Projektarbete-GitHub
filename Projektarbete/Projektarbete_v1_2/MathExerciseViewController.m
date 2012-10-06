@@ -792,10 +792,6 @@
         if ([self.navigationController.viewControllers objectAtIndex:1] != nil) {
             [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:1] animated:YES];
         }
-        else {
-            [self performSegueWithIdentifier:@"exerciseToMain" sender:self];
-        }
-		
 	} else if (buttonIndex == 1) {
         //Restarta 
         questionAtm = 0;

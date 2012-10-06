@@ -14,7 +14,7 @@
 
 @implementation NatureDetailViewController
 
-@synthesize categoryID, subject, category, subjectLabel, questionLabel, buttonOne, buttonTwo, buttonThree, buttonFour;
+@synthesize categoryID, subject, category, subjectLabel, questionLabel, buttonOne, buttonTwo, buttonThree, buttonFour, startCountdownTimer, countdownLabel, darkView, startCountdownDate, startCountdown;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,6 +27,14 @@
 
 - (void)viewDidLoad
 {
+    [darkView setHidden:NO];
+    startCountdownDate = [NSDate date];
+    startCountdownTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f/10.0f
+                                                           target:self
+                                                         selector:@selector(startCountdownMethod)
+                                                         userInfo:nil
+                                                          repeats:YES];
+    
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
     category = [[NSMutableArray alloc] init];
@@ -105,6 +113,29 @@
     return 0;
 }
 
+- (void)startCountdownMethod
+{
+    [self setStartCountdown:3-fabs([startCountdownDate timeIntervalSinceNow])];
+    NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:startCountdown];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"s"];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
+    NSString *timeString=[dateFormatter stringFromDate:timerDate];
+    
+    int val = [timeString intValue]+1;
+    
+    countdownLabel.text = [NSString stringWithFormat:@"%i", val];
+    if (startCountdown <= 0) {
+        [darkView setHidden:YES];
+        //[darkView removeFromSuperview];
+        [startCountdownTimer invalidate];
+        startCountdownTimer = nil;
+        //[self nextButtonPressed];
+    }
+    
+}
+
 
 - (void)viewDidUnload {
     [self setSubjectLabel:nil];
@@ -113,9 +144,31 @@
     [self setButtonTwo:nil];
     [self setButtonThree:nil];
     [self setButtonFour:nil];
+    [self setDarkView:nil];
+    [self setCountdownLabel:nil];
+    [self setPauseButton:nil];
     [super viewDidUnload];
 }
 - (IBAction)backButton:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
+}
+- (IBAction)pauseButtonPressed:(id)sender {
+    UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"Quiz paused" delegate:self cancelButtonTitle:@"Resume" destructiveButtonTitle:@"Exit" otherButtonTitles:@"Restart quiz", nil];
+	popupQuery.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
+	[popupQuery showInView:[UIApplication sharedApplication].keyWindow];
+}
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+	if (buttonIndex == 0) {
+        if ([self.navigationController.viewControllers objectAtIndex:1] != nil) {
+            [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:1] animated:YES];
+        }
+		
+	} else if (buttonIndex == 1) {
+        [self viewDidLoad];
+        
+	} else if (buttonIndex == 2) {
+		
+    } 
 }
 @end
