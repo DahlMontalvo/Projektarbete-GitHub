@@ -41,10 +41,45 @@
     if (question != nil) {
         questionLabel.text = [question objectAtIndex:0];
         
+        int random = 0;
+        NSMutableArray *buttons = [[NSMutableArray alloc] initWithObjects:buttonOne, buttonTwo, buttonThree, buttonFour, nil];
+        NSMutableArray *randoms = [[NSMutableArray alloc] init];
+        //Random ordning
+        for (int i = 0; i <= 3; i++) {
+            NSLog(@"Hit");
+            BOOL continueLoop = YES;
+            while (continueLoop) {
+                NSLog(@"Dit");
+                int temp = arc4random() % 4;
+                BOOL found = NO;
+                for (int a = 0; a <= i-1; a++) {
+                    NSLog(@"%i, %i, %i", a, [[randoms objectAtIndex:a] intValue], temp);
+                    if ([[randoms objectAtIndex:a] intValue] == temp) {
+                        found = YES;
+                        NSLog(@"Found");
+                    }
+                    NSLog(@"Lit");
+                }
+                if (found == NO) {
+                    NSLog(@"Skit");
+                    random = temp;
+                    continueLoop = NO;
+                }
+            }
+            NSString *correct = @"";
+            if ([[[[question objectAtIndex:2] objectAtIndex:i] objectAtIndex:2] intValue] == 1)
+                correct = @" (rätt)";
+            
+            NSString *btnString = [NSString stringWithFormat:@"%@%@", [[[question objectAtIndex:2] objectAtIndex:i] objectAtIndex:0], correct];
+            [[buttons objectAtIndex:random] setTitle:btnString forState:UIControlStateNormal];
+            [randoms addObject:[NSNumber numberWithInt:random]];
+        }
+        /*
         [buttonOne setTitle:[[[question objectAtIndex:2] objectAtIndex:0] objectAtIndex:0] forState:UIControlStateNormal];
         [buttonTwo setTitle:[[[question objectAtIndex:2] objectAtIndex:1] objectAtIndex:0] forState:UIControlStateNormal];
         [buttonThree setTitle:[[[question objectAtIndex:2] objectAtIndex:2] objectAtIndex:0] forState:UIControlStateNormal];
         [buttonFour setTitle:[[[question objectAtIndex:2] objectAtIndex:3] objectAtIndex:0] forState:UIControlStateNormal];
+         */
     }
     else {
         questionLabel.text = @"Ingen fråga hittad.";

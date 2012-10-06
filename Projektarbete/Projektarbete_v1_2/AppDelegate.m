@@ -143,22 +143,58 @@
                 
                 /* HÄMTA SVAREN */
                 //Rätt svar alltid först i arrayen
-                const char *sqlStatement = [[NSString stringWithFormat:@"SELECT * FROM answers WHERE questionId = %i ORDER BY correct DESC", [qID intValue]] UTF8String];
-                sqlite3_stmt *compiledStatement;
+                const char *sqlStatement3 = [[NSString stringWithFormat:@"SELECT * FROM answers WHERE questionId = %i AND correct = 1", [qID intValue]] UTF8String];
+                sqlite3_stmt *compiledStatement3;
                 NSMutableArray *answers = [[NSMutableArray alloc] init];
                 
-                if(sqlite3_prepare_v2(database, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK) {
-                    while(sqlite3_step(compiledStatement) == SQLITE_ROW) {
+                if(sqlite3_prepare_v2(database, sqlStatement3, -1, &compiledStatement3, NULL) == SQLITE_OK) {
+                    while(sqlite3_step(compiledStatement3) == SQLITE_ROW) {
                         NSNumber *ansId = [NSNumber numberWithInt:sqlite3_column_int(compiledStatement, 0)];
-                        NSString *answerStr = [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 3)];
-                        NSNumber *correct = [NSNumber numberWithInt:sqlite3_column_int(compiledStatement, 2)];
+                        NSString *answerStr = [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement3, 3)];
+                        NSNumber *correct = [NSNumber numberWithInt:1];
                         
                         [answers addObject:[[NSMutableArray alloc] initWithObjects:answerStr, ansId, correct, nil]];
                         
                         found = YES;
                     }
                 }
-                sqlite3_finalize(compiledStatement);
+                sqlite3_finalize(compiledStatement3);
+                
+                //Tar fram tre fel svar
+                int ansNum = 0;
+                
+                const char *sqlStatement2 = [[NSString stringWithFormat:@"SELECT * FROM answers WHERE questionId == %i AND correct == 0 LIMIT 3", [qID intValue]] UTF8String];
+                sqlite3_stmt *compiledStatement2;
+                if(sqlite3_prepare_v2(database, sqlStatement2, -1, &compiledStatement2, NULL) == SQLITE_OK) {
+                    while(sqlite3_step(compiledStatement2) == SQLITE_ROW && ansNum <= 2) {
+                        NSNumber *ansId = [NSNumber numberWithInt:sqlite3_column_int(compiledStatement2, 0)];
+                        NSString *answerStr = [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement2, 3)];
+                        NSNumber *correct = [NSNumber numberWithInt:0];
+                        
+                        [answers addObject:[[NSMutableArray alloc] initWithObjects:answerStr, ansId, correct, nil]];
+                        
+                        found = YES;
+                        ansNum++;
+                    }
+                }
+                sqlite3_finalize(compiledStatement2);
+                
+                const char *sqlStatement4 = [[NSString stringWithFormat:@"SELECT * FROM answers WHERE questionId != %i LIMIT 3", [qID intValue]] UTF8String];
+                sqlite3_stmt *compiledStatement4;
+                if(sqlite3_prepare_v2(database, sqlStatement4, -1, &compiledStatement4, NULL) == SQLITE_OK) {
+                    while(sqlite3_step(compiledStatement4) == SQLITE_ROW && ansNum <= 2) {
+                        NSNumber *ansId = [NSNumber numberWithInt:sqlite3_column_int(compiledStatement4, 0)];
+                        NSString *answerStr = [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement4, 3)];
+                        NSNumber *correct = [NSNumber numberWithInt:0];
+                        
+                        [answers addObject:[[NSMutableArray alloc] initWithObjects:answerStr, ansId, correct, nil]];
+                        
+                        found = YES;
+                        ansNum++;
+                    }
+                }
+                
+                sqlite3_finalize(compiledStatement4);
                 
                 question = [[NSMutableArray alloc] initWithObjects:questionStr, qID, answers, nil];
 			}
