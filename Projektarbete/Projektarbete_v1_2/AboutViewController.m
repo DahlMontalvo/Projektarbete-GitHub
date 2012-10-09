@@ -10,7 +10,7 @@
 
 @implementation AboutViewController
 @synthesize delegate;
-@synthesize doneButton, syncButton;
+@synthesize doneButton, syncButton, errorParsing, elementValue, articles, currentElement, item, rssParser, currentPart;
 
 -(IBAction)done:(id)sender {
     [self.delegate AboutViewControllerDidDone:self];
@@ -83,10 +83,81 @@
 
 - (IBAction)syncButtonPressed:(id)sender {
     //Synka hela databasen
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSDate *oldestUpdateDate = [appDelegate getLastSyncDate];
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    [format setDateFormat:@"YYYY-mm-dd_HH:mm:ss"];
+
+    NSString *formattedDate = [format stringFromDate:oldestUpdateDate];
     
+    NSString *url = [NSString stringWithFormat:@"http://ss.jdahl.se/getChanges.php?sinceDate=%@", formattedDate];
     
+    //
+    //I url ligger den URL vi ska accessa för att få XMLfilen med ändringarna!
+    //
     
+    NSString *agentString = @"Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_6; en-us) AppleWebKit/525.27.1 (KHTML, like Gecko) Version/3.2.1 Safari/525.27.1";
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:
+                                    [NSURL URLWithString:url]];
+    [request setValue:agentString forHTTPHeaderField:@"User-Agent"];
     
+    NSData *xmlFile = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    
+    errorParsing = NO;
+    
+    rssParser = [[NSXMLParser alloc] initWithData:xmlFile];
+    
+    [rssParser setDelegate:self];
+    
+    // You may need to turn some of these on depending on the type of XML file you are parsing
+    [rssParser setShouldProcessNamespaces:NO];
+    [rssParser setShouldReportNamespacePrefixes:NO];
+    [rssParser setShouldResolveExternalEntities:NO];
+    
+    [rssParser parse];
     
 }
+
+- (void)parserDidStartDocument:(NSXMLParser *)parser{
+    NSLog(@"File found and parsing started");
+}
+
+- (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
+    
+    NSString *errorString = [NSString stringWithFormat:@"Error code %i", [parseError code]];
+    NSLog(@"Error parsing XML: %@", errorString);
+    
+    errorParsing = YES;
+}
+
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict{
+    currentElement = [elementName copy];
+    elementValue = [[NSMutableString alloc] init];
+    NSLog(@"Element: %@ - %@", currentElement, elementValue);
+    if ([currentElement isEqualToString:@"categories"]) {
+        currentPart = @"categories";
+    }
+    else if ([currentElement isEqualToString:@"questions"]) {
+        currentPart = @"questions";
+    }
+    else if ([currentElement isEqualToString:@"answers"]) {
+        currentPart = @"answers";
+    }
+}
+
+- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string{
+    [elementValue appendString:string];
+    NSLog(@"Element: %@ - %@", currentElement, elementValue);
+}
+
+- (void)parserDidEndDocument:(NSXMLParser *)parser {
+    
+    if (errorParsing == NO) {
+        NSLog(@"XML processing done!");
+    } else {
+        NSLog(@"Error occurred during XML processing");
+    }
+    
+}
+
 @end

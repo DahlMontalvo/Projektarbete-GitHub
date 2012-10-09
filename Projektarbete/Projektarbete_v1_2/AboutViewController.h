@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
+#import "AppDelegate.h"
 
 @class AboutViewController;
 
-@protocol AboutViewControllerDelegate <NSObject, MFMailComposeViewControllerDelegate>
+@protocol AboutViewControllerDelegate <NSObject, MFMailComposeViewControllerDelegate, NSXMLParserDelegate>
 - (void)AboutViewControllerDidDone:(AboutViewController *)controller;
 
 
@@ -29,5 +30,13 @@
 -(IBAction)emailPressed:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *syncButton;
 - (IBAction)syncButtonPressed:(id)sender;
+
+@property (nonatomic) BOOL errorParsing;
+@property (nonatomic, retain) NSXMLParser *rssParser;
+@property (nonatomic, retain) NSMutableArray *articles;
+@property (nonatomic, retain) NSMutableDictionary *item;
+@property (nonatomic, retain) NSString *currentElement;
+@property (nonatomic, retain) NSString *currentPart;
+@property (nonatomic, retain) NSMutableString *elementValue;
 
 @end

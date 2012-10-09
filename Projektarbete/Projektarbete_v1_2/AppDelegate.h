@@ -26,5 +26,6 @@
 
 -(NSMutableArray *)getCategoryWithID:(int)ID;
 -(NSMutableArray *)getQuestionInCategory:(int)ID;
+-(NSDate *)getLastSyncDate;
 
 @end
