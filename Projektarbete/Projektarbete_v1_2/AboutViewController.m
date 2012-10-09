@@ -10,7 +10,7 @@
 
 @implementation AboutViewController
 @synthesize delegate;
-@synthesize doneButton;
+@synthesize doneButton, syncButton;
 
 -(IBAction)done:(id)sender {
     [self.delegate AboutViewControllerDidDone:self];
@@ -69,6 +69,7 @@
 
 - (void)viewDidUnload
 {
+    [self setSyncButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -80,4 +81,12 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (IBAction)syncButtonPressed:(id)sender {
+    //Synka hela databasen
+    
+    
+    
+    
+    
+}
 @end

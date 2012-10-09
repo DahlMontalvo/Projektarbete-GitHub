@@ -27,5 +27,7 @@
 
 -(IBAction)done:(id)sender;
 -(IBAction)emailPressed:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *syncButton;
+- (IBAction)syncButtonPressed:(id)sender;
 
 @end
