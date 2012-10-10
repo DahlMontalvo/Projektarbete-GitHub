@@ -10,7 +10,7 @@
 
 @implementation AboutViewController
 @synthesize delegate;
-@synthesize doneButton, syncButton, errorParsing, elementValue, articles, currentElement, item, rssParser, currentPart;
+@synthesize doneButton, syncButton, errorParsing, elementValue, articles, currentElement, item, rssParser, currentPart, categoryChanges, questionChanges, answerChanges, a;
 
 -(IBAction)done:(id)sender {
     [self.delegate AboutViewControllerDidDone:self];
@@ -120,6 +120,7 @@
 
 - (void)parserDidStartDocument:(NSXMLParser *)parser{
     NSLog(@"File found and parsing started");
+    a = 0;
 }
 
 - (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
@@ -133,27 +134,46 @@
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict{
     currentElement = [elementName copy];
     elementValue = [[NSMutableString alloc] init];
-    NSLog(@"Element: %@ - %@", currentElement, elementValue);
+    NSLog(@"<%@>", currentElement);
     if ([currentElement isEqualToString:@"categories"]) {
         currentPart = @"categories";
+        NSLog(@"Här börjar kategoriedelen");
     }
     else if ([currentElement isEqualToString:@"questions"]) {
         currentPart = @"questions";
+        NSLog(@"Här börjar frågedelen");
     }
     else if ([currentElement isEqualToString:@"answers"]) {
         currentPart = @"answers";
+        NSLog(@"Här börjar svarsdelen");
     }
+    else {
+        if ([currentElement isEqualToString:@"entry"]) {
+            a++;
+        }
+    }
+}
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
+    if ([elementName isEqualToString:currentElement]) {
+        
+    }
+    if ([elementName isEqualToString:@"entry"]) {
+        NSLog(@"Avsluta tidigare element");
+    }
+    NSLog(@"</%@>", elementName);
 }
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string{
     [elementValue appendString:string];
-    NSLog(@"Element: %@ - %@", currentElement, elementValue);
+    NSLog(@"%@", elementValue);
 }
 
 - (void)parserDidEndDocument:(NSXMLParser *)parser {
     
     if (errorParsing == NO) {
         NSLog(@"XML processing done!");
+        NSLog(@"Found changes: %i", a);
     } else {
         NSLog(@"Error occurred during XML processing");
     }

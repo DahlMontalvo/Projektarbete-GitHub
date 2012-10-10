@@ -38,5 +38,9 @@
 @property (nonatomic, retain) NSString *currentElement;
 @property (nonatomic, retain) NSString *currentPart;
 @property (nonatomic, retain) NSMutableString *elementValue;
+@property (nonatomic, retain) NSMutableArray *categoryChanges;
+@property (nonatomic, retain) NSMutableArray *questionChanges;
+@property (nonatomic, retain) NSMutableArray *answerChanges;
+@property (nonatomic) int a;
 
 @end
