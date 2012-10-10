@@ -10,7 +10,7 @@
 
 @implementation AboutViewController
 @synthesize delegate;
-@synthesize doneButton, syncButton, errorParsing, elementValue, articles, currentElement, item, rssParser, currentPart, categoryChanges, questionChanges, answerChanges, a;
+@synthesize doneButton, syncButton, errorParsing, questionsUpdated, elementValue, articles, currentElement, item, rssParser, currentPart, currentItem, categoryChanges, questionChanges, answerChanges, a;
 @synthesize lightView, activityIndicatior;
 -(IBAction)done:(id)sender {
     [self.delegate AboutViewControllerDidDone:self];
@@ -102,6 +102,7 @@
     NSString *formattedDate = [format stringFromDate:oldestUpdateDate];
     
     NSString *url = [NSString stringWithFormat:@"http://ss.jdahl.se/getChanges.php?sinceDate=%@", formattedDate];
+    NSLog(@"URL: %@", url);
     
     //
     //I url ligger den URL vi ska accessa för att få XMLfilen med ändringarna!
@@ -140,63 +141,48 @@
 }
 
 - (void)parserDidStartDocument:(NSXMLParser *)parser{
-    NSLog(@"File found and parsing started");
     a = 0;
+    questionsUpdated = 0;
 }
 
 - (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
-    
-    NSString *errorString = [NSString stringWithFormat:@"Error code %i", [parseError code]];
-    NSLog(@"Error parsing XML: %@", errorString);
-    
     errorParsing = YES;
 }
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict{
     currentElement = [elementName copy];
     elementValue = [[NSMutableString alloc] init];
-    NSLog(@"<%@>", currentElement);
-    if ([currentElement isEqualToString:@"categories"]) {
+    
+    if ([currentElement isEqualToString:@"categories"])
         currentPart = @"categories";
-        NSLog(@"Här börjar kategoriedelen");
-    }
-    else if ([currentElement isEqualToString:@"questions"]) {
+    else if ([currentElement isEqualToString:@"questions"])
         currentPart = @"questions";
-        NSLog(@"Här börjar frågedelen");
-    }
-    else if ([currentElement isEqualToString:@"answers"]) {
+    else if ([currentElement isEqualToString:@"answers"])
         currentPart = @"answers";
-        NSLog(@"Här börjar svarsdelen");
-    }
     else {
-        if ([currentElement isEqualToString:@"entry"]) {
+        if ([currentElement isEqualToString:@"entry"] && [currentPart isEqualToString:@"questions"]) {
             a++;
+        }
+        if ([currentElement isEqualToString:@"entry"] && [currentPart isEqualToString:@"questions"]) {
+            questionsUpdated++;
         }
     }
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
-    if ([elementName isEqualToString:currentElement]) {
-        
-    }
     if ([elementName isEqualToString:@"entry"]) {
-        NSLog(@"Avsluta tidigare element");
+        //NSLog(@"Avsluta tidigare element");
     }
-    NSLog(@"</%@>", elementName);
 }
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string{
     [elementValue appendString:string];
-    NSLog(@"%@", elementValue);
 }
 
 - (void)parserDidEndDocument:(NSXMLParser *)parser {
     
     if (errorParsing == NO) {
-        
-        NSLog(@"XML processing done!");
-        
-        NSLog(@"Found changes: %i", a);
+        NSLog(@"Found changes: %i", questionsUpdated);
     } else {
         [lightView setHidden:YES];
         [activityIndicatior setHidden:YES];
@@ -205,8 +191,19 @@
     }
     
     //Dahl du vet bäst hur man tar fram antal nya frågor.
+    questionsUpdated = 0;
+    NSString *messageText;
+    if (questionsUpdated > 1) {
+        messageText = [NSString stringWithFormat:@"Added %i New Questions!", questionsUpdated];
+    }
+    if (questionsUpdated > 0) {
+        messageText = @"Added 1 New Question!";
+    }
+    else {
+        messageText = @"There Was Nothing To Sync";
+    }
     UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Sync Done"
-                                                      message:@"Added X New Questions!"
+                                                      message:messageText
                                                      delegate:self
                                             cancelButtonTitle:@"OK"
                                             otherButtonTitles:nil];

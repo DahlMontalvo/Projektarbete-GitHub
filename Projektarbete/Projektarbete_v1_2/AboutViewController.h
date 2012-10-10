@@ -45,5 +45,7 @@
 @property (nonatomic, retain) NSMutableArray *questionChanges;
 @property (nonatomic, retain) NSMutableArray *answerChanges;
 @property (nonatomic) int a;
+@property (nonatomic) int questionsUpdated;
+@property (nonatomic, retain) NSMutableArray *currentItem;
 
 @end
