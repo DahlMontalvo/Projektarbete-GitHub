@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="12C54" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -454,6 +454,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="syncButtonDown:" destination="ck9-16-VUu" eventType="touchDown" id="ZQ6-lz-eVq"/>
                                     <action selector="syncButtonPressed:" destination="ck9-16-VUu" eventType="touchUpInside" id="o4P-ae-Ioq"/>
                                 </connections>
                             </button>
@@ -476,7 +477,7 @@
                                     <action selector="done:" destination="ck9-16-VUu" eventType="touchUpInside" id="loK-Ry-CJu"/>
                                 </connections>
                             </button>
-                            <view hidden="YES" contentMode="scaleToFill" id="5NE-a2-T1W">
+                            <view contentMode="scaleToFill" id="5NE-a2-T1W">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
                                 <subviews>

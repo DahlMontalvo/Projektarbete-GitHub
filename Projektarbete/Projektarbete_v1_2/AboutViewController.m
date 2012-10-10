@@ -64,9 +64,6 @@
 - (void)viewDidLoad
 
 {
-    [lightView setHidden:YES];
-    [activityIndicatior setHidden:YES];
-    
     [super viewDidLoad];
 }
 
@@ -94,9 +91,6 @@
 
 - (IBAction)syncButtonPressed:(id)sender {
     //gör saker oklickbara
-    [lightView setHidden:NO];
-    [activityIndicatior setHidden:NO];
-    [activityIndicatior startAnimating];
     NSLog(@"Visa activity");
     
     //Synka hela databasen
@@ -132,6 +126,16 @@
     [rssParser setShouldResolveExternalEntities:NO];
     
     [rssParser parse];
+    
+}
+
+- (IBAction)syncButtonDown:(id)sender {
+    
+    
+    [lightView setHidden:NO];
+    [activityIndicatior setHidden:NO];
+    [activityIndicatior startAnimating];
+    
     
 }
 
@@ -191,18 +195,6 @@
     if (errorParsing == NO) {
         
         NSLog(@"XML processing done!");
-        [lightView setHidden:YES];
-        [activityIndicatior setHidden:YES];
-        [activityIndicatior stopAnimating];
-        
-        //Dahl du vet bäst hur man tar fram antal nya frågor.
-        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Sync Done"
-                                                          message:@"Added X New Questions!"
-                                                         delegate:self
-                                                cancelButtonTitle:@"OK"
-                                                otherButtonTitles:nil];
-        
-        [message show];
         
         NSLog(@"Found changes: %i", a);
     } else {
@@ -211,6 +203,19 @@
         [activityIndicatior stopAnimating];
         NSLog(@"Error occurred during XML processing");
     }
+    
+    //Dahl du vet bäst hur man tar fram antal nya frågor.
+    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Sync Done"
+                                                      message:@"Added X New Questions!"
+                                                     delegate:self
+                                            cancelButtonTitle:@"OK"
+                                            otherButtonTitles:nil];
+    
+    [message show];
+    
+    [lightView setHidden:YES];
+    [activityIndicatior setHidden:YES];
+    [activityIndicatior stopAnimating];
     
 }
 

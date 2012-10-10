@@ -30,6 +30,7 @@
 -(IBAction)emailPressed:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *syncButton;
 - (IBAction)syncButtonPressed:(id)sender;
+- (IBAction)syncButtonDown:(id)sender;
 
 @property (nonatomic) BOOL errorParsing;
 @property (weak, nonatomic) IBOutlet UIView *lightView;
