@@ -27,5 +27,8 @@
 -(NSMutableArray *)getCategoryWithID:(int)ID;
 -(NSMutableArray *)getQuestionInCategory:(int)ID;
 -(NSDate *)getLastSyncDate;
+-(void)updateQuestionWithId:(int)qId question:(NSString *)question parent:(int)parentCategory deleted:(int)deleted;
+-(void)copyDatabaseIfNeeded;
+-(NSString *)getDBPath;
 
 @end

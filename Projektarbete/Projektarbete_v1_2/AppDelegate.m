@@ -24,6 +24,8 @@
     // Override point for customization after application launch.
     return YES;
     
+    [self copyDatabaseIfNeeded];
+    
     [application setStatusBarHidden:YES];
 }
 
@@ -45,7 +47,8 @@
 }
 
 -(void) checkAndCreateDatabase{
-	// Check if the SQL database has already been saved to the users phone, if not then copy it over
+	/*
+    // Check if the SQL database has already been saved to the users phone, if not then copy it over
 	BOOL success;
     
 	// Create a FileManager object, we will use this to check the status
@@ -65,6 +68,7 @@
     
 	// Copy the database from the package to the users filesystem
 	[fileManager copyItemAtPath:databasePathFromApp toPath:databasePath error:nil];
+     */
 }
 
 -(void) readQuestionsFromDatabase {
@@ -163,6 +167,51 @@
     
 }
 
+-(void)updateQuestionWithId:(int)qId question:(NSString *)question parent:(int)parentCategory deleted:(int)deleted {
+	sqlite3 *database;
+    
+    int now = [[NSDate date] timeIntervalSince1970];
+    int found = 0;
+    
+    if(sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK) {
+        const char *sqlStatement = [[NSString stringWithFormat:@"SELECT * FROM questions WHERE id = %i", qId] UTF8String];
+        sqlite3_stmt *compiledStatement;
+        if(sqlite3_prepare_v2(database, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK) {
+            while(sqlite3_step(compiledStatement) == SQLITE_ROW) {
+                found++;
+                NSLog(@"Hittades");
+            }
+        }
+        // Release the compiled statement from memory
+        //sqlite3_finalize(compiledStatement);
+    }
+    
+    if(sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK) {
+        if (found > 0) {
+            NSLog(@"Uppdaterar");
+            NSString *state = [NSString stringWithFormat:@"UPDATE questions SET parentCategory = %i, lastUpdated = %i, question = '%@', deleted = %i WHERE id = %i", parentCategory, now, question, deleted, qId];
+            const char *newSqlStatement = [state UTF8String];
+            sqlite3_stmt *newCompiledStatement;
+            if (sqlite3_prepare_v2(database, newSqlStatement, -1, &newCompiledStatement, NULL) != SQLITE_OK) {
+                NSLog(@"Fel!");
+            }
+            NSLog(@"%@", state);
+            //sqlite3_finalize(newCompiledStatement);
+        }
+        else {
+            NSLog(@"Lägger till");
+            NSString *state = [NSString stringWithFormat:@"INSERT INTO questions (parentCategory, lastUpdated, question, deleted, id) VALUES (%i, %i, '%@', %i, %i)", parentCategory, now, question, deleted, qId];
+            const char *newSqlStatement = [state UTF8String];
+            sqlite3_stmt *newCompiledStatement;
+            sqlite3_prepare_v2(database, newSqlStatement, -1, &newCompiledStatement, NULL);
+            //sqlite3_finalize(newCompiledStatement);
+            NSLog(@"%@", state);
+        }
+	}
+	sqlite3_close(database);
+    
+}
+
 
 -(NSMutableArray *) getQuestionInCategory:(int)ID {
 	sqlite3 *database;
@@ -170,7 +219,7 @@
     BOOL found = NO;
     
     if(sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK) {
-		const char *sqlStatement = [[NSString stringWithFormat:@"SELECT * FROM questions WHERE parentCategory = %i", ID] UTF8String];
+		const char *sqlStatement = [[NSString stringWithFormat:@"SELECT * FROM questions WHERE parentCategory = %i ORDER BY id ASC", ID] UTF8String];
 		sqlite3_stmt *compiledStatement;
 		if(sqlite3_prepare_v2(database, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK) {
 			while(sqlite3_step(compiledStatement) == SQLITE_ROW) {
@@ -276,6 +325,35 @@
      Save data if appropriate.
      See also applicationDidEnterBackground:.
      */
+}
+
+- (void) copyDatabaseIfNeeded {
+    //Using NSFileManager we can perform many file system operations.
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSError *error;
+    NSString *dbPath = [self getDBPath];
+    BOOL success = [fileManager fileExistsAtPath:dbPath];
+    
+    if(!success) {
+        
+        NSString *defaultDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Database.sql"];
+        success = [fileManager copyItemAtPath:defaultDBPath toPath:dbPath error:&error];
+        databasePath = dbPath;
+        databaseName = @"Database.sql";
+        
+        if (!success)
+            NSAssert1(0, @"Failed to create writable database file with message '%@'.", [error localizedDescription]);
+    }
+}
+
+- (NSString *) getDBPath {
+    //Search for standard documents using NSSearchPathForDirectoriesInDomains
+    //First Param = Searching the documents directory
+    //Second Param = Searching the Users directory and not the System
+    //Expand any tildes and identify home directories.
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory , NSUserDomainMask, YES);
+    NSString *documentsDir = [paths objectAtIndex:0];
+    return [documentsDir stringByAppendingPathComponent:@"Database.sql"];
 }
 
 @end

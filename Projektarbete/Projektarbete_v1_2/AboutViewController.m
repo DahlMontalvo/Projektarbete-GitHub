@@ -90,6 +90,11 @@
 }
 
 - (IBAction)syncButtonPressed:(id)sender {
+    
+    questionChanges = [[NSMutableArray alloc] init];
+    categoryChanges = [[NSMutableArray alloc] init];
+    answerChanges = [[NSMutableArray alloc] init];
+    
     //gör saker oklickbara
     NSLog(@"Visa activity");
     
@@ -170,8 +175,38 @@
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
+    NSString *val = [elementValue copy];
     if ([elementName isEqualToString:@"entry"]) {
-        //NSLog(@"Avsluta tidigare element");
+        if ([currentPart isEqualToString:@"questions"]) {
+        
+        }
+    }
+    else {
+        if ([currentPart isEqualToString:@"questions"]) {
+            if ([elementName isEqualToString:@"id"]) {
+                NSLog(@"Fråga %i måste uppdateras", [elementValue intValue]);
+                [questionChanges insertObject:[[NSMutableArray alloc] init] atIndex:questionsUpdated-1];
+                [[questionChanges objectAtIndex:questionsUpdated-1] insertObject:[NSNumber numberWithInt:[elementValue intValue]] atIndex:0];
+            }
+            else if ([elementName isEqualToString:@"question"]) {
+                NSLog(@"med fråga \"%@\" ", elementValue);
+                val = [val stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+                [[questionChanges objectAtIndex:questionsUpdated-1] insertObject:val atIndex:1];
+            }
+            else if ([elementName isEqualToString:@"parentCategory"]) {
+                NSLog(@"och parentCategory %i", [elementValue intValue]);
+                [[questionChanges objectAtIndex:questionsUpdated-1] insertObject:[NSNumber numberWithInt:[elementValue intValue]] atIndex:2];
+            }
+            else if ([elementName isEqualToString:@"lastUpdated"]) {
+                NSLog(@"och lastUpdated %@ ", elementValue);
+                val = [val stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+                [[questionChanges objectAtIndex:questionsUpdated-1] insertObject:val atIndex:3];
+            }
+            else if ([elementName isEqualToString:@"deleted"]) {
+                NSLog(@"och deleted %i ", [elementValue intValue]);
+                [[questionChanges objectAtIndex:questionsUpdated-1] insertObject:[NSNumber numberWithInt:[elementValue intValue]] atIndex:4];
+            }
+        }
     }
 }
 
@@ -191,7 +226,6 @@
     }
     
     //Dahl du vet bäst hur man tar fram antal nya frågor.
-    questionsUpdated = 0;
     NSString *messageText;
     if (questionsUpdated > 1) {
         messageText = [NSString stringWithFormat:@"Added %i New Questions!", questionsUpdated];
@@ -213,6 +247,21 @@
     [lightView setHidden:YES];
     [activityIndicatior setHidden:YES];
     [activityIndicatior stopAnimating];
+    
+    NSLog(@"%@", questionChanges);
+    
+    for (int i = 0; i < [questionChanges count]; i++) {
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        [appDelegate updateQuestionWithId:[[[questionChanges objectAtIndex:i] objectAtIndex:0] intValue] question:[[questionChanges objectAtIndex:i] objectAtIndex:1] parent:[[[questionChanges objectAtIndex:i] objectAtIndex:2] intValue] deleted:[[[questionChanges objectAtIndex:i] objectAtIndex:4] intValue]];
+        
+        NSLog(@"Ny rad ----------------------");
+        NSLog(@"ID: %i", [[[questionChanges objectAtIndex:i] objectAtIndex:0] intValue]);
+        NSLog(@"Question: %@", [[questionChanges objectAtIndex:i] objectAtIndex:1]);
+        NSLog(@"Parent: %i", [[[questionChanges objectAtIndex:i] objectAtIndex:2] intValue]);
+        NSLog(@"Last update: %@", [[questionChanges objectAtIndex:i] objectAtIndex:3]);
+        NSLog(@"Deleted: %i", [[[questionChanges objectAtIndex:i] objectAtIndex:4] intValue]);
+        NSLog(@" ");
+    }
     
 }
 

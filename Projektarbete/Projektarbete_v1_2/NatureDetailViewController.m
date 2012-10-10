@@ -48,7 +48,7 @@
     NSMutableArray *question = [appDelegate getQuestionInCategory:categoryID];
     if (question != nil) {
         questionLabel.text = [question objectAtIndex:0];
-        
+        /*
         int random = 0;
         NSMutableArray *buttons = [[NSMutableArray alloc] initWithObjects:buttonOne, buttonTwo, buttonThree, buttonFour, nil];
         NSMutableArray *randoms = [[NSMutableArray alloc] init];
@@ -88,6 +88,7 @@
         [buttonThree setTitle:[[[question objectAtIndex:2] objectAtIndex:2] objectAtIndex:0] forState:UIControlStateNormal];
         [buttonFour setTitle:[[[question objectAtIndex:2] objectAtIndex:3] objectAtIndex:0] forState:UIControlStateNormal];
          */
+        
     }
     else {
         questionLabel.text = @"Ingen fråga hittad.";
