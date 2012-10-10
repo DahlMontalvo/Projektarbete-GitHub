@@ -11,7 +11,7 @@
 @implementation AboutViewController
 @synthesize delegate;
 @synthesize doneButton, syncButton, errorParsing, elementValue, articles, currentElement, item, rssParser, currentPart, categoryChanges, questionChanges, answerChanges, a;
-
+@synthesize lightView, activityIndicatior;
 -(IBAction)done:(id)sender {
     [self.delegate AboutViewControllerDidDone:self];
 }
@@ -59,17 +59,28 @@
 }
 */
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
+
 {
+    [lightView setHidden:YES];
+    [activityIndicatior setHidden:YES];
+    
     [super viewDidLoad];
 }
-*/
+
+-(void)viewWillAppear:(BOOL)animated {
+    [lightView setHidden:YES];
+    [activityIndicatior setHidden:YES];
+}
+
 
 - (void)viewDidUnload
 {
     [self setSyncButton:nil];
+    [self setLightView:nil];
+    [self setActivityIndicatior:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -82,6 +93,12 @@
 }
 
 - (IBAction)syncButtonPressed:(id)sender {
+    //gör saker oklickbara
+    [lightView setHidden:NO];
+    [activityIndicatior setHidden:NO];
+    [activityIndicatior startAnimating];
+    NSLog(@"Visa activity");
+    
     //Synka hela databasen
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSDate *oldestUpdateDate = [appDelegate getLastSyncDate];
@@ -172,9 +189,26 @@
 - (void)parserDidEndDocument:(NSXMLParser *)parser {
     
     if (errorParsing == NO) {
+        
         NSLog(@"XML processing done!");
+        [lightView setHidden:YES];
+        [activityIndicatior setHidden:YES];
+        [activityIndicatior stopAnimating];
+        
+        //Dahl du vet bäst hur man tar fram antal nya frågor.
+        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Sync Done"
+                                                          message:@"Added X New Questions!"
+                                                         delegate:self
+                                                cancelButtonTitle:@"OK"
+                                                otherButtonTitles:nil];
+        
+        [message show];
+        
         NSLog(@"Found changes: %i", a);
     } else {
+        [lightView setHidden:YES];
+        [activityIndicatior setHidden:YES];
+        [activityIndicatior stopAnimating];
         NSLog(@"Error occurred during XML processing");
     }
     

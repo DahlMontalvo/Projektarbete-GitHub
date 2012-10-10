@@ -32,6 +32,8 @@
 - (IBAction)syncButtonPressed:(id)sender;
 
 @property (nonatomic) BOOL errorParsing;
+@property (weak, nonatomic) IBOutlet UIView *lightView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatior;
 @property (nonatomic, retain) NSXMLParser *rssParser;
 @property (nonatomic, retain) NSMutableArray *articles;
 @property (nonatomic, retain) NSMutableDictionary *item;
