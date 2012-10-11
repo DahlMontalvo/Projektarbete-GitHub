@@ -24,51 +24,12 @@
     // Override point for customization after application launch.
     return YES;
     
-    [self copyDatabaseIfNeeded];
-    
     [application setStatusBarHidden:YES];
 }
 
 -(void)applicationDidBecomeActive:(UIApplication *)application {
-    // Setup some globals
-	databaseName = @"Database.sql";
-    
-	// Get the path to the documents directory and append the databaseName
-	NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-	NSString *documentsDir = [documentPaths objectAtIndex:0];
-	databasePath = [documentsDir stringByAppendingPathComponent:databaseName];
-    
-	// Execute the "checkAndCreateDatabase" function
-	[self checkAndCreateDatabase];
-    
-	// Databas till array
+    [self copyDatabaseIfNeeded];
 	[self readQuestionsFromDatabase];
-    NSLog(@"Hej nu är jag aktiv!");
-}
-
--(void) checkAndCreateDatabase{
-	/*
-    // Check if the SQL database has already been saved to the users phone, if not then copy it over
-	BOOL success;
-    
-	// Create a FileManager object, we will use this to check the status
-	// of the database and to copy it over if required
-	NSFileManager *fileManager = [NSFileManager defaultManager];
-    
-	// Check if the database has already been created in the users filesystem
-	success = [fileManager fileExistsAtPath:databasePath];
-    
-	// If the database already exists then return without doing anything
-	if(success) return;
-    
-	// If not then proceed to copy the database from the application to the users filesystem
-    
-	// Get the path to the database in the application package
-	NSString *databasePathFromApp = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:databaseName];
-    
-	// Copy the database from the package to the users filesystem
-	[fileManager copyItemAtPath:databasePathFromApp toPath:databasePath error:nil];
-     */
 }
 
 -(void) readQuestionsFromDatabase {
@@ -81,7 +42,7 @@
 	// Open the database from the users filessytem
 	if(sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK) {
 		// Setup the SQL Statement and compile it for faster access
-		const char *sqlStatement = "SELECT * FROM categories";
+		const char *sqlStatement = "SELECT * FROM categories WHERE deleted != 1";
 		sqlite3_stmt *compiledStatement;
 		if(sqlite3_prepare_v2(database, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK) {
 			// Loop through the results and add them to the feeds array
@@ -109,7 +70,7 @@
     NSMutableArray *category = [[NSMutableArray alloc] init];
     
     if(sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK) {
-		const char *sqlStatement = [[NSString stringWithFormat:@"SELECT * FROM categories WHERE id = %i", ID] UTF8String];
+		const char *sqlStatement = [[NSString stringWithFormat:@"SELECT * FROM categories WHERE id = %i AND deleted != 1", ID] UTF8String];
 		sqlite3_stmt *compiledStatement;
 		if(sqlite3_prepare_v2(database, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK) {
 			while(sqlite3_step(compiledStatement) == SQLITE_ROW) {
@@ -137,9 +98,7 @@
     NSDate *lastDate = [NSDate date];
     
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
-    [format setDateFormat:@"YYYY-mm-dd HH:mm:ss"];
-    
-    NSLog(@"1: %@", [format stringFromDate:lastDate]);
+    [format setDateFormat:@"YYYY-MM-dd HH:mm:ss"];
     
     if(sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK) {
 		const char *sqlStatement = [@"SELECT MIN(categories.lastUpdated) AS r1, MIN(answers.lastUpdated) AS r2, MIN(questions.lastUpdated) AS r3 FROM categories, answers, questions" UTF8String];
@@ -148,11 +107,9 @@
 			while(sqlite3_step(compiledStatement) == SQLITE_ROW) {
                 for (int i = 0; i < 3; i++) {
                     NSDate *date = [NSDate dateWithTimeIntervalSince1970:sqlite3_column_int(compiledStatement, i)];
-                    NSLog(@"1: %i: %@", i, [format stringFromDate:date]);
                     if ([lastDate timeIntervalSinceDate:date] > 0) {
                         lastDate = date;
                     }
-                    NSLog(@"1: %i: %@", i, [format stringFromDate:lastDate]);
                 }
 			}
 		}
@@ -188,28 +145,116 @@
     
     if(sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK) {
         if (found > 0) {
+            
             NSLog(@"Uppdaterar");
             NSString *state = [NSString stringWithFormat:@"UPDATE questions SET parentCategory = %i, lastUpdated = %i, question = '%@', deleted = %i WHERE id = %i", parentCategory, now, question, deleted, qId];
-            const char *newSqlStatement = [state UTF8String];
-            sqlite3_stmt *newCompiledStatement;
-            if (sqlite3_prepare_v2(database, newSqlStatement, -1, &newCompiledStatement, NULL) != SQLITE_OK) {
-                NSLog(@"Fel!");
-            }
-            NSLog(@"%@", state);
-            //sqlite3_finalize(newCompiledStatement);
+            
+            char *error;
+            if ( sqlite3_exec(database, [state UTF8String], NULL, NULL, &error) == SQLITE_OK)
+                NSLog(@"Funkade!");
+            /*
+             const char *newSqlStatement = [state UTF8String];
+             sqlite3_stmt *newCompiledStatement;
+             if (sqlite3_prepare_v2(database, newSqlStatement, -1, &newCompiledStatement, NULL) != SQLITE_OK) {
+             NSLog(@"Fel!");
+             }
+             NSLog(@"%@", state);
+             //sqlite3_finalize(newCompiledStatement);
+             */
+            
+            
         }
         else {
             NSLog(@"Lägger till");
             NSString *state = [NSString stringWithFormat:@"INSERT INTO questions (parentCategory, lastUpdated, question, deleted, id) VALUES (%i, %i, '%@', %i, %i)", parentCategory, now, question, deleted, qId];
-            const char *newSqlStatement = [state UTF8String];
-            sqlite3_stmt *newCompiledStatement;
-            sqlite3_prepare_v2(database, newSqlStatement, -1, &newCompiledStatement, NULL);
-            //sqlite3_finalize(newCompiledStatement);
-            NSLog(@"%@", state);
+            
+            char *error;
+            if ( sqlite3_exec(database, [state UTF8String], NULL, NULL, &error) == SQLITE_OK)
+                NSLog(@"Funkade!");
+            
+            /*
+             const char *newSqlStatement = [state UTF8String];
+             sqlite3_stmt *newCompiledStatement;
+             sqlite3_prepare_v2(database, newSqlStatement, -1, &newCompiledStatement, NULL);
+             //sqlite3_finalize(newCompiledStatement);
+             NSLog(@"%@", state);
+             */
         }
 	}
 	sqlite3_close(database);
     
+}
+
+-(void)updateAnswerWithId:(int)aId answer:(NSString *)answer parent:(int)parentQuestion correct:(int)correct deleted:(int)deleted {
+	sqlite3 *database;
+    
+    int now = [[NSDate date] timeIntervalSince1970];
+    int found = 0;
+    
+    if(sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK) {
+        const char *sqlStatement = [[NSString stringWithFormat:@"SELECT * FROM questions WHERE id = %i", aId] UTF8String];
+        sqlite3_stmt *compiledStatement;
+        if(sqlite3_prepare_v2(database, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK) {
+            while(sqlite3_step(compiledStatement) == SQLITE_ROW) {
+                found++;
+            }
+        }
+    }
+    
+    if(sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK) {
+        if (found > 0) {
+            NSString *state = [NSString stringWithFormat:@"UPDATE answers SET questionId = %i, lastUpdated = %i, answer = '%@', deleted = %i, correct = %i WHERE id = %i", parentQuestion, now, answer, deleted, correct, aId];
+            char *error;
+            sqlite3_exec(database, [state UTF8String], NULL, NULL, &error);
+        }
+        else {
+            NSString *state = [NSString stringWithFormat:@"INSERT INTO answers (questionId, lastUpdated, answer, deleted, id, correct) VALUES (%i, %i, '%@', %i, %i, %i)", parentQuestion, now, answer, deleted, aId, correct];
+            char *error;
+            sqlite3_exec(database, [state UTF8String], NULL, NULL, &error);
+        }
+	}
+	sqlite3_close(database);
+}
+
+-(void)updateCategoryWithId:(int)cId name:(NSString *)name parent:(NSString *)parent deleted:(int)deleted {
+	sqlite3 *database;
+    
+    int now = [[NSDate date] timeIntervalSince1970];
+    int found = 0;
+    
+    if(sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK) {
+        const char *sqlStatement = [[NSString stringWithFormat:@"SELECT * FROM categories WHERE id = %i", cId] UTF8String];
+        sqlite3_stmt *compiledStatement;
+        if(sqlite3_prepare_v2(database, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK) {
+            while(sqlite3_step(compiledStatement) == SQLITE_ROW) {
+                found++;
+            }
+        }
+    }
+    NSLog(@"found: %i",found);
+    if(sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK) {
+        if (found > 0) {
+            NSString *state = [NSString stringWithFormat:@"UPDATE categories SET parent = '%@', lastUpdated = %i, name = '%@', deleted = %i WHERE id = %i", parent, now, name, deleted, cId];
+            char *error;
+            if (sqlite3_exec(database, [state UTF8String], NULL, NULL, &error) == SQLITE_OK) {
+                NSLog(@"Funka! %@", state);
+            }
+        }
+        else {
+            NSString *state = [NSString stringWithFormat:@"INSERT INTO categories (parent, lastUpdated, name, deleted, id) VALUES ('%@', %i, '%@', %i, %i)", parent, now, name, deleted, cId];
+            char *error;
+            
+            if (sqlite3_exec(database, [state UTF8String], NULL, NULL, &error) == SQLITE_OK) {
+                NSLog(@"Funka med! %@", state);
+            }
+            else
+                NSLog(@"Fel! %@", state);
+
+        }
+	}
+	sqlite3_close(database);
+    
+    [self readQuestionsFromDatabase];
 }
 
 
@@ -219,7 +264,7 @@
     BOOL found = NO;
     
     if(sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK) {
-		const char *sqlStatement = [[NSString stringWithFormat:@"SELECT * FROM questions WHERE parentCategory = %i ORDER BY id ASC", ID] UTF8String];
+		const char *sqlStatement = [[NSString stringWithFormat:@"SELECT * FROM questions WHERE parentCategory = %i AND deleted != 1 ORDER BY id ASC", ID] UTF8String];
 		sqlite3_stmt *compiledStatement;
 		if(sqlite3_prepare_v2(database, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK) {
 			while(sqlite3_step(compiledStatement) == SQLITE_ROW) {
@@ -228,7 +273,7 @@
                 
                 /* HÄMTA SVAREN */
                 //Rätt svar alltid först i arrayen
-                const char *sqlStatement3 = [[NSString stringWithFormat:@"SELECT * FROM answers WHERE questionId = %i AND correct = 1", [qID intValue]] UTF8String];
+                const char *sqlStatement3 = [[NSString stringWithFormat:@"SELECT * FROM answers WHERE questionId = %i AND deleted != 1 AND correct = 1", [qID intValue]] UTF8String];
                 sqlite3_stmt *compiledStatement3;
                 NSMutableArray *answers = [[NSMutableArray alloc] init];
                 
@@ -248,7 +293,7 @@
                 //Tar fram tre fel svar
                 int ansNum = 0;
                 
-                const char *sqlStatement2 = [[NSString stringWithFormat:@"SELECT * FROM answers WHERE questionId == %i AND correct == 0 LIMIT 3", [qID intValue]] UTF8String];
+                const char *sqlStatement2 = [[NSString stringWithFormat:@"SELECT * FROM answers WHERE questionId == %i AND deleted != 1 AND correct == 0 LIMIT 3", [qID intValue]] UTF8String];
                 sqlite3_stmt *compiledStatement2;
                 if(sqlite3_prepare_v2(database, sqlStatement2, -1, &compiledStatement2, NULL) == SQLITE_OK) {
                     while(sqlite3_step(compiledStatement2) == SQLITE_ROW && ansNum <= 2) {
@@ -264,7 +309,7 @@
                 }
                 sqlite3_finalize(compiledStatement2);
                 
-                const char *sqlStatement4 = [[NSString stringWithFormat:@"SELECT * FROM answers WHERE questionId != %i LIMIT 3", [qID intValue]] UTF8String];
+                const char *sqlStatement4 = [[NSString stringWithFormat:@"SELECT * FROM answers WHERE questionId != %i AND deleted != 1 LIMIT 3", [qID intValue]] UTF8String];
                 sqlite3_stmt *compiledStatement4;
                 if(sqlite3_prepare_v2(database, sqlStatement4, -1, &compiledStatement4, NULL) == SQLITE_OK) {
                     while(sqlite3_step(compiledStatement4) == SQLITE_ROW && ansNum <= 2) {
@@ -328,32 +373,29 @@
 }
 
 - (void) copyDatabaseIfNeeded {
-    //Using NSFileManager we can perform many file system operations.
+    databaseName = @"Database.sql";
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSError *error;
     NSString *dbPath = [self getDBPath];
     BOOL success = [fileManager fileExistsAtPath:dbPath];
+    databasePath = dbPath;
     
     if(!success) {
         
-        NSString *defaultDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Database.sql"];
+        NSString *defaultDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:databaseName];
         success = [fileManager copyItemAtPath:defaultDBPath toPath:dbPath error:&error];
-        databasePath = dbPath;
-        databaseName = @"Database.sql";
         
         if (!success)
             NSAssert1(0, @"Failed to create writable database file with message '%@'.", [error localizedDescription]);
     }
+    
+    NSLog(@"path: %@", dbPath);
 }
 
 - (NSString *) getDBPath {
-    //Search for standard documents using NSSearchPathForDirectoriesInDomains
-    //First Param = Searching the documents directory
-    //Second Param = Searching the Users directory and not the System
-    //Expand any tildes and identify home directories.
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory , NSUserDomainMask, YES);
     NSString *documentsDir = [paths objectAtIndex:0];
-    return [documentsDir stringByAppendingPathComponent:@"Database.sql"];
+    return [documentsDir stringByAppendingPathComponent:databaseName];
 }
 
 @end

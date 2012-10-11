@@ -28,6 +28,8 @@
 -(NSMutableArray *)getQuestionInCategory:(int)ID;
 -(NSDate *)getLastSyncDate;
 -(void)updateQuestionWithId:(int)qId question:(NSString *)question parent:(int)parentCategory deleted:(int)deleted;
+-(void)updateAnswerWithId:(int)aId answer:(NSString *)answer parent:(int)parentQuestion correct:(int)correct deleted:(int)deleted;
+-(void)updateCategoryWithId:(int)cId name:(NSString *)name parent:(NSString *)parent deleted:(int)deleted;
 -(void)copyDatabaseIfNeeded;
 -(NSString *)getDBPath;
 
