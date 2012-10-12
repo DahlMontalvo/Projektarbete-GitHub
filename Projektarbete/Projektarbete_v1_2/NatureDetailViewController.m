@@ -198,4 +198,12 @@
     [self presentNextQuestion];
     
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"ToResult"]) {
+        NatureResultsViewController *rvc = [segue destinationViewController];
+        rvc.score = correctAnswersNumber;
+    }
+}
+
 @end

@@ -114,6 +114,7 @@
 		DDE5CCA41600ED1C002005BF /* Mixed.png in Resources */ = {isa = PBXBuildFile; fileRef = DDE5CCA31600ED1C002005BF /* Mixed.png */; };
 		DDE8B8E115BDD72E0010A6D7 /* StatsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDE8B8E015BDD72E0010A6D7 /* StatsTableCell.xib */; };
 		DDE8B8E515BDD8420010A6D7 /* StatsTableCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE8B8E415BDD8420010A6D7 /* StatsTableCellController.m */; };
+		DDF39961162874930071F215 /* NatureResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF39960162874930071F215 /* NatureResultsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -254,6 +255,8 @@
 		DDE8B8E015BDD72E0010A6D7 /* StatsTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatsTableCell.xib; sourceTree = "<group>"; };
 		DDE8B8E315BDD8420010A6D7 /* StatsTableCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsTableCellController.h; sourceTree = "<group>"; };
 		DDE8B8E415BDD8420010A6D7 /* StatsTableCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatsTableCellController.m; sourceTree = "<group>"; };
+		DDF3995F162874930071F215 /* NatureResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NatureResultsViewController.h; sourceTree = "<group>"; };
+		DDF39960162874930071F215 /* NatureResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NatureResultsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,6 +309,8 @@
 				0023A33115BF4EC9006BD781 /* NatureMasterViewController.m */,
 				DD76D382161CA98A0017D48F /* NatureDetailViewController.h */,
 				DD76D383161CA98A0017D48F /* NatureDetailViewController.m */,
+				DDF3995F162874930071F215 /* NatureResultsViewController.h */,
+				DDF39960162874930071F215 /* NatureResultsViewController.m */,
 			);
 			name = "Biology, Chemistry & Physics";
 			sourceTree = "<group>";
@@ -696,6 +701,7 @@
 				DDD0C2C91601298C00CD3BDA /* MathStartViewController.m in Sources */,
 				DD76D37F161C97DC0017D48F /* NatureCategoryCell.m in Sources */,
 				DD76D384161CA98A0017D48F /* NatureDetailViewController.m in Sources */,
+				DDF39961162874930071F215 /* NatureResultsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

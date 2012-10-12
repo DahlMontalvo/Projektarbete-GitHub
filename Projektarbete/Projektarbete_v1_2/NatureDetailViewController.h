@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
+#import "NatureResultsViewController.h"
 
 @interface NatureDetailViewController : UIViewController <UIActionSheetDelegate> {
     int categoryID;
