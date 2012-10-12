@@ -31,4 +31,7 @@
 @property (nonatomic, retain) NSMutableArray *category;
 - (IBAction)backButton:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *pauseButton;
+
+@property (nonatomic, retain) NSMutableArray *questions;
+
 @end

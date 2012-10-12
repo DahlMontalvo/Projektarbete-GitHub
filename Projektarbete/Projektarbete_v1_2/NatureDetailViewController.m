@@ -14,7 +14,7 @@
 
 @implementation NatureDetailViewController
 
-@synthesize categoryID, subject, category, subjectLabel, questionLabel, buttonOne, buttonTwo, buttonThree, buttonFour, startCountdownTimer, countdownLabel, darkView, startCountdownDate, startCountdown;
+@synthesize categoryID, subject, category, subjectLabel, questionLabel, buttonOne, buttonTwo, buttonThree, buttonFour, startCountdownTimer, countdownLabel, darkView, startCountdownDate, startCountdown, questions;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,10 +45,27 @@
     
     subjectLabel.text = [NSString stringWithFormat:@"%@: %@", subject, [category objectAtIndex:0]];
     
-    NSMutableArray *question = [appDelegate getQuestionInCategory:categoryID];
+    NSMutableArray *nopId = [[NSMutableArray alloc] init];
+    questions = [[NSMutableArray alloc] init];
+    [nopId addObject:[NSNumber numberWithInt:-1]];
+    
+    int iteration = [appDelegate numbersOfQuestionsInCategory:categoryID];
+    if (iteration > 10) {
+        iteration = 10;
+    }
+    
+    for (int i = 0; i<iteration; i++) {
+        NSLog(@"i: %i", i);
+        NSMutableArray *question = [appDelegate getQuestionInCategory:categoryID withOutIds:nopId];
+        [nopId addObject:[question objectAtIndex:1]];
+        [questions addObject:question];
+    }
+    
+    NSMutableArray *question = [questions objectAtIndex:0];
+    
     if (question != nil) {
         questionLabel.text = [question objectAtIndex:0];
-        /*
+        
         int random = 0;
         NSMutableArray *buttons = [[NSMutableArray alloc] initWithObjects:buttonOne, buttonTwo, buttonThree, buttonFour, nil];
         NSMutableArray *randoms = [[NSMutableArray alloc] init];
@@ -78,8 +95,10 @@
             if ([[[[question objectAtIndex:2] objectAtIndex:i] objectAtIndex:2] intValue] == 1)
                 correct = @" (rätt)";
             
-            NSString *btnString = [NSString stringWithFormat:@"%@%@", [[[question objectAtIndex:2] objectAtIndex:i] objectAtIndex:0], correct];
-            [[buttons objectAtIndex:random] setTitle:btnString forState:UIControlStateNormal];
+            if (![[[[question objectAtIndex:2] objectAtIndex:i] objectAtIndex:0] isEqualToString:@"empty"]) {
+                NSString *btnString = [NSString stringWithFormat:@"%@%@", [[[question objectAtIndex:2] objectAtIndex:i] objectAtIndex:0], correct];
+                [[buttons objectAtIndex:random] setTitle:btnString forState:UIControlStateNormal];
+            }
             [randoms addObject:[NSNumber numberWithInt:random]];
         }
         /*

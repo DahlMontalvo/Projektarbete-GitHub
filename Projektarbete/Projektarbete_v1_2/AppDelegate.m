@@ -257,14 +257,37 @@
     [self readQuestionsFromDatabase];
 }
 
+-(int)numbersOfQuestionsInCategory:(int)ID {
+    int number = 0;
+    sqlite3 *database;
+    
+    if(sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK) {
+		const char *sqlStatement = [[NSString stringWithFormat:@"SELECT COUNT(*) FROM questions WHERE parentCategory = %i", ID] UTF8String];
+		sqlite3_stmt *compiledStatement;
+		if(sqlite3_prepare_v2(database, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK) {
+			while(sqlite3_step(compiledStatement) == SQLITE_ROW) {
+				number = sqlite3_column_int(compiledStatement, 0);
+			}
+		}
+		sqlite3_finalize(compiledStatement);
+	}
+	sqlite3_close(database);
+    return number;
+}
 
--(NSMutableArray *) getQuestionInCategory:(int)ID {
+-(NSMutableArray *) getQuestionInCategory:(int)ID withOutIds:(NSMutableArray *)noId {
 	sqlite3 *database;
     NSMutableArray *question = [[NSMutableArray alloc] init];
     BOOL found = NO;
     
     if(sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK) {
-		const char *sqlStatement = [[NSString stringWithFormat:@"SELECT * FROM questions WHERE parentCategory = %i AND deleted != 1 ORDER BY id ASC", ID] UTF8String];
+        NSString *add = @"";
+        
+        for (int i = 0; i < [noId count]; i++) {
+            add = [NSString stringWithFormat:@"%@ AND id != %i ", add, [[noId objectAtIndex:i] intValue]];
+        }
+        
+		const char *sqlStatement = [[NSString stringWithFormat:@"SELECT * FROM questions WHERE parentCategory = %i AND deleted != 1 %@ ORDER BY RANDOM() LIMIT 1", ID, add] UTF8String];
 		sqlite3_stmt *compiledStatement;
 		if(sqlite3_prepare_v2(database, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK) {
 			while(sqlite3_step(compiledStatement) == SQLITE_ROW) {
@@ -308,6 +331,7 @@
                     }
                 }
                 sqlite3_finalize(compiledStatement2);
+                NSLog(@"Ansnum: %i", ansNum);
                 
                 const char *sqlStatement4 = [[NSString stringWithFormat:@"SELECT * FROM answers WHERE questionId != %i AND deleted != 1 LIMIT 3", [qID intValue]] UTF8String];
                 sqlite3_stmt *compiledStatement4;
@@ -322,6 +346,16 @@
                         found = YES;
                         ansNum++;
                     }
+                }
+                
+                NSLog(@"Ansnum: %i", ansNum);
+                
+                for (int a = 0; a <= 3-ansNum; a++) {
+                    NSMutableArray *emptiness = [[NSMutableArray alloc] init];
+                    [emptiness addObject:@"empty"];
+                    [emptiness addObject:@"empty"];
+                    [emptiness addObject:@"empty"];
+                    [answers addObject:emptiness];
                 }
                 
                 sqlite3_finalize(compiledStatement4);
