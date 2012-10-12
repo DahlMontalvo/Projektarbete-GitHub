@@ -1588,8 +1588,8 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Question" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="skC-2l-h2g">
-                                <rect key="frame" x="0.0" y="101" width="320" height="66"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Question" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="skC-2l-h2g">
+                                <rect key="frame" x="0.0" y="101" width="320" height="152"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1606,6 +1606,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonOne:" destination="aTp-rB-Gfw" eventType="touchUpInside" id="8ig-cn-s4t"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sjr-Pi-ab1">
                                 <rect key="frame" x="0.0" y="304" width="320" height="44"/>
@@ -1618,6 +1621,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonTwo:" destination="aTp-rB-Gfw" eventType="touchUpInside" id="oQM-au-YRX"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oYk-fe-POV">
                                 <rect key="frame" x="0.0" y="347" width="320" height="44"/>
@@ -1630,6 +1636,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonThree:" destination="aTp-rB-Gfw" eventType="touchUpInside" id="fOO-ZQ-AUp"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Bwr-DZ-cTm">
                                 <rect key="frame" x="0.0" y="390" width="320" height="44"/>
@@ -1642,6 +1651,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonFour:" destination="aTp-rB-Gfw" eventType="touchUpInside" id="zY4-PX-lTw"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="L8n-Hw-9hf">
                                 <rect key="frame" x="242" y="10" width="66" height="31"/>
@@ -1674,6 +1686,13 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                             </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ApP-gu-arE">
+                                <rect key="frame" x="20" y="17" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -1684,16 +1703,106 @@
                         <outlet property="buttonOne" destination="9Xm-R1-WUT" id="NsI-lH-GDn"/>
                         <outlet property="buttonThree" destination="oYk-fe-POV" id="Xsu-wK-25G"/>
                         <outlet property="buttonTwo" destination="sjr-Pi-ab1" id="q2Y-P0-uPo"/>
+                        <outlet property="correctAnswers" destination="ApP-gu-arE" id="JTJ-d4-xPI"/>
                         <outlet property="countdownLabel" destination="2v9-K7-ZK2" id="cQr-F6-c9x"/>
                         <outlet property="darkView" destination="C44-HC-SVK" id="6vk-Be-UIp"/>
                         <outlet property="pauseButton" destination="L8n-Hw-9hf" id="PaI-qY-vWW"/>
                         <outlet property="questionLabel" destination="skC-2l-h2g" id="R4P-KG-KGH"/>
                         <outlet property="subjectLabel" destination="LV7-ko-8yR" id="sAI-vq-Qax"/>
+                        <segue destination="w5U-Yc-VyV" kind="push" identifier="ToResult" id="EtP-iO-99W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k8Y-wi-Dxa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1424" y="64"/>
+        </scene>
+        <!--View Controller - Results-->
+        <scene sceneID="YXf-f0-nBE">
+            <objects>
+                <viewController id="w5U-Yc-VyV" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="B8b-k9-HKs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="10/10" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="ie1-Ph-G0A">
+                                <rect key="frame" x="64" y="33" width="192" height="138"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="84"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Kv4-gq-kj2">
+                                <rect key="frame" x="86" y="370" width="157" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="26"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="continueButtonPressed:" destination="w5U-Yc-VyV" eventType="touchUpInside" id="jZo-a8-JP0"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Completed in Addition 5" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="1Ag-Y6-E8p">
+                                <rect key="frame" x="64" y="155" width="186" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="Y2q-M7-R5m">
+                                <rect key="frame" x="59" y="213" width="203" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="25"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="in 00.00" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="4" adjustsFontSizeToFit="NO" id="f8G-rl-XFD">
+                                <rect key="frame" x="94" y="184" width="129" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Gamemode" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="kq4-S5-SB4">
+                                <rect key="frame" x="86" y="20" width="157" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="28"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Stars!" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="ybc-Vm-z7W">
+                                <rect key="frame" x="70" y="322" width="181" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="yUi-b3-6zf">
+                                <rect key="frame" x="88" y="266" width="151" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Results" id="Cl1-Jn-vaw"/>
+                    <connections>
+                        <outlet property="gamemodeLabel" destination="kq4-S5-SB4" id="Lw0-89-7Ap"/>
+                        <outlet property="highscoreLabel" destination="Y2q-M7-R5m" id="50F-8h-LSh"/>
+                        <outlet property="infoLabel" destination="1Ag-Y6-E8p" id="brF-t4-Qnx"/>
+                        <outlet property="navItem" destination="Cl1-Jn-vaw" id="w0i-Qc-IQY"/>
+                        <outlet property="resultsLabel" destination="ie1-Ph-G0A" id="lhj-jD-Ssp"/>
+                        <outlet property="starImage" destination="yUi-b3-6zf" id="int-0Q-ju9"/>
+                        <outlet property="starLabel" destination="ybc-Vm-z7W" id="ABZ-zL-Mlw"/>
+                        <outlet property="timeLabel" destination="f8G-rl-XFD" id="CEp-8f-nR3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RwM-mM-E4B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1944" y="64"/>
         </scene>
     </scenes>
     <resources>
@@ -1872,11 +1981,16 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NatureDetailViewController.h"/>
             <relationships>
                 <relationship kind="action" name="backButton:"/>
+                <relationship kind="action" name="buttonFour:"/>
+                <relationship kind="action" name="buttonOne:"/>
+                <relationship kind="action" name="buttonThree:"/>
+                <relationship kind="action" name="buttonTwo:"/>
                 <relationship kind="action" name="pauseButtonPressed:"/>
                 <relationship kind="outlet" name="buttonFour" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="buttonOne" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="buttonThree" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="buttonTwo" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="correctAnswers" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="countdownLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="darkView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="pauseButton" candidateClass="UIButton"/>

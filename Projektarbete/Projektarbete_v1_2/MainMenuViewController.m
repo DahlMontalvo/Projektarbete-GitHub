@@ -34,8 +34,6 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    
-    NSLog(@"Haha");
 	if ([segue.identifier isEqualToString:@"GlobalStatsSegue"]) {
 		UINavigationController *navigationController = segue.destinationViewController;
 		GlobalStatsViewController *globalVC = [[navigationController viewControllers] objectAtIndex:0];
@@ -60,7 +58,6 @@
 		NatureMasterViewController *nvc = segue.destinationViewController;
         nvc.subject = @"Biology";
 	}
-    NSLog(@"Haha");
     
     
 }

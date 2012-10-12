@@ -118,8 +118,6 @@
         
 	}
 	sqlite3_close(database);
-    
-    NSLog(@"Datum: %@", [format stringFromDate:lastDate]);
     return lastDate;
     
 }
@@ -136,49 +134,26 @@
         if(sqlite3_prepare_v2(database, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK) {
             while(sqlite3_step(compiledStatement) == SQLITE_ROW) {
                 found++;
-                NSLog(@"Hittades");
             }
         }
-        // Release the compiled statement from memory
-        //sqlite3_finalize(compiledStatement);
     }
     
     if(sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK) {
         if (found > 0) {
             
-            NSLog(@"Uppdaterar");
             NSString *state = [NSString stringWithFormat:@"UPDATE questions SET parentCategory = %i, lastUpdated = %i, question = '%@', deleted = %i WHERE id = %i", parentCategory, now, question, deleted, qId];
             
             char *error;
-            if ( sqlite3_exec(database, [state UTF8String], NULL, NULL, &error) == SQLITE_OK)
-                NSLog(@"Funkade!");
-            /*
-             const char *newSqlStatement = [state UTF8String];
-             sqlite3_stmt *newCompiledStatement;
-             if (sqlite3_prepare_v2(database, newSqlStatement, -1, &newCompiledStatement, NULL) != SQLITE_OK) {
-             NSLog(@"Fel!");
-             }
-             NSLog(@"%@", state);
-             //sqlite3_finalize(newCompiledStatement);
-             */
+            sqlite3_exec(database, [state UTF8String], NULL, NULL, &error);
             
             
         }
         else {
-            NSLog(@"Lägger till");
             NSString *state = [NSString stringWithFormat:@"INSERT INTO questions (parentCategory, lastUpdated, question, deleted, id) VALUES (%i, %i, '%@', %i, %i)", parentCategory, now, question, deleted, qId];
             
             char *error;
-            if ( sqlite3_exec(database, [state UTF8String], NULL, NULL, &error) == SQLITE_OK)
-                NSLog(@"Funkade!");
+            sqlite3_exec(database, [state UTF8String], NULL, NULL, &error);
             
-            /*
-             const char *newSqlStatement = [state UTF8String];
-             sqlite3_stmt *newCompiledStatement;
-             sqlite3_prepare_v2(database, newSqlStatement, -1, &newCompiledStatement, NULL);
-             //sqlite3_finalize(newCompiledStatement);
-             NSLog(@"%@", state);
-             */
         }
 	}
 	sqlite3_close(database);
@@ -231,24 +206,17 @@
             }
         }
     }
-    NSLog(@"found: %i",found);
     if(sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK) {
         if (found > 0) {
             NSString *state = [NSString stringWithFormat:@"UPDATE categories SET parent = '%@', lastUpdated = %i, name = '%@', deleted = %i WHERE id = %i", parent, now, name, deleted, cId];
             char *error;
-            if (sqlite3_exec(database, [state UTF8String], NULL, NULL, &error) == SQLITE_OK) {
-                NSLog(@"Funka! %@", state);
-            }
+            sqlite3_exec(database, [state UTF8String], NULL, NULL, &error);
         }
         else {
             NSString *state = [NSString stringWithFormat:@"INSERT INTO categories (parent, lastUpdated, name, deleted, id) VALUES ('%@', %i, '%@', %i, %i)", parent, now, name, deleted, cId];
             char *error;
             
-            if (sqlite3_exec(database, [state UTF8String], NULL, NULL, &error) == SQLITE_OK) {
-                NSLog(@"Funka med! %@", state);
-            }
-            else
-                NSLog(@"Fel! %@", state);
+            sqlite3_exec(database, [state UTF8String], NULL, NULL, &error);
 
         }
 	}
@@ -331,7 +299,7 @@
                     }
                 }
                 sqlite3_finalize(compiledStatement2);
-                NSLog(@"Ansnum: %i", ansNum);
+                
                 
                 const char *sqlStatement4 = [[NSString stringWithFormat:@"SELECT * FROM answers WHERE questionId != %i AND deleted != 1 LIMIT 3", [qID intValue]] UTF8String];
                 sqlite3_stmt *compiledStatement4;
@@ -348,8 +316,6 @@
                     }
                 }
                 
-                NSLog(@"Ansnum: %i", ansNum);
-                
                 for (int a = 0; a <= 3-ansNum; a++) {
                     NSMutableArray *emptiness = [[NSMutableArray alloc] init];
                     [emptiness addObject:@"empty"];
@@ -360,7 +326,30 @@
                 
                 sqlite3_finalize(compiledStatement4);
                 
-                question = [[NSMutableArray alloc] initWithObjects:questionStr, qID, answers, nil];
+                int random = 0;
+                NSMutableArray *tempAnswers = [[NSMutableArray alloc] init];
+                NSMutableArray *randoms = [[NSMutableArray alloc] init];
+                //Random ordning
+                for (int i = 0; i <= 3; i++) {
+                    BOOL continueLoop = YES;
+                    while (continueLoop) {
+                        int temp = arc4random() % 4;
+                        BOOL found = NO;
+                        for (int a = 0; a < i; a++) {
+                            if ([[randoms objectAtIndex:a] intValue] == temp) {
+                                found = YES;
+                            }
+                        }
+                        if (found == NO) {
+                            random = temp;
+                            continueLoop = NO;
+                        }
+                    }
+                    [randoms addObject:[NSNumber numberWithInt:random]];
+                    [tempAnswers addObject:[answers objectAtIndex:random]];
+                }
+                
+                question = [[NSMutableArray alloc] initWithObjects:questionStr, qID, tempAnswers, nil];
 			}
 		}
 		sqlite3_finalize(compiledStatement);
@@ -422,8 +411,6 @@
         if (!success)
             NSAssert1(0, @"Failed to create writable database file with message '%@'.", [error localizedDescription]);
     }
-    
-    NSLog(@"path: %@", dbPath);
 }
 
 - (NSString *) getDBPath {

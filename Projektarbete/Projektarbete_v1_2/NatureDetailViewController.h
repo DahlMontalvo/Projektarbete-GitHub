@@ -27,11 +27,19 @@
 @property (nonatomic) float startCountdown;
 
 @property (nonatomic) int categoryID;
+@property (nonatomic) int correctAnswersNumber;
+@property (nonatomic) int questionAtm;
 @property (nonatomic, retain) NSString *subject;
 @property (nonatomic, retain) NSMutableArray *category;
 - (IBAction)backButton:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *pauseButton;
+@property (weak, nonatomic) IBOutlet UILabel *correctAnswers;
+- (IBAction)buttonOne:(id)sender;
+- (IBAction)buttonTwo:(id)sender;
+- (IBAction)buttonThree:(id)sender;
+- (IBAction)buttonFour:(id)sender;
 
 @property (nonatomic, retain) NSMutableArray *questions;
+@property (nonatomic, retain) AppDelegate *appDelegate;
 
 @end

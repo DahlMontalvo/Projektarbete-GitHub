@@ -14,7 +14,7 @@
 
 @implementation NatureDetailViewController
 
-@synthesize categoryID, subject, category, subjectLabel, questionLabel, buttonOne, buttonTwo, buttonThree, buttonFour, startCountdownTimer, countdownLabel, darkView, startCountdownDate, startCountdown, questions;
+@synthesize categoryID, subject, category, subjectLabel, questionLabel, buttonOne, buttonTwo, buttonThree, buttonFour, startCountdownTimer, countdownLabel, darkView, startCountdownDate, startCountdown, questions, questionAtm, appDelegate, correctAnswers, correctAnswersNumber;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,6 +27,10 @@
 
 - (void)viewDidLoad
 {
+    questionAtm = 0;
+    correctAnswersNumber = 0;
+    
+    //Räkna ner 3, 2, 1
     [darkView setHidden:NO];
     startCountdownDate = [NSDate date];
     startCountdownTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f/10.0f
@@ -35,91 +39,68 @@
                                                          userInfo:nil
                                                           repeats:YES];
     
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
     category = [[NSMutableArray alloc] init];
-    
     category = [appDelegate getCategoryWithID:categoryID];
     
-    NSLog(@"CategoryID: %i", categoryID);
+    subjectLabel.text = [NSString stringWithFormat:@"00:00.0"];
+    correctAnswers.text = [NSString stringWithFormat:@"0/0"];
     
-    subjectLabel.text = [NSString stringWithFormat:@"%@: %@", subject, [category objectAtIndex:0]];
-    
-    NSMutableArray *nopId = [[NSMutableArray alloc] init];
+    //Ta fram tio frågor i en array
+    NSMutableArray *noId = [[NSMutableArray alloc] init];
     questions = [[NSMutableArray alloc] init];
-    [nopId addObject:[NSNumber numberWithInt:-1]];
-    
+    [noId addObject:[NSNumber numberWithInt:-1]];
     int iteration = [appDelegate numbersOfQuestionsInCategory:categoryID];
     if (iteration > 10) {
         iteration = 10;
     }
     
     for (int i = 0; i<iteration; i++) {
-        NSLog(@"i: %i", i);
-        NSMutableArray *question = [appDelegate getQuestionInCategory:categoryID withOutIds:nopId];
-        [nopId addObject:[question objectAtIndex:1]];
+        NSMutableArray *question = [appDelegate getQuestionInCategory:categoryID withOutIds:noId];
+        [noId addObject:[question objectAtIndex:1]];
         [questions addObject:question];
     }
     
-    NSMutableArray *question = [questions objectAtIndex:0];
-    
-    if (question != nil) {
-        questionLabel.text = [question objectAtIndex:0];
-        
-        int random = 0;
-        NSMutableArray *buttons = [[NSMutableArray alloc] initWithObjects:buttonOne, buttonTwo, buttonThree, buttonFour, nil];
-        NSMutableArray *randoms = [[NSMutableArray alloc] init];
-        //Random ordning
-        for (int i = 0; i <= 3; i++) {
-            NSLog(@"Hit");
-            BOOL continueLoop = YES;
-            while (continueLoop) {
-                NSLog(@"Dit");
-                int temp = arc4random() % 4;
-                BOOL found = NO;
-                for (int a = 0; a <= i-1; a++) {
-                    NSLog(@"%i, %i, %i", a, [[randoms objectAtIndex:a] intValue], temp);
-                    if ([[randoms objectAtIndex:a] intValue] == temp) {
-                        found = YES;
-                        NSLog(@"Found");
-                    }
-                    NSLog(@"Lit");
-                }
-                if (found == NO) {
-                    NSLog(@"Skit");
-                    random = temp;
-                    continueLoop = NO;
-                }
-            }
-            NSString *correct = @"";
-            if ([[[[question objectAtIndex:2] objectAtIndex:i] objectAtIndex:2] intValue] == 1)
-                correct = @" (rätt)";
-            
-            if (![[[[question objectAtIndex:2] objectAtIndex:i] objectAtIndex:0] isEqualToString:@"empty"]) {
-                NSString *btnString = [NSString stringWithFormat:@"%@%@", [[[question objectAtIndex:2] objectAtIndex:i] objectAtIndex:0], correct];
-                [[buttons objectAtIndex:random] setTitle:btnString forState:UIControlStateNormal];
-            }
-            [randoms addObject:[NSNumber numberWithInt:random]];
-        }
-        /*
-        [buttonOne setTitle:[[[question objectAtIndex:2] objectAtIndex:0] objectAtIndex:0] forState:UIControlStateNormal];
-        [buttonTwo setTitle:[[[question objectAtIndex:2] objectAtIndex:1] objectAtIndex:0] forState:UIControlStateNormal];
-        [buttonThree setTitle:[[[question objectAtIndex:2] objectAtIndex:2] objectAtIndex:0] forState:UIControlStateNormal];
-        [buttonFour setTitle:[[[question objectAtIndex:2] objectAtIndex:3] objectAtIndex:0] forState:UIControlStateNormal];
-         */
-        
-    }
-    else {
-        questionLabel.text = @"Ingen fråga hittad.";
-        
-        [buttonOne setHidden:YES];
-        [buttonTwo setHidden:YES];
-        [buttonThree setHidden:YES];
-        [buttonFour setHidden:YES];
-    }
+    //Vi är nu redo att presentera den första frågan
+    [self presentNextQuestion];
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+}
+
+- (void)presentNextQuestion {
+    if (questionAtm == 10) {
+        [self performSegueWithIdentifier:@"ToResult" sender:self];
+    }
+    else {
+        BOOL error = NO;
+        NSMutableArray *question;
+        if (questionAtm >= [questions count])
+            error = YES;
+        else
+            question = [questions objectAtIndex:questionAtm];
+        
+        correctAnswers.text = [NSString stringWithFormat:@"%i/%i", correctAnswersNumber, questionAtm];
+        
+        if (!error && question != nil) {
+            questionLabel.text = [question objectAtIndex:0];
+            
+            [buttonOne setTitle:[[[question objectAtIndex:2] objectAtIndex:0] objectAtIndex:0] forState:UIControlStateNormal];
+            [buttonTwo setTitle:[[[question objectAtIndex:2] objectAtIndex:1] objectAtIndex:0] forState:UIControlStateNormal];
+            [buttonThree setTitle:[[[question objectAtIndex:2] objectAtIndex:2] objectAtIndex:0] forState:UIControlStateNormal];
+            [buttonFour setTitle:[[[question objectAtIndex:2] objectAtIndex:3] objectAtIndex:0] forState:UIControlStateNormal];
+        }
+        else {
+            questionLabel.text = @"You have reached the point of no return. Det finns inte tillräckligt med frågor i denna kategori. Klaga på dahl.montalvo@gmail.com.";
+            [buttonOne setHidden:YES];
+            [buttonTwo setHidden:YES];
+            [buttonThree setHidden:YES];
+            [buttonFour setHidden:YES];
+        }
+        
+        questionAtm++;
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -167,6 +148,7 @@
     [self setDarkView:nil];
     [self setCountdownLabel:nil];
     [self setPauseButton:nil];
+    [self setCorrectAnswers:nil];
     [super viewDidUnload];
 }
 - (IBAction)backButton:(id)sender {
@@ -190,5 +172,30 @@
 	} else if (buttonIndex == 2) {
 		
     } 
+}
+- (IBAction)buttonOne:(id)sender {
+    [self buttonPressed:1];
+}
+
+- (IBAction)buttonTwo:(id)sender {
+    [self buttonPressed:2];
+}
+
+- (IBAction)buttonThree:(id)sender {
+    [self buttonPressed:3];
+}
+
+- (IBAction)buttonFour:(id)sender {
+    [self buttonPressed:4];
+}
+
+-(void)buttonPressed:(int)buttonIndex {
+    
+    if ([[[[[questions objectAtIndex:questionAtm-1] objectAtIndex:2] objectAtIndex:buttonIndex-1] objectAtIndex:2] intValue] == 1) {
+        correctAnswersNumber++;
+    }
+    
+    [self presentNextQuestion];
+    
 }
 @end

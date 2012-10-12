@@ -120,7 +120,6 @@
     cellValue = [[categories objectAtIndex:index] objectAtIndex:0];
     
     NatureCategoryCell *cell = (NatureCategoryCell *)[localTableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    NSLog(@"RID: %@", CellIdentifier);
     if (cell == nil)
     {
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"NatureCategoryCell" owner:self options:nil];
@@ -146,7 +145,6 @@
     NatureDetailViewController *nvc = segue.destinationViewController;
     nvc.subject = subject;
     nvc.categoryID = categoryID;
-    NSLog(@"ID i master: %i", categoryID);
 }
 
 @end
