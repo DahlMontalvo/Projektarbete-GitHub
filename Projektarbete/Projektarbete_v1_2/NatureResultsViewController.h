@@ -11,6 +11,7 @@
 @interface NatureResultsViewController : UIViewController {
     
     int score;
+    NSDate *testStartedDate;
     
 }
 
@@ -21,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *starsImageView;
+@property (retain, nonatomic) NSDate *testStartedDate;
 - (IBAction)continueButtonPressed:(id)sender;
 
 @end

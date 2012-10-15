@@ -32,6 +32,13 @@
 @property (nonatomic) int questionAtm;
 @property (nonatomic, retain) NSString *subject;
 @property (nonatomic, retain) NSMutableArray *category;
+@property (nonatomic, retain) NSDate *testStartedDate;
+@property (nonatomic, retain) NSDate *start_countdown_date;
+@property (nonatomic) float countdownCounter;
+@property (nonatomic) NSTimeInterval time_passed;
+@property (nonatomic, retain) NSDate *start_date;
+@property (nonatomic, retain) NSTimer *countdownTimer;
+@property (nonatomic, retain) NSTimer *timer;
 - (IBAction)backButton:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *pauseButton;
 @property (weak, nonatomic) IBOutlet UILabel *correctAnswers;

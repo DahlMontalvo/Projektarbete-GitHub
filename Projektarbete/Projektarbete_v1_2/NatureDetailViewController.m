@@ -14,7 +14,7 @@
 
 @implementation NatureDetailViewController
 
-@synthesize categoryID, subject, category, subjectLabel, questionLabel, buttonOne, buttonTwo, buttonThree, buttonFour, startCountdownTimer, countdownLabel, darkView, startCountdownDate, startCountdown, questions, questionAtm, appDelegate, correctAnswers, correctAnswersNumber;
+@synthesize categoryID, subject, category, subjectLabel, questionLabel, buttonOne, buttonTwo, buttonThree, buttonFour, startCountdownTimer, countdownLabel, darkView, startCountdownDate, startCountdown, questions, questionAtm, appDelegate, correctAnswers, correctAnswersNumber, testStartedDate, start_date, timer, time_passed, countdownCounter, start_countdown_date, countdownTimer;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -25,10 +25,90 @@
     return self;
 }
 
+-(void)onTimerStart
+{
+    //NÄR STOPPURET STARTAS FÖRSTA GÅNGEN
+    time_passed = 0;
+    
+    //Startdatum
+    start_date = [NSDate date];
+    
+    //Startar en timer som uppdateras tio gånger i sekunden
+    timer = [NSTimer timerWithTimeInterval:1.0/10.0 target:self selector:@selector(onTimer) userInfo:nil repeats:YES];
+}
+
+-(void)onPause
+{
+    //CALLA FÖR ATT PAUSA KLOCKAN
+    //Räkna ut passerad tid
+    if (questionAtm > 0) {
+        time_passed += [[NSDate date] timeIntervalSinceDate:start_date];
+        
+    }
+    
+    
+    //Stanna klockan
+    [timer invalidate];
+}
+
+-(void)onUnpause
+{
+    //STARTAR ETT PAUSA UR
+    //Nytt startdatum
+    start_date = [NSDate date];
+    
+    //Starta timer för att uppdatera UIt
+    timer = [NSTimer timerWithTimeInterval:1.0/10.0 target:self selector:@selector(onTimer) userInfo:nil repeats:YES];
+}
+
+-(void)onReset
+{
+    //STANNAR KLOCKAN FÖR EVIGT
+    [timer invalidate];
+    
+    time_passed = 0;
+    
+    start_date = nil;
+}
+
+-(void)onTimer
+{
+    //UPPDATERAR UIt
+    NSDate *currentDate = [NSDate date];
+    NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:start_date]+time_passed;
+    NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:timeInterval];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"mm:ss.S"];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
+    NSString *timeString=[dateFormatter stringFromDate:timerDate];
+    subjectLabel.text = timeString;
+    
+}
+
+- (void)countdownTimerMethod
+{
+    [self setCountdownCounter:20-fabs([start_countdown_date timeIntervalSinceNow])];
+    NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:countdownCounter];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"mm:ss.S"];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
+    NSString *timeString=[dateFormatter stringFromDate:timerDate];
+    subjectLabel.text = timeString;
+    
+    NSLog(@"%@", timeString);
+    
+    if (countdownCounter <= 0) {
+        [self buttonPressed:5];
+    }
+    
+}
+
 - (void)viewDidLoad
 {
     questionAtm = 0;
     correctAnswersNumber = 0;
+    testStartedDate = [NSDate date];
     
     //Räkna ner 3, 2, 1
     [darkView setHidden:NO];
@@ -57,19 +137,32 @@
     }
     
     for (int i = 0; i<iteration; i++) {
+        NSLog(@"i:%i", i);
         NSMutableArray *question = [appDelegate getQuestionInCategory:categoryID withOutIds:noId];
-        [noId addObject:[question objectAtIndex:1]];
-        [questions addObject:question];
+        if (question != nil) {
+            [noId addObject:[question objectAtIndex:1]];
+            [questions addObject:question];
+        }
     }
     
-    //Vi är nu redo att presentera den första frågan
-    [self presentNextQuestion];
+    subjectLabel.text = @"00:00.0";
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
 
 - (void)presentNextQuestion {
+    [countdownTimer invalidate];
+    countdownTimer = nil;
+    
+    start_countdown_date = [NSDate date];
+    countdownCounter = 20;
+    countdownTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f/20.0f
+                                                      target:self
+                                                    selector:@selector(countdownTimerMethod)
+                                                    userInfo:nil
+                                                     repeats:YES];
+
     if (questionAtm == 10) {
         [self performSegueWithIdentifier:@"ToResult" sender:self];
     }
@@ -132,7 +225,10 @@
         //[darkView removeFromSuperview];
         [startCountdownTimer invalidate];
         startCountdownTimer = nil;
-        //[self nextButtonPressed];
+        
+        
+        //Vi är nu redo att presentera den första frågan
+        [self presentNextQuestion];
     }
     
 }
@@ -190,19 +286,19 @@
 }
 
 -(void)buttonPressed:(int)buttonIndex {
-    
-    if ([[[[[questions objectAtIndex:questionAtm-1] objectAtIndex:2] objectAtIndex:buttonIndex-1] objectAtIndex:2] intValue] == 1) {
-        correctAnswersNumber++;
+    if (buttonIndex < 5 && buttonIndex > 0) {
+        if ([[[[[questions objectAtIndex:questionAtm-1] objectAtIndex:2] objectAtIndex:buttonIndex-1] objectAtIndex:2] intValue] == 1) {
+            correctAnswersNumber++;
+        }
     }
-    
     [self presentNextQuestion];
-    
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"ToResult"]) {
         NatureResultsViewController *rvc = [segue destinationViewController];
         rvc.score = correctAnswersNumber;
+        rvc.testStartedDate = testStartedDate;
     }
 }
 

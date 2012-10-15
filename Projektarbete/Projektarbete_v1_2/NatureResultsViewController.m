@@ -14,7 +14,7 @@
 
 @implementation NatureResultsViewController
 
-@synthesize scoreLabel, timeLabel, categoryLabel, starsImageView, score;
+@synthesize scoreLabel, timeLabel, categoryLabel, starsImageView, score, testStartedDate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,6 +27,11 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     scoreLabel.text = [NSString stringWithFormat:@"%i/10", score];
+    
+    NSTimeInterval timeInterval = [[NSDate date] timeIntervalSinceDate:testStartedDate]-3600;
+    NSDateFormatter *objDateFormatter = [[NSDateFormatter alloc] init];
+    [objDateFormatter setDateFormat:@"mm:ss.S"];
+    timeLabel.text = [objDateFormatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:timeInterval]];
 }
 
 - (void)viewDidLoad

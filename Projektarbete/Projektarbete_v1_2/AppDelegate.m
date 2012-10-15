@@ -244,6 +244,7 @@
 }
 
 -(NSMutableArray *) getQuestionInCategory:(int)ID withOutIds:(NSMutableArray *)noId {
+    NSLog(@"hej");
 	sqlite3 *database;
     NSMutableArray *question = [[NSMutableArray alloc] init];
     BOOL found = NO;
@@ -355,6 +356,7 @@
 		sqlite3_finalize(compiledStatement);
 	}
 	sqlite3_close(database);
+    NSLog(@"Då");
     if (found)
         return question;
     else

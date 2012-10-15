@@ -549,12 +549,9 @@
     questionAtm = 0;
     
     //SAKER FÖR ATT STÄDA UPP
-    //Tangentbord upp
-    //[answerFromUser becomeFirstResponder];
     navItem.hidesBackButton = YES;
     [navItem setTitle:[NSString stringWithFormat:@"%@ in %@ %i",gameMode,operation,difficulty]];
 
-    
     quizArray = [self newQuizArrayFromCountingOperation:operation andDifficulty:difficulty numberOfQuestions:10];
 
     if ([gameMode isEqualToString:@"Test"]) {
