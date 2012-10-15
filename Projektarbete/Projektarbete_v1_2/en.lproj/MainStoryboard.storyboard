@@ -560,6 +560,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="biologyButtonPressed:" destination="djt-lz-ZBQ" eventType="touchUpInside" id="Hvw-e0-j0A"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VV4-nU-iFi">
                                 <rect key="frame" x="20" y="361" width="132" height="55"/>
@@ -572,6 +575,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="chemistryButtonPressed:" destination="djt-lz-ZBQ" eventType="touchUpInside" id="ANB-Ol-jpd"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fxF-1s-09A">
                                 <rect key="frame" x="168" y="295" width="132" height="55"/>
@@ -584,6 +590,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="physicsButtonPressed:" destination="djt-lz-ZBQ" eventType="touchUpInside" id="zxC-Ef-7k7"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Something" lineBreakMode="tailTruncation" minimumFontSize="10" id="Dq1-ga-Q0k">
                                 <rect key="frame" x="20" y="12" width="94" height="26"/>
@@ -675,6 +684,7 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="doneButton" destination="IVi-pL-mwq" id="YL5-te-hZA"/>
+                        <segue destination="WkA-cj-qCf" kind="push" identifier="ToNatureStats" id="JbX-se-8u6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fxJ-Vo-lg1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -715,7 +725,37 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mLa-rk-It1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1914" y="1379"/>
+            <point key="canvasLocation" x="1918" y="1379"/>
+        </scene>
+        <!--Nature Stats View Controller-->
+        <scene sceneID="9kX-dD-dAB">
+            <objects>
+                <tableViewController id="WkA-cj-qCf" customClass="NatureStatsViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="YHg-DB-Akf">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Jil-tq-29W">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="WkA-cj-qCf" id="1Xo-rY-IYP"/>
+                            <outlet property="delegate" destination="WkA-cj-qCf" id="75J-6X-Xzf"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="EbD-hD-9JJ"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RT3-0c-hpz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1918" y="2034"/>
         </scene>
         <!--Math Master View Controller-->
         <scene sceneID="0yb-cp-avd">
@@ -1786,6 +1826,7 @@
                         <outlet property="categoryLabel" destination="1Ag-Y6-E8p" id="esk-kb-KXl"/>
                         <outlet property="scoreLabel" destination="ie1-Ph-G0A" id="Gxl-jP-rKl"/>
                         <outlet property="starsImageView" destination="yUi-b3-6zf" id="Dvd-ox-pRY"/>
+                        <outlet property="starsLabel" destination="ybc-Vm-z7W" id="qhD-fF-RtQ"/>
                         <outlet property="timeLabel" destination="f8G-rl-XFD" id="j7T-xU-OHY"/>
                     </connections>
                 </viewController>
@@ -1837,8 +1878,11 @@
         <class className="GlobalStatsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GlobalStatsViewController.h"/>
             <relationships>
+                <relationship kind="action" name="biologyButtonPressed:"/>
+                <relationship kind="action" name="chemistryButtonPressed:"/>
                 <relationship kind="action" name="clearAll:"/>
                 <relationship kind="action" name="done:"/>
+                <relationship kind="action" name="physicsButtonPressed:"/>
                 <relationship kind="outlet" name="clearButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="completedPractisesLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="completedTestsLabel" candidateClass="UILabel"/>
@@ -2003,8 +2047,12 @@
                 <relationship kind="outlet" name="categoryLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="scoreLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="starsImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="starsLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
             </relationships>
+        </class>
+        <class className="NatureStatsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NatureStatsViewController.h"/>
         </class>
         <class className="StatsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/StatsViewController.h"/>

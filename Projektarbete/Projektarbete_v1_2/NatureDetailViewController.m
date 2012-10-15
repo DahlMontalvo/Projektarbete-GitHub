@@ -152,21 +152,23 @@
 }
 
 - (void)presentNextQuestion {
-    [countdownTimer invalidate];
-    countdownTimer = nil;
-    
-    start_countdown_date = [NSDate date];
-    countdownCounter = 20;
-    countdownTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f/20.0f
-                                                      target:self
-                                                    selector:@selector(countdownTimerMethod)
-                                                    userInfo:nil
-                                                     repeats:YES];
-
     if (questionAtm == 10) {
+        [countdownTimer invalidate];
+        countdownTimer = nil;
         [self performSegueWithIdentifier:@"ToResult" sender:self];
     }
     else {
+        [countdownTimer invalidate];
+        countdownTimer = nil;
+        
+        start_countdown_date = [NSDate date];
+        countdownCounter = 20;
+        countdownTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f/20.0f
+                                                          target:self
+                                                        selector:@selector(countdownTimerMethod)
+                                                        userInfo:nil
+                                                         repeats:YES];
+        
         BOOL error = NO;
         NSMutableArray *question;
         if (questionAtm >= [questions count])
@@ -299,6 +301,7 @@
         NatureResultsViewController *rvc = [segue destinationViewController];
         rvc.score = correctAnswersNumber;
         rvc.testStartedDate = testStartedDate;
+        rvc.categoryId = categoryID;
     }
 }
 

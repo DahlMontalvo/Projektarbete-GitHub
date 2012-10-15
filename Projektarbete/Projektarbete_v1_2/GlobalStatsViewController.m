@@ -57,6 +57,18 @@
     [self dismissModalViewControllerAnimated:YES];
 }
 
+- (IBAction)physicsButtonPressed:(id)sender {
+    [self performSegueWithIdentifier:@"ToNatureStats" sender:self];
+}
+
+- (IBAction)chemistryButtonPressed:(id)sender {
+    [self performSegueWithIdentifier:@"ToNatureStats" sender:self];
+}
+
+- (IBAction)biologyButtonPressed:(id)sender {
+    [self performSegueWithIdentifier:@"ToNatureStats" sender:self];
+}
+
 -(IBAction)clearAll:(id)sender {
     
     UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"Are you sure that you want to delete all stats?" delegate:self cancelButtonTitle:@"No" destructiveButtonTitle:@"Yes" otherButtonTitles:nil, nil, nil];
@@ -75,9 +87,13 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     NSString *operation = [segue identifier];
-    StatsViewController *evc = [segue destinationViewController];
-    evc.operation = operation;
-    
+    if ([operation isEqualToString:@"ToNatureStats"]) {
+        
+    }
+    else {
+        StatsViewController *evc = [segue destinationViewController];
+        evc.operation = operation;
+    }
 }
 
 

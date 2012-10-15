@@ -108,6 +108,7 @@
 		DDB5889E15B955C6009CF151 /* MathDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB5889D15B955C6009CF151 /* MathDetailViewController.m */; };
 		DDB588A815B99DED009CF151 /* MathExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB588A715B99DED009CF151 /* MathExerciseViewController.m */; };
 		DDB588AC15B9A1AE009CF151 /* MathResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB588AB15B9A1AE009CF151 /* MathResultsViewController.m */; };
+		DDCABE25162C265E00F83AB5 /* NatureStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCABE24162C265E00F83AB5 /* NatureStatsViewController.m */; };
 		DDD0C2C51601289A00CD3BDA /* MathQuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD0C2C41601289A00CD3BDA /* MathQuizViewController.m */; };
 		DDD0C2C91601298C00CD3BDA /* MathStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD0C2C81601298C00CD3BDA /* MathStartViewController.m */; };
 		DDE5CC9C15FFE368002005BF /* MathMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE5CC9B15FFE368002005BF /* MathMasterViewController.m */; };
@@ -245,6 +246,8 @@
 		DDB588A715B99DED009CF151 /* MathExerciseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathExerciseViewController.m; sourceTree = "<group>"; };
 		DDB588AA15B9A1AE009CF151 /* MathResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathResultsViewController.h; sourceTree = "<group>"; };
 		DDB588AB15B9A1AE009CF151 /* MathResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathResultsViewController.m; sourceTree = "<group>"; };
+		DDCABE23162C265E00F83AB5 /* NatureStatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NatureStatsViewController.h; sourceTree = "<group>"; };
+		DDCABE24162C265E00F83AB5 /* NatureStatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NatureStatsViewController.m; sourceTree = "<group>"; };
 		DDD0C2C31601289A00CD3BDA /* MathQuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathQuizViewController.h; sourceTree = "<group>"; };
 		DDD0C2C41601289A00CD3BDA /* MathQuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathQuizViewController.m; sourceTree = "<group>"; };
 		DDD0C2C71601298C00CD3BDA /* MathStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathStartViewController.h; sourceTree = "<group>"; };
@@ -441,6 +444,8 @@
 				00D655DE15BDFC1C00314BBB /* GlobalStatsViewController.m */,
 				00E66CF515BC9DA600174D38 /* StatsViewController.h */,
 				00E66CF615BC9DA600174D38 /* StatsViewController.m */,
+				DDCABE23162C265E00F83AB5 /* NatureStatsViewController.h */,
+				DDCABE24162C265E00F83AB5 /* NatureStatsViewController.m */,
 				DDB5886E15B947A9009CF151 /* MainStoryboard.storyboard */,
 				007BC47C15C09B4E009BC60D /* MathTableCellController.xib */,
 				DD76D380161C97F80017D48F /* NatureCategoryCell.xib */,
@@ -702,6 +707,7 @@
 				DD76D37F161C97DC0017D48F /* NatureCategoryCell.m in Sources */,
 				DD76D384161CA98A0017D48F /* NatureDetailViewController.m in Sources */,
 				DDF39961162874930071F215 /* NatureResultsViewController.m in Sources */,
+				DDCABE25162C265E00F83AB5 /* NatureStatsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
