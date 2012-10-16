@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "MathQuizViewController.h"
 #import "MathExerciseViewController.h"
+#import "DifficultySegmentedControlButtonController.h"
+#import "GamemodeSegmentedControlButtonController.h"
 
 @interface MathDetailViewController : UIViewController {
     NSString *operation;
@@ -27,11 +29,28 @@
 @property (strong, nonatomic) IBOutlet UIButton *modeLabel;
 @property (strong, nonatomic) IBOutlet UIButton *startButton;
 @property (nonatomic, retain) NSString *operation;
+@property (nonatomic, retain) NSMutableArray *difficultyButtons;
+@property (nonatomic, retain) NSMutableArray *gamemodeButtons;
 
 - (IBAction)difficultySegmentedControl:(id)sender;
 - (IBAction)gamemodeSegmentedControl:(id)sender;
 - (IBAction)backButton:(id)sender;
 - (IBAction)startButton:(id)sender;
+
+- (IBAction)buttonOnePressed:(id)sender;
+- (IBAction)buttonTwoPressed:(id)sender;
+- (IBAction)buttonThreePressed:(id)sender;
+- (IBAction)buttonFourPressed:(id)sender;
+- (IBAction)buttonFivePressed:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *buttonOne;
+@property (weak, nonatomic) IBOutlet UIButton *buttonTwo;
+@property (weak, nonatomic) IBOutlet UIButton *buttonThree;
+@property (weak, nonatomic) IBOutlet UIButton *buttonFour;
+@property (weak, nonatomic) IBOutlet UIButton *buttonFive;
+- (IBAction)buttonPractisePressed:(id)sender;
+- (IBAction)buttonTestPressed:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *buttonPractise;
+@property (weak, nonatomic) IBOutlet UIButton *buttonTest;
 
 
 @end

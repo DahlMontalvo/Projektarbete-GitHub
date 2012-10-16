@@ -18,7 +18,7 @@
 @synthesize operation;
 @synthesize modeLabel;
 @synthesize starsImage;
-@synthesize starsLabel;
+@synthesize starsLabel, difficultyButtons, buttonFive, buttonFour, buttonOne, buttonThree, buttonTwo, buttonPractise, buttonTest, gamemodeButtons;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -51,6 +51,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    difficultyButtons = [[NSMutableArray alloc] initWithObjects:buttonOne, buttonTwo, buttonThree, buttonFour, buttonFive, nil];
+    //Följande rad initialiserar - ta inte bort!
+    [self buttonPressed:0];
+    
+    gamemodeButtons = [[NSMutableArray alloc] initWithObjects:buttonPractise, buttonTest, nil];
+    //Följande rad initialiserar - ta inte bort!
+    [self buttonGamemodePressed:0];
     
     [gamemodeSegmentedControl setEnabled:NO];
     [practiseButton setEnabled:NO];
@@ -99,6 +107,13 @@
     [self setStartButton:nil];
     [self setStarsImage:nil];
     [self setStarsLabel:nil];
+    [self setButtonOne:nil];
+    [self setButtonTwo:nil];
+    [self setButtonThree:nil];
+    [self setButtonFour:nil];
+    [self setButtonFive:nil];
+    [self setButtonPractise:nil];
+    [self setButtonTest:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -166,4 +181,36 @@
         [self performSegueWithIdentifier:@"ToCount" sender:self];
     }
 }
+
+- (void)buttonPressed:(NSInteger)activeButtonIndex {
+    for (int i = 0; i < [difficultyButtons count]; i++) {
+        DifficultySegmentedControlButtonController *button = [difficultyButtons objectAtIndex:i];
+        if (i == activeButtonIndex-1) {
+            [button setPressed:YES];
+        } else {
+            [button setPressed:NO];
+        }
+        NSLog(@"wtf");
+    }
+}
+
+- (void)buttonGamemodePressed:(NSInteger)activeButtonIndex {
+    for (int i = 0; i < [gamemodeButtons count]; i++) {
+        GamemodeSegmentedControlButtonController *button = [gamemodeButtons objectAtIndex:i];
+        if (i == activeButtonIndex-1) {
+            [button setPressed:YES];
+        } else {
+            [button setPressed:NO];
+        }
+    }
+}
+
+- (IBAction)buttonOnePressed:(id)sender { [self buttonPressed:1]; }
+- (IBAction)buttonTwoPressed:(id)sender { [self buttonPressed:2]; }
+- (IBAction)buttonThreePressed:(id)sender { [self buttonPressed:3]; }
+- (IBAction)buttonFourPressed:(id)sender { [self buttonPressed:4]; }
+- (IBAction)buttonFivePressed:(id)sender { [self buttonPressed:5]; }
+- (IBAction)buttonPractisePressed:(id)sender { [self buttonGamemodePressed:1]; }
+- (IBAction)buttonTestPressed:(id)sender { [self buttonGamemodePressed:2]; }
+
 @end

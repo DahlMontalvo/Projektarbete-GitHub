@@ -109,6 +109,8 @@
 		DDB588A815B99DED009CF151 /* MathExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB588A715B99DED009CF151 /* MathExerciseViewController.m */; };
 		DDB588AC15B9A1AE009CF151 /* MathResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB588AB15B9A1AE009CF151 /* MathResultsViewController.m */; };
 		DDCABE25162C265E00F83AB5 /* NatureStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCABE24162C265E00F83AB5 /* NatureStatsViewController.m */; };
+		DDCABE2E162D508B00F83AB5 /* GamemodeSegmentedControlButtonController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCABE2D162D508B00F83AB5 /* GamemodeSegmentedControlButtonController.m */; };
+		DDCABE31162D50DE00F83AB5 /* DifficultySegmentedControlButtonController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCABE30162D50DE00F83AB5 /* DifficultySegmentedControlButtonController.m */; };
 		DDD0C2C51601289A00CD3BDA /* MathQuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD0C2C41601289A00CD3BDA /* MathQuizViewController.m */; };
 		DDD0C2C91601298C00CD3BDA /* MathStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD0C2C81601298C00CD3BDA /* MathStartViewController.m */; };
 		DDE5CC9C15FFE368002005BF /* MathMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE5CC9B15FFE368002005BF /* MathMasterViewController.m */; };
@@ -248,6 +250,10 @@
 		DDB588AB15B9A1AE009CF151 /* MathResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathResultsViewController.m; sourceTree = "<group>"; };
 		DDCABE23162C265E00F83AB5 /* NatureStatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NatureStatsViewController.h; sourceTree = "<group>"; };
 		DDCABE24162C265E00F83AB5 /* NatureStatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NatureStatsViewController.m; sourceTree = "<group>"; };
+		DDCABE2C162D508A00F83AB5 /* GamemodeSegmentedControlButtonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamemodeSegmentedControlButtonController.h; sourceTree = "<group>"; };
+		DDCABE2D162D508B00F83AB5 /* GamemodeSegmentedControlButtonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamemodeSegmentedControlButtonController.m; sourceTree = "<group>"; };
+		DDCABE2F162D50DE00F83AB5 /* DifficultySegmentedControlButtonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DifficultySegmentedControlButtonController.h; sourceTree = "<group>"; };
+		DDCABE30162D50DE00F83AB5 /* DifficultySegmentedControlButtonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DifficultySegmentedControlButtonController.m; sourceTree = "<group>"; };
 		DDD0C2C31601289A00CD3BDA /* MathQuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathQuizViewController.h; sourceTree = "<group>"; };
 		DDD0C2C41601289A00CD3BDA /* MathQuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathQuizViewController.m; sourceTree = "<group>"; };
 		DDD0C2C71601298C00CD3BDA /* MathStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathStartViewController.h; sourceTree = "<group>"; };
@@ -452,6 +458,10 @@
 				DDE8B8E015BDD72E0010A6D7 /* StatsTableCell.xib */,
 				007BC48015C09E0A009BC60D /* Bilder etc. */,
 				DDB5886315B947A9009CF151 /* Supporting Files */,
+				DDCABE2C162D508A00F83AB5 /* GamemodeSegmentedControlButtonController.h */,
+				DDCABE2D162D508B00F83AB5 /* GamemodeSegmentedControlButtonController.m */,
+				DDCABE2F162D50DE00F83AB5 /* DifficultySegmentedControlButtonController.h */,
+				DDCABE30162D50DE00F83AB5 /* DifficultySegmentedControlButtonController.m */,
 			);
 			path = Projektarbete_v1_2;
 			sourceTree = "<group>";
@@ -708,6 +718,8 @@
 				DD76D384161CA98A0017D48F /* NatureDetailViewController.m in Sources */,
 				DDF39961162874930071F215 /* NatureResultsViewController.m in Sources */,
 				DDCABE25162C265E00F83AB5 /* NatureStatsViewController.m in Sources */,
+				DDCABE2E162D508B00F83AB5 /* GamemodeSegmentedControlButtonController.m in Sources */,
+				DDCABE31162D50DE00F83AB5 /* DifficultySegmentedControlButtonController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
