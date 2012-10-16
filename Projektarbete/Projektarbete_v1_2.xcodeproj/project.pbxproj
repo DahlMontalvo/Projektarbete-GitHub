@@ -79,6 +79,24 @@
 		00C6AE1D16028C4300493F52 /* settings3.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AE1C16028C4300493F52 /* settings3.png */; };
 		00C6AE1F16028D4F00493F52 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AE1E16028D4F00493F52 /* Default@2x.png */; };
 		00C6AE2D1604C7BD00493F52 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C6AE2C1604C7BD00493F52 /* MessageUI.framework */; };
+		00C71472162DC72600753136 /* 1ButtonDepressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C71468162DC72600753136 /* 1ButtonDepressed.png */; };
+		00C71473162DC72600753136 /* 1ButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C71469162DC72600753136 /* 1ButtonPressed.png */; };
+		00C71474162DC72600753136 /* 2ButtonDepressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C7146A162DC72600753136 /* 2ButtonDepressed.png */; };
+		00C71475162DC72600753136 /* 2ButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C7146B162DC72600753136 /* 2ButtonPressed.png */; };
+		00C71476162DC72600753136 /* 3ButtonDepressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C7146C162DC72600753136 /* 3ButtonDepressed.png */; };
+		00C71477162DC72600753136 /* 3ButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C7146D162DC72600753136 /* 3ButtonPressed.png */; };
+		00C71478162DC72600753136 /* 4ButtonDepressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C7146E162DC72600753136 /* 4ButtonDepressed.png */; };
+		00C71479162DC72600753136 /* 4ButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C7146F162DC72600753136 /* 4ButtonPressed.png */; };
+		00C7147A162DC72600753136 /* 5ButtonDepressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C71470162DC72600753136 /* 5ButtonDepressed.png */; };
+		00C7147B162DC72600753136 /* 5ButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C71471162DC72600753136 /* 5ButtonPressed.png */; };
+		00C71482162DC88E00753136 /* PlayButtonActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C7147C162DC88D00753136 /* PlayButtonActive.png */; };
+		00C71483162DC88E00753136 /* PlayButtonInactive.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C7147D162DC88D00753136 /* PlayButtonInactive.png */; };
+		00C71484162DC88E00753136 /* PractiseButtonDepressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C7147E162DC88D00753136 /* PractiseButtonDepressed.png */; };
+		00C71485162DC88E00753136 /* PractiseButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C7147F162DC88D00753136 /* PractiseButtonPressed.png */; };
+		00C71486162DC88E00753136 /* TestButtonDepressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C71480162DC88D00753136 /* TestButtonDepressed.png */; };
+		00C71487162DC88E00753136 /* TestButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C71481162DC88D00753136 /* TestButtonPressed.png */; };
+		00C71489162DCA4900753136 /* Box.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C71488162DCA4900753136 /* Box.png */; };
+		00C7148B162DCB6000753136 /* PapperGM.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C7148A162DCB6000753136 /* PapperGM.png */; };
 		00D655DF15BDFC1C00314BBB /* GlobalStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D655DE15BDFC1C00314BBB /* GlobalStatsViewController.m */; };
 		00E66CF715BC9DA600174D38 /* Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E66CF415BC9DA600174D38 /* Singleton.m */; };
 		00E66CF815BC9DA600174D38 /* StatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E66CF615BC9DA600174D38 /* StatsViewController.m */; };
@@ -207,6 +225,24 @@
 		00C6AE1C16028C4300493F52 /* settings3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings3.png; sourceTree = "<group>"; };
 		00C6AE1E16028D4F00493F52 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		00C6AE2C1604C7BD00493F52 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		00C71468162DC72600753136 /* 1ButtonDepressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1ButtonDepressed.png; sourceTree = "<group>"; };
+		00C71469162DC72600753136 /* 1ButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1ButtonPressed.png; sourceTree = "<group>"; };
+		00C7146A162DC72600753136 /* 2ButtonDepressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2ButtonDepressed.png; sourceTree = "<group>"; };
+		00C7146B162DC72600753136 /* 2ButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2ButtonPressed.png; sourceTree = "<group>"; };
+		00C7146C162DC72600753136 /* 3ButtonDepressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3ButtonDepressed.png; sourceTree = "<group>"; };
+		00C7146D162DC72600753136 /* 3ButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3ButtonPressed.png; sourceTree = "<group>"; };
+		00C7146E162DC72600753136 /* 4ButtonDepressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4ButtonDepressed.png; sourceTree = "<group>"; };
+		00C7146F162DC72600753136 /* 4ButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4ButtonPressed.png; sourceTree = "<group>"; };
+		00C71470162DC72600753136 /* 5ButtonDepressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5ButtonDepressed.png; sourceTree = "<group>"; };
+		00C71471162DC72600753136 /* 5ButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5ButtonPressed.png; sourceTree = "<group>"; };
+		00C7147C162DC88D00753136 /* PlayButtonActive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlayButtonActive.png; sourceTree = "<group>"; };
+		00C7147D162DC88D00753136 /* PlayButtonInactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlayButtonInactive.png; sourceTree = "<group>"; };
+		00C7147E162DC88D00753136 /* PractiseButtonDepressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PractiseButtonDepressed.png; sourceTree = "<group>"; };
+		00C7147F162DC88D00753136 /* PractiseButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PractiseButtonPressed.png; sourceTree = "<group>"; };
+		00C71480162DC88D00753136 /* TestButtonDepressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestButtonDepressed.png; sourceTree = "<group>"; };
+		00C71481162DC88D00753136 /* TestButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestButtonPressed.png; sourceTree = "<group>"; };
+		00C71488162DCA4900753136 /* Box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Box.png; sourceTree = "<group>"; };
+		00C7148A162DCB6000753136 /* PapperGM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PapperGM.png; sourceTree = "<group>"; };
 		00D655DD15BDFC1C00314BBB /* GlobalStatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalStatsViewController.h; sourceTree = "<group>"; };
 		00D655DE15BDFC1C00314BBB /* GlobalStatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalStatsViewController.m; sourceTree = "<group>"; };
 		00E66CF315BC9DA600174D38 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
@@ -327,6 +363,7 @@
 		007BC48015C09E0A009BC60D /* Bilder etc. */ = {
 			isa = PBXGroup;
 			children = (
+				00C71467162DC71700753136 /* Gamemode Knappar */,
 				DD412BC7161D94B100F950E1 /* Database.sql */,
 				005F5E5716243433006E2CBC /* FetLinje.png */,
 				005F5E5816243433006E2CBC /* SmalLinje.png */,
@@ -397,6 +434,31 @@
 				00C6AD4415FCF05100493F52 /* twittericonBW copy.png */,
 			);
 			name = "Bilder etc.";
+			sourceTree = "<group>";
+		};
+		00C71467162DC71700753136 /* Gamemode Knappar */ = {
+			isa = PBXGroup;
+			children = (
+				00C71468162DC72600753136 /* 1ButtonDepressed.png */,
+				00C71469162DC72600753136 /* 1ButtonPressed.png */,
+				00C7146A162DC72600753136 /* 2ButtonDepressed.png */,
+				00C7146B162DC72600753136 /* 2ButtonPressed.png */,
+				00C7146C162DC72600753136 /* 3ButtonDepressed.png */,
+				00C7146D162DC72600753136 /* 3ButtonPressed.png */,
+				00C7146E162DC72600753136 /* 4ButtonDepressed.png */,
+				00C7146F162DC72600753136 /* 4ButtonPressed.png */,
+				00C71470162DC72600753136 /* 5ButtonDepressed.png */,
+				00C71471162DC72600753136 /* 5ButtonPressed.png */,
+				00C7147C162DC88D00753136 /* PlayButtonActive.png */,
+				00C7147D162DC88D00753136 /* PlayButtonInactive.png */,
+				00C7147E162DC88D00753136 /* PractiseButtonDepressed.png */,
+				00C7147F162DC88D00753136 /* PractiseButtonPressed.png */,
+				00C71480162DC88D00753136 /* TestButtonDepressed.png */,
+				00C71481162DC88D00753136 /* TestButtonPressed.png */,
+				00C71488162DCA4900753136 /* Box.png */,
+				00C7148A162DCB6000753136 /* PapperGM.png */,
+			);
+			name = "Gamemode Knappar";
 			sourceTree = "<group>";
 		};
 		DDB5884D15B947A9009CF151 = {
@@ -663,6 +725,24 @@
 				005F5E551624323F006E2CBC /* PaperEndast.png in Resources */,
 				005F5E5916243433006E2CBC /* FetLinje.png in Resources */,
 				005F5E5A16243433006E2CBC /* SmalLinje.png in Resources */,
+				00C71472162DC72600753136 /* 1ButtonDepressed.png in Resources */,
+				00C71473162DC72600753136 /* 1ButtonPressed.png in Resources */,
+				00C71474162DC72600753136 /* 2ButtonDepressed.png in Resources */,
+				00C71475162DC72600753136 /* 2ButtonPressed.png in Resources */,
+				00C71476162DC72600753136 /* 3ButtonDepressed.png in Resources */,
+				00C71477162DC72600753136 /* 3ButtonPressed.png in Resources */,
+				00C71478162DC72600753136 /* 4ButtonDepressed.png in Resources */,
+				00C71479162DC72600753136 /* 4ButtonPressed.png in Resources */,
+				00C7147A162DC72600753136 /* 5ButtonDepressed.png in Resources */,
+				00C7147B162DC72600753136 /* 5ButtonPressed.png in Resources */,
+				00C71482162DC88E00753136 /* PlayButtonActive.png in Resources */,
+				00C71483162DC88E00753136 /* PlayButtonInactive.png in Resources */,
+				00C71484162DC88E00753136 /* PractiseButtonDepressed.png in Resources */,
+				00C71485162DC88E00753136 /* PractiseButtonPressed.png in Resources */,
+				00C71486162DC88E00753136 /* TestButtonDepressed.png in Resources */,
+				00C71487162DC88E00753136 /* TestButtonPressed.png in Resources */,
+				00C71489162DCA4900753136 /* Box.png in Resources */,
+				00C7148B162DCB6000753136 /* PapperGM.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
