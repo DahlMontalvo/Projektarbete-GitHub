@@ -61,10 +61,12 @@
     [self buttonGamemodePressed:0];
     
     [gamemodeSegmentedControl setEnabled:NO];
-    [practiseButton setEnabled:NO];
-    [testingButton setEnabled:NO];
+    [buttonPractise setEnabled:NO];
+    [buttonTest setEnabled:NO];
     [modeLabel setEnabled:NO];
     [startButton setEnabled:NO];
+    
+    
     
     [practiseTextField setTextColor:[UIColor lightGrayColor]];
     [testTextField setTextColor:[UIColor lightGrayColor]];
@@ -127,8 +129,8 @@
 
 - (IBAction)difficultySegmentedControl:(id)sender {
     [gamemodeSegmentedControl setEnabled:YES];
-    [practiseButton setEnabled:YES];
-    [testingButton setEnabled:YES];
+   // [practiseButton setEnabled:YES];
+   // [testingButton setEnabled:YES];
     [modeLabel setEnabled:YES];
     [practiseTextField setTextColor:[UIColor blackColor]];
     [testTextField setTextColor:[UIColor blackColor]];
@@ -162,6 +164,7 @@
 
 - (IBAction)gamemodeSegmentedControl:(id)sender {
     [startButton setEnabled:YES];
+   
 
 }
 
@@ -183,6 +186,8 @@
 }
 
 - (void)buttonPressed:(NSInteger)activeButtonIndex {
+    [buttonPractise setEnabled:YES];
+    [buttonTest setEnabled:YES];
     for (int i = 0; i < [difficultyButtons count]; i++) {
         DifficultySegmentedControlButtonController *button = [difficultyButtons objectAtIndex:i];
         if (i == activeButtonIndex-1) {
@@ -199,8 +204,10 @@
         GamemodeSegmentedControlButtonController *button = [gamemodeButtons objectAtIndex:i];
         if (i == activeButtonIndex-1) {
             [button setPressed:YES];
+            [startButton setEnabled:YES];
         } else {
             [button setPressed:NO];
+            [startButton setEnabled:YES];
         }
     }
 }

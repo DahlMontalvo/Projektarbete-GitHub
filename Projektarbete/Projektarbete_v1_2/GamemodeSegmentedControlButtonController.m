@@ -25,6 +25,7 @@
     pressed = pressedArg;
     if ([[self titleForState:UIControlStateNormal] isEqualToString:@"Test"] && pressed == YES) {
         NSLog(@"Button 'Test' pressed");
+      
     }
     if (pressed == YES) {
         [self setBackgroundImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@ButtonPressed.png", [self titleForState:UIControlStateNormal]]] forState:UIControlStateNormal];
