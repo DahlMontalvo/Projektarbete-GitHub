@@ -27,10 +27,10 @@
         NSLog(@"Button 'Test' pressed");
     }
     if (pressed == YES) {
-        [self setBackgroundColor:[UIColor blueColor]];
+        [self setBackgroundImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@ButtonPressed.png", [self titleForState:UIControlStateNormal]]] forState:UIControlStateNormal];
     }
     else {
-        [self setBackgroundColor:[UIColor redColor]];
+        [self setBackgroundImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@ButtonDepressed.png", [self titleForState:UIControlStateNormal]]] forState:UIControlStateNormal];
     }
 }
 

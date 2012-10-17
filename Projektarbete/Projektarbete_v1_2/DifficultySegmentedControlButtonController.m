@@ -23,14 +23,11 @@
 
 - (void)setPressed:(BOOL)pressedArg {
     pressed = pressedArg;
-    if ([[self titleForState:UIControlStateNormal] isEqualToString:@"1"] && pressed == YES) {
-        NSLog(@"Button 1 pressed");
-    }
     if (pressed == YES) {
-        [self setBackgroundColor:[UIColor blueColor]];
+        [self setBackgroundImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@ButtonPressed.png", [self titleForState:UIControlStateNormal]]] forState:UIControlStateNormal];
     }
     else {
-        [self setBackgroundColor:[UIColor redColor]];
+        [self setBackgroundImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@ButtonDepressed.png", [self titleForState:UIControlStateNormal]]] forState:UIControlStateNormal];
     }
 }
 
