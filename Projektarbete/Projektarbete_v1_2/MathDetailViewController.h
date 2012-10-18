@@ -21,6 +21,8 @@
 }
 @property (weak, nonatomic) IBOutlet UIImageView *starsImage;
 @property (weak, nonatomic) IBOutlet UILabel *starsLabel;
+@property (nonatomic) int selectedOperation;
+@property (weak, nonatomic) NSString *selectedGamemode;
 
 @property (strong, nonatomic) IBOutlet UIButton *testingButton;
 @property (strong, nonatomic) IBOutlet UIButton *gameButton;

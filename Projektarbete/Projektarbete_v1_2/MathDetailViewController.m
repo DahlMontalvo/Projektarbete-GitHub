@@ -18,7 +18,7 @@
 @synthesize operation;
 @synthesize modeLabel;
 @synthesize starsImage;
-@synthesize starsLabel, difficultyButtons, buttonFive, buttonFour, buttonOne, buttonThree, buttonTwo, buttonPractise, buttonTest, gamemodeButtons;
+@synthesize starsLabel, difficultyButtons, buttonFive, buttonFour, buttonOne, buttonThree, buttonTwo, buttonPractise, buttonTest, gamemodeButtons, selectedGamemode, selectedOperation;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -60,7 +60,6 @@
     //Följande rad initialiserar - ta inte bort!
     [self buttonGamemodePressed:0];
     
-    [gamemodeSegmentedControl setEnabled:NO];
     [buttonPractise setEnabled:NO];
     [buttonTest setEnabled:NO];
     [modeLabel setEnabled:NO];
@@ -79,21 +78,20 @@
 - (void)viewDidDisappear:(BOOL)animated
 {
 	[super viewDidDisappear:animated];
-    [difficultySegmentedControl setSelectedSegmentIndex:UISegmentedControlNoSegment];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"ToQuiz"]) {
         MathQuizViewController *evc = [segue destinationViewController];
         evc.operation = operation;
-        evc.difficulty = (difficultySegmentedControl.selectedSegmentIndex+1);
-        evc.gameMode = [gamemodeSegmentedControl titleForSegmentAtIndex:gamemodeSegmentedControl.selectedSegmentIndex];
+        evc.difficulty = selectedOperation;
+        evc.gameMode = selectedGamemode;
     }
     else {
         MathExerciseViewController *evc = [segue destinationViewController];
         evc.operation = operation;
-        evc.difficulty = (difficultySegmentedControl.selectedSegmentIndex+1);
-        evc.gameMode = [gamemodeSegmentedControl titleForSegmentAtIndex:gamemodeSegmentedControl.selectedSegmentIndex];
+        evc.difficulty = selectedOperation;
+        evc.gameMode = selectedGamemode;
     }
      
 }
@@ -131,34 +129,7 @@
     [gamemodeSegmentedControl setEnabled:YES];
    // [practiseButton setEnabled:YES];
    // [testingButton setEnabled:YES];
-    [modeLabel setEnabled:YES];
-    [practiseTextField setTextColor:[UIColor blackColor]];
-    [testTextField setTextColor:[UIColor blackColor]];
-    [starsLabel setTextColor:[UIColor blackColor]];
     
-    int stars = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"Stars%@%i",operation, difficultySegmentedControl.selectedSegmentIndex+1]];
-    
-    NSString *name;
-    
-    switch (stars) {
-        case 0:
-            name = @"NoStars.png";
-            break;
-        case 1:
-            name = @"OneStars.png";
-            break;
-        case 2:
-            name = @"TwoStars.png";
-            break;
-        case 3:
-            name = @"ThreeStars.png";
-            break;
-        default:
-            name = @"NoStars.png";
-            break;
-    }
-    
-    starsImage.image = [UIImage imageNamed:name];
 
 }
 
@@ -192,10 +163,38 @@
         DifficultySegmentedControlButtonController *button = [difficultyButtons objectAtIndex:i];
         if (i == activeButtonIndex-1) {
             [button setPressed:YES];
+            selectedOperation = [[button titleForState:UIControlStateNormal] intValue];
+            [modeLabel setEnabled:YES];
+            [practiseTextField setTextColor:[UIColor blackColor]];
+            [testTextField setTextColor:[UIColor blackColor]];
+            [starsLabel setTextColor:[UIColor blackColor]];
+            
+            int stars = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"Stars%@%i",operation,selectedOperation]];
+            
+            NSString *name;
+            
+            switch (stars) {
+                case 0:
+                    name = @"NoStars.png";
+                    break;
+                case 1:
+                    name = @"OneStars.png";
+                    break;
+                case 2:
+                    name = @"TwoStars.png";
+                    break;
+                case 3:
+                    name = @"ThreeStars.png";
+                    break;
+                default:
+                    name = @"NoStars.png";
+                    break;
+            }
+            
+            starsImage.image = [UIImage imageNamed:name];
         } else {
             [button setPressed:NO];
         }
-        NSLog(@"wtf");
     }
 }
 
@@ -205,9 +204,9 @@
         if (i == activeButtonIndex-1) {
             [button setPressed:YES];
             [startButton setEnabled:YES];
+            selectedGamemode = [button titleForState:UIControlStateNormal];
         } else {
             [button setPressed:NO];
-            [startButton setEnabled:YES];
         }
     }
 }
