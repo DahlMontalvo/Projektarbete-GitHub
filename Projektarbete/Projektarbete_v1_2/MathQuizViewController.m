@@ -187,11 +187,13 @@
                                                     repeats:YES];
         }
         
-        
-        
         if ([operation isEqualToString:@"Fraction"]) {
             questionArray = [[NSMutableArray alloc] init];
             answersArray = [[NSMutableArray alloc] init];
+            
+            firstLineLabel.text = @"__";
+            secondLineLabel.text = @"__";
+            
             correctAnswers = 0;
             //Skapa frågor
             int numeratorOne;

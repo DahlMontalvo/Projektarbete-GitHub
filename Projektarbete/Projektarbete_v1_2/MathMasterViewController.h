@@ -10,19 +10,13 @@
 #import "MathDetailViewController.h"
 #import "MathTableCellController.h"
 
-@interface MathMasterViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
-    NSMutableArray *operations;
-    NSMutableArray *otherExercises;
-    NSString *operation;
-    NSString *otherExercise;
-}
+@interface MathMasterViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, retain) NSString *operation;
-@property (nonatomic, retain) NSString *otherExercise;
-@property (nonatomic, retain) NSString *sectionTitle;
+@property (nonatomic, retain) NSMutableArray *operations;
 
-@property (nonatomic, retain)IBOutlet UITableView *tableView;
-- (IBAction)Button:(id)sender;
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
 
+- (IBAction)button:(id)sender;
 
 @end
