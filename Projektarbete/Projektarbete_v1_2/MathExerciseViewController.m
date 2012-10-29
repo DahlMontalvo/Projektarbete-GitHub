@@ -49,7 +49,7 @@
 @synthesize startCountdown;
 @synthesize testStarted;
 @synthesize startCountdownDate;
-@synthesize startCountdownCounter;
+@synthesize startCountdownCounter, progressBar;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -131,7 +131,6 @@
     [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
     NSString *timeString=[dateFormatter stringFromDate:timerDate];
     countdownLabel.text = timeString;
-    
 }
 
 - (void)countdownTimer
@@ -148,7 +147,7 @@
     if (countdownCounter <= 0) {
         [self nextButtonPressed];
     }
-    
+    [progressBar setProgress:((5+5*difficulty)-countdownCounter)/(5+5*difficulty) animated:YES];
 }
 
 - (void)startCountdownMethod
@@ -541,7 +540,6 @@
     [keyboarddot setEnabled:NO];
     [keyboardback setEnabled:NO];
     
-    
     testStarted = NO;
     
     cancelCountdown = NO;
@@ -556,8 +554,13 @@
 
     if ([gameMode isEqualToString:@"Test"]) {
         //Exit ist för pause
-        [pauseButton setTitle:@"Exit" forState:UIControlStateNormal];    
+        [pauseButton setTitle:@"Exit" forState:UIControlStateNormal];
+        [progressBar setHidden:NO];
     }
+    else {
+        [progressBar setHidden:YES];
+    }
+    
     countdownLabel.text = @"00:00.0";
 
     startCountdownDate = [NSDate date];
@@ -852,6 +855,7 @@
     [self setKeyboardback:nil];
     [self setDarkView:nil];
     [self setStartCountdownLabel:nil];
+    [self setProgressBar:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

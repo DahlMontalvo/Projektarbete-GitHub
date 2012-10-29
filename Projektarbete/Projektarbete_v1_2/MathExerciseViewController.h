@@ -51,6 +51,7 @@
 @property (nonatomic) float startCountdownCounter;
 
 
+@property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
 @property (strong, nonatomic) IBOutlet UIButton *pauseButton;
 @property (strong, nonatomic) IBOutlet UILabel *countdownLabel;
 @property (strong, nonatomic) IBOutlet UILabel *correctAnswersLabel;

@@ -51,7 +51,7 @@
 @synthesize startCountdown;
 @synthesize testStarted;
 @synthesize startCountdownDate;
-@synthesize startCountdownCounter;
+@synthesize startCountdownCounter, progressBar;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -151,6 +151,8 @@
         [self presentNextQuestion];
     }
     
+    [progressBar setProgress:((5+5*difficulty)-countdownCounter)/(5+5*difficulty) animated:YES];
+
 }
 
 - (void)startCountdownMethod
@@ -533,6 +535,11 @@
     numeratorTwoLabel.text = @"";
     questionLabel.text = @"";
     
+    if ([gameMode isEqualToString:@"Practise"])
+        [progressBar setHidden:YES];
+    else
+        [progressBar setHidden:NO];
+    
     if (![operation isEqualToString:@"Fraction"]) {
         operationLabel.text = @"";
         firstLineLabel.text = @"";
@@ -679,6 +686,7 @@
     [self setQuestionLabel:nil];
     [self setFirstLineLabel:nil];
     [self setSecondLineLabel:nil];
+    [self setProgressBar:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

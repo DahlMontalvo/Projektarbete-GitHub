@@ -1252,6 +1252,11 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" id="I7S-dY-q2c">
+                                <rect key="frame" x="13" y="63" width="294" height="9"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="progressTintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </progressView>
                             <view contentMode="scaleToFill" id="IyR-Sw-win">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1287,6 +1292,7 @@
                         <outlet property="numeratorTwoLabel" destination="rwg-mV-PEL" id="K8c-bN-igx"/>
                         <outlet property="operationLabel" destination="fpr-vj-0cd" id="0O9-Qz-Hjs"/>
                         <outlet property="pauseButton" destination="6EI-K1-G0Q" id="5sG-db-IWv"/>
+                        <outlet property="progressBar" destination="I7S-dY-q2c" id="NOA-wm-qWZ"/>
                         <outlet property="questionLabel" destination="mul-u4-do1" id="qx9-qf-drV"/>
                         <outlet property="secondLineLabel" destination="cAb-x6-TO6" id="1mP-lu-JSs"/>
                         <outlet property="startCountdownLabel" destination="Bec-Bh-XOx" id="LBa-ys-9Me"/>
@@ -1306,14 +1312,14 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="f7B-ag-joi">
-                                <rect key="frame" x="67" y="62" width="187" height="45"/>
+                                <rect key="frame" x="67" y="77" width="187" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="26"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="h7a-Mc-1R3">
-                                <rect key="frame" x="93" y="150" width="132" height="46"/>
+                                <rect key="frame" x="93" y="157" width="132" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Marion-Regular" family="Marion" pointSize="26"/>
                                 <color key="tintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -1533,7 +1539,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="nqJ-z9-2bO">
-                                <rect key="frame" x="82" y="107" width="154" height="35"/>
+                                <rect key="frame" x="82" y="116" width="154" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Marion-Regular" family="Marion" pointSize="23"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1575,6 +1581,11 @@
                                     <action selector="pausePressed:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="TnK-NT-FP0"/>
                                 </connections>
                             </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" id="bWt-HZ-9Kt">
+                                <rect key="frame" x="13" y="61" width="294" height="9"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="progressTintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </progressView>
                             <view contentMode="scaleToFill" id="4tC-sZ-nQI">
                                 <rect key="frame" x="-1" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1617,6 +1628,7 @@
                         <outlet property="nextButton" destination="h7a-Mc-1R3" id="Vvg-7u-e68"/>
                         <outlet property="numberLabel" destination="ppB-hW-GXu" id="rbc-Kf-YoN"/>
                         <outlet property="pauseButton" destination="pOo-KL-YGW" id="CQN-qk-fhT"/>
+                        <outlet property="progressBar" destination="bWt-HZ-9Kt" id="Gx1-Lq-RgD"/>
                         <outlet property="startCountdownLabel" destination="0fm-vN-wD3" id="UGt-uz-sfk"/>
                         <segue destination="MWV-x0-Nen" kind="push" identifier="Done" id="Ord-lZ-lSz"/>
                     </connections>
@@ -1843,6 +1855,11 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" id="ZwI-j7-4W3">
+                                <rect key="frame" x="10" y="65" width="300" height="9"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="progressTintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </progressView>
                             <view contentMode="scaleToFill" id="C44-HC-SVK">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1873,6 +1890,7 @@
                         <outlet property="countdownLabel" destination="2v9-K7-ZK2" id="cQr-F6-c9x"/>
                         <outlet property="darkView" destination="C44-HC-SVK" id="6vk-Be-UIp"/>
                         <outlet property="pauseButton" destination="L8n-Hw-9hf" id="PaI-qY-vWW"/>
+                        <outlet property="progressBar" destination="ZwI-j7-4W3" id="BmT-fH-b8g"/>
                         <outlet property="questionLabel" destination="skC-2l-h2g" id="R4P-KG-KGH"/>
                         <outlet property="subjectLabel" destination="LV7-ko-8yR" id="sAI-vq-Qax"/>
                         <segue destination="w5U-Yc-VyV" kind="push" identifier="ToResult" id="EtP-iO-99W"/>
@@ -2114,6 +2132,7 @@
                 <relationship kind="outlet" name="nextButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="numberLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="pauseButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="progressBar" candidateClass="UIProgressView"/>
                 <relationship kind="outlet" name="startCountdownLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
@@ -2146,6 +2165,7 @@
                 <relationship kind="outlet" name="numeratorTwoLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="operationLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="pauseButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="progressBar" candidateClass="UIProgressView"/>
                 <relationship kind="outlet" name="questionLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="secondLineLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="startCountdownLabel" candidateClass="UILabel"/>
@@ -2182,6 +2202,7 @@
                 <relationship kind="outlet" name="countdownLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="darkView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="pauseButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="progressBar" candidateClass="UIProgressView"/>
                 <relationship kind="outlet" name="questionLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="subjectLabel" candidateClass="UILabel"/>
             </relationships>

@@ -26,6 +26,7 @@
 @property (nonatomic, retain) NSDate *startCountdownDate;
 - (IBAction)pauseButtonPressed:(id)sender;
 @property (nonatomic) float startCountdown;
+@property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
 
 @property (nonatomic) int categoryID;
 @property (nonatomic) int correctAnswersNumber;

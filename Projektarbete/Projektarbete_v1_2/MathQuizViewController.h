@@ -27,6 +27,7 @@
     BOOL testStarted;
 }
 
+@property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
 @property (weak, nonatomic) IBOutlet UILabel *startCountdownLabel;
 @property (weak, nonatomic) IBOutlet UIView *darkView;
 @property (weak, nonatomic) IBOutlet UILabel *questionLabel;

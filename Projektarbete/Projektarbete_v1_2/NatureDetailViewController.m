@@ -14,7 +14,7 @@
 
 @implementation NatureDetailViewController
 
-@synthesize categoryID, subject, category, subjectLabel, questionLabel, buttonOne, buttonTwo, buttonThree, buttonFour, startCountdownTimer, countdownLabel, darkView, startCountdownDate, startCountdown, questions, questionAtm, appDelegate, correctAnswers, correctAnswersNumber, testStartedDate, start_date, timer, time_passed, countdownCounter, start_countdown_date, countdownTimer;
+@synthesize categoryID, subject, category, subjectLabel, questionLabel, buttonOne, buttonTwo, buttonThree, buttonFour, startCountdownTimer, countdownLabel, darkView, startCountdownDate, startCountdown, questions, questionAtm, appDelegate, correctAnswers, correctAnswersNumber, testStartedDate, start_date, timer, time_passed, countdownCounter, start_countdown_date, countdownTimer, progressBar;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -96,7 +96,7 @@
     NSString *timeString=[dateFormatter stringFromDate:timerDate];
     subjectLabel.text = timeString;
     
-    NSLog(@"%@", timeString);
+    [progressBar setProgress:(20-countdownCounter)/20 animated:YES];
     
     if (countdownCounter <= 0) {
         [self buttonPressed:5];
@@ -247,6 +247,7 @@
     [self setCountdownLabel:nil];
     [self setPauseButton:nil];
     [self setCorrectAnswers:nil];
+    [self setProgressBar:nil];
     [super viewDidUnload];
 }
 - (IBAction)backButton:(id)sender {
