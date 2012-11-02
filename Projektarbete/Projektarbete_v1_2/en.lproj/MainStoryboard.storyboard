@@ -247,20 +247,8 @@
                                 <rect key="frame" x="40" y="73" width="240" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="DocumentText.png" id="fM4-Ia-MfL">
-                                <rect key="frame" x="20" y="54" width="78" height="12"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="SubjectText.png" id="7EJ-yN-YgP">
-                                <rect key="frame" x="20" y="121.5" width="51" height="15"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="FetLinje.png" id="c3V-2V-26m">
-                                <rect key="frame" x="23" y="108.5" width="271" height="12"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="SmalLinje.png" id="eEO-GD-6aX">
-                                <rect key="frame" x="32" y="138" width="265" height="4"/>
+                                <rect key="frame" x="23" y="112.5" width="271" height="12"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -942,14 +930,14 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Stars in Test mode:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dJ3-D9-MCg">
-                                <rect key="frame" x="20" y="175" width="215" height="21"/>
+                                <rect key="frame" x="20" y="178" width="215" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Marion-Regular" family="Marion" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="NoStars.png" id="a7Y-2j-tXX">
-                                <rect key="frame" x="184" y="170" width="96" height="26"/>
+                                <rect key="frame" x="173" y="173" width="96" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="r09-1v-AX1" customClass="DifficultySegmentedControlButtonController">
@@ -1311,8 +1299,227 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="f7B-ag-joi">
-                                <rect key="frame" x="67" y="77" width="187" height="45"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Wood1.png" id="eK9-eH-LUE">
+                                <rect key="frame" x="-20" y="0.0" width="360" height="640"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" id="zdg-Qj-QtS">
+                                <rect key="frame" x="12" y="17" width="295" height="455"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <progressView opaque="NO" contentMode="scaleToFill" id="bWt-HZ-9Kt">
+                                        <rect key="frame" x="7" y="44" width="280" height="9"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="progressTintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </progressView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RUu-9A-6qU">
+                                        <rect key="frame" x="7" y="210" width="94" height="58"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="30"/>
+                                        <color key="tintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="1">
+                                            <color key="titleColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="keyboard1:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="d5L-eN-xaY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xSN-Aq-fM8">
+                                        <rect key="frame" x="100" y="210" width="94" height="58"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="30"/>
+                                        <color key="tintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="2">
+                                            <color key="titleColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="keyboard2:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="U0S-uA-G1t"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qRE-pR-9vo">
+                                        <rect key="frame" x="193" y="210" width="94" height="58"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="30"/>
+                                        <color key="tintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="3">
+                                            <color key="titleColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="keyboard3:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="kk8-CW-JYt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="viH-Zv-92z">
+                                        <rect key="frame" x="7" y="266" width="94" height="58"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="30"/>
+                                        <color key="tintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="4">
+                                            <color key="titleColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="keyboard4:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="xIh-q4-TNm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oau-TO-fRK">
+                                        <rect key="frame" x="100" y="266" width="94" height="58"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="30"/>
+                                        <color key="tintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="5">
+                                            <color key="titleColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="keyboard5:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="Bw7-jw-Q7J"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HL5-D1-SVY">
+                                        <rect key="frame" x="193" y="266" width="94" height="58"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="30"/>
+                                        <color key="tintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="6">
+                                            <color key="titleColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="keyboard6:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="gMV-4r-6do"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NAb-67-oBp">
+                                        <rect key="frame" x="7" y="322" width="94" height="58"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="30"/>
+                                        <color key="tintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="7">
+                                            <color key="titleColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="keyboard7:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="Sad-1S-a1u"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ODD-lw-muD">
+                                        <rect key="frame" x="100" y="322" width="94" height="58"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="30"/>
+                                        <color key="tintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="8">
+                                            <color key="titleColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="keyboard8:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="Gzl-Jt-A89"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="G6n-7u-HYL">
+                                        <rect key="frame" x="193" y="322" width="94" height="58"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="30"/>
+                                        <color key="tintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="9">
+                                            <color key="titleColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="keyboard9:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="zxZ-Sr-bMX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="swu-i6-han">
+                                        <rect key="frame" x="7" y="378" width="94" height="58"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="30"/>
+                                        <color key="tintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title=".">
+                                            <color key="titleColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="keyboarddot:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="5un-hv-s08"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4o8-Mu-ivk">
+                                        <rect key="frame" x="193" y="378" width="94" height="58"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="24"/>
+                                        <color key="tintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="6" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Delete">
+                                            <color key="titleColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="keyboardback:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="UbS-f3-7Z9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PX3-om-SEv">
+                                        <rect key="frame" x="100" y="378" width="94" height="58"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="30"/>
+                                        <color key="tintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="0">
+                                            <color key="titleColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="keyboard0:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="f9Q-xS-rth"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Tal" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="f7B-ag-joi">
+                                <rect key="frame" x="67" y="78" width="187" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="26"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1335,211 +1542,8 @@
                                     <action selector="nextButton:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="Bn9-ub-6tX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RUu-9A-6qU">
-                                <rect key="frame" x="24" y="227" width="94" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="30"/>
-                                <color key="tintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="1">
-                                    <color key="titleColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="keyboard1:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="d5L-eN-xaY"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xSN-Aq-fM8">
-                                <rect key="frame" x="117" y="227" width="94" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="30"/>
-                                <color key="tintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="2">
-                                    <color key="titleColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="keyboard2:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="U0S-uA-G1t"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qRE-pR-9vo">
-                                <rect key="frame" x="210" y="227" width="94" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="30"/>
-                                <color key="tintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="3">
-                                    <color key="titleColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="keyboard3:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="kk8-CW-JYt"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="viH-Zv-92z">
-                                <rect key="frame" x="24" y="283" width="94" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="30"/>
-                                <color key="tintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="4">
-                                    <color key="titleColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="keyboard4:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="xIh-q4-TNm"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oau-TO-fRK">
-                                <rect key="frame" x="117" y="283" width="94" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="30"/>
-                                <color key="tintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="5">
-                                    <color key="titleColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="keyboard5:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="Bw7-jw-Q7J"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HL5-D1-SVY">
-                                <rect key="frame" x="210" y="283" width="94" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="30"/>
-                                <color key="tintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="6">
-                                    <color key="titleColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="keyboard6:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="gMV-4r-6do"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NAb-67-oBp">
-                                <rect key="frame" x="24" y="339" width="94" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="30"/>
-                                <color key="tintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="7">
-                                    <color key="titleColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="keyboard7:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="Sad-1S-a1u"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ODD-lw-muD">
-                                <rect key="frame" x="117" y="339" width="94" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="30"/>
-                                <color key="tintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="8">
-                                    <color key="titleColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="keyboard8:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="Gzl-Jt-A89"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="G6n-7u-HYL">
-                                <rect key="frame" x="210" y="339" width="94" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="30"/>
-                                <color key="tintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="9">
-                                    <color key="titleColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="keyboard9:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="zxZ-Sr-bMX"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="swu-i6-han">
-                                <rect key="frame" x="24" y="395" width="94" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="30"/>
-                                <color key="tintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title=".">
-                                    <color key="titleColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="keyboarddot:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="5un-hv-s08"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4o8-Mu-ivk">
-                                <rect key="frame" x="210" y="395" width="94" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="24"/>
-                                <color key="tintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <inset key="contentEdgeInsets" minX="0.0" minY="6" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Delete">
-                                    <color key="titleColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="keyboardback:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="UbS-f3-7Z9"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PX3-om-SEv">
-                                <rect key="frame" x="117" y="395" width="94" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="30"/>
-                                <color key="tintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="0">
-                                    <color key="titleColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="keyboard0:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="f9Q-xS-rth"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="nqJ-z9-2bO">
-                                <rect key="frame" x="82" y="116" width="154" height="35"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Svar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="nqJ-z9-2bO">
+                                <rect key="frame" x="87" y="114" width="154" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Marion-Regular" family="Marion" pointSize="23"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1581,11 +1585,6 @@
                                     <action selector="pausePressed:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="TnK-NT-FP0"/>
                                 </connections>
                             </button>
-                            <progressView opaque="NO" contentMode="scaleToFill" id="bWt-HZ-9Kt">
-                                <rect key="frame" x="13" y="61" width="294" height="9"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="progressTintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
-                            </progressView>
                             <view contentMode="scaleToFill" id="4tC-sZ-nQI">
                                 <rect key="frame" x="-1" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1988,7 +1987,6 @@
         <image name="BioButton2.png" width="535" height="94"/>
         <image name="Box.png" width="490" height="120"/>
         <image name="ChemButton2.png" width="535" height="94"/>
-        <image name="DocumentText.png" width="127" height="20"/>
         <image name="FetLinje.png" width="521" height="20"/>
         <image name="Grön Banner 2.png" width="174" height="579"/>
         <image name="GulBanner1.png" width="110" height="139"/>
@@ -2006,7 +2004,6 @@
         <image name="Röd Banner 2.png" width="174" height="579"/>
         <image name="SimpleText.png" width="426" height="57"/>
         <image name="SmalLinje.png" width="528" height="4"/>
-        <image name="SubjectText.png" width="92" height="27"/>
         <image name="TestButtonDepressed.png" width="212" height="83"/>
         <image name="ThreeStars.png" width="320" height="90"/>
         <image name="TwoStars.png" width="320" height="90"/>
@@ -2014,229 +2011,6 @@
         <image name="Wood1.png" width="640" height="960"/>
         <image name="bakåtpil.png" width="124" height="124"/>
     </resources>
-    <classes>
-        <class className="AboutViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="done:"/>
-                <relationship kind="action" name="emailPressed:"/>
-                <relationship kind="action" name="syncButtonDown:"/>
-                <relationship kind="action" name="syncButtonPressed:"/>
-                <relationship kind="outlet" name="activityIndicatior" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="lightView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="syncButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="DifficultySegmentedControlButtonController" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DifficultySegmentedControlButtonController.h"/>
-        </class>
-        <class className="GamemodeSegmentedControlButtonController" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GamemodeSegmentedControlButtonController.h"/>
-        </class>
-        <class className="GlobalStatsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GlobalStatsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="biologyButtonPressed:"/>
-                <relationship kind="action" name="chemistryButtonPressed:"/>
-                <relationship kind="action" name="clearAll:"/>
-                <relationship kind="action" name="done:"/>
-                <relationship kind="action" name="physicsButtonPressed:"/>
-                <relationship kind="outlet" name="clearButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="completedPractisesLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="completedTestsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
-            </relationships>
-        </class>
-        <class className="MainMenuViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainMenuViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="greenBanner:"/>
-                <relationship kind="action" name="redBanner:"/>
-                <relationship kind="outlet" name="greenBanner" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="redBanner" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="scrollViewGr" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="MathDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MathDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backButton:"/>
-                <relationship kind="action" name="buttonFivePressed:"/>
-                <relationship kind="action" name="buttonFourPressed:"/>
-                <relationship kind="action" name="buttonOnePressed:"/>
-                <relationship kind="action" name="buttonPractisePressed:"/>
-                <relationship kind="action" name="buttonTestPressed:"/>
-                <relationship kind="action" name="buttonThreePressed:"/>
-                <relationship kind="action" name="buttonTwoPressed:"/>
-                <relationship kind="action" name="difficultySegmentedControl:"/>
-                <relationship kind="action" name="gamemodeSegmentedControl:"/>
-                <relationship kind="action" name="startButton:"/>
-                <relationship kind="outlet" name="buttonFive" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonFour" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonOne" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonPractise" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonTest" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonThree" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonTwo" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="difficultySegmentedControl" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="gameButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="gamemodeSegmentedControl" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="modeLabel" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="navigationLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="practiseButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="practiseTextField" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="starsImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="starsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="startButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="testTextField" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="testingButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="MathExerciseViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MathExerciseViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="keyboard0:"/>
-                <relationship kind="action" name="keyboard1:"/>
-                <relationship kind="action" name="keyboard2:"/>
-                <relationship kind="action" name="keyboard3:"/>
-                <relationship kind="action" name="keyboard4:"/>
-                <relationship kind="action" name="keyboard5:"/>
-                <relationship kind="action" name="keyboard6:"/>
-                <relationship kind="action" name="keyboard7:"/>
-                <relationship kind="action" name="keyboard8:"/>
-                <relationship kind="action" name="keyboard9:"/>
-                <relationship kind="action" name="keyboardback:"/>
-                <relationship kind="action" name="keyboarddot:"/>
-                <relationship kind="action" name="nextButton:"/>
-                <relationship kind="action" name="pausePressed:"/>
-                <relationship kind="outlet" name="answerFromUser" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="correctAnswersLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="countdownLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="darkView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="exerciseLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="keyboard0" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="keyboard1" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="keyboard2" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="keyboard3" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="keyboard4" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="keyboard5" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="keyboard6" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="keyboard7" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="keyboard8" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="keyboard9" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="keyboardback" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="keyboarddot" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="navItem" candidateClass="UINavigationItem"/>
-                <relationship kind="outlet" name="nextButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="numberLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="pauseButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="progressBar" candidateClass="UIProgressView"/>
-                <relationship kind="outlet" name="startCountdownLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MathMasterViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MathMasterViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="button:"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="MathQuizViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MathQuizViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buttonFour:"/>
-                <relationship kind="action" name="buttonOne:"/>
-                <relationship kind="action" name="buttonThree:"/>
-                <relationship kind="action" name="buttonTwo:"/>
-                <relationship kind="action" name="pauseButton:"/>
-                <relationship kind="outlet" name="buttonFour" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonOne" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonThree" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonTwo" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="correctAnswersLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="countdownLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="darkView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="denominatorOneLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="denominatorTwoLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="firstLineLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="numeratorOneLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="numeratorTwoLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="operationLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="pauseButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="progressBar" candidateClass="UIProgressView"/>
-                <relationship kind="outlet" name="questionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="secondLineLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="startCountdownLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MathResultsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MathResultsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="continueButtonPressed:"/>
-                <relationship kind="outlet" name="gamemodeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="highscoreLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="infoLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="navItem" candidateClass="UINavigationItem"/>
-                <relationship kind="outlet" name="resultsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="starImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="starLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NatureDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NatureDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backButton:"/>
-                <relationship kind="action" name="buttonFour:"/>
-                <relationship kind="action" name="buttonOne:"/>
-                <relationship kind="action" name="buttonThree:"/>
-                <relationship kind="action" name="buttonTwo:"/>
-                <relationship kind="action" name="pauseButtonPressed:"/>
-                <relationship kind="outlet" name="buttonFour" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonOne" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonThree" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonTwo" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="correctAnswers" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="countdownLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="darkView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="pauseButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="progressBar" candidateClass="UIProgressView"/>
-                <relationship kind="outlet" name="questionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="subjectLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NatureMasterViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NatureMasterViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backButton:"/>
-                <relationship kind="outlet" name="questionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="subjectLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="NatureResultsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NatureResultsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="continueButtonPressed:"/>
-                <relationship kind="outlet" name="categoryLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="scoreLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="starsImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="starsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NatureStatsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NatureStatsViewController.h"/>
-        </class>
-        <class className="StatsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/StatsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="navItem" candidateClass="UINavigationItem"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
@@ -2244,6 +2018,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="0Ym-HD-fgS"/>
-        <segue reference="Ord-lZ-lSz"/>
+        <segue reference="m7M-EV-8hW"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -128,6 +128,8 @@
     if ((finalTime < previousHighscore || previousHighscore == 0) && [gamemode isEqualToString:@"Test"] && results == 10) {
         [[[Singleton sharedSingleton] sharedPrefs] setFloat:finalTime forKey:[NSString stringWithFormat:@"%@%i",operation,difficulty]];
         highscoreLabel.text = @"Highscore!";
+    } else {
+        highscoreLabel.text = [NSString stringWithFormat:@"Current Highscore: %f",previousHighscore];
     }
     
     //Sparar Global Stats
