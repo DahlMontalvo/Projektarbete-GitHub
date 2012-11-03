@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Singleton.h"
 #import "StatsViewController.h"
+#import "NatureStatsViewController.h"
 
 
 
@@ -29,6 +30,7 @@
 @property (nonatomic, strong) IBOutlet UILabel *completedTestsLabel;
 @property (nonatomic, strong) IBOutlet UILabel *
 completedPractisesLabel;
+@property (nonatomic, retain) NSString *subject;
 @property (nonatomic, weak) id <GlobalStatsViewControllerDelegate> delegate;
 
 -(IBAction)clearAll:(id)sender;

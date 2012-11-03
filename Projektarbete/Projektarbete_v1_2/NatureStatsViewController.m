@@ -14,6 +14,8 @@
 
 @implementation NatureStatsViewController
 
+@synthesize subject, navItem, categories;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -22,7 +24,25 @@
     }
     return self;
 }
-
+- (void)viewWillAppear:(BOOL)animated {
+    
+    NSLog(@"2");
+    [navItem setTitle:[NSString stringWithFormat:@"%@",subject]];
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    categories = [[NSMutableArray alloc] init];
+    
+    for (int i = 0; i < [appDelegate.categories count]; i++) {
+        if ([[[appDelegate.categories objectAtIndex:i] objectAtIndex:1] isEqualToString:subject]) {
+            NSString *name = [[appDelegate.categories objectAtIndex:i] objectAtIndex:0];
+            NSString *parent = [[appDelegate.categories objectAtIndex:i] objectAtIndex:1];
+            int ID = [[[appDelegate.categories objectAtIndex:i] objectAtIndex:2] intValue];
+            NSMutableArray *temp = [[NSMutableArray alloc] initWithObjects:name, parent, [NSNumber numberWithInt:ID], nil];
+            [categories addObject:temp];
+        }
+    }
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -44,26 +64,72 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [categories count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    NSString *cellID = [[categories objectAtIndex:indexPath.row] objectAtIndex:0];
+    StatsTableCellController *cell = (StatsTableCellController *)[tableView dequeueReusableCellWithIdentifier:cellID];
+    if (cell == nil) {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"StatsTableCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }
     
-    // Configure the cell...
+    cell.titleLabel.text = [[categories objectAtIndex:indexPath.row] objectAtIndex:0];
+    cell.descriptionLabel.text = @"Fastest 10/10";
+    
+    
+    int stars = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"NatureCategory%iStars", [[[categories objectAtIndex:indexPath.row] objectAtIndex:2] intValue]]];
+    
+    NSString *name;
+    
+    switch (stars) {
+        case 0:
+            name = @"NoStars.png";
+            break;
+        case 1:
+            name = @"OneStars.png";
+            break;
+        case 2:
+            name = @"TwoStars.png";
+            break;
+        case 3:
+            name = @"ThreeStars.png";
+            break;
+        default:
+            name = @"NoStars.png";
+            break;
+    }
+    
+    cell.starsImage.image = [UIImage imageNamed:name];
+    
+    float value = [[[Singleton sharedSingleton] sharedPrefs] floatForKey:[NSString stringWithFormat:@"NatureCategory%iTime", [[[categories objectAtIndex:indexPath.row] objectAtIndex:2] intValue]]];
+    
+    NSString *highscore;
+    
+    if (value == 0) {
+        highscore = @"None";
+    }
+    else {
+        float time = [[[Singleton sharedSingleton] sharedPrefs] floatForKey:[NSString stringWithFormat:@"NatureCategory%iTime", [[[categories objectAtIndex:indexPath.row] objectAtIndex:2] intValue]]];
+        
+        highscore = [NSString stringWithFormat:@"%.2f s", time];
+    }
+    NSLog(@"%@", [NSString stringWithFormat:@"NatureCategory%iTime", [[[categories objectAtIndex:indexPath.row] objectAtIndex:2] intValue]]);
+    
+    cell.valueLabel.text = highscore;
+    
     
     return cell;
+
 }
 
 /*
@@ -118,4 +184,8 @@
      */
 }
 
+- (void)viewDidUnload {
+    [self setNavItem:nil];
+    [super viewDidUnload];
+}
 @end

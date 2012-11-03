@@ -14,7 +14,7 @@
 @synthesize completedPractisesLabel;
 @synthesize clearButton;
 @synthesize doneButton;
-@synthesize delegate;
+@synthesize delegate, subject;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -58,14 +58,17 @@
 }
 
 - (IBAction)physicsButtonPressed:(id)sender {
+    subject = @"Physics";
     [self performSegueWithIdentifier:@"ToNatureStats" sender:self];
 }
 
 - (IBAction)chemistryButtonPressed:(id)sender {
+    subject = @"Chemistry";
     [self performSegueWithIdentifier:@"ToNatureStats" sender:self];
 }
 
 - (IBAction)biologyButtonPressed:(id)sender {
+    subject = @"Biology";
     [self performSegueWithIdentifier:@"ToNatureStats" sender:self];
 }
 
@@ -88,7 +91,9 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     NSString *operation = [segue identifier];
     if ([operation isEqualToString:@"ToNatureStats"]) {
-        
+        NatureStatsViewController *evc = [segue destinationViewController];
+        evc.subject = subject;
+        NSLog(@"1");
     }
     else {
         StatsViewController *evc = [segue destinationViewController];

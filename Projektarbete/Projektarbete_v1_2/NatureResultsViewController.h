@@ -29,5 +29,6 @@
 @property (retain, nonatomic) NSDate *testStartedDate;
 @property (nonatomic) int categoryId;
 - (IBAction)continueButtonPressed:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *highscoreLabel;
 
 @end

@@ -693,6 +693,12 @@
 
 -(void)addNumber:(int)numberToAdd {
     [answerFromUser setText:[NSString stringWithFormat:@"%@%i",answerFromUser.text,numberToAdd]];
+    
+    int answerFromUserInt = [answerFromUser.text intValue];
+    [[quizArray objectAtIndex:2] insertObject:[NSNumber numberWithInt:answerFromUserInt] atIndex:questionAtm-1];
+    if (answerFromUserInt == [[[quizArray objectAtIndex:1] objectAtIndex:questionAtm-1] intValue]) {
+        [self nextButtonPressed];
+    }
 }
 
 - (IBAction)keyboard1:(id)sender {

@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
+#import "StatsTableCellController.h"
+#import "Singleton.h"
 
-@interface NatureStatsViewController : UITableViewController
+@interface NatureStatsViewController : UITableViewController {
+    NSString *subject;
+}
+
+@property (nonatomic, retain) NSString *subject;
+@property (nonatomic, retain) NSMutableArray *categories;
+@property (weak, nonatomic) IBOutlet UINavigationItem *navItem;
 
 @end

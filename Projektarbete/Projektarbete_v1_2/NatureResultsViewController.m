@@ -14,7 +14,7 @@
 
 @implementation NatureResultsViewController
 
-@synthesize scoreLabel, timeLabel, categoryLabel, starsImageView, score, testStartedDate, categoryId, starsLabel;
+@synthesize scoreLabel, timeLabel, categoryLabel, starsImageView, score, testStartedDate, categoryId, starsLabel, highscoreLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,11 +28,9 @@
 -(void)viewWillAppear:(BOOL)animated {
     scoreLabel.text = [NSString stringWithFormat:@"%i/10", score];
     
-    NSTimeInterval timeInterval = [[NSDate date] timeIntervalSinceDate:testStartedDate]-3600;
-    NSDateFormatter *objDateFormatter = [[NSDateFormatter alloc] init];
-    [objDateFormatter setDateFormat:@"mm:ss.S"];
-    timeLabel.text = [objDateFormatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:timeInterval]];
-    
+    NSDate *currentDate = [NSDate date];
+    NSTimeInterval timeIntervalSince = [currentDate timeIntervalSinceDate:testStartedDate];
+    float finalTime = timeIntervalSince;
     
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
@@ -40,23 +38,22 @@
     category = [appDelegate getCategoryWithID:categoryId];
     
     categoryLabel.text = [NSString stringWithFormat:@"Completed in %@", [category objectAtIndex:0]];
-    timeInterval += 3600;
     int stars;
     int starsBefore = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"NatureCategory%iStars",categoryId] ];
     if (score == 10) {
-        if (timeInterval < 20) {
+        if (finalTime < 20) {
             starsLabel.text = @"3 Stars!";
             stars = 3;
             if (starsBefore < 3)
                 [[[Singleton sharedSingleton] sharedPrefs] setInteger:3 forKey:[NSString stringWithFormat:@"NatureCategory%iStars",categoryId]];
         }
-        else if (timeInterval < 40) {
+        else if (finalTime < 40) {
             starsLabel.text = @"2 Stars!";
             stars = 2;
             if (starsBefore < 2)
                 [[[Singleton sharedSingleton] sharedPrefs] setInteger:2 forKey:[NSString stringWithFormat:@"NatureCategory%iStars",categoryId]];
         }
-        else if (timeInterval < 60) {
+        else if (finalTime < 60) {
             starsLabel.text = @"1 Star!";
             stars = 1;
             if (starsBefore < 1)
@@ -70,6 +67,17 @@
     else {
         starsLabel.text = @"No stars this time! :(";
         stars = 0;
+    }
+    
+    float previousHighscore = [[[Singleton sharedSingleton] sharedPrefs] floatForKey:[NSString stringWithFormat:@"NatureCategory%iTime",categoryId]];
+    
+    if ((finalTime < previousHighscore || previousHighscore == 0) && score == 10) {
+        [[[Singleton sharedSingleton] sharedPrefs] setFloat:finalTime forKey:[NSString stringWithFormat:@"NatureCategory%iTime",categoryId]];
+        highscoreLabel.text = @"Highscore!";
+        NSLog(@"final: %f", finalTime);
+    }
+    else {
+        NSLog(@"%f :: %f :: %i", finalTime, previousHighscore, score);
     }
     
     [[[Singleton sharedSingleton] sharedPrefs] synchronize];
@@ -94,6 +102,7 @@
             break;
     }
     
+    timeLabel.text = [NSString stringWithFormat:@"in %.2f seconds",finalTime];
     starsImageView.image = [UIImage imageNamed:name];
     
 }
@@ -116,6 +125,7 @@
     [self setCategoryLabel:nil];
     [self setStarsImageView:nil];
     [self setStarsLabel:nil];
+    [self setHighscoreLabel:nil];
     [super viewDidUnload];
 }
 - (IBAction)continueButtonPressed:(id)sender {
