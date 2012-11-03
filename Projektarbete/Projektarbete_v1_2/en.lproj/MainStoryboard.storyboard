@@ -715,7 +715,7 @@
             </objects>
             <point key="canvasLocation" x="1918" y="1379"/>
         </scene>
-        <!--Nature Stats View Controller - Subject-->
+        <!--Nature Stats View Controller-->
         <scene sceneID="9kX-dD-dAB">
             <objects>
                 <tableViewController id="WkA-cj-qCf" customClass="NatureStatsViewController" sceneMemberID="viewController">
@@ -739,10 +739,7 @@
                             <outlet property="delegate" destination="WkA-cj-qCf" id="75J-6X-Xzf"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Subject" id="EbD-hD-9JJ"/>
-                    <connections>
-                        <outlet property="navItem" destination="EbD-hD-9JJ" id="5IF-6j-XLr"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="EbD-hD-9JJ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RT3-0c-hpz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1970,7 +1967,6 @@
                     <navigationItem key="navigationItem" title="Results" id="Cl1-Jn-vaw"/>
                     <connections>
                         <outlet property="categoryLabel" destination="1Ag-Y6-E8p" id="esk-kb-KXl"/>
-                        <outlet property="highscoreLabel" destination="Y2q-M7-R5m" id="EtN-Ro-omf"/>
                         <outlet property="scoreLabel" destination="ie1-Ph-G0A" id="Gxl-jP-rKl"/>
                         <outlet property="starsImageView" destination="yUi-b3-6zf" id="Dvd-ox-pRY"/>
                         <outlet property="starsLabel" destination="ybc-Vm-z7W" id="qhD-fF-RtQ"/>
@@ -2015,8 +2011,6 @@
         <image name="Wood1.png" width="640" height="960"/>
         <image name="bakåtpil.png" width="124" height="124"/>
     </resources>
-<<<<<<< HEAD
-=======
     <classes>
         <class className="AboutViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutViewController.h"/>
@@ -2224,6 +2218,7 @@
             <relationships>
                 <relationship kind="action" name="continueButtonPressed:"/>
                 <relationship kind="outlet" name="categoryLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="highscoreLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="scoreLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="starsImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="starsLabel" candidateClass="UILabel"/>
@@ -2243,7 +2238,6 @@
             </relationships>
         </class>
     </classes>
->>>>>>> Lite stats och allmänna buggfixar
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
