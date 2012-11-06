@@ -14,40 +14,18 @@
 
 @implementation NatureMasterViewController
 
-@synthesize questionLabel, subject, subjectLabel, tableView, categories, categoryID;
+@synthesize subject, subjectLabel, tableView, categories, categoryID;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
 }
 
 #pragma mark - View lifecycle
 
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView
-{
-}
-*/
-
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    
     categories = [[NSMutableArray alloc] init];
     
     for (int i = 0; i < [appDelegate.categories count]; i++) {
@@ -60,25 +38,12 @@
         }
     }
     
-    //int randomNumber = arc4random() % ([appDelegate.questions count]);
-    
-	//NSString *question = (NSString *)[appDelegate.questions objectAtIndex:randomNumber];
-    //questionLabel.text = question;
-    
     subjectLabel.text = subject;
     
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TableViewBG2"]];
     self.tableView.backgroundView = imageView;
     
     [[self.navigationController navigationBar] setHidden:YES];
-}
-
-
-
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
 }
 
 - (void)tableView:(UITableView *)localTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -93,47 +58,33 @@
 
 - (void)viewDidUnload
 {
-    [self setQuestionLabel:nil];
     [self setSubjectLabel:nil];
     [self setTableView:nil];
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
-    
     return [categories count];
-    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)localTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSString *CellIdentifier;
-    NSString *cellValue;
-    
     int index = indexPath.row;
-    
-    CellIdentifier = [NSString stringWithFormat:@"%i", [[[categories objectAtIndex:index] objectAtIndex:2] intValue]];
-    
-    cellValue = [[categories objectAtIndex:index] objectAtIndex:0];
-    
+    NSString *CellIdentifier = [NSString stringWithFormat:@"%i", [[[categories objectAtIndex:index] objectAtIndex:2] intValue]];
+    NSString *cellValue = [[categories objectAtIndex:index] objectAtIndex:0];
     NatureCategoryCell *cell = (NatureCategoryCell *)[localTableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil)
-    {
+    
+    if (cell == nil) {
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"NatureCategoryCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
     
     cell.titleLabel.text = cellValue;
-    
     return cell;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 

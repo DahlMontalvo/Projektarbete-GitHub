@@ -16,13 +16,13 @@
     NSString *subject;
 }
 
-@property (weak, nonatomic) IBOutlet UILabel *subjectLabel;
-@property (nonatomic, retain) NSString *subject;
-@property (weak, nonatomic) IBOutlet UILabel *questionLabel;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-- (IBAction)backButton:(id)sender;
-
+@property (retain, nonatomic) NSString *subject;
 @property (nonatomic, retain) NSMutableArray *categories;
 @property (nonatomic) int categoryID;
+
+@property (weak, nonatomic) IBOutlet UILabel *subjectLabel;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+- (IBAction)backButton:(id)sender;
 
 @end

@@ -14,6 +14,7 @@
     int categoryID;
     NSString *subject;
 }
+
 @property (weak, nonatomic) IBOutlet UILabel *subjectLabel;
 @property (weak, nonatomic) IBOutlet UILabel *questionLabel;
 @property (weak, nonatomic) IBOutlet UIButton *buttonOne;
@@ -22,8 +23,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *buttonFour;
 @property (weak, nonatomic) IBOutlet UIView *darkView;
 @property (weak, nonatomic) IBOutlet UILabel *countdownLabel;
-@property (nonatomic, retain) NSTimer *startCountdownTimer;
-@property (nonatomic, retain) NSDate *startCountdownDate;
 - (IBAction)pauseButtonPressed:(id)sender;
 @property (nonatomic) float startCountdown;
 @property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
@@ -40,9 +39,12 @@
 @property (nonatomic, retain) NSDate *start_date;
 @property (nonatomic, retain) NSTimer *countdownTimer;
 @property (nonatomic, retain) NSTimer *timer;
-- (IBAction)backButton:(id)sender;
+@property (nonatomic, retain) NSTimer *startCountdownTimer;
+@property (nonatomic, retain) NSDate *startCountdownDate;
+
 @property (weak, nonatomic) IBOutlet UIButton *pauseButton;
 @property (weak, nonatomic) IBOutlet UILabel *correctAnswers;
+
 - (IBAction)buttonOne:(id)sender;
 - (IBAction)buttonTwo:(id)sender;
 - (IBAction)buttonThree:(id)sender;
