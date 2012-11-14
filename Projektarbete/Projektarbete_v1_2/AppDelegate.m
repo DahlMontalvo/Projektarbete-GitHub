@@ -54,7 +54,22 @@
                 
                 NSMutableArray *cat = [[NSMutableArray alloc] initWithObjects:category, parent, catID, nil];
                 
-                [categories addObject:cat];
+                const char *sqlStatement2 = [[NSString stringWithFormat:@"SELECT COUNT(*) AS count FROM questions WHERE parentCategory = %i", [catID intValue]] UTF8String];
+                NSLog(@"sql: %s", sqlStatement2);
+                sqlite3_stmt *compiledStatement2;
+                int numbers = 0;
+                if(sqlite3_prepare_v2(database, sqlStatement2, -1, &compiledStatement2, NULL) == SQLITE_OK) {
+                    // Loop through the results and add them to the feeds array
+                    while(sqlite3_step(compiledStatement2) == SQLITE_ROW) {
+                        // Read the data from the result row
+                        numbers = sqlite3_column_int(compiledStatement2, 0);
+                        NSLog(@"%i", numbers);
+                    }
+                }
+                
+                if (numbers > 9) {
+                    [categories addObject:cat];
+                }
 			}
 		}
 		// Release the compiled statement from memory

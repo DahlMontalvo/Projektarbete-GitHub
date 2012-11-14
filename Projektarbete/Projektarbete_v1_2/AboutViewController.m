@@ -331,6 +331,8 @@
                                   deleted:[[[categoryChanges objectAtIndex:i] objectAtIndex:4] intValue]];
     }
     
+    [appDelegate readQuestionsFromDatabase];
+    
 }
 
 @end
