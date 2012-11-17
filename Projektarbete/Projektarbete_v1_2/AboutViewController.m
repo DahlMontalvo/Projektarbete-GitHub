@@ -20,10 +20,10 @@
 - (IBAction)emailPressed:(id)sender {
 	MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
 	mailController.mailComposeDelegate = self;
-    NSArray *toRecipients = [NSArray arrayWithObject:@"VårSupportEmail"];
+    NSArray *toRecipients = [NSArray arrayWithObject:@"dahl.montalvo@gmail.com"];
 	[mailController setToRecipients:toRecipients];
 	[mailController setSubject:@"Simple Science Feedback"];
-	[mailController setMessageBody:@"Enter text here." isHTML:NO];
+	[mailController setMessageBody:@"" isHTML:NO];
 	[self presentModalViewController:mailController animated:YES];
 
 }
@@ -62,8 +62,9 @@
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
-
 {
+    NSString *string = @"string med &aring; &auml; &ouml;";
+    //NSLog(@"String: %@", [string stringByDecodingHTMLEntities]);
     [super viewDidLoad];
 }
 

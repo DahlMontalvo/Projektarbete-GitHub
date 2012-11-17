@@ -1831,12 +1831,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="L8n-Hw-9hf">
-                                <rect key="frame" x="258" y="9" width="52" height="32"/>
+                                <rect key="frame" x="258" y="3" width="52" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Marion-Regular" family="Marion" pointSize="14"/>
                                 <color key="tintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="4" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Pause">
+                                <state key="normal" title="Exit">
                                     <color key="titleColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -2185,7 +2185,6 @@
         <class className="NatureDetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NatureDetailViewController.h"/>
             <relationships>
-                <relationship kind="action" name="backButton:"/>
                 <relationship kind="action" name="buttonFour:"/>
                 <relationship kind="action" name="buttonOne:"/>
                 <relationship kind="action" name="buttonThree:"/>
@@ -2208,7 +2207,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NatureMasterViewController.h"/>
             <relationships>
                 <relationship kind="action" name="backButton:"/>
-                <relationship kind="outlet" name="questionLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="subjectLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>

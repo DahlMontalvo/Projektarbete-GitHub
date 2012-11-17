@@ -110,6 +110,18 @@
     correctAnswersNumber = 0;
     testStartedDate = [NSDate date];
     
+    [buttonOne setTitle:@"" forState:UIControlStateNormal];
+    [buttonTwo setTitle:@"" forState:UIControlStateNormal];
+    [buttonThree setTitle:@"" forState:UIControlStateNormal];
+    [buttonFour setTitle:@"" forState:UIControlStateNormal];
+    
+    subjectLabel.text = [NSString stringWithFormat:@"00:20.0"];
+    correctAnswers.text = [NSString stringWithFormat:@"0/0"];
+    
+    questionLabel.text = @"";
+    
+    [progressBar setProgress:0];
+    
     //Räkna ner 3, 2, 1
     [darkView setHidden:NO];
     startCountdownDate = [NSDate date];
@@ -123,9 +135,6 @@
     
     category = [[NSMutableArray alloc] init];
     category = [appDelegate getCategoryWithID:categoryID];
-    
-    subjectLabel.text = [NSString stringWithFormat:@"00:00.0"];
-    correctAnswers.text = [NSString stringWithFormat:@"0/0"];
     
     //Ta fram tio frågor i en array
     NSMutableArray *noId = [[NSMutableArray alloc] init];
@@ -145,13 +154,12 @@
         }
     }
     
-    subjectLabel.text = @"00:00.0";
-    
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
 
 - (void)presentNextQuestion {
+    NSLog(@"presenterar nästa fråga");
     if (questionAtm == 10) {
         [countdownTimer invalidate];
         countdownTimer = nil;
@@ -187,7 +195,7 @@
             [buttonFour setTitle:[[[question objectAtIndex:2] objectAtIndex:3] objectAtIndex:0] forState:UIControlStateNormal];
         }
         else {
-            questionLabel.text = @"You have reached the point of no return. Det finns inte tillräckligt med frågor i denna kategori. Klaga på dahl.montalvo@gmail.com.";
+            questionLabel.text = @"There are no more questions in this category. :(. To complain, please contact dahl.montalvo@gmail.com using the About tab from the Main Menu.";
             [buttonOne setHidden:YES];
             [buttonTwo setHidden:YES];
             [buttonThree setHidden:YES];
@@ -261,11 +269,17 @@
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     
 	if (buttonIndex == 0) {
+        //Döda klockan
+        [countdownTimer invalidate];
+        countdownTimer = nil;
         if ([self.navigationController.viewControllers objectAtIndex:1] != nil) {
             [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:1] animated:YES];
         }
 		
 	} else if (buttonIndex == 1) {
+        //Döda klockan
+        [countdownTimer invalidate];
+        countdownTimer = nil;
         [self viewDidLoad];
         
 	} else if (buttonIndex == 2) {
