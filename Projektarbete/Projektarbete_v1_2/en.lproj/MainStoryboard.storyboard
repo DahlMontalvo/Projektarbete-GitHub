@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -502,6 +502,7 @@
         <scene sceneID="LDi-DE-FEg">
             <objects>
                 <navigationController definesPresentationContext="YES" id="qjj-h2-kOT" sceneMemberID="viewController">
+                    <nil key="simulatedStatusBarMetrics"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="omo-Fz-F7A">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -513,20 +514,23 @@
             </objects>
             <point key="canvasLocation" x="947" y="1379"/>
         </scene>
-        <!--Global Stats View Controller - Statistics-->
+        <!--Global Stats View Controller - Ful Banner-->
         <scene sceneID="9Kn-3S-LYs">
             <objects>
                 <viewController id="djt-lz-ZBQ" customClass="GlobalStatsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xrB-O8-s9Q">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="44" width="320" height="436"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aoH-xe-nNd">
-                                <rect key="frame" x="20" y="295" width="132" height="55"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="StatsBG2.png" id="w0E-aC-Vwq">
+                                <rect key="frame" x="0.0" y="-45" width="320" height="481"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aoH-xe-nNd">
+                                <rect key="frame" x="17" y="262" width="67" height="168"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="22"/>
-                                <state key="normal" title="Math">
+                                <state key="normal" title="Math" image="MaBanner.png">
                                     <color key="titleColor" red="0.50196081399917603" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -537,11 +541,11 @@
                                     <segue destination="4qP-lV-kyf" kind="push" identifier="Math" id="YKs-d5-0BG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qkj-NO-urq">
-                                <rect key="frame" x="168" y="361" width="132" height="55"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qkj-NO-urq">
+                                <rect key="frame" x="237" y="262" width="67" height="168"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="22"/>
-                                <state key="normal" title="Biology">
+                                <state key="normal" title="Biology" image="BioBanner.png">
                                     <color key="titleColor" red="0.0" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -552,11 +556,11 @@
                                     <action selector="biologyButtonPressed:" destination="djt-lz-ZBQ" eventType="touchUpInside" id="Hvw-e0-j0A"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VV4-nU-iFi">
-                                <rect key="frame" x="20" y="361" width="132" height="55"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VV4-nU-iFi">
+                                <rect key="frame" x="90" y="262" width="67" height="168"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="22"/>
-                                <state key="normal" title="Chemistry">
+                                <state key="normal" title="Chemistry" image="ChemBanner.png">
                                     <color key="titleColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -567,11 +571,11 @@
                                     <action selector="chemistryButtonPressed:" destination="djt-lz-ZBQ" eventType="touchUpInside" id="ANB-Ol-jpd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fxF-1s-09A">
-                                <rect key="frame" x="168" y="295" width="132" height="55"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fxF-1s-09A">
+                                <rect key="frame" x="165" y="262" width="67" height="168"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="22"/>
-                                <state key="normal" title="Physics">
+                                <state key="normal" title="Physics" image="PhysBanner.png">
                                     <color key="titleColor" red="1" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -582,81 +586,18 @@
                                     <action selector="physicsButtonPressed:" destination="djt-lz-ZBQ" eventType="touchUpInside" id="zxC-Ef-7k7"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Something" lineBreakMode="tailTruncation" minimumFontSize="10" id="Dq1-ga-Q0k">
-                                <rect key="frame" x="20" y="12" width="94" height="26"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Some awesome stat" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6lV-V9-eYx">
+                                <rect key="frame" x="29" y="25" width="134" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="22"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="Marion-Regular" family="Marion" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Statistics" lineBreakMode="tailTruncation" minimumFontSize="10" id="f3n-gX-BSS">
-                                <rect key="frame" x="20" y="261" width="132" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="22"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="zfL-dl-zrm">
-                                <rect key="frame" x="20" y="51" width="280" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="17"/>
-                                <state key="normal" title="Share this app on Facebook">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Idz-PN-ZXg">
-                                <rect key="frame" x="20" y="96" width="280" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="17"/>
-                                <state key="normal" title="Share this app on Twitter">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ndg-uQ-gk2">
-                                <rect key="frame" x="20" y="171" width="280" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="17"/>
-                                <state key="normal" title="Settings eller nått">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="mbe-IY-W6y">
-                                <rect key="frame" x="20" y="152" width="280" height="1"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Vd1-a1-2Yd">
-                                <rect key="frame" x="20" y="216" width="280" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="17"/>
-                                <state key="normal" title="Settings eller nått">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Statistics" id="O6w-8P-Ok3">
+                    <navigationItem key="navigationItem" title="Ful Banner" id="O6w-8P-Ok3">
                         <barButtonItem key="leftBarButtonItem" title="Done" id="IVi-pL-mwq">
                             <connections>
                                 <action selector="done:" destination="djt-lz-ZBQ" id="l9R-hA-oUl"/>
@@ -684,7 +625,7 @@
             <objects>
                 <tableViewController id="4qP-lV-kyf" customClass="StatsViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="DdR-Dr-Xcw">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="44" width="320" height="436"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -720,7 +661,7 @@
             <objects>
                 <tableViewController id="WkA-cj-qCf" customClass="NatureStatsViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="YHg-DB-Akf">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="44" width="320" height="436"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
@@ -1515,6 +1456,22 @@
                                             <action selector="keyboard0:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="f9Q-xS-rth"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" id="4tC-sZ-nQI">
+                                        <rect key="frame" x="-13" y="-17" width="320" height="480"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="0fm-vN-wD3">
+                                                <rect key="frame" x="49" y="139" width="222" height="202"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="150"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <size key="shadowOffset" width="-1" height="-1"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
@@ -1585,22 +1542,6 @@
                                     <action selector="pausePressed:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="TnK-NT-FP0"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" id="4tC-sZ-nQI">
-                                <rect key="frame" x="-1" y="0.0" width="320" height="480"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="0fm-vN-wD3">
-                                        <rect key="frame" x="49" y="139" width="222" height="202"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="150"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        <size key="shadowOffset" width="-1" height="-1"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -1984,19 +1925,23 @@
         <image name="3ButtonDepressed.png" width="76" height="87"/>
         <image name="4ButtonDepressed.png" width="76" height="85"/>
         <image name="5ButtonDepressed.png" width="74" height="85"/>
+        <image name="BioBanner.png" width="133" height="336"/>
         <image name="BioButton2.png" width="535" height="94"/>
         <image name="Box.png" width="490" height="120"/>
+        <image name="ChemBanner.png" width="133" height="336"/>
         <image name="ChemButton2.png" width="535" height="94"/>
         <image name="FetLinje.png" width="521" height="20"/>
         <image name="Grön Banner 2.png" width="174" height="579"/>
         <image name="GulBanner1.png" width="110" height="139"/>
         <image name="Lounge3.png" width="639" height="176"/>
+        <image name="MaBanner.png" width="133" height="336"/>
         <image name="MathButton2.png" width="535" height="94"/>
         <image name="NavBarNy1.png" width="640" height="129"/>
         <image name="NoStars.png" width="320" height="90"/>
         <image name="OneStars.png" width="320" height="90"/>
         <image name="PaperEndast.png" width="605" height="753"/>
         <image name="PapperGM.png" width="610" height="851"/>
+        <image name="PhysBanner.png" width="133" height="336"/>
         <image name="PhysButton2.png" width="535" height="94"/>
         <image name="PlayButtonActive.png" width="449" height="83"/>
         <image name="PlayButtonInactive.png" width="449" height="83"/>
@@ -2004,6 +1949,7 @@
         <image name="Röd Banner 2.png" width="174" height="579"/>
         <image name="SimpleText.png" width="426" height="57"/>
         <image name="SmalLinje.png" width="528" height="4"/>
+        <image name="StatsBG2.png" width="640" height="960"/>
         <image name="TestButtonDepressed.png" width="212" height="83"/>
         <image name="ThreeStars.png" width="320" height="90"/>
         <image name="TwoStars.png" width="320" height="90"/>
@@ -2243,6 +2189,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="0Ym-HD-fgS"/>
-        <segue reference="m7M-EV-8hW"/>
+        <segue reference="Ord-lZ-lSz"/>
     </inferredMetricsTieBreakers>
 </document>
