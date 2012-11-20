@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -523,12 +523,12 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="StatsBG2.png" id="w0E-aC-Vwq">
-                                <rect key="frame" x="0.0" y="-45" width="320" height="481"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="0.0" y="-1" width="320" height="481"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aoH-xe-nNd">
-                                <rect key="frame" x="17" y="262" width="67" height="168"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="17" y="307" width="67" height="168"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="22"/>
                                 <state key="normal" title="Math" image="MaBanner.png">
                                     <color key="titleColor" red="0.50196081399917603" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -542,8 +542,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qkj-NO-urq">
-                                <rect key="frame" x="237" y="262" width="67" height="168"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="237" y="307" width="67" height="168"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="22"/>
                                 <state key="normal" title="Biology" image="BioBanner.png">
                                     <color key="titleColor" red="0.0" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -557,8 +557,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VV4-nU-iFi">
-                                <rect key="frame" x="90" y="262" width="67" height="168"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="90" y="307" width="67" height="168"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="22"/>
                                 <state key="normal" title="Chemistry" image="ChemBanner.png">
                                     <color key="titleColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -572,8 +572,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fxF-1s-09A">
-                                <rect key="frame" x="165" y="262" width="67" height="168"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="165" y="307" width="67" height="168"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="22"/>
                                 <state key="normal" title="Physics" image="PhysBanner.png">
                                     <color key="titleColor" red="1" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -587,17 +587,17 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Some awesome stat" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6lV-V9-eYx">
-                                <rect key="frame" x="29" y="25" width="134" height="21"/>
+                                <rect key="frame" x="23" y="64" width="134" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Marion-Regular" family="Marion" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4bj-wc-pXw">
-                                <rect key="frame" x="20" y="13" width="73" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4bj-wc-pXw">
+                                <rect key="frame" x="19" y="12" width="40" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Ner!">
+                                <state key="normal" title="Ner!" image="NerPil.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -608,6 +608,25 @@
                                     <action selector="downButtonPressed:" destination="djt-lz-ZBQ" eventType="touchUpInside" id="isc-nX-RrA"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="crR-nl-LjP">
+                                <rect key="frame" x="260" y="12" width="40" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Button" image="SopTunna.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clearAll:" destination="djt-lz-ZBQ" eventType="touchUpInside" id="Nza-nn-miG"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="StatsText.png" id="tmb-5c-E76">
+                                <rect key="frame" x="94" y="16" width="132" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -1952,6 +1971,7 @@
         <image name="MaBanner.png" width="133" height="336"/>
         <image name="MathButton2.png" width="535" height="94"/>
         <image name="NavBarNy1.png" width="640" height="129"/>
+        <image name="NerPil.png" width="79" height="74"/>
         <image name="NoStars.png" width="320" height="90"/>
         <image name="OneStars.png" width="320" height="90"/>
         <image name="PaperEndast.png" width="605" height="753"/>
@@ -1964,7 +1984,9 @@
         <image name="Röd Banner 2.png" width="174" height="579"/>
         <image name="SimpleText.png" width="426" height="57"/>
         <image name="SmalLinje.png" width="528" height="4"/>
+        <image name="SopTunna.png" width="79" height="74"/>
         <image name="StatsBG2.png" width="640" height="960"/>
+        <image name="StatsText.png" width="273" height="61"/>
         <image name="TestButtonDepressed.png" width="212" height="83"/>
         <image name="ThreeStars.png" width="320" height="90"/>
         <image name="TwoStars.png" width="320" height="90"/>

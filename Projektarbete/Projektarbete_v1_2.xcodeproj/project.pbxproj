@@ -110,6 +110,9 @@
 		00F7C93516599DA100B65A2E /* PhysBanner.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F7C93116599DA100B65A2E /* PhysBanner.png */; };
 		00F7C93616599DA100B65A2E /* ChemBanner.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F7C93216599DA100B65A2E /* ChemBanner.png */; };
 		00F7C93716599DA100B65A2E /* BioBanner.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F7C93316599DA100B65A2E /* BioBanner.png */; };
+		00F7C943165BCE4800B65A2E /* SopTunna.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F7C940165BCE4800B65A2E /* SopTunna.png */; };
+		00F7C944165BCE4800B65A2E /* NerPil.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F7C941165BCE4800B65A2E /* NerPil.png */; };
+		00F7C945165BCE4800B65A2E /* StatsText.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F7C942165BCE4800B65A2E /* StatsText.png */; };
 		DD412BC8161D94B100F950E1 /* Database.sql in Resources */ = {isa = PBXBuildFile; fileRef = DD412BC7161D94B100F950E1 /* Database.sql */; };
 		DD412BC9161D94B100F950E1 /* Database.sql in Resources */ = {isa = PBXBuildFile; fileRef = DD412BC7161D94B100F950E1 /* Database.sql */; };
 		DD751EC1161B7CB200C4E2D1 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DD751EC0161B7CB200C4E2D1 /* libsqlite3.0.dylib */; };
@@ -264,6 +267,9 @@
 		00F7C93116599DA100B65A2E /* PhysBanner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PhysBanner.png; sourceTree = "<group>"; };
 		00F7C93216599DA100B65A2E /* ChemBanner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChemBanner.png; sourceTree = "<group>"; };
 		00F7C93316599DA100B65A2E /* BioBanner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BioBanner.png; sourceTree = "<group>"; };
+		00F7C940165BCE4800B65A2E /* SopTunna.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SopTunna.png; sourceTree = "<group>"; };
+		00F7C941165BCE4800B65A2E /* NerPil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NerPil.png; sourceTree = "<group>"; };
+		00F7C942165BCE4800B65A2E /* StatsText.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatsText.png; sourceTree = "<group>"; };
 		DD412BC7161D94B100F950E1 /* Database.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = Database.sql; sourceTree = "<group>"; };
 		DD751EC0161B7CB200C4E2D1 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		DD76D37D161C97DC0017D48F /* NatureCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NatureCategoryCell.h; sourceTree = "<group>"; };
@@ -373,6 +379,9 @@
 		007BC48015C09E0A009BC60D /* Bilder etc. */ = {
 			isa = PBXGroup;
 			children = (
+				00F7C940165BCE4800B65A2E /* SopTunna.png */,
+				00F7C941165BCE4800B65A2E /* NerPil.png */,
+				00F7C942165BCE4800B65A2E /* StatsText.png */,
 				00F7C93016599DA100B65A2E /* MaBanner.png */,
 				00F7C93116599DA100B65A2E /* PhysBanner.png */,
 				00F7C93216599DA100B65A2E /* ChemBanner.png */,
@@ -763,6 +772,9 @@
 				00F7C93516599DA100B65A2E /* PhysBanner.png in Resources */,
 				00F7C93616599DA100B65A2E /* ChemBanner.png in Resources */,
 				00F7C93716599DA100B65A2E /* BioBanner.png in Resources */,
+				00F7C943165BCE4800B65A2E /* SopTunna.png in Resources */,
+				00F7C944165BCE4800B65A2E /* NerPil.png in Resources */,
+				00F7C945165BCE4800B65A2E /* StatsText.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
