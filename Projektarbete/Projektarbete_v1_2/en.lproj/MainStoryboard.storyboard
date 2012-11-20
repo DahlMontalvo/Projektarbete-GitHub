@@ -501,8 +501,8 @@
         <!--Navigation Controller-->
         <scene sceneID="LDi-DE-FEg">
             <objects>
-                <navigationController definesPresentationContext="YES" id="qjj-h2-kOT" sceneMemberID="viewController">
-                    <nil key="simulatedStatusBarMetrics"/>
+                <navigationController definesPresentationContext="YES" navigationBarHidden="YES" id="qjj-h2-kOT" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="omo-Fz-F7A">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -519,7 +519,7 @@
             <objects>
                 <viewController id="djt-lz-ZBQ" customClass="GlobalStatsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xrB-O8-s9Q">
-                        <rect key="frame" x="0.0" y="44" width="320" height="436"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="StatsBG2.png" id="w0E-aC-Vwq">
@@ -640,7 +640,7 @@
             <objects>
                 <tableViewController id="4qP-lV-kyf" customClass="StatsViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="DdR-Dr-Xcw">
-                        <rect key="frame" x="0.0" y="44" width="320" height="436"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -676,7 +676,7 @@
             <objects>
                 <tableViewController id="WkA-cj-qCf" customClass="NatureStatsViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="YHg-DB-Akf">
-                        <rect key="frame" x="0.0" y="44" width="320" height="436"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>

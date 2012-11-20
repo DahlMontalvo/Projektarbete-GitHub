@@ -85,7 +85,7 @@
     
     UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"Are you sure that you want to delete all stats?" delegate:self cancelButtonTitle:@"No" destructiveButtonTitle:@"Yes" otherButtonTitles:nil, nil, nil];
 	popupQuery.actionSheetStyle = UIActionSheetStyleBlackOpaque;
-	[popupQuery showInView:self.view];    
+	[popupQuery showInView:self.view];
 }
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
