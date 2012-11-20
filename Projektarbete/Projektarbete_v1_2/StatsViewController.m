@@ -136,6 +136,8 @@
     [operations addObject:@"Percent"];
     [operations addObject:@"Fratction"];
     [operations addObject:@"Equations"];
+    
+    [[self.navigationController navigationBar] setHidden:YES];
 }
 
 - (void)viewDidUnload

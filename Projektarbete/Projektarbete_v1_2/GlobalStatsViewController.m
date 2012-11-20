@@ -25,6 +25,10 @@
     return self;
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    [self.navigationController.navigationBar setHidden:YES];
+}
+
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -70,6 +74,11 @@
 - (IBAction)biologyButtonPressed:(id)sender {
     subject = @"Biology";
     [self performSegueWithIdentifier:@"ToNatureStats" sender:self];
+}
+
+- (IBAction)downButtonPressed:(id)sender {
+    [self.parentViewController dismissModalViewControllerAnimated:YES];
+    NSLog(@"Klickad");
 }
 
 -(IBAction)clearAll:(id)sender {

@@ -38,5 +38,6 @@ completedPractisesLabel;
 - (IBAction)physicsButtonPressed:(id)sender;
 - (IBAction)chemistryButtonPressed:(id)sender;
 - (IBAction)biologyButtonPressed:(id)sender;
+- (IBAction)downButtonPressed:(id)sender;
 
 @end
