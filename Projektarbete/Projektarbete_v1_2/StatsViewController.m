@@ -14,16 +14,8 @@
 @synthesize difficulty;
 @synthesize section;
 @synthesize navItem;
-@synthesize operation;
+@synthesize operation, tableView;
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -112,6 +104,8 @@
         
     NSLog(@"%@%i",name, stars);
     
+    cell.backgroundColor = [UIColor clearColor];
+    
     return cell;
 }
 
@@ -125,9 +119,10 @@
     
     [navItem setTitle:[NSString stringWithFormat:@"%@",operation]];
     
-    operations = [[NSMutableArray alloc] init];
+    [self.navigationController.navigationBar setHidden:NO];
+    [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
     
-    //För att lägga till ämnen, lägg till här och gör en ny segue på storyborden med identifyer samma
+    operations = [[NSMutableArray alloc] init];
     
     [operations addObject:@"Addition"];
     [operations addObject:@"Subtraction"];
@@ -136,8 +131,6 @@
     [operations addObject:@"Percent"];
     [operations addObject:@"Fratction"];
     [operations addObject:@"Equations"];
-    
-    [[self.navigationController navigationBar] setHidden:YES];
 }
 
 - (void)viewDidUnload
@@ -149,6 +142,11 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    tableView.backgroundColor = [UIColor clearColor];
+    tableView.opaque = NO;
+    tableView.backgroundView = nil;
+    tableView.separatorColor = [UIColor clearColor];
+    tableView.separatorStyle = nil;
     [super viewWillAppear:animated];
 }
 
@@ -232,6 +230,29 @@
 }
 */
 
+- (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    // create the parent view that will hold header Label
+	UIView* customView = [[UIView alloc] initWithFrame:CGRectMake(10.0, 0.0, 300.0, 44.0)];
+	
+	// create the button object
+	UILabel * headerLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+	headerLabel.backgroundColor = [UIColor clearColor];
+	headerLabel.opaque = NO;
+	headerLabel.textColor = [UIColor blackColor];
+	headerLabel.highlightedTextColor = [UIColor whiteColor];
+	headerLabel.font = [UIFont fontWithName:@"Marion" size:20];
+	headerLabel.frame = CGRectMake(10.0, 0.0, 300.0, 44.0);
+    
+	// If you want to align the header text as centered
+	// headerLabel.frame = CGRectMake(150.0, 0.0, 300.0, 44.0);
+    
+	headerLabel.text = [operations objectAtIndex:section]; // i.e. array element
+	[customView addSubview:headerLabel];
+    
+	return customView;
+}
+
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -248,4 +269,7 @@
      */
 }
 
+- (IBAction)pop:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 @end

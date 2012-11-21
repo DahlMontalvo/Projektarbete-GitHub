@@ -11,7 +11,7 @@
 #import "StatsTableCellController.h"
 #import "GlobalStatsViewController.h"
 
-@interface StatsViewController : UITableViewController {
+@interface StatsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     NSMutableArray *operations;
     NSString *operation;
 }
@@ -21,6 +21,9 @@
 @property (nonatomic) int section;
 @property (strong, nonatomic) NSString *operation;
 
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
+
+- (IBAction)pop:(id)sender;
 
 
 @end

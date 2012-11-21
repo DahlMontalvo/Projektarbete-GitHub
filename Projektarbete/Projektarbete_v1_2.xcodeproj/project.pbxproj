@@ -125,7 +125,6 @@
 		DDB5886715B947A9009CF151 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DDB5886515B947A9009CF151 /* InfoPlist.strings */; };
 		DDB5886915B947A9009CF151 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB5886815B947A9009CF151 /* main.m */; };
 		DDB5886D15B947A9009CF151 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB5886C15B947A9009CF151 /* AppDelegate.m */; };
-		DDB5887015B947A9009CF151 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB5886E15B947A9009CF151 /* MainStoryboard.storyboard */; };
 		DDB5887E15B947AA009CF151 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB5887D15B947AA009CF151 /* SenTestingKit.framework */; };
 		DDB5887F15B947AA009CF151 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB5885C15B947A9009CF151 /* UIKit.framework */; };
 		DDB5888015B947AA009CF151 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB5885E15B947A9009CF151 /* Foundation.framework */; };
@@ -134,6 +133,9 @@
 		DDB5889E15B955C6009CF151 /* MathDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB5889D15B955C6009CF151 /* MathDetailViewController.m */; };
 		DDB588A815B99DED009CF151 /* MathExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB588A715B99DED009CF151 /* MathExerciseViewController.m */; };
 		DDB588AC15B9A1AE009CF151 /* MathResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB588AB15B9A1AE009CF151 /* MathResultsViewController.m */; };
+		DDBA3467165CF9EB00B600C4 /* StatsBG3.png in Resources */ = {isa = PBXBuildFile; fileRef = DDBA3466165CF9EB00B600C4 /* StatsBG3.png */; };
+		DDBA346A165D01E200B600C4 /* VansterPil.png in Resources */ = {isa = PBXBuildFile; fileRef = DDBA3469165D01E200B600C4 /* VansterPil.png */; };
+		DDBA346D165D058C00B600C4 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDBA346B165D058B00B600C4 /* MainStoryboard.storyboard */; };
 		DDCABE25162C265E00F83AB5 /* NatureStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCABE24162C265E00F83AB5 /* NatureStatsViewController.m */; };
 		DDCABE2E162D508B00F83AB5 /* GamemodeSegmentedControlButtonController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCABE2D162D508B00F83AB5 /* GamemodeSegmentedControlButtonController.m */; };
 		DDCABE31162D50DE00F83AB5 /* DifficultySegmentedControlButtonController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCABE30162D50DE00F83AB5 /* DifficultySegmentedControlButtonController.m */; };
@@ -287,7 +289,6 @@
 		DDB5886A15B947A9009CF151 /* Projektarbete_v1_2-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Projektarbete_v1_2-Prefix.pch"; sourceTree = "<group>"; };
 		DDB5886B15B947A9009CF151 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DDB5886C15B947A9009CF151 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		DDB5886F15B947A9009CF151 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		DDB5887C15B947AA009CF151 /* Projektarbete_v1_2Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Projektarbete_v1_2Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB5887D15B947AA009CF151 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		DDB5888515B947AA009CF151 /* Projektarbete_v1_2Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Projektarbete_v1_2Tests-Info.plist"; sourceTree = "<group>"; };
@@ -300,6 +301,9 @@
 		DDB588A715B99DED009CF151 /* MathExerciseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathExerciseViewController.m; sourceTree = "<group>"; };
 		DDB588AA15B9A1AE009CF151 /* MathResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathResultsViewController.h; sourceTree = "<group>"; };
 		DDB588AB15B9A1AE009CF151 /* MathResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathResultsViewController.m; sourceTree = "<group>"; };
+		DDBA3466165CF9EB00B600C4 /* StatsBG3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatsBG3.png; sourceTree = "<group>"; };
+		DDBA3469165D01E200B600C4 /* VansterPil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VansterPil.png; sourceTree = "<group>"; };
+		DDBA346C165D058C00B600C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		DDCABE23162C265E00F83AB5 /* NatureStatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NatureStatsViewController.h; sourceTree = "<group>"; };
 		DDCABE24162C265E00F83AB5 /* NatureStatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NatureStatsViewController.m; sourceTree = "<group>"; };
 		DDCABE2C162D508A00F83AB5 /* GamemodeSegmentedControlButtonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamemodeSegmentedControlButtonController.h; sourceTree = "<group>"; };
@@ -379,6 +383,7 @@
 		007BC48015C09E0A009BC60D /* Bilder etc. */ = {
 			isa = PBXGroup;
 			children = (
+				DDBA3469165D01E200B600C4 /* VansterPil.png */,
 				00F7C940165BCE4800B65A2E /* SopTunna.png */,
 				00F7C941165BCE4800B65A2E /* NerPil.png */,
 				00F7C942165BCE4800B65A2E /* StatsText.png */,
@@ -387,6 +392,7 @@
 				00F7C93216599DA100B65A2E /* ChemBanner.png */,
 				00F7C93316599DA100B65A2E /* BioBanner.png */,
 				00F7C92D16599D9500B65A2E /* StatsBG2.png */,
+				DDBA3466165CF9EB00B600C4 /* StatsBG3.png */,
 				00C71467162DC71700753136 /* Gamemode Knappar */,
 				DD412BC7161D94B100F950E1 /* Database.sql */,
 				005F5E5716243433006E2CBC /* FetLinje.png */,
@@ -525,6 +531,7 @@
 		DDB5886215B947A9009CF151 /* Projektarbete_v1_2 */ = {
 			isa = PBXGroup;
 			children = (
+				DDBA346B165D058B00B600C4 /* MainStoryboard.storyboard */,
 				0023A32515BF3216006BD781 /* Icke ViewControllers */,
 				DDB5889815B953A3009CF151 /* Math */,
 				0023A32F15BF4E4F006BD781 /* Biology, Chemistry & Physics */,
@@ -538,7 +545,6 @@
 				00E66CF615BC9DA600174D38 /* StatsViewController.m */,
 				DDCABE23162C265E00F83AB5 /* NatureStatsViewController.h */,
 				DDCABE24162C265E00F83AB5 /* NatureStatsViewController.m */,
-				DDB5886E15B947A9009CF151 /* MainStoryboard.storyboard */,
 				007BC47C15C09B4E009BC60D /* MathTableCellController.xib */,
 				DD76D380161C97F80017D48F /* NatureCategoryCell.xib */,
 				DDE8B8E015BDD72E0010A6D7 /* StatsTableCell.xib */,
@@ -672,7 +678,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDB5886715B947A9009CF151 /* InfoPlist.strings in Resources */,
-				DDB5887015B947A9009CF151 /* MainStoryboard.storyboard in Resources */,
 				DDE8B8E115BDD72E0010A6D7 /* StatsTableCell.xib in Resources */,
 				007BC47E15C09B4E009BC60D /* MathTableCellController.xib in Resources */,
 				00C6AD4515FCF05100493F52 /* grayFB copy.png in Resources */,
@@ -775,6 +780,9 @@
 				00F7C943165BCE4800B65A2E /* SopTunna.png in Resources */,
 				00F7C944165BCE4800B65A2E /* NerPil.png in Resources */,
 				00F7C945165BCE4800B65A2E /* StatsText.png in Resources */,
+				DDBA3467165CF9EB00B600C4 /* StatsBG3.png in Resources */,
+				DDBA346A165D01E200B600C4 /* VansterPil.png in Resources */,
+				DDBA346D165D058C00B600C4 /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -862,20 +870,20 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		DDB5886E15B947A9009CF151 /* MainStoryboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DDB5886F15B947A9009CF151 /* en */,
-			);
-			name = MainStoryboard.storyboard;
-			sourceTree = "<group>";
-		};
 		DDB5888615B947AA009CF151 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				DDB5888715B947AA009CF151 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DDBA346B165D058B00B600C4 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DDBA346C165D058C00B600C4 /* en */,
+			);
+			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
