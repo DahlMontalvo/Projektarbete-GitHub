@@ -38,8 +38,6 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)localSection {
-    
-    //varför blir det här en warning?
     return [operations objectAtIndex:localSection];
 }
 

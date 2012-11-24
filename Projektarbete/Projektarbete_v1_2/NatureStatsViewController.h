@@ -11,12 +11,16 @@
 #import "StatsTableCellController.h"
 #import "Singleton.h"
 
-@interface NatureStatsViewController : UITableViewController {
+@interface NatureStatsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     NSString *subject;
 }
 
 @property (nonatomic, retain) NSString *subject;
 @property (nonatomic, retain) NSMutableArray *categories;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navItem;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+- (IBAction)pop:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end

@@ -83,8 +83,8 @@
 
 -(IBAction)clearAll:(id)sender {
     
-    UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"Are you sure that you want to delete all stats?" delegate:self cancelButtonTitle:@"No" destructiveButtonTitle:@"Yes" otherButtonTitles:nil, nil, nil];
-	popupQuery.actionSheetStyle = UIActionSheetStyleBlackOpaque;
+    UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"Are you sure that you want to delete all stats?" delegate:self cancelButtonTitle:@"No" destructiveButtonTitle:@"Yes" otherButtonTitles:nil];
+	popupQuery.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
 	[popupQuery showInView:self.view];
 }
 
@@ -92,6 +92,7 @@
     
 	if (buttonIndex == 0) {
         [[[Singleton sharedSingleton] sharedPrefs] setPersistentDomain:[NSDictionary dictionary] forName:[[NSBundle mainBundle] bundleIdentifier]];
+        [[[Singleton sharedSingleton] sharedPrefs] synchronize];
         [self refreshView];
     }
     

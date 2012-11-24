@@ -636,7 +636,7 @@
                                                    userInfo:nil
                                                     repeats:YES];
         }
-        [nextButton setTitle:@"Next" forState:UIControlStateNormal];
+        [nextButton setTitle:@"Skip" forState:UIControlStateNormal];
     }
     else {
         //Rätta tidigare fråga
@@ -652,7 +652,7 @@
     answerFromUser.text = @"";
     
     if (questionAtm == 10) {
-        [nextButton setTitle:@"Done!" forState:UIControlStateNormal];
+        [nextButton setTitle:@"Skip" forState:UIControlStateNormal];
     }
     if (questionAtm == 11) {
         //Skickar med tiden till nästa view

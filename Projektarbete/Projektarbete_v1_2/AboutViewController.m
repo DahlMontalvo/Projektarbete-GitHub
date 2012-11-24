@@ -91,13 +91,13 @@
 }
 
 - (IBAction)syncButtonPressed:(id)sender {
+    [lightView setHidden:NO];
+    [activityIndicatior setHidden:NO];
+    [activityIndicatior startAnimating];
     
     questionChanges = [[NSMutableArray alloc] init];
     categoryChanges = [[NSMutableArray alloc] init];
     answerChanges = [[NSMutableArray alloc] init];
-    
-    //gör saker oklickbara
-    NSLog(@"Visa activity");
     
     //Synka hela databasen
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -131,10 +131,12 @@
     
 }
 
-- (IBAction)syncButtonDown:(id)sender {
-    [lightView setHidden:NO];
-    [activityIndicatior setHidden:NO];
-    [activityIndicatior startAnimating];
+- (IBAction)likeButtonPressed:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://facebook.com"]];
+}
+
+- (IBAction)feedBackFacebookButtonPressed:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://facebook.com/feedback"]];
 }
 
 - (void)parserDidStartDocument:(NSXMLParser *)parser{
@@ -281,16 +283,22 @@
     }
     
     NSString *messageText;
-    if (questionsUpdated > 1) {
-        messageText = [NSString stringWithFormat:@"Added %i New Questions!", questionsUpdated];
+    if (questionsUpdated > 3) {
+        messageText = [NSString stringWithFormat:@"%i questions changed/updated!", questionsUpdated];
     }
-    else if (questionsUpdated > 0) {
-        messageText = @"Added One New Question!";
+    else if (questionsUpdated == 3) {
+        messageText = @"Three question changed/updated!";
+    }
+    else if (questionsUpdated == 2) {
+        messageText = @"Two question changed/updated!";
+    }
+    else if (questionsUpdated == 1) {
+        messageText = @"One question changed/updated!";
     }
     else {
-        messageText = @"There Was Nothing To Sync";
+        messageText = @"There was nothing to sync";
     }
-    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Sync Done"
+    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Sync Complete"
                                                       message:messageText
                                                      delegate:self
                                             cancelButtonTitle:@"OK"

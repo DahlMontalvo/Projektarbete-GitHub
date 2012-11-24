@@ -14,17 +14,18 @@
 
 @implementation NatureStatsViewController
 
-@synthesize subject, navItem, categories;
+@synthesize subject, navItem, categories, titleLabel, tableView;
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 - (void)viewWillAppear:(BOOL)animated {
+    
+    tableView.backgroundColor = [UIColor clearColor];
+    tableView.opaque = NO;
+    tableView.backgroundView = nil;
+    tableView.separatorColor = [UIColor clearColor];
+    tableView.separatorStyle = nil;
+    [super viewWillAppear:animated];
+    
+    [titleLabel setText:[NSString stringWithFormat:@"%@ Stats", subject]];
     
     NSLog(@"2");
     [navItem setTitle:[NSString stringWithFormat:@"%@",subject]];
@@ -43,6 +44,7 @@
         }
     }
 }
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -186,6 +188,13 @@
 
 - (void)viewDidUnload {
     [self setNavItem:nil];
+    [self setTableView:nil];
+    [self setTitleLabel:nil];
     [super viewDidUnload];
 }
+
+- (IBAction)pop:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 @end

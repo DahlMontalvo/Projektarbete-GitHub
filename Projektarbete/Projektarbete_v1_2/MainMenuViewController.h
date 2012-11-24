@@ -10,6 +10,7 @@
 #import "GlobalStatsViewController.h"
 #import "AboutViewController.h"
 #import "NatureMasterViewController.h"
+#import "Singleton.h"
 
 
 @interface MainMenuViewController : UIViewController <GlobalStatsViewControllerDelegate, AboutViewControllerDelegate>  {
@@ -27,6 +28,10 @@
 - (IBAction)redBanner:(id)sender;
 - (IBAction)greenBanner:(id)sender;
 
+@property (retain, nonatomic) IBOutlet UIImageView *chemistryStars;
+@property (strong, nonatomic) IBOutlet UIImageView *mathStars;
+@property (strong, nonatomic) IBOutlet UIImageView *physicsStars;
+@property (strong, nonatomic) IBOutlet UIImageView *biologyStars;
 
 
 

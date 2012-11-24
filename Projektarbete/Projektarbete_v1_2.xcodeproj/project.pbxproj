@@ -136,6 +136,9 @@
 		DDBA3467165CF9EB00B600C4 /* StatsBG3.png in Resources */ = {isa = PBXBuildFile; fileRef = DDBA3466165CF9EB00B600C4 /* StatsBG3.png */; };
 		DDBA346A165D01E200B600C4 /* VansterPil.png in Resources */ = {isa = PBXBuildFile; fileRef = DDBA3469165D01E200B600C4 /* VansterPil.png */; };
 		DDBA346D165D058C00B600C4 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDBA346B165D058B00B600C4 /* MainStoryboard.storyboard */; };
+		DDBA34941661160900B600C4 /* AboutBG.png in Resources */ = {isa = PBXBuildFile; fileRef = DDBA34931661160900B600C4 /* AboutBG.png */; };
+		DDBA34961661185F00B600C4 /* knappBG.png in Resources */ = {isa = PBXBuildFile; fileRef = DDBA34951661185F00B600C4 /* knappBG.png */; };
+		DDBA349816613A7A00B600C4 /* ThreeStarsSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = DDBA349716613A7A00B600C4 /* ThreeStarsSmall.png */; };
 		DDCABE25162C265E00F83AB5 /* NatureStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCABE24162C265E00F83AB5 /* NatureStatsViewController.m */; };
 		DDCABE2E162D508B00F83AB5 /* GamemodeSegmentedControlButtonController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCABE2D162D508B00F83AB5 /* GamemodeSegmentedControlButtonController.m */; };
 		DDCABE31162D50DE00F83AB5 /* DifficultySegmentedControlButtonController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCABE30162D50DE00F83AB5 /* DifficultySegmentedControlButtonController.m */; };
@@ -304,6 +307,9 @@
 		DDBA3466165CF9EB00B600C4 /* StatsBG3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatsBG3.png; sourceTree = "<group>"; };
 		DDBA3469165D01E200B600C4 /* VansterPil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VansterPil.png; sourceTree = "<group>"; };
 		DDBA346C165D058C00B600C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		DDBA34931661160900B600C4 /* AboutBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AboutBG.png; sourceTree = "<group>"; };
+		DDBA34951661185F00B600C4 /* knappBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = knappBG.png; sourceTree = "<group>"; };
+		DDBA349716613A7A00B600C4 /* ThreeStarsSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ThreeStarsSmall.png; sourceTree = "<group>"; };
 		DDCABE23162C265E00F83AB5 /* NatureStatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NatureStatsViewController.h; sourceTree = "<group>"; };
 		DDCABE24162C265E00F83AB5 /* NatureStatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NatureStatsViewController.m; sourceTree = "<group>"; };
 		DDCABE2C162D508A00F83AB5 /* GamemodeSegmentedControlButtonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamemodeSegmentedControlButtonController.h; sourceTree = "<group>"; };
@@ -357,17 +363,11 @@
 				DDB5886C15B947A9009CF151 /* AppDelegate.m */,
 				00E66CF315BC9DA600174D38 /* Singleton.h */,
 				00E66CF415BC9DA600174D38 /* Singleton.m */,
-				007BC47A15C09B4E009BC60D /* MathTableCellController.h */,
-				007BC47B15C09B4E009BC60D /* MathTableCellController.m */,
-				DDE8B8E315BDD8420010A6D7 /* StatsTableCellController.h */,
-				DDE8B8E415BDD8420010A6D7 /* StatsTableCellController.m */,
-				DD76D37D161C97DC0017D48F /* NatureCategoryCell.h */,
-				DD76D37E161C97DC0017D48F /* NatureCategoryCell.m */,
 			);
 			name = "Icke ViewControllers";
 			sourceTree = "<group>";
 		};
-		0023A32F15BF4E4F006BD781 /* Biology, Chemistry & Physics */ = {
+		0023A32F15BF4E4F006BD781 /* Biology, Chemistry & Physics sections */ = {
 			isa = PBXGroup;
 			children = (
 				0023A33015BF4EC9006BD781 /* NatureMasterViewController.h */,
@@ -377,12 +377,15 @@
 				DDF3995F162874930071F215 /* NatureResultsViewController.h */,
 				DDF39960162874930071F215 /* NatureResultsViewController.m */,
 			);
-			name = "Biology, Chemistry & Physics";
+			name = "Biology, Chemistry & Physics sections";
 			sourceTree = "<group>";
 		};
 		007BC48015C09E0A009BC60D /* Bilder etc. */ = {
 			isa = PBXGroup;
 			children = (
+				DDBA349716613A7A00B600C4 /* ThreeStarsSmall.png */,
+				DDBA34951661185F00B600C4 /* knappBG.png */,
+				DDBA34931661160900B600C4 /* AboutBG.png */,
 				DDBA3469165D01E200B600C4 /* VansterPil.png */,
 				00F7C940165BCE4800B65A2E /* SopTunna.png */,
 				00F7C941165BCE4800B65A2E /* NerPil.png */,
@@ -531,10 +534,10 @@
 		DDB5886215B947A9009CF151 /* Projektarbete_v1_2 */ = {
 			isa = PBXGroup;
 			children = (
-				DDBA346B165D058B00B600C4 /* MainStoryboard.storyboard */,
+				DDBA349216610DB300B600C4 /* Design */,
 				0023A32515BF3216006BD781 /* Icke ViewControllers */,
-				DDB5889815B953A3009CF151 /* Math */,
-				0023A32F15BF4E4F006BD781 /* Biology, Chemistry & Physics */,
+				DDB5889815B953A3009CF151 /* Math section */,
+				0023A32F15BF4E4F006BD781 /* Biology, Chemistry & Physics sections */,
 				000DFE5315BEDFDC00138D06 /* MainMenuViewController.h */,
 				000DFE5415BEDFDC00138D06 /* MainMenuViewController.m */,
 				000DFE5615BEE4D800138D06 /* AboutViewController.h */,
@@ -545,9 +548,6 @@
 				00E66CF615BC9DA600174D38 /* StatsViewController.m */,
 				DDCABE23162C265E00F83AB5 /* NatureStatsViewController.h */,
 				DDCABE24162C265E00F83AB5 /* NatureStatsViewController.m */,
-				007BC47C15C09B4E009BC60D /* MathTableCellController.xib */,
-				DD76D380161C97F80017D48F /* NatureCategoryCell.xib */,
-				DDE8B8E015BDD72E0010A6D7 /* StatsTableCell.xib */,
 				007BC48015C09E0A009BC60D /* Bilder etc. */,
 				DDB5886315B947A9009CF151 /* Supporting Files */,
 				DDCABE2C162D508A00F83AB5 /* GamemodeSegmentedControlButtonController.h */,
@@ -588,7 +588,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		DDB5889815B953A3009CF151 /* Math */ = {
+		DDB5889815B953A3009CF151 /* Math section */ = {
 			isa = PBXGroup;
 			children = (
 				DDE5CC9A15FFE368002005BF /* MathMasterViewController.h */,
@@ -604,7 +604,24 @@
 				DDB588AA15B9A1AE009CF151 /* MathResultsViewController.h */,
 				DDB588AB15B9A1AE009CF151 /* MathResultsViewController.m */,
 			);
-			name = Math;
+			name = "Math section";
+			sourceTree = "<group>";
+		};
+		DDBA349216610DB300B600C4 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				007BC47A15C09B4E009BC60D /* MathTableCellController.h */,
+				007BC47B15C09B4E009BC60D /* MathTableCellController.m */,
+				007BC47C15C09B4E009BC60D /* MathTableCellController.xib */,
+				DDE8B8E315BDD8420010A6D7 /* StatsTableCellController.h */,
+				DDE8B8E415BDD8420010A6D7 /* StatsTableCellController.m */,
+				DDE8B8E015BDD72E0010A6D7 /* StatsTableCell.xib */,
+				DD76D37D161C97DC0017D48F /* NatureCategoryCell.h */,
+				DD76D37E161C97DC0017D48F /* NatureCategoryCell.m */,
+				DD76D380161C97F80017D48F /* NatureCategoryCell.xib */,
+				DDBA346B165D058B00B600C4 /* MainStoryboard.storyboard */,
+			);
+			name = Design;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -783,6 +800,9 @@
 				DDBA3467165CF9EB00B600C4 /* StatsBG3.png in Resources */,
 				DDBA346A165D01E200B600C4 /* VansterPil.png in Resources */,
 				DDBA346D165D058C00B600C4 /* MainStoryboard.storyboard in Resources */,
+				DDBA34941661160900B600C4 /* AboutBG.png in Resources */,
+				DDBA34961661185F00B600C4 /* knappBG.png in Resources */,
+				DDBA349816613A7A00B600C4 /* ThreeStarsSmall.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
