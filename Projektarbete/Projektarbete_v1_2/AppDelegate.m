@@ -67,9 +67,9 @@
                     }
                 }
                 
-                if (numbers > 9) {
+                //if (numbers > 9) {
                     [categories addObject:cat];
-                }
+                //}
 			}
 		}
 		// Release the compiled statement from memory
@@ -155,12 +155,20 @@
     
     if(sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK) {
         if (found > 0) {
-            
-            NSString *state = [NSString stringWithFormat:@"UPDATE questions SET parentCategory = %i, lastUpdated = %i, question = '%@', deleted = %i WHERE id = %i", parentCategory, now, question, deleted, qId];
-            
-            char *error;
-            sqlite3_exec(database, [state UTF8String], NULL, NULL, &error);
-            
+            if (deleted == 1) {
+                NSString *state = [NSString stringWithFormat:@"DELETE FROM questions WHERE id = %i", qId];
+                
+                char *error;
+                sqlite3_exec(database, [state UTF8String], NULL, NULL, &error);
+                NSLog(@"Deleted: %i", qId);
+            }
+            else {
+                NSString *state = [NSString stringWithFormat:@"UPDATE questions SET parentCategory = %i, lastUpdated = %i, question = '%@', deleted = %i WHERE id = %i", parentCategory, now, question, deleted, qId];
+                NSLog(@"Updated: %i", qId);
+                
+                char *error;
+                sqlite3_exec(database, [state UTF8String], NULL, NULL, &error);
+            }
             
         }
         else {
