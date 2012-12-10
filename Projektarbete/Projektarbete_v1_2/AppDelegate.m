@@ -346,11 +346,11 @@
                     }
                 }
                 
-                for (int a = 0; a <= 3-ansNum; a++) {
+                for (int a = 0; a <= 2-ansNum; a++) {
                     NSMutableArray *emptiness = [[NSMutableArray alloc] init];
-                    [emptiness addObject:@"empty"];
-                    [emptiness addObject:@"empty"];
-                    [emptiness addObject:@"empty"];
+                    [emptiness addObject:@""];
+                    [emptiness addObject:@""];
+                    [emptiness addObject:@""];
                     [answers addObject:emptiness];
                 }
                 
