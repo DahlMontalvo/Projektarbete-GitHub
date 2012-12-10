@@ -288,10 +288,10 @@
         messageText = [NSString stringWithFormat:@"%i questions changed/updated!", questionsUpdated];
     }
     else if (questionsUpdated == 3) {
-        messageText = @"Three question changed/updated!";
+        messageText = @"Three questions changed/updated!";
     }
     else if (questionsUpdated == 2) {
-        messageText = @"Two question changed/updated!";
+        messageText = @"Two questions changed/updated!";
     }
     else if (questionsUpdated == 1) {
         messageText = @"One question changed/updated!";

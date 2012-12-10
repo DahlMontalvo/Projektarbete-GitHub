@@ -159,7 +159,6 @@
 }
 
 - (void)presentNextQuestion {
-    NSLog(@"presenterar nästa fråga");
     if (questionAtm == 10) {
         [countdownTimer invalidate];
         countdownTimer = nil;

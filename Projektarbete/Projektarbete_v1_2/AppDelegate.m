@@ -190,7 +190,7 @@
     int found = 0;
     
     if(sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK) {
-        const char *sqlStatement = [[NSString stringWithFormat:@"SELECT * FROM questions WHERE id = %i", aId] UTF8String];
+        const char *sqlStatement = [[NSString stringWithFormat:@"SELECT * FROM answers WHERE id = %i", aId] UTF8String];
         sqlite3_stmt *compiledStatement;
         if(sqlite3_prepare_v2(database, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK) {
             while(sqlite3_step(compiledStatement) == SQLITE_ROW) {
@@ -204,11 +204,15 @@
             NSString *state = [NSString stringWithFormat:@"UPDATE answers SET questionId = %i, lastUpdated = %i, answer = '%@', deleted = %i, correct = %i WHERE id = %i", parentQuestion, now, answer, deleted, correct, aId];
             char *error;
             sqlite3_exec(database, [state UTF8String], NULL, NULL, &error);
+            NSLog(@"0!sql:   %s", [state UTF8String]);
+            NSLog(@"error: %s", error);
         }
         else {
             NSString *state = [NSString stringWithFormat:@"INSERT INTO answers (questionId, lastUpdated, answer, deleted, id, correct) VALUES (%i, %i, '%@', %i, %i, %i)", parentQuestion, now, answer, deleted, aId, correct];
             char *error;
             sqlite3_exec(database, [state UTF8String], NULL, NULL, &error);
+            NSLog(@"sql:   %s", [state UTF8String]);
+            NSLog(@"error: %s", error);
         }
 	}
 	sqlite3_close(database);
@@ -267,7 +271,6 @@
 }
 
 -(NSMutableArray *) getQuestionInCategory:(int)ID withOutIds:(NSMutableArray *)noId {
-    NSLog(@"hej");
 	sqlite3 *database;
     NSMutableArray *question = [[NSMutableArray alloc] init];
     BOOL found = NO;
@@ -301,6 +304,9 @@
                         [answers addObject:[[NSMutableArray alloc] initWithObjects:answerStr, ansId, correct, nil]];
                         
                         found = YES;
+                        NSLog(@" ");
+                        NSLog(@"%@ ", answerStr);
+                        NSLog(@" ");
                     }
                 }
                 sqlite3_finalize(compiledStatement3);
@@ -379,7 +385,6 @@
 		sqlite3_finalize(compiledStatement);
 	}
 	sqlite3_close(database);
-    NSLog(@"Då");
     if (found)
         return question;
     else
