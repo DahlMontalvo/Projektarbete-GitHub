@@ -200,7 +200,8 @@
             [buttonThree setHidden:YES];
             [buttonFour setHidden:YES];
         }
-        
+        NSLog(@"Question %i", questionAtm);
+        NSLog(@"%@", [questions objectAtIndex:questionAtm]);
         questionAtm++;
     }
 }

@@ -116,22 +116,19 @@
     [format setDateFormat:@"YYYY-MM-dd HH:mm:ss"];
     
     if(sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK) {
-		const char *sqlStatement = [@"SELECT MIN(categories.lastUpdated) AS r1, MIN(answers.lastUpdated) AS r2, MIN(questions.lastUpdated) AS r3 FROM categories, answers, questions" UTF8String];
+		const char *sqlStatement = [@"SELECT MIN(questions.lastUpdated) AS r1 FROM questions" UTF8String];
 		sqlite3_stmt *compiledStatement;
 		if(sqlite3_prepare_v2(database, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK) {
 			while(sqlite3_step(compiledStatement) == SQLITE_ROW) {
-                for (int i = 0; i < 3; i++) {
-                    NSDate *date = [NSDate dateWithTimeIntervalSince1970:sqlite3_column_int(compiledStatement, i)];
-                    if ([lastDate timeIntervalSinceDate:date] > 0) {
+                    NSDate *date = [NSDate dateWithTimeIntervalSince1970:sqlite3_column_int(compiledStatement, 0)];
                         lastDate = date;
-                    }
-                }
 			}
 		}
 		// Release the compiled statement from memory
 		sqlite3_finalize(compiledStatement);
         
 	}
+    NSLog(@"Last Sync Date: %@", lastDate);
 	sqlite3_close(database);
     return lastDate;
     
