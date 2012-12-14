@@ -160,7 +160,8 @@
                 NSLog(@"Deleted: %i", qId);
             }
             else {
-                NSString *state = [NSString stringWithFormat:@"UPDATE questions SET parentCategory = %i, lastUpdated = %i, question = '%@', deleted = %i WHERE id = %i", parentCategory, now, question, deleted, qId];
+                NSString *state = [NSString stringWithFormat:@"UPDATE questions SET parentCategory = %i, lastUpdated = %i, question = \"%@\", deleted = %i WHERE id = %i", parentCategory, now, [question stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""], deleted, qId];
+                
                 NSLog(@"Updated: %i", qId);
                 
                 char *error;
@@ -169,7 +170,7 @@
             
         }
         else {
-            NSString *state = [NSString stringWithFormat:@"INSERT INTO questions (parentCategory, lastUpdated, question, deleted, id) VALUES (%i, %i, '%@', %i, %i)", parentCategory, now, question, deleted, qId];
+            NSString *state = [NSString stringWithFormat:@"INSERT INTO questions (parentCategory, lastUpdated, question, deleted, id) VALUES (%i, %i, \"%@\", %i, %i)", parentCategory, now, [question stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""], deleted, qId];
             
             char *error;
             sqlite3_exec(database, [state UTF8String], NULL, NULL, &error);
@@ -198,14 +199,14 @@
     
     if(sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK) {
         if (found > 0) {
-            NSString *state = [NSString stringWithFormat:@"UPDATE answers SET questionId = %i, lastUpdated = %i, answer = '%@', deleted = %i, correct = %i WHERE id = %i", parentQuestion, now, answer, deleted, correct, aId];
+            NSString *state = [NSString stringWithFormat:@"UPDATE answers SET questionId = %i, lastUpdated = %i, answer = \"%@\", deleted = %i, correct = %i WHERE id = %i", parentQuestion, now, [answer stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""], deleted, correct, aId];
             char *error;
             sqlite3_exec(database, [state UTF8String], NULL, NULL, &error);
             NSLog(@"0!sql:   %s", [state UTF8String]);
             NSLog(@"error: %s", error);
         }
         else {
-            NSString *state = [NSString stringWithFormat:@"INSERT INTO answers (questionId, lastUpdated, answer, deleted, id, correct) VALUES (%i, %i, '%@', %i, %i, %i)", parentQuestion, now, answer, deleted, aId, correct];
+            NSString *state = [NSString stringWithFormat:@"INSERT INTO answers (questionId, lastUpdated, answer, deleted, id, correct) VALUES (%i, %i, \"%@\", %i, %i, %i)", parentQuestion, now, [answer  stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""], deleted, aId, correct];
             char *error;
             sqlite3_exec(database, [state UTF8String], NULL, NULL, &error);
             NSLog(@"sql:   %s", [state UTF8String]);
@@ -232,12 +233,12 @@
     }
     if(sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK) {
         if (found > 0) {
-            NSString *state = [NSString stringWithFormat:@"UPDATE categories SET parent = '%@', lastUpdated = %i, name = '%@', deleted = %i WHERE id = %i", parent, now, name, deleted, cId];
+            NSString *state = [NSString stringWithFormat:@"UPDATE categories SET parent = \"%@\", lastUpdated = %i, name = \"%@\", deleted = %i WHERE id = %i", [parent stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""], now, [name stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""], deleted, cId];
             char *error;
             sqlite3_exec(database, [state UTF8String], NULL, NULL, &error);
         }
         else {
-            NSString *state = [NSString stringWithFormat:@"INSERT INTO categories (parent, lastUpdated, name, deleted, id) VALUES ('%@', %i, '%@', %i, %i)", parent, now, name, deleted, cId];
+            NSString *state = [NSString stringWithFormat:@"INSERT INTO categories (parent, lastUpdated, name, deleted, id) VALUES (\"%@\", %i, \"%@\", %i, %i)", [parent stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""], now, [name stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""], deleted, cId];
             char *error;
             
             sqlite3_exec(database, [state UTF8String], NULL, NULL, &error);
