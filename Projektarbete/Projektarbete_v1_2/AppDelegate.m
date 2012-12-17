@@ -63,13 +63,13 @@
                     while(sqlite3_step(compiledStatement2) == SQLITE_ROW) {
                         // Read the data from the result row
                         numbers = sqlite3_column_int(compiledStatement2, 0);
-                        NSLog(@"%i", numbers);
+                        NSLog(@"Antal frågor: %i", numbers);
                     }
                 }
                 
-                //if (numbers > 9) {
+                if (numbers > 9) {
                     [categories addObject:cat];
-                //}
+                }
 			}
 		}
 		// Release the compiled statement from memory
