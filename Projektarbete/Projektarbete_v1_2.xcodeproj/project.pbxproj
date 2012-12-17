@@ -53,6 +53,7 @@
 		006E426816069C6A003B5BC7 /* MathFirstBG4.png in Resources */ = {isa = PBXBuildFile; fileRef = 006E426716069C6A003B5BC7 /* MathFirstBG4.png */; };
 		007BC47D15C09B4E009BC60D /* MathTableCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 007BC47B15C09B4E009BC60D /* MathTableCellController.m */; };
 		007BC47E15C09B4E009BC60D /* MathTableCellController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007BC47C15C09B4E009BC60D /* MathTableCellController.xib */; };
+		00946E46167FC804002C9786 /* brun2.png in Resources */ = {isa = PBXBuildFile; fileRef = 00946E45167FC804002C9786 /* brun2.png */; };
 		00C6AD4515FCF05100493F52 /* grayFB copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AD4215FCF05100493F52 /* grayFB copy.png */; };
 		00C6AD4615FCF05100493F52 /* statsbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AD4315FCF05100493F52 /* statsbutton.png */; };
 		00C6AD4715FCF05100493F52 /* twittericonBW copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AD4415FCF05100493F52 /* twittericonBW copy.png */; };
@@ -212,6 +213,7 @@
 		007BC47A15C09B4E009BC60D /* MathTableCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathTableCellController.h; sourceTree = "<group>"; };
 		007BC47B15C09B4E009BC60D /* MathTableCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathTableCellController.m; sourceTree = "<group>"; };
 		007BC47C15C09B4E009BC60D /* MathTableCellController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MathTableCellController.xib; sourceTree = "<group>"; };
+		00946E45167FC804002C9786 /* brun2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brun2.png; sourceTree = "<group>"; };
 		00C6AD4215FCF05100493F52 /* grayFB copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grayFB copy.png"; sourceTree = "<group>"; };
 		00C6AD4315FCF05100493F52 /* statsbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statsbutton.png; sourceTree = "<group>"; };
 		00C6AD4415FCF05100493F52 /* twittericonBW copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twittericonBW copy.png"; sourceTree = "<group>"; };
@@ -383,6 +385,7 @@
 		007BC48015C09E0A009BC60D /* Bilder etc. */ = {
 			isa = PBXGroup;
 			children = (
+				00946E45167FC804002C9786 /* brun2.png */,
 				DDBA349716613A7A00B600C4 /* ThreeStarsSmall.png */,
 				DDBA34951661185F00B600C4 /* knappBG.png */,
 				DDBA34931661160900B600C4 /* AboutBG.png */,
@@ -803,6 +806,7 @@
 				DDBA34941661160900B600C4 /* AboutBG.png in Resources */,
 				DDBA34961661185F00B600C4 /* knappBG.png in Resources */,
 				DDBA349816613A7A00B600C4 /* ThreeStarsSmall.png in Resources */,
+				00946E46167FC804002C9786 /* brun2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
