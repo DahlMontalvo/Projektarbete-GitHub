@@ -1079,17 +1079,16 @@
                                 <rect key="frame" x="-2" y="-82" width="322" height="640"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
                             </imageView>
-                            <view contentMode="scaleToFill" id="1lf-FM-Wa6">
-                                <rect key="frame" x="12" y="17" width="295" height="455"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
+                            <imageView contentMode="scaleToFill" image="PapperGM.png" id="H5z-Bq-CJQ">
+                                <rect key="frame" x="8" y="43" width="305" height="432"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="brun2.png" id="byG-tm-y7k">
                                 <rect key="frame" x="0.0" y="-3" width="320" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="mul-u4-do1">
-                                <rect key="frame" x="21" y="132" width="280" height="73"/>
+                                <rect key="frame" x="25" y="152" width="270" height="73"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Marion-Regular" family="Marion" pointSize="35"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1306,6 +1305,10 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Wood1.png" id="eK9-eH-LUE">
                                 <rect key="frame" x="-20" y="0.0" width="360" height="640"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" image="PapperGM.png" id="hSX-RB-IOu">
+                                <rect key="frame" x="7" y="50" width="305" height="422"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="zdg-Qj-QtS">
                                 <rect key="frame" x="12" y="17" width="295" height="455"/>
@@ -1535,12 +1538,28 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="brun2.png" id="Ik4-pf-xgU">
                                 <rect key="frame" x="0.0" y="-4" width="320" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <view contentMode="scaleToFill" id="4tC-sZ-nQI">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="0fm-vN-wD3">
+                                        <rect key="frame" x="49" y="139" width="222" height="202"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="150"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <size key="shadowOffset" width="-1" height="-1"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                            </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0/0" lineBreakMode="tailTruncation" minimumFontSize="13" id="ppB-hW-GXu">
                                 <rect key="frame" x="20" y="17" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1572,22 +1591,6 @@
                                     <action selector="pausePressed:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="TnK-NT-FP0"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" id="4tC-sZ-nQI">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="0fm-vN-wD3">
-                                        <rect key="frame" x="49" y="139" width="222" height="202"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="150"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        <size key="shadowOffset" width="-1" height="-1"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -1634,6 +1637,10 @@
                                 <rect key="frame" x="-1" y="0.0" width="329" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
                             </imageView>
+                            <imageView contentMode="scaleToFill" image="PapperGM.png" id="T4j-e0-Llb">
+                                <rect key="frame" x="7" y="12" width="305" height="455"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                            </imageView>
                             <view contentMode="scaleToFill" id="xkw-DY-9Hw">
                                 <rect key="frame" x="13" y="12" width="295" height="455"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
@@ -1677,7 +1684,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="tyF-EU-mJe">
                                 <rect key="frame" x="86" y="370" width="157" height="56"/>
@@ -1734,10 +1741,23 @@
                                 <rect key="frame" x="-2" y="-85" width="322" height="640"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
                             </imageView>
+                            <imageView contentMode="scaleToFill" image="PapperGM.png" id="JCE-HZ-DFJ">
+                                <rect key="frame" x="7" y="26" width="305" height="449"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                            </imageView>
                             <view contentMode="scaleToFill" id="cTV-Sb-QCf">
                                 <rect key="frame" x="12" y="14" width="295" height="455"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="skC-2l-h2g">
+                                        <rect key="frame" x="5" y="85" width="285" height="152"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <fontDescription key="fontDescription" name="Marion-Regular" family="Marion" pointSize="19"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="brun2.png" id="P0X-aN-Dti">
                                 <rect key="frame" x="0.0" y="-4" width="320" height="65"/>
@@ -1748,13 +1768,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="26"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="skC-2l-h2g">
-                                <rect key="frame" x="10" y="99" width="300" height="152"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
-                                <fontDescription key="fontDescription" name="Marion-Regular" family="Marion" pointSize="19"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9Xm-R1-WUT">
@@ -1906,6 +1919,10 @@
                                 <rect key="frame" x="-4" y="0.0" width="329" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView contentMode="scaleToFill" image="PapperGM.png" id="3aI-kH-p46">
+                                <rect key="frame" x="7" y="12" width="305" height="455"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                            </imageView>
                             <view contentMode="scaleToFill" id="BDd-cq-ZNW">
                                 <rect key="frame" x="13" y="12" width="295" height="455"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -1956,7 +1973,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Three stars!" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="ybc-Vm-z7W">
                                 <rect key="frame" x="70" y="322" width="181" height="21"/>
@@ -2087,6 +2104,243 @@
         <image name="brun2.png" width="640" height="122"/>
         <image name="knappBG.png" width="260" height="37"/>
     </resources>
+    <classes>
+        <class className="AboutViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="action" name="emailPressed:"/>
+                <relationship kind="action" name="feedBackFacebookButtonPressed:"/>
+                <relationship kind="action" name="likeButtonPressed:"/>
+                <relationship kind="action" name="syncButtonPressed:"/>
+                <relationship kind="outlet" name="activityIndicatior" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="lightView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="syncButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="DifficultySegmentedControlButtonController" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DifficultySegmentedControlButtonController.h"/>
+        </class>
+        <class className="GamemodeSegmentedControlButtonController" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GamemodeSegmentedControlButtonController.h"/>
+        </class>
+        <class className="GlobalStatsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GlobalStatsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="biologyButtonPressed:"/>
+                <relationship kind="action" name="chemistryButtonPressed:"/>
+                <relationship kind="action" name="clearAll:"/>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="action" name="downButtonPressed:"/>
+                <relationship kind="action" name="physicsButtonPressed:"/>
+                <relationship kind="outlet" name="clearButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="completedPractisesLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="completedTestsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="MainMenuViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainMenuViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="greenBanner:"/>
+                <relationship kind="action" name="redBanner:"/>
+                <relationship kind="outlet" name="biologyPercentLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="chemistryPercentLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="greenBanner" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="mathPercentLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="physicsPercentLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="redBanner" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="scrollViewGr" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="MathDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MathDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backButton:"/>
+                <relationship kind="action" name="buttonFivePressed:"/>
+                <relationship kind="action" name="buttonFourPressed:"/>
+                <relationship kind="action" name="buttonOnePressed:"/>
+                <relationship kind="action" name="buttonPractisePressed:"/>
+                <relationship kind="action" name="buttonTestPressed:"/>
+                <relationship kind="action" name="buttonThreePressed:"/>
+                <relationship kind="action" name="buttonTwoPressed:"/>
+                <relationship kind="action" name="difficultySegmentedControl:"/>
+                <relationship kind="action" name="gamemodeSegmentedControl:"/>
+                <relationship kind="action" name="startButton:"/>
+                <relationship kind="outlet" name="buttonFive" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonFour" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonOne" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonPractise" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonTest" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonThree" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonTwo" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="difficultySegmentedControl" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="gameButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="gamemodeSegmentedControl" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="modeLabel" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="navigationLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="practiseButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="practiseTextField" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="starsImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="starsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="startButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="testTextField" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="testingButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="MathExerciseViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MathExerciseViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="keyboard0:"/>
+                <relationship kind="action" name="keyboard1:"/>
+                <relationship kind="action" name="keyboard2:"/>
+                <relationship kind="action" name="keyboard3:"/>
+                <relationship kind="action" name="keyboard4:"/>
+                <relationship kind="action" name="keyboard5:"/>
+                <relationship kind="action" name="keyboard6:"/>
+                <relationship kind="action" name="keyboard7:"/>
+                <relationship kind="action" name="keyboard8:"/>
+                <relationship kind="action" name="keyboard9:"/>
+                <relationship kind="action" name="keyboardback:"/>
+                <relationship kind="action" name="keyboarddot:"/>
+                <relationship kind="action" name="nextButton:"/>
+                <relationship kind="action" name="pausePressed:"/>
+                <relationship kind="outlet" name="answerFromUser" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="correctAnswersLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="countdownLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="darkView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="exerciseLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="keyboard0" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="keyboard1" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="keyboard2" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="keyboard3" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="keyboard4" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="keyboard5" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="keyboard6" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="keyboard7" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="keyboard8" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="keyboard9" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="keyboardback" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="keyboarddot" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="navItem" candidateClass="UINavigationItem"/>
+                <relationship kind="outlet" name="nextButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="numberLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="pauseButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="progressBar" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="startCountdownLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MathMasterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MathMasterViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="button:"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="MathQuizViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MathQuizViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="buttonFour:"/>
+                <relationship kind="action" name="buttonOne:"/>
+                <relationship kind="action" name="buttonThree:"/>
+                <relationship kind="action" name="buttonTwo:"/>
+                <relationship kind="action" name="pauseButton:"/>
+                <relationship kind="outlet" name="buttonFour" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonOne" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonThree" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonTwo" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="correctAnswersLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="countdownLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="darkView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="denominatorOneLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="denominatorTwoLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="firstLineLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="numeratorOneLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="numeratorTwoLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="operationLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="pauseButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="progressBar" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="questionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="secondLineLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="startCountdownLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MathResultsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MathResultsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="continueButtonPressed:"/>
+                <relationship kind="outlet" name="gamemodeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="highscoreLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="infoLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="navItem" candidateClass="UINavigationItem"/>
+                <relationship kind="outlet" name="resultsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="starImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="starLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NatureDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NatureDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backButton:"/>
+                <relationship kind="action" name="buttonFour:"/>
+                <relationship kind="action" name="buttonOne:"/>
+                <relationship kind="action" name="buttonThree:"/>
+                <relationship kind="action" name="buttonTwo:"/>
+                <relationship kind="action" name="pauseButtonPressed:"/>
+                <relationship kind="outlet" name="buttonFour" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonOne" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonThree" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonTwo" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="correctAnswers" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="countdownLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="darkView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="pauseButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="progressBar" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="questionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subjectLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NatureMasterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NatureMasterViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backButton:"/>
+                <relationship kind="outlet" name="subjectLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="NatureResultsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NatureResultsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="continueButtonPressed:"/>
+                <relationship kind="outlet" name="categoryLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="highscoreLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scoreLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="starsImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="starsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NatureStatsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NatureStatsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="pop:"/>
+                <relationship kind="outlet" name="navItem" candidateClass="UINavigationItem"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="StatsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StatsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="pop:"/>
+                <relationship kind="outlet" name="navItem" candidateClass="UINavigationItem"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
@@ -2094,6 +2348,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="0Ym-HD-fgS"/>
-        <segue reference="m7M-EV-8hW"/>
+        <segue reference="Ord-lZ-lSz"/>
     </inferredMetricsTieBreakers>
 </document>
