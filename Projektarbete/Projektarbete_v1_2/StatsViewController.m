@@ -237,7 +237,7 @@
 	UILabel * headerLabel = [[UILabel alloc] initWithFrame:CGRectZero];
 	headerLabel.backgroundColor = [UIColor clearColor];
 	headerLabel.opaque = NO;
-	headerLabel.textColor = [UIColor blackColor];
+	headerLabel.textColor = [UIColor whiteColor];
 	headerLabel.highlightedTextColor = [UIColor whiteColor];
 	headerLabel.font = [UIFont fontWithName:@"Marion" size:20];
 	headerLabel.frame = CGRectMake(10.0, 0.0, 300.0, 44.0);

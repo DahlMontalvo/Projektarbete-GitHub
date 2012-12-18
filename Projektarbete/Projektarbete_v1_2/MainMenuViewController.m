@@ -12,8 +12,7 @@
 @synthesize scrollView;
 @synthesize scrollViewGr;
 @synthesize redBanner;
-@synthesize greenBanner, chemistryStars, mathStars, physicsStars, biologyStars;
-
+@synthesize greenBanner, chemistryPercentLabel, mathPercentLabel, biologyPercentLabel, physicsPercentLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -112,10 +111,10 @@
     [self setRedBanner:nil];
     [self setGreenBanner:nil];
     [self setGreenBanner:nil];
-    [self setChemistryStars:nil];
-    [self setMathStars:nil];
-    [self setPhysicsStars:nil];
-    [self setBiologyStars:nil];
+    [self setMathPercentLabel:nil];
+    [self setChemistryPercentLabel:nil];
+    [self setPhysicsPercentLabel:nil];
+    [self setBiologyPercentLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -133,6 +132,7 @@
 -(void)viewWillAppear:(BOOL)animated {
     
     NSLog(@"Jag kallar på dig.");
+    
     [[[Singleton sharedSingleton] sharedPrefs] synchronize];
     
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -156,17 +156,19 @@
         
     }
     
-    NSMutableArray *contents = [[NSMutableArray alloc] initWithObjects:[[NSMutableArray alloc] initWithObjects:chemistryCategories, physicsCategories, biologyCategories, nil], [[NSMutableArray alloc] initWithObjects:chemistryStars, physicsStars, biologyStars, nil], nil];
+    NSMutableArray *contents = [[NSMutableArray alloc] initWithObjects:[[NSMutableArray alloc] initWithObjects:chemistryCategories, physicsCategories, biologyCategories, nil], [[NSMutableArray alloc] initWithObjects:chemistryPercentLabel, physicsPercentLabel, biologyPercentLabel, nil], nil];
     
     for (int a = 0; a < 3; a++) {
         int total = 0;
         int stars = 0;
         float share = 0;
         
+        NSLog(@"Här?");
         for (int i = 0; i < [[[contents objectAtIndex:0] objectAtIndex:a] count]; i++) {
             int thisStars = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"NatureCategory%iStars", [[[[[contents objectAtIndex:0] objectAtIndex:a] objectAtIndex:i] objectAtIndex:2] intValue]]];
             total+=3;
             stars+=thisStars;
+            NSLog(@"Här?");
         }
         
         if (total != 0)
@@ -174,27 +176,27 @@
         else
             share = 0;
         
-        int width = 54*share;
+        share*=100;
         
-        if (width > 0) {
-            UIImage *image = [UIImage imageNamed:@"ThreeStarsSmall.png"];
-            
-            CGRect rect = CGRectMake(0, 0, width, 15);
-            CGImageRef imageRef = CGImageCreateWithImageInRect([image CGImage], rect);
-            UIImage *img = [UIImage imageWithCGImage:imageRef];
-            
-            UIImageView *imageView = [[UIImageView alloc] initWithImage:img];
-            [imageView setFrame:rect];
-            [[[contents objectAtIndex:1] objectAtIndex:a] addSubview:imageView];
-            
-            UIImageView *temp = [[contents objectAtIndex:0] objectAtIndex:a];
-            temp = [[UIImageView alloc] initWithImage:image];
-        }
+        [[[contents objectAtIndex:1] objectAtIndex:a] setText:[NSString stringWithFormat:@"%i %%", (int)(share+0.5)]];
+        
     }
     
+    int total = 0;
+    int stars = 0;
     
+    NSMutableArray *operations = [[NSMutableArray alloc] initWithObjects:@"Addition", @"Subtraction", @"Division", @"Multiplication", @"Percent", @"Fraction", @"Equations", nil];
+    for (int i = 0; i < 7; i++) {
+        NSString *key = [NSString stringWithFormat:@"TotalStars%@", [operations objectAtIndex:i]];
+        
+        int thisStars = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:key];
+        total+=15;
+        stars+=thisStars;
+        NSLog(@"stars %i, %i", total, stars);
+    }
     
-    
+    float share = 100*((float)stars/total);
+    mathPercentLabel.text = [NSString stringWithFormat:@"%i %%", (int)(share+0.5)];
     
     
     

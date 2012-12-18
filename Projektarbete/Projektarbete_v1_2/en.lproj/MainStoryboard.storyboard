@@ -121,10 +121,6 @@
                                             <segue destination="Q68-bD-PBh" kind="push" identifier="Physics" id="0Ym-HD-fgS"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="vKd-g6-5SU">
-                                        <rect key="frame" x="133" y="81" width="54" height="15"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                    </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Play" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0u4-lM-Wnh">
                                         <rect key="frame" x="213" y="145" width="52" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
@@ -151,6 +147,20 @@
                                         <rect key="frame" x="2" y="54" width="265" height="4"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="100 %" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6HF-Np-mVF">
+                                        <rect key="frame" x="145" y="83" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Marion-Regular" family="Marion" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="highlightedColor" red="1" green="0.96408474430000002" blue="0.98380444209999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="100 %" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iOB-My-adq">
+                                        <rect key="frame" x="145" y="149" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Marion-Regular" family="Marion" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="highlightedColor" red="1" green="0.96408474430000002" blue="0.98380444209999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
@@ -184,14 +194,6 @@
                                     <segue destination="uf3-zW-hz6" kind="push" id="CW1-Wy-vIP"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="Juw-yB-LK8">
-                                <rect key="frame" x="161" y="299" width="54" height="15"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="SBb-vt-Fed">
-                                <rect key="frame" x="161" y="365" width="54" height="15"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gMf-lz-8dh">
                                 <rect key="frame" x="237" y="-32" width="63" height="112"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -251,10 +253,20 @@
                                 <rect key="frame" x="23" y="112.5" width="271" height="12"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="nXq-Au-iee">
-                                <rect key="frame" x="161" y="166" width="54" height="15"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="100 %" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mkG-Gq-6y9">
+                                <rect key="frame" x="170" y="167" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Marion-Regular" family="Marion" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="1" green="0.96408474430000002" blue="0.98380444209999995" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="100 %" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tcP-SY-V1p">
+                                <rect key="frame" x="170" y="367" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Marion-Regular" family="Marion" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="1" green="0.96408474430000002" blue="0.98380444209999995" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -262,11 +274,11 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="biologyStars" destination="SBb-vt-Fed" id="v2T-uo-mnr"/>
-                        <outlet property="chemistryStars" destination="vKd-g6-5SU" id="b1W-nD-CY5"/>
+                        <outlet property="biologyPercentLabel" destination="tcP-SY-V1p" id="PTy-Nl-eUV"/>
+                        <outlet property="chemistryPercentLabel" destination="6HF-Np-mVF" id="5kc-RH-h97"/>
                         <outlet property="greenBanner" destination="CTO-tp-9JJ" id="xgh-Zl-rp1"/>
-                        <outlet property="mathStars" destination="nXq-Au-iee" id="4o5-J7-EVA"/>
-                        <outlet property="physicsStars" destination="Juw-yB-LK8" id="rUG-vi-V48"/>
+                        <outlet property="mathPercentLabel" destination="mkG-Gq-6y9" id="4ZB-9a-JBd"/>
+                        <outlet property="physicsPercentLabel" destination="iOB-My-adq" id="Q1X-YP-GAj"/>
                         <outlet property="redBanner" destination="OZ1-d9-Xae" id="SJD-Nl-IF8"/>
                         <outlet property="scrollView" destination="ANL-LO-6WD" id="bgQ-pq-Cmx"/>
                         <outlet property="scrollViewGr" destination="ACj-5u-NLq" id="F4M-2Y-kZM"/>
@@ -1847,7 +1859,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="2v9-K7-ZK2">
-                                        <rect key="frame" x="65" y="166" width="222" height="202"/>
+                                        <rect key="frame" x="49" y="164" width="222" height="202"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="150"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -2075,242 +2087,6 @@
         <image name="brun2.png" width="640" height="122"/>
         <image name="knappBG.png" width="260" height="37"/>
     </resources>
-    <classes>
-        <class className="AboutViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="done:"/>
-                <relationship kind="action" name="emailPressed:"/>
-                <relationship kind="action" name="feedBackFacebookButtonPressed:"/>
-                <relationship kind="action" name="likeButtonPressed:"/>
-                <relationship kind="action" name="syncButtonPressed:"/>
-                <relationship kind="outlet" name="activityIndicatior" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="lightView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="syncButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="DifficultySegmentedControlButtonController" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DifficultySegmentedControlButtonController.h"/>
-        </class>
-        <class className="GamemodeSegmentedControlButtonController" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GamemodeSegmentedControlButtonController.h"/>
-        </class>
-        <class className="GlobalStatsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GlobalStatsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="biologyButtonPressed:"/>
-                <relationship kind="action" name="chemistryButtonPressed:"/>
-                <relationship kind="action" name="clearAll:"/>
-                <relationship kind="action" name="done:"/>
-                <relationship kind="action" name="downButtonPressed:"/>
-                <relationship kind="action" name="physicsButtonPressed:"/>
-                <relationship kind="outlet" name="clearButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="completedPractisesLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="completedTestsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
-            </relationships>
-        </class>
-        <class className="MainMenuViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainMenuViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="greenBanner:"/>
-                <relationship kind="action" name="redBanner:"/>
-                <relationship kind="outlet" name="biologyStars" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="chemistryStars" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="greenBanner" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="mathStars" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="physicsStars" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="redBanner" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="scrollViewGr" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="MathDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MathDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backButton:"/>
-                <relationship kind="action" name="buttonFivePressed:"/>
-                <relationship kind="action" name="buttonFourPressed:"/>
-                <relationship kind="action" name="buttonOnePressed:"/>
-                <relationship kind="action" name="buttonPractisePressed:"/>
-                <relationship kind="action" name="buttonTestPressed:"/>
-                <relationship kind="action" name="buttonThreePressed:"/>
-                <relationship kind="action" name="buttonTwoPressed:"/>
-                <relationship kind="action" name="difficultySegmentedControl:"/>
-                <relationship kind="action" name="gamemodeSegmentedControl:"/>
-                <relationship kind="action" name="startButton:"/>
-                <relationship kind="outlet" name="buttonFive" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonFour" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonOne" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonPractise" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonTest" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonThree" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonTwo" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="difficultySegmentedControl" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="gameButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="gamemodeSegmentedControl" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="modeLabel" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="navigationLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="practiseButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="practiseTextField" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="starsImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="starsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="startButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="testTextField" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="testingButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="MathExerciseViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MathExerciseViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="keyboard0:"/>
-                <relationship kind="action" name="keyboard1:"/>
-                <relationship kind="action" name="keyboard2:"/>
-                <relationship kind="action" name="keyboard3:"/>
-                <relationship kind="action" name="keyboard4:"/>
-                <relationship kind="action" name="keyboard5:"/>
-                <relationship kind="action" name="keyboard6:"/>
-                <relationship kind="action" name="keyboard7:"/>
-                <relationship kind="action" name="keyboard8:"/>
-                <relationship kind="action" name="keyboard9:"/>
-                <relationship kind="action" name="keyboardback:"/>
-                <relationship kind="action" name="keyboarddot:"/>
-                <relationship kind="action" name="nextButton:"/>
-                <relationship kind="action" name="pausePressed:"/>
-                <relationship kind="outlet" name="answerFromUser" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="correctAnswersLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="countdownLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="darkView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="exerciseLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="keyboard0" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="keyboard1" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="keyboard2" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="keyboard3" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="keyboard4" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="keyboard5" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="keyboard6" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="keyboard7" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="keyboard8" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="keyboard9" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="keyboardback" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="keyboarddot" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="navItem" candidateClass="UINavigationItem"/>
-                <relationship kind="outlet" name="nextButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="numberLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="pauseButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="progressBar" candidateClass="UIProgressView"/>
-                <relationship kind="outlet" name="startCountdownLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MathMasterViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MathMasterViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="button:"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="MathQuizViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MathQuizViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buttonFour:"/>
-                <relationship kind="action" name="buttonOne:"/>
-                <relationship kind="action" name="buttonThree:"/>
-                <relationship kind="action" name="buttonTwo:"/>
-                <relationship kind="action" name="pauseButton:"/>
-                <relationship kind="outlet" name="buttonFour" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonOne" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonThree" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonTwo" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="correctAnswersLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="countdownLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="darkView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="denominatorOneLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="denominatorTwoLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="firstLineLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="numeratorOneLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="numeratorTwoLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="operationLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="pauseButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="progressBar" candidateClass="UIProgressView"/>
-                <relationship kind="outlet" name="questionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="secondLineLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="startCountdownLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MathResultsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MathResultsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="continueButtonPressed:"/>
-                <relationship kind="outlet" name="gamemodeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="highscoreLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="infoLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="navItem" candidateClass="UINavigationItem"/>
-                <relationship kind="outlet" name="resultsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="starImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="starLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NatureDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NatureDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buttonFour:"/>
-                <relationship kind="action" name="buttonOne:"/>
-                <relationship kind="action" name="buttonThree:"/>
-                <relationship kind="action" name="buttonTwo:"/>
-                <relationship kind="action" name="pauseButtonPressed:"/>
-                <relationship kind="outlet" name="buttonFour" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonOne" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonThree" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonTwo" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="correctAnswers" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="countdownLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="darkView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="pauseButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="progressBar" candidateClass="UIProgressView"/>
-                <relationship kind="outlet" name="questionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="subjectLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NatureMasterViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NatureMasterViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backButton:"/>
-                <relationship kind="outlet" name="subjectLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="NatureResultsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NatureResultsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="continueButtonPressed:"/>
-                <relationship kind="outlet" name="categoryLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="highscoreLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="scoreLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="starsImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="starsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NatureStatsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NatureStatsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="pop:"/>
-                <relationship kind="outlet" name="navItem" candidateClass="UINavigationItem"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="StatsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/StatsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="pop:"/>
-                <relationship kind="outlet" name="navItem" candidateClass="UINavigationItem"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

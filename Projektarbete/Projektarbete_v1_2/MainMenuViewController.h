@@ -28,11 +28,10 @@
 - (IBAction)redBanner:(id)sender;
 - (IBAction)greenBanner:(id)sender;
 
-@property (retain, nonatomic) IBOutlet UIImageView *chemistryStars;
-@property (strong, nonatomic) IBOutlet UIImageView *mathStars;
-@property (strong, nonatomic) IBOutlet UIImageView *physicsStars;
-@property (strong, nonatomic) IBOutlet UIImageView *biologyStars;
-
+@property (strong, nonatomic) IBOutlet UILabel *mathPercentLabel;
+@property (strong, nonatomic) IBOutlet UILabel *chemistryPercentLabel;
+@property (strong, nonatomic) IBOutlet UILabel *physicsPercentLabel;
+@property (strong, nonatomic) IBOutlet UILabel *biologyPercentLabel;
 
 
 @end
