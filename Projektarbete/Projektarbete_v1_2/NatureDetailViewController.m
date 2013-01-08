@@ -110,6 +110,16 @@
     correctAnswersNumber = 0;
     testStartedDate = [NSDate date];
     
+    buttonOne.titleLabel.lineBreakMode = UILineBreakModeWordWrap;
+    buttonTwo.titleLabel.lineBreakMode = UILineBreakModeWordWrap;
+    buttonThree.titleLabel.lineBreakMode = UILineBreakModeWordWrap;
+    buttonFour.titleLabel.lineBreakMode = UILineBreakModeWordWrap;
+    
+    buttonOne.titleLabel.textAlignment = UITextAlignmentCenter;
+    buttonTwo.titleLabel.textAlignment = UITextAlignmentCenter;
+    buttonThree.titleLabel.textAlignment = UITextAlignmentCenter;
+    buttonFour.titleLabel.textAlignment = UITextAlignmentCenter;
+    
     [buttonOne setTitle:@"" forState:UIControlStateNormal];
     [buttonTwo setTitle:@"" forState:UIControlStateNormal];
     [buttonThree setTitle:@"" forState:UIControlStateNormal];
