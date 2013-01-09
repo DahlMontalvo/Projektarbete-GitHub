@@ -48,9 +48,10 @@
 
 - (void)tableView:(UITableView *)localTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [localTableView deselectRowAtIndexPath:indexPath animated:NO];
-    
-    categoryID = [[[categories objectAtIndex:indexPath.row] objectAtIndex:2] intValue];
-    
+    if (indexPath.section == 1)
+        categoryID = [[[categories objectAtIndex:indexPath.row] objectAtIndex:2] intValue];
+    else
+        categoryID = -1;
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [self performSegueWithIdentifier:@"ToDetail" sender:self];
 }
@@ -63,25 +64,44 @@
     [super viewDidUnload];
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
-    return [categories count];
+    if (section == 1)
+        return [categories count];
+    else
+        return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)localTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     int index = indexPath.row;
-    NSString *CellIdentifier = [NSString stringWithFormat:@"%i", [[[categories objectAtIndex:index] objectAtIndex:2] intValue]];
-    NSString *cellValue = [[categories objectAtIndex:index] objectAtIndex:0];
-    NatureCategoryCell *cell = (NatureCategoryCell *)[localTableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    if (cell == nil) {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"NatureCategoryCell" owner:self options:nil];
-        cell = [nib objectAtIndex:0];
+    if (indexPath.section == 1) {
+        NSString *CellIdentifier = [NSString stringWithFormat:@"%i", [[[categories objectAtIndex:index] objectAtIndex:2] intValue]];
+        NSString *cellValue = [[categories objectAtIndex:index] objectAtIndex:0];
+        NatureCategoryCell *cell = (NatureCategoryCell *)[localTableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        
+        if (cell == nil) {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"NatureCategoryCell" owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+        }
+        
+        cell.titleLabel.text = cellValue;
+        return cell;
     }
-    
-    cell.titleLabel.text = cellValue;
-    return cell;
+    else {
+        NatureCategoryCell *cell = (NatureCategoryCell *)[localTableView dequeueReusableCellWithIdentifier:@"mixed"];
+        
+        if (cell == nil) {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"NatureCategoryCell" owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+        }
+        
+        cell.titleLabel.text = @"Mixed";
+        return cell;
+    }
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {

@@ -142,22 +142,44 @@
                                                           repeats:YES];
     
     appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    
-    category = [[NSMutableArray alloc] init];
-    category = [appDelegate getCategoryWithID:categoryID];
-    
-    //Ta fram tio frågor i en array
-    NSMutableArray *noId = [[NSMutableArray alloc] init];
-    questions = [[NSMutableArray alloc] init];
-    [noId addObject:[NSNumber numberWithInt:-1]];
-    int iteration = [appDelegate numbersOfQuestionsInCategory:categoryID];
-    if (iteration > 10) {
+    int iteration;
+    NSMutableArray *noId;
+    if (categoryID > 0) {
+        NSLog(@"catID:%i", categoryID);
+        category = [[NSMutableArray alloc] init];
+        category = [appDelegate getCategoryWithID:categoryID];
+        NSLog(@"catID2:%i", categoryID);
+        
+        //Ta fram tio frågor i en array
+        noId = [[NSMutableArray alloc] init];
+        questions = [[NSMutableArray alloc] init];
+        [noId addObject:[NSNumber numberWithInt:-1]];
+        iteration = [appDelegate numbersOfQuestionsInCategory:categoryID];
+        if (iteration > 10) {
+            iteration = 10;
+        }
+    }
+    else {
+        NSLog(@"catID3:%i", categoryID);
+        NSLog(@"catID4:%i", categoryID);
+        
+        //Ta fram tio frågor i en array
+        noId = [[NSMutableArray alloc] init];
+        questions = [[NSMutableArray alloc] init];
+        [noId addObject:[NSNumber numberWithInt:-1]];
         iteration = 10;
     }
     
+    
+    
     for (int i = 0; i<iteration; i++) {
         NSLog(@"i:%i", i);
-        NSMutableArray *question = [appDelegate getQuestionInCategory:categoryID withOutIds:noId];
+        NSMutableArray *question;
+        if (categoryID > 0)
+            question = [appDelegate getQuestionInCategory:categoryID withOutIds:noId];
+        else {
+            question = [appDelegate getQuestionInMainCategory:subject withOutIds:noId];
+        }
         if (question != nil) {
             [noId addObject:[question objectAtIndex:1]];
             [questions addObject:question];
@@ -172,9 +194,11 @@
     if (questionAtm == 10) {
         [countdownTimer invalidate];
         countdownTimer = nil;
+        NSLog(@"hit");
         [self performSegueWithIdentifier:@"ToResult" sender:self];
     }
     else {
+        NSLog(@"Presenting...");
         [countdownTimer invalidate];
         countdownTimer = nil;
         
@@ -327,6 +351,7 @@
         rvc.score = correctAnswersNumber;
         rvc.testStartedDate = testStartedDate;
         rvc.categoryId = categoryID;
+        rvc.subject = subject;
     }
 }
 

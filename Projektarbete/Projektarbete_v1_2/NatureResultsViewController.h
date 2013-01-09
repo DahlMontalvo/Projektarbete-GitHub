@@ -15,6 +15,7 @@
     int score;
     NSDate *testStartedDate;
     int categoryId;
+    NSString *subject;
     
 }
 
@@ -30,5 +31,7 @@
 @property (nonatomic) int categoryId;
 - (IBAction)continueButtonPressed:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *highscoreLabel;
+@property (nonatomic, retain) NSString *subject;
+@property (strong, nonatomic) IBOutlet UILabel *description;
 
 @end

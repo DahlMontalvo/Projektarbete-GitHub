@@ -27,6 +27,7 @@
 -(NSMutableArray *)getCategoryWithID:(int)ID;
 -(int)numbersOfQuestionsInCategory:(int)ID;
 -(NSMutableArray *) getQuestionInCategory:(int)ID withOutIds:(NSMutableArray *)noId;
+-(NSMutableArray *) getQuestionInMainCategory:(NSString *)subject withOutIds:(NSMutableArray *)noId;
 -(NSDate *)getLastSyncDate;
 -(void)updateQuestionWithId:(int)qId question:(NSString *)question parent:(int)parentCategory deleted:(int)deleted;
 -(void)updateAnswerWithId:(int)aId answer:(NSString *)answer parent:(int)parentQuestion correct:(int)correct deleted:(int)deleted;

@@ -73,23 +73,78 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [categories count];
+    return [categories count]+1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *cellID = [[categories objectAtIndex:indexPath.row] objectAtIndex:0];
+    if (indexPath.row == 0){
+        NSString *cellID = @"MixedCell";
+        StatsTableCellController *cell = (StatsTableCellController *)[tableView dequeueReusableCellWithIdentifier:cellID];
+        if (cell == nil) {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"StatsTableCell" owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+        }
+        
+        cell.titleLabel.text = [NSString stringWithFormat:@"Mixed %@", subject ];
+        cell.descriptionLabel.text = @"Highscore";
+        
+        
+        int stars = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"NatureCategory%@Mixed", subject]];
+        
+        NSString *name;
+        
+        switch (stars) {
+            case 0:
+                name = @"NoStars.png";
+                break;
+            case 1:
+                name = @"OneStars.png";
+                break;
+            case 2:
+                name = @"TwoStars.png";
+                break;
+            case 3:
+                name = @"ThreeStars.png";
+                break;
+            default:
+                name = @"NoStars.png";
+                break;
+        }
+        
+        cell.starsImage.image = [UIImage imageNamed:name];
+        
+        float value = [[[Singleton sharedSingleton] sharedPrefs] floatForKey:[NSString stringWithFormat:@"NatureCategory%@MixedTime",subject]];
+        
+        NSString *highscore;
+        
+        if (value == 0) {
+            highscore = @"None";
+        }
+        else {
+            float time = [[[Singleton sharedSingleton] sharedPrefs] floatForKey:[NSString stringWithFormat:@"NatureCategory%@MixedTime",subject]];
+            
+            highscore = [NSString stringWithFormat:@"%.2f s", time];
+        }
+        
+        cell.valueLabel.text = highscore;
+        
+        
+        return cell;
+    }
+    else {
+    NSString *cellID = [[categories objectAtIndex:indexPath.row-1] objectAtIndex:0];
     StatsTableCellController *cell = (StatsTableCellController *)[tableView dequeueReusableCellWithIdentifier:cellID];
     if (cell == nil) {
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"StatsTableCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
     
-    cell.titleLabel.text = [[categories objectAtIndex:indexPath.row] objectAtIndex:0];
-    cell.descriptionLabel.text = @"Fastest 10/10";
+    cell.titleLabel.text = [[categories objectAtIndex:indexPath.row-1] objectAtIndex:0];
+    cell.descriptionLabel.text = @"Highscore";
     
     
-    int stars = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"NatureCategory%iStars", [[[categories objectAtIndex:indexPath.row] objectAtIndex:2] intValue]]];
+    int stars = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"NatureCategory%iStars", [[[categories objectAtIndex:indexPath.row-1] objectAtIndex:2] intValue]]];
     
     NSString *name;
     
@@ -113,7 +168,7 @@
     
     cell.starsImage.image = [UIImage imageNamed:name];
     
-    float value = [[[Singleton sharedSingleton] sharedPrefs] floatForKey:[NSString stringWithFormat:@"NatureCategory%iTime", [[[categories objectAtIndex:indexPath.row] objectAtIndex:2] intValue]]];
+    float value = [[[Singleton sharedSingleton] sharedPrefs] floatForKey:[NSString stringWithFormat:@"NatureCategory%iTime", [[[categories objectAtIndex:indexPath.row-1] objectAtIndex:2] intValue]]];
     
     NSString *highscore;
     
@@ -121,17 +176,17 @@
         highscore = @"None";
     }
     else {
-        float time = [[[Singleton sharedSingleton] sharedPrefs] floatForKey:[NSString stringWithFormat:@"NatureCategory%iTime", [[[categories objectAtIndex:indexPath.row] objectAtIndex:2] intValue]]];
+        float time = [[[Singleton sharedSingleton] sharedPrefs] floatForKey:[NSString stringWithFormat:@"NatureCategory%iTime", [[[categories objectAtIndex:indexPath.row-1] objectAtIndex:2] intValue]]];
         
         highscore = [NSString stringWithFormat:@"%.2f s", time];
     }
-    NSLog(@"%@", [NSString stringWithFormat:@"NatureCategory%iTime", [[[categories objectAtIndex:indexPath.row] objectAtIndex:2] intValue]]);
+    NSLog(@"%@", [NSString stringWithFormat:@"NatureCategory%iTime", [[[categories objectAtIndex:indexPath.row-1] objectAtIndex:2] intValue]]);
     
     cell.valueLabel.text = highscore;
     
     
     return cell;
-
+    }
 }
 
 /*

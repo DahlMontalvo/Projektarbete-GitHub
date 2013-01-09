@@ -391,6 +391,129 @@
     
 }
 
+-(NSMutableArray *) getQuestionInMainCategory:(NSString *)subject withOutIds:(NSMutableArray *)noId {
+	sqlite3 *database;
+    NSMutableArray *question = [[NSMutableArray alloc] init];
+    BOOL found = NO;
+    
+    if(sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK) {
+        NSString *add = @"";
+        
+        for (int i = 0; i < [noId count]; i++) {
+            add = [NSString stringWithFormat:@"%@ AND questions.id != %i ", add, [[noId objectAtIndex:i] intValue]];
+        }
+        
+		const char *sqlStatement = [[NSString stringWithFormat:@"SELECT * FROM questions LEFT JOIN categories ON questions.parentCategory = categories.id WHERE categories.parent = '%@' AND questions.deleted != 1 %@ ORDER BY RANDOM() LIMIT 1", subject, add] UTF8String];
+        NSLog(@"str: %s", sqlStatement);
+		sqlite3_stmt *compiledStatement;
+		if(sqlite3_prepare_v2(database, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK) {
+			while(sqlite3_step(compiledStatement) == SQLITE_ROW) {
+				NSNumber *qID = [NSNumber numberWithInt:sqlite3_column_int(compiledStatement, 0)];
+				NSString *questionStr = [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 1)];
+                
+                /* HÄMTA SVAREN */
+                //Rätt svar alltid först i arrayen
+                const char *sqlStatement3 = [[NSString stringWithFormat:@"SELECT * FROM answers WHERE questionId = %i AND deleted != 1 AND correct = 1", [qID intValue]] UTF8String];
+                sqlite3_stmt *compiledStatement3;
+                NSMutableArray *answers = [[NSMutableArray alloc] init];
+                
+                if(sqlite3_prepare_v2(database, sqlStatement3, -1, &compiledStatement3, NULL) == SQLITE_OK) {
+                    while(sqlite3_step(compiledStatement3) == SQLITE_ROW) {
+                        NSNumber *ansId = [NSNumber numberWithInt:sqlite3_column_int(compiledStatement, 0)];
+                        NSString *answerStr = [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement3, 3)];
+                        NSNumber *correct = [NSNumber numberWithInt:1];
+                        
+                        [answers addObject:[[NSMutableArray alloc] initWithObjects:answerStr, ansId, correct, nil]];
+                        
+                        found = YES;
+                        NSLog(@" ");
+                        NSLog(@"%@ ", answerStr);
+                        NSLog(@" ");
+                    }
+                }
+                sqlite3_finalize(compiledStatement3);
+                
+                //Tar fram tre fel svar
+                int ansNum = 0;
+                
+                const char *sqlStatement2 = [[NSString stringWithFormat:@"SELECT * FROM answers WHERE questionId == %i AND deleted != 1 AND correct == 0 LIMIT 3", [qID intValue]] UTF8String];
+                sqlite3_stmt *compiledStatement2;
+                if(sqlite3_prepare_v2(database, sqlStatement2, -1, &compiledStatement2, NULL) == SQLITE_OK) {
+                    while(sqlite3_step(compiledStatement2) == SQLITE_ROW && ansNum <= 2) {
+                        NSNumber *ansId = [NSNumber numberWithInt:sqlite3_column_int(compiledStatement2, 0)];
+                        NSString *answerStr = [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement2, 3)];
+                        NSNumber *correct = [NSNumber numberWithInt:0];
+                        
+                        [answers addObject:[[NSMutableArray alloc] initWithObjects:answerStr, ansId, correct, nil]];
+                        
+                        found = YES;
+                        ansNum++;
+                    }
+                }
+                sqlite3_finalize(compiledStatement2);
+                
+                
+                const char *sqlStatement4 = [[NSString stringWithFormat:@"SELECT * FROM answers WHERE questionId != %i AND deleted != 1 LIMIT 3", [qID intValue]] UTF8String];
+                sqlite3_stmt *compiledStatement4;
+                if(sqlite3_prepare_v2(database, sqlStatement4, -1, &compiledStatement4, NULL) == SQLITE_OK) {
+                    while(sqlite3_step(compiledStatement4) == SQLITE_ROW && ansNum <= 2) {
+                        NSNumber *ansId = [NSNumber numberWithInt:sqlite3_column_int(compiledStatement4, 0)];
+                        NSString *answerStr = [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement4, 3)];
+                        NSNumber *correct = [NSNumber numberWithInt:0];
+                        
+                        [answers addObject:[[NSMutableArray alloc] initWithObjects:answerStr, ansId, correct, nil]];
+                        
+                        found = YES;
+                        ansNum++;
+                    }
+                }
+                
+                for (int a = 0; a <= 2-ansNum; a++) {
+                    NSMutableArray *emptiness = [[NSMutableArray alloc] init];
+                    [emptiness addObject:@""];
+                    [emptiness addObject:@""];
+                    [emptiness addObject:@""];
+                    [answers addObject:emptiness];
+                }
+                
+                sqlite3_finalize(compiledStatement4);
+                
+                int random = 0;
+                NSMutableArray *tempAnswers = [[NSMutableArray alloc] init];
+                NSMutableArray *randoms = [[NSMutableArray alloc] init];
+                //Random ordning
+                for (int i = 0; i <= 3; i++) {
+                    BOOL continueLoop = YES;
+                    while (continueLoop) {
+                        int temp = arc4random() % 4;
+                        BOOL found = NO;
+                        for (int a = 0; a < i; a++) {
+                            if ([[randoms objectAtIndex:a] intValue] == temp) {
+                                found = YES;
+                            }
+                        }
+                        if (found == NO) {
+                            random = temp;
+                            continueLoop = NO;
+                        }
+                    }
+                    [randoms addObject:[NSNumber numberWithInt:random]];
+                    [tempAnswers addObject:[answers objectAtIndex:random]];
+                }
+                
+                question = [[NSMutableArray alloc] initWithObjects:questionStr, qID, tempAnswers, nil];
+			}
+		}
+		sqlite3_finalize(compiledStatement);
+	}
+	sqlite3_close(database);
+    if (found)
+        return question;
+    else
+        return nil;
+    
+}
+
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {
