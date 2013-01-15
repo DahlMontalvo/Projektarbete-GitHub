@@ -116,6 +116,7 @@
 		00F7C945165BCE4800B65A2E /* StatsText.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F7C942165BCE4800B65A2E /* StatsText.png */; };
 		DD18EEC816A58332003185F8 /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = DD18EEC716A58332003185F8 /* red.png */; };
 		DD18EECB16A5A33A003185F8 /* brown.png in Resources */ = {isa = PBXBuildFile; fileRef = DD18EECA16A5A33A003185F8 /* brown.png */; };
+		DD18EECD16A5C3DF003185F8 /* white.png in Resources */ = {isa = PBXBuildFile; fileRef = DD18EECC16A5C3DF003185F8 /* white.png */; };
 		DD412BC8161D94B100F950E1 /* Database.sql in Resources */ = {isa = PBXBuildFile; fileRef = DD412BC7161D94B100F950E1 /* Database.sql */; };
 		DD412BC9161D94B100F950E1 /* Database.sql in Resources */ = {isa = PBXBuildFile; fileRef = DD412BC7161D94B100F950E1 /* Database.sql */; };
 		DD751EC1161B7CB200C4E2D1 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DD751EC0161B7CB200C4E2D1 /* libsqlite3.0.dylib */; };
@@ -281,6 +282,7 @@
 		00F7C942165BCE4800B65A2E /* StatsText.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatsText.png; sourceTree = "<group>"; };
 		DD18EEC716A58332003185F8 /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red.png; sourceTree = "<group>"; };
 		DD18EECA16A5A33A003185F8 /* brown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brown.png; sourceTree = "<group>"; };
+		DD18EECC16A5C3DF003185F8 /* white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white.png; sourceTree = "<group>"; };
 		DD412BC7161D94B100F950E1 /* Database.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = Database.sql; sourceTree = "<group>"; };
 		DD751EC0161B7CB200C4E2D1 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		DD76D37D161C97DC0017D48F /* NatureCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NatureCategoryCell.h; sourceTree = "<group>"; };
@@ -389,6 +391,7 @@
 		007BC48015C09E0A009BC60D /* Bilder etc. */ = {
 			isa = PBXGroup;
 			children = (
+				DD18EECC16A5C3DF003185F8 /* white.png */,
 				DD18EECA16A5A33A003185F8 /* brown.png */,
 				DD18EEC716A58332003185F8 /* red.png */,
 				00946E45167FC804002C9786 /* brun2.png */,
@@ -815,6 +818,7 @@
 				00946E46167FC804002C9786 /* brun2.png in Resources */,
 				DD18EEC816A58332003185F8 /* red.png in Resources */,
 				DD18EECB16A5A33A003185F8 /* brown.png in Resources */,
+				DD18EECD16A5C3DF003185F8 /* white.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

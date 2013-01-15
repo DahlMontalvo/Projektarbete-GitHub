@@ -346,7 +346,8 @@
     for (int i = 0; i < 4; i++) {
         [[buttons objectAtIndex:i] setBackgroundImage:[UIImage imageNamed:@"white.png"] forState:UIControlStateNormal];
         [[buttons objectAtIndex:i] setTitleColor:[UIColor brownColor] forState:UIControlStateNormal];
-        [[buttons objectAtIndex:i] setBackgroundImage:[UIImage imageNamed:@"brown.png"] forState:UIControlStateHighlighted];
+        [[buttons objectAtIndex:i] setBackgroundImage:[UIImage imageNamed:@"white.png"] forState:UIControlStateHighlighted];
+        [[buttons objectAtIndex:i] setTitleColor:[UIColor brownColor] forState:UIControlStateHighlighted];
     }
 }
 
