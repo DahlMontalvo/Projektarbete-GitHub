@@ -40,6 +40,7 @@
     
     subjectLabel.text = subject;
     
+    
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TableViewBG2"]];
     self.tableView.backgroundView = imageView;
     
@@ -87,8 +88,12 @@
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"NatureCategoryCell" owner:self options:nil];
             cell = [nib objectAtIndex:0];
         }
+        //Kolla detta 1/2
+        int stars = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"NatureCategory%@Mixed", subject]];
         
         cell.titleLabel.text = cellValue;
+        cell.valueLabel.text = [NSString stringWithFormat:@"%i/3 Stars",stars];
+
         return cell;
     }
     else {
@@ -99,7 +104,12 @@
             cell = [nib objectAtIndex:0];
         }
         
+        //och detta 2/2
+        int stars = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"NatureCategory%@Mixed", subject]];
+        
         cell.titleLabel.text = @"Mixed";
+        cell.valueLabel.text = [NSString stringWithFormat:@"%i/3 Stars", stars];
+
         return cell;
     }
 }

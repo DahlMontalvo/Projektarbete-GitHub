@@ -2291,6 +2291,7 @@
         <class className="NatureDetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NatureDetailViewController.h"/>
             <relationships>
+                <relationship kind="action" name="backButton:"/>
                 <relationship kind="action" name="buttonFour:"/>
                 <relationship kind="action" name="buttonOne:"/>
                 <relationship kind="action" name="buttonThree:"/>

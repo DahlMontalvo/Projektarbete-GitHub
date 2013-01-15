@@ -10,7 +10,7 @@
 
 @implementation NatureCategoryCell
 
-@synthesize imageView, titleLabel;
+@synthesize imageView, titleLabel, valueLabel;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
