@@ -64,7 +64,6 @@
 - (void)viewDidLoad
 {
     NSString *string = @"string med &aring; &auml; &ouml;";
-    //NSLog(@"String: %@", [string stringByDecodingHTMLEntities]);
     [super viewDidLoad];
 }
 
@@ -107,10 +106,8 @@
 
     NSString *formattedDate = [format stringFromDate:oldestUpdateDate];
     
-    NSLog(@"Formatted date: %@", formattedDate);
     
     NSString *url = [NSString stringWithFormat:@"http://ss.jdahl.se/getChanges.php?sinceDate=%@", formattedDate];
-    
     NSString *agentString = @"Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_6; en-us) AppleWebKit/525.27.1 (KHTML, like Gecko) Version/3.2.1 Safari/525.27.1";
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:
                                     [NSURL URLWithString:url]];
@@ -148,7 +145,6 @@
 
 - (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
     errorParsing = YES;
-    NSLog(@"Fel!");
 }
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict{
@@ -181,26 +177,21 @@
     else {
         if ([currentPart isEqualToString:@"questions"]) {
             if ([elementName isEqualToString:@"id"]) {
-                NSLog(@"Fråga %i måste uppdateras", [elementValue intValue]);
                 [questionChanges insertObject:[[NSMutableArray alloc] init] atIndex:questionsUpdated-1];
                 [[questionChanges objectAtIndex:questionsUpdated-1] insertObject:[NSNumber numberWithInt:[elementValue intValue]] atIndex:0];
             }
             else if ([elementName isEqualToString:@"question"]) {
-                NSLog(@"med fråga \"%@\" ", elementValue);
                 val = [val stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
                 [[questionChanges objectAtIndex:questionsUpdated-1] insertObject:val atIndex:1];
             }
             else if ([elementName isEqualToString:@"parentCategory"]) {
-                NSLog(@"och parentCategory %i", [elementValue intValue]);
                 [[questionChanges objectAtIndex:questionsUpdated-1] insertObject:[NSNumber numberWithInt:[elementValue intValue]] atIndex:2];
             }
             else if ([elementName isEqualToString:@"lastUpdated"]) {
-                NSLog(@"och lastUpdated %@ ", elementValue);
                 val = [val stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
                 [[questionChanges objectAtIndex:questionsUpdated-1] insertObject:val atIndex:3];
             }
             else if ([elementName isEqualToString:@"deleted"]) {
-                NSLog(@"och deleted %i ", [elementValue intValue]);
                 [[questionChanges objectAtIndex:questionsUpdated-1] insertObject:[NSNumber numberWithInt:[elementValue intValue]] atIndex:4];
             }
         }
@@ -210,27 +201,22 @@
         
         else if ([currentPart isEqualToString:@"categories"]) {
             if ([elementName isEqualToString:@"id"]) {
-                NSLog(@"Kategori %i måste uppdateras", [elementValue intValue]);
                 [categoryChanges insertObject:[[NSMutableArray alloc] init] atIndex:[categoryChanges count]];
                 [[categoryChanges objectAtIndex:[categoryChanges count]-1] insertObject:[NSNumber numberWithInt:[elementValue intValue]] atIndex:0];
             }
             else if ([elementName isEqualToString:@"name"]) {
-                NSLog(@"med namn \"%@\" ", elementValue);
                 val = [val stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
                 [[categoryChanges objectAtIndex:[categoryChanges count]-1] insertObject:val atIndex:1];
             }
             else if ([elementName isEqualToString:@"parent"]) {
-                NSLog(@"och parent %@", elementValue);
                 val = [val stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
                 [[categoryChanges objectAtIndex:[categoryChanges count]-1] insertObject:val atIndex:2];
             }
             else if ([elementName isEqualToString:@"lastUpdated"]) {
-                NSLog(@"och lastUpdated %@ ", elementValue);
                 val = [val stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
                 [[categoryChanges objectAtIndex:[categoryChanges count]-1] insertObject:val atIndex:3];
             }
             else if ([elementName isEqualToString:@"deleted"]) {
-                NSLog(@"och deleted %i ", [elementValue intValue]);
                 [[categoryChanges objectAtIndex:[categoryChanges count]-1] insertObject:[NSNumber numberWithInt:[elementValue intValue]] atIndex:4];
             }
         }
@@ -240,31 +226,25 @@
         
         else if ([currentPart isEqualToString:@"answers"]) {
             if ([elementName isEqualToString:@"id"]) {
-                NSLog(@"Svar %i måste uppdateras", [elementValue intValue]);
                 [answerChanges insertObject:[[NSMutableArray alloc] init] atIndex:[answerChanges count]];
                 [[answerChanges objectAtIndex:[answerChanges count]-1] insertObject:[NSNumber numberWithInt:[elementValue intValue]] atIndex:0];
             }
             else if ([elementName isEqualToString:@"answer"]) {
-                NSLog(@"med svar \"%@\" ", elementValue);
                 val = [val stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
                 [[answerChanges objectAtIndex:[answerChanges count]-1] insertObject:val atIndex:1];
             }
             else if ([elementName isEqualToString:@"questionId"]) {
-                NSLog(@"och parent %@", elementValue);
                 val = [val stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
                 [[answerChanges objectAtIndex:[answerChanges count]-1] insertObject:val atIndex:2];
             }
             else if ([elementName isEqualToString:@"correct"]) {
-                NSLog(@"och correct %@", elementValue);
                 [[answerChanges objectAtIndex:[answerChanges count]-1] insertObject:[NSNumber numberWithInt:[elementValue intValue]] atIndex:3];
             }
             else if ([elementName isEqualToString:@"lastUpdated"]) {
-                NSLog(@"och lastUpdated %@ ", elementValue);
                 val = [val stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
                 [[answerChanges objectAtIndex:[answerChanges count]-1] insertObject:val atIndex:4];
             }
             else if ([elementName isEqualToString:@"deleted"]) {
-                NSLog(@"och deleted %i ", [elementValue intValue]);
                 [[answerChanges objectAtIndex:[answerChanges count]-1] insertObject:[NSNumber numberWithInt:[elementValue intValue]] atIndex:5];
             }
         }
@@ -282,7 +262,6 @@
         [lightView setHidden:YES];
         [activityIndicatior setHidden:YES];
         [activityIndicatior stopAnimating];
-        NSLog(@"Error occurred during XML processing");
     }
     
     NSString *messageText;
@@ -315,20 +294,9 @@
     
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     for (int i = 0; i < [questionChanges count]; i++) {
-        NSLog(@"a: %i", i);
         [appDelegate updateQuestionWithId:[[[questionChanges objectAtIndex:i] objectAtIndex:0] intValue] question:[[questionChanges objectAtIndex:i] objectAtIndex:1] parent:[[[questionChanges objectAtIndex:i] objectAtIndex:2] intValue] deleted:[[[questionChanges objectAtIndex:i] objectAtIndex:4] intValue]];
-        /*
-         NSLog(@"Ny rad ----------------------");
-         NSLog(@"ID: %i", [[[questionChanges objectAtIndex:i] objectAtIndex:0] intValue]);
-         NSLog(@"Question: %@", [[questionChanges objectAtIndex:i] objectAtIndex:1]);
-         NSLog(@"Parent: %i", [[[questionChanges objectAtIndex:i] objectAtIndex:2] intValue]);
-         NSLog(@"Last update: %@", [[questionChanges objectAtIndex:i] objectAtIndex:3]);
-         NSLog(@"Deleted: %i", [[[questionChanges objectAtIndex:i] objectAtIndex:4] intValue]);
-         NSLog(@" ");
-         */
     }
     for (int i = 0; i < [answerChanges count]; i++) {
-        NSLog(@"H: %i", i);
         [appDelegate updateAnswerWithId:[[[answerChanges objectAtIndex:i] objectAtIndex:0] intValue]
                                  answer:[[answerChanges objectAtIndex:i] objectAtIndex:1]
                                  parent:[[[answerChanges objectAtIndex:i] objectAtIndex:2] intValue]
@@ -336,7 +304,6 @@
                                 deleted:[[[answerChanges objectAtIndex:i] objectAtIndex:5] intValue]];
     }
     for (int i = 0; i < [categoryChanges count]; i++) {
-        NSLog(@"b: %i", i);
         [appDelegate updateCategoryWithId:[[[categoryChanges objectAtIndex:i] objectAtIndex:0] intValue]
                                      name:[[categoryChanges objectAtIndex:i] objectAtIndex:1]
                                    parent:[[categoryChanges objectAtIndex:i] objectAtIndex:2]

@@ -125,6 +125,11 @@
     [buttonThree setTitle:@"" forState:UIControlStateNormal];
     [buttonFour setTitle:@"" forState:UIControlStateNormal];
     
+    [buttonOne setBackgroundImage:[UIImage imageNamed:@"brown.png"] forState:UIControlStateHighlighted];
+    [buttonTwo setBackgroundImage:[UIImage imageNamed:@"brown.png"] forState:UIControlStateHighlighted];
+    [buttonThree setBackgroundImage:[UIImage imageNamed:@"brown.png"] forState:UIControlStateHighlighted];
+    [buttonFour setBackgroundImage:[UIImage imageNamed:@"brown.png"] forState:UIControlStateHighlighted];
+    
     subjectLabel.text = [NSString stringWithFormat:@"00:20.0"];
     correctAnswers.text = [NSString stringWithFormat:@"0/0"];
     
@@ -336,13 +341,37 @@
     [self buttonPressed:4];
 }
 
+- (void)noBG {
+    NSMutableArray *buttons = [[NSMutableArray alloc] initWithObjects:buttonOne, buttonTwo, buttonThree, buttonFour, nil];
+    for (int i = 0; i < 4; i++) {
+        [[buttons objectAtIndex:i] setBackgroundImage:[UIImage imageNamed:@"white.png"] forState:UIControlStateNormal];
+        [[buttons objectAtIndex:i] setTitleColor:[UIColor brownColor] forState:UIControlStateNormal];
+        [[buttons objectAtIndex:i] setBackgroundImage:[UIImage imageNamed:@"brown.png"] forState:UIControlStateHighlighted];
+    }
+}
+
 -(void)buttonPressed:(int)buttonIndex {
+    NSMutableArray *buttons = [[NSMutableArray alloc] initWithObjects:buttonOne, buttonTwo, buttonThree, buttonFour, nil];
     if (buttonIndex < 5 && buttonIndex > 0) {
+        [[buttons objectAtIndex:buttonIndex-1] setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         if ([[[[[questions objectAtIndex:questionAtm-1] objectAtIndex:2] objectAtIndex:buttonIndex-1] objectAtIndex:2] intValue] == 1) {
             correctAnswersNumber++;
+            [[buttons objectAtIndex:buttonIndex-1] setBackgroundImage:[UIImage imageNamed:@"green.png"] forState:UIControlStateNormal];
         }
+        else {
+            [[buttons objectAtIndex:buttonIndex-1] setBackgroundImage:[UIImage imageNamed:@"red.png"] forState:UIControlStateNormal];
+        }
+        [NSTimer scheduledTimerWithTimeInterval:.5
+                                         target:self
+                                       selector:@selector(noBG)
+                                       userInfo:nil
+                                        repeats:NO];
     }
-    [self presentNextQuestion];
+    [NSTimer scheduledTimerWithTimeInterval:.5
+                                     target:self
+                                   selector:@selector(presentNextQuestion)
+                                   userInfo:nil
+                                    repeats:NO];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
