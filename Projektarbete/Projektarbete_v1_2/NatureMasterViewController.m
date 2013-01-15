@@ -89,8 +89,8 @@
             cell = [nib objectAtIndex:0];
         }
         //Kolla detta 1/2
-        int stars = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"NatureCategory%@Mixed", subject]];
-        
+        int stars = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"NatureCategory%iStars", [[[categories objectAtIndex:indexPath.row] objectAtIndex:2] intValue]]];
+    
         cell.titleLabel.text = cellValue;
         cell.valueLabel.text = [NSString stringWithFormat:@"%i/3 Stars",stars];
 
