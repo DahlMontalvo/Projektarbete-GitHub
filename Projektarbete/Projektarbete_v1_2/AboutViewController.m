@@ -134,11 +134,11 @@
 }
 
 - (IBAction)likeButtonPressed:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://facebook.com"]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://facebook.com/dahlmontalvoapps"]];
 }
 
 - (IBAction)feedBackFacebookButtonPressed:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://facebook.com/feedback"]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://facebook.com/dahlmontalvoapps"]];
 }
 
 - (void)parserDidStartDocument:(NSXMLParser *)parser{
