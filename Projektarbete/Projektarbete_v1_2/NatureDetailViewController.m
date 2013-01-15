@@ -125,10 +125,10 @@
     [buttonThree setTitle:@"" forState:UIControlStateNormal];
     [buttonFour setTitle:@"" forState:UIControlStateNormal];
     
-    [buttonOne setBackgroundImage:[UIImage imageNamed:@"brown.png"] forState:UIControlStateHighlighted];
-    [buttonTwo setBackgroundImage:[UIImage imageNamed:@"brown.png"] forState:UIControlStateHighlighted];
-    [buttonThree setBackgroundImage:[UIImage imageNamed:@"brown.png"] forState:UIControlStateHighlighted];
-    [buttonFour setBackgroundImage:[UIImage imageNamed:@"brown.png"] forState:UIControlStateHighlighted];
+    [buttonOne setBackgroundImage:[UIImage imageNamed:@"white.png"] forState:UIControlStateHighlighted];
+    [buttonTwo setBackgroundImage:[UIImage imageNamed:@"white.png"] forState:UIControlStateHighlighted];
+    [buttonThree setBackgroundImage:[UIImage imageNamed:@"white.png"] forState:UIControlStateHighlighted];
+    [buttonFour setBackgroundImage:[UIImage imageNamed:@"white.png"] forState:UIControlStateHighlighted];
     
     subjectLabel.text = [NSString stringWithFormat:@"00:20.0"];
     correctAnswers.text = [NSString stringWithFormat:@"0/0"];
