@@ -176,9 +176,9 @@
         highscore = @"None";
     }
     else {
-        float time = [[[Singleton sharedSingleton] sharedPrefs] floatForKey:[NSString stringWithFormat:@"NatureCategory%iTime", [[[categories objectAtIndex:indexPath.row-1] objectAtIndex:2] intValue]]];
+        int time = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"NatureCategory%iTime", [[[categories objectAtIndex:indexPath.row-1] objectAtIndex:2] intValue]]];
         
-        highscore = [NSString stringWithFormat:@"%.2f s", time];
+        highscore = [NSString stringWithFormat:@"%i", time];
     }
     NSLog(@"%@", [NSString stringWithFormat:@"NatureCategory%iTime", [[[categories objectAtIndex:indexPath.row-1] objectAtIndex:2] intValue]]);
     

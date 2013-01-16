@@ -109,32 +109,6 @@
     
 }
 
--(NSDate *)getLastSyncDate {
-	sqlite3 *database;
-    NSDate *lastDate = [NSDate date];
-    
-    NSDateFormatter *format = [[NSDateFormatter alloc] init];
-    [format setDateFormat:@"YYYY-MM-dd HH:mm:ss"];
-    
-    if(sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK) {
-		const char *sqlStatement = [@"SELECT MIN(questions.lastUpdated) AS r1 FROM questions" UTF8String];
-		sqlite3_stmt *compiledStatement;
-		if(sqlite3_prepare_v2(database, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK) {
-			while(sqlite3_step(compiledStatement) == SQLITE_ROW) {
-                    NSDate *date = [NSDate dateWithTimeIntervalSince1970:sqlite3_column_int(compiledStatement, 0)];
-                        lastDate = date;
-			}
-		}
-		// Release the compiled statement from memory
-		sqlite3_finalize(compiledStatement);
-        
-	}
-    NSLog(@"Last Sync Date: %@", lastDate);
-	sqlite3_close(database);
-    return lastDate;
-    
-}
-
 -(void)updateQuestionWithId:(int)qId question:(NSString *)question parent:(int)parentCategory deleted:(int)deleted {
 	sqlite3 *database;
     

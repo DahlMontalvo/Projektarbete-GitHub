@@ -7,63 +7,21 @@
 //
 
 #import "AboutViewController.h"
+#import "Singleton.h"
 
 @implementation AboutViewController
-@synthesize delegate;
-@synthesize doneButton, syncButton, errorParsing, questionsUpdated, elementValue, articles, currentElement, item, rssParser, currentPart, currentItem, categoryChanges, questionChanges, answerChanges, a;
-@synthesize lightView, activityIndicatior;
--(IBAction)done:(id)sender {
-    [self.delegate AboutViewControllerDidDone:self];
-}
+@synthesize delegate, doneButton, syncButton, errorParsing, questionsUpdated, elementValue, articles, currentElement, item, rssParser, currentPart, currentItem, categoryChanges, questionChanges, answerChanges, a, lightView, activityIndicatior;
 
-
-- (IBAction)emailPressed:(id)sender {
-	MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
-	mailController.mailComposeDelegate = self;
-    NSArray *toRecipients = [NSArray arrayWithObject:@"feedback@dahlmontalvo.com"];
-	[mailController setToRecipients:toRecipients];
-	[mailController setSubject:@"Simple Science Feedback"];
-	[mailController setMessageBody:@"" isHTML:NO];
-	[self presentModalViewController:mailController animated:YES];
-
-}
-
-- (void)mailComposeController:(MFMailComposeViewController*)mailController didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error {
-	[self becomeFirstResponder];
-	[self dismissModalViewControllerAnimated:YES];
-}
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+#pragma mark - Initialization
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
-
-#pragma mark - View lifecycle
-
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView
-{
-}
-*/
-
-
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad
-{
-    NSString *string = @"string med &aring; &auml; &ouml;";
+#pragma mark - View management
+- (void)viewDidLoad {
     [super viewDidLoad];
 }
 
@@ -72,72 +30,22 @@
     [activityIndicatior setHidden:YES];
 }
 
-
-- (void)viewDidUnload
-{
+- (void)viewDidUnload {
     [self setSyncButton:nil];
     [self setLightView:nil];
     [self setActivityIndicatior:nil];
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (IBAction)syncButtonPressed:(id)sender {
-    [lightView setHidden:NO];
-    [activityIndicatior setHidden:NO];
-    [activityIndicatior startAnimating];
-    
-    questionChanges = [[NSMutableArray alloc] init];
-    categoryChanges = [[NSMutableArray alloc] init];
-    answerChanges = [[NSMutableArray alloc] init];
-    
-    //Synka hela databasen
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSDate *oldestUpdateDate = [appDelegate getLastSyncDate];
-    NSDateFormatter *format = [[NSDateFormatter alloc] init];
-    [format setDateFormat:@"YYYY-MM-dd_HH:mm:ss"];
-
-    NSString *formattedDate = [format stringFromDate:oldestUpdateDate];
-    
-    
-    NSString *url = [NSString stringWithFormat:@"http://ss.jdahl.se/getChanges.php?sinceDate=%@", formattedDate];
-    NSString *agentString = @"Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_6; en-us) AppleWebKit/525.27.1 (KHTML, like Gecko) Version/3.2.1 Safari/525.27.1";
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:
-                                    [NSURL URLWithString:url]];
-    [request setValue:agentString forHTTPHeaderField:@"User-Agent"];
-    
-    NSData *xmlFile = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-    
-    errorParsing = NO;
-    
-    rssParser = [[NSXMLParser alloc] initWithData:xmlFile];
-    
-    [rssParser setDelegate:self];
-    
-    // You may need to turn some of these on depending on the type of XML file you are parsing
-    [rssParser setShouldProcessNamespaces:NO];
-    [rssParser setShouldReportNamespacePrefixes:NO];
-    [rssParser setShouldResolveExternalEntities:NO];
-    
-    [rssParser parse];
-    
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
 }
 
-- (IBAction)likeButtonPressed:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://facebook.com/dahlmontalvoapps"]];
-}
-
-- (IBAction)feedBackFacebookButtonPressed:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://facebook.com/dahlmontalvoapps"]];
-}
-
+#pragma mark - XML
 - (void)parserDidStartDocument:(NSXMLParser *)parser{
     a = 0;
     questionsUpdated = 0;
@@ -147,7 +55,7 @@
     errorParsing = YES;
 }
 
-- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict{
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     currentElement = [elementName copy];
     elementValue = [[NSMutableString alloc] init];
     
@@ -169,12 +77,7 @@
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     NSString *val = [elementValue copy];
-    if ([elementName isEqualToString:@"entry"]) {
-        if ([currentPart isEqualToString:@"questions"]) {
-        
-        }
-    }
-    else {
+    if (![elementName isEqualToString:@"entry"]) {
         if ([currentPart isEqualToString:@"questions"]) {
             if ([elementName isEqualToString:@"id"]) {
                 [questionChanges insertObject:[[NSMutableArray alloc] init] atIndex:questionsUpdated-1];
@@ -195,10 +98,6 @@
                 [[questionChanges objectAtIndex:questionsUpdated-1] insertObject:[NSNumber numberWithInt:[elementValue intValue]] atIndex:4];
             }
         }
-        
-        
-        
-        
         else if ([currentPart isEqualToString:@"categories"]) {
             if ([elementName isEqualToString:@"id"]) {
                 [categoryChanges insertObject:[[NSMutableArray alloc] init] atIndex:[categoryChanges count]];
@@ -220,10 +119,6 @@
                 [[categoryChanges objectAtIndex:[categoryChanges count]-1] insertObject:[NSNumber numberWithInt:[elementValue intValue]] atIndex:4];
             }
         }
-        
-        
-        
-        
         else if ([currentPart isEqualToString:@"answers"]) {
             if ([elementName isEqualToString:@"id"]) {
                 [answerChanges insertObject:[[NSMutableArray alloc] init] atIndex:[answerChanges count]];
@@ -251,35 +146,27 @@
     }
 }
 
-- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string{
+- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
     [elementValue appendString:string];
 }
 
 - (void)parserDidEndDocument:(NSXMLParser *)parser {
-    
-    if (errorParsing == NO) {
-    } else {
-        [lightView setHidden:YES];
-        [activityIndicatior setHidden:YES];
-        [activityIndicatior stopAnimating];
-    }
+    [lightView setHidden:YES];
+    [activityIndicatior setHidden:YES];
+    [activityIndicatior stopAnimating];
     
     NSString *messageText;
-    if (questionsUpdated > 3) {
+    if (questionsUpdated > 3)
         messageText = [NSString stringWithFormat:@"%i questions changed/updated!", questionsUpdated];
-    }
-    else if (questionsUpdated == 3) {
+    else if (questionsUpdated == 3)
         messageText = @"Three questions changed/updated!";
-    }
-    else if (questionsUpdated == 2) {
+    else if (questionsUpdated == 2)
         messageText = @"Two questions changed/updated!";
-    }
-    else if (questionsUpdated == 1) {
+    else if (questionsUpdated == 1)
         messageText = @"One question changed/updated!";
-    }
-    else {
+    else
         messageText = @"There was nothing to sync";
-    }
+    
     UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Sync Complete"
                                                       message:messageText
                                                      delegate:self
@@ -287,10 +174,6 @@
                                             otherButtonTitles:nil];
     
     [message show];
-    
-    [lightView setHidden:YES];
-    [activityIndicatior setHidden:YES];
-    [activityIndicatior stopAnimating];
     
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     for (int i = 0; i < [questionChanges count]; i++) {
@@ -309,9 +192,80 @@
                                    parent:[[categoryChanges objectAtIndex:i] objectAtIndex:2]
                                   deleted:[[[categoryChanges objectAtIndex:i] objectAtIndex:4] intValue]];
     }
-    
+    [[[Singleton sharedSingleton] sharedPrefs] setObject:[NSDate date] forKey:@"LastSyncDate"];
     [appDelegate readQuestionsFromDatabase];
+}
+
+#pragma mark - Other
+-(IBAction)done:(id)sender {
+    [self.delegate AboutViewControllerDidDone:self];
+}
+
+- (IBAction)emailPressed:(id)sender {
+	MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
+	mailController.mailComposeDelegate = (id<MFMailComposeViewControllerDelegate>)self;
+    NSArray *toRecipients = [NSArray arrayWithObject:@"feedback@dahlmontalvo.com"];
+	[mailController setToRecipients:toRecipients];
+	[mailController setSubject:@"Simple Science Feedback"];
+	[mailController setMessageBody:@"" isHTML:NO];
+	[self presentModalViewController:mailController animated:YES];
+}
+
+- (void)mailComposeController:(MFMailComposeViewController*)mailController didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error {
+	[self becomeFirstResponder];
+	[self dismissModalViewControllerAnimated:YES];
+}
+
+-(void)startUpdating {
+    questionChanges = [[NSMutableArray alloc] init];
+    categoryChanges = [[NSMutableArray alloc] init];
+    answerChanges = [[NSMutableArray alloc] init];
     
+    //Synka hela databasen
+    NSDate *oldestUpdateDate = [[[Singleton sharedSingleton] sharedPrefs] objectForKey:@"LastSyncDate"];
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:@"Europe/Stockholm"];
+    [format setTimeZone:timeZone];
+    [format setDateFormat:@"YYYY-MM-dd_HH:mm:ss"];
+    NSString *formattedDate = [format stringFromDate:oldestUpdateDate];
+    NSLog(@"%@", formattedDate);
+    
+    NSString *url = [NSString stringWithFormat:@"http://ss.jdahl.se/getChanges.php?sinceDate=%@", formattedDate];
+    NSString *agentString = @"Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_6; en-us) AppleWebKit/525.27.1 (KHTML, like Gecko) Version/3.2.1 Safari/525.27.1";
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
+    [request setValue:agentString forHTTPHeaderField:@"User-Agent"];
+    
+    NSData *xmlFile = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    
+    errorParsing = NO;
+    
+    rssParser = [[NSXMLParser alloc] initWithData:xmlFile];
+    
+    [rssParser setDelegate:self];
+    
+    // You may need to turn some of these on depending on the type of XML file you are parsing
+    [rssParser setShouldProcessNamespaces:NO];
+    [rssParser setShouldReportNamespacePrefixes:NO];
+    [rssParser setShouldResolveExternalEntities:NO];
+    
+    [rssParser parse];
+}
+
+- (IBAction)syncButtonPressed:(id)sender {
+    
+    [lightView setHidden:NO];
+    [activityIndicatior setHidden:NO];
+    [activityIndicatior startAnimating];
+    
+    [self performSelector:@selector(startUpdating) withObject:nil afterDelay:0];
+}
+
+- (IBAction)likeButtonPressed:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://facebook.com/dahlmontalvoapps"]];
+}
+
+- (IBAction)feedBackFacebookButtonPressed:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://facebook.com/dahlmontalvoapps"]];
 }
 
 @end

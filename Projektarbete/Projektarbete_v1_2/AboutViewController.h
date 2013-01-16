@@ -14,25 +14,14 @@
 
 @protocol AboutViewControllerDelegate <NSObject, MFMailComposeViewControllerDelegate, NSXMLParserDelegate>
 - (void)AboutViewControllerDidDone:(AboutViewController *)controller;
-
-
 @end
 
 @interface AboutViewController : UIViewController {
-    
-    
 }
 
 @property (nonatomic, weak) id <AboutViewControllerDelegate> delegate;
 @property (strong, nonatomic)IBOutlet UIBarButtonItem *doneButton;
-
--(IBAction)done:(id)sender;
--(IBAction)emailPressed:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *syncButton;
-- (IBAction)syncButtonPressed:(id)sender;
-- (IBAction)likeButtonPressed:(id)sender;
-- (IBAction)feedBackFacebookButtonPressed:(id)sender;
-
 @property (nonatomic) BOOL errorParsing;
 @property (weak, nonatomic) IBOutlet UIView *lightView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatior;
@@ -48,5 +37,12 @@
 @property (nonatomic) int a;
 @property (nonatomic) int questionsUpdated;
 @property (nonatomic, retain) NSMutableArray *currentItem;
+
+-(IBAction)done:(id)sender;
+-(IBAction)emailPressed:(id)sender;
+-(IBAction)syncButtonPressed:(id)sender;
+-(IBAction)likeButtonPressed:(id)sender;
+-(IBAction)feedBackFacebookButtonPressed:(id)sender;
+-(void)startUpdating;
 
 @end

@@ -9,28 +9,132 @@
 #import "MainMenuViewController.h"
 
 @implementation MainMenuViewController
-@synthesize scrollView;
-@synthesize scrollViewGr;
-@synthesize redBanner;
-@synthesize greenBanner, chemistryPercentLabel, mathPercentLabel, biologyPercentLabel, physicsPercentLabel;
+@synthesize redBanner, scrollViewGr, scrollView, greenBanner, chemistryPercentLabel, mathPercentLabel, biologyPercentLabel, physicsPercentLabel;
 
+#pragma mark - Initialization
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
+#pragma mark - View management
+- (void)viewDidLoad {
+    [super viewDidLoad];
     
-    // Release any cached data, images, etc that aren't in use.
+    //Setting up Settings and About scroll views
+    scrollView.scrollEnabled = YES;
+    scrollView.contentSize = scrollView.frame.size;
+    [scrollView setAlwaysBounceVertical:YES];
+    
+    scrollViewGr.scrollEnabled = YES;
+    scrollViewGr.contentSize = scrollViewGr.frame.size;
+    [scrollViewGr setAlwaysBounceVertical:YES];
 }
 
+- (void)viewDidUnload {
+    [self setRedBanner:nil];
+    [self setGreenBanner:nil];
+    [self setGreenBanner:nil];
+    [self setMathPercentLabel:nil];
+    [self setChemistryPercentLabel:nil];
+    [self setPhysicsPercentLabel:nil];
+    [self setBiologyPercentLabel:nil];
+    [super viewDidUnload];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    //Ta bort status bar
+    UIApplication *app = [UIApplication sharedApplication];
+    [app setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
+    
+    [[[Singleton sharedSingleton] sharedPrefs] synchronize];
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    //Samla underkategorierna i sina arrayer beroende på överkategori
+    NSMutableArray *biologyCategories = [[NSMutableArray alloc] init];
+    NSMutableArray *chemistryCategories = [[NSMutableArray alloc] init];
+    NSMutableArray *physicsCategories = [[NSMutableArray alloc] init];
+    
+    for (int i = 0; i < [appDelegate.categories count]; i++) {
+        NSString *name = [[appDelegate.categories objectAtIndex:i] objectAtIndex:0];
+        NSString *parent = [[appDelegate.categories objectAtIndex:i] objectAtIndex:1];
+        int ID = [[[appDelegate.categories objectAtIndex:i] objectAtIndex:2] intValue];
+        NSMutableArray *temp = [[NSMutableArray alloc] initWithObjects:name, parent, [NSNumber numberWithInt:ID], nil];
+        NSString *subject = [[appDelegate.categories objectAtIndex:i] objectAtIndex:1];
+        
+        if ([subject isEqualToString:@"Physics"])
+            [physicsCategories addObject:temp];
+        else if ([subject isEqualToString:@"Chemistry"])
+            [chemistryCategories addObject:temp];
+        else if ([subject isEqualToString:@"Biology"])
+            [biologyCategories addObject:temp];
+    }
+    
+    //Lägger in kategorierna med deras labels
+    NSMutableArray *contents = [[NSMutableArray alloc] initWithObjects:[[NSMutableArray alloc] initWithObjects:chemistryCategories, physicsCategories, biologyCategories, nil], [[NSMutableArray alloc] initWithObjects:chemistryPercentLabel, physicsPercentLabel, biologyPercentLabel, nil], nil];
+    NSMutableArray *subjects = [[NSMutableArray alloc] initWithObjects:@"Chemistry", @"Physics", @"Biology", nil];
+    
+    //Loopar igenom ett ämne i taget
+    for (int a = 0; a < 3; a++) {
+        int total = 0;
+        int stars = 0;
+        float share = 0;
+        //Loopar igenom alla kategorier i ämnet
+        for (int i = 0; i < [[[contents objectAtIndex:0] objectAtIndex:a] count]; i++) {
+            NSString *key = [NSString stringWithFormat:@"NatureCategory%iStars", [[[[[contents objectAtIndex:0] objectAtIndex:a] objectAtIndex:i] objectAtIndex:2] intValue]];
+            int thisStars = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:key];
+            total+=3;
+            stars+=thisStars;
+        }
+        
+        //Lägg till mixed
+        total+=3;
+        stars+=[[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"NatureCategory%@Mixed", [subjects objectAtIndex:a]]];
+        
+        if (total != 0)
+            share = (float)stars/(float)total;
+        else
+            share = 0;
+        
+        share*=100;
+        
+        UILabel *label = [[contents objectAtIndex:1] objectAtIndex:a];
+        [label setText:[NSString stringWithFormat:@"%i %%", (int)(share+0.5)]];
+    }
+    
+    //Matteprocent
+    int total = 0;
+    int stars = 0;
+    
+    NSMutableArray *operations = [[NSMutableArray alloc] initWithObjects:@"Addition", @"Subtraction", @"Division", @"Multiplication", @"Percent", @"Fraction", @"Equations", nil];
+    for (int i = 0; i < 7; i++) {
+        NSString *key = [NSString stringWithFormat:@"TotalStars%@", [operations objectAtIndex:i]];
+        
+        int thisStars = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:key];
+        total+=15;
+        stars+=thisStars;
+    }
+    
+    float share = 100*((float)stars/total);
+    mathPercentLabel.text = [NSString stringWithFormat:@"%i %%", (int)(share+0.5)];
+    
+    [[self.navigationController navigationBar] setTintColor:[UIColor blackColor]];
+    [[self.navigationController navigationBar] setHidden:YES];
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma mark - Others
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
 	if ([segue.identifier isEqualToString:@"GlobalStatsSegue"]) {
@@ -57,172 +161,23 @@
 		NatureMasterViewController *nvc = segue.destinationViewController;
         nvc.subject = @"Biology";
 	}
-    
-    
+}
+
+- (IBAction)redBanner:(id)sender {
+    [self performSegueWithIdentifier:@"StatsSegue" sender:sender];
+}
+
+- (IBAction)greenBanner:(id)sender {
+    [self performSegueWithIdentifier:@"AboutSegue" sender:sender];
 }
 
 - (void)GlobalStatsViewControllerDidDone:(GlobalStatsViewController *)controller {
 	[self dismissViewControllerAnimated:YES completion:nil];
-    
 }
 
 - (void)AboutViewControllerDidDone:(AboutViewController *)controller {
 	[self dismissViewControllerAnimated:YES completion:nil];
-    
 }
 
-
-#pragma mark - View lifecycle
-
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView
-{
-}
-*/
-
-
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad
-{
-    scrollView.scrollEnabled = YES;
-    self.scrollView.contentSize = self.scrollView.frame.size;
-    [scrollView setAlwaysBounceVertical:YES];
-    
-    scrollViewGr.scrollEnabled = YES;
-    self.scrollViewGr.contentSize = self.scrollViewGr.frame.size;
-    [scrollViewGr setAlwaysBounceVertical:YES];
-    
-    [super viewDidLoad];
-    
-    [[self.navigationController navigationBar] setTintColor:[UIColor darkGrayColor]];
-    /*
-    [redBanner addTarget:self action:@selector(draggedOut:withEvent:)
-        forControlEvents:UIControlEventTouchDragOutside |
-     UIControlEventTouchDragInside];
-    [greenBanner addTarget:self action:@selector(draggedOutGreen:withEvent:)
-        forControlEvents:UIControlEventTouchDragOutside |
-     UIControlEventTouchDragInside];
-     */
-}
-
-- (void)viewDidUnload
-{
-    [self setRedBanner:nil];
-    [self setGreenBanner:nil];
-    [self setGreenBanner:nil];
-    [self setMathPercentLabel:nil];
-    [self setChemistryPercentLabel:nil];
-    [self setPhysicsPercentLabel:nil];
-    [self setBiologyPercentLabel:nil];
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
--(void)viewDidAppear {
-    
-}
--(void)viewWillAppear:(BOOL)animated {
-    
-    NSLog(@"Jag kallar på dig.");
-    
-    [[[Singleton sharedSingleton] sharedPrefs] synchronize];
-    
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    
-    NSMutableArray *biologyCategories = [[NSMutableArray alloc] init];
-    NSMutableArray *chemistryCategories = [[NSMutableArray alloc] init];
-    NSMutableArray *physicsCategories = [[NSMutableArray alloc] init];
-    
-    for (int i = 0; i < [appDelegate.categories count]; i++) {
-        NSString *name = [[appDelegate.categories objectAtIndex:i] objectAtIndex:0];
-        NSString *parent = [[appDelegate.categories objectAtIndex:i] objectAtIndex:1];
-        int ID = [[[appDelegate.categories objectAtIndex:i] objectAtIndex:2] intValue];
-        NSMutableArray *temp = [[NSMutableArray alloc] initWithObjects:name, parent, [NSNumber numberWithInt:ID], nil];
-        
-        if ([[[appDelegate.categories objectAtIndex:i] objectAtIndex:1] isEqualToString:@"Physics"])
-            [physicsCategories addObject:temp];
-        else if ([[[appDelegate.categories objectAtIndex:i] objectAtIndex:1] isEqualToString:@"Chemistry"])
-            [chemistryCategories addObject:temp];
-        else if ([[[appDelegate.categories objectAtIndex:i] objectAtIndex:1] isEqualToString:@"Biology"])
-            [biologyCategories addObject:temp];
-        
-    }
-    
-    NSMutableArray *contents = [[NSMutableArray alloc] initWithObjects:[[NSMutableArray alloc] initWithObjects:chemistryCategories, physicsCategories, biologyCategories, nil], [[NSMutableArray alloc] initWithObjects:chemistryPercentLabel, physicsPercentLabel, biologyPercentLabel, nil], nil];
-    NSMutableArray *subjects = [[NSMutableArray alloc] initWithObjects:@"Chemistry", @"Physics", @"Biology", nil];
-    for (int a = 0; a < 3; a++) {
-        int total = 0;
-        int stars = 0;
-        float share = 0;
-        NSLog(@"stars: %i", stars);
-        NSLog(@"Här?");
-        for (int i = 0; i < [[[contents objectAtIndex:0] objectAtIndex:a] count]; i++) {
-            int thisStars = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"NatureCategory%iStars", [[[[[contents objectAtIndex:0] objectAtIndex:a] objectAtIndex:i] objectAtIndex:2] intValue]]];
-            total+=3;
-            stars+=thisStars;
-            NSLog(@"Här?");
-        }
-        
-        total+=3;
-        stars+=[[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"NatureCategory%@Mixed", [subjects objectAtIndex:a]]];
-        NSLog(@"Total: %i, stars: %i", total, stars);
-        
-        if (total != 0)
-            share = (float)stars/(float)total;
-        else
-            share = 0;
-        
-        share*=100;
-        
-        [[[contents objectAtIndex:1] objectAtIndex:a] setText:[NSString stringWithFormat:@"%i %%", (int)(share+0.5)]];
-        
-    }
-    
-    int total = 0;
-    int stars = 0;
-    
-    NSMutableArray *operations = [[NSMutableArray alloc] initWithObjects:@"Addition", @"Subtraction", @"Division", @"Multiplication", @"Percent", @"Fraction", @"Equations", nil];
-    for (int i = 0; i < 7; i++) {
-        NSString *key = [NSString stringWithFormat:@"TotalStars%@", [operations objectAtIndex:i]];
-        
-        int thisStars = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:key];
-        total+=15;
-        stars+=thisStars;
-        NSLog(@"stars %i, %i", total, stars);
-    }
-    
-    float share = 100*((float)stars/total);
-    mathPercentLabel.text = [NSString stringWithFormat:@"%i %%", (int)(share+0.5)];
-    
-    
-    
-       [[self.navigationController navigationBar] setTintColor:[UIColor blackColor]];
-        [[self.navigationController navigationBar] setHidden:YES];
-    
-    UIApplication *app = [UIApplication sharedApplication];
-    [app setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
-}
-
-
-- (IBAction)redBanner:(id)sender {
-
-        [self performSegueWithIdentifier:@"StatsSegue" sender:sender];
-
-    
-}
-
-- (IBAction)greenBanner:(id)sender {
-
-        [self performSegueWithIdentifier:@"AboutSegue" sender:sender];
-
-}
 
 @end

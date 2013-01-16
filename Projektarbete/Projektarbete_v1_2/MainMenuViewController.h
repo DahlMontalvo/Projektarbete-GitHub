@@ -14,24 +14,19 @@
 
 
 @interface MainMenuViewController : UIViewController <GlobalStatsViewControllerDelegate, AboutViewControllerDelegate>  {
-  
-    
-    
+
 }
 
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollViewGr;
 @property (weak, nonatomic) IBOutlet UIButton *redBanner;
 @property (weak, nonatomic) IBOutlet UIButton *greenBanner;
-
-
-- (IBAction)redBanner:(id)sender;
-- (IBAction)greenBanner:(id)sender;
-
 @property (strong, nonatomic) IBOutlet UILabel *mathPercentLabel;
 @property (strong, nonatomic) IBOutlet UILabel *chemistryPercentLabel;
 @property (strong, nonatomic) IBOutlet UILabel *physicsPercentLabel;
 @property (strong, nonatomic) IBOutlet UILabel *biologyPercentLabel;
 
+- (IBAction)redBanner:(id)sender;
+- (IBAction)greenBanner:(id)sender;
 
 @end

@@ -40,11 +40,11 @@
     
     subjectLabel.text = subject;
     
-    
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TableViewBG2"]];
     self.tableView.backgroundView = imageView;
     
     [[self.navigationController navigationBar] setHidden:YES];
+    [tableView reloadData];
 }
 
 - (void)tableView:(UITableView *)localTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
