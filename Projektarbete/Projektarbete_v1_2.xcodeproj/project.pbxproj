@@ -19,6 +19,8 @@
 		002DBD211609194100E8B4A1 /* TwoStars.png in Resources */ = {isa = PBXBuildFile; fileRef = 002DBD1E1609194100E8B4A1 /* TwoStars.png */; };
 		002DBD2916092C2800E8B4A1 /* icon4-114.png in Resources */ = {isa = PBXBuildFile; fileRef = 002DBD2816092C2800E8B4A1 /* icon4-114.png */; };
 		002DBD2F1609323000E8B4A1 /* icon5-114.png in Resources */ = {isa = PBXBuildFile; fileRef = 002DBD2E1609323000E8B4A1 /* icon5-114.png */; };
+		00346EBE16A7427B00E94B1D /* libFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00346EBD16A7427B00E94B1D /* libFlurry.a */; };
+		00346EC116A744EC00E94B1D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00346EC016A744EC00E94B1D /* SystemConfiguration.framework */; };
 		0034764316A6E1C000056F98 /* PauseButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 0034764216A6E1C000056F98 /* PauseButton.png */; };
 		004DD9ED1608AD5D008B97E7 /* NoStars.png in Resources */ = {isa = PBXBuildFile; fileRef = 004DD9E91608AD5D008B97E7 /* NoStars.png */; };
 		005C23AF16177C490056EA7F /* RödBanner1.png in Resources */ = {isa = PBXBuildFile; fileRef = 005C23AC16177C490056EA7F /* RödBanner1.png */; };
@@ -149,6 +151,9 @@
 		002DBD1E1609194100E8B4A1 /* TwoStars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TwoStars.png; sourceTree = "<group>"; };
 		002DBD2816092C2800E8B4A1 /* icon4-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon4-114.png"; sourceTree = "<group>"; };
 		002DBD2E1609323000E8B4A1 /* icon5-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon5-114.png"; sourceTree = "<group>"; };
+		00346EBC16A7427B00E94B1D /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
+		00346EBD16A7427B00E94B1D /* libFlurry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry.a; sourceTree = "<group>"; };
+		00346EC016A744EC00E94B1D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		0034764216A6E1C000056F98 /* PauseButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PauseButton.png; sourceTree = "<group>"; };
 		004DD9E91608AD5D008B97E7 /* NoStars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NoStars.png; sourceTree = "<group>"; };
 		005C23AC16177C490056EA7F /* RödBanner1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RödBanner1.png"; sourceTree = "<group>"; };
@@ -279,11 +284,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00346EC116A744EC00E94B1D /* SystemConfiguration.framework in Frameworks */,
 				DD751EC1161B7CB200C4E2D1 /* libsqlite3.0.dylib in Frameworks */,
 				00C6AE2D1604C7BD00493F52 /* MessageUI.framework in Frameworks */,
 				DDB5885D15B947A9009CF151 /* UIKit.framework in Frameworks */,
 				DDB5885F15B947A9009CF151 /* Foundation.framework in Frameworks */,
 				DDB5886115B947A9009CF151 /* CoreGraphics.framework in Frameworks */,
+				00346EBE16A7427B00E94B1D /* libFlurry.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +318,15 @@
 				DDF39960162874930071F215 /* NatureResultsViewController.m */,
 			);
 			name = Nature;
+			sourceTree = "<group>";
+		};
+		00346EBB16A7427B00E94B1D /* Flurry */ = {
+			isa = PBXGroup;
+			children = (
+				00346EBC16A7427B00E94B1D /* Flurry.h */,
+				00346EBD16A7427B00E94B1D /* libFlurry.a */,
+			);
+			path = Flurry;
 			sourceTree = "<group>";
 		};
 		007BC48015C09E0A009BC60D /* Bilder */ = {
@@ -511,6 +527,7 @@
 		DDB5885B15B947A9009CF151 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				00346EC016A744EC00E94B1D /* SystemConfiguration.framework */,
 				DDB5885C15B947A9009CF151 /* UIKit.framework */,
 				DDB5885E15B947A9009CF151 /* Foundation.framework */,
 				DDB5886015B947A9009CF151 /* CoreGraphics.framework */,
@@ -522,6 +539,7 @@
 		DDB5886215B947A9009CF151 /* Projektarbete_v1_2 */ = {
 			isa = PBXGroup;
 			children = (
+				00346EBB16A7427B00E94B1D /* Flurry */,
 				DD18EEDA16A69F34003185F8 /* Andra view controllers */,
 				DD18EED916A69E58003185F8 /* Andra filer */,
 				DD412BC7161D94B100F950E1 /* Database.sql */,
@@ -913,6 +931,10 @@
 				GCC_PREFIX_HEADER = "Projektarbete_v1_2/Projektarbete_v1_2-Prefix.pch";
 				INFOPLIST_FILE = "Projektarbete_v1_2/Projektarbete_v1_2-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Projektarbete_v1_2/Flurry\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -925,6 +947,10 @@
 				GCC_PREFIX_HEADER = "Projektarbete_v1_2/Projektarbete_v1_2-Prefix.pch";
 				INFOPLIST_FILE = "Projektarbete_v1_2/Projektarbete_v1_2-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Projektarbete_v1_2/Flurry\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

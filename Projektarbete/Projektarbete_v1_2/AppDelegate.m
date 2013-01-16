@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "Flurry.h"
 @implementation AppDelegate
 
 @synthesize window = _window;
@@ -16,6 +16,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    //starta flurry
+    [Flurry startSession:@"4PZV62W3J3VVBGMC42SC"];
     
     [NSThread sleepForTimeInterval:1.0];
     
