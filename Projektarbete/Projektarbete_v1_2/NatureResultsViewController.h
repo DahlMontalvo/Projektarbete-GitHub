@@ -33,5 +33,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *highscoreLabel;
 @property (nonatomic, retain) NSString *subject;
 @property (strong, nonatomic) IBOutlet UILabel *description;
+@property (strong, nonatomic) IBOutlet UILabel *scoreScoreLabel;
 
 @end

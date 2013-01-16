@@ -157,12 +157,12 @@
     }
     
     NSMutableArray *contents = [[NSMutableArray alloc] initWithObjects:[[NSMutableArray alloc] initWithObjects:chemistryCategories, physicsCategories, biologyCategories, nil], [[NSMutableArray alloc] initWithObjects:chemistryPercentLabel, physicsPercentLabel, biologyPercentLabel, nil], nil];
-    
+    NSMutableArray *subjects = [[NSMutableArray alloc] initWithObjects:@"Chemistry", @"Physics", @"Biology", nil];
     for (int a = 0; a < 3; a++) {
         int total = 0;
         int stars = 0;
         float share = 0;
-        
+        NSLog(@"stars: %i", stars);
         NSLog(@"Här?");
         for (int i = 0; i < [[[contents objectAtIndex:0] objectAtIndex:a] count]; i++) {
             int thisStars = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"NatureCategory%iStars", [[[[[contents objectAtIndex:0] objectAtIndex:a] objectAtIndex:i] objectAtIndex:2] intValue]]];
@@ -170,6 +170,10 @@
             stars+=thisStars;
             NSLog(@"Här?");
         }
+        
+        total+=3;
+        stars+=[[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"NatureCategory%@Mixed", [subjects objectAtIndex:a]]];
+        NSLog(@"Total: %i, stars: %i", total, stars);
         
         if (total != 0)
             share = (float)stars/(float)total;

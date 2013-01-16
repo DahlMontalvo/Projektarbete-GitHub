@@ -122,9 +122,9 @@
             highscore = @"None";
         }
         else {
-            float time = [[[Singleton sharedSingleton] sharedPrefs] floatForKey:[NSString stringWithFormat:@"NatureCategory%@MixedTime",subject]];
+            int time = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"NatureCategory%@MixedTime",subject]];
             
-            highscore = [NSString stringWithFormat:@"%.2f s", time];
+            highscore = [NSString stringWithFormat:@"%i", time];
         }
         
         cell.valueLabel.text = highscore;

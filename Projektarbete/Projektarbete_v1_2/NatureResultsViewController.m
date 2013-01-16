@@ -14,7 +14,7 @@
 
 @implementation NatureResultsViewController
 
-@synthesize scoreLabel, timeLabel, categoryLabel, starsImageView, score, testStartedDate, categoryId, starsLabel, highscoreLabel, subject, description;
+@synthesize scoreLabel, timeLabel, categoryLabel, starsImageView, score, testStartedDate, categoryId, starsLabel, highscoreLabel, subject, description, scoreScoreLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -85,15 +85,17 @@
         stars = 0;
     }
     
-    float previousHighscore = [[[Singleton sharedSingleton] sharedPrefs] floatForKey:timeKey];
+    int scoreScore;
+    if (stars != 0)
+        scoreScore = 150-finalTime/stars-(3-stars)*15;
+    else
+        scoreScore = 0;
+    if (scoreScore < 0) scoreScore = 0;
+    int previousHighscore = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:timeKey];
     
-    if ((finalTime < previousHighscore || previousHighscore == 0) && score == 10) {
-        [[[Singleton sharedSingleton] sharedPrefs] setFloat:finalTime forKey:timeKey];
+    if (scoreScore > previousHighscore) {
+        [[[Singleton sharedSingleton] sharedPrefs] setInteger:scoreScore forKey:timeKey];
         highscoreLabel.text = @"Highscore!";
-        NSLog(@"final: %f", finalTime);
-    }
-    else {
-        NSLog(@"%f :: %f :: %i", finalTime, previousHighscore, score);
     }
     
     [[[Singleton sharedSingleton] sharedPrefs] synchronize];
@@ -119,6 +121,7 @@
     }
     
     timeLabel.text = [NSString stringWithFormat:@"in %.2f seconds",finalTime];
+    scoreScoreLabel.text = [NSString stringWithFormat:@"%i", scoreScore];
     starsImageView.image = [UIImage imageNamed:name];
     
 }
@@ -143,6 +146,7 @@
     [self setStarsLabel:nil];
     [self setHighscoreLabel:nil];
     [self setDescription:nil];
+    [self setScore:nil];
     [super viewDidUnload];
 }
 - (IBAction)continueButtonPressed:(id)sender {

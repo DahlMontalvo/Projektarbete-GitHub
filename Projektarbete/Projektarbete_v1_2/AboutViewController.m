@@ -20,7 +20,7 @@
 - (IBAction)emailPressed:(id)sender {
 	MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
 	mailController.mailComposeDelegate = self;
-    NSArray *toRecipients = [NSArray arrayWithObject:@"dahl.montalvo@gmail.com"];
+    NSArray *toRecipients = [NSArray arrayWithObject:@"feedback@dahlmontalvo.com"];
 	[mailController setToRecipients:toRecipients];
 	[mailController setSubject:@"Simple Science Feedback"];
 	[mailController setMessageBody:@"" isHTML:NO];
