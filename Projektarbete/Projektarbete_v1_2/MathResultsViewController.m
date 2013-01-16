@@ -9,91 +9,66 @@
 #import "MathResultsViewController.h"
 
 @implementation MathResultsViewController
-@synthesize results;
-@synthesize resultsLabel;
-@synthesize timeLabel;
-@synthesize infoLabel;
-@synthesize navItem;
-@synthesize operation;
-@synthesize difficulty;
-@synthesize finalTime;
-@synthesize gamemode;
-@synthesize gamemodeLabel;
-@synthesize highscoreLabel;
-@synthesize starLabel;
-@synthesize starImage;
+@synthesize results, resultsLabel, timeLabel, infoLabel, navItem, operation, difficulty, finalTime, gamemode, gamemodeLabel, highscoreLabel, starLabel, starImage, scoreScoreLabel, starExplanationLabel;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+#pragma mark - Initialization
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
-
-#pragma mark - View lifecycle
-
-/*
- // Implement loadView to create a view hierarchy programmatically, without using a nib.
- - (void)loadView
- {
- }
- */
-
-
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad
-{
+#pragma mark - View management
+- (void)viewDidLoad {
     [super viewDidLoad];
+    
     int stars;
-    //Hur många stjärnor får användaren? Ska presenteras grafiskt senare, och storas som highscoren.
-    //Storar hur många stjärnor man har, tex 3 forKey StarsAddition2 då har man alltså 3 stjärnor på Addition lvl 2
-    if (finalTime < ((difficulty * 100)*0.2) && results == 10) {
+    
+    float timeForOneStar = (difficulty * 100)*0.6;
+    float timeForTwoStars = (difficulty * 100)*0.4;
+    float timeForThreeStars = ((difficulty * 100)*0.2);
+    
+    if (finalTime < timeForThreeStars && results == 10) {
         starLabel.text = @"3 Stars!";
+        starExplanationLabel.text = @"Perfect!";
         stars = 3;
-        if ([[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"Stars%@%i",operation,difficulty] ] < 3) {
+        if ([[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"Stars%@%i",operation,difficulty] ] < 3)
             [[[Singleton sharedSingleton] sharedPrefs] setInteger:3 forKey:[NSString stringWithFormat:@"Stars%@%i",operation,difficulty]];
-        }
-    } else if (finalTime < (difficulty * 100)*0.4 && results == 10) {
+    }
+    else if (finalTime < timeForTwoStars && results > 7) {
         starLabel.text = @"2 Stars!";
+        starExplanationLabel.text = [NSString stringWithFormat:@"For three stars, you need all correct answers in %.02f seconds!", timeForThreeStars];
         stars = 2;
-        if ([[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"Stars%@%i",operation,difficulty] ] < 2) {
+        if ([[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"Stars%@%i",operation,difficulty] ] < 2)
             [[[Singleton sharedSingleton] sharedPrefs] setInteger:2 forKey:[NSString stringWithFormat:@"Stars%@%i",operation,difficulty]];
-        }
-    } else if (finalTime < (difficulty * 100)*0.6 && results == 10) {
+    }
+    else if (finalTime < timeForOneStar && results > 5) {
         starLabel.text = @"1 Star!";
+        starExplanationLabel.text = [NSString stringWithFormat:@"For two stars, you need 8 correct answers in %.02f seconds!", timeForTwoStars];
+
         stars = 1;
-        if ([[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"Stars%@%i",operation,difficulty] ] < 1) {
+        if ([[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"Stars%@%i",operation,difficulty] ] < 1)
             [[[Singleton sharedSingleton] sharedPrefs] setInteger:1 forKey:[NSString stringWithFormat:@"Stars%@%i",operation,difficulty]];
-        }
-    } else {
+    }
+    else {
         starLabel.text = @"No stars this time! :(";
+        starExplanationLabel.text = [NSString stringWithFormat:@"For one star, you need 6 correct answers in %.02f seconds!", timeForOneStar];
+
         stars = 0;
     }
     
     [[[Singleton sharedSingleton] sharedPrefs] synchronize];
-    
     int starsA = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"Stars%@1",operation]];
     int starsB = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"Stars%@2",operation]];
     int starsC = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"Stars%@3",operation]];
     int starsD = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"Stars%@4",operation]];
     int starsE = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"Stars%@5",operation]];
-    
     int totalStars = starsA + starsB + starsC + starsD + starsE;
     
     [[[Singleton sharedSingleton] sharedPrefs] setInteger:totalStars forKey:[NSString stringWithFormat:@"TotalStars%@",operation]];
     
     NSString *name;
-    
     switch (stars) {
         case 0:
             name = @"NoStars.png";
@@ -113,63 +88,57 @@
     }
     
     starImage.image = [UIImage imageNamed:name];
-
-    [[[Singleton sharedSingleton] sharedPrefs] synchronize];
-    navItem.hidesBackButton = YES;
     resultsLabel.text = [NSString stringWithFormat:@"%i/10", results];
-    infoLabel.text = [NSString stringWithFormat:@"Completed in %@ level %i,", operation,difficulty];
+    infoLabel.text = [NSString stringWithFormat:@"Completed in %@ level %i,", operation, difficulty];
     gamemodeLabel.text = gamemode;
-    
-    //Sparar Singletonvärde med tiden i en key med operationen och diffen, det mesta förklarar sig självt
-    
-    float previousHighscore = [[[Singleton sharedSingleton] sharedPrefs] floatForKey:[NSString stringWithFormat:@"%@%i",operation,difficulty]];
-    
     timeLabel.text = [NSString stringWithFormat:@"in %.2f seconds",finalTime];
-    if ((finalTime < previousHighscore || previousHighscore == 0) && [gamemode isEqualToString:@"Test"] && results == 10) {
-        [[[Singleton sharedSingleton] sharedPrefs] setFloat:finalTime forKey:[NSString stringWithFormat:@"%@%i",operation,difficulty]];
+    
+    int previousHighscore = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"%@%i",operation,difficulty]];
+    int scoreScore;
+    
+    if (stars != 0)
+        scoreScore = 150-finalTime*2/stars-(3-stars)*15;
+    else
+        scoreScore = 0;
+    if (scoreScore < 0) scoreScore = 0;
+    scoreScoreLabel.text = [NSString stringWithFormat:@"%i", scoreScore];
+    
+    if ((scoreScore > previousHighscore) && [gamemode isEqualToString:@"Test"]) {
+        [[[Singleton sharedSingleton] sharedPrefs] setInteger:scoreScore forKey:[NSString stringWithFormat:@"%@%i",operation,difficulty]];
         highscoreLabel.text = @"Highscore!";
     } else {
-        highscoreLabel.text = [NSString stringWithFormat:@"Current Highscore: %f",previousHighscore];
+        highscoreLabel.text = [NSString stringWithFormat:@"Current Highscore: %i",previousHighscore];
     }
     
-    //Sparar Global Stats
     int previousCompletedTests = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"CompletedTests"];
     int previousCompletedPractises = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"CompletedPractises"];
 
-    
-    
-    if ([gamemode isEqualToString:@"Test"]) {
+    if ([gamemode isEqualToString:@"Test"])
         [[[Singleton sharedSingleton] sharedPrefs] setInteger:previousCompletedTests+1 forKey:@"CompletedTests"];
-    }
-    
-    if ([gamemode isEqualToString:@"Practise"]) {
+    if ([gamemode isEqualToString:@"Practise"])
         [[[Singleton sharedSingleton] sharedPrefs] setInteger:previousCompletedPractises+1 forKey:@"CompletedPractises"];
-    }
-    
-    
 }
 
-
-- (void)viewDidUnload
-{
+- (void)viewDidUnload {
     [self setResultsLabel:nil];
     [self setStarImage:nil];
+    [self setScoreScoreLabel:nil];
+    [self setStarExplanationLabel:nil];
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+
+#pragma mark - Other
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 - (IBAction)continueButtonPressed:(id)sender {
-    
     NSArray *viewControllers = [self.navigationController viewControllers];
-    
     [self.navigationController popToViewController:[viewControllers objectAtIndex:1] animated:YES];
-    
 }
+
 @end

@@ -30,8 +30,10 @@
 @property (strong, nonatomic) IBOutlet UILabel *highscoreLabel;
 @property (strong, nonatomic) IBOutlet UILabel *starLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *starImage;
+@property (strong, nonatomic) IBOutlet UILabel *scoreScoreLabel;
 
 @property (retain, nonatomic) IBOutlet UINavigationItem *navItem;
 - (IBAction)continueButtonPressed:(id)sender;
+@property (strong, nonatomic) IBOutlet UILabel *starExplanationLabel;
 
 @end

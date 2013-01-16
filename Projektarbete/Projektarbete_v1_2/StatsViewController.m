@@ -11,70 +11,116 @@
 
 @implementation StatsViewController
 
-@synthesize difficulty;
-@synthesize section;
-@synthesize navItem;
-@synthesize operation, tableView;
+@synthesize difficulty, section, navItem, operation, tableView;
 
+#pragma mark - Initialization
 
-- (void)didReceiveMemoryWarning
+#pragma mark - View management
+- (void)viewDidLoad
 {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
+    [super viewDidLoad];
     
-    // Release any cached data, images, etc that aren't in use.
+    [navItem setTitle:[NSString stringWithFormat:@"%@",operation]];
+    [self.navigationController.navigationBar setHidden:NO];
+    [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
+    
+    operations = [[NSMutableArray alloc] init];
+    [operations addObject:@"Addition"];
+    [operations addObject:@"Subtraction"];
+    [operations addObject:@"Multiplication"];
+    [operations addObject:@"Division"];
+    [operations addObject:@"Percent"];
+    [operations addObject:@"Fratction"];
+    [operations addObject:@"Equations"];
 }
 
+- (void)viewDidUnload {
+    [super viewDidUnload];
+}
 
+- (void)viewWillAppear:(BOOL)animated {
+    tableView.backgroundColor = [UIColor clearColor];
+    tableView.opaque = NO;
+    tableView.backgroundView = nil;
+    tableView.separatorColor = [UIColor clearColor];
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [super viewWillAppear:animated];
+}
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+
+#pragma mark - Table view data source
+- (UIView *) tableView:(UITableView *)tableViewObject viewForHeaderInSection:(NSInteger)sectionInt {
+	UIView* customView = [[UIView alloc] initWithFrame:CGRectMake(10.0, 0.0, 300.0, 44.0)];
+	
+	UILabel * headerLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+	headerLabel.backgroundColor = [UIColor clearColor];
+	headerLabel.opaque = NO;
+	headerLabel.textColor = [UIColor whiteColor];
+	headerLabel.highlightedTextColor = [UIColor whiteColor];
+	headerLabel.font = [UIFont fontWithName:@"Marion" size:20];
+	headerLabel.frame = CGRectMake(10.0, 0.0, 300.0, 44.0);
+	headerLabel.text = [operations objectAtIndex:sectionInt];
+	[customView addSubview:headerLabel];
     
+	return customView;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableViewObject {
     return [operations count];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView
- numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableViewObject numberOfRowsInSection:(NSInteger)section {
     return 5;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)localSection {
+- (NSString *)tableView:(UITableView *)tableViewObject titleForHeaderInSection:(NSInteger)localSection {
     return [operations objectAtIndex:localSection];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+- (UITableViewCell *)tableView:(UITableView *)tableViewObject cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     difficulty = indexPath.row+1;
-    
     section = indexPath.section;
     
     float value = [[[Singleton sharedSingleton] sharedPrefs] floatForKey:[NSString stringWithFormat:@"%@%i", [operations objectAtIndex:section], difficulty]];
-    
     NSString *highscore;
     
-    if (value == 0) {
+    if (value == 0)
         highscore = @"None";
-    }
     else {
-        float time = [[[Singleton sharedSingleton] sharedPrefs] floatForKey:[NSString stringWithFormat:@"%@%i", [operations objectAtIndex:section], difficulty]];
-        
-        highscore = [NSString stringWithFormat:@"%.2f s", time];
+        int time = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"%@%i", [operations objectAtIndex:section], difficulty]];
+        highscore = [NSString stringWithFormat:@"%i", time];
     }
     
     NSString *cellID = [operations objectAtIndex:section];
     
-    StatsTableCellController *cell = (StatsTableCellController *)[tableView dequeueReusableCellWithIdentifier:cellID];
-    if (cell == nil) 
-    {
+    StatsTableCellController *cell = (StatsTableCellController *)[tableViewObject dequeueReusableCellWithIdentifier:cellID];
+    if (cell == nil) {
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"StatsTableCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
-    } 
-    
+    }
     cell.titleLabel.text = [NSString stringWithFormat:@"Level %i", difficulty];
-    cell.descriptionLabel.text = @"Fastest 10/10";
-    
+    cell.descriptionLabel.text = @"Highscore";
     
     int stars = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"Stars%@%i",[operations objectAtIndex:section],difficulty]];
-    
     NSString *name;
     
     switch (stars) {
@@ -96,116 +142,13 @@
     }
     
     cell.starsImage.image = [UIImage imageNamed:name];
-    
     cell.valueLabel.text = highscore;
-    
-        
-    NSLog(@"%@%i",name, stars);
-    
     cell.backgroundColor = [UIColor clearColor];
-    
     return cell;
 }
 
-
-
-#pragma mark - View lifecycle
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    [navItem setTitle:[NSString stringWithFormat:@"%@",operation]];
-    
-    [self.navigationController.navigationBar setHidden:NO];
-    [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
-    
-    operations = [[NSMutableArray alloc] init];
-    
-    [operations addObject:@"Addition"];
-    [operations addObject:@"Subtraction"];
-    [operations addObject:@"Multiplication"];
-    [operations addObject:@"Division"];
-    [operations addObject:@"Percent"];
-    [operations addObject:@"Fratction"];
-    [operations addObject:@"Equations"];
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    tableView.backgroundColor = [UIColor clearColor];
-    tableView.opaque = NO;
-    tableView.backgroundView = nil;
-    tableView.separatorColor = [UIColor clearColor];
-    [super viewWillAppear:animated];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:animated];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
-#pragma mark - Table view data source
-- (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    // create the parent view that will hold header Label
-	UIView* customView = [[UIView alloc] initWithFrame:CGRectMake(10.0, 0.0, 300.0, 44.0)];
-	
-	// create the button object
-	UILabel * headerLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-	headerLabel.backgroundColor = [UIColor clearColor];
-	headerLabel.opaque = NO;
-	headerLabel.textColor = [UIColor whiteColor];
-	headerLabel.highlightedTextColor = [UIColor whiteColor];
-	headerLabel.font = [UIFont fontWithName:@"Marion" size:20];
-	headerLabel.frame = CGRectMake(10.0, 0.0, 300.0, 44.0);
-    
-	// If you want to align the header text as centered
-	// headerLabel.frame = CGRectMake(150.0, 0.0, 300.0, 44.0);
-    
-	headerLabel.text = [operations objectAtIndex:section]; // i.e. array element
-	[customView addSubview:headerLabel];
-    
-	return customView;
-}
-
-#pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+- (void)tableView:(UITableView *)tableViewObject didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableViewObject deselectRowAtIndexPath:indexPath animated:NO];
 }
 
 - (IBAction)pop:(id)sender {
