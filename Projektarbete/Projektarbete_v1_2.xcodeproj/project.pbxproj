@@ -473,6 +473,7 @@
 		DD18EED916A69E58003185F8 /* Andra filer */ = {
 			isa = PBXGroup;
 			children = (
+				DD412BC7161D94B100F950E1 /* Database.sql */,
 				DDB5886B15B947A9009CF151 /* AppDelegate.h */,
 				DDB5886C15B947A9009CF151 /* AppDelegate.m */,
 				00E66CF315BC9DA600174D38 /* Singleton.h */,
@@ -542,15 +543,10 @@
 				00346EBB16A7427B00E94B1D /* Flurry */,
 				DD18EEDA16A69F34003185F8 /* Andra view controllers */,
 				DD18EED916A69E58003185F8 /* Andra filer */,
-				DD412BC7161D94B100F950E1 /* Database.sql */,
 				DDBA349216610DB300B600C4 /* Design */,
 				DDB5889815B953A3009CF151 /* Math */,
 				0023A32F15BF4E4F006BD781 /* Nature */,
 				DDB5886315B947A9009CF151 /* Supporting Files */,
-				DDCABE2C162D508A00F83AB5 /* GamemodeSegmentedControlButtonController.h */,
-				DDCABE2D162D508B00F83AB5 /* GamemodeSegmentedControlButtonController.m */,
-				DDCABE2F162D50DE00F83AB5 /* DifficultySegmentedControlButtonController.h */,
-				DDCABE30162D50DE00F83AB5 /* DifficultySegmentedControlButtonController.m */,
 			);
 			path = Projektarbete_v1_2;
 			sourceTree = "<group>";
@@ -608,6 +604,10 @@
 			isa = PBXGroup;
 			children = (
 				007BC48015C09E0A009BC60D /* Bilder */,
+				DDCABE2C162D508A00F83AB5 /* GamemodeSegmentedControlButtonController.h */,
+				DDCABE2D162D508B00F83AB5 /* GamemodeSegmentedControlButtonController.m */,
+				DDCABE2F162D50DE00F83AB5 /* DifficultySegmentedControlButtonController.h */,
+				DDCABE30162D50DE00F83AB5 /* DifficultySegmentedControlButtonController.m */,
 				007BC47A15C09B4E009BC60D /* MathTableCellController.h */,
 				007BC47B15C09B4E009BC60D /* MathTableCellController.m */,
 				007BC47C15C09B4E009BC60D /* MathTableCellController.xib */,
