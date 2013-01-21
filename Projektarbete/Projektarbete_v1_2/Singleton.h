@@ -9,14 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface Singleton : NSObject {
-
     NSUserDefaults *sharedPrefs;    
 }
 
 @property (nonatomic, retain) NSUserDefaults *sharedPrefs;
-
-
 + (Singleton *)sharedSingleton;
-    
 
 @end

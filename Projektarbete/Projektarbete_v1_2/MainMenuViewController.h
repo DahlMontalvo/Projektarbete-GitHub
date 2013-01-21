@@ -12,7 +12,6 @@
 #import "NatureMasterViewController.h"
 #import "Singleton.h"
 
-
 @interface MainMenuViewController : UIViewController <GlobalStatsViewControllerDelegate, AboutViewControllerDelegate>  {
 
 }
@@ -25,8 +24,12 @@
 @property (strong, nonatomic) IBOutlet UILabel *chemistryPercentLabel;
 @property (strong, nonatomic) IBOutlet UILabel *physicsPercentLabel;
 @property (strong, nonatomic) IBOutlet UILabel *biologyPercentLabel;
+@property (nonatomic, retain) NSMutableArray *chemistryCategories;
+@property (nonatomic, retain) NSMutableArray *physicsCategories;
+@property (nonatomic, retain) NSMutableArray *biologyCategories;
 
 - (IBAction)redBanner:(id)sender;
 - (IBAction)greenBanner:(id)sender;
+- (void)updateNumbers;
 
 @end

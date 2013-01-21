@@ -7,6 +7,7 @@
 //
 
 #import "NatureResultsViewController.h"
+#import "Flurry.h"
 
 @interface NatureResultsViewController ()
 
@@ -123,6 +124,8 @@
     timeLabel.text = [NSString stringWithFormat:@"in %.2f seconds",finalTime];
     scoreScoreLabel.text = [NSString stringWithFormat:@"%i", scoreScore];
     starsImageView.image = [UIImage imageNamed:name];
+    
+    [Flurry logEvent:[NSString stringWithFormat:@"Test completed in nature category %@", [category objectAtIndex:0]]];
     
 }
 

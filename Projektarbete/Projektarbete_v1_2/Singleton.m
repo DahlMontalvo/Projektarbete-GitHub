@@ -13,32 +13,19 @@ static Singleton *shared = NULL;
 @implementation Singleton
 @synthesize sharedPrefs;
 
-
-
-
-- (id)init
-{
-    if ( self = [super init] )
-    {
+- (id)init {
+    if ( self = [super init] ) {
         self.sharedPrefs = [[NSUserDefaults alloc] init];
         NSLog(@"Singletons initierade");
-        
     }
     return self;
-    
 }
 
-+ (Singleton *)sharedSingleton
-{
-   
++ (Singleton *)sharedSingleton {
     {
-        if ( !shared || shared == NULL )
-        {
-            
-            // allocate the shared instance, because it hasn't been done yet
+        if ( !shared || shared == NULL ) {
             shared = [[Singleton alloc] init];
         }
-        
         return shared;
     }
 }

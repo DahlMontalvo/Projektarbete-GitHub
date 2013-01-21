@@ -18,7 +18,7 @@
 {
     //starta flurry
     [Flurry startSession:@"4PZV62W3J3VVBGMC42SC"];
-    
+    [self readQuestionsFromDatabase];
     [NSThread sleepForTimeInterval:1.0];
     
     UIApplication *app = [UIApplication sharedApplication];
@@ -35,11 +35,15 @@
 }
 
 -(void) readQuestionsFromDatabase {
+    NSLog(@"Läser frågor");
+    
 	// Setup the database object
 	sqlite3 *database;
     
 	// Init the animals Array
 	categories = [[NSMutableArray alloc] init];
+    
+    BOOL redo = NO;
     
 	// Open the database from the users filessytem
 	if(sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK) {
@@ -57,7 +61,6 @@
                 NSMutableArray *cat = [[NSMutableArray alloc] initWithObjects:category, parent, catID, nil];
                 
                 const char *sqlStatement2 = [[NSString stringWithFormat:@"SELECT COUNT(*) AS count FROM questions WHERE parentCategory = %i", [catID intValue]] UTF8String];
-                NSLog(@"sql: %s", sqlStatement2);
                 sqlite3_stmt *compiledStatement2;
                 int numbers = 0;
                 if(sqlite3_prepare_v2(database, sqlStatement2, -1, &compiledStatement2, NULL) == SQLITE_OK) {
@@ -68,18 +71,21 @@
                     }
                 }
                 
-                NSLog(@"Antal frågor: %i", numbers);
-                NSLog(@"I kategori: %@", category);
                 if (numbers > 9) {
                     [categories addObject:cat];
                 }
 			}
 		}
+        else {
+            redo = YES;
+        }
 		// Release the compiled statement from memory
 		sqlite3_finalize(compiledStatement);
         
 	}
 	sqlite3_close(database);
+    if (redo)
+        [self performSelector:@selector(readQuestionsFromDatabase) withObject:nil afterDelay:.5];
     
 }
 
@@ -134,12 +140,9 @@
                 
                 char *error;
                 sqlite3_exec(database, [state UTF8String], NULL, NULL, &error);
-                NSLog(@"Deleted: %i", qId);
             }
             else {
                 NSString *state = [NSString stringWithFormat:@"UPDATE questions SET parentCategory = %i, lastUpdated = %i, question = \"%@\", deleted = %i WHERE id = %i", parentCategory, now, [question stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""], deleted, qId];
-                
-                NSLog(@"Updated: %i", qId);
                 
                 char *error;
                 sqlite3_exec(database, [state UTF8String], NULL, NULL, &error);
@@ -179,15 +182,11 @@
             NSString *state = [NSString stringWithFormat:@"UPDATE answers SET questionId = %i, lastUpdated = %i, answer = \"%@\", deleted = %i, correct = %i WHERE id = %i", parentQuestion, now, [answer stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""], deleted, correct, aId];
             char *error;
             sqlite3_exec(database, [state UTF8String], NULL, NULL, &error);
-            NSLog(@"0!sql:   %s", [state UTF8String]);
-            NSLog(@"error: %s", error);
         }
         else {
             NSString *state = [NSString stringWithFormat:@"INSERT INTO answers (questionId, lastUpdated, answer, deleted, id, correct) VALUES (%i, %i, \"%@\", %i, %i, %i)", parentQuestion, now, [answer  stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""], deleted, aId, correct];
             char *error;
             sqlite3_exec(database, [state UTF8String], NULL, NULL, &error);
-            NSLog(@"sql:   %s", [state UTF8String]);
-            NSLog(@"error: %s", error);
         }
 	}
 	sqlite3_close(database);
@@ -279,9 +278,6 @@
                         [answers addObject:[[NSMutableArray alloc] initWithObjects:answerStr, ansId, correct, nil]];
                         
                         found = YES;
-                        NSLog(@" ");
-                        NSLog(@"%@ ", answerStr);
-                        NSLog(@" ");
                     }
                 }
                 sqlite3_finalize(compiledStatement3);
@@ -380,7 +376,6 @@
         }
         
 		const char *sqlStatement = [[NSString stringWithFormat:@"SELECT * FROM questions LEFT JOIN categories ON questions.parentCategory = categories.id WHERE categories.parent = '%@' AND questions.deleted != 1 %@ ORDER BY RANDOM() LIMIT 1", subject, add] UTF8String];
-        NSLog(@"str: %s", sqlStatement);
 		sqlite3_stmt *compiledStatement;
 		if(sqlite3_prepare_v2(database, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK) {
 			while(sqlite3_step(compiledStatement) == SQLITE_ROW) {
@@ -402,9 +397,6 @@
                         [answers addObject:[[NSMutableArray alloc] initWithObjects:answerStr, ansId, correct, nil]];
                         
                         found = YES;
-                        NSLog(@" ");
-                        NSLog(@"%@ ", answerStr);
-                        NSLog(@" ");
                     }
                 }
                 sqlite3_finalize(compiledStatement3);
