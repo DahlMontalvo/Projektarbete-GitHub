@@ -127,6 +127,11 @@
     
     [Flurry logEvent:[NSString stringWithFormat:@"Test completed in nature category %@", [category objectAtIndex:0]]];
     
+    int previousCompletedTests = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"CompletedTests"];
+    
+    [[[Singleton sharedSingleton] sharedPrefs] setInteger:previousCompletedTests+1 forKey:@"CompletedTests"];
+
+    
 }
 
 - (void)viewDidLoad

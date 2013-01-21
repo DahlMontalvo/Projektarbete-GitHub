@@ -111,12 +111,10 @@
     }
     
     int previousCompletedTests = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"CompletedTests"];
-    int previousCompletedPractises = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"CompletedPractises"];
 
     if ([gamemode isEqualToString:@"Test"])
         [[[Singleton sharedSingleton] sharedPrefs] setInteger:previousCompletedTests+1 forKey:@"CompletedTests"];
-    if ([gamemode isEqualToString:@"Practise"])
-        [[[Singleton sharedSingleton] sharedPrefs] setInteger:previousCompletedPractises+1 forKey:@"CompletedPractises"];
+
 }
 
 - (void)viewDidUnload {

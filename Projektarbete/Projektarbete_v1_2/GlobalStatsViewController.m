@@ -11,7 +11,6 @@
 
 @implementation GlobalStatsViewController
 @synthesize completedTestsLabel;
-@synthesize completedPractisesLabel;
 @synthesize clearButton;
 @synthesize doneButton;
 @synthesize delegate, subject;
@@ -47,11 +46,8 @@
 */
 -(void)refreshView {
     
-    int completedPractises = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"CompletedPractises"];
     int completedTests = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"CompletedTests"];
-    
-    
-    completedPractisesLabel.text = [NSString stringWithFormat:@"%i",completedPractises];
+
     completedTestsLabel.text = [NSString stringWithFormat:@"%i",completedTests];
     
 }
