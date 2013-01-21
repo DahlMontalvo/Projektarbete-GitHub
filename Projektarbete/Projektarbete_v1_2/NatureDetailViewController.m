@@ -82,7 +82,6 @@
     [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
     NSString *timeString=[dateFormatter stringFromDate:timerDate];
     subjectLabel.text = timeString;
-    
 }
 
 - (void)countdownTimerMethod
@@ -99,6 +98,8 @@
     [progressBar setProgress:(20-countdownCounter)/20 animated:YES];
     
     if (countdownCounter <= 0) {
+        [self setCountdownCounter:0];
+        subjectLabel.text = @"00:00.0";
         [self buttonPressed:5];
     }
     
@@ -303,7 +304,7 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (IBAction)pauseButtonPressed:(id)sender {
-    UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"Quiz paused" delegate:self cancelButtonTitle:@"Resume" destructiveButtonTitle:@"Exit" otherButtonTitles:@"Restart quiz", nil];
+    UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"Menu" delegate:self cancelButtonTitle:@"Resume" destructiveButtonTitle:@"Exit" otherButtonTitles:@"Restart quiz", @"Report question", nil];
 	popupQuery.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
 	[popupQuery showInView:[UIApplication sharedApplication].keyWindow];
 }
@@ -324,7 +325,7 @@
         [self viewDidLoad];
         
 	} else if (buttonIndex == 2) {
-		
+		[self report];
     } 
 }
 - (IBAction)buttonOne:(id)sender {
@@ -343,13 +344,13 @@
     [self buttonPressed:4];
 }
 
-- (IBAction)reportButtonPressed:(id)sender {
+-(void)report {
     if (lastSentErrorReport < questionAtm) {
         int qID = [[[questions objectAtIndex:questionAtm] objectAtIndex:1] intValue];
         int token = qID*3+253;
         NSString *postString = [NSString stringWithFormat:@"qid=%i&token=%i", qID, token];
         
-        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://simplescience.dahlmontalvo.com/"]];
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://simplescience.dahlmontalvo.com/report.php"]];
         
         [request setHTTPMethod:@"POST"];
         [request setValue:[NSString stringWithFormat:@"%d", [postString length]] forHTTPHeaderField:@"Content-length"];
@@ -361,6 +362,10 @@
     }
 }
 
+- (IBAction)reportButtonPressed:(id)sender {
+    [self report];
+}
+
 - (void)noBG {
     NSMutableArray *buttons = [[NSMutableArray alloc] initWithObjects:buttonOne, buttonTwo, buttonThree, buttonFour, nil];
     for (int i = 0; i < 4; i++) {
@@ -368,11 +373,21 @@
         [[buttons objectAtIndex:i] setTitleColor:[UIColor brownColor] forState:UIControlStateNormal];
         [[buttons objectAtIndex:i] setBackgroundImage:[UIImage imageNamed:@"white.png"] forState:UIControlStateHighlighted];
         [[buttons objectAtIndex:i] setTitleColor:[UIColor brownColor] forState:UIControlStateHighlighted];
+        [[buttons objectAtIndex:i] setEnabled:YES];
     }
 }
 
 -(void)buttonPressed:(int)buttonIndex {
+    
+    [self setCountdownCounter:0];
+    [countdownTimer invalidate];
+    countdownTimer = nil;
+    
     NSMutableArray *buttons = [[NSMutableArray alloc] initWithObjects:buttonOne, buttonTwo, buttonThree, buttonFour, nil];
+    for (int i = 0; i < 4; i++) {
+        [[buttons objectAtIndex:i] setEnabled:NO];
+    }
+    
     if (buttonIndex < 5 && buttonIndex > 0) {
         [[buttons objectAtIndex:buttonIndex-1] setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         if ([[[[[questions objectAtIndex:questionAtm-1] objectAtIndex:2] objectAtIndex:buttonIndex-1] objectAtIndex:2] intValue] == 1) {
@@ -382,17 +397,9 @@
         else {
             [[buttons objectAtIndex:buttonIndex-1] setBackgroundImage:[UIImage imageNamed:@"red.png"] forState:UIControlStateNormal];
         }
-        [NSTimer scheduledTimerWithTimeInterval:.5
-                                         target:self
-                                       selector:@selector(noBG)
-                                       userInfo:nil
-                                        repeats:NO];
     }
-    [NSTimer scheduledTimerWithTimeInterval:.5
-                                     target:self
-                                   selector:@selector(presentNextQuestion)
-                                   userInfo:nil
-                                    repeats:NO];
+    [self performSelector:@selector(noBG) withObject:nil afterDelay:.5];
+    [self performSelector:@selector(presentNextQuestion) withObject:nil afterDelay:.5];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

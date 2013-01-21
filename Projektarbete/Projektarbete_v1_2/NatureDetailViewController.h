@@ -51,6 +51,7 @@
 - (IBAction)buttonThree:(id)sender;
 - (IBAction)buttonFour:(id)sender;
 - (IBAction)reportButtonPressed:(id)sender;
+- (void)report;
 
 @property (nonatomic, retain) NSMutableArray *questions;
 @property (nonatomic, retain) AppDelegate *appDelegate;
