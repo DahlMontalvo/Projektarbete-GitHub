@@ -230,7 +230,7 @@
     NSString *formattedDate = [format stringFromDate:oldestUpdateDate];
     NSLog(@"%@", formattedDate);
     
-    NSString *url = [NSString stringWithFormat:@"http://ss.jdahl.se/getChanges.php?sinceDate=%@", formattedDate];
+    NSString *url = [NSString stringWithFormat:@"http://simplescience.dahlmontalvo.com/getChanges.php?sinceDate=%@", formattedDate];
     NSString *agentString = @"Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_6; en-us) AppleWebKit/525.27.1 (KHTML, like Gecko) Version/3.2.1 Safari/525.27.1";
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
     [request setValue:agentString forHTTPHeaderField:@"User-Agent"];
