@@ -31,6 +31,7 @@
 @property (nonatomic, strong) IBOutlet UILabel *tenOutOfTensLabel;
 @property (nonatomic, strong) IBOutlet UILabel *bestHighscoreLabel;
 @property (nonatomic, strong) IBOutlet UILabel *mostPlayedSubjectLabel;
+@property (strong, nonatomic) IBOutlet UILabel *overallProgressLabel;
 @property (nonatomic, retain) NSString *subject;
 @property (nonatomic, weak) id <GlobalStatsViewControllerDelegate> delegate;
 

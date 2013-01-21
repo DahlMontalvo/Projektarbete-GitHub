@@ -137,7 +137,7 @@
     }
     
     
-    int bestHighscore  = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TenOutOfTens"];
+    int bestHighscore  = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"BestHighscore"];
     if (scoreScore > bestHighscore) {
         [[[Singleton sharedSingleton] sharedPrefs] setInteger:scoreScore forKey:@"BestHighscore"];
         

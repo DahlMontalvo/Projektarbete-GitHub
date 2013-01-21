@@ -10,13 +10,7 @@
 #import "StatsViewController.h"
 
 @implementation GlobalStatsViewController
-@synthesize completedTestsLabel;
-@synthesize clearButton;
-@synthesize doneButton;
-@synthesize delegate, subject;
-@synthesize tenOutOfTensLabel;
-@synthesize bestHighscoreLabel;
-@synthesize mostPlayedSubjectLabel;
+@synthesize completedTestsLabel, clearButton, doneButton, delegate, subject, tenOutOfTensLabel, bestHighscoreLabel, mostPlayedSubjectLabel, overallProgressLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -84,6 +78,66 @@
     tenOutOfTensLabel.text = [NSString stringWithFormat:@"%i", tenOutOfTens];
     bestHighscoreLabel.text = [NSString stringWithFormat:@"%i", bestHighscore];
     
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate readQuestionsFromDatabase];
+    //Samla underkategorierna i sina arrayer beroende på överkategori
+    NSMutableArray *biologyCategories = [[NSMutableArray alloc] init];
+    NSMutableArray *chemistryCategories = [[NSMutableArray alloc] init];
+    NSMutableArray *physicsCategories = [[NSMutableArray alloc] init];
+    
+    for (int i = 0; i < [appDelegate.categories count]; i++) {
+        NSString *name = [[appDelegate.categories objectAtIndex:i] objectAtIndex:0];
+        NSString *parent = [[appDelegate.categories objectAtIndex:i] objectAtIndex:1];
+        int ID = [[[appDelegate.categories objectAtIndex:i] objectAtIndex:2] intValue];
+        NSMutableArray *temp = [[NSMutableArray alloc] initWithObjects:name, parent, [NSNumber numberWithInt:ID], nil];
+        NSString *sub = [[appDelegate.categories objectAtIndex:i] objectAtIndex:1];
+        
+        if ([sub isEqualToString:@"Physics"])
+            [physicsCategories addObject:temp];
+        else if ([sub isEqualToString:@"Chemistry"])
+            [chemistryCategories addObject:temp];
+        else if ([sub isEqualToString:@"Biology"])
+            [biologyCategories addObject:temp];
+    }
+    
+    //Lägger in kategorierna med deras labels
+    NSMutableArray *contents = [[NSMutableArray alloc] initWithObjects:[[NSMutableArray alloc] initWithObjects: chemistryCategories,
+                                                                        physicsCategories,
+                                                                        biologyCategories, nil], nil];
+    NSMutableArray *subjects = [[NSMutableArray alloc] initWithObjects:@"Chemistry", @"Physics", @"Biology", nil];
+        
+    int total = 0;
+    int stars = 0;
+        float share = 0;
+    
+    //Loopar igenom ett ämne i taget
+    for (int a = 0; a < 3; a++) {
+        NSLog(@"a: %i", a);
+        //Loopar igenom alla kategorier i ämnet
+        int loop = [[[contents objectAtIndex:0] objectAtIndex:a] count];
+        
+        for (int i = 0; i < loop; i++) {
+            NSLog(@"loopey: %i", i);
+            NSString *key = [NSString stringWithFormat:@"NatureCategory%iStars", [[[[[contents objectAtIndex:0] objectAtIndex:a] objectAtIndex:i] objectAtIndex:2] intValue]];
+            int thisStars = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:key];
+            total+=3;
+            stars+=thisStars;
+        }
+        NSLog(@"hit?");
+        //Lägg till mixed
+        total+=3;
+        stars+=[[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"NatureCategory%@Mixed", [subjects objectAtIndex:a]]];
+    }
+        if (total != 0)
+            share = (float)stars/(float)total;
+        else
+            share = 0;
+        
+        share*=100;
+    
+    overallProgressLabel.text = [NSString stringWithFormat:@"%i %%", (int)(share+.5)];
+
 }
 
 -(IBAction)done:(id)sender {
@@ -154,6 +208,7 @@
 
 - (void)viewDidUnload
 {
+    [self setOverallProgressLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
