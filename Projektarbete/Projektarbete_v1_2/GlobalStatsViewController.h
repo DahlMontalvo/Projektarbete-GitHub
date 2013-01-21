@@ -28,6 +28,9 @@
 @property (strong, nonatomic)IBOutlet UIBarButtonItem *clearButton;
 @property (strong, nonatomic)IBOutlet UIBarButtonItem *doneButton;
 @property (nonatomic, strong) IBOutlet UILabel *completedTestsLabel;
+@property (nonatomic, strong) IBOutlet UILabel *tenOutOfTensLabel;
+@property (nonatomic, strong) IBOutlet UILabel *bestHighscoreLabel;
+@property (nonatomic, strong) IBOutlet UILabel *mostPlayedSubjectLabel;
 @property (nonatomic, retain) NSString *subject;
 @property (nonatomic, weak) id <GlobalStatsViewControllerDelegate> delegate;
 

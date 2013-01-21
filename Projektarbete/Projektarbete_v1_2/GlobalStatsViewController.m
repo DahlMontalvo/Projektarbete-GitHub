@@ -14,6 +14,9 @@
 @synthesize clearButton;
 @synthesize doneButton;
 @synthesize delegate, subject;
+@synthesize tenOutOfTensLabel;
+@synthesize bestHighscoreLabel;
+@synthesize mostPlayedSubjectLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -46,9 +49,40 @@
 */
 -(void)refreshView {
     
+    //Fetch them highscores
     int completedTests = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"CompletedTests"];
+    int tenOutOfTens = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TenOutOfTens"];
+    int bestHighscore = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"BestHighscore"];
+    
+    int timesPlayedMa = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TimesPlayedMa"];
+    int timesPlayedCh = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TimesPlayedChemistry"];
+    int timesPlayedBi = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TimesPlayedBiology"];
+    int timesPlayedPh = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TimesPlayedPhysics"];
+    
+    if (timesPlayedMa > timesPlayedCh && timesPlayedMa > timesPlayedBi && timesPlayedMa > timesPlayedPh) {
+        mostPlayedSubjectLabel.text = @"Ma";
+    }
+    
+    else if (timesPlayedBi > timesPlayedCh && timesPlayedBi > timesPlayedMa && timesPlayedBi > timesPlayedPh) {
+        mostPlayedSubjectLabel.text = @"Bi";
+    }
+    
+    else if (timesPlayedPh > timesPlayedCh && timesPlayedPh > timesPlayedMa && timesPlayedPh > timesPlayedBi) {
+        mostPlayedSubjectLabel.text = @"Ph";
+    }
+    
+    else if (timesPlayedCh > timesPlayedMa && timesPlayedCh > timesPlayedBi && timesPlayedCh > timesPlayedPh) {
+        mostPlayedSubjectLabel.text = @"Ch";
+    }
+    
+    else {
+        mostPlayedSubjectLabel.text = @"None!";
+    }
+    
 
     completedTestsLabel.text = [NSString stringWithFormat:@"%i",completedTests];
+    tenOutOfTensLabel.text = [NSString stringWithFormat:@"%i", tenOutOfTens];
+    bestHighscoreLabel.text = [NSString stringWithFormat:@"%i", bestHighscore];
     
 }
 

@@ -110,10 +110,28 @@
         highscoreLabel.text = [NSString stringWithFormat:@"Current Highscore: %i",previousHighscore];
     }
     
+//Global Stats
+    
     int previousCompletedTests = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"CompletedTests"];
-
     if ([gamemode isEqualToString:@"Test"])
         [[[Singleton sharedSingleton] sharedPrefs] setInteger:previousCompletedTests+1 forKey:@"CompletedTests"];
+    
+    int tenOutOfTens = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TenOutOfTens"];
+    if (results == 10) {
+        [[[Singleton sharedSingleton] sharedPrefs] setInteger:tenOutOfTens+1 forKey:@"TenOutOfTens"];
+        
+    int bestHighscore  = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TenOutOfTens"];
+        if (scoreScore > bestHighscore) {
+            [[[Singleton sharedSingleton] sharedPrefs] setInteger:scoreScore forKey:@"BestHighscore"];
+
+        }
+        
+    int timesPlayedMa = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TimesPlayedMa"];
+    [[[Singleton sharedSingleton] sharedPrefs] setInteger:timesPlayedMa+1 forKey:@"TimesPlayedMa"];
+        
+    }
+    
+//End of global stats
 
 }
 

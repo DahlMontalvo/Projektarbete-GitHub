@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C3012" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
@@ -694,7 +694,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Ch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FD8-3h-1k9">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Ch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" id="FD8-3h-1k9">
                                 <rect key="frame" x="246" y="216" width="48" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Marion-Regular" family="Marion" pointSize="22"/>
@@ -763,8 +763,11 @@
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="bestHighscoreLabel" destination="HGz-L2-8xw" id="jfb-Vb-xSL"/>
                         <outlet property="completedTestsLabel" destination="JrS-T9-2K5" id="zBe-sx-0Vj"/>
                         <outlet property="doneButton" destination="IVi-pL-mwq" id="YL5-te-hZA"/>
+                        <outlet property="mostPlayedSubjectLabel" destination="FD8-3h-1k9" id="mB7-uC-4pR"/>
+                        <outlet property="tenOutOfTensLabel" destination="fHz-6I-F5W" id="XRE-hT-pR0"/>
                         <segue destination="U6E-mL-xzp" kind="push" identifier="ToNatureStats" id="kYr-dT-u7F"/>
                     </connections>
                 </viewController>
@@ -2279,9 +2282,12 @@
                 <relationship kind="action" name="done:"/>
                 <relationship kind="action" name="downButtonPressed:"/>
                 <relationship kind="action" name="physicsButtonPressed:"/>
+                <relationship kind="outlet" name="bestHighscoreLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="clearButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="completedTestsLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="mostPlayedSubjectLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tenOutOfTensLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="MainMenuViewController" superclassName="UIViewController">

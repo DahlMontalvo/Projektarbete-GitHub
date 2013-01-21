@@ -127,9 +127,28 @@
     
     [Flurry logEvent:[NSString stringWithFormat:@"Test completed in nature category %@", [category objectAtIndex:0]]];
     
+//Global Stats
     int previousCompletedTests = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"CompletedTests"];
-    
     [[[Singleton sharedSingleton] sharedPrefs] setInteger:previousCompletedTests+1 forKey:@"CompletedTests"];
+    
+    int tenOutOfTens = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TenOutOfTens"];
+    if (score == 10) {
+        [[[Singleton sharedSingleton] sharedPrefs] setInteger:tenOutOfTens+1 forKey:@"TenOutOfTens"];
+    }
+    
+    
+    int bestHighscore  = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TenOutOfTens"];
+    if (scoreScore > bestHighscore) {
+        [[[Singleton sharedSingleton] sharedPrefs] setInteger:scoreScore forKey:@"BestHighscore"];
+        
+    }
+    
+    int timesPlayedSubject = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"TimesPlayed%@",subject]];
+    [[[Singleton sharedSingleton] sharedPrefs] setInteger:timesPlayedSubject+1 forKey:[NSString stringWithFormat:@"TimesPlayed%@",subject]];
+
+
+    
+//End of global stats
 
     
 }
