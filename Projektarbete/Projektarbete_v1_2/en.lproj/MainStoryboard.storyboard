@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C3012" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
@@ -1842,6 +1842,21 @@
                                             <action selector="buttonFour:" destination="aTp-rB-Gfw" eventType="touchUpInside" id="zY4-PX-lTw"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lY4-Qa-LIR">
+                                        <rect key="frame" x="237" y="63" width="53" height="26"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Report">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="reportButtonPressed:" destination="aTp-rB-Gfw" eventType="touchUpInside" id="Uyg-NV-20G"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
@@ -1886,7 +1901,7 @@
                                 <color key="progressTintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
                             </progressView>
                             <view contentMode="scaleToFill" id="C44-HC-SVK">
-                                <rect key="frame" x="0.0" y="2" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="2v9-K7-ZK2">
@@ -2145,6 +2160,248 @@
         <image name="brun2.png" width="640" height="122"/>
         <image name="knappBG.png" width="260" height="37"/>
     </resources>
+    <classes>
+        <class className="AboutViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="action" name="emailPressed:"/>
+                <relationship kind="action" name="feedBackFacebookButtonPressed:"/>
+                <relationship kind="action" name="likeButtonPressed:"/>
+                <relationship kind="action" name="syncButtonPressed:"/>
+                <relationship kind="outlet" name="activityIndicatior" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="lightView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="syncButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="DifficultySegmentedControlButtonController" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DifficultySegmentedControlButtonController.h"/>
+        </class>
+        <class className="GamemodeSegmentedControlButtonController" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GamemodeSegmentedControlButtonController.h"/>
+        </class>
+        <class className="GlobalStatsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GlobalStatsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="biologyButtonPressed:"/>
+                <relationship kind="action" name="chemistryButtonPressed:"/>
+                <relationship kind="action" name="clearAll:"/>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="action" name="downButtonPressed:"/>
+                <relationship kind="action" name="physicsButtonPressed:"/>
+                <relationship kind="outlet" name="clearButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="completedPractisesLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="completedTestsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="MainMenuViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainMenuViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="greenBanner:"/>
+                <relationship kind="action" name="redBanner:"/>
+                <relationship kind="outlet" name="biologyPercentLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="chemistryPercentLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="greenBanner" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="mathPercentLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="physicsPercentLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="redBanner" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="scrollViewGr" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="MathDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MathDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backButton:"/>
+                <relationship kind="action" name="buttonFivePressed:"/>
+                <relationship kind="action" name="buttonFourPressed:"/>
+                <relationship kind="action" name="buttonOnePressed:"/>
+                <relationship kind="action" name="buttonPractisePressed:"/>
+                <relationship kind="action" name="buttonTestPressed:"/>
+                <relationship kind="action" name="buttonThreePressed:"/>
+                <relationship kind="action" name="buttonTwoPressed:"/>
+                <relationship kind="action" name="difficultySegmentedControl:"/>
+                <relationship kind="action" name="gamemodeSegmentedControl:"/>
+                <relationship kind="action" name="startButton:"/>
+                <relationship kind="outlet" name="buttonFive" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonFour" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonOne" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonPractise" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonTest" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonThree" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonTwo" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="difficultySegmentedControl" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="gameButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="gamemodeSegmentedControl" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="modeLabel" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="navigationLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="practiseButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="practiseTextField" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="starsImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="starsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="startButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="testTextField" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="testingButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="MathExerciseViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MathExerciseViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="keyboard0:"/>
+                <relationship kind="action" name="keyboard1:"/>
+                <relationship kind="action" name="keyboard2:"/>
+                <relationship kind="action" name="keyboard3:"/>
+                <relationship kind="action" name="keyboard4:"/>
+                <relationship kind="action" name="keyboard5:"/>
+                <relationship kind="action" name="keyboard6:"/>
+                <relationship kind="action" name="keyboard7:"/>
+                <relationship kind="action" name="keyboard8:"/>
+                <relationship kind="action" name="keyboard9:"/>
+                <relationship kind="action" name="keyboardback:"/>
+                <relationship kind="action" name="keyboarddot:"/>
+                <relationship kind="action" name="nextButton:"/>
+                <relationship kind="action" name="pausePressed:"/>
+                <relationship kind="outlet" name="answerFromUser" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="correctAnswersLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="countdownLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="darkView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="exerciseLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="keyboard0" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="keyboard1" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="keyboard2" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="keyboard3" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="keyboard4" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="keyboard5" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="keyboard6" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="keyboard7" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="keyboard8" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="keyboard9" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="keyboardback" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="keyboarddot" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="navItem" candidateClass="UINavigationItem"/>
+                <relationship kind="outlet" name="nextButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="numberLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="pauseButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="progressBar" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="startCountdownLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MathMasterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MathMasterViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="button:"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="MathQuizViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MathQuizViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="buttonFour:"/>
+                <relationship kind="action" name="buttonOne:"/>
+                <relationship kind="action" name="buttonThree:"/>
+                <relationship kind="action" name="buttonTwo:"/>
+                <relationship kind="action" name="pauseButton:"/>
+                <relationship kind="outlet" name="buttonFour" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonOne" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonThree" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonTwo" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="correctAnswersLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="countdownLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="darkView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="denominatorOneLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="denominatorTwoLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="firstLineLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="numeratorOneLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="numeratorTwoLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="operationLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="pauseButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="progressBar" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="questionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="secondLineLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="startCountdownLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MathResultsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MathResultsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="continueButtonPressed:"/>
+                <relationship kind="outlet" name="gamemodeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="highscoreLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="infoLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="navItem" candidateClass="UINavigationItem"/>
+                <relationship kind="outlet" name="resultsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scoreScoreLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="starExplanationLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="starImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="starLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NatureDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NatureDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backButton:"/>
+                <relationship kind="action" name="buttonFour:"/>
+                <relationship kind="action" name="buttonOne:"/>
+                <relationship kind="action" name="buttonThree:"/>
+                <relationship kind="action" name="buttonTwo:"/>
+                <relationship kind="action" name="pauseButtonPressed:"/>
+                <relationship kind="action" name="reportButtonPressed:"/>
+                <relationship kind="outlet" name="buttonFour" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonOne" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonThree" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonTwo" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="correctAnswers" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="countdownLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="darkView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="pauseButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="progressBar" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="questionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subjectLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NatureMasterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NatureMasterViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backButton:"/>
+                <relationship kind="outlet" name="subjectLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="NatureResultsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NatureResultsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="continueButtonPressed:"/>
+                <relationship kind="outlet" name="categoryLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="description" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="highscoreLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scoreLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scoreScoreLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="starsImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="starsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NatureStatsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NatureStatsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="pop:"/>
+                <relationship kind="outlet" name="navItem" candidateClass="UINavigationItem"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="StatsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StatsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="pop:"/>
+                <relationship kind="outlet" name="navItem" candidateClass="UINavigationItem"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

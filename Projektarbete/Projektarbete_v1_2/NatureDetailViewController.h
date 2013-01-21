@@ -30,6 +30,7 @@
 @property (nonatomic) int categoryID;
 @property (nonatomic) int correctAnswersNumber;
 @property (nonatomic) int questionAtm;
+@property (nonatomic) int lastSentErrorReport;
 @property (nonatomic, retain) NSString *subject;
 @property (nonatomic, retain) NSMutableArray *category;
 @property (nonatomic, retain) NSDate *testStartedDate;
@@ -49,6 +50,7 @@
 - (IBAction)buttonTwo:(id)sender;
 - (IBAction)buttonThree:(id)sender;
 - (IBAction)buttonFour:(id)sender;
+- (IBAction)reportButtonPressed:(id)sender;
 
 @property (nonatomic, retain) NSMutableArray *questions;
 @property (nonatomic, retain) AppDelegate *appDelegate;

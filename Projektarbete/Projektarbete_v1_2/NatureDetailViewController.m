@@ -14,7 +14,7 @@
 
 @implementation NatureDetailViewController
 
-@synthesize categoryID, subject, category, subjectLabel, questionLabel, buttonOne, buttonTwo, buttonThree, buttonFour, startCountdownTimer, countdownLabel, darkView, startCountdownDate, startCountdown, questions, questionAtm, appDelegate, correctAnswers, correctAnswersNumber, testStartedDate, start_date, timer, time_passed, countdownCounter, start_countdown_date, countdownTimer, progressBar;
+@synthesize categoryID, subject, category, subjectLabel, questionLabel, buttonOne, buttonTwo, buttonThree, buttonFour, startCountdownTimer, countdownLabel, darkView, startCountdownDate, startCountdown, questions, questionAtm, appDelegate, correctAnswers, correctAnswersNumber, testStartedDate, start_date, timer, time_passed, countdownCounter, start_countdown_date, countdownTimer, progressBar, lastSentErrorReport;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -104,8 +104,8 @@
     
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
+    [super viewDidLoad];
     questionAtm = 0;
     correctAnswersNumber = 0;
     testStartedDate = [NSDate date];
@@ -195,9 +195,6 @@
             [questions addObject:question];
         }
     }
-    
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
 }
 
 - (void)presentNextQuestion {
@@ -344,6 +341,24 @@
 
 - (IBAction)buttonFour:(id)sender {
     [self buttonPressed:4];
+}
+
+- (IBAction)reportButtonPressed:(id)sender {
+    if (lastSentErrorReport < questionAtm) {
+        int qID = [[[questions objectAtIndex:questionAtm] objectAtIndex:1] intValue];
+        int token = qID*3+253;
+        NSString *postString = [NSString stringWithFormat:@"qid=%i&token=%i", qID, token];
+        
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://simplescience.dahlmontalvo.com/"]];
+        
+        [request setHTTPMethod:@"POST"];
+        [request setValue:[NSString stringWithFormat:@"%d", [postString length]] forHTTPHeaderField:@"Content-length"];
+        [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
+        
+        NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+        conn = nil;
+        lastSentErrorReport = questionAtm;
+    }
 }
 
 - (void)noBG {
