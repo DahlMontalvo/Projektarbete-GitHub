@@ -88,7 +88,8 @@
     
     int scoreScore;
     if (stars != 0)
-        scoreScore = 150-finalTime/stars-(3-stars)*15;
+        scoreScore = (score / sqrt(finalTime)*447.2135956);
+        //150-finalTime/stars-(3-stars)*15;
     else
         scoreScore = 0;
     if (scoreScore < 0) scoreScore = 0;
