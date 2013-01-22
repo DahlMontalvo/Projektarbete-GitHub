@@ -346,6 +346,23 @@
 
 -(void)report {
     if (lastSentErrorReport < questionAtm) {
+        
+        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Report Error"
+                                                          message:@"Are u sure that u want to report this question as incorrect?"
+                                                         delegate:self
+                                                cancelButtonTitle:@"No"
+                                                otherButtonTitles:@"Yes",nil];
+        [message show];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    
+	NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
+    
+	if([title isEqualToString:@"Yes"]) {
+        
         int qID = [[[questions objectAtIndex:questionAtm] objectAtIndex:1] intValue];
         int token = qID*3+253;
         NSString *postString = [NSString stringWithFormat:@"qid=%i&token=%i", qID, token];

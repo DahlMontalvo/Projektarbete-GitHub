@@ -66,14 +66,14 @@
         if (starsBefore < 3)
             [[[Singleton sharedSingleton] sharedPrefs] setInteger:3 forKey:key];
     }
-    else if (finalTime < 60 && score > 7) {
+    else if (finalTime < 80 && score > 7) {
         starsLabel.text = @"2 Stars!";
         description.text = @"For three stars, you need all correct answers in 50 seconds.";
         stars = 2;
         if (starsBefore < 2)
             [[[Singleton sharedSingleton] sharedPrefs] setInteger:2 forKey:key];
     }
-    else if (finalTime < 100 && score > 5) {
+    else if (finalTime < 120 && score > 5) {
         starsLabel.text = @"1 Star!";
         description.text = @"For two stars, you need 8 correct answers in 60 seconds.";
         stars = 1;
