@@ -7,6 +7,7 @@
 //
 
 #import "MathResultsViewController.h"
+#import "Flurry.h"
 
 @implementation MathResultsViewController
 @synthesize results, resultsLabel, timeLabel, infoLabel, navItem, operation, difficulty, finalTime, gamemode, gamemodeLabel, highscoreLabel, starLabel, starImage, scoreScoreLabel, starExplanationLabel;
@@ -132,6 +133,16 @@
     }
     
 //End of global stats
+    
+    NSDictionary *eventParams =
+    [NSDictionary dictionaryWithObjectsAndKeys:
+     @"Math", @"Subject",
+     gamemode, @"GameMode",
+     operation, @"CategoryName",
+     [NSString stringWithFormat:@"%i", difficulty], @"Difficulty",
+     nil];
+    
+    [Flurry logEvent:@"Test_completed" withParameters:eventParams];
 
 }
 

@@ -120,7 +120,11 @@
     
     cell.titleLabel.text = [operations objectAtIndex:index];
     cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",[operations objectAtIndex:index]]];
-    cell.valueLabel.text = [NSString stringWithFormat:@"%i/15 Stars",[[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"TotalStars%@",[operations objectAtIndex:index]]]];
+    int stars = 0;
+    for (int i = 1; i < 6; i++) {
+        stars += [[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"Stars%@%i", [operations objectAtIndex:index], i]];
+    }
+    cell.valueLabel.text = [NSString stringWithFormat:@"%i/15 Stars",stars];
     
     return cell;
 }

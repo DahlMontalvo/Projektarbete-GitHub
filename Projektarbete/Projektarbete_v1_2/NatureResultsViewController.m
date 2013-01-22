@@ -126,7 +126,16 @@
     scoreScoreLabel.text = [NSString stringWithFormat:@"%i", scoreScore];
     starsImageView.image = [UIImage imageNamed:name];
     
-    [Flurry logEvent:[NSString stringWithFormat:@"Test completed in nature category %@", [category objectAtIndex:0]]];
+    NSDictionary *eventParams =
+    [NSDictionary dictionaryWithObjectsAndKeys:
+     subject, @"Subject",
+     [category objectAtIndex:0], @"CategoryName",
+     [category objectAtIndex:1], @"CategoryID",
+        nil];
+    
+    [Flurry logEvent:@"Test_completed" withParameters:eventParams];
+    
+    
     
 //Global Stats
     int previousCompletedTests = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"CompletedTests"];

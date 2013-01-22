@@ -7,6 +7,7 @@
 //
 
 #import "NatureDetailViewController.h"
+#import "Flurry.h"
 
 @interface NatureDetailViewController ()
 
@@ -106,7 +107,17 @@
 }
 
 - (void)viewDidLoad {
+    
+    NSDictionary *eventParams =
+    [NSDictionary dictionaryWithObjectsAndKeys:
+     subject, @"Subject",
+     [category objectAtIndex:0], @"CategoryName",
+     [category objectAtIndex:1], @"CategoryID",
+     nil];
+    
+    [Flurry logEvent:@"Test_started" withParameters:eventParams];
     [super viewDidLoad];
+    
     questionAtm = 0;
     correctAnswersNumber = 0;
     testStartedDate = [NSDate date];

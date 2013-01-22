@@ -7,6 +7,7 @@
 //
 
 #import "MathDetailViewController.h"
+#import "Flurry.h"
 
 @implementation MathDetailViewController
 @synthesize startButton;
@@ -81,6 +82,16 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSDictionary *eventParams =
+    [NSDictionary dictionaryWithObjectsAndKeys:
+     @"Math", @"Subject",
+     operation, @"CategoryName",
+     selectedGamemode, @"GameMode",
+     [NSString stringWithFormat:@"%i", selectedOperation], @"Difficulty",
+     nil];
+    NSLog(@"Dict: %@", eventParams);
+    [Flurry logEvent:@"Test_started" withParameters:eventParams];
+    
     if ([[segue identifier] isEqualToString:@"ToQuiz"]) {
         MathQuizViewController *evc = [segue destinationViewController];
         evc.operation = operation;

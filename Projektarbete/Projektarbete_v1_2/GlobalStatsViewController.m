@@ -129,15 +129,35 @@
         total+=3;
         stars+=[[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"NatureCategory%@Mixed", [subjects objectAtIndex:a]]];
     }
-        if (total != 0)
-            share = (float)stars/(float)total;
-        else
-            share = 0;
-        
-        share*=100;
+    
+    //Matten
+    NSMutableArray *operations = [[NSMutableArray alloc] initWithObjects:@"Addition",
+                                  @"Subtraction",
+                                  @"Multiplication",
+                                  @"Division",
+                                  @"Percent",
+                                  @"Fraction",
+                                  @"Equations",
+                                  nil];
+    for (int a = 0; a < [operations count]; a++) {
+        for (int i = 1; i < 6; i++) {
+            NSString *key = [NSString stringWithFormat:@"Stars%@%i", [operations objectAtIndex:a], i];
+            int thisStars = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:key];
+            total+=3;
+            stars+=thisStars;
+            NSLog(@"Stars: %@, %i", key, thisStars);
+        }
+    }
+    
+    
+    if (total != 0)
+        share = (float)stars/(float)total;
+    else
+        share = 0;
+    
+    share*=100;
     
     overallProgressLabel.text = [NSString stringWithFormat:@"%i %%", (int)(share+.5)];
-
 }
 
 -(IBAction)done:(id)sender {

@@ -113,6 +113,23 @@
         [label setText:[NSString stringWithFormat:@"%i %%", (int)(share+0.5)]];
         NSLog(@"String: %f", share);
     }
+    //Matteprocent
+    int total = 0;
+    int stars = 0;
+    
+    NSMutableArray *operations = [[NSMutableArray alloc] initWithObjects:@"Addition", @"Subtraction", @"Division", @"Multiplication", @"Percent", @"Fraction", @"Equations", nil];
+    for (int i = 0; i < 7; i++) {
+        for (int a = 1; a < 6; a++) {
+            NSString *key = [NSString stringWithFormat:@"Stars%@%i", [operations objectAtIndex:i], a];
+            
+            int thisStars = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:key];
+            total+=3;
+            stars+=thisStars;
+        }
+    }
+    
+    float share = 100*((float)stars/total);
+    mathPercentLabel.text = [NSString stringWithFormat:@"%i %%", (int)(share+0.5)];
     if (again == YES)
         [self performSelector:@selector(updateNumbers) withObject:nil afterDelay:.5];
 }
@@ -139,21 +156,7 @@
     
     [self updateNumbers];
     
-    //Matteprocent
-    int total = 0;
-    int stars = 0;
     
-    NSMutableArray *operations = [[NSMutableArray alloc] initWithObjects:@"Addition", @"Subtraction", @"Division", @"Multiplication", @"Percent", @"Fraction", @"Equations", nil];
-    for (int i = 0; i < 7; i++) {
-        NSString *key = [NSString stringWithFormat:@"TotalStars%@", [operations objectAtIndex:i]];
-        
-        int thisStars = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:key];
-        total+=15;
-        stars+=thisStars;
-    }
-    
-    float share = 100*((float)stars/total);
-    mathPercentLabel.text = [NSString stringWithFormat:@"%i %%", (int)(share+0.5)];
     
     [[self.navigationController navigationBar] setTintColor:[UIColor blackColor]];
     [[self.navigationController navigationBar] setHidden:YES];
