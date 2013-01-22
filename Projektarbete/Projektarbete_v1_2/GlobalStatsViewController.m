@@ -70,7 +70,7 @@
     }
     
     else {
-        mostPlayedSubjectLabel.text = @"None!";
+        mostPlayedSubjectLabel.text = @"None";
     }
     
 
