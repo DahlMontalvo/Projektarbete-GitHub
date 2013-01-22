@@ -666,7 +666,7 @@
                                 <rect key="frame" x="94" y="16" width="132" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Total science progress" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qZE-wg-Nkw">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Overall progress" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qZE-wg-Nkw">
                                 <rect key="frame" x="29" y="68" width="197" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Marion-Regular" family="Marion" pointSize="22"/>
@@ -2438,6 +2438,7 @@
         <class className="NatureDetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NatureDetailViewController.h"/>
             <relationships>
+                <relationship kind="action" name="backButton:"/>
                 <relationship kind="action" name="buttonFour:"/>
                 <relationship kind="action" name="buttonOne:"/>
                 <relationship kind="action" name="buttonThree:"/>
