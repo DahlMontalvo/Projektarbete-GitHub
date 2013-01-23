@@ -40,7 +40,7 @@
         category = [appDelegate getCategoryWithID:categoryId];
     }
     else {
-        category = [[NSMutableArray alloc] initWithObjects:[NSString stringWithFormat:@"Mixed %@", subject], nil];
+        category = [[NSMutableArray alloc] initWithObjects:[NSString stringWithFormat:@"Mixed %@", subject], subject, @"-1", nil];
     }
     
     categoryLabel.text = [NSString stringWithFormat:@"Completed in %@", [category objectAtIndex:0]];
@@ -125,6 +125,8 @@
     timeLabel.text = [NSString stringWithFormat:@"in %.2f seconds",finalTime];
     scoreScoreLabel.text = [NSString stringWithFormat:@"%i", scoreScore];
     starsImageView.image = [UIImage imageNamed:name];
+    
+    
     
     NSDictionary *eventParams =
     [NSDictionary dictionaryWithObjectsAndKeys:
