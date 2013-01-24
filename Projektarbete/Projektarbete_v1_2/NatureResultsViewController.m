@@ -87,11 +87,9 @@
     }
     
     int scoreScore;
-    if (stars != 0)
-        scoreScore = (score / sqrt(finalTime)*447.2135956);
+    scoreScore = (score / sqrt(finalTime)*447.2135956);
         //150-finalTime/stars-(3-stars)*15;
-    else
-        scoreScore = 0;
+
     if (scoreScore < 0) scoreScore = 0;
     int previousHighscore = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:timeKey];
     
@@ -157,6 +155,13 @@
     
     int timesPlayedSubject = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"TimesPlayed%@",subject]];
     [[[Singleton sharedSingleton] sharedPrefs] setInteger:timesPlayedSubject+1 forKey:[NSString stringWithFormat:@"TimesPlayed%@",subject]];
+    
+    int totalCorrect = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TotalCorrect"];
+    [[[Singleton sharedSingleton] sharedPrefs] setInteger:totalCorrect+score forKey:@"TotalCorrect"];
+    
+    int totalHighscore = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TotalHighscore"];
+    [[[Singleton sharedSingleton] sharedPrefs] setInteger:totalHighscore+scoreScore forKey:@"TotalHighscore"];
+    
 
 
     
@@ -185,7 +190,7 @@
     [self setStarsLabel:nil];
     [self setHighscoreLabel:nil];
     [self setDescription:nil];
-    [self setScore:nil];
+
     [super viewDidUnload];
 }
 - (IBAction)continueButtonPressed:(id)sender {

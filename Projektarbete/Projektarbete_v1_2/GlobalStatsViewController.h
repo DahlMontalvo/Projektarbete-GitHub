@@ -32,6 +32,9 @@
 @property (nonatomic, strong) IBOutlet UILabel *bestHighscoreLabel;
 @property (nonatomic, strong) IBOutlet UILabel *mostPlayedSubjectLabel;
 @property (strong, nonatomic) IBOutlet UILabel *overallProgressLabel;
+@property (strong, nonatomic) IBOutlet UILabel *averageCorrectQuestionsLabel;
+@property (strong, nonatomic) IBOutlet UILabel *averageHighscoreLabel;
+@property (strong, nonatomic) IBOutlet UIButton *infoButton;
 @property (nonatomic, retain) NSString *subject;
 @property (nonatomic, weak) id <GlobalStatsViewControllerDelegate> delegate;
 
@@ -41,5 +44,8 @@
 - (IBAction)chemistryButtonPressed:(id)sender;
 - (IBAction)biologyButtonPressed:(id)sender;
 - (IBAction)downButtonPressed:(id)sender;
+- (IBAction)infoButtonPressed:(id)sender;
+
+
 
 @end

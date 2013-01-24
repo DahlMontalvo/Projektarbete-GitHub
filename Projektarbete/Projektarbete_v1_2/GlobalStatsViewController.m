@@ -10,7 +10,7 @@
 #import "StatsViewController.h"
 
 @implementation GlobalStatsViewController
-@synthesize completedTestsLabel, clearButton, doneButton, delegate, subject, tenOutOfTensLabel, bestHighscoreLabel, mostPlayedSubjectLabel, overallProgressLabel;
+@synthesize completedTestsLabel, clearButton, doneButton, delegate, subject, tenOutOfTensLabel, bestHighscoreLabel, mostPlayedSubjectLabel, overallProgressLabel, averageCorrectQuestionsLabel, averageHighscoreLabel, infoButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -47,6 +47,8 @@
     int completedTests = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"CompletedTests"];
     int tenOutOfTens = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TenOutOfTens"];
     int bestHighscore = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"BestHighscore"];
+    int totalCorrectQuestions = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TotalCorrect"];
+    int totalScore = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TotalHighscore"];
     
     int timesPlayedMa = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TimesPlayedMa"];
     int timesPlayedCh = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TimesPlayedChemistry"];
@@ -72,6 +74,21 @@
     else {
         mostPlayedSubjectLabel.text = @"None";
     }
+    
+    if (completedTests > 0) {
+        
+        float averageCorrectQuestions = (float)totalCorrectQuestions / (float)completedTests;
+        int averageScore = totalScore / completedTests;
+        
+        averageCorrectQuestionsLabel.text = [NSString stringWithFormat:@"%.1f",averageCorrectQuestions];
+        averageHighscoreLabel.text = [NSString stringWithFormat:@"%i",averageScore];
+    } else {
+        averageCorrectQuestionsLabel.text = @"0";
+        averageHighscoreLabel.text = @"0";
+    }
+    
+
+    
     
 
     completedTestsLabel.text = [NSString stringWithFormat:@"%i",completedTests];
@@ -213,6 +230,15 @@
         StatsViewController *evc = [segue destinationViewController];
         evc.operation = operation;
     }
+}
+
+-(IBAction)infoButtonPressed:(id)sender {
+    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Stats Info"
+                                                      message:@"Math difficulty 1 & 2 has been excluded from the globalstats since it can give an excessivly high result. The overall progress will still include them though."
+                                                     delegate:self
+                                            cancelButtonTitle:@"OK"
+                                            otherButtonTitles:nil];
+    [message show];
 }
 
 

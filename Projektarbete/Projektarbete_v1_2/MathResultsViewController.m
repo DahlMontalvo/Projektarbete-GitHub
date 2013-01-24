@@ -113,6 +113,8 @@
     
 //Global Stats
     
+    if (difficulty > 2) {
+    
     int previousCompletedTests = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"CompletedTests"];
     if ([gamemode isEqualToString:@"Test"])
         [[[Singleton sharedSingleton] sharedPrefs] setInteger:previousCompletedTests+1 forKey:@"CompletedTests"];
@@ -120,7 +122,7 @@
     int tenOutOfTens = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TenOutOfTens"];
     if (results == 10) {
         [[[Singleton sharedSingleton] sharedPrefs] setInteger:tenOutOfTens+1 forKey:@"TenOutOfTens"];
-        
+
     int bestHighscore  = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TenOutOfTens"];
         if (scoreScore > bestHighscore) {
             [[[Singleton sharedSingleton] sharedPrefs] setInteger:scoreScore forKey:@"BestHighscore"];
@@ -131,6 +133,14 @@
     [[[Singleton sharedSingleton] sharedPrefs] setInteger:timesPlayedMa+1 forKey:@"TimesPlayedMa"];
         
     }
+    
+    int totalCorrect = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TotalCorrect"];
+    [[[Singleton sharedSingleton] sharedPrefs] setInteger:totalCorrect+results forKey:@"TotalCorrect"];
+    
+    int totalHighscore = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TotalHighscore"];
+    [[[Singleton sharedSingleton] sharedPrefs] setInteger:totalHighscore+scoreScore forKey:@"TotalHighscore"];
+        
+}
     
 //End of global stats
     
