@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "Flurry.h"
+#import "Singleton.h"
 @implementation AppDelegate
 
 @synthesize window = _window;
@@ -24,10 +25,34 @@
     UIApplication *app = [UIApplication sharedApplication];
     [app setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
     // Override point for customization after application launch.
-    return YES;
+    
+    
+    int launchCount;
+    
+    launchCount = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"launchCount" ] + 1;
+    [[[Singleton sharedSingleton] sharedPrefs] setInteger:launchCount forKey:@"launchCount"];
+    [[[Singleton sharedSingleton] sharedPrefs] synchronize];
+    
+    NSLog(@"number of times: %i this app has been launched", launchCount);
+    
+    if ( launchCount == 1 )
+    {
+        NSLog(@"this is the FIRST LAUNCH of the app");
+        // do stuff here as you wish
+    }
+    if ( launchCount == 2 )
+    {
+        NSLog(@"this is the SECOND launch of the damn app");
+        // do stuff here as you wish
+    }
+
     
     [application setStatusBarHidden:YES];
+    
+    return YES;
 }
+
+
 
 -(void)applicationDidBecomeActive:(UIApplication *)application {
     [self copyDatabaseIfNeeded];

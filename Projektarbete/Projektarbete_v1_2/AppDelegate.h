@@ -22,6 +22,7 @@
 @property (nonatomic, retain) NSMutableArray *questions;
 @property (nonatomic, retain) NSMutableArray *categories;
 
+@property (nonatomic) BOOL *kNOT_FIRST_LAUNCH;
 @property (strong, nonatomic) UIWindow *window;
 
 -(NSMutableArray *)getCategoryWithID:(int)ID;
