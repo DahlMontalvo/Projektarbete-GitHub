@@ -234,7 +234,7 @@
 
 -(IBAction)infoButtonPressed:(id)sender {
     UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Stats Info"
-                                                      message:@"Math difficulty 1 & 2 has been excluded from the globalstats since it can give an excessivly high result. The overall progress will still include them though."
+                                                      message:@"Math difficulties 1 & 2 has been excluded from the globalstats since it can give an excessively high result. The overall progress will still include them though."
                                                      delegate:self
                                             cancelButtonTitle:@"OK"
                                             otherButtonTitles:nil];

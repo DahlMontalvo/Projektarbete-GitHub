@@ -316,13 +316,14 @@
                 }
             }
             else {
+                if (number1-number2 < 5) number1+=arc4random() % 10 + 5;
                 localAnswer = number1-number2;
                 text = [NSString stringWithFormat:@"%i - %i", number1, number2];
             } 
         } 
         else if ([localOperation isEqualToString:@"Division"]) {
             number1*=difficulty+1;
-            number2*=2;
+            number2*=1.2;
             number3*=(difficulty+1)/3;
             number2/=2;
             
@@ -420,7 +421,6 @@
             }
             else {
                 
-                
                 localAnswer = (float) number1 / (float) number2;
                 text = [NSString stringWithFormat:@"%i / %i", number1, number2];
             }
@@ -429,6 +429,7 @@
         } 
         else if ([localOperation isEqualToString:@"Multiplication"]) {
             if (difficulty > 3) {
+                NSLog(@"multi");
                 number1/=difficulty;
                 number2/=difficulty;
                 number3/=difficulty;
@@ -498,9 +499,14 @@
                 }
             }
             else {
-                number1/=difficulty*1.25;
-                number2/=difficulty*1.25;
-                number3/=difficulty*1.25;
+                if (difficulty == 3) {
+                    number1*=1.75;
+                    number2*=1.75;
+                    number3*=1.75;
+                }
+                number1/=difficulty;
+                number2/=difficulty;
+                number3/=difficulty;
                 localAnswer = number1*number2;
                 text = [NSString stringWithFormat:@"%i * %i", number1, number2];
             }
