@@ -56,6 +56,7 @@
 }
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
+    
     currentElement = [elementName copy];
     elementValue = [[NSMutableString alloc] init];
     
@@ -86,6 +87,7 @@
             else if ([elementName isEqualToString:@"question"]) {
                 val = [val stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
                 [[questionChanges objectAtIndex:questionsUpdated-1] insertObject:val atIndex:1];
+                NSLog(@"val: %@", val);
             }
             else if ([elementName isEqualToString:@"parentCategory"]) {
                 [[questionChanges objectAtIndex:questionsUpdated-1] insertObject:[NSNumber numberWithInt:[elementValue intValue]] atIndex:2];
@@ -127,6 +129,7 @@
             else if ([elementName isEqualToString:@"answer"]) {
                 val = [val stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
                 [[answerChanges objectAtIndex:[answerChanges count]-1] insertObject:val atIndex:1];
+                NSLog(@"val: %@", val);
             }
             else if ([elementName isEqualToString:@"questionId"]) {
                 val = [val stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];

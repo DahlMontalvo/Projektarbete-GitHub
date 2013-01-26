@@ -206,6 +206,7 @@
             [noId addObject:[question objectAtIndex:1]];
             [questions addObject:question];
         }
+        NSLog(@"qId: %i", [[question objectAtIndex:1] intValue]);
     }
 }
 

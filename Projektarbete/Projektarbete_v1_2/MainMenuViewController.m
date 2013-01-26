@@ -24,12 +24,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    if ([[[Singleton sharedSingleton] sharedPrefs] boolForKey:@"ApplicationHasOpenedBefore"] != YES) {
-        //First run
-        [[[Singleton sharedSingleton] sharedPrefs] setObject:[NSDate date] forKey:@"LastSyncDate"];
-        [[[Singleton sharedSingleton] sharedPrefs] setBool:YES forKey:@"ApplicationHasOpenedBefore"];
-    }
-    
     //Setting up Settings and About scroll views
     scrollView.scrollEnabled = YES;
     scrollView.contentSize = scrollView.frame.size;

@@ -27,7 +27,7 @@
     // Override point for customization after application launch.
     
     
-    int launchCount;
+    int launchCount = 0;
     
     launchCount = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"launchCount" ] + 1;
     [[[Singleton sharedSingleton] sharedPrefs] setInteger:launchCount forKey:@"launchCount"];
@@ -45,7 +45,12 @@
         NSLog(@"this is the SECOND launch of the damn app");
         // do stuff here as you wish
     }
-
+    
+    if ([[[Singleton sharedSingleton] sharedPrefs] boolForKey:@"ApplicationHasOpenedBefore"] != YES) {
+        //First run
+        [[[Singleton sharedSingleton] sharedPrefs] setObject:[NSDate dateWithTimeIntervalSince1970:1357020000] forKey:@"LastSyncDate"];
+        [[[Singleton sharedSingleton] sharedPrefs] setBool:YES forKey:@"ApplicationHasOpenedBefore"];
+    }
     
     [application setStatusBarHidden:YES];
     
