@@ -1,29 +1,46 @@
 //
 //  StatsViewController.h
-//  Projektarbete_v1_2
+//  Simple Science
 //
-//  Created by Philip Montalvo on 2012-07-22.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 Jonas Dahl & Philip Montalvo. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "Singleton.h"
-#import "StatsTableCellController.h"
-#import "GlobalStatsViewController.h"
+#import "MathStatsViewController.h"
+#import "NatureStatsViewController.h"
 
-@interface StatsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
-    NSMutableArray *operations;
-    NSString *operation;
+@class StatsViewController;
+
+@protocol StatsViewControllerDelegate <NSObject>
+
+- (void)StatsViewControllerDidDone:(StatsViewController *)controller;
+
+@end
+
+@interface StatsViewController : UIViewController <UIActionSheetDelegate> {
 }
 
-@property (strong, nonatomic) IBOutlet UINavigationItem *navItem;
-@property (nonatomic) int difficulty;
-@property (nonatomic) int section;
-@property (strong, nonatomic) NSString *operation;
+@property (strong, nonatomic)IBOutlet UIBarButtonItem *doneButton;
+@property (nonatomic, strong) IBOutlet UILabel *completedTestsLabel;
+@property (nonatomic, strong) IBOutlet UILabel *tenOutOfTensLabel;
+@property (nonatomic, strong) IBOutlet UILabel *bestHighscoreLabel;
+@property (nonatomic, strong) IBOutlet UILabel *mostPlayedSubjectLabel;
+@property (strong, nonatomic) IBOutlet UILabel *overallProgressLabel;
+@property (strong, nonatomic) IBOutlet UILabel *averageCorrectQuestionsLabel;
+@property (strong, nonatomic) IBOutlet UILabel *averageHighscoreLabel;
+@property (strong, nonatomic) IBOutlet UIButton *infoButton;
+@property (nonatomic, retain) NSString *subject;
+@property (nonatomic, weak) id <StatsViewControllerDelegate> delegate;
 
-@property (nonatomic, retain) IBOutlet UITableView *tableView;
+-(IBAction)clearAll:(id)sender;
+-(IBAction)done:(id)sender;
+- (IBAction)physicsButtonPressed:(id)sender;
+- (IBAction)chemistryButtonPressed:(id)sender;
+- (IBAction)biologyButtonPressed:(id)sender;
+- (IBAction)downButtonPressed:(id)sender;
+- (IBAction)infoButtonPressed:(id)sender;
 
-- (IBAction)pop:(id)sender;
 
 
 @end

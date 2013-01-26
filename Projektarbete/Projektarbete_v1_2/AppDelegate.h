@@ -1,38 +1,33 @@
 //
 //  AppDelegate.h
-//  Projektarbete_v1_2
+//  Simple Science
 //
-//  Created by Jonas Dahl on 7/20/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 Jonas Dahl & Philip Montalvo. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import <sqlite3.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate> {
-    // DBvariabler
 	NSString *databaseName;
 	NSString *databasePath;
-    
-	// Frågorarray
 	NSMutableArray *questions;
 	NSMutableArray *categories;
 }
 
 @property (nonatomic, retain) NSMutableArray *questions;
 @property (nonatomic, retain) NSMutableArray *categories;
-
 @property (nonatomic) BOOL *kNOT_FIRST_LAUNCH;
 @property (strong, nonatomic) UIWindow *window;
 
 -(NSMutableArray *)getCategoryWithID:(int)ID;
--(int)numbersOfQuestionsInCategory:(int)ID;
 -(NSMutableArray *) getQuestionInCategory:(int)ID withOutIds:(NSMutableArray *)noId;
 -(NSMutableArray *) getQuestionInMainCategory:(NSString *)subject withOutIds:(NSMutableArray *)noId;
+-(int)numbersOfQuestionsInCategory:(int)ID;
 -(void)updateQuestionWithId:(int)qId question:(NSString *)question parent:(int)parentCategory deleted:(int)deleted;
 -(void)updateAnswerWithId:(int)aId answer:(NSString *)answer parent:(int)parentQuestion correct:(int)correct deleted:(int)deleted;
 -(void)updateCategoryWithId:(int)cId name:(NSString *)name parent:(NSString *)parent deleted:(int)deleted;
--(void)readQuestionsFromDatabase;
+-(void)readCategoriesFromDatabase;
 -(void)copyDatabaseIfNeeded;
 -(NSString *)getDBPath;
 

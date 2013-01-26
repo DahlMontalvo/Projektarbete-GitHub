@@ -1,9 +1,8 @@
 //
 //  MathResultsViewController.m
-//  Projektarbete_v1_2
+//  Simple Science
 //
-//  Created by Jonas Dahl on 7/20/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 Jonas Dahl & Philip Montalvo. All rights reserved.
 //
 
 #import "MathResultsViewController.h"
@@ -15,8 +14,6 @@
 #pragma mark - Initialization
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-    }
     return self;
 }
 
@@ -47,7 +44,7 @@
     else if (finalTime < timeForOneStar && results > 5) {
         starLabel.text = @"1 Star!";
         starExplanationLabel.text = [NSString stringWithFormat:@"For two stars, you need 8 correct answers in %.02f seconds!", timeForTwoStars];
-
+        
         stars = 1;
         if ([[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"Stars%@%i",operation,difficulty] ] < 1)
             [[[Singleton sharedSingleton] sharedPrefs] setInteger:1 forKey:[NSString stringWithFormat:@"Stars%@%i",operation,difficulty]];
@@ -55,7 +52,7 @@
     else {
         starLabel.text = @"No stars this time! :(";
         starExplanationLabel.text = [NSString stringWithFormat:@"For one star, you need 6 correct answers in %.02f seconds!", timeForOneStar];
-
+        
         stars = 0;
     }
     
@@ -111,38 +108,38 @@
         highscoreLabel.text = [NSString stringWithFormat:@"Current Highscore: %i",previousHighscore];
     }
     
-//Global Stats
+    //Global Stats
     
     if (difficulty > 2) {
-    
-    int previousCompletedTests = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"CompletedTests"];
-    if ([gamemode isEqualToString:@"Test"])
-        [[[Singleton sharedSingleton] sharedPrefs] setInteger:previousCompletedTests+1 forKey:@"CompletedTests"];
-    
-    int tenOutOfTens = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TenOutOfTens"];
-    if (results == 10) {
-        [[[Singleton sharedSingleton] sharedPrefs] setInteger:tenOutOfTens+1 forKey:@"TenOutOfTens"];
-
-    int bestHighscore  = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TenOutOfTens"];
-        if (scoreScore > bestHighscore) {
-            [[[Singleton sharedSingleton] sharedPrefs] setInteger:scoreScore forKey:@"BestHighscore"];
-
+        
+        int previousCompletedTests = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"CompletedTests"];
+        if ([gamemode isEqualToString:@"Test"])
+            [[[Singleton sharedSingleton] sharedPrefs] setInteger:previousCompletedTests+1 forKey:@"CompletedTests"];
+        
+        int tenOutOfTens = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TenOutOfTens"];
+        if (results == 10) {
+            [[[Singleton sharedSingleton] sharedPrefs] setInteger:tenOutOfTens+1 forKey:@"TenOutOfTens"];
+            
+            int bestHighscore  = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TenOutOfTens"];
+            if (scoreScore > bestHighscore) {
+                [[[Singleton sharedSingleton] sharedPrefs] setInteger:scoreScore forKey:@"BestHighscore"];
+                
+            }
+            
+            int timesPlayedMa = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TimesPlayedMa"];
+            [[[Singleton sharedSingleton] sharedPrefs] setInteger:timesPlayedMa+1 forKey:@"TimesPlayedMa"];
+            
         }
         
-    int timesPlayedMa = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TimesPlayedMa"];
-    [[[Singleton sharedSingleton] sharedPrefs] setInteger:timesPlayedMa+1 forKey:@"TimesPlayedMa"];
+        int totalCorrect = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TotalCorrect"];
+        [[[Singleton sharedSingleton] sharedPrefs] setInteger:totalCorrect+results forKey:@"TotalCorrect"];
+        
+        int totalHighscore = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TotalHighscore"];
+        [[[Singleton sharedSingleton] sharedPrefs] setInteger:totalHighscore+scoreScore forKey:@"TotalHighscore"];
         
     }
     
-    int totalCorrect = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TotalCorrect"];
-    [[[Singleton sharedSingleton] sharedPrefs] setInteger:totalCorrect+results forKey:@"TotalCorrect"];
-    
-    int totalHighscore = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TotalHighscore"];
-    [[[Singleton sharedSingleton] sharedPrefs] setInteger:totalHighscore+scoreScore forKey:@"TotalHighscore"];
-        
-}
-    
-//End of global stats
+    //End of global stats
     
     NSDictionary *eventParams =
     [NSDictionary dictionaryWithObjectsAndKeys:

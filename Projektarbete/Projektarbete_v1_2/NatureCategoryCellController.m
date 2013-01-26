@@ -1,18 +1,15 @@
 //
-//  StatsTableCellController.m
+//  NatureCategoryCellController.m
 //  Simple Science
 //
 //  Copyright (c) 2013 Jonas Dahl & Philip Montalvo. All rights reserved.
 //
 
-#import "StatsTableCellController.h"
+#import "NatureCategoryCellController.h"
 
-@implementation StatsTableCellController
+@implementation NatureCategoryCellController
 
-@synthesize titleLabel;
-@synthesize descriptionLabel;
-@synthesize valueLabel;
-@synthesize starsImage;
+@synthesize titleLabel, starsImage;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];

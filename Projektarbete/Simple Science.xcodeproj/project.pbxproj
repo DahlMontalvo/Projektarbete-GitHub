@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		000B98BD1619E58F0050AFB1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 000B98BC1619E58F0050AFB1 /* Default-568h@2x.png */; };
-		000B98D2161B90E90050AFB1 /* Someicon4-114 kopia.png in Resources */ = {isa = PBXBuildFile; fileRef = 000B98D1161B90E90050AFB1 /* Someicon4-114 kopia.png */; };
+		000B98D2161B90E90050AFB1 /* IconRetina.png in Resources */ = {isa = PBXBuildFile; fileRef = 000B98D1161B90E90050AFB1 /* IconRetina.png */; };
 		000B98D6161B94CE0050AFB1 /* Grön Banner 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 000B98D4161B94CE0050AFB1 /* Grön Banner 2.png */; };
 		000B98D7161B94CE0050AFB1 /* Röd Banner 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 000B98D5161B94CE0050AFB1 /* Röd Banner 2.png */; };
 		000DFE5515BEDFDC00138D06 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 000DFE5415BEDFDC00138D06 /* MainMenuViewController.m */; };
@@ -17,8 +16,6 @@
 		002DBD1F1609194100E8B4A1 /* OneStars.png in Resources */ = {isa = PBXBuildFile; fileRef = 002DBD1C1609194100E8B4A1 /* OneStars.png */; };
 		002DBD201609194100E8B4A1 /* ThreeStars.png in Resources */ = {isa = PBXBuildFile; fileRef = 002DBD1D1609194100E8B4A1 /* ThreeStars.png */; };
 		002DBD211609194100E8B4A1 /* TwoStars.png in Resources */ = {isa = PBXBuildFile; fileRef = 002DBD1E1609194100E8B4A1 /* TwoStars.png */; };
-		002DBD2916092C2800E8B4A1 /* icon4-114.png in Resources */ = {isa = PBXBuildFile; fileRef = 002DBD2816092C2800E8B4A1 /* icon4-114.png */; };
-		002DBD2F1609323000E8B4A1 /* icon5-114.png in Resources */ = {isa = PBXBuildFile; fileRef = 002DBD2E1609323000E8B4A1 /* icon5-114.png */; };
 		00346EBE16A7427B00E94B1D /* libFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00346EBD16A7427B00E94B1D /* libFlurry.a */; };
 		00346EC116A744EC00E94B1D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00346EC016A744EC00E94B1D /* SystemConfiguration.framework */; };
 		0034764316A6E1C000056F98 /* PauseButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 0034764216A6E1C000056F98 /* PauseButton.png */; };
@@ -38,7 +35,7 @@
 		005F5E5A16243433006E2CBC /* SmalLinje.png in Resources */ = {isa = PBXBuildFile; fileRef = 005F5E5816243433006E2CBC /* SmalLinje.png */; };
 		006E426616069A2C003B5BC7 /* StartButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 006E426516069A2C003B5BC7 /* StartButton.png */; };
 		007BC47D15C09B4E009BC60D /* MathTableCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 007BC47B15C09B4E009BC60D /* MathTableCellController.m */; };
-		007BC47E15C09B4E009BC60D /* MathTableCellController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007BC47C15C09B4E009BC60D /* MathTableCellController.xib */; };
+		007BC47E15C09B4E009BC60D /* MathTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007BC47C15C09B4E009BC60D /* MathTableCell.xib */; };
 		00946E46167FC804002C9786 /* brun2.png in Resources */ = {isa = PBXBuildFile; fileRef = 00946E45167FC804002C9786 /* brun2.png */; };
 		00C6AD6B15FD248600493F52 /* Addition.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AD6415FD248600493F52 /* Addition.png */; };
 		00C6AD6C15FD248600493F52 /* Division.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AD6515FD248600493F52 /* Division.png */; };
@@ -47,7 +44,6 @@
 		00C6AD6F15FD248600493F52 /* Multiplication.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AD6815FD248600493F52 /* Multiplication.png */; };
 		00C6AD7015FD248600493F52 /* Percent.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AD6915FD248600493F52 /* Percent.png */; };
 		00C6AD7115FD248600493F52 /* Subtraction.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AD6A15FD248600493F52 /* Subtraction.png */; };
-		00C6AE1F16028D4F00493F52 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AE1E16028D4F00493F52 /* Default@2x.png */; };
 		00C6AE2D1604C7BD00493F52 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C6AE2C1604C7BD00493F52 /* MessageUI.framework */; };
 		00C71472162DC72600753136 /* 1ButtonDepressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C71468162DC72600753136 /* 1ButtonDepressed.png */; };
 		00C71473162DC72600753136 /* 1ButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C71469162DC72600753136 /* 1ButtonPressed.png */; };
@@ -67,9 +63,9 @@
 		00C71487162DC88E00753136 /* TestButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C71481162DC88D00753136 /* TestButtonPressed.png */; };
 		00C71489162DCA4900753136 /* Box.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C71488162DCA4900753136 /* Box.png */; };
 		00C7148B162DCB6000753136 /* PapperGM.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C7148A162DCB6000753136 /* PapperGM.png */; };
-		00D655DF15BDFC1C00314BBB /* GlobalStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D655DE15BDFC1C00314BBB /* GlobalStatsViewController.m */; };
+		00D655DF15BDFC1C00314BBB /* StatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D655DE15BDFC1C00314BBB /* StatsViewController.m */; };
 		00E66CF715BC9DA600174D38 /* Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E66CF415BC9DA600174D38 /* Singleton.m */; };
-		00E66CF815BC9DA600174D38 /* StatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E66CF615BC9DA600174D38 /* StatsViewController.m */; };
+		00E66CF815BC9DA600174D38 /* MathStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E66CF615BC9DA600174D38 /* MathStatsViewController.m */; };
 		00F082CA161ECA1600616FBE /* Paper4.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F082C5161ECA1500616FBE /* Paper4.png */; };
 		00F082CB161ECA1600616FBE /* BioButton2.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F082C6161ECA1500616FBE /* BioButton2.png */; };
 		00F082CC161ECA1600616FBE /* PhysButton2.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F082C7161ECA1500616FBE /* PhysButton2.png */; };
@@ -88,9 +84,8 @@
 		DD18EECD16A5C3DF003185F8 /* white.png in Resources */ = {isa = PBXBuildFile; fileRef = DD18EECC16A5C3DF003185F8 /* white.png */; };
 		DD18EECF16A5CA99003185F8 /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = DD18EECE16A5CA99003185F8 /* green.png */; };
 		DD412BC8161D94B100F950E1 /* Database.sql in Resources */ = {isa = PBXBuildFile; fileRef = DD412BC7161D94B100F950E1 /* Database.sql */; };
-		DD412BC9161D94B100F950E1 /* Database.sql in Resources */ = {isa = PBXBuildFile; fileRef = DD412BC7161D94B100F950E1 /* Database.sql */; };
 		DD751EC1161B7CB200C4E2D1 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DD751EC0161B7CB200C4E2D1 /* libsqlite3.0.dylib */; };
-		DD76D37F161C97DC0017D48F /* NatureCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD76D37E161C97DC0017D48F /* NatureCategoryCell.m */; };
+		DD76D37F161C97DC0017D48F /* NatureCategoryCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD76D37E161C97DC0017D48F /* NatureCategoryCellController.m */; };
 		DD76D381161C97F80017D48F /* NatureCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD76D380161C97F80017D48F /* NatureCategoryCell.xib */; };
 		DD76D384161CA98A0017D48F /* NatureDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD76D383161CA98A0017D48F /* NatureDetailViewController.m */; };
 		DDB5885D15B947A9009CF151 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB5885C15B947A9009CF151 /* UIKit.framework */; };
@@ -99,11 +94,6 @@
 		DDB5886715B947A9009CF151 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DDB5886515B947A9009CF151 /* InfoPlist.strings */; };
 		DDB5886915B947A9009CF151 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB5886815B947A9009CF151 /* main.m */; };
 		DDB5886D15B947A9009CF151 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB5886C15B947A9009CF151 /* AppDelegate.m */; };
-		DDB5887E15B947AA009CF151 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB5887D15B947AA009CF151 /* SenTestingKit.framework */; };
-		DDB5887F15B947AA009CF151 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB5885C15B947A9009CF151 /* UIKit.framework */; };
-		DDB5888015B947AA009CF151 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB5885E15B947A9009CF151 /* Foundation.framework */; };
-		DDB5888815B947AA009CF151 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DDB5888615B947AA009CF151 /* InfoPlist.strings */; };
-		DDB5888B15B947AA009CF151 /* Projektarbete_v1_2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB5888A15B947AA009CF151 /* Projektarbete_v1_2Tests.m */; };
 		DDB5889E15B955C6009CF151 /* MathDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB5889D15B955C6009CF151 /* MathDetailViewController.m */; };
 		DDB588A815B99DED009CF151 /* MathExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB588A715B99DED009CF151 /* MathExerciseViewController.m */; };
 		DDB588AC15B9A1AE009CF151 /* MathResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB588AB15B9A1AE009CF151 /* MathResultsViewController.m */; };
@@ -121,22 +111,18 @@
 		DDE5CCA41600ED1C002005BF /* Mixed.png in Resources */ = {isa = PBXBuildFile; fileRef = DDE5CCA31600ED1C002005BF /* Mixed.png */; };
 		DDE8B8E115BDD72E0010A6D7 /* StatsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDE8B8E015BDD72E0010A6D7 /* StatsTableCell.xib */; };
 		DDE8B8E515BDD8420010A6D7 /* StatsTableCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE8B8E415BDD8420010A6D7 /* StatsTableCellController.m */; };
+		DDF3128716B45EBA00015C6C /* IconStandard.png in Resources */ = {isa = PBXBuildFile; fileRef = DDF3128616B45EBA00015C6C /* IconStandard.png */; };
+		DDF3128B16B45FB500015C6C /* IconAppStore.png in Resources */ = {isa = PBXBuildFile; fileRef = DDF3128A16B45FB500015C6C /* IconAppStore.png */; };
+		DDF3129016B460AE00015C6C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDF3128F16B460AE00015C6C /* Default-568h@2x.png */; };
+		DDF3129316B461F700015C6C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AE1E16028D4F00493F52 /* Default@2x.png */; };
+		DDF3129716B4623800015C6C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DDF3129616B4623800015C6C /* Default.png */; };
+		DDF312A716B46A4B00015C6C /* Singleton.txt in Resources */ = {isa = PBXBuildFile; fileRef = DDF312A616B46A4B00015C6C /* Singleton.txt */; };
+		DDF312AE16B4863100015C6C /* bakåtpil.png in Resources */ = {isa = PBXBuildFile; fileRef = DDF312AD16B4863100015C6C /* bakåtpil.png */; };
 		DDF39961162874930071F215 /* NatureResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF39960162874930071F215 /* NatureResultsViewController.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		DDB5888115B947AA009CF151 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DDB5884F15B947A9009CF151 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DDB5885715B947A9009CF151;
-			remoteInfo = Projektarbete_v1_2;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		000B98BC1619E58F0050AFB1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		000B98D1161B90E90050AFB1 /* Someicon4-114 kopia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Someicon4-114 kopia.png"; sourceTree = "<group>"; };
+		000B98D1161B90E90050AFB1 /* IconRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IconRetina.png; path = ../IconRetina.png; sourceTree = "<group>"; };
 		000B98D4161B94CE0050AFB1 /* Grön Banner 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Grön Banner 2.png"; sourceTree = "<group>"; };
 		000B98D5161B94CE0050AFB1 /* Röd Banner 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Röd Banner 2.png"; sourceTree = "<group>"; };
 		000DFE5315BEDFDC00138D06 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
@@ -148,8 +134,6 @@
 		002DBD1C1609194100E8B4A1 /* OneStars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OneStars.png; sourceTree = "<group>"; };
 		002DBD1D1609194100E8B4A1 /* ThreeStars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ThreeStars.png; sourceTree = "<group>"; };
 		002DBD1E1609194100E8B4A1 /* TwoStars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TwoStars.png; sourceTree = "<group>"; };
-		002DBD2816092C2800E8B4A1 /* icon4-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon4-114.png"; sourceTree = "<group>"; };
-		002DBD2E1609323000E8B4A1 /* icon5-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon5-114.png"; sourceTree = "<group>"; };
 		00346EBC16A7427B00E94B1D /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
 		00346EBD16A7427B00E94B1D /* libFlurry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry.a; sourceTree = "<group>"; };
 		00346EC016A744EC00E94B1D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -171,7 +155,7 @@
 		006E426516069A2C003B5BC7 /* StartButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StartButton.png; sourceTree = "<group>"; };
 		007BC47A15C09B4E009BC60D /* MathTableCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathTableCellController.h; sourceTree = "<group>"; };
 		007BC47B15C09B4E009BC60D /* MathTableCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathTableCellController.m; sourceTree = "<group>"; };
-		007BC47C15C09B4E009BC60D /* MathTableCellController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MathTableCellController.xib; sourceTree = "<group>"; };
+		007BC47C15C09B4E009BC60D /* MathTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MathTableCell.xib; sourceTree = "<group>"; };
 		00946E45167FC804002C9786 /* brun2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brun2.png; sourceTree = "<group>"; };
 		00C6AD6415FD248600493F52 /* Addition.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Addition.png; sourceTree = "<group>"; };
 		00C6AD6515FD248600493F52 /* Division.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Division.png; sourceTree = "<group>"; };
@@ -180,7 +164,7 @@
 		00C6AD6815FD248600493F52 /* Multiplication.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Multiplication.png; sourceTree = "<group>"; };
 		00C6AD6915FD248600493F52 /* Percent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Percent.png; sourceTree = "<group>"; };
 		00C6AD6A15FD248600493F52 /* Subtraction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Subtraction.png; sourceTree = "<group>"; };
-		00C6AE1E16028D4F00493F52 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		00C6AE1E16028D4F00493F52 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		00C6AE2C1604C7BD00493F52 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		00C71468162DC72600753136 /* 1ButtonDepressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1ButtonDepressed.png; sourceTree = "<group>"; };
 		00C71469162DC72600753136 /* 1ButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1ButtonPressed.png; sourceTree = "<group>"; };
@@ -200,12 +184,12 @@
 		00C71481162DC88D00753136 /* TestButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestButtonPressed.png; sourceTree = "<group>"; };
 		00C71488162DCA4900753136 /* Box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Box.png; sourceTree = "<group>"; };
 		00C7148A162DCB6000753136 /* PapperGM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PapperGM.png; sourceTree = "<group>"; };
-		00D655DD15BDFC1C00314BBB /* GlobalStatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalStatsViewController.h; sourceTree = "<group>"; };
-		00D655DE15BDFC1C00314BBB /* GlobalStatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalStatsViewController.m; sourceTree = "<group>"; };
+		00D655DD15BDFC1C00314BBB /* StatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsViewController.h; sourceTree = "<group>"; };
+		00D655DE15BDFC1C00314BBB /* StatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatsViewController.m; sourceTree = "<group>"; };
 		00E66CF315BC9DA600174D38 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
 		00E66CF415BC9DA600174D38 /* Singleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Singleton.m; sourceTree = "<group>"; };
-		00E66CF515BC9DA600174D38 /* StatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsViewController.h; sourceTree = "<group>"; };
-		00E66CF615BC9DA600174D38 /* StatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatsViewController.m; sourceTree = "<group>"; };
+		00E66CF515BC9DA600174D38 /* MathStatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathStatsViewController.h; sourceTree = "<group>"; };
+		00E66CF615BC9DA600174D38 /* MathStatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathStatsViewController.m; sourceTree = "<group>"; };
 		00F082C5161ECA1500616FBE /* Paper4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Paper4.png; sourceTree = "<group>"; };
 		00F082C6161ECA1500616FBE /* BioButton2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BioButton2.png; sourceTree = "<group>"; };
 		00F082C7161ECA1500616FBE /* PhysButton2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PhysButton2.png; sourceTree = "<group>"; };
@@ -223,29 +207,24 @@
 		DD18EECA16A5A33A003185F8 /* brown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brown.png; sourceTree = "<group>"; };
 		DD18EECC16A5C3DF003185F8 /* white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white.png; sourceTree = "<group>"; };
 		DD18EECE16A5CA99003185F8 /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
-		DD412BC7161D94B100F950E1 /* Database.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = Database.sql; sourceTree = "<group>"; };
+		DD412BC7161D94B100F950E1 /* Database.sql */ = {isa = PBXFileReference; lastKnownFileType = file; name = Database.sql; path = Projektarbete_v1_2/Database.sql; sourceTree = "<group>"; };
 		DD751EC0161B7CB200C4E2D1 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
-		DD76D37D161C97DC0017D48F /* NatureCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NatureCategoryCell.h; sourceTree = "<group>"; };
-		DD76D37E161C97DC0017D48F /* NatureCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NatureCategoryCell.m; sourceTree = "<group>"; };
+		DD76D37D161C97DC0017D48F /* NatureCategoryCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NatureCategoryCellController.h; sourceTree = "<group>"; };
+		DD76D37E161C97DC0017D48F /* NatureCategoryCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NatureCategoryCellController.m; sourceTree = "<group>"; };
 		DD76D380161C97F80017D48F /* NatureCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NatureCategoryCell.xib; sourceTree = "<group>"; };
 		DD76D382161CA98A0017D48F /* NatureDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NatureDetailViewController.h; sourceTree = "<group>"; };
 		DD76D383161CA98A0017D48F /* NatureDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NatureDetailViewController.m; sourceTree = "<group>"; };
-		DDB5885815B947A9009CF151 /* Projektarbete_v1_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Projektarbete_v1_2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDB5885815B947A9009CF151 /* Simple Science.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Science.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB5885C15B947A9009CF151 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DDB5885E15B947A9009CF151 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DDB5886015B947A9009CF151 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		DDB5886415B947A9009CF151 /* Projektarbete_v1_2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Projektarbete_v1_2-Info.plist"; sourceTree = "<group>"; };
+		DDB5886415B947A9009CF151 /* Simple Science-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Simple Science-Info.plist"; path = "Projektarbete_v1_2/Simple Science-Info.plist"; sourceTree = "<group>"; };
 		DDB5886615B947A9009CF151 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		DDB5886815B947A9009CF151 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		DDB5886A15B947A9009CF151 /* Projektarbete_v1_2-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Projektarbete_v1_2-Prefix.pch"; sourceTree = "<group>"; };
+		DDB5886815B947A9009CF151 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Projektarbete_v1_2/main.m; sourceTree = "<group>"; };
+		DDB5886A15B947A9009CF151 /* Simple Science-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Simple Science-Prefix.pch"; path = "Projektarbete_v1_2/Simple Science-Prefix.pch"; sourceTree = "<group>"; };
 		DDB5886B15B947A9009CF151 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DDB5886C15B947A9009CF151 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		DDB5887C15B947AA009CF151 /* Projektarbete_v1_2Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Projektarbete_v1_2Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB5887D15B947AA009CF151 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		DDB5888515B947AA009CF151 /* Projektarbete_v1_2Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Projektarbete_v1_2Tests-Info.plist"; sourceTree = "<group>"; };
-		DDB5888715B947AA009CF151 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		DDB5888915B947AA009CF151 /* Projektarbete_v1_2Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Projektarbete_v1_2Tests.h; sourceTree = "<group>"; };
-		DDB5888A15B947AA009CF151 /* Projektarbete_v1_2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Projektarbete_v1_2Tests.m; sourceTree = "<group>"; };
 		DDB5889C15B955C6009CF151 /* MathDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathDetailViewController.h; sourceTree = "<group>"; };
 		DDB5889D15B955C6009CF151 /* MathDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathDetailViewController.m; sourceTree = "<group>"; };
 		DDB588A615B99DEC009CF151 /* MathExerciseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathExerciseViewController.h; sourceTree = "<group>"; };
@@ -272,6 +251,12 @@
 		DDE8B8E015BDD72E0010A6D7 /* StatsTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatsTableCell.xib; sourceTree = "<group>"; };
 		DDE8B8E315BDD8420010A6D7 /* StatsTableCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsTableCellController.h; sourceTree = "<group>"; };
 		DDE8B8E415BDD8420010A6D7 /* StatsTableCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatsTableCellController.m; sourceTree = "<group>"; };
+		DDF3128616B45EBA00015C6C /* IconStandard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IconStandard.png; path = ../IconStandard.png; sourceTree = "<group>"; };
+		DDF3128A16B45FB500015C6C /* IconAppStore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconAppStore.png; sourceTree = "<group>"; };
+		DDF3128F16B460AE00015C6C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		DDF3129616B4623800015C6C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
+		DDF312A616B46A4B00015C6C /* Singleton.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Singleton.txt; sourceTree = "<group>"; };
+		DDF312AD16B4863100015C6C /* bakåtpil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bakåtpil.png"; sourceTree = SOURCE_ROOT; };
 		DDF3995F162874930071F215 /* NatureResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NatureResultsViewController.h; sourceTree = "<group>"; };
 		DDF39960162874930071F215 /* NatureResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NatureResultsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -282,22 +267,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				00346EC116A744EC00E94B1D /* SystemConfiguration.framework in Frameworks */,
-				DD751EC1161B7CB200C4E2D1 /* libsqlite3.0.dylib in Frameworks */,
 				00C6AE2D1604C7BD00493F52 /* MessageUI.framework in Frameworks */,
 				DDB5885D15B947A9009CF151 /* UIKit.framework in Frameworks */,
 				DDB5885F15B947A9009CF151 /* Foundation.framework in Frameworks */,
 				DDB5886115B947A9009CF151 /* CoreGraphics.framework in Frameworks */,
+				DD751EC1161B7CB200C4E2D1 /* libsqlite3.0.dylib in Frameworks */,
 				00346EBE16A7427B00E94B1D /* libFlurry.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DDB5887815B947AA009CF151 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DDB5887E15B947AA009CF151 /* SenTestingKit.framework in Frameworks */,
-				DDB5887F15B947AA009CF151 /* UIKit.framework in Frameworks */,
-				DDB5888015B947AA009CF151 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,29 +301,7 @@
 			path = Flurry;
 			sourceTree = "<group>";
 		};
-		007BC48015C09E0A009BC60D /* Bilder */ = {
-			isa = PBXGroup;
-			children = (
-				00C6AD6415FD248600493F52 /* Addition.png */,
-				DDE5CCA31600ED1C002005BF /* Mixed.png */,
-				00C6AD6515FD248600493F52 /* Division.png */,
-				00C6AD6615FD248600493F52 /* Equations.png */,
-				00C6AD6715FD248600493F52 /* Fraction.png */,
-				00C6AD6815FD248600493F52 /* Multiplication.png */,
-				00C6AD6915FD248600493F52 /* Percent.png */,
-				00C6AD6A15FD248600493F52 /* Subtraction.png */,
-				DD18EED816A69DF0003185F8 /* Räknesätt */,
-				00C71467162DC71700753136 /* Gamemodeknappar */,
-				DD18EED416A686F3003185F8 /* Stats View Controller */,
-				DD18EED316A686B5003185F8 /* About View Controller */,
-				DD18EED216A6869E003185F8 /* Stjärnor */,
-				DD18EED116A6868F003185F8 /* Allmän design */,
-				DD18EED016A68674003185F8 /* Knappar */,
-			);
-			name = Bilder;
-			sourceTree = "<group>";
-		};
-		00C71467162DC71700753136 /* Gamemodeknappar */ = {
+		00C71467162DC71700753136 /* Game Mode */ = {
 			isa = PBXGroup;
 			children = (
 				00C71468162DC72600753136 /* 1ButtonDepressed.png */,
@@ -370,10 +323,10 @@
 				00C71488162DCA4900753136 /* Box.png */,
 				00C7148A162DCB6000753136 /* PapperGM.png */,
 			);
-			name = Gamemodeknappar;
+			name = "Game Mode";
 			sourceTree = "<group>";
 		};
-		DD18EED016A68674003185F8 /* Knappar */ = {
+		DD18EED016A68674003185F8 /* Game */ = {
 			isa = PBXGroup;
 			children = (
 				0034764216A6E1C000056F98 /* PauseButton.png */,
@@ -382,16 +335,16 @@
 				DD18EECA16A5A33A003185F8 /* brown.png */,
 				DD18EEC716A58332003185F8 /* red.png */,
 			);
-			name = Knappar;
+			name = Game;
 			sourceTree = "<group>";
 		};
-		DD18EED116A6868F003185F8 /* Allmän design */ = {
+		DD18EED116A6868F003185F8 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				DDF312AD16B4863100015C6C /* bakåtpil.png */,
 				005C23BF161793750056EA7F /* Arrow1.png */,
 				000B98D4161B94CE0050AFB1 /* Grön Banner 2.png */,
 				000B98D5161B94CE0050AFB1 /* Röd Banner 2.png */,
-				DD18EED716A69CCA003185F8 /* Ämnesknappar */,
 				005F5E4E1624323F006E2CBC /* SubjectText.png */,
 				005F5E4F1624323F006E2CBC /* DocumentText.png */,
 				005F5E501624323F006E2CBC /* SimpleText.png */,
@@ -410,10 +363,10 @@
 				005C23AC16177C490056EA7F /* RödBanner1.png */,
 				005C23AD16177C490056EA7F /* Wood1.png */,
 			);
-			name = "Allmän design";
+			name = General;
 			sourceTree = "<group>";
 		};
-		DD18EED216A6869E003185F8 /* Stjärnor */ = {
+		DD18EED216A6869E003185F8 /* Stars */ = {
 			isa = PBXGroup;
 			children = (
 				002DBD1C1609194100E8B4A1 /* OneStars.png */,
@@ -422,19 +375,19 @@
 				004DD9E91608AD5D008B97E7 /* NoStars.png */,
 				DDBA349716613A7A00B600C4 /* ThreeStarsSmall.png */,
 			);
-			name = "Stjärnor";
+			name = Stars;
 			sourceTree = "<group>";
 		};
-		DD18EED316A686B5003185F8 /* About View Controller */ = {
+		DD18EED316A686B5003185F8 /* About */ = {
 			isa = PBXGroup;
 			children = (
 				DDBA34931661160900B600C4 /* AboutBG.png */,
 				DDBA34951661185F00B600C4 /* knappBG.png */,
 			);
-			name = "About View Controller";
+			name = About;
 			sourceTree = "<group>";
 		};
-		DD18EED416A686F3003185F8 /* Stats View Controller */ = {
+		DD18EED416A686F3003185F8 /* Stats */ = {
 			isa = PBXGroup;
 			children = (
 				006E426516069A2C003B5BC7 /* StartButton.png */,
@@ -446,10 +399,10 @@
 				00F7C93316599DA100B65A2E /* BioBanner.png */,
 				00F7C942165BCE4800B65A2E /* StatsText.png */,
 			);
-			name = "Stats View Controller";
+			name = Stats;
 			sourceTree = "<group>";
 		};
-		DD18EED716A69CCA003185F8 /* Ämnesknappar */ = {
+		DD18EED716A69CCA003185F8 /* Subject */ = {
 			isa = PBXGroup;
 			children = (
 				00F082C6161ECA1500616FBE /* BioButton2.png */,
@@ -457,57 +410,26 @@
 				00F082C8161ECA1500616FBE /* ChemButton2.png */,
 				00F082C9161ECA1500616FBE /* MathButton2.png */,
 			);
-			name = "Ämnesknappar";
+			name = Subject;
 			sourceTree = "<group>";
 		};
-		DD18EED816A69DF0003185F8 /* Räknesätt */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Räknesätt";
-			sourceTree = "<group>";
-		};
-		DD18EED916A69E58003185F8 /* Andra filer */ = {
-			isa = PBXGroup;
-			children = (
-				DD412BC7161D94B100F950E1 /* Database.sql */,
-				DDB5886B15B947A9009CF151 /* AppDelegate.h */,
-				DDB5886C15B947A9009CF151 /* AppDelegate.m */,
-				00E66CF315BC9DA600174D38 /* Singleton.h */,
-				00E66CF415BC9DA600174D38 /* Singleton.m */,
-			);
-			name = "Andra filer";
-			sourceTree = "<group>";
-		};
-		DD18EEDA16A69F34003185F8 /* Andra view controllers */ = {
+		DD18EEDA16A69F34003185F8 /* General */ = {
 			isa = PBXGroup;
 			children = (
 				000DFE5315BEDFDC00138D06 /* MainMenuViewController.h */,
 				000DFE5415BEDFDC00138D06 /* MainMenuViewController.m */,
 				000DFE5615BEE4D800138D06 /* AboutViewController.h */,
 				000DFE5715BEE4D800138D06 /* AboutViewController.m */,
-				00D655DD15BDFC1C00314BBB /* GlobalStatsViewController.h */,
-				00D655DE15BDFC1C00314BBB /* GlobalStatsViewController.m */,
-				00E66CF515BC9DA600174D38 /* StatsViewController.h */,
-				00E66CF615BC9DA600174D38 /* StatsViewController.m */,
-				DDCABE23162C265E00F83AB5 /* NatureStatsViewController.h */,
-				DDCABE24162C265E00F83AB5 /* NatureStatsViewController.m */,
 			);
-			name = "Andra view controllers";
+			name = General;
 			sourceTree = "<group>";
 		};
 		DDB5884D15B947A9009CF151 = {
 			isa = PBXGroup;
 			children = (
-				000B98D1161B90E90050AFB1 /* Someicon4-114 kopia.png */,
-				DD751EC0161B7CB200C4E2D1 /* libsqlite3.0.dylib */,
-				000B98BC1619E58F0050AFB1 /* Default-568h@2x.png */,
-				002DBD2E1609323000E8B4A1 /* icon5-114.png */,
-				002DBD2816092C2800E8B4A1 /* icon4-114.png */,
-				00C6AE2C1604C7BD00493F52 /* MessageUI.framework */,
-				00C6AE1E16028D4F00493F52 /* Default@2x.png */,
-				DDB5886215B947A9009CF151 /* Projektarbete_v1_2 */,
-				DDB5888315B947AA009CF151 /* Projektarbete_v1_2Tests */,
+				DDB5886215B947A9009CF151 /* Classes */,
+				DDF3128516B45DDC00015C6C /* Resources */,
+				DDF3128316B45D9100015C6C /* Other Sources */,
 				DDB5885B15B947A9009CF151 /* Frameworks */,
 				DDB5885915B947A9009CF151 /* Products */,
 			);
@@ -516,8 +438,7 @@
 		DDB5885915B947A9009CF151 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DDB5885815B947A9009CF151 /* Projektarbete_v1_2.app */,
-				DDB5887C15B947AA009CF151 /* Projektarbete_v1_2Tests.octest */,
+				DDB5885815B947A9009CF151 /* Simple Science.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -525,6 +446,8 @@
 		DDB5885B15B947A9009CF151 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DD751EC0161B7CB200C4E2D1 /* libsqlite3.0.dylib */,
+				00C6AE2C1604C7BD00493F52 /* MessageUI.framework */,
 				00346EC016A744EC00E94B1D /* SystemConfiguration.framework */,
 				DDB5885C15B947A9009CF151 /* UIKit.framework */,
 				DDB5885E15B947A9009CF151 /* Foundation.framework */,
@@ -534,48 +457,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DDB5886215B947A9009CF151 /* Projektarbete_v1_2 */ = {
+		DDB5886215B947A9009CF151 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				00346EBB16A7427B00E94B1D /* Flurry */,
-				DD18EEDA16A69F34003185F8 /* Andra view controllers */,
-				DD18EED916A69E58003185F8 /* Andra filer */,
-				DDBA349216610DB300B600C4 /* Design */,
-				DDB5889815B953A3009CF151 /* Math */,
-				0023A32F15BF4E4F006BD781 /* Nature */,
-				DDB5886315B947A9009CF151 /* Supporting Files */,
+				DDF3129816B4639E00015C6C /* AppDelegate */,
+				DDF3129916B463AC00015C6C /* Controllers */,
+				DDF3129A16B463B300015C6C /* Helpers */,
+				DDF3129B16B463CF00015C6C /* Models */,
 			);
+			name = Classes;
 			path = Projektarbete_v1_2;
-			sourceTree = "<group>";
-		};
-		DDB5886315B947A9009CF151 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				DDB5886415B947A9009CF151 /* Projektarbete_v1_2-Info.plist */,
-				DDB5886515B947A9009CF151 /* InfoPlist.strings */,
-				DDB5886815B947A9009CF151 /* main.m */,
-				DDB5886A15B947A9009CF151 /* Projektarbete_v1_2-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		DDB5888315B947AA009CF151 /* Projektarbete_v1_2Tests */ = {
-			isa = PBXGroup;
-			children = (
-				DDB5888915B947AA009CF151 /* Projektarbete_v1_2Tests.h */,
-				DDB5888A15B947AA009CF151 /* Projektarbete_v1_2Tests.m */,
-				DDB5888415B947AA009CF151 /* Supporting Files */,
-			);
-			path = Projektarbete_v1_2Tests;
-			sourceTree = "<group>";
-		};
-		DDB5888415B947AA009CF151 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				DDB5888515B947AA009CF151 /* Projektarbete_v1_2Tests-Info.plist */,
-				DDB5888615B947AA009CF151 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		DDB5889815B953A3009CF151 /* Math */ = {
@@ -598,31 +489,187 @@
 		DDBA349216610DB300B600C4 /* Design */ = {
 			isa = PBXGroup;
 			children = (
-				007BC48015C09E0A009BC60D /* Bilder */,
 				DDCABE2C162D508A00F83AB5 /* GamemodeSegmentedControlButtonController.h */,
 				DDCABE2D162D508B00F83AB5 /* GamemodeSegmentedControlButtonController.m */,
 				DDCABE2F162D50DE00F83AB5 /* DifficultySegmentedControlButtonController.h */,
 				DDCABE30162D50DE00F83AB5 /* DifficultySegmentedControlButtonController.m */,
 				007BC47A15C09B4E009BC60D /* MathTableCellController.h */,
 				007BC47B15C09B4E009BC60D /* MathTableCellController.m */,
-				007BC47C15C09B4E009BC60D /* MathTableCellController.xib */,
 				DDE8B8E315BDD8420010A6D7 /* StatsTableCellController.h */,
 				DDE8B8E415BDD8420010A6D7 /* StatsTableCellController.m */,
-				DDE8B8E015BDD72E0010A6D7 /* StatsTableCell.xib */,
-				DD76D37D161C97DC0017D48F /* NatureCategoryCell.h */,
-				DD76D37E161C97DC0017D48F /* NatureCategoryCell.m */,
-				DD76D380161C97F80017D48F /* NatureCategoryCell.xib */,
-				DDBA346B165D058B00B600C4 /* MainStoryboard.storyboard */,
+				DD76D37D161C97DC0017D48F /* NatureCategoryCellController.h */,
+				DD76D37E161C97DC0017D48F /* NatureCategoryCellController.m */,
 			);
 			name = Design;
+			sourceTree = "<group>";
+		};
+		DDF3128316B45D9100015C6C /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				DDB5886415B947A9009CF151 /* Simple Science-Info.plist */,
+				DDB5886515B947A9009CF151 /* InfoPlist.strings */,
+				DDB5886815B947A9009CF151 /* main.m */,
+				DDB5886A15B947A9009CF151 /* Simple Science-Prefix.pch */,
+				DD412BC7161D94B100F950E1 /* Database.sql */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		DDF3128516B45DDC00015C6C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DDF3128816B45ED500015C6C /* Images */,
+				DDF3129D16B464F200015C6C /* NIBs & Storyboards */,
+			);
+			name = Resources;
+			path = Projektarbete_v1_2;
+			sourceTree = "<group>";
+		};
+		DDF3128816B45ED500015C6C /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				DDF3129E16B4653D00015C6C /* Application */,
+				DDF3128C16B45FF900015C6C /* Launch */,
+				DDF3128916B45EE300015C6C /* Icons */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		DDF3128916B45EE300015C6C /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				DDF3128A16B45FB500015C6C /* IconAppStore.png */,
+				DDF3128616B45EBA00015C6C /* IconStandard.png */,
+				000B98D1161B90E90050AFB1 /* IconRetina.png */,
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
+		DDF3128C16B45FF900015C6C /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				DDF3129616B4623800015C6C /* Default.png */,
+				00C6AE1E16028D4F00493F52 /* Default@2x.png */,
+				DDF3128F16B460AE00015C6C /* Default-568h@2x.png */,
+			);
+			name = Launch;
+			sourceTree = "<group>";
+		};
+		DDF3129816B4639E00015C6C /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				DDB5886B15B947A9009CF151 /* AppDelegate.h */,
+				DDB5886C15B947A9009CF151 /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		DDF3129916B463AC00015C6C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DDF312AF16B49A6300015C6C /* Stats */,
+				DD18EEDA16A69F34003185F8 /* General */,
+				DDBA349216610DB300B600C4 /* Design */,
+				DDB5889815B953A3009CF151 /* Math */,
+				0023A32F15BF4E4F006BD781 /* Nature */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		DDF3129A16B463B300015C6C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DDF3129C16B4646F00015C6C /* Singleton */,
+				00346EBB16A7427B00E94B1D /* Flurry */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		DDF3129B16B463CF00015C6C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		DDF3129C16B4646F00015C6C /* Singleton */ = {
+			isa = PBXGroup;
+			children = (
+				00E66CF315BC9DA600174D38 /* Singleton.h */,
+				00E66CF415BC9DA600174D38 /* Singleton.m */,
+				DDF312A616B46A4B00015C6C /* Singleton.txt */,
+			);
+			name = Singleton;
+			sourceTree = "<group>";
+		};
+		DDF3129D16B464F200015C6C /* NIBs & Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				DDBA346B165D058B00B600C4 /* MainStoryboard.storyboard */,
+				007BC47C15C09B4E009BC60D /* MathTableCell.xib */,
+				DDE8B8E015BDD72E0010A6D7 /* StatsTableCell.xib */,
+				DD76D380161C97F80017D48F /* NatureCategoryCell.xib */,
+			);
+			name = "NIBs & Storyboards";
+			sourceTree = "<group>";
+		};
+		DDF3129E16B4653D00015C6C /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				DDF312A016B465E300015C6C /* Buttons */,
+				DD18EED116A6868F003185F8 /* General */,
+				DD18EED216A6869E003185F8 /* Stars */,
+				DD18EED316A686B5003185F8 /* About */,
+				DD18EED416A686F3003185F8 /* Stats */,
+				DDF3129F16B4654900015C6C /* Math Operations */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		DDF3129F16B4654900015C6C /* Math Operations */ = {
+			isa = PBXGroup;
+			children = (
+				00C6AD6415FD248600493F52 /* Addition.png */,
+				DDE5CCA31600ED1C002005BF /* Mixed.png */,
+				00C6AD6515FD248600493F52 /* Division.png */,
+				00C6AD6615FD248600493F52 /* Equations.png */,
+				00C6AD6715FD248600493F52 /* Fraction.png */,
+				00C6AD6815FD248600493F52 /* Multiplication.png */,
+				00C6AD6915FD248600493F52 /* Percent.png */,
+				00C6AD6A15FD248600493F52 /* Subtraction.png */,
+			);
+			name = "Math Operations";
+			sourceTree = "<group>";
+		};
+		DDF312A016B465E300015C6C /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				00C71467162DC71700753136 /* Game Mode */,
+				DD18EED716A69CCA003185F8 /* Subject */,
+				DD18EED016A68674003185F8 /* Game */,
+			);
+			name = Buttons;
+			sourceTree = "<group>";
+		};
+		DDF312AF16B49A6300015C6C /* Stats */ = {
+			isa = PBXGroup;
+			children = (
+				00D655DD15BDFC1C00314BBB /* StatsViewController.h */,
+				00D655DE15BDFC1C00314BBB /* StatsViewController.m */,
+				00E66CF515BC9DA600174D38 /* MathStatsViewController.h */,
+				00E66CF615BC9DA600174D38 /* MathStatsViewController.m */,
+				DDCABE23162C265E00F83AB5 /* NatureStatsViewController.h */,
+				DDCABE24162C265E00F83AB5 /* NatureStatsViewController.m */,
+			);
+			name = Stats;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DDB5885715B947A9009CF151 /* Projektarbete_v1_2 */ = {
+		DDB5885715B947A9009CF151 /* Simple Science */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DDB5888E15B947AA009CF151 /* Build configuration list for PBXNativeTarget "Projektarbete_v1_2" */;
+			buildConfigurationList = DDB5888E15B947AA009CF151 /* Build configuration list for PBXNativeTarget "Simple Science" */;
 			buildPhases = (
 				DDB5885415B947A9009CF151 /* Sources */,
 				DDB5885515B947A9009CF151 /* Frameworks */,
@@ -632,29 +679,10 @@
 			);
 			dependencies = (
 			);
-			name = Projektarbete_v1_2;
+			name = "Simple Science";
 			productName = Projektarbete_v1_2;
-			productReference = DDB5885815B947A9009CF151 /* Projektarbete_v1_2.app */;
+			productReference = DDB5885815B947A9009CF151 /* Simple Science.app */;
 			productType = "com.apple.product-type.application";
-		};
-		DDB5887B15B947AA009CF151 /* Projektarbete_v1_2Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DDB5889115B947AA009CF151 /* Build configuration list for PBXNativeTarget "Projektarbete_v1_2Tests" */;
-			buildPhases = (
-				DDB5887715B947AA009CF151 /* Sources */,
-				DDB5887815B947AA009CF151 /* Frameworks */,
-				DDB5887915B947AA009CF151 /* Resources */,
-				DDB5887A15B947AA009CF151 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DDB5888215B947AA009CF151 /* PBXTargetDependency */,
-			);
-			name = Projektarbete_v1_2Tests;
-			productName = Projektarbete_v1_2Tests;
-			productReference = DDB5887C15B947AA009CF151 /* Projektarbete_v1_2Tests.octest */;
-			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -664,7 +692,7 @@
 			attributes = {
 				LastUpgradeCheck = 0420;
 			};
-			buildConfigurationList = DDB5885215B947A9009CF151 /* Build configuration list for PBXProject "Projektarbete_v1_2" */;
+			buildConfigurationList = DDB5885215B947A9009CF151 /* Build configuration list for PBXProject "Simple Science" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -676,8 +704,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DDB5885715B947A9009CF151 /* Projektarbete_v1_2 */,
-				DDB5887B15B947AA009CF151 /* Projektarbete_v1_2Tests */,
+				DDB5885715B947A9009CF151 /* Simple Science */,
 			);
 		};
 /* End PBXProject section */
@@ -689,7 +716,7 @@
 			files = (
 				DDB5886715B947A9009CF151 /* InfoPlist.strings in Resources */,
 				DDE8B8E115BDD72E0010A6D7 /* StatsTableCell.xib in Resources */,
-				007BC47E15C09B4E009BC60D /* MathTableCellController.xib in Resources */,
+				007BC47E15C09B4E009BC60D /* MathTableCell.xib in Resources */,
 				00C6AD6B15FD248600493F52 /* Addition.png in Resources */,
 				00C6AD6C15FD248600493F52 /* Division.png in Resources */,
 				00C6AD6D15FD248600493F52 /* Equations.png in Resources */,
@@ -698,14 +725,11 @@
 				00C6AD7015FD248600493F52 /* Percent.png in Resources */,
 				00C6AD7115FD248600493F52 /* Subtraction.png in Resources */,
 				DDE5CCA41600ED1C002005BF /* Mixed.png in Resources */,
-				00C6AE1F16028D4F00493F52 /* Default@2x.png in Resources */,
 				006E426616069A2C003B5BC7 /* StartButton.png in Resources */,
 				004DD9ED1608AD5D008B97E7 /* NoStars.png in Resources */,
 				002DBD1F1609194100E8B4A1 /* OneStars.png in Resources */,
 				002DBD201609194100E8B4A1 /* ThreeStars.png in Resources */,
 				002DBD211609194100E8B4A1 /* TwoStars.png in Resources */,
-				002DBD2916092C2800E8B4A1 /* icon4-114.png in Resources */,
-				002DBD2F1609323000E8B4A1 /* icon5-114.png in Resources */,
 				005C23AF16177C490056EA7F /* RödBanner1.png in Resources */,
 				005C23B016177C490056EA7F /* Wood1.png in Resources */,
 				005C23B6161788F70056EA7F /* GrönBanner1.png in Resources */,
@@ -713,8 +737,7 @@
 				005C23BD161790EA0056EA7F /* TableViewBG2.png in Resources */,
 				005C23BE161790EA0056EA7F /* UnderTableView1.png in Resources */,
 				005C23C0161793750056EA7F /* Arrow1.png in Resources */,
-				000B98BD1619E58F0050AFB1 /* Default-568h@2x.png in Resources */,
-				000B98D2161B90E90050AFB1 /* Someicon4-114 kopia.png in Resources */,
+				000B98D2161B90E90050AFB1 /* IconRetina.png in Resources */,
 				000B98D6161B94CE0050AFB1 /* Grön Banner 2.png in Resources */,
 				000B98D7161B94CE0050AFB1 /* Röd Banner 2.png in Resources */,
 				DD76D381161C97F80017D48F /* NatureCategoryCell.xib in Resources */,
@@ -768,35 +791,17 @@
 				DD18EECD16A5C3DF003185F8 /* white.png in Resources */,
 				DD18EECF16A5CA99003185F8 /* green.png in Resources */,
 				0034764316A6E1C000056F98 /* PauseButton.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DDB5887915B947AA009CF151 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DDB5888815B947AA009CF151 /* InfoPlist.strings in Resources */,
-				DD412BC9161D94B100F950E1 /* Database.sql in Resources */,
+				DDF3128716B45EBA00015C6C /* IconStandard.png in Resources */,
+				DDF3128B16B45FB500015C6C /* IconAppStore.png in Resources */,
+				DDF3129016B460AE00015C6C /* Default-568h@2x.png in Resources */,
+				DDF3129316B461F700015C6C /* Default@2x.png in Resources */,
+				DDF3129716B4623800015C6C /* Default.png in Resources */,
+				DDF312A716B46A4B00015C6C /* Singleton.txt in Resources */,
+				DDF312AE16B4863100015C6C /* bakåtpil.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		DDB5887A15B947AA009CF151 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DDB5885415B947A9009CF151 /* Sources */ = {
@@ -809,16 +814,16 @@
 				DDB588A815B99DED009CF151 /* MathExerciseViewController.m in Sources */,
 				DDB588AC15B9A1AE009CF151 /* MathResultsViewController.m in Sources */,
 				00E66CF715BC9DA600174D38 /* Singleton.m in Sources */,
-				00E66CF815BC9DA600174D38 /* StatsViewController.m in Sources */,
+				00E66CF815BC9DA600174D38 /* MathStatsViewController.m in Sources */,
 				DDE8B8E515BDD8420010A6D7 /* StatsTableCellController.m in Sources */,
-				00D655DF15BDFC1C00314BBB /* GlobalStatsViewController.m in Sources */,
+				00D655DF15BDFC1C00314BBB /* StatsViewController.m in Sources */,
 				000DFE5515BEDFDC00138D06 /* MainMenuViewController.m in Sources */,
 				000DFE5815BEE4D800138D06 /* AboutViewController.m in Sources */,
 				0023A33215BF4EC9006BD781 /* NatureMasterViewController.m in Sources */,
 				007BC47D15C09B4E009BC60D /* MathTableCellController.m in Sources */,
 				DDE5CC9C15FFE368002005BF /* MathMasterViewController.m in Sources */,
 				DDD0C2C51601289A00CD3BDA /* MathQuizViewController.m in Sources */,
-				DD76D37F161C97DC0017D48F /* NatureCategoryCell.m in Sources */,
+				DD76D37F161C97DC0017D48F /* NatureCategoryCellController.m in Sources */,
 				DD76D384161CA98A0017D48F /* NatureDetailViewController.m in Sources */,
 				DDF39961162874930071F215 /* NatureResultsViewController.m in Sources */,
 				DDCABE25162C265E00F83AB5 /* NatureStatsViewController.m in Sources */,
@@ -827,23 +832,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DDB5887715B947AA009CF151 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DDB5888B15B947AA009CF151 /* Projektarbete_v1_2Tests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		DDB5888215B947AA009CF151 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DDB5885715B947A9009CF151 /* Projektarbete_v1_2 */;
-			targetProxy = DDB5888115B947AA009CF151 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DDB5886515B947A9009CF151 /* InfoPlist.strings */ = {
@@ -852,14 +841,7 @@
 				DDB5886615B947A9009CF151 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		DDB5888615B947AA009CF151 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DDB5888715B947AA009CF151 /* en */,
-			);
-			name = InfoPlist.strings;
+			path = Projektarbete_v1_2;
 			sourceTree = "<group>";
 		};
 		DDBA346B165D058B00B600C4 /* MainStoryboard.storyboard */ = {
@@ -922,14 +904,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Projektarbete_v1_2/Projektarbete_v1_2-Prefix.pch";
-				INFOPLIST_FILE = "Projektarbete_v1_2/Projektarbete_v1_2-Info.plist";
+				GCC_PREFIX_HEADER = "Projektarbete_v1_2/Simple Science-Prefix.pch";
+				INFOPLIST_FILE = "Projektarbete_v1_2/Simple Science-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Projektarbete_v1_2/Flurry\"",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Simple Science";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -939,57 +921,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Projektarbete_v1_2/Projektarbete_v1_2-Prefix.pch";
-				INFOPLIST_FILE = "Projektarbete_v1_2/Projektarbete_v1_2-Info.plist";
+				GCC_PREFIX_HEADER = "Projektarbete_v1_2/Simple Science-Prefix.pch";
+				INFOPLIST_FILE = "Projektarbete_v1_2/Simple Science-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Projektarbete_v1_2/Flurry\"",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Simple Science";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		DDB5889215B947AA009CF151 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Projektarbete_v1_2.app/Projektarbete_v1_2";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Projektarbete_v1_2/Projektarbete_v1_2-Prefix.pch";
-				INFOPLIST_FILE = "Projektarbete_v1_2Tests/Projektarbete_v1_2Tests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		DDB5889315B947AA009CF151 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Projektarbete_v1_2.app/Projektarbete_v1_2";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Projektarbete_v1_2/Projektarbete_v1_2-Prefix.pch";
-				INFOPLIST_FILE = "Projektarbete_v1_2Tests/Projektarbete_v1_2Tests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DDB5885215B947A9009CF151 /* Build configuration list for PBXProject "Projektarbete_v1_2" */ = {
+		DDB5885215B947A9009CF151 /* Build configuration list for PBXProject "Simple Science" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DDB5888C15B947AA009CF151 /* Debug */,
@@ -998,20 +946,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DDB5888E15B947AA009CF151 /* Build configuration list for PBXNativeTarget "Projektarbete_v1_2" */ = {
+		DDB5888E15B947AA009CF151 /* Build configuration list for PBXNativeTarget "Simple Science" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DDB5888F15B947AA009CF151 /* Debug */,
 				DDB5889015B947AA009CF151 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DDB5889115B947AA009CF151 /* Build configuration list for PBXNativeTarget "Projektarbete_v1_2Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DDB5889215B947AA009CF151 /* Debug */,
-				DDB5889315B947AA009CF151 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

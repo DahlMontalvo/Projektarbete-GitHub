@@ -1,68 +1,24 @@
 //
-//  ExerciseViewController.m
-//  Projektarbete_v1_2
+//  MathExerciseViewController.m
+//  Simple Science
 //
-//  Created by Jonas Dahl on 7/20/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 Jonas Dahl & Philip Montalvo. All rights reserved.
 //
 
 #import "MathExerciseViewController.h"
 
 @implementation MathExerciseViewController
 
-@synthesize operation;
-@synthesize difficulty;
-@synthesize start_countdown_date;
-@synthesize startCountdownLabel;
-@synthesize darkView;
-@synthesize quizArray;
-@synthesize questionAtm;
-@synthesize answer;
-@synthesize countdownLabel;
-@synthesize correctAnswers;
-@synthesize correctAnswersLabel;
-@synthesize numberLabel;
-@synthesize exerciseLabel;
-@synthesize nextButton;
-@synthesize answerFromUser;
-@synthesize navItem;
-@synthesize gameMode;
-@synthesize pauseButton;
-@synthesize countdownCounter;
-@synthesize cancelCountdown;
-@synthesize finalTime;
-@synthesize interval;
-@synthesize decimalSignInserted;
-@synthesize keyboard0;
-@synthesize keyboardback;
-@synthesize keyboard1;
-@synthesize keyboard2;
-@synthesize keyboard3;
-@synthesize keyboard4;
-@synthesize keyboard5;
-@synthesize keyboard6;
-@synthesize keyboard7;
-@synthesize keyboard8;
-@synthesize keyboard9;
-@synthesize startCountdownTimer;
-@synthesize keyboarddot;
-@synthesize startCountdown;
-@synthesize testStarted;
-@synthesize startCountdownDate;
-@synthesize startCountdownCounter, progressBar;
+@synthesize operation, difficulty, start_countdown_date, startCountdownLabel, darkView, quizArray, questionAtm, answer, countdownLabel, correctAnswers, correctAnswersLabel, numberLabel, exerciseLabel, nextButton, answerFromUser, navItem, gameMode, pauseButton, countdownCounter, cancelCountdown, finalTime, interval, decimalSignInserted, keyboard0, keyboardback, keyboard1, keyboard2, keyboard3, keyboard4, keyboard5, keyboard6, keyboard7, keyboard8, keyboard9, startCountdownTimer, startCountdown, testStarted, startCountdownDate, startCountdownCounter, progressBar;
 
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+#pragma mark - Initialization
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
     return self;
 }
 
-- (void)timer
-{
+#pragma mark - Timer
+- (void)timer {
     //RÄKNAR TIDEN UPPÅT
     NSDate *currentDate = [NSDate date];
     NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:start_date];
@@ -74,8 +30,7 @@
     countdownLabel.text = timeString;
 }
 
--(void)onTimerStart
-{
+-(void)onTimerStart {
     //NÄR STOPPURET STARTAS FÖRSTA GÅNGEN
     time_passed = 0;
     
@@ -86,23 +41,17 @@
     timer = [NSTimer timerWithTimeInterval:1.0/10.0 target:self selector:@selector(onTimer) userInfo:nil repeats:YES];
 }
 
--(void)onPause
-{
-    //CALLA FÖR ATT PAUSA KLOCKAN
+-(void)onPause {
     //Räkna ut passerad tid
     if (testStarted == YES) {
           time_passed += [[NSDate date] timeIntervalSinceDate: start_date];
         
     }
-  
-    
     //Stanna klockan
     [timer invalidate];
 }
 
--(void)onUnpause
-{   
-    //STARTAR ETT PAUSA UR
+-(void)onUnpause {
     //Nytt startdatum
     start_date = [NSDate date];
     
@@ -110,18 +59,13 @@
     timer = [NSTimer timerWithTimeInterval:1.0/10.0 target:self selector:@selector(onTimer) userInfo:nil repeats:YES];
 }
 
--(void)onReset
-{
-    //STANNAR KLOCKAN FÖR EVIGT
+-(void)onReset {
     [timer invalidate];
-    
     time_passed = 0;
-    
     start_date = nil;
 }
 
--(void)onTimer
-{
+-(void)onTimer {
     //UPPDATERAR UIt
     NSDate *currentDate = [NSDate date];
     NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:start_date]+time_passed;
@@ -133,8 +77,7 @@
     countdownLabel.text = timeString;
 }
 
-- (void)countdownTimer
-{
+- (void)countdownTimer {
     [self setCountdownCounter:(5+5*difficulty)-fabs([start_countdown_date timeIntervalSinceNow])];
     NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:countdownCounter];
     
@@ -150,8 +93,7 @@
     [progressBar setProgress:((5+5*difficulty)-countdownCounter)/(5+5*difficulty) animated:YES];
 }
 
-- (void)startCountdownMethod
-{
+- (void)startCountdownMethod {
     [self setStartCountdown:3-fabs([startCountdownDate timeIntervalSinceNow])];
     NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:startCountdown];
     
@@ -173,15 +115,10 @@
     
 }
 
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
+#pragma mark - View management
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
 }
-
-#pragma mark - View lifecycle
 
 - (NSMutableArray *) newQuizArrayFromCountingOperation:(NSString *)localOperation andDifficulty:(int)localDifficulty numberOfQuestions:(int)num {
     
@@ -429,7 +366,6 @@
         } 
         else if ([localOperation isEqualToString:@"Multiplication"]) {
             if (difficulty > 3) {
-                NSLog(@"multi");
                 number1/=difficulty;
                 number2/=difficulty;
                 number3/=difficulty;
@@ -524,8 +460,7 @@
     return localQuizArray;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     
     [darkView setHidden:NO];
@@ -543,7 +478,6 @@
     [keyboard8 setEnabled:NO];
     [keyboard9 setEnabled:NO];
     [keyboard0 setEnabled:NO];
-    [keyboarddot setEnabled:NO];
     [keyboardback setEnabled:NO];
     
     testStarted = NO;
@@ -579,6 +513,32 @@
     
 }
 
+- (void)viewDidUnload {
+    [self setCorrectAnswersLabel:nil];
+    [self setExerciseLabel:nil];
+    [self setAnswerFromUser:nil];
+    [self setExerciseLabel:nil];
+    [self setNextButton:nil];
+    [self setNumberLabel:nil];
+    [self setCountdownLabel:nil];
+    [self setPauseButton:nil];
+    [self setKeyboard1:nil];
+    [self setKeyboard2:nil];
+    [self setKeyboard3:nil];
+    [self setKeyboard4:nil];
+    [self setKeyboard5:nil];
+    [self setKeyboard6:nil];
+    [self setKeyboard7:nil];
+    [self setKeyboard8:nil];
+    [self setKeyboard9:nil];
+    [self setKeyboard0:nil];
+    [self setKeyboardback:nil];
+    [self setDarkView:nil];
+    [self setStartCountdownLabel:nil];
+    [self setProgressBar:nil];
+    [super viewDidUnload];
+}
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"Done"]) {
         MathResultsViewController *rvc = [segue destinationViewController];
@@ -590,13 +550,11 @@
     }
 }
 
-
+#pragma mark - Others
 -(void)nextButtonPressed {
     decimalSignInserted = NO;
-    [keyboarddot setEnabled:YES];
     testStarted = YES;
     questionAtm++;
-    NSLog(@"Fortsätter denna efter vi är klara är det fel! Qatm = %i", questionAtm);
     [countdownTimer invalidate];
     countdownTimer = nil;
     
@@ -626,7 +584,6 @@
             [keyboard8 setEnabled:YES];
             [keyboard9 setEnabled:YES];
             [keyboard0 setEnabled:YES];
-            [keyboarddot setEnabled:YES];
             [keyboardback setEnabled:YES];
         }
         
@@ -668,7 +625,6 @@
             NSDate *currentDate = [NSDate date];
             NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:testDate];
             finalTime = timeInterval;
-            NSLog(@"finaltime TEST: %f",finalTime);
             [timer invalidate];
             start_date = nil;
             testDate = nil;
@@ -682,7 +638,6 @@
             NSDate *currentDate = [NSDate date];
             NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:start_date]+time_passed;
             finalTime = timeInterval;
-            NSLog(@"finaltime PRAC: %f",finalTime);
             [timer invalidate];
             start_date = nil;
             testDate = nil;
@@ -743,13 +698,6 @@
     [self addNumber:9];
 }
 
-- (IBAction)keyboarddot:(id)sender {
-    if (decimalSignInserted == NO)
-        [answerFromUser setText:[NSString stringWithFormat:@"%@.",answerFromUser.text]];
-    decimalSignInserted = YES;
-    [keyboarddot setEnabled:NO];
-}
-
 - (IBAction)keyboard0:(id)sender {
     [self addNumber:0];
 }
@@ -758,7 +706,6 @@
     NSString *string = [answerFromUser text];
     if ([string hasSuffix:@"."]) {
         decimalSignInserted = NO;
-        [keyboarddot setEnabled:YES];
     }
     if ( [string length] > 0)
         string = [string substringToIndex:[string length] - 1];
@@ -766,16 +713,10 @@
 }
 
 - (IBAction)nextButton:(id)sender {
-    
     [self nextButtonPressed];
-    
 }
 
-// PAUSE OCH ACTIONSHEET
-
 -(IBAction)pausePressed:(id)sender {
-    //Hej! Ibland så laggar jag, jag låtsas bli tryckt två gånger fast jag bara blivit tryckt en enda gång. Det är inte bra. Hejdå!
-        
     UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"Quiz paused" delegate:self cancelButtonTitle:@"Resume" destructiveButtonTitle:@"Exit" otherButtonTitles:@"Restart quiz", nil];
 	popupQuery.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
 	[popupQuery showInView:[UIApplication sharedApplication].keyWindow];
@@ -785,12 +726,9 @@
         timer = nil;
         [self onPause];
     }
-    
-    
 }
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-
 	if (buttonIndex == 0) {
         cancelCountdown = YES;
         
@@ -804,7 +742,8 @@
         if ([self.navigationController.viewControllers objectAtIndex:1] != nil) {
             [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:1] animated:YES];
         }
-	} else if (buttonIndex == 1) {
+	}
+    else if (buttonIndex == 1) {
         //Restarta 
         questionAtm = 0;
         [[quizArray objectAtIndex:1] removeAllObjects];
@@ -824,7 +763,8 @@
         
         [self viewDidLoad];
     
-	} else if (buttonIndex == 2) {
+	}
+    else if (buttonIndex == 2) {
 		//Starta klockan!!!!
         if ([gameMode isEqualToString:@"Practise"]) {
             [self onUnpause];
@@ -836,46 +776,11 @@
                                                        userInfo:nil
                                                         repeats:YES];
             }
-            
         }
     } 
 }
 
-- (void)viewDidUnload
-{
-    [self setCorrectAnswersLabel:nil];
-    [self setExerciseLabel:nil];
-    [self setAnswerFromUser:nil];
-    [self setExerciseLabel:nil];
-    [self setNextButton:nil];
-    [self setNumberLabel:nil];
-    [self setCountdownLabel:nil];
-    [self setPauseButton:nil];
-    
-    [self setKeyboarddot:nil];
-    [self setKeyboard1:nil];
-    [self setKeyboard2:nil];
-    [self setKeyboard3:nil];
-    [self setKeyboard4:nil];
-    [self setKeyboard5:nil];
-    [self setKeyboard6:nil];
-    [self setKeyboard7:nil];
-    [self setKeyboard8:nil];
-    [self setKeyboard9:nil];
-    [self setKeyboarddot:nil];
-    [self setKeyboard0:nil];
-    [self setKeyboardback:nil];
-    [self setDarkView:nil];
-    [self setStartCountdownLabel:nil];
-    [self setProgressBar:nil];
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 

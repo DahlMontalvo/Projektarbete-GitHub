@@ -1,9 +1,8 @@
 //
-//  ViewController.m
-//  Projektarbete_v1_2
+//  MathMasterViewController.m
+//  Simple Science
 //
-//  Created by Jonas Dahl on 9/11/12.
-//
+//  Copyright (c) 2013 Jonas Dahl & Philip Montalvo. All rights reserved.
 //
 
 #import "MathMasterViewController.h"
@@ -13,46 +12,30 @@
 @end
 
 @implementation MathMasterViewController
-@synthesize tableView;
 
-@synthesize operation, operations;
+@synthesize tableView, operation, operations;
 
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+#pragma mark - Initialization
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
     return self;
 }
 
-- (void)viewDidLoad
-{
+#pragma mark - View management
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TableViewBG2"]];
     self.tableView.backgroundView = imageView;
     
-    operations = [[NSMutableArray alloc] init];
-    [operations addObject:@"Addition"];
-    [operations addObject:@"Subtraction"];
-    [operations addObject:@"Multiplication"];
-    [operations addObject:@"Division"];
-    [operations addObject:@"Percent"];
-    [operations addObject:@"Fraction"];
-    [operations addObject:@"Equations"];
-    
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    operations = [[NSMutableArray alloc] initWithObjects:@"Addition", @"Subtraction", @"Multiplication", @"Division", @"Percent", @"Fraction", @"Equations", nil];
 }
 
-- (void)viewDidUnload
-{
+- (void)viewDidUnload {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
@@ -60,6 +43,7 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+#pragma mark - Table view
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
     NSString *sectionTitle;
@@ -86,22 +70,20 @@
     return 2;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView
- numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0)
         return 4;
     else
         return 3;
 }
 
- - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
      if (section == 0)
          return @"Basic operations";
      else
          return @"More";
 }
  
-
 - (UITableViewCell *)tableView:(UITableView *)localTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSString *CellIdentifier;
@@ -138,7 +120,6 @@
     [localTableView deselectRowAtIndexPath:indexPath animated:NO];
     
     operation = [operations objectAtIndex:indexPath.row+(indexPath.section*4)];
-    NSLog(@"operation = %@, %i", operation, indexPath.row+(indexPath.section*4));
 
     [self performSegueWithIdentifier:@"ToDetail" sender:self];
 }

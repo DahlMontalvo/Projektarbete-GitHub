@@ -1,9 +1,8 @@
 //
 //  MathQuizViewController.h
-//  Projektarbete_v1_2
+//  Simple Science
 //
-//  Created by Jonas Dahl on 9/12/12.
-//
+//  Copyright (c) 2013 Jonas Dahl & Philip Montalvo. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -33,7 +32,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *questionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *firstLineLabel;
 @property (weak, nonatomic) IBOutlet UILabel *secondLineLabel;
-
 @property (weak, nonatomic) IBOutlet UILabel *countdownLabel;
 @property (weak, nonatomic) IBOutlet UILabel *correctAnswersLabel;
 - (IBAction)pauseButton:(id)sender;
@@ -41,13 +39,13 @@
 @property (weak, nonatomic) IBOutlet UIButton *buttonTwo;
 @property (weak, nonatomic) IBOutlet UIButton *buttonThree;
 @property (weak, nonatomic) IBOutlet UIButton *buttonFour;
-
 @property (weak, nonatomic) IBOutlet UILabel *operationLabel;
 @property (weak, nonatomic) IBOutlet UIButton *pauseButton;
 @property (weak, nonatomic) IBOutlet UILabel *numeratorOneLabel;
 @property (weak, nonatomic) IBOutlet UILabel *numeratorTwoLabel;
 @property (weak, nonatomic) IBOutlet UILabel *denominatorOneLabel;
 @property (weak, nonatomic) IBOutlet UILabel *denominatorTwoLabel;
+
 @property (nonatomic) int correctButton;
 @property (nonatomic, retain) NSMutableArray *quizArray;
 @property (nonatomic, retain) NSMutableArray *questionArray;

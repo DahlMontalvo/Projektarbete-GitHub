@@ -1,157 +1,234 @@
 //
 //  StatsViewController.m
-//  Projektarbete_v1_2
+//  Simple Science
 //
-//  Created by Philip Montalvo on 2012-07-22.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 Jonas Dahl & Philip Montalvo. All rights reserved.
 //
 
 #import "StatsViewController.h"
 
-
 @implementation StatsViewController
-
-@synthesize difficulty, section, navItem, operation, tableView;
+@synthesize completedTestsLabel, doneButton, delegate, subject, tenOutOfTensLabel, bestHighscoreLabel, mostPlayedSubjectLabel, overallProgressLabel, averageCorrectQuestionsLabel, averageHighscoreLabel, infoButton;
 
 #pragma mark - Initialization
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+    }
+    return self;
+}
 
 #pragma mark - View management
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    [navItem setTitle:[NSString stringWithFormat:@"%@",operation]];
-    [self.navigationController.navigationBar setHidden:NO];
-    [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
-    
-    operations = [[NSMutableArray alloc] init];
-    [operations addObject:@"Addition"];
-    [operations addObject:@"Subtraction"];
-    [operations addObject:@"Multiplication"];
-    [operations addObject:@"Division"];
-    [operations addObject:@"Percent"];
-    [operations addObject:@"Fratction"];
-    [operations addObject:@"Equations"];
-}
-
-- (void)viewDidUnload {
-    [super viewDidUnload];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    tableView.backgroundColor = [UIColor clearColor];
-    tableView.opaque = NO;
-    tableView.backgroundView = nil;
-    tableView.separatorColor = [UIColor clearColor];
-    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [super viewWillAppear:animated];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+-(void)viewWillAppear:(BOOL)animated {
+    [self.navigationController.navigationBar setHidden:YES];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
-#pragma mark - Table view data source
-- (UIView *) tableView:(UITableView *)tableViewObject viewForHeaderInSection:(NSInteger)sectionInt {
-	UIView* customView = [[UIView alloc] initWithFrame:CGRectMake(10.0, 0.0, 300.0, 44.0)];
-	
-	UILabel * headerLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-	headerLabel.backgroundColor = [UIColor clearColor];
-	headerLabel.opaque = NO;
-	headerLabel.textColor = [UIColor whiteColor];
-	headerLabel.highlightedTextColor = [UIColor whiteColor];
-	headerLabel.font = [UIFont fontWithName:@"Marion" size:20];
-	headerLabel.frame = CGRectMake(10.0, 0.0, 300.0, 44.0);
-	headerLabel.text = [operations objectAtIndex:sectionInt];
-	[customView addSubview:headerLabel];
+-(void)refreshView {
+    int completedTests = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"CompletedTests"];
+    int tenOutOfTens = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TenOutOfTens"];
+    int bestHighscore = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"BestHighscore"];
+    int totalCorrectQuestions = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TotalCorrect"];
+    int totalScore = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TotalHighscore"];
     
-	return customView;
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableViewObject {
-    return [operations count];
-}
-
-- (NSInteger)tableView:(UITableView *)tableViewObject numberOfRowsInSection:(NSInteger)section {
-    return 5;
-}
-
-- (NSString *)tableView:(UITableView *)tableViewObject titleForHeaderInSection:(NSInteger)localSection {
-    return [operations objectAtIndex:localSection];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableViewObject cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    difficulty = indexPath.row+1;
-    section = indexPath.section;
+    int timesPlayedMa = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TimesPlayedMa"];
+    int timesPlayedCh = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TimesPlayedChemistry"];
+    int timesPlayedBi = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TimesPlayedBiology"];
+    int timesPlayedPh = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TimesPlayedPhysics"];
     
-    float value = [[[Singleton sharedSingleton] sharedPrefs] floatForKey:[NSString stringWithFormat:@"%@%i", [operations objectAtIndex:section], difficulty]];
-    NSString *highscore;
+    if (timesPlayedMa > timesPlayedCh && timesPlayedMa > timesPlayedBi && timesPlayedMa > timesPlayedPh) {
+        mostPlayedSubjectLabel.text = @"Ma";
+    }
     
-    if (value == 0)
-        highscore = @"None";
+    else if (timesPlayedBi > timesPlayedCh && timesPlayedBi > timesPlayedMa && timesPlayedBi > timesPlayedPh) {
+        mostPlayedSubjectLabel.text = @"Bi";
+    }
+    
+    else if (timesPlayedPh > timesPlayedCh && timesPlayedPh > timesPlayedMa && timesPlayedPh > timesPlayedBi) {
+        mostPlayedSubjectLabel.text = @"Ph";
+    }
+    
+    else if (timesPlayedCh > timesPlayedMa && timesPlayedCh > timesPlayedBi && timesPlayedCh > timesPlayedPh) {
+        mostPlayedSubjectLabel.text = @"Ch";
+    }
+    
     else {
-        int time = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"%@%i", [operations objectAtIndex:section], difficulty]];
-        highscore = [NSString stringWithFormat:@"%i", time];
+        mostPlayedSubjectLabel.text = @"None";
     }
     
-    NSString *cellID = [operations objectAtIndex:section];
-    
-    StatsTableCellController *cell = (StatsTableCellController *)[tableViewObject dequeueReusableCellWithIdentifier:cellID];
-    if (cell == nil) {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"StatsTableCell" owner:self options:nil];
-        cell = [nib objectAtIndex:0];
-    }
-    cell.titleLabel.text = [NSString stringWithFormat:@"Level %i", difficulty];
-    cell.descriptionLabel.text = @"Highscore";
-    
-    int stars = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"Stars%@%i",[operations objectAtIndex:section],difficulty]];
-    NSString *name;
-    
-    switch (stars) {
-        case 0:
-            name = @"NoStars.png";
-            break;
-        case 1:
-            name = @"OneStars.png";
-            break;
-        case 2:
-            name = @"TwoStars.png";
-            break;
-        case 3:
-            name = @"ThreeStars.png";
-            break;
-        default:
-            name = @"NoStars.png";
-            break;
+    if (completedTests > 0) {
+        
+        float averageCorrectQuestions = (float)totalCorrectQuestions / (float)completedTests;
+        int averageScore = totalScore / completedTests;
+        
+        averageCorrectQuestionsLabel.text = [NSString stringWithFormat:@"%.1f",averageCorrectQuestions];
+        averageHighscoreLabel.text = [NSString stringWithFormat:@"%i",averageScore];
+    } else {
+        averageCorrectQuestionsLabel.text = @"0";
+        averageHighscoreLabel.text = @"0";
     }
     
-    cell.starsImage.image = [UIImage imageNamed:name];
-    cell.valueLabel.text = highscore;
-    cell.backgroundColor = [UIColor clearColor];
-    return cell;
+    completedTestsLabel.text = [NSString stringWithFormat:@"%i",completedTests];
+    tenOutOfTensLabel.text = [NSString stringWithFormat:@"%i", tenOutOfTens];
+    bestHighscoreLabel.text = [NSString stringWithFormat:@"%i", bestHighscore];
+    
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate readCategoriesFromDatabase];
+    
+    //Samla underkategorierna i sina arrayer beroende på överkategori
+    NSMutableArray *biologyCategories = [[NSMutableArray alloc] init];
+    NSMutableArray *chemistryCategories = [[NSMutableArray alloc] init];
+    NSMutableArray *physicsCategories = [[NSMutableArray alloc] init];
+    
+    for (int i = 0; i < [appDelegate.categories count]; i++) {
+        NSString *name = [[appDelegate.categories objectAtIndex:i] objectAtIndex:0];
+        NSString *parent = [[appDelegate.categories objectAtIndex:i] objectAtIndex:1];
+        int ID = [[[appDelegate.categories objectAtIndex:i] objectAtIndex:2] intValue];
+        NSMutableArray *temp = [[NSMutableArray alloc] initWithObjects:name, parent, [NSNumber numberWithInt:ID], nil];
+        NSString *sub = [[appDelegate.categories objectAtIndex:i] objectAtIndex:1];
+        
+        if ([sub isEqualToString:@"Physics"])
+            [physicsCategories addObject:temp];
+        else if ([sub isEqualToString:@"Chemistry"])
+            [chemistryCategories addObject:temp];
+        else if ([sub isEqualToString:@"Biology"])
+            [biologyCategories addObject:temp];
+    }
+    
+    //Lägger in kategorierna med deras labels
+    NSMutableArray *contents = [[NSMutableArray alloc] initWithObjects:[[NSMutableArray alloc] initWithObjects: chemistryCategories,
+                                                                        physicsCategories,
+                                                                        biologyCategories, nil], nil];
+    NSMutableArray *subjects = [[NSMutableArray alloc] initWithObjects:@"Chemistry", @"Physics", @"Biology", nil];
+        
+    int total = 0;
+    int stars = 0;
+        float share = 0;
+    
+    //Loopar igenom ett ämne i taget
+    for (int a = 0; a < 3; a++) {
+        //Loopar igenom alla kategorier i ämnet
+        int loop = [[[contents objectAtIndex:0] objectAtIndex:a] count];
+        
+        for (int i = 0; i < loop; i++) {
+            NSString *key = [NSString stringWithFormat:@"NatureCategory%iStars", [[[[[contents objectAtIndex:0] objectAtIndex:a] objectAtIndex:i] objectAtIndex:2] intValue]];
+            int thisStars = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:key];
+            total+=3;
+            stars+=thisStars;
+        }
+        //Lägg till mixed
+        total+=3;
+        stars+=[[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"NatureCategory%@Mixed", [subjects objectAtIndex:a]]];
+    }
+    
+    //Matten
+    NSMutableArray *operations = [[NSMutableArray alloc] initWithObjects:@"Addition",
+                                  @"Subtraction",
+                                  @"Multiplication",
+                                  @"Division",
+                                  @"Percent",
+                                  @"Fraction",
+                                  @"Equations",
+                                  nil];
+    for (int a = 0; a < [operations count]; a++) {
+        for (int i = 1; i < 6; i++) {
+            NSString *key = [NSString stringWithFormat:@"Stars%@%i", [operations objectAtIndex:a], i];
+            int thisStars = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:key];
+            total+=3;
+            stars+=thisStars;
+        }
+    }
+    
+    if (total != 0)
+        share = (float)stars/(float)total;
+    else
+        share = 0;
+    
+    share*=100;
+    
+    overallProgressLabel.text = [NSString stringWithFormat:@"%i %%", (int)(share+.5)];
 }
 
-- (void)tableView:(UITableView *)tableViewObject didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableViewObject deselectRowAtIndexPath:indexPath animated:NO];
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self refreshView];
 }
 
-- (IBAction)pop:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+- (void)viewDidUnload {
+    [self setOverallProgressLabel:nil];
+    [super viewDidUnload];
 }
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma mark - Others
+-(IBAction)done:(id)sender {
+    [self.delegate StatsViewControllerDidDone:self];
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+- (IBAction)physicsButtonPressed:(id)sender {
+    subject = @"Physics";
+    [self performSegueWithIdentifier:@"ToNatureStats" sender:self];
+}
+
+- (IBAction)chemistryButtonPressed:(id)sender {
+    subject = @"Chemistry";
+    [self performSegueWithIdentifier:@"ToNatureStats" sender:self];
+}
+
+- (IBAction)biologyButtonPressed:(id)sender {
+    subject = @"Biology";
+    [self performSegueWithIdentifier:@"ToNatureStats" sender:self];
+}
+
+- (IBAction)downButtonPressed:(id)sender {
+    [self.parentViewController dismissModalViewControllerAnimated:YES];
+}
+
+-(IBAction)clearAll:(id)sender {
+    
+    UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"Are you sure that you want to delete all stats?" delegate:self cancelButtonTitle:@"No" destructiveButtonTitle:@"Yes" otherButtonTitles:nil];
+	popupQuery.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
+	[popupQuery showInView:self.view];
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+	if (buttonIndex == 0) {
+        [[[Singleton sharedSingleton] sharedPrefs] setPersistentDomain:[NSDictionary dictionary] forName:[[NSBundle mainBundle] bundleIdentifier]];
+        [[[Singleton sharedSingleton] sharedPrefs] synchronize];
+        [self refreshView];
+    }
+    
+} 
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSString *operation = [segue identifier];
+    if ([operation isEqualToString:@"ToNatureStats"]) {
+        NatureStatsViewController *evc = [segue destinationViewController];
+        evc.subject = subject;
+    }
+    else {
+        MathStatsViewController *evc = [segue destinationViewController];
+        evc.operation = operation;
+    }
+}
+
+-(IBAction)infoButtonPressed:(id)sender {
+    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Stats Info"
+                                                      message:@"Math difficulties 1 & 2 have been excluded from the global stats since they can give an excessively high result. The overall progress will still though include them."
+                                                     delegate:self
+                                            cancelButtonTitle:@"OK"
+                                            otherButtonTitles:nil];
+    [message show];
+}
+
 @end

@@ -1,18 +1,17 @@
 //
 //  MainMenuViewController.h
-//  Projektarbete_v1_2
+//  Simple Science
 //
-//  Created by Philip Montalvo on 2012-07-24.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 Jonas Dahl & Philip Montalvo. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "GlobalStatsViewController.h"
+#import "StatsViewController.h"
 #import "AboutViewController.h"
 #import "NatureMasterViewController.h"
 #import "Singleton.h"
 
-@interface MainMenuViewController : UIViewController <GlobalStatsViewControllerDelegate, AboutViewControllerDelegate>  {
+@interface MainMenuViewController : UIViewController <StatsViewControllerDelegate, AboutViewControllerDelegate>  {
 }
 
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollView;

@@ -1,9 +1,8 @@
 //
 //  Singleton.m
-//  alarm1
+//  Simple Science
 //
-//  Created by Philip Montalvo on 2012-02-03.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 Jonas Dahl & Philip Montalvo. All rights reserved.
 //
 
 #import "Singleton.h"
@@ -16,7 +15,6 @@ static Singleton *shared = NULL;
 - (id)init {
     if ( self = [super init] ) {
         self.sharedPrefs = [[NSUserDefaults alloc] init];
-        NSLog(@"Singletons initierade");
     }
     return self;
 }

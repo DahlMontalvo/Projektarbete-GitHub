@@ -1,9 +1,8 @@
 //
 //  NatureDetailViewController.m
-//  Projektarbete_v1_2
+//  Simple Science
 //
-//  Created by Jonas Dahl on 2012-10-03.
-//
+//  Copyright (c) 2013 Jonas Dahl & Philip Montalvo. All rights reserved.
 //
 
 #import "NatureDetailViewController.h"
@@ -17,17 +16,14 @@
 
 @synthesize categoryID, subject, category, subjectLabel, questionLabel, buttonOne, buttonTwo, buttonThree, buttonFour, startCountdownTimer, countdownLabel, darkView, startCountdownDate, startCountdown, questions, questionAtm, appDelegate, correctAnswers, correctAnswersNumber, testStartedDate, start_date, timer, time_passed, countdownCounter, start_countdown_date, countdownTimer, progressBar, lastSentErrorReport;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+#pragma mark - Initialization
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
     return self;
 }
 
--(void)onTimerStart
-{
+#pragma mark - Timer
+-(void)onTimerStart {
     //NÄR STOPPURET STARTAS FÖRSTA GÅNGEN
     time_passed = 0;
     
@@ -38,23 +34,17 @@
     timer = [NSTimer timerWithTimeInterval:1.0/10.0 target:self selector:@selector(onTimer) userInfo:nil repeats:YES];
 }
 
--(void)onPause
-{
-    //CALLA FÖR ATT PAUSA KLOCKAN
+-(void)onPause {
     //Räkna ut passerad tid
     if (questionAtm > 0) {
         time_passed += [[NSDate date] timeIntervalSinceDate:start_date];
         
     }
-    
-    
     //Stanna klockan
     [timer invalidate];
 }
 
--(void)onUnpause
-{
-    //STARTAR ETT PAUSA UR
+-(void)onUnpause {
     //Nytt startdatum
     start_date = [NSDate date];
     
@@ -62,19 +52,13 @@
     timer = [NSTimer timerWithTimeInterval:1.0/10.0 target:self selector:@selector(onTimer) userInfo:nil repeats:YES];
 }
 
--(void)onReset
-{
-    //STANNAR KLOCKAN FÖR EVIGT
+-(void)onReset {
     [timer invalidate];
-    
     time_passed = 0;
-    
     start_date = nil;
 }
 
--(void)onTimer
-{
-    //UPPDATERAR UIt
+-(void)onTimer {
     NSDate *currentDate = [NSDate date];
     NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:start_date]+time_passed;
     NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:timeInterval];
@@ -85,8 +69,7 @@
     subjectLabel.text = timeString;
 }
 
-- (void)countdownTimerMethod
-{
+- (void)countdownTimerMethod {
     [self setCountdownCounter:20-fabs([start_countdown_date timeIntervalSinceNow])];
     NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:countdownCounter];
     
@@ -106,8 +89,33 @@
     
 }
 
-- (void)viewDidLoad {
+- (void)startCountdownMethod {
+    [self setStartCountdown:3-fabs([startCountdownDate timeIntervalSinceNow])];
+    NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:startCountdown];
     
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"s"];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
+    NSString *timeString=[dateFormatter stringFromDate:timerDate];
+    
+    int val = [timeString intValue]+1;
+    
+    countdownLabel.text = [NSString stringWithFormat:@"%i", val];
+    if (startCountdown <= 0) {
+        [darkView setHidden:YES];
+        //[darkView removeFromSuperview];
+        [startCountdownTimer invalidate];
+        startCountdownTimer = nil;
+        
+        
+        //Vi är nu redo att presentera den första frågan
+        [self presentNextQuestion];
+    }
+    
+}
+
+#pragma mark - View management
+- (void)viewDidLoad {
     NSDictionary *eventParams =
     [NSDictionary dictionaryWithObjectsAndKeys:
      subject, @"Subject",
@@ -167,10 +175,8 @@
     int iteration;
     NSMutableArray *noId;
     if (categoryID > 0) {
-        NSLog(@"catID:%i", categoryID);
         category = [[NSMutableArray alloc] init];
         category = [appDelegate getCategoryWithID:categoryID];
-        NSLog(@"catID2:%i", categoryID);
         
         //Ta fram tio frågor i en array
         noId = [[NSMutableArray alloc] init];
@@ -182,9 +188,6 @@
         }
     }
     else {
-        NSLog(@"catID3:%i", categoryID);
-        NSLog(@"catID4:%i", categoryID);
-        
         //Ta fram tio frågor i en array
         noId = [[NSMutableArray alloc] init];
         questions = [[NSMutableArray alloc] init];
@@ -195,7 +198,6 @@
     
     
     for (int i = 0; i<iteration; i++) {
-        NSLog(@"i:%i", i);
         NSMutableArray *question;
         if (categoryID > 0)
             question = [appDelegate getQuestionInCategory:categoryID withOutIds:noId];
@@ -206,19 +208,36 @@
             [noId addObject:[question objectAtIndex:1]];
             [questions addObject:question];
         }
-        NSLog(@"qId: %i", [[question objectAtIndex:1] intValue]);
     }
 }
 
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+
+- (void)viewDidUnload {
+    [self setSubjectLabel:nil];
+    [self setQuestionLabel:nil];
+    [self setButtonOne:nil];
+    [self setButtonTwo:nil];
+    [self setButtonThree:nil];
+    [self setButtonFour:nil];
+    [self setDarkView:nil];
+    [self setCountdownLabel:nil];
+    [self setPauseButton:nil];
+    [self setCorrectAnswers:nil];
+    [self setProgressBar:nil];
+    [super viewDidUnload];
+}
+
+#pragma mark - Others
 - (void)presentNextQuestion {
     if (questionAtm == 10) {
         [countdownTimer invalidate];
         countdownTimer = nil;
-        NSLog(@"hit");
         [self performSegueWithIdentifier:@"ToResult" sender:self];
     }
     else {
-        NSLog(@"Presenting...");
         [countdownTimer invalidate];
         countdownTimer = nil;
         
@@ -254,67 +273,10 @@
             [buttonThree setHidden:YES];
             [buttonFour setHidden:YES];
         }
-        NSLog(@"Question %i", questionAtm);
-        NSLog(@"%@", [questions objectAtIndex:questionAtm]);
         questionAtm++;
     }
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (NSInteger)tableView:(UITableView *)tableView
- numberOfRowsInSection:(NSInteger)section {
-    return 0;
-}
-
-- (void)startCountdownMethod
-{
-    [self setStartCountdown:3-fabs([startCountdownDate timeIntervalSinceNow])];
-    NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:startCountdown];
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"s"];
-    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
-    NSString *timeString=[dateFormatter stringFromDate:timerDate];
-    
-    int val = [timeString intValue]+1;
-    
-    countdownLabel.text = [NSString stringWithFormat:@"%i", val];
-    if (startCountdown <= 0) {
-        [darkView setHidden:YES];
-        //[darkView removeFromSuperview];
-        [startCountdownTimer invalidate];
-        startCountdownTimer = nil;
-        
-        
-        //Vi är nu redo att presentera den första frågan
-        [self presentNextQuestion];
-    }
-    
-}
-
-
-- (void)viewDidUnload {
-    [self setSubjectLabel:nil];
-    [self setQuestionLabel:nil];
-    [self setButtonOne:nil];
-    [self setButtonTwo:nil];
-    [self setButtonThree:nil];
-    [self setButtonFour:nil];
-    [self setDarkView:nil];
-    [self setCountdownLabel:nil];
-    [self setPauseButton:nil];
-    [self setCorrectAnswers:nil];
-    [self setProgressBar:nil];
-    [super viewDidUnload];
-}
-- (IBAction)backButton:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
-}
 - (IBAction)pauseButtonPressed:(id)sender {
     UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"Menu" delegate:self cancelButtonTitle:@"Resume" destructiveButtonTitle:@"Exit" otherButtonTitles:@"Restart Quiz", @"Report Question", nil];
 	popupQuery.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
@@ -338,7 +300,7 @@
         
 	} else if (buttonIndex == 2) {
 		[self report];
-    } 
+    }
 }
 - (IBAction)buttonOne:(id)sender {
     [self buttonPressed:1];
@@ -368,8 +330,7 @@
     }
 }
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     
 	NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
     
@@ -439,6 +400,12 @@
         rvc.categoryId = categoryID;
         rvc.subject = subject;
     }
+}
+
+#pragma mark - Table view
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section {
+    return 0;
 }
 
 @end

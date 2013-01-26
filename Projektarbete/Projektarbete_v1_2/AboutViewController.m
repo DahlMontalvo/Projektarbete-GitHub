@@ -1,9 +1,8 @@
 //
 //  AboutViewController.m
-//  Projektarbete_v1_2
+//  Simple Science
 //
-//  Created by Philip Montalvo on 2012-07-24.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 Jonas Dahl & Philip Montalvo. All rights reserved.
 //
 
 #import "AboutViewController.h"
@@ -87,7 +86,6 @@
             else if ([elementName isEqualToString:@"question"]) {
                 val = [val stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
                 [[questionChanges objectAtIndex:questionsUpdated-1] insertObject:val atIndex:1];
-                NSLog(@"val: %@", val);
             }
             else if ([elementName isEqualToString:@"parentCategory"]) {
                 [[questionChanges objectAtIndex:questionsUpdated-1] insertObject:[NSNumber numberWithInt:[elementValue intValue]] atIndex:2];
@@ -129,7 +127,6 @@
             else if ([elementName isEqualToString:@"answer"]) {
                 val = [val stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
                 [[answerChanges objectAtIndex:[answerChanges count]-1] insertObject:val atIndex:1];
-                NSLog(@"val: %@", val);
             }
             else if ([elementName isEqualToString:@"questionId"]) {
                 val = [val stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -196,7 +193,7 @@
                                   deleted:[[[categoryChanges objectAtIndex:i] objectAtIndex:4] intValue]];
     }
     [[[Singleton sharedSingleton] sharedPrefs] setObject:[NSDate date] forKey:@"LastSyncDate"];
-    [appDelegate readQuestionsFromDatabase];
+    [appDelegate readCategoriesFromDatabase];
 }
 
 #pragma mark - Other
@@ -231,7 +228,6 @@
     [format setTimeZone:timeZone];
     [format setDateFormat:@"YYYY-MM-dd_HH:mm:ss"];
     NSString *formattedDate = [format stringFromDate:oldestUpdateDate];
-    NSLog(@"%@", formattedDate);
     
     NSString *url = [NSString stringWithFormat:@"http://simplescience.dahlmontalvo.com/getChanges.php?sinceDate=%@", formattedDate];
     NSString *agentString = @"Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_6; en-us) AppleWebKit/525.27.1 (KHTML, like Gecko) Version/3.2.1 Safari/525.27.1";
@@ -243,19 +239,14 @@
     errorParsing = NO;
     
     rssParser = [[NSXMLParser alloc] initWithData:xmlFile];
-    
-    [rssParser setDelegate:self];
-    
-    // You may need to turn some of these on depending on the type of XML file you are parsing
+    [rssParser setDelegate:(id<NSXMLParserDelegate>)self];
     [rssParser setShouldProcessNamespaces:NO];
     [rssParser setShouldReportNamespacePrefixes:NO];
     [rssParser setShouldResolveExternalEntities:NO];
-    
     [rssParser parse];
 }
 
 - (IBAction)syncButtonPressed:(id)sender {
-    
     [lightView setHidden:NO];
     [activityIndicatior setHidden:NO];
     [activityIndicatior startAnimating];

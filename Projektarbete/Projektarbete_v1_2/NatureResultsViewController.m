@@ -1,9 +1,8 @@
 //
 //  NatureResultsViewController.m
-//  Projektarbete_v1_2
+//  Simple Science
 //
-//  Created by Jonas Dahl on 2012-10-12.
-//
+//  Copyright (c) 2013 Jonas Dahl & Philip Montalvo. All rights reserved.
 //
 
 #import "NatureResultsViewController.h"
@@ -17,15 +16,13 @@
 
 @synthesize scoreLabel, timeLabel, categoryLabel, starsImageView, score, testStartedDate, categoryId, starsLabel, highscoreLabel, subject, description, scoreScoreLabel;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+#pragma mark - Initialization
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
     return self;
 }
 
+#pragma mark - View management
 -(void)viewWillAppear:(BOOL)animated {
     scoreLabel.text = [NSString stringWithFormat:@"%i/10", score];
     
@@ -88,8 +85,8 @@
     
     int scoreScore;
     scoreScore = (score / sqrt(finalTime)*447.2135956);
-        //150-finalTime/stars-(3-stars)*15;
-
+    //150-finalTime/stars-(3-stars)*15;
+    
     if (scoreScore < 0) scoreScore = 0;
     int previousHighscore = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:timeKey];
     
@@ -131,13 +128,13 @@
      subject, @"Subject",
      [category objectAtIndex:0], @"CategoryName",
      [category objectAtIndex:1], @"CategoryID",
-        nil];
+     nil];
     
     [Flurry logEvent:@"Test_completed" withParameters:eventParams];
     
     
     
-//Global Stats
+    //Global Stats
     int previousCompletedTests = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"CompletedTests"];
     [[[Singleton sharedSingleton] sharedPrefs] setInteger:previousCompletedTests+1 forKey:@"CompletedTests"];
     
@@ -162,24 +159,15 @@
     int totalHighscore = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TotalHighscore"];
     [[[Singleton sharedSingleton] sharedPrefs] setInteger:totalHighscore+scoreScore forKey:@"TotalHighscore"];
     
-
-
-    
-//End of global stats
-
-    
+    //End of global stats
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)viewDidUnload {
@@ -190,14 +178,13 @@
     [self setStarsLabel:nil];
     [self setHighscoreLabel:nil];
     [self setDescription:nil];
-
     [super viewDidUnload];
 }
+
+#pragma mark - Others
 - (IBAction)continueButtonPressed:(id)sender {
-    
     NSArray *viewControllers = [self.navigationController viewControllers];
-    
     [self.navigationController popToViewController:[viewControllers objectAtIndex:1] animated:YES];
-    
 }
+
 @end

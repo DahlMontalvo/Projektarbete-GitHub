@@ -1,9 +1,8 @@
 //
 //  MainMenuViewController.m
-//  Projektarbete_v1_2
+//  Simple Science
 //
-//  Created by Philip Montalvo on 2012-07-24.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 Jonas Dahl & Philip Montalvo. All rights reserved.
 //
 
 #import "MainMenuViewController.h"
@@ -24,7 +23,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //Setting up Settings and About scroll views
+    if ([[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"LaunchCount"] == 1) {
+        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Hi!" message:@"Before you start taking any quizes, we recommend you to go to the About tab and synchronize the quiz database to make sure you are up to date." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [message show];
+    }
+
+    //Settings & About label setup
     scrollView.scrollEnabled = YES;
     scrollView.contentSize = scrollView.frame.size;
     [scrollView setAlwaysBounceVertical:YES];
@@ -33,20 +37,18 @@
     scrollViewGr.contentSize = scrollViewGr.frame.size;
     [scrollViewGr setAlwaysBounceVertical:YES];
     
-    
     [self performSelector:@selector(updateNumbers) withObject:nil afterDelay:1];
 }
 
 - (void)updateNumbers {
     BOOL again = YES;
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    [appDelegate readQuestionsFromDatabase];
+    [appDelegate readCategoriesFromDatabase];
+    
     //Samla underkategorierna i sina arrayer beroende på överkategori
     biologyCategories = [[NSMutableArray alloc] init];
     chemistryCategories = [[NSMutableArray alloc] init];
     physicsCategories = [[NSMutableArray alloc] init];
-    
-    NSLog(@"App.count: %i", [appDelegate.categories count]);
     
     for (int i = 0; i < [appDelegate.categories count]; i++) {
         NSString *name = [[appDelegate.categories objectAtIndex:i] objectAtIndex:0];
@@ -61,11 +63,8 @@
             [chemistryCategories addObject:temp];
         else if ([subject isEqualToString:@"Biology"])
             [biologyCategories addObject:temp];
-        NSLog(@"name: %@", name);
     }
-    
-    NSLog(@"Nu: %i", [[[Singleton sharedSingleton] sharedPrefs] boolForKey:@"ApplicationHasOpenedBefore"]);
-    
+
     //Lägger in kategorierna med deras labels
     NSMutableArray *contents = [[NSMutableArray alloc] initWithObjects:[[NSMutableArray alloc] initWithObjects: chemistryCategories,
                                                                                                                 physicsCategories,
@@ -82,11 +81,9 @@
         float share = 0;
         //Loopar igenom alla kategorier i ämnet
         int loop = [[[contents objectAtIndex:0] objectAtIndex:a] count];
-        NSLog(@"Loop:%i", loop);
         for (int i = 0; i < loop; i++) {
             NSString *key = [NSString stringWithFormat:@"NatureCategory%iStars", [[[[[contents objectAtIndex:0] objectAtIndex:a] objectAtIndex:i] objectAtIndex:2] intValue]];
             int thisStars = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:key];
-            NSLog(@"thisStars: %i", thisStars);
             total+=3;
             stars+=thisStars;
             again = NO;
@@ -105,8 +102,8 @@
         
         UILabel *label = [[contents objectAtIndex:1] objectAtIndex:a];
         [label setText:[NSString stringWithFormat:@"%i %%", (int)(share+0.5)]];
-        NSLog(@"String: %f", share);
     }
+    
     //Matteprocent
     int total = 0;
     int stars = 0;
@@ -150,8 +147,6 @@
     
     [self updateNumbers];
     
-    
-    
     [[self.navigationController navigationBar] setTintColor:[UIColor blackColor]];
     [[self.navigationController navigationBar] setHidden:YES];
 }
@@ -165,7 +160,7 @@
 {
 	if ([segue.identifier isEqualToString:@"GlobalStatsSegue"]) {
 		UINavigationController *navigationController = segue.destinationViewController;
-		GlobalStatsViewController *globalVC = [[navigationController viewControllers] objectAtIndex:0];
+		StatsViewController *globalVC = [[navigationController viewControllers] objectAtIndex:0];
 		globalVC.delegate = self;
         
 	}
@@ -197,7 +192,7 @@
     [self performSegueWithIdentifier:@"AboutSegue" sender:sender];
 }
 
-- (void)GlobalStatsViewControllerDidDone:(GlobalStatsViewController *)controller {
+- (void)StatsViewControllerDidDone:(StatsViewController *)controller {
 	[self dismissViewControllerAnimated:YES completion:nil];
 }
 

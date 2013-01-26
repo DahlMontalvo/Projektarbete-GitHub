@@ -1,9 +1,8 @@
 //
 //  MathResultsViewController.h
-//  Projektarbete_v1_2
+//  Simple Science
 //
-//  Created by Jonas Dahl on 7/20/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 Jonas Dahl & Philip Montalvo. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -31,7 +30,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *starLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *starImage;
 @property (strong, nonatomic) IBOutlet UILabel *scoreScoreLabel;
-
 @property (retain, nonatomic) IBOutlet UINavigationItem *navItem;
 - (IBAction)continueButtonPressed:(id)sender;
 @property (strong, nonatomic) IBOutlet UILabel *starExplanationLabel;

@@ -1,9 +1,8 @@
 //
 //  DifficultySegmentedControlButtonController.h
-//  Projektarbete_v1_2
+//  Simple Science
 //
-//  Created by Jonas Dahl on 2012-10-16.
-//
+//  Copyright (c) 2013 Jonas Dahl & Philip Montalvo. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

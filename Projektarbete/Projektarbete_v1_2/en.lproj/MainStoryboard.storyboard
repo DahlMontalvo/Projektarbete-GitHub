@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C3012" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
@@ -31,10 +31,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Wood1.png" id="MP3-Gy-ABk">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="Lounge3.png" id="h9f-VO-cxo">
-                                <rect key="frame" x="0.0" y="477" width="320" height="86"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="ANL-LO-6WD">
                                 <rect key="frame" x="30" y="342" width="87" height="158"/>
@@ -560,10 +556,10 @@
             </objects>
             <point key="canvasLocation" x="947" y="1379"/>
         </scene>
-        <!--Global Stats View Controller - Ful Banner-->
+        <!--Stats View Controller - Ful Banner-->
         <scene sceneID="9Kn-3S-LYs">
             <objects>
-                <viewController id="djt-lz-ZBQ" customClass="GlobalStatsViewController" sceneMemberID="viewController">
+                <viewController id="djt-lz-ZBQ" customClass="StatsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xrB-O8-s9Q">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -829,10 +825,10 @@
             </objects>
             <point key="canvasLocation" x="1432" y="1379"/>
         </scene>
-        <!--Stats View Controller-->
+        <!--Math Stats View Controller-->
         <scene sceneID="Qon-bG-X1z">
             <objects>
-                <viewController id="Nwi-iC-Lbi" customClass="StatsViewController" sceneMemberID="viewController">
+                <viewController id="Nwi-iC-Lbi" customClass="MathStatsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xF1-gN-fs6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1301,7 +1297,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VHb-Wn-t5b">
-                                <rect key="frame" x="20" y="266" width="280" height="47"/>
+                                <rect key="frame" x="18" y="288" width="140" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" name="Marion-Regular" family="Marion" pointSize="17"/>
                                 <color key="tintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -1318,7 +1314,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NLs-Ts-kMi">
-                                <rect key="frame" x="20" y="317" width="280" height="47"/>
+                                <rect key="frame" x="164" y="288" width="140" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" name="Marion-Regular" family="Marion" pointSize="17"/>
                                 <color key="tintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -1335,7 +1331,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Z0g-og-PE8">
-                                <rect key="frame" x="21" y="368" width="279" height="47"/>
+                                <rect key="frame" x="18" y="379" width="140" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" name="Marion-Regular" family="Marion" pointSize="17"/>
                                 <color key="tintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -1352,7 +1348,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="69Q-oH-R5Y">
-                                <rect key="frame" x="20" y="419" width="280" height="47"/>
+                                <rect key="frame" x="164" y="379" width="140" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" name="Marion-Regular" family="Marion" pointSize="17"/>
                                 <color key="tintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -1978,7 +1974,6 @@
                                         <rect key="frame" x="266" y="63" width="29" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="16"/>
-                                        <color key="tintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="!">
                                             <color key="titleColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -2034,7 +2029,7 @@
                                 <color key="progressTintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
                             </progressView>
                             <view contentMode="scaleToFill" id="C44-HC-SVK">
-                                <rect key="frame" x="0.0" y="2" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="2v9-K7-ZK2">
@@ -2263,7 +2258,6 @@
         <image name="FetLinje.png" width="521" height="20"/>
         <image name="Grön Banner 2.png" width="174" height="579"/>
         <image name="GulBanner1.png" width="110" height="139"/>
-        <image name="Lounge3.png" width="16" height="16"/>
         <image name="MaBanner.png" width="133" height="336"/>
         <image name="MathButton2.png" width="535" height="94"/>
         <image name="NerPil.png" width="79" height="74"/>
@@ -2288,7 +2282,7 @@
         <image name="UnderTableView1.png" width="640" height="60"/>
         <image name="VansterPil.png" width="79" height="74"/>
         <image name="Wood1.png" width="640" height="960"/>
-        <image name="bakåtpil.png" width="16" height="16"/>
+        <image name="bakåtpil.png" width="124" height="124"/>
         <image name="brun2.png" width="640" height="122"/>
         <image name="knappBG.png" width="260" height="37"/>
     </resources>
@@ -2312,28 +2306,6 @@
         </class>
         <class className="GamemodeSegmentedControlButtonController" superclassName="UIButton">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GamemodeSegmentedControlButtonController.h"/>
-        </class>
-        <class className="GlobalStatsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GlobalStatsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="biologyButtonPressed:"/>
-                <relationship kind="action" name="chemistryButtonPressed:"/>
-                <relationship kind="action" name="clearAll:"/>
-                <relationship kind="action" name="done:"/>
-                <relationship kind="action" name="downButtonPressed:"/>
-                <relationship kind="action" name="infoButtonPressed:"/>
-                <relationship kind="action" name="physicsButtonPressed:"/>
-                <relationship kind="outlet" name="averageCorrectQuestionsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="averageHighscoreLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="bestHighscoreLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="clearButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="completedTestsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="infoButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="mostPlayedSubjectLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="overallProgressLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="tenOutOfTensLabel" candidateClass="UILabel"/>
-            </relationships>
         </class>
         <class className="MainMenuViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MainMenuViewController.h"/>
@@ -2361,8 +2333,6 @@
                 <relationship kind="action" name="buttonTestPressed:"/>
                 <relationship kind="action" name="buttonThreePressed:"/>
                 <relationship kind="action" name="buttonTwoPressed:"/>
-                <relationship kind="action" name="difficultySegmentedControl:"/>
-                <relationship kind="action" name="gamemodeSegmentedControl:"/>
                 <relationship kind="action" name="startButton:"/>
                 <relationship kind="outlet" name="buttonFive" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="buttonFour" candidateClass="UIButton"/>
@@ -2371,18 +2341,11 @@
                 <relationship kind="outlet" name="buttonTest" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="buttonThree" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="buttonTwo" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="difficultySegmentedControl" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="gameButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="gamemodeSegmentedControl" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="modeLabel" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="navigationLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="practiseButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="practiseTextField" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="starsImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="starsLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="startButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="testTextField" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="testingButton" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="MathExerciseViewController" superclassName="UIViewController">
@@ -2399,7 +2362,6 @@
                 <relationship kind="action" name="keyboard8:"/>
                 <relationship kind="action" name="keyboard9:"/>
                 <relationship kind="action" name="keyboardback:"/>
-                <relationship kind="action" name="keyboarddot:"/>
                 <relationship kind="action" name="nextButton:"/>
                 <relationship kind="action" name="pausePressed:"/>
                 <relationship kind="outlet" name="answerFromUser" candidateClass="UILabel"/>
@@ -2418,7 +2380,6 @@
                 <relationship kind="outlet" name="keyboard8" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="keyboard9" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="keyboardback" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="keyboarddot" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="navItem" candidateClass="UINavigationItem"/>
                 <relationship kind="outlet" name="nextButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="numberLabel" candidateClass="UILabel"/>
@@ -2478,6 +2439,13 @@
                 <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
+        <class className="MathStatsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MathStatsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="pop:"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
         <class className="NatureDetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NatureDetailViewController.h"/>
             <relationships>
@@ -2526,7 +2494,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NatureStatsViewController.h"/>
             <relationships>
                 <relationship kind="action" name="pop:"/>
-                <relationship kind="outlet" name="navItem" candidateClass="UINavigationItem"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
             </relationships>
@@ -2534,9 +2501,22 @@
         <class className="StatsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/StatsViewController.h"/>
             <relationships>
-                <relationship kind="action" name="pop:"/>
-                <relationship kind="outlet" name="navItem" candidateClass="UINavigationItem"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+                <relationship kind="action" name="biologyButtonPressed:"/>
+                <relationship kind="action" name="chemistryButtonPressed:"/>
+                <relationship kind="action" name="clearAll:"/>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="action" name="downButtonPressed:"/>
+                <relationship kind="action" name="infoButtonPressed:"/>
+                <relationship kind="action" name="physicsButtonPressed:"/>
+                <relationship kind="outlet" name="averageCorrectQuestionsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="averageHighscoreLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="bestHighscoreLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="completedTestsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="infoButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="mostPlayedSubjectLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="overallProgressLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tenOutOfTensLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
     </classes>

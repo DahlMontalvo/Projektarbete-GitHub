@@ -1,9 +1,8 @@
 //
 //  NatureDetailViewController.h
-//  Projektarbete_v1_2
+//  Simple Science
 //
-//  Created by Jonas Dahl on 2012-10-03.
-//
+//  Copyright (c) 2013 Jonas Dahl & Philip Montalvo. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -23,10 +22,11 @@
 @property (weak, nonatomic) IBOutlet UIButton *buttonFour;
 @property (weak, nonatomic) IBOutlet UIView *darkView;
 @property (weak, nonatomic) IBOutlet UILabel *countdownLabel;
-- (IBAction)pauseButtonPressed:(id)sender;
-@property (nonatomic) float startCountdown;
 @property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
+@property (weak, nonatomic) IBOutlet UIButton *pauseButton;
+@property (weak, nonatomic) IBOutlet UILabel *correctAnswers;
 
+@property (nonatomic) float startCountdown;
 @property (nonatomic) int categoryID;
 @property (nonatomic) int correctAnswersNumber;
 @property (nonatomic) int questionAtm;
@@ -43,14 +43,12 @@
 @property (nonatomic, retain) NSTimer *startCountdownTimer;
 @property (nonatomic, retain) NSDate *startCountdownDate;
 
-@property (weak, nonatomic) IBOutlet UIButton *pauseButton;
-@property (weak, nonatomic) IBOutlet UILabel *correctAnswers;
-
 - (IBAction)buttonOne:(id)sender;
 - (IBAction)buttonTwo:(id)sender;
 - (IBAction)buttonThree:(id)sender;
 - (IBAction)buttonFour:(id)sender;
 - (IBAction)reportButtonPressed:(id)sender;
+- (IBAction)pauseButtonPressed:(id)sender;
 - (void)report;
 
 @property (nonatomic, retain) NSMutableArray *questions;

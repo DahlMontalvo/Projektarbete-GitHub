@@ -1,0 +1,16 @@
+LaunchCount                 Antal launchar
+NatureCategory%@Mixed       Antal stjärnor i det mixedsubjectet @ = subject
+NatureCategory%iStars       Antal stjärnor i kategori i = category ID
+NatureCategory%iTime        Bästa highscore för kategori där i = category ID
+NatureCategory%@MixedTime   Bästa highscore för mixed i ett subject @ = subject
+CompletedTests              Totalt antal slutförda tests
+TenOutOfTens                Totalt antal 10/10
+BestHighscore               Bästa highscoren overall
+TotalCorrect                Antal korrekta frågor någonsin
+TotalHighscore              Total highscore
+TimesPlayedMa               Antal gånger spelat matte
+TimesPlayedChemistry        Antal gånger spelat chemistry
+TimesPlayedPhysics          Antal gånger spelat physics
+TimesPlayedBiology          Antal gånger spelat bio
+
+

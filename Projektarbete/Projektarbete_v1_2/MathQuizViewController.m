@@ -1,9 +1,8 @@
 //
 //  MathQuizViewController.m
-//  Projektarbete_v1_2
+//  Simple Science
 //
-//  Created by Jonas Dahl on 9/12/12.
-//
+//  Copyright (c) 2013 Jonas Dahl & Philip Montalvo. All rights reserved.
 //
 
 #import "MathQuizViewController.h"
@@ -13,57 +12,91 @@
 @end
 
 @implementation MathQuizViewController
-@synthesize buttonFour;
-@synthesize buttonTwo;
-@synthesize buttonThree;
+@synthesize buttonFour, buttonTwo, buttonThree, operation, difficulty, start_countdown_date, startCountdownLabel, darkView, questionLabel, firstLineLabel, secondLineLabel, countdownLabel, correctAnswersLabel, buttonOne, operationLabel, pauseButton, numeratorOneLabel, numeratorTwoLabel, denominatorOneLabel, denominatorTwoLabel, quizArray, questionAtm, answer, correctAnswers, gameMode, countdownCounter, cancelCountdown, finalTime, interval, correctButton, answersArray, questionArray, correctString, startCountdownTimer, startCountdown, testStarted, startCountdownDate, startCountdownCounter, progressBar;
 
-@synthesize operation;
-@synthesize difficulty;
-@synthesize start_countdown_date;
-@synthesize startCountdownLabel;
-@synthesize darkView;
-@synthesize questionLabel;
-@synthesize firstLineLabel;
-@synthesize secondLineLabel;
-@synthesize countdownLabel;
-@synthesize correctAnswersLabel;
-@synthesize buttonOne;
-@synthesize operationLabel;
-@synthesize pauseButton;
-@synthesize numeratorOneLabel;
-@synthesize numeratorTwoLabel;
-@synthesize denominatorOneLabel;
-@synthesize denominatorTwoLabel;
-@synthesize quizArray;
-@synthesize questionAtm;
-@synthesize answer;
-@synthesize correctAnswers;
-@synthesize gameMode;
-@synthesize countdownCounter;
-@synthesize cancelCountdown;
-@synthesize finalTime;
-@synthesize interval;
-@synthesize correctButton;
-@synthesize answersArray;
-@synthesize questionArray;
-@synthesize correctString;
-@synthesize startCountdownTimer;
-@synthesize startCountdown;
-@synthesize testStarted;
-@synthesize startCountdownDate;
-@synthesize startCountdownCounter, progressBar;
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+#pragma mark - Initialization
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
     return self;
 }
 
-- (void)timer
-{
+#pragma mark - View management
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    questionAtm = 0;
+    [darkView setHidden:NO];
+    [questionArray removeAllObjects];
+    [answersArray removeAllObjects];
+    countdownLabel.text = @"00:00.0";
+    correctAnswersLabel.text = @"0/0";
+    denominatorOneLabel.text = @"";
+    denominatorTwoLabel.text = @"";
+    numeratorOneLabel.text = @"";
+    numeratorTwoLabel.text = @"";
+    questionLabel.text = @"";
+    
+    [buttonOne setBackgroundImage:[UIImage imageNamed:@"white.png"] forState:UIControlStateHighlighted];
+    [buttonTwo setBackgroundImage:[UIImage imageNamed:@"white.png"] forState:UIControlStateHighlighted];
+    [buttonThree setBackgroundImage:[UIImage imageNamed:@"white.png"] forState:UIControlStateHighlighted];
+    [buttonFour setBackgroundImage:[UIImage imageNamed:@"white.png"] forState:UIControlStateHighlighted];
+    NSMutableArray *buttons = [[NSMutableArray alloc] initWithObjects:buttonOne, buttonTwo, buttonThree, buttonFour, nil];
+    for (int i = 0; i < 4; i++) {
+        [[buttons objectAtIndex:i] setTitleColor:[UIColor brownColor] forState:UIControlStateNormal];
+        [[buttons objectAtIndex:i] setTitleColor:[UIColor brownColor] forState:UIControlStateHighlighted];
+    }
+    
+    if ([gameMode isEqualToString:@"Practise"])
+        [progressBar setHidden:YES];
+    else
+        [progressBar setHidden:NO];
+    
+    if (![operation isEqualToString:@"Fraction"]) {
+        operationLabel.text = @"";
+        firstLineLabel.text = @"";
+        secondLineLabel.text = @"";
+    }
+    testStarted = NO;
+    
+    startCountdownDate = [NSDate date];
+    startCountdownTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f/10.0f
+                                                           target:self
+                                                         selector:@selector(startCountdownMethod)
+                                                         userInfo:nil
+                                                          repeats:YES];
+}
+
+- (void)viewDidUnload {
+    [self setCountdownLabel:nil];
+    [self setCorrectAnswersLabel:nil];
+    [self setPauseButton:nil];
+    [self setOperationLabel:nil];
+    [self setNumeratorOneLabel:nil];
+    [self setNumeratorTwoLabel:nil];
+    [self setDenominatorOneLabel:nil];
+    [self setDenominatorTwoLabel:nil];
+    [self setButtonOne:nil];
+    [self setButtonTwo:nil];
+    [self setButtonThree:nil];
+    [self setButtonFour:nil];
+    [self setButtonTwo:nil];
+    [self setButtonThree:nil];
+    [self setButtonFour:nil];
+    [self setStartCountdownLabel:nil];
+    [self setDarkView:nil];
+    [self setQuestionLabel:nil];
+    [self setFirstLineLabel:nil];
+    [self setSecondLineLabel:nil];
+    [self setProgressBar:nil];
+    [super viewDidUnload];
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma mark - Timers
+- (void)timer {
     //RÄKNAR TIDEN UPPÅT
     NSDate *currentDate = [NSDate date];
     NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:start_date];
@@ -75,8 +108,7 @@
     countdownLabel.text = timeString;
 }
 
--(void)onTimerStart
-{
+-(void)onTimerStart {
     //NÄR STOPPURET STARTAS FÖRSTA GÅNGEN
     time_passed = 0;
     
@@ -87,8 +119,7 @@
     timer = [NSTimer timerWithTimeInterval:1.0/10.0 target:self selector:@selector(onTimer) userInfo:nil repeats:YES];
 }
 
--(void)onPause
-{
+-(void)onPause {
     //CALLA FÖR ATT PAUSA KLOCKAN
     //Räkna ut passerad tid
     if (testStarted == YES) {
@@ -96,13 +127,11 @@
         
     }
     
-    
     //Stanna klockan
     [timer invalidate];
 }
 
--(void)onUnpause
-{
+-(void)onUnpause {
     //STARTAR ETT PAUSA UR
     //Nytt startdatum
     start_date = [NSDate date];
@@ -111,18 +140,14 @@
     timer = [NSTimer timerWithTimeInterval:1.0/10.0 target:self selector:@selector(onTimer) userInfo:nil repeats:YES];
 }
 
--(void)onReset
-{
+-(void)onReset {
     //STANNAR KLOCKAN FÖR EVIGT
     [timer invalidate];
-    
     time_passed = 0;
-    
     start_date = nil;
 }
 
--(void)onTimer
-{
+-(void)onTimer {
     //UPPDATERAR UIt
     NSDate *currentDate = [NSDate date];
     NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:start_date]+time_passed;
@@ -132,11 +157,9 @@
     [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
     NSString *timeString=[dateFormatter stringFromDate:timerDate];
     countdownLabel.text = timeString;
-
 }
 
-- (void)countdownTimer
-{
+- (void)countdownTimer {
     [self setCountdownCounter:(5+5*difficulty)-fabs([start_countdown_date timeIntervalSinceNow])];
     NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:countdownCounter];
     
@@ -147,16 +170,13 @@
     
     countdownLabel.text = timeString;
     if (countdownCounter <= 0) {
-        NSLog(@"Fel om denna fortsätter efter vi är klara");
         [self presentNextQuestion];
     }
     
     [progressBar setProgress:((5+5*difficulty)-countdownCounter)/(5+5*difficulty) animated:YES];
-
 }
 
-- (void)startCountdownMethod
-{
+- (void)startCountdownMethod {
     [self setStartCountdown:3-fabs([startCountdownDate timeIntervalSinceNow])];
     NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:startCountdown];
     
@@ -421,7 +441,18 @@
         
         [self presentNextQuestion];
     }
-    
+}
+
+#pragma mark - Others
+- (void)noBG {
+    NSMutableArray *buttons = [[NSMutableArray alloc] initWithObjects:buttonOne, buttonTwo, buttonThree, buttonFour, nil];
+    for (int i = 0; i < 4; i++) {
+        [[buttons objectAtIndex:i] setBackgroundImage:[UIImage imageNamed:@"white.png"] forState:UIControlStateNormal];
+        [[buttons objectAtIndex:i] setTitleColor:[UIColor brownColor] forState:UIControlStateNormal];
+        [[buttons objectAtIndex:i] setBackgroundImage:[UIImage imageNamed:@"white.png"] forState:UIControlStateHighlighted];
+        [[buttons objectAtIndex:i] setTitleColor:[UIColor brownColor] forState:UIControlStateHighlighted];
+        [[buttons objectAtIndex:i] setEnabled:YES];
+    }
 }
 
 - (NSMutableArray *)simplifyFractionFromArray:(NSMutableArray *)array {
@@ -518,44 +549,6 @@
         return YES;
     }
     return NO;
-}
-
-- (void)viewDidLoad
-{
-        
-    questionAtm = 0;
-    [darkView setHidden:NO];
-    [questionArray removeAllObjects];
-    [answersArray removeAllObjects];
-    countdownLabel.text = @"00:00.0";
-    correctAnswersLabel.text = @"0/0";
-    denominatorOneLabel.text = @"";
-    denominatorTwoLabel.text = @"";
-    numeratorOneLabel.text = @"";
-    numeratorTwoLabel.text = @"";
-    questionLabel.text = @"";
-    
-    if ([gameMode isEqualToString:@"Practise"])
-        [progressBar setHidden:YES];
-    else
-        [progressBar setHidden:NO];
-    
-    if (![operation isEqualToString:@"Fraction"]) {
-        operationLabel.text = @"";
-        firstLineLabel.text = @"";
-        secondLineLabel.text = @"";
-    }
-    testStarted = NO;
-    
-    startCountdownDate = [NSDate date];
-    startCountdownTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f/10.0f
-                                                           target:self
-                                                         selector:@selector(startCountdownMethod)
-                                                         userInfo:nil
-                                                          repeats:YES];
-    
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
 }
 
 -(void)presentNextQuestion {
@@ -664,44 +657,26 @@
     
 }
 
-- (void)viewDidUnload
-{
-    [self setCountdownLabel:nil];
-    [self setCorrectAnswersLabel:nil];
-    [self setPauseButton:nil];
-    [self setOperationLabel:nil];
-    [self setNumeratorOneLabel:nil];
-    [self setNumeratorTwoLabel:nil];
-    [self setDenominatorOneLabel:nil];
-    [self setDenominatorTwoLabel:nil];
-    [self setButtonOne:nil];
-    [self setButtonTwo:nil];
-    [self setButtonThree:nil];
-    [self setButtonFour:nil];
-    [self setButtonTwo:nil];
-    [self setButtonThree:nil];
-    [self setButtonFour:nil];
-    [self setStartCountdownLabel:nil];
-    [self setDarkView:nil];
-    [self setQuestionLabel:nil];
-    [self setFirstLineLabel:nil];
-    [self setSecondLineLabel:nil];
-    [self setProgressBar:nil];
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
 -(void)buttonClicked:(int)buttonNumber {
-    if ([self checkIfCorrect:buttonNumber]) {
-        correctAnswers++;
+    [self setCountdownCounter:0];
+    [countdownTimer invalidate];
+    countdownTimer = nil;
+    
+    NSMutableArray *buttons = [[NSMutableArray alloc] initWithObjects:buttonOne, buttonTwo, buttonThree, buttonFour, nil];
+    for (int i = 0; i < 4; i++) {
+        [[buttons objectAtIndex:i] setEnabled:NO];
     }
     
-    [self presentNextQuestion];
+    if ([self checkIfCorrect:buttonNumber]) {
+        correctAnswers++;
+        [[buttons objectAtIndex:buttonNumber] setBackgroundImage:[UIImage imageNamed:@"green.png"] forState:UIControlStateNormal];
+    }
+    else {
+        [[buttons objectAtIndex:buttonNumber] setBackgroundImage:[UIImage imageNamed:@"red.png"] forState:UIControlStateNormal];
+    }
+    
+    [self performSelector:@selector(noBG) withObject:nil afterDelay:.5];
+    [self performSelector:@selector(presentNextQuestion) withObject:nil afterDelay:.5];
     
 }
 

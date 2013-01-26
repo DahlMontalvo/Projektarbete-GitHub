@@ -1,5 +1,8 @@
 //
-// Prefix header for all source files of the 'Projektarbete_v1_2' target in the 'Projektarbete_v1_2' project
+//  Prefix file
+//  Simple Science
+//
+//  Copyright (c) 2013 Jonas Dahl & Philip Montalvo. All rights reserved.
 //
 
 #import <Availability.h>

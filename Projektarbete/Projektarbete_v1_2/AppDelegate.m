@@ -1,9 +1,8 @@
 //
 //  AppDelegate.m
-//  Projektarbete_v1_2
+//  Simple Science
 //
-//  Created by Jonas Dahl on 7/20/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 Jonas Dahl & Philip Montalvo. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -12,91 +11,70 @@
 @implementation AppDelegate
 
 @synthesize window = _window;
-@synthesize questions;
-@synthesize categories;
+@synthesize questions, categories;
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    //starta flurry
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    //Starta Flurry
     [Flurry startSession:@"4PZV62W3J3VVBGMC42SC"];
-    [self readQuestionsFromDatabase];
+    [self readCategoriesFromDatabase];
     [NSThread sleepForTimeInterval:1.0];
     
-    UIApplication *app = [UIApplication sharedApplication];
-    [app setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
-    // Override point for customization after application launch.
+    //Dölj status bar
+    [application setStatusBarHidden:YES];
     
-    
-    int launchCount = 0;
-    
-    launchCount = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"launchCount" ] + 1;
-    [[[Singleton sharedSingleton] sharedPrefs] setInteger:launchCount forKey:@"launchCount"];
+    //Hantera antal launchar
+    int launchCount = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"LaunchCount" ] + 1;
+    [[[Singleton sharedSingleton] sharedPrefs] setInteger:launchCount forKey:@"LaunchCount"];
     [[[Singleton sharedSingleton] sharedPrefs] synchronize];
     
-    NSLog(@"number of times: %i this app has been launched", launchCount);
-    
-    if ( launchCount == 1 )
-    {
-        NSLog(@"this is the FIRST LAUNCH of the app");
-        // do stuff here as you wish
-    }
-    if ( launchCount == 2 )
-    {
-        NSLog(@"this is the SECOND launch of the damn app");
-        // do stuff here as you wish
-    }
-    
-    if ([[[Singleton sharedSingleton] sharedPrefs] boolForKey:@"ApplicationHasOpenedBefore"] != YES) {
-        //First run
+    if (launchCount == 1) {
         [[[Singleton sharedSingleton] sharedPrefs] setObject:[NSDate dateWithTimeIntervalSince1970:1357020000] forKey:@"LastSyncDate"];
-        [[[Singleton sharedSingleton] sharedPrefs] setBool:YES forKey:@"ApplicationHasOpenedBefore"];
     }
-    
-    [application setStatusBarHidden:YES];
     
     return YES;
 }
 
-
-
 -(void)applicationDidBecomeActive:(UIApplication *)application {
     [self copyDatabaseIfNeeded];
-	[self readQuestionsFromDatabase];
+	[self readCategoriesFromDatabase];
 }
 
--(void) readQuestionsFromDatabase {
-    NSLog(@"Läser frågor");
-    
-	// Setup the database object
+- (void)applicationWillResignActive:(UIApplication *)application {
+}
+
+- (void)applicationDidEnterBackground:(UIApplication *)application {
+}
+
+- (void)applicationWillEnterForeground:(UIApplication *)application {
+}
+
+- (void)applicationWillTerminate:(UIApplication *)application {
+}
+
+#pragma mark - Database Methods
+
+-(void)readCategoriesFromDatabase {
 	sqlite3 *database;
-    
-	// Init the animals Array
 	categories = [[NSMutableArray alloc] init];
+    BOOL again = NO;
     
-    BOOL redo = NO;
-    
-	// Open the database from the users filessytem
 	if(sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK) {
-		// Setup the SQL Statement and compile it for faster access
 		const char *sqlStatement = "SELECT * FROM categories WHERE deleted != 1";
 		sqlite3_stmt *compiledStatement;
+        
 		if(sqlite3_prepare_v2(database, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK) {
-			// Loop through the results and add them to the feeds array
+            
 			while(sqlite3_step(compiledStatement) == SQLITE_ROW) {
-				// Read the data from the result row
 				NSNumber *catID = [NSNumber numberWithInt:sqlite3_column_int(compiledStatement, 0)];
 				NSString *category = [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 1)];
                 NSString *parent = [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 2)];
-                
                 NSMutableArray *cat = [[NSMutableArray alloc] initWithObjects:category, parent, catID, nil];
                 
                 const char *sqlStatement2 = [[NSString stringWithFormat:@"SELECT COUNT(*) AS count FROM questions WHERE parentCategory = %i", [catID intValue]] UTF8String];
                 sqlite3_stmt *compiledStatement2;
                 int numbers = 0;
                 if(sqlite3_prepare_v2(database, sqlStatement2, -1, &compiledStatement2, NULL) == SQLITE_OK) {
-                    // Loop through the results and add them to the feeds array
                     while(sqlite3_step(compiledStatement2) == SQLITE_ROW) {
-                        // Read the data from the result row
                         numbers = sqlite3_column_int(compiledStatement2, 0);
                     }
                 }
@@ -107,19 +85,20 @@
 			}
 		}
         else {
-            redo = YES;
+            again = YES;
         }
-		// Release the compiled statement from memory
 		sqlite3_finalize(compiledStatement);
         
 	}
 	sqlite3_close(database);
-    if (redo)
+    
+    //Om databasen inte är initialiserad försöker vi igen om 0.5 s
+    if (again)
         [self performSelector:@selector(readQuestionsFromDatabase) withObject:nil afterDelay:.5];
     
 }
 
--(NSMutableArray *) getCategoryWithID:(int)ID {
+-(NSMutableArray *)getCategoryWithID:(int)ID {
 	sqlite3 *database;
     NSMutableArray *category = [[NSMutableArray alloc] init];
     
@@ -137,7 +116,6 @@
                 [category addObject:catID];
 			}
 		}
-		// Release the compiled statement from memory
 		sqlite3_finalize(compiledStatement);
         
 	}
@@ -253,7 +231,7 @@
 	}
 	sqlite3_close(database);
     
-    [self readQuestionsFromDatabase];
+    [self readCategoriesFromDatabase];
 }
 
 -(int)numbersOfQuestionsInCategory:(int)ID {
@@ -274,7 +252,7 @@
     return number;
 }
 
--(NSMutableArray *) getQuestionInCategory:(int)ID withOutIds:(NSMutableArray *)noId {
+-(NSMutableArray *)getQuestionInCategory:(int)ID withOutIds:(NSMutableArray *)noId {
 	sqlite3 *database;
     NSMutableArray *question = [[NSMutableArray alloc] init];
     BOOL found = NO;
@@ -331,8 +309,7 @@
                 }
                 sqlite3_finalize(compiledStatement2);
                 
-                
-                const char *sqlStatement4 = [[NSString stringWithFormat:@"SELECT * FROM answers WHERE questionId != %i AND deleted != 1 LIMIT 3", [qID intValue]] UTF8String];
+                const char *sqlStatement4 = [[NSString stringWithFormat:@"SELECT * FROM answers WHERE questionId != %i AND deleted != 1 ORDER BY RANDOM() LIMIT 3", [qID intValue]] UTF8String];
                 sqlite3_stmt *compiledStatement4;
                 if(sqlite3_prepare_v2(database, sqlStatement4, -1, &compiledStatement4, NULL) == SQLITE_OK) {
                     while(sqlite3_step(compiledStatement4) == SQLITE_ROW && ansNum <= 2) {
@@ -390,7 +367,6 @@
         return question;
     else
         return nil;
-    
 }
 
 -(NSMutableArray *) getQuestionInMainCategory:(NSString *)subject withOutIds:(NSMutableArray *)noId {
@@ -451,7 +427,7 @@
                 sqlite3_finalize(compiledStatement2);
                 
                 
-                const char *sqlStatement4 = [[NSString stringWithFormat:@"SELECT * FROM answers WHERE questionId != %i AND deleted != 1 LIMIT 3", [qID intValue]] UTF8String];
+                const char *sqlStatement4 = [[NSString stringWithFormat:@"SELECT * FROM answers WHERE questionId != %i AND deleted != 1 ORDER BY RANDOM() LIMIT 3", [qID intValue]] UTF8String];
                 sqlite3_stmt *compiledStatement4;
                 if(sqlite3_prepare_v2(database, sqlStatement4, -1, &compiledStatement4, NULL) == SQLITE_OK) {
                     while(sqlite3_step(compiledStatement4) == SQLITE_ROW && ansNum <= 2) {
@@ -512,40 +488,7 @@
     
 }
 
-							
-- (void)applicationWillResignActive:(UIApplication *)application
-{
-    /*
-     Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-     Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-     */
-}
-
-- (void)applicationDidEnterBackground:(UIApplication *)application
-{
-    /*
-     Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-     If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-     */
-}
-
-- (void)applicationWillEnterForeground:(UIApplication *)application
-{
-    /*
-     Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-     */
-}
-
-- (void)applicationWillTerminate:(UIApplication *)application
-{
-    /*
-     Called when the application is about to terminate.
-     Save data if appropriate.
-     See also applicationDidEnterBackground:.
-     */
-}
-
-- (void) copyDatabaseIfNeeded {
+- (void)copyDatabaseIfNeeded {
     databaseName = @"Database.sql";
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSError *error;

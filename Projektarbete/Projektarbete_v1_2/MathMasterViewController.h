@@ -1,9 +1,8 @@
 //
-//  ViewController.h
-//  Projektarbete_v1_2
+//  MathMasterViewController.h
+//  Simple Science
 //
-//  Created by Jonas Dahl on 9/11/12.
-//
+//  Copyright (c) 2013 Jonas Dahl & Philip Montalvo. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -14,7 +13,6 @@
 
 @property (nonatomic, retain) NSString *operation;
 @property (nonatomic, retain) NSMutableArray *operations;
-
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
 
 - (IBAction)button:(id)sender;
