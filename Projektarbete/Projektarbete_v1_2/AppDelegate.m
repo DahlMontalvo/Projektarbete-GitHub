@@ -94,7 +94,7 @@
     
     //Om databasen inte är initialiserad försöker vi igen om 0.5 s
     if (again)
-        [self performSelector:@selector(readQuestionsFromDatabase) withObject:nil afterDelay:.5];
+        [self performSelector:@selector(readCategoriesFromDatabase) withObject:nil afterDelay:.5];
     
 }
 
