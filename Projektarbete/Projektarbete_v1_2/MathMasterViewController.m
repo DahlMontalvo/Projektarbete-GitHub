@@ -96,7 +96,7 @@
     
     MathTableCellController *cell = (MathTableCellController *)[localTableView dequeueReusableCellWithIdentifier:operation];
     if (cell == nil) {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MathTableCellController" owner:self options:nil];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MathTableCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
     
