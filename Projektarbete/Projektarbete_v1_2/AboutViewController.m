@@ -9,7 +9,7 @@
 #import "Singleton.h"
 
 @implementation AboutViewController
-@synthesize delegate, doneButton, syncButton, errorParsing, questionsUpdated, elementValue, articles, currentElement, item, rssParser, currentPart, currentItem, categoryChanges, questionChanges, answerChanges, a, lightView, activityIndicatior;
+@synthesize delegate, doneButton, syncButton, errorParsing, questionsUpdated, elementValue, articles, currentElement, item, rssParser, currentPart, currentItem, categoryChanges, questionChanges, answerChanges, a, progressBar, totalUpdates, update, updateTimer;
 
 #pragma mark - Initialization
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -25,14 +25,12 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated {
-    [lightView setHidden:YES];
-    [activityIndicatior setHidden:YES];
+    [progressBar setHidden:YES];
 }
 
 - (void)viewDidUnload {
     [self setSyncButton:nil];
-    [self setLightView:nil];
-    [self setActivityIndicatior:nil];
+    [self setProgressBar:nil];
     [super viewDidUnload];
 }
 
@@ -52,9 +50,15 @@
 
 - (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
     errorParsing = YES;
+    UIAlertView *errorMessage = [[UIAlertView alloc] initWithTitle:@"Error" message:@"An error occurred. Try again later." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    [errorMessage show];
+    update = 0;
+    [NSThread detachNewThreadSelector:@selector(updateProgressBar) toTarget:self withObject:nil];
+    [progressBar setHidden:YES];
 }
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
+    [NSThread detachNewThreadSelector:@selector(updateProgressBar) toTarget:self withObject:nil];
     
     currentElement = [elementName copy];
     elementValue = [[NSMutableString alloc] init];
@@ -65,11 +69,13 @@
         currentPart = @"questions";
     else if ([currentElement isEqualToString:@"answers"])
         currentPart = @"answers";
+    else if ([currentElement isEqualToString:@"count"])
+        currentPart = @"count";
     else {
-        if ([currentElement isEqualToString:@"entry"]) {
+        if ([currentElement isEqualToString:@"e"]) {
             a++;
         }
-        if ([currentElement isEqualToString:@"entry"] && [currentPart isEqualToString:@"questions"]) {
+        if ([currentElement isEqualToString:@"e"] && [currentPart isEqualToString:@"questions"]) {
             questionsUpdated++;
         }
     }
@@ -77,69 +83,77 @@
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     NSString *val = [elementValue copy];
-    if (![elementName isEqualToString:@"entry"]) {
-        if ([currentPart isEqualToString:@"questions"]) {
-            if ([elementName isEqualToString:@"id"]) {
+    if (![elementName isEqualToString:@"e"]) {
+        if ([currentPart isEqualToString:@"count"]) {
+            NSString *val = [elementValue copy];
+            totalUpdates = 2*[val intValue];
+        }
+        else if ([currentPart isEqualToString:@"questions"]) {
+            if ([elementName isEqualToString:@"i"]) {
+                update++;
                 [questionChanges insertObject:[[NSMutableArray alloc] init] atIndex:questionsUpdated-1];
                 [[questionChanges objectAtIndex:questionsUpdated-1] insertObject:[NSNumber numberWithInt:[elementValue intValue]] atIndex:0];
             }
-            else if ([elementName isEqualToString:@"question"]) {
+            else if ([elementName isEqualToString:@"q"]) {
                 val = [val stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
                 [[questionChanges objectAtIndex:questionsUpdated-1] insertObject:val atIndex:1];
             }
-            else if ([elementName isEqualToString:@"parentCategory"]) {
+            else if ([elementName isEqualToString:@"p"]) {
                 [[questionChanges objectAtIndex:questionsUpdated-1] insertObject:[NSNumber numberWithInt:[elementValue intValue]] atIndex:2];
             }
-            else if ([elementName isEqualToString:@"lastUpdated"]) {
+            else if ([elementName isEqualToString:@"l"]) {
                 val = [val stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
                 [[questionChanges objectAtIndex:questionsUpdated-1] insertObject:val atIndex:3];
             }
-            else if ([elementName isEqualToString:@"deleted"]) {
+            else if ([elementName isEqualToString:@"d"]) {
                 [[questionChanges objectAtIndex:questionsUpdated-1] insertObject:[NSNumber numberWithInt:[elementValue intValue]] atIndex:4];
             }
         }
         else if ([currentPart isEqualToString:@"categories"]) {
-            if ([elementName isEqualToString:@"id"]) {
+            if ([elementName isEqualToString:@"i"]) {
+                update++;
                 [categoryChanges insertObject:[[NSMutableArray alloc] init] atIndex:[categoryChanges count]];
                 [[categoryChanges objectAtIndex:[categoryChanges count]-1] insertObject:[NSNumber numberWithInt:[elementValue intValue]] atIndex:0];
             }
-            else if ([elementName isEqualToString:@"name"]) {
+            else if ([elementName isEqualToString:@"n"]) {
                 val = [val stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
                 [[categoryChanges objectAtIndex:[categoryChanges count]-1] insertObject:val atIndex:1];
             }
-            else if ([elementName isEqualToString:@"parent"]) {
+            else if ([elementName isEqualToString:@"p"]) {
                 val = [val stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
                 [[categoryChanges objectAtIndex:[categoryChanges count]-1] insertObject:val atIndex:2];
             }
-            else if ([elementName isEqualToString:@"lastUpdated"]) {
+            else if ([elementName isEqualToString:@"l"]) {
                 val = [val stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
                 [[categoryChanges objectAtIndex:[categoryChanges count]-1] insertObject:val atIndex:3];
             }
-            else if ([elementName isEqualToString:@"deleted"]) {
+            else if ([elementName isEqualToString:@"d"]) {
                 [[categoryChanges objectAtIndex:[categoryChanges count]-1] insertObject:[NSNumber numberWithInt:[elementValue intValue]] atIndex:4];
             }
         }
         else if ([currentPart isEqualToString:@"answers"]) {
-            if ([elementName isEqualToString:@"id"]) {
+            if ([elementName isEqualToString:@"i"]) {
+                update++;
+                
                 [answerChanges insertObject:[[NSMutableArray alloc] init] atIndex:[answerChanges count]];
                 [[answerChanges objectAtIndex:[answerChanges count]-1] insertObject:[NSNumber numberWithInt:[elementValue intValue]] atIndex:0];
             }
-            else if ([elementName isEqualToString:@"answer"]) {
+            else if ([elementName isEqualToString:@"a"]) {
                 val = [val stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
                 [[answerChanges objectAtIndex:[answerChanges count]-1] insertObject:val atIndex:1];
             }
-            else if ([elementName isEqualToString:@"questionId"]) {
+            else if ([elementName isEqualToString:@"q"]) {
                 val = [val stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
                 [[answerChanges objectAtIndex:[answerChanges count]-1] insertObject:val atIndex:2];
             }
-            else if ([elementName isEqualToString:@"correct"]) {
+            else if ([elementName isEqualToString:@"c"]) {
                 [[answerChanges objectAtIndex:[answerChanges count]-1] insertObject:[NSNumber numberWithInt:[elementValue intValue]] atIndex:3];
             }
-            else if ([elementName isEqualToString:@"lastUpdated"]) {
+            else if ([elementName isEqualToString:@"l"]) {
                 val = [val stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
                 [[answerChanges objectAtIndex:[answerChanges count]-1] insertObject:val atIndex:4];
             }
-            else if ([elementName isEqualToString:@"deleted"]) {
+            else if ([elementName isEqualToString:@"d"]) {
                 [[answerChanges objectAtIndex:[answerChanges count]-1] insertObject:[NSNumber numberWithInt:[elementValue intValue]] atIndex:5];
             }
         }
@@ -147,13 +161,17 @@
 }
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
-    [elementValue appendString:string];
+    NSLog(@"%@", string);
+    if (!elementValue) {
+        elementValue = [[NSMutableString alloc] initWithString:string];
+    } else {
+        [elementValue appendString:string];
+    }
+    //[elementValue appendString:string];
 }
 
 - (void)parserDidEndDocument:(NSXMLParser *)parser {
-    [lightView setHidden:YES];
-    [activityIndicatior setHidden:YES];
-    [activityIndicatior stopAnimating];
+    [progressBar setHidden:YES];
     
     NSString *messageText;
     if (questionsUpdated > 3)
@@ -178,6 +196,8 @@
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     for (int i = 0; i < [questionChanges count]; i++) {
         [appDelegate updateQuestionWithId:[[[questionChanges objectAtIndex:i] objectAtIndex:0] intValue] question:[[questionChanges objectAtIndex:i] objectAtIndex:1] parent:[[[questionChanges objectAtIndex:i] objectAtIndex:2] intValue] deleted:[[[questionChanges objectAtIndex:i] objectAtIndex:4] intValue]];
+        update++;
+        [NSThread detachNewThreadSelector:@selector(updateProgressBar) toTarget:self withObject:nil];
     }
     for (int i = 0; i < [answerChanges count]; i++) {
         [appDelegate updateAnswerWithId:[[[answerChanges objectAtIndex:i] objectAtIndex:0] intValue]
@@ -185,18 +205,30 @@
                                  parent:[[[answerChanges objectAtIndex:i] objectAtIndex:2] intValue]
                                 correct:[[[answerChanges objectAtIndex:i] objectAtIndex:3] intValue]
                                 deleted:[[[answerChanges objectAtIndex:i] objectAtIndex:5] intValue]];
+        update++;
+        [NSThread detachNewThreadSelector:@selector(updateProgressBar) toTarget:self withObject:nil];
     }
     for (int i = 0; i < [categoryChanges count]; i++) {
         [appDelegate updateCategoryWithId:[[[categoryChanges objectAtIndex:i] objectAtIndex:0] intValue]
                                      name:[[categoryChanges objectAtIndex:i] objectAtIndex:1]
                                    parent:[[categoryChanges objectAtIndex:i] objectAtIndex:2]
                                   deleted:[[[categoryChanges objectAtIndex:i] objectAtIndex:4] intValue]];
+        update++;
+        [NSThread detachNewThreadSelector:@selector(updateProgressBar) toTarget:self withObject:nil];
     }
     [[[Singleton sharedSingleton] sharedPrefs] setObject:[NSDate date] forKey:@"LastSyncDate"];
     [appDelegate readCategoriesFromDatabase];
 }
 
 #pragma mark - Other
+-(void)updateProgressBar {
+    if (totalUpdates == 0) totalUpdates = 1;
+    float val = (float)update/(float)totalUpdates;
+    if (val <= 1) {
+        [progressBar setProgress:val animated:YES];
+    }
+}
+
 -(IBAction)done:(id)sender {
     [self.delegate AboutViewControllerDidDone:self];
 }
@@ -217,9 +249,11 @@
 }
 
 -(void)startUpdating {
+    update = 0;
     questionChanges = [[NSMutableArray alloc] init];
     categoryChanges = [[NSMutableArray alloc] init];
     answerChanges = [[NSMutableArray alloc] init];
+    totalUpdates = 100;
     
     //Synka hela databasen
     NSDate *oldestUpdateDate = [[[Singleton sharedSingleton] sharedPrefs] objectForKey:@"LastSyncDate"];
@@ -235,8 +269,9 @@
     [request setValue:agentString forHTTPHeaderField:@"User-Agent"];
     
     NSData *xmlFile = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-    
-    errorParsing = NO;
+    NSString *str = [[NSString alloc] initWithData:xmlFile encoding:NSUTF8StringEncoding];
+    str = [str stringByReplacingOccurrencesOfString:@"&" withString:@"&amp;"];
+    xmlFile = [str dataUsingEncoding:NSUTF8StringEncoding];
     
     rssParser = [[NSXMLParser alloc] initWithData:xmlFile];
     [rssParser setDelegate:(id<NSXMLParserDelegate>)self];
@@ -247,10 +282,8 @@
 }
 
 - (IBAction)syncButtonPressed:(id)sender {
-    [lightView setHidden:NO];
-    [activityIndicatior setHidden:NO];
-    [activityIndicatior startAnimating];
-    
+    update = 0;
+    [progressBar setHidden:NO];
     [self performSelector:@selector(startUpdating) withObject:nil afterDelay:0];
 }
 

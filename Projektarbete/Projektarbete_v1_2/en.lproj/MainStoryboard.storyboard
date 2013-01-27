@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C3012" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
@@ -398,14 +398,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Developed by" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="iaC-5u-2ci">
-                                <rect key="frame" x="19" y="62" width="280" height="43"/>
+                                <rect key="frame" x="19" y="57" width="280" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
                                 <fontDescription key="fontDescription" name="Marion-Regular" family="Marion" pointSize="15"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Jonas Dahl &amp; Philip Montalvo" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="VaZ-4M-zMX">
-                                <rect key="frame" x="19" y="83" width="280" height="43"/>
+                                <rect key="frame" x="19" y="77" width="280" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
                                 <fontDescription key="fontDescription" name="Marion-Regular" family="Marion" pointSize="15"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -461,7 +461,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xLE-Eu-0P9">
-                                <rect key="frame" x="30" y="129" width="260" height="44"/>
+                                <rect key="frame" x="30" y="119" width="260" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
                                 <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="23"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
@@ -491,17 +491,6 @@
                                     <action selector="done:" destination="ck9-16-VUu" eventType="touchUpInside" id="loK-Ry-CJu"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" id="5NE-a2-T1W">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
-                                <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="gray" id="jJe-lr-3eg">
-                                        <rect key="frame" x="150" y="230" width="20" height="20"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                    </activityIndicatorView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="0.78000000000000003" colorSpace="calibratedWhite"/>
-                            </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="About" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iPe-PS-D0B">
                                 <rect key="frame" x="74" y="18" width="172" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -510,7 +499,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" editable="NO" id="pqY-1j-yX8">
-                                <rect key="frame" x="30" y="177" width="260" height="125"/>
+                                <rect key="frame" x="30" y="180" width="260" height="125"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <string key="text">Here you can sync the questions in your app to our database, if there are any available questions the button above will download them. Also, if you find any errors in the questions or have any feedback, send us an email or report the question in the pause menu. We hope you will enjoy it.</string>
@@ -518,6 +507,11 @@
                                 <fontDescription key="fontDescription" name="Marion-Regular" family="Marion" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <progressView opaque="NO" contentMode="scaleToFill" id="bde-cM-CXg">
+                                <rect key="frame" x="30" y="170" width="260" height="9"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="progressTintColor" red="0.063548486230000006" green="0.31301817599999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -530,9 +524,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="activityIndicatior" destination="jJe-lr-3eg" id="dbY-6S-kaS"/>
                         <outlet property="doneButton" destination="Irt-gF-0Nv" id="Q55-3v-6KU"/>
-                        <outlet property="lightView" destination="5NE-a2-T1W" id="TFx-4m-HdY"/>
+                        <outlet property="progressBar" destination="bde-cM-CXg" id="Rk8-PP-0WB"/>
                         <outlet property="syncButton" destination="xLE-Eu-0P9" id="uc5-5E-YI2"/>
                     </connections>
                 </viewController>
@@ -2295,9 +2288,7 @@
                 <relationship kind="action" name="feedBackFacebookButtonPressed:"/>
                 <relationship kind="action" name="likeButtonPressed:"/>
                 <relationship kind="action" name="syncButtonPressed:"/>
-                <relationship kind="outlet" name="activityIndicatior" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="lightView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="syncButton" candidateClass="UIButton"/>
             </relationships>
         </class>

@@ -23,9 +23,9 @@
 @property (nonatomic, weak) id <AboutViewControllerDelegate> delegate;
 @property (strong, nonatomic)IBOutlet UIBarButtonItem *doneButton;
 @property (weak, nonatomic) IBOutlet UIButton *syncButton;
+@property (strong, nonatomic) IBOutlet UIProgressView *progressBar;
+
 @property (nonatomic) BOOL errorParsing;
-@property (weak, nonatomic) IBOutlet UIView *lightView;
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatior;
 @property (nonatomic, retain) NSXMLParser *rssParser;
 @property (nonatomic, retain) NSMutableArray *articles;
 @property (nonatomic, retain) NSMutableDictionary *item;
@@ -36,8 +36,11 @@
 @property (nonatomic, retain) NSMutableArray *questionChanges;
 @property (nonatomic, retain) NSMutableArray *answerChanges;
 @property (nonatomic) int a;
+@property (nonatomic) int totalUpdates;
+@property (nonatomic) int update;
 @property (nonatomic) int questionsUpdated;
 @property (nonatomic, retain) NSMutableArray *currentItem;
+@property (nonatomic, retain) NSTimer *updateTimer;
 
 -(IBAction)done:(id)sender;
 -(IBAction)emailPressed:(id)sender;
