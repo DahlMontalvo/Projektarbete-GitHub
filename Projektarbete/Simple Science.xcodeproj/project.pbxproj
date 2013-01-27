@@ -33,6 +33,7 @@
 		007BC47E15C09B4E009BC60D /* MathTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007BC47C15C09B4E009BC60D /* MathTableCell.xib */; };
 		00946E46167FC804002C9786 /* brun2.png in Resources */ = {isa = PBXBuildFile; fileRef = 00946E45167FC804002C9786 /* brun2.png */; };
 		00AC4D1816B4A30D006839F8 /* StatsBG3.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AC4D1716B4A30D006839F8 /* StatsBG3.png */; };
+		00AC4D1E16B5DF24006839F8 /* ContinueButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 00AC4D1D16B5DF24006839F8 /* ContinueButton.png */; };
 		00C6AD6B15FD248600493F52 /* Addition.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AD6415FD248600493F52 /* Addition.png */; };
 		00C6AD6C15FD248600493F52 /* Division.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AD6515FD248600493F52 /* Division.png */; };
 		00C6AD6D15FD248600493F52 /* Equations.png in Resources */ = {isa = PBXBuildFile; fileRef = 00C6AD6615FD248600493F52 /* Equations.png */; };
@@ -147,6 +148,7 @@
 		007BC47C15C09B4E009BC60D /* MathTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MathTableCell.xib; sourceTree = "<group>"; };
 		00946E45167FC804002C9786 /* brun2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brun2.png; sourceTree = "<group>"; };
 		00AC4D1716B4A30D006839F8 /* StatsBG3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatsBG3.png; sourceTree = "<group>"; };
+		00AC4D1D16B5DF24006839F8 /* ContinueButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ContinueButton.png; sourceTree = "<group>"; };
 		00C6AD6415FD248600493F52 /* Addition.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Addition.png; sourceTree = "<group>"; };
 		00C6AD6515FD248600493F52 /* Division.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Division.png; sourceTree = "<group>"; };
 		00C6AD6615FD248600493F52 /* Equations.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Equations.png; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 				00C71481162DC88D00753136 /* TestButtonPressed.png */,
 				00C71488162DCA4900753136 /* Box.png */,
 				00C7148A162DCB6000753136 /* PapperGM.png */,
+				00AC4D1D16B5DF24006839F8 /* ContinueButton.png */,
 			);
 			name = "Game Mode";
 			sourceTree = "<group>";
@@ -774,6 +777,7 @@
 				DDF312A716B46A4B00015C6C /* Singleton.txt in Resources */,
 				DDF312AE16B4863100015C6C /* bakåtpil.png in Resources */,
 				00AC4D1816B4A30D006839F8 /* StatsBG3.png in Resources */,
+				00AC4D1E16B5DF24006839F8 /* ContinueButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
