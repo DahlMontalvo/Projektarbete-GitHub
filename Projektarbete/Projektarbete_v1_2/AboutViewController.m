@@ -170,8 +170,13 @@
     //[elementValue appendString:string];
 }
 
-- (void)parserDidEndDocument:(NSXMLParser *)parser {
+-(void)hideProgressBar {
     [progressBar setHidden:YES];
+}
+
+- (void)parserDidEndDocument:(NSXMLParser *)parser {
+    [progressBar setProgress:1.0];
+    [self performSelector:@selector(hideProgressBar) withObject:nil afterDelay:.3];
     
     NSString *messageText;
     if (questionsUpdated > 3)
