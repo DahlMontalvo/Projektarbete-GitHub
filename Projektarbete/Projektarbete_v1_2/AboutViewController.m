@@ -223,6 +223,9 @@
     }
     [[[Singleton sharedSingleton] sharedPrefs] setObject:[NSDate date] forKey:@"LastSyncDate"];
     [appDelegate readCategoriesFromDatabase];
+    categoryChanges = nil;
+    questionChanges = nil;
+    answerChanges = nil;
 }
 
 #pragma mark - Other

@@ -129,9 +129,9 @@
     //Frågor placeras i quizArray[0]
     
     //Lite minnesplatser
-    int number1; 
-    int number2;
-    int number3;
+    int number1 = 1;
+    int number2 = 1;
+    int number3 = 1;
     int localAnswer;
     NSString *text;
     

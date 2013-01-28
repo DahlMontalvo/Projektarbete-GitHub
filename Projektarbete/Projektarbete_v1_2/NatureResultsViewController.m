@@ -56,30 +56,30 @@
     
     starsBefore = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:key];
     
-    if (finalTime < 50 && score == 10) {
+    if (finalTime < 60 && score == 10) {
         starsLabel.text = @"3 Stars!";
         description.text = @"Perfect!";
         stars = 3;
         if (starsBefore < 3)
             [[[Singleton sharedSingleton] sharedPrefs] setInteger:3 forKey:key];
     }
-    else if (finalTime < 80 && score > 7) {
+    else if (finalTime < 90 && score > 7) {
         starsLabel.text = @"2 Stars!";
-        description.text = @"For three stars, you need all correct answers in 50 seconds.";
+        description.text = @"For three stars, you need all correct answers in 60 seconds.";
         stars = 2;
         if (starsBefore < 2)
             [[[Singleton sharedSingleton] sharedPrefs] setInteger:2 forKey:key];
     }
-    else if (finalTime < 120 && score > 5) {
+    else if (finalTime < 140 && score > 5) {
         starsLabel.text = @"1 Star!";
-        description.text = @"For two stars, you need 8 correct answers in 60 seconds.";
+        description.text = @"For two stars, you need 8 correct answers in 90 seconds.";
         stars = 1;
         if (starsBefore < 1)
             [[[Singleton sharedSingleton] sharedPrefs] setInteger:1 forKey:key];
     }
     else {
         starsLabel.text = @"No stars this time.";
-        description.text = @"For one star, you need 6 correct answers in 100 seconds.";
+        description.text = @"For one star, you need 6 correct answers in 140 seconds.";
         stars = 0;
     }
     
@@ -184,7 +184,10 @@
 #pragma mark - Others
 - (IBAction)continueButtonPressed:(id)sender {
     NSArray *viewControllers = [self.navigationController viewControllers];
-    [self.navigationController popToViewController:[viewControllers objectAtIndex:1] animated:YES];
+    if ([viewControllers count] >= 2)
+        [self.navigationController popToViewController:[viewControllers objectAtIndex:1] animated:YES];
+    else
+        [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 @end

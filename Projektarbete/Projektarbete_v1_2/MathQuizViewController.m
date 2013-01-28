@@ -177,6 +177,8 @@
 }
 
 - (void)startCountdownMethod {
+    int x = 0;
+
     [self setStartCountdown:3-fabs([startCountdownDate timeIntervalSinceNow])];
     NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:startCountdown];
     
@@ -298,7 +300,6 @@
                 int b = (arc4random() % 50)/(6-difficulty)+1;
                 int c = (arc4random() % 50)/(6-difficulty)+1;
                 NSString *question;
-                int x;
                 bool leaveLoop;
                 
                 //fan va bra du har gjort det här.
@@ -381,14 +382,12 @@
             questionArray = [[NSMutableArray alloc] init];
             answersArray = [[NSMutableArray alloc] init];
             correctAnswers = 0;
-            //Skapa frågor
-            
+            //Skapa frågor            
             for (int i = 0; i < 10; i++) {
                 int a = (arc4random() % 95);
                 a=(a/10)*10;
                 int b = (arc4random() % 500)/(6-difficulty)+5;
                 NSString *question;
-                int x;
                 int typeOfQuestion = arc4random() % 2+1;
                 bool leave;
                 NSString *unit;

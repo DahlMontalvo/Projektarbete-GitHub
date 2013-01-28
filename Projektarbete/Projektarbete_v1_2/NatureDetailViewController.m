@@ -322,7 +322,7 @@
     if (lastSentErrorReport < questionAtm) {
         
         UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Report Error"
-                                                          message:@"Are u sure that u want to report this question as incorrect?"
+                                                          message:@"Are you sure that you want to report this question as incorrect?"
                                                          delegate:self
                                                 cancelButtonTitle:@"No"
                                                 otherButtonTitles:@"Yes",nil];
@@ -346,8 +346,7 @@
         [request setValue:[NSString stringWithFormat:@"%d", [postString length]] forHTTPHeaderField:@"Content-length"];
         [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
         
-        NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-        conn = nil;
+        [NSURLConnection connectionWithRequest:request delegate:self];
         lastSentErrorReport = questionAtm;
     }
 }

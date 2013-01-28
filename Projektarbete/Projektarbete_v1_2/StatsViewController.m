@@ -28,6 +28,8 @@
 }
 
 -(void)refreshView {
+    NSLog(@"%@", [[[Singleton sharedSingleton] sharedPrefs] dictionaryRepresentation]);
+    
     int completedTests = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"CompletedTests"];
     int tenOutOfTens = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TenOutOfTens"];
     int bestHighscore = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"BestHighscore"];
@@ -203,8 +205,13 @@
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     
 	if (buttonIndex == 0) {
+        NSDate *lastSyncDate = [[[Singleton sharedSingleton] sharedPrefs] objectForKey:@"LastSyncDate"];
+        int launchCount = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"LaunchCount"];
         [[[Singleton sharedSingleton] sharedPrefs] setPersistentDomain:[NSDictionary dictionary] forName:[[NSBundle mainBundle] bundleIdentifier]];
+        [[[Singleton sharedSingleton] sharedPrefs] setObject:lastSyncDate forKey:@"LastSyncDate"];
+        [[[Singleton sharedSingleton] sharedPrefs] setInteger:launchCount forKey:@"LaunchCount"];
         [[[Singleton sharedSingleton] sharedPrefs] synchronize];
+    
         [self refreshView];
     }
     
