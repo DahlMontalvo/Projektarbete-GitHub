@@ -398,15 +398,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Developed by" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="iaC-5u-2ci">
-                                <rect key="frame" x="19" y="57" width="280" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
+                                <rect key="frame" x="19" y="51" width="280" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Marion-Regular" family="Marion" pointSize="15"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Jonas Dahl &amp; Philip Montalvo" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="VaZ-4M-zMX">
-                                <rect key="frame" x="19" y="77" width="280" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
+                                <rect key="frame" x="19" y="68" width="280" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Marion-Regular" family="Marion" pointSize="15"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -461,8 +461,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xLE-Eu-0P9">
-                                <rect key="frame" x="30" y="119" width="260" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
+                                <rect key="frame" x="29" y="121" width="260" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="23"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Sync Questions" backgroundImage="knappBG.png">
@@ -498,17 +498,17 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" editable="NO" id="pqY-1j-yX8">
-                                <rect key="frame" x="30" y="180" width="260" height="125"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" editable="NO" id="pqY-1j-yX8">
+                                <rect key="frame" x="30" y="171" width="260" height="127"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <string key="text">Here you can sync the questions in your app to our database, if there are any available questions the button above will download them. Also, if you find any errors in the questions or have any feedback, send us an email or report the question in the pause menu. We hope you will enjoy it.</string>
+                                <string key="text">Here you can sync the questions in your app to our database, if there are any available questions the button above will download them. Also, if you find any errors in the questions or have any feedback, send us an email or report the question in the pause menu. We are sorry for any errors or typos and we will actively try to fix them, we are only human. We hope you will enjoy the app.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Marion-Regular" family="Marion" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <progressView opaque="NO" contentMode="scaleToFill" id="bde-cM-CXg">
-                                <rect key="frame" x="30" y="170" width="260" height="9"/>
+                                <rect key="frame" x="29" y="110" width="260" height="9"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="progressTintColor" red="0.063548486230000006" green="0.31301817599999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </progressView>
