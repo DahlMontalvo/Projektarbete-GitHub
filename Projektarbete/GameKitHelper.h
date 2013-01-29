@@ -19,8 +19,10 @@ id<GameKitHelperProtocol> delegate;
 
 @property (nonatomic, readonly) NSError* lastError;
 
+
 + (id) sharedGameKitHelper;
 -(void) authenticateLocalPlayer;
 -(void) submitScore:(int64_t)scoreScore category:(NSString*)category;
++(int64_t) getScoreInCategory;
 
 @end

@@ -182,6 +182,8 @@
     //End of global stats
     
     [[GameKitHelper sharedGameKitHelper] submitScore:(int64_t)totalHighscore + scoreScore category:@"totalScore"];
+    
+    [GameKitHelper getScoreInCategory];
 }
 
 - (void)viewDidLoad {
@@ -211,5 +213,6 @@
     else
         [self.navigationController popToRootViewControllerAnimated:YES];
 }
+
 
 @end

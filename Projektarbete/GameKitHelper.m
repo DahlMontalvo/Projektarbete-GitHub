@@ -58,8 +58,7 @@
 
 -(void) authenticateLocalPlayer {
     
-    GKLocalPlayer* localPlayer =
-    [GKLocalPlayer localPlayer];
+    GKLocalPlayer* localPlayer = [GKLocalPlayer localPlayer];
     
     localPlayer.authenticateHandler =
     ^(UIViewController *viewController,
@@ -79,18 +78,40 @@
     
 }
 
-    - (void) submitScore:(int64_t)scoreScore category:(NSString*) category
-    {
-        GKScore* gkScore = [[GKScore alloc] initWithCategory:category];
-        gkScore.value = (int64_t)scoreScore;
+- (void) submitScore:(int64_t)scoreScore category:(NSString*) category
+{
+    GKScore* gkScore = [[GKScore alloc] initWithCategory:category];
+    gkScore.value = (int64_t)scoreScore;
+    
+    GKScore *scoreReporter = [[GKScore alloc] initWithCategory:category];
+    scoreReporter.value = scoreScore;
+    scoreReporter.context = 0;
+    
+    [scoreReporter reportScoreWithCompletionHandler:^(NSError *error) {
         
-        GKScore *scoreReporter = [[GKScore alloc] initWithCategory:category];
-        scoreReporter.value = scoreScore;
-        scoreReporter.context = 0;
+    }];
+}
+
++(int64_t) getScoreInCategory {
+    
+    GKLocalPlayer* localPlayer = [GKLocalPlayer localPlayer];
+    NSArray *ids = [[NSArray alloc] initWithObjects:[localPlayer playerID], nil];
+    GKLeaderboard *query = [[GKLeaderboard alloc] initWithPlayerIDs:ids];
+    
+    if (query != nil) {
         
-        [scoreReporter reportScoreWithCompletionHandler:^(NSError *error) {
-           
+        [query loadScoresWithCompletionHandler: ^(NSArray *scores, NSError *error) {
+            if (scores != nil) {
+                NSLog(@"Scores: %@", scores);
+                GKScore *score = [scores objectAtIndex:0];
+                NSLog(@"score: %@", score);
+                int inti = [[score formattedValue] intValue];
+                NSLog(@"Inti: %i", inti);
+            }
         }];
+        
     }
+    return 0;
+}
 
 @end
