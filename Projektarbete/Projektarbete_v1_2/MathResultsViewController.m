@@ -158,7 +158,7 @@
     
     //Achievements
     
-    if (difficulty == 5 && results == 10) {
+    if (difficulty == 5 && results == 10 && [gamemode isEqualToString:@"Test"]) {
         //Math Magician
         [GameKitHelper reportAchievementIdentifier:@"math_magician" percentComplete:100.0];
     }
