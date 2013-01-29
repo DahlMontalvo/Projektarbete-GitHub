@@ -6,6 +6,7 @@
 //
 
 #import <GameKit/GameKit.h>
+#import "Singleton.h"
 
 @protocol GameKitHelperProtocol<NSObject>
 -(void) onScoresSubmitted:(bool)success;

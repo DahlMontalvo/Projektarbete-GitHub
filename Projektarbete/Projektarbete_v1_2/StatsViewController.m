@@ -205,9 +205,13 @@
 	if (buttonIndex == 0) {
         NSDate *lastSyncDate = [[[Singleton sharedSingleton] sharedPrefs] objectForKey:@"LastSyncDate"];
         int launchCount = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"LaunchCount"];
+        int storedScore = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"StoredScore"];
+        
         [[[Singleton sharedSingleton] sharedPrefs] setPersistentDomain:[NSDictionary dictionary] forName:[[NSBundle mainBundle] bundleIdentifier]];
+        
         [[[Singleton sharedSingleton] sharedPrefs] setObject:lastSyncDate forKey:@"LastSyncDate"];
         [[[Singleton sharedSingleton] sharedPrefs] setInteger:launchCount forKey:@"LaunchCount"];
+        [[[Singleton sharedSingleton] sharedPrefs] setInteger:storedScore forKey:@"StoredScore"];
         [[[Singleton sharedSingleton] sharedPrefs] synchronize];
     
         [self refreshView];

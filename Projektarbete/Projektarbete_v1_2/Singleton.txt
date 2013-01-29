@@ -12,5 +12,4 @@ TimesPlayedMa               Antal gånger spelat matte
 TimesPlayedChemistry        Antal gånger spelat chemistry
 TimesPlayedPhysics          Antal gånger spelat physics
 TimesPlayedBiology          Antal gånger spelat bio
-
-
+StoredScore                 Storad score till GC

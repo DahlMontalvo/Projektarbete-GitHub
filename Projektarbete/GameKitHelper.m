@@ -107,10 +107,18 @@
                 GKScore *score = [scores objectAtIndex:0];
                 int64_t scoreVal = (int64_t)[score value];
                 
-                int64_t submitScore = scoreVal+scoreScore;
+                int64_t submitScore = scoreVal+scoreScore+[[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"StoredScore"];
                 NSLog(@"submitscore: %i, %i", (int)submitScore, (int)scoreVal);
                 
                 [[GameKitHelper sharedGameKitHelper] submitScore:submitScore category:@"totalScore"];
+            }
+            else {
+                [[[Singleton sharedSingleton] sharedPrefs] setInteger:scoreScore forKey:@"StoredScore"];
+                NSLog(@"1");
+            }
+            if (error != nil) {
+                NSLog(@"2");
+                [[[Singleton sharedSingleton] sharedPrefs] setInteger:scoreScore forKey:@"StoredScore"];
             }
         }];
         
