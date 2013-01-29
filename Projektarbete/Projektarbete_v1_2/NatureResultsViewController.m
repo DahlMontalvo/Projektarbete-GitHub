@@ -182,20 +182,89 @@
     //End of global stats
     [GameKitHelper submitAndAddScore:scoreScore];
     
-    NSString *acheivmentID = nil;
-    if (stars == 3) {
-        acheivmentID = @"";
-    }
-    else if (stars == 2) {
+    [appDelegate readCategoriesFromDatabase];
+    
+    //Samla underkategorierna i sina arrayer beroende på överkategori
+    NSMutableArray *biologyCategories = [[NSMutableArray alloc] init];
+    NSMutableArray *chemistryCategories = [[NSMutableArray alloc] init];
+    NSMutableArray *physicsCategories = [[NSMutableArray alloc] init];
+    
+    for (int i = 0; i < [appDelegate.categories count]; i++) {
+        NSString *name = [[appDelegate.categories objectAtIndex:i] objectAtIndex:0];
+        NSString *parent = [[appDelegate.categories objectAtIndex:i] objectAtIndex:1];
+        int ID = [[[appDelegate.categories objectAtIndex:i] objectAtIndex:2] intValue];
+        NSMutableArray *temp = [[NSMutableArray alloc] initWithObjects:name, parent, [NSNumber numberWithInt:ID], nil];
+        NSString *sub = [[appDelegate.categories objectAtIndex:i] objectAtIndex:1];
         
+        if ([sub isEqualToString:@"Physics"])
+            [physicsCategories addObject:temp];
+        else if ([sub isEqualToString:@"Chemistry"])
+            [chemistryCategories addObject:temp];
+        else if ([sub isEqualToString:@"Biology"])
+            [biologyCategories addObject:temp];
     }
-    else if (stars == 1) {
+    NSMutableArray *contents = [[NSMutableArray alloc] initWithObjects:[[NSMutableArray alloc] initWithObjects: chemistryCategories,
+                                                                        physicsCategories,
+                                                                        biologyCategories, nil], nil];
+    NSMutableArray *subjects = [[NSMutableArray alloc] initWithObjects:@"Chemistry", @"Physics", @"Biology", nil];
+    
+    int total = 0;
+    int totalStars = 0;
+    
+    //Loopar igenom ett ämne i taget
+    for (int a = 0; a < 3; a++) {
+        //Loopar igenom alla kategorier i ämnet
+        int loop = [[[contents objectAtIndex:0] objectAtIndex:a] count];
         
+        for (int i = 0; i < loop; i++) {
+            NSString *key = [NSString stringWithFormat:@"NatureCategory%iStars", [[[[[contents objectAtIndex:0] objectAtIndex:a] objectAtIndex:i] objectAtIndex:2] intValue]];
+            int thisStars = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:key];
+            total+=3;
+            totalStars+=thisStars;
+        }
+        //Lägg till mixed
+        total+=3;
+        totalStars+=[[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"NatureCategory%@Mixed", [subjects objectAtIndex:a]]];
     }
     
-    if (acheivmentID != nil) {
-        
+    //Matten
+    NSMutableArray *operations = [[NSMutableArray alloc] initWithObjects:@"Addition",
+                                  @"Subtraction",
+                                  @"Multiplication",
+                                  @"Division",
+                                  @"Percent",
+                                  @"Fraction",
+                                  @"Equations",
+                                  nil];
+    for (int a = 0; a < [operations count]; a++) {
+        for (int i = 1; i < 6; i++) {
+            NSString *key = [NSString stringWithFormat:@"Stars%@%i", [operations objectAtIndex:a], i];
+            int thisStars = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:key];
+            total+=3;
+            totalStars+=thisStars;
+        }
     }
+    
+    //Achievements
+    
+    
+    if ([subject isEqualToString:@"Physics"] && stars == 3) {
+        //Speed of light
+        [GameKitHelper reportAchievementIdentifier:@"speed_of_light" percentComplete:100.0];
+    }
+    
+    //Master scientist
+    [GameKitHelper reportAchievementIdentifier:@"maste_scientist" percentComplete:(float)totalStars/(float)total];
+    
+    
+    if (stars == 1) {
+        //It's something
+        [GameKitHelper reportAchievementIdentifier:@"its_something" percentComplete:100.0];
+    }
+}
+
+-(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    
 }
 
 - (void)viewDidLoad {

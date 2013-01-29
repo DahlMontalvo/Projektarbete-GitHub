@@ -94,6 +94,8 @@
 
 +(void) submitAndAddScore:(int64_t)scoreScore {
     
+    NSLog(@"kallas");
+    
     GKLocalPlayer* localPlayer = [GKLocalPlayer localPlayer];
     NSArray *ids = [[NSArray alloc] initWithObjects:[localPlayer playerID], nil];
     GKLeaderboard *query = [[GKLeaderboard alloc] initWithPlayerIDs:ids];
@@ -121,9 +123,10 @@
     }
 }
 
-- (void) reportAchievementIdentifier: (NSString*) identifier percentComplete: (float) percent
++ (void) reportAchievementIdentifier: (NSString*) identifier percentComplete: (float) percent
 {
     GKAchievement *achievement = [[GKAchievement alloc] initWithIdentifier: identifier];
+    achievement.showsCompletionBanner = YES;
     if (achievement)
     {
         achievement.percentComplete = percent;
