@@ -114,6 +114,7 @@
             }
             if (error != nil) {
                 [[[Singleton sharedSingleton] sharedPrefs] setInteger:scoreScore forKey:@"StoredScore"];
+                NSLog(@"Error");
             }
         }];
         
