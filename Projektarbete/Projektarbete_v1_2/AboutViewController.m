@@ -9,7 +9,7 @@
 #import "Singleton.h"
 
 @implementation AboutViewController
-@synthesize delegate, doneButton, syncButton, errorParsing, questionsUpdated, elementValue, articles, currentElement, item, rssParser, currentPart, currentItem, categoryChanges, questionChanges, answerChanges, a, progressBar, totalUpdates, update, updateTimer;
+@synthesize delegate, doneButton, syncButton, errorParsing, questionsUpdated, elementValue, articles, currentElement, item, rssParser, currentPart, currentItem, categoryChanges, questionChanges, answerChanges, a, progressBar, totalUpdates, update, updateTimer, progressView;
 
 #pragma mark - Initialization
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -25,12 +25,13 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated {
-    [progressBar setHidden:YES];
+    [progressView setHidden:YES];
 }
 
 - (void)viewDidUnload {
     [self setSyncButton:nil];
     [self setProgressBar:nil];
+    [self setProgressView:nil];
     [super viewDidUnload];
 }
 
@@ -54,7 +55,7 @@
     [errorMessage show];
     update = 0;
     [NSThread detachNewThreadSelector:@selector(updateProgressBar) toTarget:self withObject:nil];
-    [progressBar setHidden:YES];
+    [progressView setHidden:YES];
 }
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
@@ -171,12 +172,12 @@
 }
 
 -(void)hideProgressBar {
-    [progressBar setHidden:YES];
+    [progressView setHidden:YES];
 }
 
 - (void)parserDidEndDocument:(NSXMLParser *)parser {
     [progressBar setProgress:1.0];
-    [self performSelector:@selector(hideProgressBar) withObject:nil afterDelay:.3];
+    [progressView setHidden:YES];
     
     NSString *messageText;
     if (questionsUpdated > 3)
@@ -291,7 +292,7 @@
 
 - (IBAction)syncButtonPressed:(id)sender {
     update = 0;
-    [progressBar setHidden:NO];
+    [progressView setHidden:NO];
     [self performSelector:@selector(startUpdating) withObject:nil afterDelay:0];
 }
 

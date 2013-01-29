@@ -24,6 +24,7 @@
 @property (strong, nonatomic)IBOutlet UIBarButtonItem *doneButton;
 @property (weak, nonatomic) IBOutlet UIButton *syncButton;
 @property (strong, nonatomic) IBOutlet UIProgressView *progressBar;
+@property (strong, nonatomic) IBOutlet UIView *progressView;
 
 @property (nonatomic) BOOL errorParsing;
 @property (nonatomic, retain) NSXMLParser *rssParser;

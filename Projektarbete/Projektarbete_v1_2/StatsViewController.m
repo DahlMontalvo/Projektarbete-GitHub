@@ -246,7 +246,7 @@
         //leaderboardController.category = self.currentLeaderBoard;
         leaderboardController.category = nil;
         leaderboardController.timeScope = GKLeaderboardTimeScopeWeek;
-        leaderboardController.leaderboardDelegate = self;
+        leaderboardController.leaderboardDelegate = (id<GKLeaderboardViewControllerDelegate>)self;
         [self presentModalViewController: leaderboardController animated: YES];
     }
 }

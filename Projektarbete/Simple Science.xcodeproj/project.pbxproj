@@ -305,13 +305,14 @@
 			path = Flurry;
 			sourceTree = "<group>";
 		};
-		006C69AE16B729630051D3CC /* GameKitFiles */ = {
+		006C69AE16B729630051D3CC /* GameKit */ = {
 			isa = PBXGroup;
 			children = (
 				006C69AF16B729A00051D3CC /* GameKitHelper.h */,
 				006C69B016B729A00051D3CC /* GameKitHelper.m */,
 			);
-			name = GameKitFiles;
+			name = GameKit;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		00C71467162DC71700753136 /* Game Mode */ = {
@@ -439,7 +440,6 @@
 		DDB5884D15B947A9009CF151 = {
 			isa = PBXGroup;
 			children = (
-				006C69AE16B729630051D3CC /* GameKitFiles */,
 				DDB5886215B947A9009CF151 /* Classes */,
 				DDF3128516B45DDC00015C6C /* Resources */,
 				DDF3128316B45D9100015C6C /* Other Sources */,
@@ -593,6 +593,7 @@
 		DDF3129A16B463B300015C6C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				006C69AE16B729630051D3CC /* GameKit */,
 				DDF3129C16B4646F00015C6C /* Singleton */,
 				00346EBB16A7427B00E94B1D /* Flurry */,
 			);

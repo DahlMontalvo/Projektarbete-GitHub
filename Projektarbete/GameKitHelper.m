@@ -1,7 +1,11 @@
+//
+//  GameKitHelper.h
+//  Simple Science
+//
+//  Copyright (c) 2013 Jonas Dahl & Philip Montalvo. All rights reserved.
+//
+
 #import "GameKitHelper.h"
-//#import "GameConstants.h"
-
-
 
 @interface GameKitHelper ()
 <GKGameCenterControllerDelegate> {
@@ -32,6 +36,10 @@
     UIViewController* rootVC = [self getRootViewController];
     [rootVC presentViewController:vc animated:YES
                        completion:nil];
+}
+
+-(void)gameCenterViewControllerDidFinish:(GKGameCenterViewController *)gameCenterViewController {
+    
 }
 
 #pragma mark Singleton stuff

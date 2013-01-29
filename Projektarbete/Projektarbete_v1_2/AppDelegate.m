@@ -28,7 +28,7 @@
     [[[Singleton sharedSingleton] sharedPrefs] synchronize];
     
     if (launchCount == 1) {
-        [[[Singleton sharedSingleton] sharedPrefs] setObject:[NSDate dateWithTimeIntervalSince1970:1357020000] forKey:@"LastSyncDate"];
+        [[[Singleton sharedSingleton] sharedPrefs] setObject:[NSDate dateWithTimeIntervalSince1970:1359446104] forKey:@"LastSyncDate"];
     }
     
     return YES;
