@@ -253,6 +253,16 @@
         [GameKitHelper reportAchievementIdentifier:@"speed_of_light" percentComplete:100.0];
     }
     
+    if ([subject isEqualToString:@"Biology"] && stars == 3) {
+        //Natural Selection
+        [GameKitHelper reportAchievementIdentifier:@"natural_selection" percentComplete:100.0];
+    }
+    
+    if ([subject isEqualToString:@"Chemistry"] && stars == 3) {
+        //Chemists have solutions
+        [GameKitHelper reportAchievementIdentifier:@"chemists_have_solutions" percentComplete:100.0];
+    }
+    
     //Master scientist
     [GameKitHelper reportAchievementIdentifier:@"maste_scientist" percentComplete:(float)totalStars/(float)total];
     
@@ -261,6 +271,12 @@
         //It's something
         [GameKitHelper reportAchievementIdentifier:@"its_something" percentComplete:100.0];
     }
+    
+    if (stars == 2) {
+        [GameKitHelper reportAchievementIdentifier:@"improvement" percentComplete:100.0];
+    }
+    
+    
 }
 
 -(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {

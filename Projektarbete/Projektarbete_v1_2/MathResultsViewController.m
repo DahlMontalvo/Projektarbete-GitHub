@@ -155,6 +155,13 @@
      nil];
     
     [Flurry logEvent:@"Test_completed" withParameters:eventParams];
+    
+    //Achievements
+    
+    if (difficulty == 5 && results == 10) {
+        //Math Magician
+        [GameKitHelper reportAchievementIdentifier:@"math_magician" percentComplete:100.0];
+    }
 
 }
 
