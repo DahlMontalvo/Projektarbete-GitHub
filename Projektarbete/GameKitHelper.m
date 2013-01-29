@@ -112,12 +112,7 @@
                 
                 [[GameKitHelper sharedGameKitHelper] submitScore:submitScore category:@"totalScore"];
             }
-            else {
-                [[[Singleton sharedSingleton] sharedPrefs] setInteger:scoreScore forKey:@"StoredScore"];
-                NSLog(@"1");
-            }
             if (error != nil) {
-                NSLog(@"2");
                 [[[Singleton sharedSingleton] sharedPrefs] setInteger:scoreScore forKey:@"StoredScore"];
             }
         }];
