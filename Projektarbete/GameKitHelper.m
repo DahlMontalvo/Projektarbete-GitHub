@@ -92,26 +92,27 @@
     }];
 }
 
-+(int64_t) getScoreInCategory {
++(void) submitAndAddScore:(int64_t)scoreScore {
     
     GKLocalPlayer* localPlayer = [GKLocalPlayer localPlayer];
     NSArray *ids = [[NSArray alloc] initWithObjects:[localPlayer playerID], nil];
     GKLeaderboard *query = [[GKLeaderboard alloc] initWithPlayerIDs:ids];
-    
+    query.timeScope = GKLeaderboardTimeScopeAllTime;
+    query.category = @"totalScore";
     if (query != nil) {
         
         [query loadScoresWithCompletionHandler: ^(NSArray *scores, NSError *error) {
             if (scores != nil) {
-                NSLog(@"Scores: %@", scores);
                 GKScore *score = [scores objectAtIndex:0];
-                NSLog(@"score: %@", score);
-                int inti = [[score formattedValue] intValue];
-                NSLog(@"Inti: %i", inti);
+                
+                int64_t submitScore = [[score formattedValue] intValue]+scoreScore;
+                NSLog(@"submitscore: %i, %i", (int)submitScore, (int)[[score formattedValue] intValue]);
+                
+                [[GameKitHelper sharedGameKitHelper] submitScore:submitScore category:@"totalScore"];
             }
         }];
         
     }
-    return 0;
 }
 
 @end

@@ -28,8 +28,6 @@
 }
 
 -(void)refreshView {
-    NSLog(@"%@", [[[Singleton sharedSingleton] sharedPrefs] dictionaryRepresentation]);
-    
     int completedTests = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"CompletedTests"];
     int tenOutOfTens = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TenOutOfTens"];
     int bestHighscore = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"BestHighscore"];

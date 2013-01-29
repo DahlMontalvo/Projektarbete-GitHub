@@ -23,6 +23,6 @@ id<GameKitHelperProtocol> delegate;
 + (id) sharedGameKitHelper;
 -(void) authenticateLocalPlayer;
 -(void) submitScore:(int64_t)scoreScore category:(NSString*)category;
-+(int64_t) getScoreInCategory;
++(void) submitAndAddScore:(int64_t)scoreScore;
 
 @end
