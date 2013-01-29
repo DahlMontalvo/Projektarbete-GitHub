@@ -181,6 +181,21 @@
     
     //End of global stats
     [GameKitHelper submitAndAddScore:scoreScore];
+    
+    NSString *acheivmentID = nil;
+    if (stars == 3) {
+        acheivmentID = @"";
+    }
+    else if (stars == 2) {
+        
+    }
+    else if (stars == 1) {
+        
+    }
+    
+    if (acheivmentID != nil) {
+        
+    }
 }
 
 - (void)viewDidLoad {
