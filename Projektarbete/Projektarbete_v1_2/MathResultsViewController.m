@@ -7,6 +7,7 @@
 
 #import "MathResultsViewController.h"
 #import "Flurry.h"
+#import "GameKitHelper.h"
 
 @implementation MathResultsViewController
 @synthesize results, resultsLabel, timeLabel, infoLabel, navItem, operation, difficulty, finalTime, gamemode, gamemodeLabel, highscoreLabel, starLabel, starImage, scoreScoreLabel, starExplanationLabel;
@@ -137,9 +138,13 @@
         int totalHighscore = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"TotalHighscore"];
         [[[Singleton sharedSingleton] sharedPrefs] setInteger:totalHighscore+scoreScore forKey:@"TotalHighscore"];
         
+        //End of global stats
+        
+        [[GameKitHelper sharedGameKitHelper] submitScore:(int64_t)totalHighscore + scoreScore category:@"totalScore"];
+        
     }
     
-    //End of global stats
+    
     
     NSDictionary *eventParams =
     [NSDictionary dictionaryWithObjectsAndKeys:

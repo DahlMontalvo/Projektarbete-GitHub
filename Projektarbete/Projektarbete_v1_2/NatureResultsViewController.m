@@ -180,6 +180,8 @@
     [[[Singleton sharedSingleton] sharedPrefs] setInteger:totalHighscore+scoreScore forKey:@"TotalHighscore"];
     
     //End of global stats
+    
+    [[GameKitHelper sharedGameKitHelper] submitScore:(int64_t)totalHighscore + scoreScore category:@"totalScore"];
 }
 
 - (void)viewDidLoad {
