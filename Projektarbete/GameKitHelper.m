@@ -125,19 +125,31 @@
 
 + (void) reportAchievementIdentifier: (NSString*) identifier percentComplete: (float) percent
 {
-    GKAchievement *achievement = [[GKAchievement alloc] initWithIdentifier: identifier];
-    achievement.showsCompletionBanner = YES;
-    if (achievement)
+    //Hämta detta acheivment
+    [GKAchievement loadAchievementsWithCompletionHandler: ^(NSArray *scores, NSError *error)
     {
-        achievement.percentComplete = percent;
-        [achievement reportAchievementWithCompletionHandler:^(NSError *error)
-         {
-             if (error != nil)
-             {
-                 NSLog(@"Error in reporting achievements: %@", error);
-             }
-         }];
-    }
+        if (error == nil) {
+            for (GKAchievement* achievement in scores) {
+                if (achievement.completed == NO && [achievement.identifier isEqualToString:identifier]) {
+                    
+                    GKAchievement *achievement2 = [[GKAchievement alloc] initWithIdentifier:identifier];
+                    achievement2.showsCompletionBanner = YES;
+                    if (achievement2) {
+                        achievement2.percentComplete = percent;
+                        [achievement2 reportAchievementWithCompletionHandler:^(NSError *error)
+                         {
+                             if (error != nil)
+                             {
+                                 NSLog(@"Error in reporting achievements: %@", error);
+                             }
+                         }];
+                    }
+                    
+                }
+            }
+        }
+     
+    }];
 }
 
 @end

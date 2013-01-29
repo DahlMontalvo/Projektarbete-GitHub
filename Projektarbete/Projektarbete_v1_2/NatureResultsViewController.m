@@ -264,7 +264,7 @@
     }
     
     //Master scientist
-    [GameKitHelper reportAchievementIdentifier:@"maste_scientist" percentComplete:(float)totalStars/(float)total];
+    [GameKitHelper reportAchievementIdentifier:@"master_scientist" percentComplete:((float)totalStars/(float)total)*100.0+0.5];
     
     
     if (stars == 1) {
