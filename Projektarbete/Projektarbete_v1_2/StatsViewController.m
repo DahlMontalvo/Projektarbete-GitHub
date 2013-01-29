@@ -8,7 +8,7 @@
 #import "StatsViewController.h"
 
 @implementation StatsViewController
-@synthesize completedTestsLabel, doneButton, delegate, subject, tenOutOfTensLabel, bestHighscoreLabel, mostPlayedSubjectLabel, overallProgressLabel, averageCorrectQuestionsLabel, averageHighscoreLabel, infoButton;
+@synthesize completedTestsLabel, doneButton, delegate, subject, tenOutOfTensLabel, bestHighscoreLabel, mostPlayedSubjectLabel, overallProgressLabel, averageCorrectQuestionsLabel, averageHighscoreLabel, infoButton, leaderboardsButton;
 
 #pragma mark - Initialization
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -236,6 +236,24 @@
                                             cancelButtonTitle:@"OK"
                                             otherButtonTitles:nil];
     [message show];
+}
+
+- (IBAction) leaderboards:(id)sender
+{
+    GKLeaderboardViewController *leaderboardController = [[GKLeaderboardViewController alloc] init];
+    if (leaderboardController != NULL)
+    {
+        //leaderboardController.category = self.currentLeaderBoard;
+        leaderboardController.category = nil;
+        leaderboardController.timeScope = GKLeaderboardTimeScopeWeek;
+        leaderboardController.leaderboardDelegate = self;
+        [self presentModalViewController: leaderboardController animated: YES];
+    }
+}
+- (void)leaderboardViewControllerDidFinish:(GKLeaderboardViewController *)viewController
+{
+    [self dismissModalViewControllerAnimated: YES];
+    
 }
 
 @end

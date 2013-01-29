@@ -7,6 +7,7 @@
 
 #import "NatureResultsViewController.h"
 #import "Flurry.h"
+#import "GameKitHelper.h"
 
 @interface NatureResultsViewController ()
 
@@ -88,11 +89,30 @@
     //150-finalTime/stars-(3-stars)*15;
     
     if (scoreScore < 0) scoreScore = 0;
+    
+    //GAME CENTER
+
+    NSString *smallLetterSubject;
+    if ([subject isEqualToString:@"Biology"]) {
+        smallLetterSubject = @"biology";
+    }
+    if ([subject isEqualToString:@"Chemistry"]) {
+        smallLetterSubject = @"chemistry";
+    }
+    if ([subject isEqualToString:@"Physics"]) {
+        smallLetterSubject = @"physics";
+    }
+    
+    [[GameKitHelper sharedGameKitHelper] submitScore:(int64_t)scoreScore category:[NSString stringWithFormat:@"mixed_%@_highscores",smallLetterSubject]];
+    
     int previousHighscore = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:timeKey];
     
     if (scoreScore > previousHighscore) {
         [[[Singleton sharedSingleton] sharedPrefs] setInteger:scoreScore forKey:timeKey];
         highscoreLabel.text = @"Highscore!";
+    } else {
+        //Jadu dahl, den här lilla detaljen hade du minsann glömt, den sa att den alltid fick highscore pga interfacebuilder!
+        highscoreLabel.text = @"";
     }
     
     [[[Singleton sharedSingleton] sharedPrefs] synchronize];

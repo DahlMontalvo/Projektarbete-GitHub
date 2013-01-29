@@ -5,7 +5,10 @@
 //  Copyright (c) 2013 Jonas Dahl & Philip Montalvo. All rights reserved.
 //
 
+
+
 #import "MainMenuViewController.h"
+#import "GameKitHelper.h"
 
 @implementation MainMenuViewController
 @synthesize redBanner, scrollViewGr, scrollView, greenBanner, chemistryPercentLabel, mathPercentLabel, biologyPercentLabel, physicsPercentLabel, biologyCategories, physicsCategories, chemistryCategories;
@@ -27,6 +30,10 @@
         UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Hi!" message:@"Before you start taking any quizes, we recommend you to go to the About tab and synchronize the quiz database to make sure you are up to date." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [message show];
     }
+    
+    [[GameKitHelper sharedGameKitHelper]
+     authenticateLocalPlayer];
+
 
     //Settings & About label setup
     scrollView.scrollEnabled = YES;
@@ -191,6 +198,10 @@
 - (IBAction)greenBanner:(id)sender {
     [self performSegueWithIdentifier:@"AboutSegue" sender:sender];
 }
+
+
+
+
 
 - (void)StatsViewControllerDidDone:(StatsViewController *)controller {
 	[self dismissViewControllerAnimated:YES completion:nil];

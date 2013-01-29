@@ -9,6 +9,7 @@
 #import "Singleton.h"
 #import "MathStatsViewController.h"
 #import "NatureStatsViewController.h"
+#import "GameKitHelper.h"
 
 @class StatsViewController;
 
@@ -30,6 +31,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *averageCorrectQuestionsLabel;
 @property (strong, nonatomic) IBOutlet UILabel *averageHighscoreLabel;
 @property (strong, nonatomic) IBOutlet UIButton *infoButton;
+@property (strong, nonatomic) IBOutlet UIButton *leaderboardsButton;
 @property (nonatomic, retain) NSString *subject;
 @property (nonatomic, weak) id <StatsViewControllerDelegate> delegate;
 
@@ -40,6 +42,7 @@
 - (IBAction)biologyButtonPressed:(id)sender;
 - (IBAction)downButtonPressed:(id)sender;
 - (IBAction)infoButtonPressed:(id)sender;
+- (IBAction)leaderboards:(id)sender;
 
 
 

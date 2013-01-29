@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GameKitHelper.h"
 #import "StatsViewController.h"
 #import "AboutViewController.h"
 #import "NatureMasterViewController.h"
@@ -18,6 +19,7 @@
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollViewGr;
 @property (weak, nonatomic) IBOutlet UIButton *redBanner;
 @property (weak, nonatomic) IBOutlet UIButton *greenBanner;
+
 @property (strong, nonatomic) IBOutlet UILabel *mathPercentLabel;
 @property (strong, nonatomic) IBOutlet UILabel *chemistryPercentLabel;
 @property (strong, nonatomic) IBOutlet UILabel *physicsPercentLabel;
@@ -25,6 +27,7 @@
 @property (nonatomic, retain) NSMutableArray *chemistryCategories;
 @property (nonatomic, retain) NSMutableArray *physicsCategories;
 @property (nonatomic, retain) NSMutableArray *biologyCategories;
+
 
 - (IBAction)redBanner:(id)sender;
 - (IBAction)greenBanner:(id)sender;

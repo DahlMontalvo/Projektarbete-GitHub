@@ -29,6 +29,14 @@
 		005F5E551624323F006E2CBC /* PaperEndast.png in Resources */ = {isa = PBXBuildFile; fileRef = 005F5E511624323F006E2CBC /* PaperEndast.png */; };
 		005F5E5916243433006E2CBC /* FetLinje.png in Resources */ = {isa = PBXBuildFile; fileRef = 005F5E5716243433006E2CBC /* FetLinje.png */; };
 		005F5E5A16243433006E2CBC /* SmalLinje.png in Resources */ = {isa = PBXBuildFile; fileRef = 005F5E5816243433006E2CBC /* SmalLinje.png */; };
+		006C69AD16B728CC0051D3CC /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 006C69AC16B728CC0051D3CC /* GameKit.framework */; };
+		006C69B116B729A00051D3CC /* GameKitHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 006C69B016B729A00051D3CC /* GameKitHelper.m */; };
+		006C69BB16B748B10051D3CC /* GameCenter.png in Resources */ = {isa = PBXBuildFile; fileRef = 006C69BA16B748B10051D3CC /* GameCenter.png */; };
+		006C69C016B74E1A0051D3CC /* BioLitenF.png in Resources */ = {isa = PBXBuildFile; fileRef = 006C69BC16B74E1A0051D3CC /* BioLitenF.png */; };
+		006C69C116B74E1A0051D3CC /* ChemLitenF.png in Resources */ = {isa = PBXBuildFile; fileRef = 006C69BD16B74E1A0051D3CC /* ChemLitenF.png */; };
+		006C69C216B74E1A0051D3CC /* MaLitenF.png in Resources */ = {isa = PBXBuildFile; fileRef = 006C69BE16B74E1A0051D3CC /* MaLitenF.png */; };
+		006C69C316B74E1A0051D3CC /* PhLitenF.png in Resources */ = {isa = PBXBuildFile; fileRef = 006C69BF16B74E1A0051D3CC /* PhLitenF.png */; };
+		006C69C516B74E220051D3CC /* Leaderboards.png in Resources */ = {isa = PBXBuildFile; fileRef = 006C69C416B74E220051D3CC /* Leaderboards.png */; };
 		007BC47D15C09B4E009BC60D /* MathTableCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 007BC47B15C09B4E009BC60D /* MathTableCellController.m */; };
 		007BC47E15C09B4E009BC60D /* MathTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007BC47C15C09B4E009BC60D /* MathTableCell.xib */; };
 		00946E46167FC804002C9786 /* brun2.png in Resources */ = {isa = PBXBuildFile; fileRef = 00946E45167FC804002C9786 /* brun2.png */; };
@@ -69,10 +77,6 @@
 		00F082CD161ECA1600616FBE /* ChemButton2.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F082C8161ECA1500616FBE /* ChemButton2.png */; };
 		00F082CE161ECA1600616FBE /* MathButton2.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F082C9161ECA1500616FBE /* MathButton2.png */; };
 		00F7C92E16599D9500B65A2E /* StatsBG2.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F7C92D16599D9500B65A2E /* StatsBG2.png */; };
-		00F7C93416599DA100B65A2E /* MaBanner.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F7C93016599DA100B65A2E /* MaBanner.png */; };
-		00F7C93516599DA100B65A2E /* PhysBanner.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F7C93116599DA100B65A2E /* PhysBanner.png */; };
-		00F7C93616599DA100B65A2E /* ChemBanner.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F7C93216599DA100B65A2E /* ChemBanner.png */; };
-		00F7C93716599DA100B65A2E /* BioBanner.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F7C93316599DA100B65A2E /* BioBanner.png */; };
 		00F7C943165BCE4800B65A2E /* SopTunna.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F7C940165BCE4800B65A2E /* SopTunna.png */; };
 		00F7C944165BCE4800B65A2E /* NerPil.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F7C941165BCE4800B65A2E /* NerPil.png */; };
 		00F7C945165BCE4800B65A2E /* StatsText.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F7C942165BCE4800B65A2E /* StatsText.png */; };
@@ -144,6 +148,15 @@
 		005F5E511624323F006E2CBC /* PaperEndast.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PaperEndast.png; sourceTree = "<group>"; };
 		005F5E5716243433006E2CBC /* FetLinje.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FetLinje.png; sourceTree = "<group>"; };
 		005F5E5816243433006E2CBC /* SmalLinje.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SmalLinje.png; sourceTree = "<group>"; };
+		006C69AC16B728CC0051D3CC /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		006C69AF16B729A00051D3CC /* GameKitHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameKitHelper.h; sourceTree = "<group>"; };
+		006C69B016B729A00051D3CC /* GameKitHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameKitHelper.m; sourceTree = "<group>"; };
+		006C69BA16B748B10051D3CC /* GameCenter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GameCenter.png; sourceTree = "<group>"; };
+		006C69BC16B74E1A0051D3CC /* BioLitenF.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BioLitenF.png; sourceTree = "<group>"; };
+		006C69BD16B74E1A0051D3CC /* ChemLitenF.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChemLitenF.png; sourceTree = "<group>"; };
+		006C69BE16B74E1A0051D3CC /* MaLitenF.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MaLitenF.png; sourceTree = "<group>"; };
+		006C69BF16B74E1A0051D3CC /* PhLitenF.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PhLitenF.png; sourceTree = "<group>"; };
+		006C69C416B74E220051D3CC /* Leaderboards.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Leaderboards.png; sourceTree = "<group>"; };
 		007BC47A15C09B4E009BC60D /* MathTableCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathTableCellController.h; sourceTree = "<group>"; };
 		007BC47B15C09B4E009BC60D /* MathTableCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathTableCellController.m; sourceTree = "<group>"; };
 		007BC47C15C09B4E009BC60D /* MathTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MathTableCell.xib; sourceTree = "<group>"; };
@@ -189,10 +202,6 @@
 		00F082C8161ECA1500616FBE /* ChemButton2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChemButton2.png; sourceTree = "<group>"; };
 		00F082C9161ECA1500616FBE /* MathButton2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MathButton2.png; sourceTree = "<group>"; };
 		00F7C92D16599D9500B65A2E /* StatsBG2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatsBG2.png; sourceTree = "<group>"; };
-		00F7C93016599DA100B65A2E /* MaBanner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MaBanner.png; sourceTree = "<group>"; };
-		00F7C93116599DA100B65A2E /* PhysBanner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PhysBanner.png; sourceTree = "<group>"; };
-		00F7C93216599DA100B65A2E /* ChemBanner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChemBanner.png; sourceTree = "<group>"; };
-		00F7C93316599DA100B65A2E /* BioBanner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BioBanner.png; sourceTree = "<group>"; };
 		00F7C940165BCE4800B65A2E /* SopTunna.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SopTunna.png; sourceTree = "<group>"; };
 		00F7C941165BCE4800B65A2E /* NerPil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NerPil.png; sourceTree = "<group>"; };
 		00F7C942165BCE4800B65A2E /* StatsText.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatsText.png; sourceTree = "<group>"; };
@@ -258,6 +267,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				006C69AD16B728CC0051D3CC /* GameKit.framework in Frameworks */,
 				00346EC116A744EC00E94B1D /* SystemConfiguration.framework in Frameworks */,
 				00C6AE2D1604C7BD00493F52 /* MessageUI.framework in Frameworks */,
 				DDB5885D15B947A9009CF151 /* UIKit.framework in Frameworks */,
@@ -291,6 +301,15 @@
 				00346EBD16A7427B00E94B1D /* libFlurry.a */,
 			);
 			path = Flurry;
+			sourceTree = "<group>";
+		};
+		006C69AE16B729630051D3CC /* GameKitFiles */ = {
+			isa = PBXGroup;
+			children = (
+				006C69AF16B729A00051D3CC /* GameKitHelper.h */,
+				006C69B016B729A00051D3CC /* GameKitHelper.m */,
+			);
+			name = GameKitFiles;
 			sourceTree = "<group>";
 		};
 		00C71467162DC71700753136 /* Game Mode */ = {
@@ -351,6 +370,7 @@
 				005C23B916178A2D0056EA7F /* GulBanner1.png */,
 				00946E45167FC804002C9786 /* brun2.png */,
 				005C23AD16177C490056EA7F /* Wood1.png */,
+				006C69BA16B748B10051D3CC /* GameCenter.png */,
 			);
 			name = General;
 			sourceTree = "<group>";
@@ -381,11 +401,12 @@
 			children = (
 				00AC4D1716B4A30D006839F8 /* StatsBG3.png */,
 				00F7C92D16599D9500B65A2E /* StatsBG2.png */,
-				00F7C93016599DA100B65A2E /* MaBanner.png */,
-				00F7C93116599DA100B65A2E /* PhysBanner.png */,
-				00F7C93216599DA100B65A2E /* ChemBanner.png */,
-				00F7C93316599DA100B65A2E /* BioBanner.png */,
 				00F7C942165BCE4800B65A2E /* StatsText.png */,
+				006C69BC16B74E1A0051D3CC /* BioLitenF.png */,
+				006C69BD16B74E1A0051D3CC /* ChemLitenF.png */,
+				006C69BE16B74E1A0051D3CC /* MaLitenF.png */,
+				006C69BF16B74E1A0051D3CC /* PhLitenF.png */,
+				006C69C416B74E220051D3CC /* Leaderboards.png */,
 			);
 			name = Stats;
 			sourceTree = "<group>";
@@ -415,6 +436,7 @@
 		DDB5884D15B947A9009CF151 = {
 			isa = PBXGroup;
 			children = (
+				006C69AE16B729630051D3CC /* GameKitFiles */,
 				DDB5886215B947A9009CF151 /* Classes */,
 				DDF3128516B45DDC00015C6C /* Resources */,
 				DDF3128316B45D9100015C6C /* Other Sources */,
@@ -435,6 +457,7 @@
 			isa = PBXGroup;
 			children = (
 				DD751EC0161B7CB200C4E2D1 /* libsqlite3.0.dylib */,
+				006C69AC16B728CC0051D3CC /* GameKit.framework */,
 				00C6AE2C1604C7BD00493F52 /* MessageUI.framework */,
 				00346EC016A744EC00E94B1D /* SystemConfiguration.framework */,
 				DDB5885C15B947A9009CF151 /* UIKit.framework */,
@@ -754,10 +777,6 @@
 				00C71489162DCA4900753136 /* Box.png in Resources */,
 				00C7148B162DCB6000753136 /* PapperGM.png in Resources */,
 				00F7C92E16599D9500B65A2E /* StatsBG2.png in Resources */,
-				00F7C93416599DA100B65A2E /* MaBanner.png in Resources */,
-				00F7C93516599DA100B65A2E /* PhysBanner.png in Resources */,
-				00F7C93616599DA100B65A2E /* ChemBanner.png in Resources */,
-				00F7C93716599DA100B65A2E /* BioBanner.png in Resources */,
 				00F7C943165BCE4800B65A2E /* SopTunna.png in Resources */,
 				00F7C944165BCE4800B65A2E /* NerPil.png in Resources */,
 				00F7C945165BCE4800B65A2E /* StatsText.png in Resources */,
@@ -782,6 +801,12 @@
 				00AC4D1816B4A30D006839F8 /* StatsBG3.png in Resources */,
 				00AC4D1E16B5DF24006839F8 /* ContinueButton.png in Resources */,
 				00AC4D2116B6DB4A006839F8 /* NumberButton.png in Resources */,
+				006C69BB16B748B10051D3CC /* GameCenter.png in Resources */,
+				006C69C016B74E1A0051D3CC /* BioLitenF.png in Resources */,
+				006C69C116B74E1A0051D3CC /* ChemLitenF.png in Resources */,
+				006C69C216B74E1A0051D3CC /* MaLitenF.png in Resources */,
+				006C69C316B74E1A0051D3CC /* PhLitenF.png in Resources */,
+				006C69C516B74E220051D3CC /* Leaderboards.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -813,6 +838,7 @@
 				DDCABE25162C265E00F83AB5 /* NatureStatsViewController.m in Sources */,
 				DDCABE2E162D508B00F83AB5 /* GamemodeSegmentedControlButtonController.m in Sources */,
 				DDCABE31162D50DE00F83AB5 /* DifficultySegmentedControlButtonController.m in Sources */,
+				006C69B116B729A00051D3CC /* GameKitHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
