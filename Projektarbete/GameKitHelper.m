@@ -103,10 +103,12 @@
         
         [query loadScoresWithCompletionHandler: ^(NSArray *scores, NSError *error) {
             if (scores != nil) {
+                NSLog(@"score: %@", scores);
                 GKScore *score = [scores objectAtIndex:0];
+                int64_t scoreVal = (int64_t)[score value];
                 
-                int64_t submitScore = [[score formattedValue] intValue]+scoreScore;
-                NSLog(@"submitscore: %i, %i", (int)submitScore, (int)[[score formattedValue] intValue]);
+                int64_t submitScore = scoreVal+scoreScore;
+                NSLog(@"submitscore: %i, %i", (int)submitScore, (int)scoreVal);
                 
                 [[GameKitHelper sharedGameKitHelper] submitScore:submitScore category:@"totalScore"];
             }
