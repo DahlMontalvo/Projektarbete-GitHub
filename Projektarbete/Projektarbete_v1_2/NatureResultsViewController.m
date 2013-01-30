@@ -85,7 +85,10 @@
     }
     
     int scoreScore;
-    scoreScore = (score / sqrt(finalTime)*447.2135956); //Copyright Philip Montalvo
+    int minus = 20-finalTime;
+    if (minus < 0) minus = 0;
+    minus*=45;
+    scoreScore = (score / sqrt(finalTime)*447.2135956)-minus; //Copyright Philip Montalvo
     //150-finalTime/stars-(3-stars)*15;
     
     if (scoreScore < 0) scoreScore = 0;
