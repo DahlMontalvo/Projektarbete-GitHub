@@ -160,7 +160,7 @@
         else {
             NSLog(@"3: %@", error);
         }
-        /*
+        
         if (scores == nil || found == NO) {
             GKAchievement *achievement2 = [[GKAchievement alloc] initWithIdentifier:identifier];
             if (achievement2) {
@@ -170,7 +170,7 @@
                 NSLog(@"4: %@", achievement2);
             }
         }
-         */
+         
      NSLog(@"5");
     }];
     NSLog(@"6");
