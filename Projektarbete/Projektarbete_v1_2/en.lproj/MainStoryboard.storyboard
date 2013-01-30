@@ -1329,6 +1329,7 @@
                                 </state>
                                 <connections>
                                     <action selector="buttonOne:" destination="fYp-3i-OM3" eventType="touchUpInside" id="lHj-7V-KxS"/>
+                                    <action selector="buttonOnePressedDown:" destination="fYp-3i-OM3" eventType="touchDown" id="2KL-iV-aGI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NLs-Ts-kMi">
@@ -1346,6 +1347,7 @@
                                 </state>
                                 <connections>
                                     <action selector="buttonTwo:" destination="fYp-3i-OM3" eventType="touchUpInside" id="mh2-Zn-VKF"/>
+                                    <action selector="buttonTwoPressedDown:" destination="fYp-3i-OM3" eventType="touchDown" id="K7V-Rz-0tC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Z0g-og-PE8">
@@ -1363,6 +1365,7 @@
                                 </state>
                                 <connections>
                                     <action selector="buttonThree:" destination="fYp-3i-OM3" eventType="touchUpInside" id="KlY-G7-KsS"/>
+                                    <action selector="buttonThreePressedDown:" destination="fYp-3i-OM3" eventType="touchDown" id="X82-rf-BhR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="69Q-oH-R5Y">
@@ -1380,6 +1383,7 @@
                                 </state>
                                 <connections>
                                     <action selector="buttonFour:" destination="fYp-3i-OM3" eventType="touchUpInside" id="PuW-jp-H6f"/>
+                                    <action selector="buttonFourPressedDown:" destination="fYp-3i-OM3" eventType="touchDown" id="Cjx-Nu-fRH"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="clip" numberOfLines="4" minimumFontSize="10" id="fpr-vj-0cd">
@@ -1937,6 +1941,7 @@
                                         </state>
                                         <connections>
                                             <action selector="buttonTwo:" destination="aTp-rB-Gfw" eventType="touchUpInside" id="oQM-au-YRX"/>
+                                            <action selector="buttonTwoPressedDown:" destination="aTp-rB-Gfw" eventType="touchDown" id="xNe-IA-uMu"/>
                                         </connections>
                                     </button>
                                     <button autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9Xm-R1-WUT">
@@ -1954,6 +1959,7 @@
                                         </state>
                                         <connections>
                                             <action selector="buttonOne:" destination="aTp-rB-Gfw" eventType="touchUpInside" id="8ig-cn-s4t"/>
+                                            <action selector="buttonOnePressedDown:" destination="aTp-rB-Gfw" eventType="touchDown" id="peH-le-zWM"/>
                                         </connections>
                                     </button>
                                     <button autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oYk-fe-POV">
@@ -1971,6 +1977,7 @@
                                         </state>
                                         <connections>
                                             <action selector="buttonThree:" destination="aTp-rB-Gfw" eventType="touchUpInside" id="fOO-ZQ-AUp"/>
+                                            <action selector="buttonThreePressedDown:" destination="aTp-rB-Gfw" eventType="touchDown" id="YOV-LB-52s"/>
                                         </connections>
                                     </button>
                                     <button autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Bwr-DZ-cTm">
@@ -1988,6 +1995,7 @@
                                         </state>
                                         <connections>
                                             <action selector="buttonFour:" destination="aTp-rB-Gfw" eventType="touchUpInside" id="zY4-PX-lTw"/>
+                                            <action selector="buttonFourPressedDown:" destination="aTp-rB-Gfw" eventType="touchDown" id="jgw-GH-kUf"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lY4-Qa-LIR">
@@ -2425,9 +2433,13 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MathQuizViewController.h"/>
             <relationships>
                 <relationship kind="action" name="buttonFour:"/>
+                <relationship kind="action" name="buttonFourPressedDown:"/>
                 <relationship kind="action" name="buttonOne:"/>
+                <relationship kind="action" name="buttonOnePressedDown:"/>
                 <relationship kind="action" name="buttonThree:"/>
+                <relationship kind="action" name="buttonThreePressedDown:"/>
                 <relationship kind="action" name="buttonTwo:"/>
+                <relationship kind="action" name="buttonTwoPressedDown:"/>
                 <relationship kind="action" name="pauseButton:"/>
                 <relationship kind="outlet" name="buttonFour" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="buttonOne" candidateClass="UIButton"/>
@@ -2476,9 +2488,13 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NatureDetailViewController.h"/>
             <relationships>
                 <relationship kind="action" name="buttonFour:"/>
+                <relationship kind="action" name="buttonFourPressedDown:"/>
                 <relationship kind="action" name="buttonOne:"/>
+                <relationship kind="action" name="buttonOnePressedDown:"/>
                 <relationship kind="action" name="buttonThree:"/>
+                <relationship kind="action" name="buttonThreePressedDown:"/>
                 <relationship kind="action" name="buttonTwo:"/>
+                <relationship kind="action" name="buttonTwoPressedDown:"/>
                 <relationship kind="action" name="pauseButtonPressed:"/>
                 <relationship kind="action" name="reportButtonPressed:"/>
                 <relationship kind="outlet" name="buttonFour" candidateClass="UIButton"/>
@@ -2555,6 +2571,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="b2y-sA-E6x"/>
-        <segue reference="Ord-lZ-lSz"/>
+        <segue reference="m7M-EV-8hW"/>
     </inferredMetricsTieBreakers>
 </document>

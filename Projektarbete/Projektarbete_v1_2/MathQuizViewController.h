@@ -73,5 +73,10 @@
 - (IBAction)buttonThree:(id)sender;
 - (IBAction)buttonFour:(id)sender;
 
+- (IBAction)buttonOnePressedDown:(id)sender;
+- (IBAction)buttonTwoPressedDown:(id)sender;
+- (IBAction)buttonThreePressedDown:(id)sender;
+- (IBAction)buttonFourPressedDown:(id)sender;
+
 
 @end

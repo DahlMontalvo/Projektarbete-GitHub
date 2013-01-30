@@ -304,6 +304,7 @@
 }
 - (IBAction)buttonOne:(id)sender {
     [self buttonPressed:1];
+    NSLog(@"Up");
 }
 
 - (IBAction)buttonTwo:(id)sender {
@@ -316,6 +317,27 @@
 
 - (IBAction)buttonFour:(id)sender {
     [self buttonPressed:4];
+}
+
+- (IBAction)buttonOnePressedDown:(id)sender{
+    [buttonTwo setEnabled:NO];
+    [buttonThree setEnabled:NO];
+    [buttonFour setEnabled:NO];
+}
+- (IBAction)buttonTwoPressedDown:(id)sender{
+    [buttonOne setEnabled:NO];
+    [buttonThree setEnabled:NO];
+    [buttonFour setEnabled:NO];
+}
+- (IBAction)buttonThreePressedDown:(id)sender{
+    [buttonTwo setEnabled:NO];
+    [buttonOne setEnabled:NO];
+    [buttonFour setEnabled:NO];
+}
+- (IBAction)buttonFourPressedDown:(id)sender{
+    [buttonTwo setEnabled:NO];
+    [buttonThree setEnabled:NO];
+    [buttonOne setEnabled:NO];
 }
 
 -(void)report {

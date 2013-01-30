@@ -761,6 +761,27 @@
     [self buttonClicked:3];
 }
 
+- (IBAction)buttonOnePressedDown:(id)sender{
+    [buttonTwo setEnabled:NO];
+    [buttonThree setEnabled:NO];
+    [buttonFour setEnabled:NO];
+}
+- (IBAction)buttonTwoPressedDown:(id)sender{
+    [buttonOne setEnabled:NO];
+    [buttonThree setEnabled:NO];
+    [buttonFour setEnabled:NO];
+}
+- (IBAction)buttonThreePressedDown:(id)sender{
+    [buttonTwo setEnabled:NO];
+    [buttonOne setEnabled:NO];
+    [buttonFour setEnabled:NO];
+}
+- (IBAction)buttonFourPressedDown:(id)sender{
+    [buttonTwo setEnabled:NO];
+    [buttonThree setEnabled:NO];
+    [buttonOne setEnabled:NO];
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"ToResult"]) {
         MathResultsViewController *rvc = [segue destinationViewController];
