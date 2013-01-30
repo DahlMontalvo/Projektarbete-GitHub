@@ -31,8 +31,7 @@
         [message show];
     }
     
-    [[GameKitHelper sharedGameKitHelper]
-     authenticateLocalPlayer];
+    [[GameKitHelper sharedGameKitHelper] authenticateLocalPlayer];
 
 
     //Settings & About label setup

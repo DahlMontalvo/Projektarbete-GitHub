@@ -57,7 +57,7 @@
 #pragma mark Player Authentication
 
 -(void) authenticateLocalPlayer {
-    
+    NSLog(@"kallad");
     GKLocalPlayer* localPlayer = [GKLocalPlayer localPlayer];
     
     localPlayer.authenticateHandler =
@@ -69,7 +69,6 @@
         if (localPlayer.authenticated) {
             _gameCenterFeaturesEnabled = YES;
         } else if(viewController) {
-           
             [self presentViewController:viewController];
         } else {
             _gameCenterFeaturesEnabled = NO;

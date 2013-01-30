@@ -242,6 +242,8 @@
 
 - (IBAction) leaderboards:(id)sender
 {
+    [[GameKitHelper sharedGameKitHelper] authenticateLocalPlayer];
+    
     GKLeaderboardViewController *leaderboardController = [[GKLeaderboardViewController alloc] init];
     if (leaderboardController != NULL)
     {
@@ -249,8 +251,9 @@
         leaderboardController.category = nil;
         leaderboardController.timeScope = GKLeaderboardTimeScopeWeek;
         leaderboardController.leaderboardDelegate = (id<GKLeaderboardViewControllerDelegate>)self;
-        [self presentModalViewController: leaderboardController animated: YES];
+        [self presentModalViewController:leaderboardController animated: YES];
     }
+     
 }
 - (void)leaderboardViewControllerDidFinish:(GKLeaderboardViewController *)viewController
 {
