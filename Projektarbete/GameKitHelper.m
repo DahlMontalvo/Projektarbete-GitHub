@@ -132,33 +132,40 @@
     }
 }
 
-+ (void) reportAchievementIdentifier: (NSString*) identifier percentComplete: (float) percent
-{
++ (void) reportAchievementIdentifier: (NSString*) identifier percentComplete: (float) percent {
     //Hämta detta acheivment
-    [GKAchievement loadAchievementsWithCompletionHandler: ^(NSArray *scores, NSError *error)
-    {
+    [GKAchievement loadAchievementsWithCompletionHandler: ^(NSArray *scores, NSError *error) {
+        BOOL found = NO;
         if (error == nil) {
             for (GKAchievement* achievement in scores) {
-                if (achievement.completed == NO && [achievement.identifier isEqualToString:identifier]) {
-                    
+                if ([achievement.identifier isEqualToString:identifier]) {
+                    found = YES;
                     GKAchievement *achievement2 = [[GKAchievement alloc] initWithIdentifier:identifier];
-                    achievement2.showsCompletionBanner = YES;
                     if (achievement2) {
+                        achievement2.showsCompletionBanner = YES;
                         achievement2.percentComplete = percent;
-                        [achievement2 reportAchievementWithCompletionHandler:^(NSError *error)
-                         {
-                             if (error != nil)
-                             {
-                                 NSLog(@"Error in reporting achievements: %@", error);
-                             }
-                         }];
+                        [achievement2 reportAchievementWithCompletionHandler:^(NSError *error) { }];
+                        NSLog(@"Sent");
                     }
-                    
                 }
+                NSLog(@"%@", achievement);
             }
         }
-     
+        else {
+            NSLog(@"%@", error);
+        }
+        if (scores == nil || found == NO) {
+            GKAchievement *achievement2 = [[GKAchievement alloc] initWithIdentifier:identifier];
+            if (achievement2) {
+                achievement2.showsCompletionBanner = YES;
+                achievement2.percentComplete = percent;
+                [achievement2 reportAchievementWithCompletionHandler:^(NSError *error) { }];
+                NSLog(@"Sent");
+            }
+        }
+     NSLog(@"Hit 2");
     }];
+    NSLog(@"Hit");
 }
 
 @end

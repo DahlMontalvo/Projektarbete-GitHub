@@ -67,8 +67,7 @@
     return [categories count]+1;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)localTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)localTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0){
         NSString *cellID = @"MixedCell";
         StatsTableCellController *cell = (StatsTableCellController *)[localTableView dequeueReusableCellWithIdentifier:cellID];
