@@ -213,6 +213,12 @@
     
     int total = 0;
     int totalStars = 0;
+    int chemistryStars = 0;
+    int totalChemistryStars = 0;
+    int physicsStars = 0;
+    int totalPhysicsStars = 0;
+    int biologyStars = 0;
+    int totalBiologyStars = 0;
     
     //Loopar igenom ett ämne i taget
     for (int a = 0; a < 3; a++) {
@@ -224,10 +230,43 @@
             int thisStars = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:key];
             total+=3;
             totalStars+=thisStars;
+            //Chemistry
+            if (a == 0) {
+                chemistryStars+=thisStars;
+                totalChemistryStars+=3;
+            }
+            //Physics
+            else if (a == 1) {
+                totalPhysicsStars+=3;
+                physicsStars+=thisStars;
+            }
+            //Chemistry
+            else if (a == 2) {
+                totalBiologyStars+=3;
+                biologyStars+=thisStars;
+            }
         }
+        
         //Lägg till mixed
         total+=3;
-        totalStars+=[[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"NatureCategory%@Mixed", [subjects objectAtIndex:a]]];
+        int thisOne = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"NatureCategory%@Mixed", [subjects objectAtIndex:a]]];
+        totalStars+=thisOne;
+        
+        //Chemistry
+        if (a == 0) {
+            chemistryStars+=thisOne;
+            totalChemistryStars+=3;
+        }
+        //Physics
+        else if (a == 1) {
+            totalPhysicsStars+=3;
+            physicsStars+=thisOne;
+        }
+        //Chemistry
+        else if (a == 2) {
+            totalBiologyStars+=3;
+            biologyStars+=thisOne;
+        }
     }
     
     //Matten
@@ -248,7 +287,11 @@
         }
     }
     
-    //Achievements
+    /* *****************
+     
+         Achievements 
+     
+       ***************** */
     
     
     if ([subject isEqualToString:@"Physics"] && stars == 3) {
@@ -265,21 +308,24 @@
         //Chemists have solutions
         [GameKitHelper reportAchievementIdentifier:@"chemists_have_solutions" percentComplete:100.0];
     }
-    
-    //Master scientist
-    [GameKitHelper reportAchievementIdentifier:@"master_scientist" percentComplete:((float)totalStars/(float)total)*100.0+0.5];
-    
-    
     if (stars == 1) {
         //It's something
         [GameKitHelper reportAchievementIdentifier:@"its_something" percentComplete:100.0];
     }
-    
     if (stars == 2) {
+        //Improvement
         [GameKitHelper reportAchievementIdentifier:@"improvement" percentComplete:100.0];
     }
     
+    //Apex Predator
+    [GameKitHelper reportAchievementIdentifier:@"apex_predator" percentComplete:((float)biologyStars/(float)totalBiologyStars)*100.0+0.5];
+    //Master of Physics
+    [GameKitHelper reportAchievementIdentifier:@"master_of_physics" percentComplete:((float)physicsStars/(float)totalPhysicsStars)*100.0+0.5];
+    //Master of Chemistry
+    [GameKitHelper reportAchievementIdentifier:@"master_of_chemistry" percentComplete:((float)chemistryStars/(float)totalChemistryStars)*100.0+0.5];
     
+    //Master scientist
+    [GameKitHelper reportAchievementIdentifier:@"master_scientist" percentComplete:((float)totalStars/(float)total)*100.0+0.5];
 }
 
 -(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {

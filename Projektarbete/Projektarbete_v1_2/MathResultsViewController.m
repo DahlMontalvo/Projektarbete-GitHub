@@ -140,9 +140,8 @@
         
         //End of global stats
         
-        [[GameKitHelper sharedGameKitHelper] submitScore:(int64_t)totalHighscore + scoreScore category:@"totalScore"];
-        
     }
+    [GameKitHelper submitAndAddScore:scoreScore];
     
     
     
@@ -162,6 +161,82 @@
         //Math Magician
         [GameKitHelper reportAchievementIdentifier:@"math_magician" percentComplete:100.0];
     }
+    
+    int total = 0;
+    int mathStars = 0;
+    //Matten
+    NSMutableArray *operations = [[NSMutableArray alloc] initWithObjects:@"Addition",
+                                  @"Subtraction",
+                                  @"Multiplication",
+                                  @"Division",
+                                  @"Percent",
+                                  @"Fraction",
+                                  @"Equations",
+                                  nil];
+    for (int a = 0; a < [operations count]; a++) {
+        for (int i = 1; i < 6; i++) {
+            NSString *key = [NSString stringWithFormat:@"Stars%@%i", [operations objectAtIndex:a], i];
+            int thisStars = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:key];
+            total+=3;
+            mathStars+=thisStars;
+        }
+    }
+    
+    //Master of Chemistry
+    [GameKitHelper reportAchievementIdentifier:@"master_of_mathematics" percentComplete:((float)mathStars/(float)total)*100.0+0.5];
+    
+    
+    //Samla underkategorierna i sina arrayer beroende på överkategori
+    NSMutableArray *biologyCategories = [[NSMutableArray alloc] init];
+    NSMutableArray *chemistryCategories = [[NSMutableArray alloc] init];
+    NSMutableArray *physicsCategories = [[NSMutableArray alloc] init];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    for (int i = 0; i < [appDelegate.categories count]; i++) {
+        NSString *name = [[appDelegate.categories objectAtIndex:i] objectAtIndex:0];
+        NSString *parent = [[appDelegate.categories objectAtIndex:i] objectAtIndex:1];
+        int ID = [[[appDelegate.categories objectAtIndex:i] objectAtIndex:2] intValue];
+        NSMutableArray *temp = [[NSMutableArray alloc] initWithObjects:name, parent, [NSNumber numberWithInt:ID], nil];
+        NSString *sub = [[appDelegate.categories objectAtIndex:i] objectAtIndex:1];
+        
+        if ([sub isEqualToString:@"Physics"])
+            [physicsCategories addObject:temp];
+        else if ([sub isEqualToString:@"Chemistry"])
+            [chemistryCategories addObject:temp];
+        else if ([sub isEqualToString:@"Biology"])
+            [biologyCategories addObject:temp];
+    }
+    
+    NSMutableArray *contents = [[NSMutableArray alloc] initWithObjects:[[NSMutableArray alloc] initWithObjects: chemistryCategories,
+                                                                        physicsCategories,
+                                                                        biologyCategories, nil], nil];
+    NSMutableArray *subjects = [[NSMutableArray alloc] initWithObjects:@"Chemistry", @"Physics", @"Biology", nil];
+    
+    
+    int totalTotal = 0;
+    int totalTotalStars = 0;
+    
+    //Loopar igenom ett ämne i taget
+    for (int a = 0; a < 3; a++) {
+        //Loopar igenom alla kategorier i ämnet
+        int loop = [[[contents objectAtIndex:0] objectAtIndex:a] count];
+        
+        for (int i = 0; i < loop; i++) {
+            NSString *key = [NSString stringWithFormat:@"NatureCategory%iStars", [[[[[contents objectAtIndex:0] objectAtIndex:a] objectAtIndex:i] objectAtIndex:2] intValue]];
+            int thisStars = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:key];
+            totalTotal+=3;
+            totalTotalStars+=thisStars;
+        }
+        
+        //Lägg till mixed
+        totalTotal+=3;
+        int thisOne = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"NatureCategory%@Mixed", [subjects objectAtIndex:a]]];
+        totalTotalStars+=thisOne;
+    }
+    
+    
+    //Master scientist
+    [GameKitHelper reportAchievementIdentifier:@"master_scientist" percentComplete:((float)totalTotalStars/(float)totalTotal)*100.0+0.5];
 
 }
 

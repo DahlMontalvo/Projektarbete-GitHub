@@ -7,6 +7,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Singleton.h"
+#import "AppDelegate.h"
 
 @interface MathResultsViewController : UIViewController {
     int results;

@@ -112,6 +112,9 @@
                 NSLog(@"submitscore: %i, %i", (int)submitScore, (int)scoreVal);
                 
                 [[GameKitHelper sharedGameKitHelper] submitScore:submitScore category:@"totalScore"];
+                [GameKitHelper reportAchievementIdentifier:@"hundredk_and_counting" percentComplete:((float)submitScore/(float)100000)*100.0+0.5];
+                [GameKitHelper reportAchievementIdentifier:@"fivehundredk_and_counting" percentComplete:((float)submitScore/(float)500000)*100.0+0.5];
+                [GameKitHelper reportAchievementIdentifier:@"one_million" percentComplete:((float)submitScore/(float)1000000)*100.0+0.5];
             }
             else {
                 NSLog(@"Ny user");
@@ -119,6 +122,9 @@
                 NSLog(@"submitscore: %i", (int)submitScore);
                 
                 [[GameKitHelper sharedGameKitHelper] submitScore:submitScore category:@"totalScore"];
+                [GameKitHelper reportAchievementIdentifier:@"hundredk_and_counting" percentComplete:((float)submitScore/(float)100000)*100.0+0.5];
+                [GameKitHelper reportAchievementIdentifier:@"fivehundredk_and_counting" percentComplete:((float)submitScore/(float)500000)*100.0+0.5];
+                [GameKitHelper reportAchievementIdentifier:@"one_million" percentComplete:((float)submitScore/(float)1000000)*100.0+0.5];
             }
             if (error != nil) {
                 [[[Singleton sharedSingleton] sharedPrefs] setInteger:scoreScore forKey:@"StoredScore"];
@@ -138,34 +144,36 @@
         BOOL found = NO;
         if (error == nil) {
             for (GKAchievement* achievement in scores) {
-                if ([achievement.identifier isEqualToString:identifier]) {
+                if ([achievement.identifier isEqualToString:identifier] && achievement.percentComplete != 100) {
                     found = YES;
                     GKAchievement *achievement2 = [[GKAchievement alloc] initWithIdentifier:identifier];
                     if (achievement2) {
                         achievement2.showsCompletionBanner = YES;
                         achievement2.percentComplete = percent;
                         [achievement2 reportAchievementWithCompletionHandler:^(NSError *error) { }];
-                        NSLog(@"Sent");
+                        NSLog(@"1");
                     }
                 }
-                NSLog(@"%@", achievement);
+                NSLog(@"2: %@", achievement);
             }
         }
         else {
-            NSLog(@"%@", error);
+            NSLog(@"3: %@", error);
         }
+        /*
         if (scores == nil || found == NO) {
             GKAchievement *achievement2 = [[GKAchievement alloc] initWithIdentifier:identifier];
             if (achievement2) {
                 achievement2.showsCompletionBanner = YES;
                 achievement2.percentComplete = percent;
                 [achievement2 reportAchievementWithCompletionHandler:^(NSError *error) { }];
-                NSLog(@"Sent");
+                NSLog(@"4: %@", achievement2);
             }
         }
-     NSLog(@"Hit 2");
+         */
+     NSLog(@"5");
     }];
-    NSLog(@"Hit");
+    NSLog(@"6");
 }
 
 @end
