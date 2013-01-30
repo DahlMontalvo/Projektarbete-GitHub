@@ -114,12 +114,22 @@
                 
                 [[GameKitHelper sharedGameKitHelper] submitScore:submitScore category:@"totalScore"];
             }
+            else {
+                NSLog(@"Ny user");
+                int64_t submitScore = scoreScore+[[[Singleton sharedSingleton] sharedPrefs] integerForKey:@"StoredScore"];
+                NSLog(@"submitscore: %i", (int)submitScore);
+                
+                [[GameKitHelper sharedGameKitHelper] submitScore:submitScore category:@"totalScore"];
+            }
             if (error != nil) {
                 [[[Singleton sharedSingleton] sharedPrefs] setInteger:scoreScore forKey:@"StoredScore"];
                 NSLog(@"Error");
             }
         }];
         
+    }
+    else {
+        NSLog(@"Ny user");
     }
 }
 

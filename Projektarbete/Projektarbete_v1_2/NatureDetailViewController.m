@@ -194,7 +194,7 @@
         [noId addObject:[NSNumber numberWithInt:-1]];
         iteration = 10;
     }
-    
+    lastSentErrorReport = 0;
     
     
     for (int i = 0; i<iteration; i++) {
@@ -336,7 +336,7 @@
     
 	if([title isEqualToString:@"Yes"]) {
         
-        int qID = [[[questions objectAtIndex:questionAtm] objectAtIndex:1] intValue];
+        int qID = [[[questions objectAtIndex:questionAtm-1] objectAtIndex:1] intValue];
         int token = qID*3+253;
         NSString *postString = [NSString stringWithFormat:@"qid=%i&token=%i", qID, token];
         
