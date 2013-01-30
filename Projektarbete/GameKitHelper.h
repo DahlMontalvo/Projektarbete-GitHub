@@ -19,10 +19,12 @@
 id<GameKitHelperProtocol> delegate;
 
 @property (nonatomic, readonly) NSError* lastError;
+@property(nonatomic, retain) NSMutableDictionary *achievementsDictionary;
 
 + (id) sharedGameKitHelper;
 -(void) authenticateLocalPlayer;
 -(void) submitScore:(int64_t)scoreScore category:(NSString*)category;
 +(void) submitAndAddScore:(int64_t)scoreScore;
-+ (void) reportAchievementIdentifier: (NSString*) identifier percentComplete: (float) percent;
+- (void) reportAchievementIdentifier: (NSString*) identifier percentComplete: (float) percent;
+- (void) loadAchievements;
 @end

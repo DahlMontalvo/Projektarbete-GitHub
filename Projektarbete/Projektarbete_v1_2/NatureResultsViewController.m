@@ -296,36 +296,36 @@
     
     if ([subject isEqualToString:@"Physics"] && stars == 3) {
         //Speed of light
-        [GameKitHelper reportAchievementIdentifier:@"speed_of_light" percentComplete:100.0];
+        [[GameKitHelper sharedGameKitHelper] reportAchievementIdentifier:@"speed_of_light" percentComplete:100.0];
     }
     
     if ([subject isEqualToString:@"Biology"] && stars == 3) {
         //Natural Selection
-        [GameKitHelper reportAchievementIdentifier:@"natural_selection" percentComplete:100.0];
+        [[GameKitHelper sharedGameKitHelper] reportAchievementIdentifier:@"natural_selection" percentComplete:100.0];
     }
     
     if ([subject isEqualToString:@"Chemistry"] && stars == 3) {
         //Chemists have solutions
-        [GameKitHelper reportAchievementIdentifier:@"chemists_have_solutions" percentComplete:100.0];
+        [[GameKitHelper sharedGameKitHelper] reportAchievementIdentifier:@"chemists_have_solutions" percentComplete:100.0];
     }
     if (stars == 1) {
         //It's something
-        [GameKitHelper reportAchievementIdentifier:@"its_something" percentComplete:100.0];
+        [[GameKitHelper sharedGameKitHelper] reportAchievementIdentifier:@"its_something" percentComplete:100.0];
     }
     if (stars == 2) {
         //Improvement
-        [GameKitHelper reportAchievementIdentifier:@"improvement" percentComplete:100.0];
+        [[GameKitHelper sharedGameKitHelper] reportAchievementIdentifier:@"improvement" percentComplete:100.0];
     }
     
     //Apex Predator
-    [GameKitHelper reportAchievementIdentifier:@"apex_predator" percentComplete:((float)biologyStars/(float)totalBiologyStars)*100.0+0.5];
+    [[GameKitHelper sharedGameKitHelper] reportAchievementIdentifier:@"apex_predator" percentComplete:((float)biologyStars/(float)totalBiologyStars)*100.0+0.5];
     //Master of Physics
-    [GameKitHelper reportAchievementIdentifier:@"master_of_physics" percentComplete:((float)physicsStars/(float)totalPhysicsStars)*100.0+0.5];
+    [[GameKitHelper sharedGameKitHelper] reportAchievementIdentifier:@"master_of_physics" percentComplete:((float)physicsStars/(float)totalPhysicsStars)*100.0+0.5];
     //Master of Chemistry
-    [GameKitHelper reportAchievementIdentifier:@"master_of_chemistry" percentComplete:((float)chemistryStars/(float)totalChemistryStars)*100.0+0.5];
+    [[GameKitHelper sharedGameKitHelper] reportAchievementIdentifier:@"master_of_chemistry" percentComplete:((float)chemistryStars/(float)totalChemistryStars)*100.0+0.5];
     
     //Master scientist
-    [GameKitHelper reportAchievementIdentifier:@"master_scientist" percentComplete:((float)totalStars/(float)total)*100.0+0.5];
+    [[GameKitHelper sharedGameKitHelper] reportAchievementIdentifier:@"master_scientist" percentComplete:((float)totalStars/(float)total)*100.0+0.5];
 }
 
 -(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {

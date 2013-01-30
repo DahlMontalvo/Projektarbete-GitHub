@@ -159,7 +159,7 @@
     
     if (difficulty == 5 && results == 10 && [gamemode isEqualToString:@"Test"]) {
         //Math Magician
-        [GameKitHelper reportAchievementIdentifier:@"math_magician" percentComplete:100.0];
+        [[GameKitHelper sharedGameKitHelper] reportAchievementIdentifier:@"math_magician" percentComplete:100.0];
     }
     
     int total = 0;
@@ -183,7 +183,7 @@
     }
     
     //Master of Chemistry
-    [GameKitHelper reportAchievementIdentifier:@"master_of_mathematics" percentComplete:((float)mathStars/(float)total)*100.0+0.5];
+    [[GameKitHelper sharedGameKitHelper] reportAchievementIdentifier:@"master_of_mathematics" percentComplete:((float)mathStars/(float)total)*100.0+0.5];
     
     
     //Samla underkategorierna i sina arrayer beroende på överkategori
@@ -236,7 +236,7 @@
     
     
     //Master scientist
-    [GameKitHelper reportAchievementIdentifier:@"master_scientist" percentComplete:((float)totalTotalStars/(float)totalTotal)*100.0+0.5];
+    [[GameKitHelper sharedGameKitHelper] reportAchievementIdentifier:@"master_scientist" percentComplete:((float)totalTotalStars/(float)totalTotal)*100.0+0.5];
 
 }
 
