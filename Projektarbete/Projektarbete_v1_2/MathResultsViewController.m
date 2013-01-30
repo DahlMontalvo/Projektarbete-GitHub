@@ -26,7 +26,7 @@
     
     float timeForOneStar = (difficulty * 100)*0.6;
     float timeForTwoStars = (difficulty * 100)*0.4;
-    float timeForThreeStars = ((difficulty * 100)*0.225);
+    float timeForThreeStars = ((difficulty * 100)*0.2);
     
     if (finalTime < timeForThreeStars && results == 10) {
         starLabel.text = @"3 Stars!";
