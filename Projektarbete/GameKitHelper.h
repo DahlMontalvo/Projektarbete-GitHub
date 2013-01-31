@@ -26,5 +26,4 @@ id<GameKitHelperProtocol> delegate;
 -(void) submitScore:(int64_t)scoreScore category:(NSString*)category;
 +(void) submitAndAddScore:(int64_t)scoreScore;
 - (void) reportAchievementIdentifier: (NSString*) identifier percentComplete: (float) percent;
-- (void) loadAchievements;
 @end

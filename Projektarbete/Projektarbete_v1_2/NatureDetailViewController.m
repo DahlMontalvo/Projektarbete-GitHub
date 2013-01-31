@@ -304,7 +304,6 @@
 }
 - (IBAction)buttonOne:(id)sender {
     [self buttonPressed:1];
-    NSLog(@"Up");
 }
 
 - (IBAction)buttonTwo:(id)sender {

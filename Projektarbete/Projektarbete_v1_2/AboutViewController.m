@@ -162,7 +162,6 @@
 }
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
-    NSLog(@"%@", string);
     if (!elementValue) {
         elementValue = [[NSMutableString alloc] initWithString:string];
     } else {

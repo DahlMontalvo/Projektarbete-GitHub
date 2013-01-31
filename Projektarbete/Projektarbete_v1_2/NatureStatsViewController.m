@@ -165,7 +165,6 @@
             
             highscore = [NSString stringWithFormat:@"%i", time];
         }
-        NSLog(@"%@", [NSString stringWithFormat:@"NatureCategory%iTime", [[[categories objectAtIndex:indexPath.row-1] objectAtIndex:2] intValue]]);
         
         cell.valueLabel.text = highscore;
         
