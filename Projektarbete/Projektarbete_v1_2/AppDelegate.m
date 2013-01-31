@@ -309,30 +309,13 @@
                 }
                 sqlite3_finalize(compiledStatement2);
                 
-                const char *sqlStatement4 = [[NSString stringWithFormat:@"SELECT * FROM answers WHERE questionId != %i AND deleted != 1 ORDER BY RANDOM() LIMIT 3", [qID intValue]] UTF8String];
-                sqlite3_stmt *compiledStatement4;
-                if(sqlite3_prepare_v2(database, sqlStatement4, -1, &compiledStatement4, NULL) == SQLITE_OK) {
-                    while(sqlite3_step(compiledStatement4) == SQLITE_ROW && ansNum <= 2) {
-                        NSNumber *ansId = [NSNumber numberWithInt:sqlite3_column_int(compiledStatement4, 0)];
-                        NSString *answerStr = [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement4, 3)];
-                        NSNumber *correct = [NSNumber numberWithInt:0];
-                        
-                        [answers addObject:[[NSMutableArray alloc] initWithObjects:answerStr, ansId, correct, nil]];
-                        
-                        found = YES;
-                        ansNum++;
-                    }
-                }
-                
                 for (int a = 0; a <= 2-ansNum; a++) {
                     NSMutableArray *emptiness = [[NSMutableArray alloc] init];
-                    [emptiness addObject:@""];
-                    [emptiness addObject:@""];
-                    [emptiness addObject:@""];
+                    [emptiness addObject:@"None"];
+                    [emptiness addObject:0];
+                    [emptiness addObject:[NSNumber numberWithInt:0]];
                     [answers addObject:emptiness];
                 }
-                
-                sqlite3_finalize(compiledStatement4);
                 
                 int random = 0;
                 NSMutableArray *tempAnswers = [[NSMutableArray alloc] init];
