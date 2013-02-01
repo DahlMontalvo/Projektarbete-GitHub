@@ -12,9 +12,8 @@
 	<array>
 		<string>Default@2x.png</string>
 		<string>Default@2x.png</string>
-		<string>Someicon4-114 kopia.png</string>
 		<string>Default@2x.png</string>
-		<string>Icon.png</string>
+		<string>IconRetina.png</string>
 		<string>IconRetina.png</string>
 		<string>IconStandard.png</string>
 	</array>
@@ -27,7 +26,7 @@
 				<string>Default@2x.png</string>
 				<string>Default@2x.png</string>
 				<string>Default@2x.png</string>
-				<string>Icon.png</string>
+				<string>IconRetina.png</string>
 				<string>IconRetina.png</string>
 				<string>IconStandard.png</string>
 			</array>

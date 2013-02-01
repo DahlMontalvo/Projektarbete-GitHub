@@ -40,6 +40,8 @@
 		006C69D716BA7EC00051D3CC /* IconAppStore.png in Resources */ = {isa = PBXBuildFile; fileRef = 006C69D416BA7EC00051D3CC /* IconAppStore.png */; };
 		006C69D816BA7EC00051D3CC /* IconRetina.png in Resources */ = {isa = PBXBuildFile; fileRef = 006C69D516BA7EC00051D3CC /* IconRetina.png */; };
 		006C69D916BA7EC00051D3CC /* IconStandard.png in Resources */ = {isa = PBXBuildFile; fileRef = 006C69D616BA7EC00051D3CC /* IconStandard.png */; };
+		006C69E016BA9BEA0051D3CC /* IconStandard.png in Resources */ = {isa = PBXBuildFile; fileRef = 006C69DF16BA9BEA0051D3CC /* IconStandard.png */; };
+		006C69E216BA9BF20051D3CC /* IconRetina.png in Resources */ = {isa = PBXBuildFile; fileRef = 006C69E116BA9BF20051D3CC /* IconRetina.png */; };
 		007BC47D15C09B4E009BC60D /* MathTableCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 007BC47B15C09B4E009BC60D /* MathTableCellController.m */; };
 		007BC47E15C09B4E009BC60D /* MathTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007BC47C15C09B4E009BC60D /* MathTableCell.xib */; };
 		00946E46167FC804002C9786 /* brun2.png in Resources */ = {isa = PBXBuildFile; fileRef = 00946E45167FC804002C9786 /* brun2.png */; };
@@ -161,6 +163,8 @@
 		006C69D416BA7EC00051D3CC /* IconAppStore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconAppStore.png; sourceTree = "<group>"; };
 		006C69D516BA7EC00051D3CC /* IconRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconRetina.png; sourceTree = "<group>"; };
 		006C69D616BA7EC00051D3CC /* IconStandard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconStandard.png; sourceTree = "<group>"; };
+		006C69DF16BA9BEA0051D3CC /* IconStandard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconStandard.png; sourceTree = "<group>"; };
+		006C69E116BA9BF20051D3CC /* IconRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconRetina.png; sourceTree = "<group>"; };
 		007BC47A15C09B4E009BC60D /* MathTableCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathTableCellController.h; sourceTree = "<group>"; };
 		007BC47B15C09B4E009BC60D /* MathTableCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathTableCellController.m; sourceTree = "<group>"; };
 		007BC47C15C09B4E009BC60D /* MathTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MathTableCell.xib; sourceTree = "<group>"; };
@@ -440,6 +444,8 @@
 		DDB5884D15B947A9009CF151 = {
 			isa = PBXGroup;
 			children = (
+				006C69E116BA9BF20051D3CC /* IconRetina.png */,
+				006C69DF16BA9BEA0051D3CC /* IconStandard.png */,
 				DDB5886215B947A9009CF151 /* Classes */,
 				DDF3128516B45DDC00015C6C /* Resources */,
 				DDF3128316B45D9100015C6C /* Other Sources */,
@@ -812,6 +818,8 @@
 				006C69D716BA7EC00051D3CC /* IconAppStore.png in Resources */,
 				006C69D816BA7EC00051D3CC /* IconRetina.png in Resources */,
 				006C69D916BA7EC00051D3CC /* IconStandard.png in Resources */,
+				006C69E016BA9BEA0051D3CC /* IconStandard.png in Resources */,
+				006C69E216BA9BF20051D3CC /* IconRetina.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -901,7 +909,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -910,6 +918,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
