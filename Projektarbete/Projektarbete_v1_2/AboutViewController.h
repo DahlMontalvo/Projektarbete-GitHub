@@ -25,8 +25,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *syncButton;
 @property (strong, nonatomic) IBOutlet UIProgressView *progressBar;
 @property (strong, nonatomic) IBOutlet UIView *progressView;
+@property (strong, nonatomic) IBOutlet UIButton *cancelButton;
 
 @property (nonatomic) BOOL errorParsing;
+@property (nonatomic) BOOL stopParsing;
 @property (nonatomic, retain) NSXMLParser *rssParser;
 @property (nonatomic, retain) NSMutableArray *articles;
 @property (nonatomic, retain) NSMutableDictionary *item;
@@ -43,6 +45,7 @@
 @property (nonatomic, retain) NSMutableArray *currentItem;
 @property (nonatomic, retain) NSTimer *updateTimer;
 
+- (IBAction)cancelButtonPressed:(id)sender;
 -(IBAction)done:(id)sender;
 -(IBAction)emailPressed:(id)sender;
 -(IBAction)syncButtonPressed:(id)sender;

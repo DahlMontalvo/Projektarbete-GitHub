@@ -24,9 +24,14 @@
     
     int stars;
     
-    float timeForOneStar = (difficulty * 100)*0.6;
-    float timeForTwoStars = (difficulty * 100)*0.4;
-    float timeForThreeStars = ((difficulty * 100)*0.2);
+    int multi = 0;
+    if ([operation isEqualToString:@"Percent"] || [operation isEqualToString:@"Equations"] || [operation isEqualToString:@"Fraction"]) {
+        multi=10;
+    }
+    
+    float timeForOneStar = (difficulty * 100)*0.6+multi;
+    float timeForTwoStars = (difficulty * 100)*0.4+multi;
+    float timeForThreeStars = ((difficulty * 100)*0.2+multi);
     
     if (finalTime < timeForThreeStars && results == 10) {
         starLabel.text = @"3 Stars!";
@@ -95,11 +100,19 @@
     int previousHighscore = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"%@%i",operation,difficulty]];
     int scoreScore;
     
-    if (stars != 0)
-        scoreScore = (results / sqrt(finalTime)*447.2135956);
-    else
-        scoreScore = 0;
+    scoreScore = (results / sqrt(finalTime)*447.2135956);
+    if ([operation isEqualToString:@"Percent"] ||
+        [operation isEqualToString:@"Fraction"] ||
+        [operation isEqualToString:@"Equations"]) {
+        
+        int minus = 15-finalTime;
+        if (minus < 0) minus = 0;
+        minus*=45;
+        scoreScore-=minus;
+    }
+    
     if (scoreScore < 0) scoreScore = 0;
+    
     scoreScoreLabel.text = [NSString stringWithFormat:@"%i", scoreScore];
     
     if ((scoreScore > previousHighscore) && [gamemode isEqualToString:@"Test"]) {
