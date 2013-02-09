@@ -154,7 +154,12 @@
         //End of global stats
         
     }
-    [GameKitHelper submitAndAddScore:scoreScore];
+    
+    if (difficulty  > 2 && [gamemode isEqualToString:@"Test"]) {
+           [GameKitHelper submitAndAddScore:scoreScore];
+    }
+    
+ 
     
     
     
