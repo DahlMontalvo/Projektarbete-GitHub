@@ -269,6 +269,9 @@
         }
     }
     
+    //Master antimatte
+    [[GameKitHelper sharedGameKitHelper] reportAchievementIdentifier:@"all_except_math" percentComplete:((float)totalStars/(float)total)*100.0+0.5];
+    
     //Matten
     NSMutableArray *operations = [[NSMutableArray alloc] initWithObjects:@"Addition",
                                   @"Subtraction",
