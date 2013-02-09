@@ -199,10 +199,10 @@
             mathStars+=thisStars;
         }
     }
+    int totalMathStars = total;
     
-    //Master of Chemistry
+    //Master of Maths
     [[GameKitHelper sharedGameKitHelper] reportAchievementIdentifier:@"master_of_mathematics" percentComplete:((float)mathStars/(float)total)*100.0+0.5];
-    
     
     //Samla underkategorierna i sina arrayer beroende på överkategori
     NSMutableArray *biologyCategories = [[NSMutableArray alloc] init];
@@ -251,6 +251,8 @@
         int thisOne = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"NatureCategory%@Mixed", [subjects objectAtIndex:a]]];
         totalTotalStars+=thisOne;
     }
+    totalTotalStars+=mathStars;
+    totalTotal+=totalMathStars;
     
     
     //Master scientist
