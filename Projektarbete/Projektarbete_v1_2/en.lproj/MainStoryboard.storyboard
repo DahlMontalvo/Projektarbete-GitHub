@@ -1462,11 +1462,10 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="progressTintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
                                     </progressView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RUu-9A-6qU">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="RUu-9A-6qU">
                                         <rect key="frame" x="7" y="210" width="94" height="58"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="30"/>
-                                        <color key="tintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="1" backgroundImage="NumberButton.png">
                                             <color key="titleColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -1479,11 +1478,10 @@
                                             <action selector="keyboard1:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="d5L-eN-xaY"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xSN-Aq-fM8">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xSN-Aq-fM8">
                                         <rect key="frame" x="100" y="210" width="94" height="58"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="30"/>
-                                        <color key="tintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="2" backgroundImage="NumberButton.png">
                                             <color key="titleColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -1512,11 +1510,10 @@
                                             <action selector="keyboard3:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="kk8-CW-JYt"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="viH-Zv-92z">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="viH-Zv-92z">
                                         <rect key="frame" x="7" y="266" width="94" height="58"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="30"/>
-                                        <color key="tintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="4" backgroundImage="NumberButton.png">
                                             <color key="titleColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -1529,11 +1526,10 @@
                                             <action selector="keyboard4:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="xIh-q4-TNm"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oau-TO-fRK">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="oau-TO-fRK">
                                         <rect key="frame" x="100" y="266" width="94" height="58"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="30"/>
-                                        <color key="tintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="5" backgroundImage="NumberButton.png">
                                             <color key="titleColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -1546,11 +1542,10 @@
                                             <action selector="keyboard5:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="Bw7-jw-Q7J"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HL5-D1-SVY">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="HL5-D1-SVY">
                                         <rect key="frame" x="193" y="266" width="94" height="58"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="30"/>
-                                        <color key="tintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="6" backgroundImage="NumberButton.png">
                                             <color key="titleColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -1563,11 +1558,10 @@
                                             <action selector="keyboard6:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="gMV-4r-6do"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NAb-67-oBp">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="NAb-67-oBp">
                                         <rect key="frame" x="7" y="322" width="94" height="58"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="30"/>
-                                        <color key="tintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="7" backgroundImage="NumberButton.png">
                                             <color key="titleColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -1580,11 +1574,10 @@
                                             <action selector="keyboard7:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="Sad-1S-a1u"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ODD-lw-muD">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ODD-lw-muD">
                                         <rect key="frame" x="100" y="322" width="94" height="58"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="30"/>
-                                        <color key="tintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="8" backgroundImage="NumberButton.png">
                                             <color key="titleColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -1597,11 +1590,10 @@
                                             <action selector="keyboard8:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="Gzl-Jt-A89"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="G6n-7u-HYL">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="G6n-7u-HYL">
                                         <rect key="frame" x="193" y="322" width="94" height="58"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="30"/>
-                                        <color key="tintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="9" backgroundImage="NumberButton.png">
                                             <color key="titleColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -1613,11 +1605,10 @@
                                             <action selector="keyboard9:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="zxZ-Sr-bMX"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4o8-Mu-ivk">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4o8-Mu-ivk">
                                         <rect key="frame" x="193" y="378" width="94" height="58"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="24"/>
-                                        <color key="tintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="6" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="Delete" backgroundImage="NumberButton.png">
                                             <color key="titleColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -1630,11 +1621,10 @@
                                             <action selector="keyboardback:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="UbS-f3-7Z9"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PX3-om-SEv">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="PX3-om-SEv">
                                         <rect key="frame" x="100" y="378" width="94" height="58"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="30"/>
-                                        <color key="tintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="0" backgroundImage="NumberButton.png">
                                             <color key="titleColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -1647,11 +1637,10 @@
                                             <action selector="keyboard0:" destination="ZY0-nv-5j1" eventType="touchUpInside" id="f9Q-xS-rth"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="h7a-Mc-1R3">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="h7a-Mc-1R3">
                                         <rect key="frame" x="7" y="378" width="94" height="58"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="24"/>
-                                        <color key="tintColor" red="0.39875637759999999" green="0.29696477449999997" blue="0.24752784890000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="6" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="Skip" backgroundImage="NumberButton.png">
                                             <color key="titleColor" red="0.39875637755102045" green="0.29696477453998676" blue="0.24752784893081559" alpha="1" colorSpace="calibratedRGB"/>
@@ -1714,7 +1703,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" id="4tC-sZ-nQI">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="5" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="0fm-vN-wD3">
@@ -2566,6 +2555,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="b2y-sA-E6x"/>
-        <segue reference="m7M-EV-8hW"/>
+        <segue reference="Ord-lZ-lSz"/>
     </inferredMetricsTieBreakers>
 </document>
