@@ -26,6 +26,7 @@
 @property (strong, nonatomic) IBOutlet UIProgressView *progressBar;
 @property (strong, nonatomic) IBOutlet UIView *progressView;
 @property (strong, nonatomic) IBOutlet UIButton *cancelButton;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @property (nonatomic) BOOL errorParsing;
 @property (nonatomic) BOOL stopParsing;

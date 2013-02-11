@@ -9,7 +9,11 @@
 #import "Singleton.h"
 
 @implementation AboutViewController
-@synthesize delegate, doneButton, syncButton, errorParsing, questionsUpdated, elementValue, articles, currentElement, item, rssParser, currentPart, currentItem, categoryChanges, questionChanges, answerChanges, a, progressBar, totalUpdates, update, updateTimer, progressView, cancelButton, stopParsing;
+@synthesize activityIndicator,delegate, doneButton, syncButton, errorParsing, questionsUpdated, elementValue, articles, currentElement, item, rssParser, currentPart, currentItem, categoryChanges, questionChanges, answerChanges, a, progressBar, totalUpdates, update, updateTimer, progressView, cancelButton, stopParsing;
+
+
+#define SYSTEM_VERSION_LESS_THAN(v) ([[[UIDevice currentDevice] systemVersion] \
+compare:v options:NSNumericSearch] == NSOrderedAscending)
 
 #pragma mark - Initialization
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -34,6 +38,7 @@
     [self setProgressBar:nil];
     [self setProgressView:nil];
     [self setCancelButton:nil];
+    [self setActivityIndicator:nil];
     [super viewDidUnload];
 }
 
@@ -181,7 +186,10 @@
 }
 
 - (void)parserDidEndDocument:(NSXMLParser *)parser {
-    [progressBar setProgress:1.0];
+    
+    if (SYSTEM_VERSION_LESS_THAN(@"6.0")) { }
+    else
+        [progressBar setProgress:1.0];
     [progressView setHidden:YES];
     
     NSString *messageText;
@@ -236,8 +244,6 @@
 
 #pragma mark - Other
 
-#define SYSTEM_VERSION_LESS_THAN(v) ([[[UIDevice currentDevice] systemVersion] \
-compare:v options:NSNumericSearch] == NSOrderedAscending)
 -(void)updateProgressBar {
     if (totalUpdates == 0) totalUpdates = 1;
     float val = (float)update/(float)totalUpdates;
@@ -250,7 +256,9 @@ compare:v options:NSNumericSearch] == NSOrderedAscending)
 
 - (IBAction)cancelButtonPressed:(id)sender {
     stopParsing = YES;
-    [progressBar setProgress:1.00];
+    if (SYSTEM_VERSION_LESS_THAN(@"6.0")) { }
+    else
+        [progressBar setProgress:1.00];
     [progressView setHidden:YES];
     NSLog(@"Pushed");
 }
@@ -310,6 +318,7 @@ compare:v options:NSNumericSearch] == NSOrderedAscending)
 - (IBAction)syncButtonPressed:(id)sender {
     update = 0;
     [progressView setHidden:NO];
+    [activityIndicator startAnimating];
     [self performSelector:@selector(startUpdating) withObject:nil afterDelay:0];
 }
 
