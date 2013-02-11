@@ -15,8 +15,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //Starta Flurry
-    [Flurry startSession:@"54D9K3CPNYJM94ZRZDVM"];
-    //[Flurry startSession:@"nil"];;
+    //[Flurry startSession:@"54D9K3CPNYJM94ZRZDVM"];
+    [Flurry startSession:@"nil"];;
     [self readCategoriesFromDatabase];
     [NSThread sleepForTimeInterval:1.0];
     
@@ -29,7 +29,7 @@
     [[[Singleton sharedSingleton] sharedPrefs] synchronize];
     
     if (launchCount == 1) {
-        [[[Singleton sharedSingleton] sharedPrefs] setObject:[NSDate dateWithTimeIntervalSince1970:1360312447] forKey:@"LastSyncDate"];
+        [[[Singleton sharedSingleton] sharedPrefs] setObject:[NSDate dateWithTimeIntervalSince1970:1359638013] forKey:@"LastSyncDate"];
     }
     
     return YES;
