@@ -9,7 +9,7 @@
 #import "Singleton.h"
 
 @implementation AboutViewController
-@synthesize delegate, doneButton, syncButton, errorParsing, questionsUpdated, elementValue, articles, currentElement, item, rssParser, currentPart, currentItem, categoryChanges, questionChanges, answerChanges, a, progressBar, totalUpdates, update, updateTimer, progressView, cancelButton, stopParsing;
+@synthesize delegate, doneButton, syncButton, errorParsing, questionsUpdated, elementValue, articles, currentElement, item, rssParser, currentPart, currentItem, categoryChanges, questionChanges, answerChanges, a, progressBar, totalUpdates, update, updateTimer, progressView;
 
 #pragma mark - Initialization
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -21,7 +21,6 @@
 
 #pragma mark - View management
 - (void)viewDidLoad {
-    stopParsing = NO;
     [super viewDidLoad];
 }
 
@@ -33,7 +32,6 @@
     [self setSyncButton:nil];
     [self setProgressBar:nil];
     [self setProgressView:nil];
-    [self setCancelButton:nil];
     [super viewDidUnload];
 }
 
@@ -49,7 +47,6 @@
 - (void)parserDidStartDocument:(NSXMLParser *)parser{
     a = 0;
     questionsUpdated = 0;
-    stopParsing = NO;
 }
 
 - (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
@@ -86,9 +83,6 @@
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
-    if (stopParsing == YES) {
-        [parser abortParsing];
-    }
     NSString *val = [elementValue copy];
     if (![elementName isEqualToString:@"e"]) {
         if ([currentPart isEqualToString:@"count"]) {
@@ -241,13 +235,6 @@
     if (val <= 1) {
         [progressBar setProgress:val animated:YES];
     }
-}
-
-- (IBAction)cancelButtonPressed:(id)sender {
-    stopParsing = YES;
-    [progressBar setProgress:1.00];
-    [progressView setHidden:YES];
-    NSLog(@"Pushed");
 }
 
 -(IBAction)done:(id)sender {
