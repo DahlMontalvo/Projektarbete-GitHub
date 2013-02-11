@@ -16,6 +16,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //Starta Flurry
     [Flurry startSession:@"54D9K3CPNYJM94ZRZDVM"];
+    //[Flurry startSession:@"nil"];;
     [self readCategoriesFromDatabase];
     [NSThread sleepForTimeInterval:1.0];
     
