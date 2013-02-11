@@ -930,7 +930,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Projektarbete_v1_2/Simple Science-Prefix.pch";
 				INFOPLIST_FILE = "Projektarbete_v1_2/Simple Science-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Projektarbete_v1_2/Flurry\"",
@@ -947,7 +947,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Projektarbete_v1_2/Simple Science-Prefix.pch";
 				INFOPLIST_FILE = "Projektarbete_v1_2/Simple Science-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Projektarbete_v1_2/Flurry\"",
