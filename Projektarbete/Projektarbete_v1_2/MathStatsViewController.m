@@ -27,7 +27,7 @@
     [operations addObject:@"Multiplication"];
     [operations addObject:@"Division"];
     [operations addObject:@"Percent"];
-    [operations addObject:@"Fraction"];
+    [operations addObject:@"Fratction"];
     [operations addObject:@"Equations"];
 }
 
