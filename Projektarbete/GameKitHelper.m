@@ -53,45 +53,25 @@
 }
 
 #pragma mark Player Authentication
-#define SYSTEM_VERSION_LESS_THAN(v) ([[[UIDevice currentDevice] systemVersion] \
-compare:v options:NSNumericSearch] == NSOrderedAscending)
 
-- (void)authenticateLocalPlayer
-{
-    GKLocalPlayer *localPlayer = [GKLocalPlayer localPlayer];
+-(void) authenticateLocalPlayer {
+    GKLocalPlayer* localPlayer = [GKLocalPlayer localPlayer];
     
-    if (SYSTEM_VERSION_LESS_THAN(@"6.0"))
-    {
-        // ios 5.x and below
-        [localPlayer authenticateWithCompletionHandler:^(NSError *error)
-         {
-             [self setLastError:error];
-             
-             if (localPlayer.authenticated) {
-                 _gameCenterFeaturesEnabled = YES;
-             } else {
-                 _gameCenterFeaturesEnabled = NO;
-             }
-         }];
-    }
-    else
-    {
-        //ios 6.x and above
-        localPlayer.authenticateHandler =
-        ^(UIViewController *viewController,
-          NSError *error) {
-            
-            [self setLastError:error];
-            
-            if (localPlayer.authenticated) {
-                _gameCenterFeaturesEnabled = YES;
-            } else if(viewController) {
-                [self presentViewController:viewController];
-            } else {
-                _gameCenterFeaturesEnabled = NO;
-            }
-        };
-    }
+    localPlayer.authenticateHandler =
+    ^(UIViewController *viewController,
+      NSError *error) {
+        
+        [self setLastError:error];
+
+        if (localPlayer.authenticated) {
+            _gameCenterFeaturesEnabled = YES;
+        } else if(viewController) {
+            [self presentViewController:viewController];
+        } else {
+            _gameCenterFeaturesEnabled = NO;
+        }
+    };
+    
 }
 
 - (void) submitScore:(int64_t)scoreScore category:(NSString*) category
