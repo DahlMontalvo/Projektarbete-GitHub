@@ -35,7 +35,7 @@
 	<key>CFBundleIdentifier</key>
 	<string>dahlmontalvo.simplescience</string>
 	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
+	<string>5.0</string>
 	<key>CFBundleName</key>
 	<string>Simple Science</string>
 	<key>CFBundlePackageType</key>
