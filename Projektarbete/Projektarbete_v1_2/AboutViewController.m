@@ -235,11 +235,16 @@
 }
 
 #pragma mark - Other
+
+#define SYSTEM_VERSION_LESS_THAN(v) ([[[UIDevice currentDevice] systemVersion] \
+compare:v options:NSNumericSearch] == NSOrderedAscending)
 -(void)updateProgressBar {
     if (totalUpdates == 0) totalUpdates = 1;
     float val = (float)update/(float)totalUpdates;
     if (val <= 1) {
-        [progressBar setProgress:val animated:YES];
+        if (SYSTEM_VERSION_LESS_THAN(@"6.0")) { }
+        else
+            [progressBar setProgress:val animated:YES];
     }
 }
 
