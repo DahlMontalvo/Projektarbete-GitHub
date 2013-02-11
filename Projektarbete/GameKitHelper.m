@@ -54,23 +54,43 @@
 
 #pragma mark Player Authentication
 
--(void) authenticateLocalPlayer {
-    GKLocalPlayer* localPlayer = [GKLocalPlayer localPlayer];
-    
-    localPlayer.authenticateHandler =
-    ^(UIViewController *viewController,
-      NSError *error) {
-        
-        [self setLastError:error];
+#define SYSTEM_VERSION_LESS_THAN(v) ([[[UIDevice currentDevice] systemVersion] \
+                                       compare:v options:NSNumericSearch] == NSOrderedAscending)
 
-        if (localPlayer.authenticated) {
-            _gameCenterFeaturesEnabled = YES;
-        } else if(viewController) {
-            [self presentViewController:viewController];
-        } else {
-            _gameCenterFeaturesEnabled = NO;
-        }
-    };
+
+-(void)authenticateLocalPlayer {
+       GKLocalPlayer *localPlayer = [GKLocalPlayer localPlayer];
+
+  if (SYSTEM_VERSION_LESS_THAN(@"6.0")) {
+          // ios 5.x and below
+          [localPlayer authenticateWithCompletionHandler:^(NSError *error)
+                      {
+                               [self setLastError:error];
+                  
+                              if (localPlayer.authenticated) {
+                                      _gameCenterFeaturesEnabled = YES;
+                                } else {
+                                          _gameCenterFeaturesEnabled = NO;
+                                      }
+                          }];
+       }
+  else   {
+           //ios 6.x and above
+           localPlayer.authenticateHandler =
+            ^(UIViewController *viewController,
+                       NSError *error) {
+    
+                   [self setLastError:error];
+    
+                   if (localPlayer.authenticated) {
+                           _gameCenterFeaturesEnabled = YES;
+                    } else if(viewController) {
+                              [self presentViewController:viewController];
+                           } else {
+                                   _gameCenterFeaturesEnabled = NO;
+                              }
+               };
+    }
     
 }
 
