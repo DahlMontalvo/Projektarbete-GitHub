@@ -251,9 +251,6 @@
         int thisOne = [[[Singleton sharedSingleton] sharedPrefs] integerForKey:[NSString stringWithFormat:@"NatureCategory%@Mixed", [subjects objectAtIndex:a]]];
         totalTotalStars+=thisOne;
     }
-    //Master antimatte
-    [[GameKitHelper sharedGameKitHelper] reportAchievementIdentifier:@"all_except_math" percentComplete:((float)totalTotalStars/(float)totalTotal)*100.0+0.5];
-    
     totalTotalStars+=mathStars;
     totalTotal+=totalMathStars;
     
